@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`upfrontPayment query responds with correct mocked data 1`] = `
+Object {
+  "upfrontPayment": Object {
+    "items": Array [
+      Object {
+        "description": "Blue",
+        "imagePath": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-1.png",
+        "itemId": "512aab13-af1b-4a69-942d-083d6a23145f",
+        "price": 52.75,
+        "title": "iPhone 12 64GB",
+      },
+    ],
+    "monthlyIfpAmount": 52.75,
+    "requiredUpfrontAmount": 949.5,
+  },
+}
+`;

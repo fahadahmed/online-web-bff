@@ -1,0 +1,869 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "offerDetails": [
+    {
+      "id": "misc020789",
+      "externalId": "legacy050112",
+      "name": "Broadband Equipment",
+      "description": "Broadband Equipment",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "frequency": null,
+        "basePrice": 14.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [],
+      "entitlements": [],
+      "promotions": [],
+      "productFeatures": null,
+      "productCharacteristics": {
+        "isShippable": true,
+        "balanceManageMent": "PREPAID/POSTPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "misc050385",
+      "externalId": "legacy05011",
+      "name": "Netflix – 6mo offer",
+      "description": "Enjoy award-winning movies and must-see TV shows in Full HD. Watch on two devices at a time.",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "frequency": {
+          "value": 1,
+          "period": "Month"
+        },
+        "basePrice": 14.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "type": "LOGO",
+          "defaultUrl": "/online/myspark/__dev__/logos/netflix.svg"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "netflix_standard"
+      },
+      "productFeatures": {
+        "brand": "Netflix"
+      },
+      "productCharacteristics": {
+        "entitledEntity": "LINE",
+        "isShippable": true,
+        "balanceManageMent": "POSTPAID",
+        "isDeferrable": false,
+        "isIncluded": true
+      }
+    },
+    {
+      "id": "misc010921",
+      "externalId": "legacy050116",
+      "name": "Neon & Broadband",
+      "description": "Watch the biggest binge-worthy TV shows and movies.",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "frequency": {
+          "value": 1,
+          "period": "Month"
+        },
+        "basePrice": 14.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "type": "LOGO",
+          "defaultUrl": "/online/myspark/__dev__/logos/neon.svg"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "neon"
+      },
+      "productFeatures": {
+        "brand": "Neon"
+      },
+      "productCharacteristics": {
+        "entitledEntity": "LINE",
+        "isShippable": true,
+        "balanceManageMent": "POSTPAID",
+        "isDeferrable": false,
+        "isIncluded": true
+      }
+    },
+    {
+      "id": "misc052451",
+      "externalId": "legacy050115",
+      "name": "Spotify Premium",
+      "description": "Stream millions of songs in high-definition quality, ad-free.",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "description": "Usually $14.99/28 days",
+        "frequency": {
+          "value": 28,
+          "period": "Day"
+        },
+        "basePrice": 7.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "description": null,
+          "id": "spotify_individual_half_price_2",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-premium-logo-189x57.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "PRODUCT"
+        },
+        {
+          "description": null,
+          "id": "spotify_individual_half_price_2",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-premium-logo-189x57.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "FEATURED"
+        },
+        {
+          "description": null,
+          "id": "Spotifylogo",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon-large-140x140.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "LOGO"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "spotify_premium"
+      },
+      "productFeatures": {
+        "brand": "Spotify"
+      },
+      "productCharacteristics": {
+        "entitledEntity": "LINE",
+        "isShippable": true,
+        "balanceManageMent": "PREPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "misc077770",
+      "externalId": "legacy050117",
+      "name": "Spotify Premium",
+      "description": "Stream millions of songs in high-definition quality, ad-free.",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "description": "Usually $14.99/28 days",
+        "frequency": {
+          "value": 28,
+          "period": "Day"
+        },
+        "basePrice": 7.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "description": null,
+          "id": "spotify_individual_half_price_2",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-premium-logo-189x57.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "PRODUCT"
+        },
+        {
+          "description": null,
+          "id": "spotify_individual_half_price_2",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-premium-logo-189x57.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "FEATURED"
+        },
+        {
+          "description": null,
+          "id": "Spotifylogo",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon-large-140x140.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "LOGO"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "spotify_premium"
+      },
+      "productFeatures": {
+        "brand": "Spotify"
+      },
+      "productCharacteristics": {
+        "entitledEntity": "LINE",
+        "isShippable": true,
+        "balanceManageMent": "PREPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "misc236443",
+      "externalId": "legacy050118",
+      "name": "Spark Sport",
+      "description": "Enjoy a serious selection of international and domestic sport live, on-demand and via six 24/7 channels.",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "description": "Usually $24.99/month",
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 19.99,
+        "effectivePrice": 7.49
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "type": "LOGO",
+          "defaultUrl": "/online/myspark/__dev__/logos/spark_sport.svg"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "spark_sport"
+      },
+      "productFeatures": {
+        "brand": "Spark Sport"
+      },
+      "productCharacteristics": {
+        "entitledEntity": "ACCOUNT",
+        "isShippable": true,
+        "balanceManageMent": "POSTPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "misc583865",
+      "externalId": "legacy050119",
+      "name": "Sky Sport",
+      "description": "Enjoy a serious selection of international and domestic sport live, on-demand and via six 24/7 channels.",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "description": "Usually $24.99/month",
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 19.99,
+        "effectivePrice": 7.49
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "type": "LOGO",
+          "defaultUrl": "/online/myspark/__dev__/logos/spark_sport.svg"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "sky_sport"
+      },
+      "productFeatures": {
+        "brand": "Sky Sport"
+      },
+      "productCharacteristics": {
+        "entitledEntity": "ACCOUNT",
+        "isShippable": true,
+        "balanceManageMent": "POSTPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "bvbundle050504",
+      "externalId": "legacy050120",
+      "name": "Unplan Fibre 100 with Landline 12 months",
+      "description": "Unplan Fibre 100 with Landline 12 months",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "frequency": null,
+        "basePrice": 14.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [],
+      "entitlements": [],
+      "promotions": [],
+      "productFeatures": null,
+      "productCharacteristics": {
+        "isShippable": true,
+        "balanceManageMent": "PREPAID/POSTPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "mbundle050290",
+      "externalId": "legacy0501",
+      "name": "Mobile $59.99 Rollover Plan",
+      "description": "Mobile $59.99 Rollover Plan",
+      "category": [
+        {
+          "id": "iphone"
+        }
+      ],
+      "price": {
+        "priceType": "Onetime",
+        "frequency": null,
+        "basePrice": 14.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "",
+        "name": "",
+        "description": "iPhone rollover",
+        "isDefault": true
+      },
+      "productFeatures": {
+        "color": "blue",
+        "band": "5G"
+      },
+      "productCharacteristics": {
+        "isShippable": true,
+        "balanceManageMent": "PREPAID/POSTPAID",
+        "isDeferrable": true,
+        "isIncluded": true
+      },
+      "associatedPriceRules": [
+        {
+          "description": "Pay over 12 months credit interest free payment",
+          "pricePointID": "PP_fItqq",
+          "ruleType": "IFP/REGULAR",
+          "sources": [
+            {
+              "id": "79.99endlessplan",
+              "name": "79.99 endlessplan",
+              "category": [
+                {
+                  "id": "iphone"
+                },
+                {
+                  "id": "handset"
+                }
+              ]
+            },
+            {
+              "id": "ift_12",
+              "name": "IFP on 12 months",
+              "category": [
+                {
+                  "id": "IFP"
+                }
+              ]
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "length": 12,
+            "effectivePrice": 90
+          }
+        }
+      ]
+    },
+    {
+      "id": "spotify_individual_included",
+      "externalId": "legacy050121",
+      "name": "Spotify individual",
+      "description": "Spotify individual subscription",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Recurring",
+        "frequency": {
+          "period": "Month"
+        },
+        "basePrice": 14.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "id": "LOGO",
+          "defaultUrl": "https://spark.co.nz/content/dam/telecomcms/content-images/personalisation/vas/getmore/Spotify.svg"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "spotify_premium"
+      },
+      "productFeatures": {
+        "brand": "Spotify"
+      },
+      "productCharacteristics": {
+        "isShippable": true,
+        "balanceManageMent": "PREPAID/POSTPAID",
+        "isDeferrable": false,
+        "isIncluded": true
+      }
+    },
+    {
+      "id": "spotify_individual_half_price_2",
+      "externalId": "legacy050122",
+      "name": "Spotify individual half price",
+      "description": "Spotify individual half price subscription",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Recurring",
+        "frequency": {
+          "period": "Month"
+        },
+        "basePrice": 14.99,
+        "effectivePrice": 6.99
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "id": "LOGO",
+          "defaultUrl": "https://spark.co.nz/content/dam/telecomcms/content-images/personalisation/vas/getmore/Spotify.svg"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "spotify_premium"
+      },
+      "productFeatures": {
+        "brand": "Spotify"
+      },
+      "productCharacteristics": {
+        "isShippable": true,
+        "balanceManageMent": "PREPAID/POSTPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "misc050385",
+      "externalId": "legacy050114",
+      "name": "Endless Mobile Plan",
+      "description": "Ideal for online gaming, HD video streaming, file downloads and more",
+      "contentKey": "endless_plan.keyConditions",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 79.99
+      },
+      "entitlements": [
+        {
+          "name": "40GB",
+          "shortDescription": "40GB Rollover Data",
+          "longDescription": "Lorem ipsum dolor sit amet, cosectetur adipiscing eli suspendisse. Lorem dolor sit ame.",
+          "iconUrl": "/online/myspark/__dev__/logos/changePlan/unlimited_small.png",
+          "sortOrder": 1
+        },
+        {
+          "name": "Unlimited",
+          "shortDescription": "Unlimited AU/NZ Mins & SMS",
+          "longDescription": "Excludes MMS (e.g. picture messaging) and non-data video calling.",
+          "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+          "sortOrder": 2
+        }
+      ],
+      "promotions": [
+        {
+          "name": "Spotify",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "Half Price Spotify Premium",
+          "longDescription": "Usually $14.99/28 days",
+          "iconUrl": "/online/myspark/__dev__/logos/changePlan/spotify_small.png",
+          "sortOrder": 1
+        },
+        {
+          "name": "Hotspot",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "Hotspot your data for $10/month",
+          "longDescription": "Hotspot counts towards your total data usage on your Mobile plan. One hotspot extra can be added per line per month.",
+          "iconUrl": "/online/myspark/__dev__/logos/changePlan/plus_small.png",
+          "sortOrder": 2
+        },
+        {
+          "name": "contracts",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "No contracts, 30 days notice",
+          "longDescription": null,
+          "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+          "sortOrder": 3
+        }
+      ]
+    },
+    {
+      "id": "dollar_39_endless_mobile_plan-of_tskxp",
+      "externalId": "legacy050124",
+      "name": "Endless Mobile Plan",
+      "grandFathered": true
+    },
+    {
+      "id": "mcafee-active",
+      "externalId": "legacy090124",
+      "name": "McAfee Security Standard",
+      "description": "Help protect your personal data and privacy - for up to 5 devices",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "description": null,
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 4.95,
+        "effectivePrice": 7.49
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "type": "LOGO",
+          "defaultUrl": "/online/myspark/__dev__/logos/mcafee-flat.svg"
+        },
+        {
+          "type": "BACKGROUND",
+          "defaultUrl": "/online/myspark/__dev__/images/subscriptions/logo-bg-mcafee.svg"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "mcafee"
+      },
+      "productFeatures": null,
+      "productCharacteristics": {
+        "entitledEntity": "LINE",
+        "isShippable": true,
+        "balanceManageMent": "PREPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "mcafee-not-active",
+      "externalId": "legacy050125",
+      "name": "McAfee Security Standard",
+      "description": "Help protect your personal data and privacy - for up to 5 devices",
+      "category": [{ "id": "mobile" }],
+      "price": {
+        "priceType": "Onetime",
+        "description": null,
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 4.95,
+        "effectivePrice": 7.49
+      },
+      "subscriptionType": null,
+      "images": [
+        {
+          "type": "LOGO",
+          "defaultUrl": "/online/myspark/__dev__/logos/mcafee-flat.svg"
+        },
+        {
+          "type": "BACKGROUND",
+          "defaultUrl": "/online/myspark/__dev__/images/subscriptions/logo-bg-mcafee.svg"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "group": {
+        "id": "mcafee"
+      },
+      "productFeatures": {
+        "brand": "McAfee"
+      },
+      "productCharacteristics": {
+        "entitledEntity": "LINE",
+        "isShippable": true,
+        "balanceManageMent": "PREPAID",
+        "isDeferrable": false,
+        "isIncluded": false
+      }
+    },
+    {
+      "id": "spotify_premium_half_price",
+      "grandFathered": false,
+      "productType": "Spotify Subscription",
+      "externalId": "vasbundle070019",
+      "name": "Spotify Premium",
+      "description": "Endlessly stream, skip and share music & podcasts with Spotify Premium.",
+      "launchDate": "2022-03-26T04:15:00Z",
+      "category": [
+        {
+          "id": "mobile_vas"
+        },
+        {
+          "id": "mobile_spotify"
+        }
+      ],
+      "contractTerm": null,
+      "contentKey": null,
+      "price": {},
+      "associatedPrices": [],
+      "group": {},
+      "images": [
+        {
+          "description": null,
+          "id": "spotify_individual_half_price_2",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-premium-logo-189x57.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "PRODUCT"
+        },
+        {
+          "description": null,
+          "id": "spotify_individual_half_price_2",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-premium-logo-189x57.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "FEATURED"
+        },
+        {
+          "description": null,
+          "id": "Spotifylogo",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon-large-140x140.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "LOGO"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "productFeatures": {
+        "color": null,
+        "primaryColor": null,
+        "colorHex": null,
+        "brand": "Spotify",
+        "band": null,
+        "storage": null
+      },
+      "productCharacteristics": {
+        "isShippable": null,
+        "entitledEntity": "LINE",
+        "partnerId": null,
+        "isDeferrable": null,
+        "isIncluded": false,
+        "basePlanOfferId": null,
+        "addedInCart": null,
+        "isFeatured": null,
+        "soldSeparately": null,
+        "balanceManageMent": "POSTPAID"
+      },
+      "associatedPriceRules": null,
+      "stock": null,
+      "productSpecifications": [],
+      "ctaOverrides": [],
+      "supportedDestinations": [],
+      "defaultPlan": null,
+      "defaultPrice": null,
+      "defaultTerm": null
+    },
+    {
+      "id": "mbundle050820",
+      "grandFathered": false,
+      "productType": "Mobile Subscription",
+      "externalId": "mbundle050820",
+      "name": "$59.99 Endless Plan",
+      "description": "Enjoy unlimited calls, texts and endless data.",
+      "launchDate": "2022-02-07T00:00:00Z",
+      "category": [],
+      "contractTerm": null,
+      "contentKey": "endless_plan.keyConditions",
+      "price": {},
+      "associatedPrices": [],
+      "group": null,
+      "images": [
+        {
+          "description": null,
+          "id": "59.99EndlessPlanproduct",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-1.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "PRODUCT"
+        },
+        {
+          "description": null,
+          "id": "$59.99EndlessMobilePlanicon",
+          "sortOrder": 1,
+          "defaultUrl": null,
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-1.png",
+          "tinyUrl": null,
+          "type": "LOGO"
+        },
+        {
+          "description": null,
+          "id": "59.99EndlessPlanfeatured",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-1.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "FEATURED"
+        }
+      ],
+      "entitlements": [
+        {
+          "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+          "contentKey": null,
+          "shortDescription": "",
+          "longDescription": null,
+          "quantity": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.png",
+          "sortOrder": 3,
+          "type": "Voice"
+        },
+        {
+          "name": "12GB data at max speed. Endless data at reduced speed*",
+          "contentKey": null,
+          "shortDescription": "",
+          "longDescription": "This will impact your experience.",
+          "quantity": "10",
+          "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.png",
+          "sortOrder": 1,
+          "type": "Data"
+        },
+        {
+          "name": "Unlimited NZ/AUS SMS*",
+          "contentKey": null,
+          "shortDescription": "",
+          "longDescription": "",
+          "quantity": null,
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.png",
+          "sortOrder": 2,
+          "type": "SMS"
+        }
+      ],
+      "promotions": [
+        {
+          "name": "3GB Hotspot data*",
+          "contentKey": null,
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "sortOrder": 2,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png"
+        },
+        {
+          "name": "Half price Spotify Premium",
+          "contentKey": null,
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "longDescription": "Usually $14.99/month (incl GST)",
+          "sortOrder": 1,
+          "iconUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon.png"
+        },
+        {
+          "name": "Spark Voicemail App",
+          "contentKey": null,
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "longDescription": "",
+          "sortOrder": 4,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png"
+        }
+      ],
+      "productFeatures": {
+        "color": null,
+        "primaryColor": null,
+        "colorHex": null,
+        "brand": null,
+        "band": null,
+        "storage": null
+      },
+      "productCharacteristics": {
+        "isShippable": null,
+        "entitledEntity": null,
+        "partnerId": null,
+        "isDeferrable": null,
+        "isIncluded": null,
+        "basePlanOfferId": null,
+        "addedInCart": null,
+        "isFeatured": null,
+        "soldSeparately": null,
+        "balanceManageMent": "POSTPAID"
+      },
+      "associatedPriceRules": null,
+      "stock": null,
+      "productSpecifications": [],
+      "ctaOverrides": [],
+      "supportedDestinations": [],
+      "defaultPlan": null,
+      "defaultPrice": null,
+      "defaultTerm": null
+    }
+  ]
+}

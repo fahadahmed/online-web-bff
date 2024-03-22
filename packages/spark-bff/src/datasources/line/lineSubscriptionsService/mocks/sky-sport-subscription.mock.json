@@ -1,0 +1,47 @@
+{
+  "offer": {
+    "id": "sky_sport",
+    "name": "Sky Sport",
+    "productInstanceId": "1-2HA33330"
+  },
+  "bundleOffer": {
+    "id": "misc583865",
+    "name": "Sky Sport",
+    "productInstanceId": "1-2HA33331"
+  },
+  "assetStartDate": "2021-09-22T03:31:03.964Z",
+  "accountNumber": "369121518",
+  "lineNumber": "0278675179",
+  "status": {
+    "type": "CANCELLED",
+    "label": "cancelled"
+  },
+  "nextRenewalDate": "2021-01-01T00:00:00.000Z",
+  "ctas": [
+    {
+      "type": "ACTIVATE",
+      "label": "Activate Sky Sport"
+    },
+    {
+      "type": "CANCEL",
+      "label": "Cancel Sky Sport Premium"
+    },
+    {
+      "type": "CHANGE_PAYMENT_METHOD",
+      "label": "Change payment method"
+    },
+    {
+      "type": "EDIT_PARTNER_ACCOUNT",
+      "label": "Go to Sky Sport",
+      "webLink": "https://accounts.skysport.com/"
+    },
+    {
+      "type": "RESUME",
+      "label": "Resume Sky Sport"
+    },
+    {
+      "type": "SWITCH",
+      "label": "Change to Ultimate Sky Sport"
+    }
+  ]
+}

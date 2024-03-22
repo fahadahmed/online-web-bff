@@ -1,0 +1,621 @@
+{
+  "line": [
+    {
+      "serviceType": "MOBILE",
+      "balanceManagement": "PREPAID",
+      "connectionNumber": "033227715",
+      "planName": "Smart Prepaid",
+      "offerId": "smartprepaidBPO",
+      "message": {
+        "primary": "You have",
+        "secondary": "``1.6GB left.``",
+        "tertiary": "1.3GB expires in 5 days",
+        "status": "IMPORTANT"
+      },
+      "group": {
+        "id": 123,
+        "profile": null
+      },
+      "usage": [
+        {
+          "category": "DATA",
+          "name": "DATA",
+          "types": ["SOCIALISER"],
+          "unCapped": false,
+          "cap": {
+            "value": 4500,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 6500,
+            "unit": "MB"
+          },
+          "expiry": [
+            {
+              "date": "2021-01-13T11:00:00.000Z",
+              "value": 10,
+              "unit": "GB"
+            }
+          ]
+        },
+        {
+          "priority": 650,
+          "category": "DATA",
+          "productId": "1-280X6VRB",
+          "productName": "Mobile $79.99 Rollover Plan",
+          "productType": "Offer",
+          "offerId": "mbundle050335",
+          "types": ["ROLLOVER", "UNSHARED"],
+          "roaming": false,
+          "name": "Rollover Data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": { "value": 3584, "unit": "MB" },
+          "used": { "value": 0, "unit": "MB", "bySharer": null },
+          "remaining": { "value": 3584, "unit": "MB" },
+          "tiers": null,
+          "expiry": [
+            { "date": "2022-03-22T10:59:59Z", "value": 1745.67, "unit": "MB" },
+            { "date": "2022-04-29T10:59:59Z", "value": 2000, "unit": "MB" }
+          ],
+          "nextRenewalDate": "2021-07-22T12:00:00Z",
+          "renewal": null
+        },
+        {
+          "category": "DATA",
+          "name": "AGGREGATED",
+          "types": ["SOCIALISER"],
+          "unCapped": true,
+          "cap": {
+            "value": 4500,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 1000,
+            "unit": "MB"
+          },
+          "expiry": [
+            {
+              "date": "2021-04-30T11:00:00.000Z",
+              "value": 10,
+              "unit": "GB"
+            }
+          ],
+          "renewal": null
+        },
+        {
+          "priority": null,
+          "category": "DATA",
+          "productId": null,
+          "productName": null,
+          "productType": null,
+          "offerId": null,
+          "types": ["AGGREGATED"],
+          "roaming": false,
+          "name": "AGGREGATED",
+          "billingStatus": null,
+          "unCapped": false,
+          "cap": {
+            "value": 6852,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 5171.187678,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 1680.812322,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": null,
+          "category": "TALK",
+          "productId": null,
+          "productName": null,
+          "productType": null,
+          "offerId": null,
+          "types": ["AGGREGATED"],
+          "roaming": false,
+          "name": "AGGREGATED",
+          "billingStatus": null,
+          "unCapped": false,
+          "cap": {
+            "value": 700,
+            "unit": "MIN"
+          },
+          "used": {
+            "value": 16,
+            "unit": "MIN",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 684,
+            "unit": "MIN"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": null,
+          "category": "TEXT",
+          "productId": null,
+          "productName": null,
+          "productType": null,
+          "offerId": null,
+          "types": ["AGGREGATED"],
+          "roaming": false,
+          "name": "AGGREGATED",
+          "billingStatus": null,
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 39,
+            "unit": "TEXT",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "CASUAL", "UNSHARED"],
+          "roaming": false,
+          "name": "10MB of data for $1 a day",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 500,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "Data Stack",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 2500,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 819.187678,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 1680.812322,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "TIERED", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "Mobile Roaming Data Zone 1",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "TIERED", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "Mobile Roaming Data Zone 2",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "TIERED", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "Mobile Roaming Data Zone 6",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "TIERED", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "Mobile Roaming Data Zone 6",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 1000,
+              "unit": "MB"
+            }
+          ],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "TIERED", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "Mobile Roaming Data Zone 6",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 500,
+              "unit": "MB"
+            }
+          ],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 650,
+          "category": "TALK",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["ROLLOVER", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "Rollover Voice",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 500,
+            "unit": "MIN"
+          },
+          "used": {
+            "value": 0,
+            "unit": "MIN",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MIN"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 140,
+              "unit": "MIN"
+            },
+            {
+              "date": "2021-10-01T10:59:59Z",
+              "value": 181,
+              "unit": "MIN"
+            },
+            {
+              "date": "2021-10-30T10:59:59Z",
+              "value": 179,
+              "unit": "MIN"
+            }
+          ],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 650,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["ROLLOVER", "UNSHARED"],
+          "roaming": false,
+          "name": "Rollover Data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 3584,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": null
+        },
+        {
+          "priority": 300,
+          "category": "DATA",
+          "productId": "1-2FFFVOD1",
+          "productName": "2GB Data Boost",
+          "productType": "Extra",
+          "offerId": "dataextra050783",
+          "types": ["EXTRA", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "2GB data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 2048,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 2048,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-01-06T10:59:59Z",
+              "value": 2048,
+              "unit": "MB"
+            }
+          ],
+          "nextRenewalDate": "2021-01-06T11:00:00Z",
+          "renewal": null
+        },
+        {
+          "priority": 200,
+          "category": "TEXT",
+          "productId": "1-2FC1LNCZ",
+          "productName": "$19 Rollover Value Pack",
+          "productType": "VPSpotifyExtra",
+          "offerId": "valuepack050312",
+          "types": ["EXTRA", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "Non-stop texts",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 39,
+            "unit": "TEXT",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2020-12-26T10:59:59Z",
+              "value": null,
+              "unit": "TEXT"
+            }
+          ],
+          "nextRenewalDate": "2020-12-26T11:00:00Z",
+          "renewal": null
+        },
+        {
+          "priority": 300,
+          "category": "DATA",
+          "productId": "1-2FC1LNCZ",
+          "productName": "$19 Rollover Value Pack",
+          "productType": "VPSpotifyExtra",
+          "offerId": "valuepack050312",
+          "types": ["EXTRA", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "1.25GB data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 1280,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 1280,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2020-12-26T10:59:59Z",
+              "value": 1280,
+              "unit": "MB"
+            }
+          ],
+          "nextRenewalDate": "2020-12-26T11:00:00Z",
+          "renewal": null
+        },
+        {
+          "priority": 300,
+          "category": "TALK",
+          "productId": "1-2FC1LNCZ",
+          "productName": "$19 Rollover Value Pack",
+          "productType": "VPSpotifyExtra",
+          "offerId": "valuepack050312",
+          "types": ["EXTRA", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "200 minutes",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 200,
+            "unit": "MIN"
+          },
+          "used": {
+            "value": 16,
+            "unit": "MIN",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 184,
+            "unit": "MIN"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2020-12-26T10:59:59Z",
+              "value": 200,
+              "unit": "MIN"
+            }
+          ],
+          "nextRenewalDate": "2020-12-26T11:00:00Z",
+          "renewal": null
+        },
+        {
+          "priority": 300,
+          "category": "TALK",
+          "productId": "1-26KY7NCG",
+          "productName": "$10 International Talk & Text Boost - 20 countries",
+          "productType": "Extra",
+          "offerId": "inttexttalk050301",
+          "types": ["EXTRA", "INTERNATIONAL", "UNSHARED"],
+          "roaming": false,
+          "name": "200 international minutes",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": { "value": 200, "unit": "MIN" },
+          "used": { "value": 10, "unit": "MIN", "bySharer": null },
+          "remaining": { "value": 190, "unit": "MIN" },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-14T12:00:00Z",
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 300,
+          "category": "TEXT",
+          "productId": "1-26KY7NCG",
+          "productName": "$10 International Talk & Text Boost - 20 countries",
+          "productType": "Extra",
+          "offerId": "inttexttalk050301",
+          "types": ["EXTRA", "INTERNATIONAL", "UNSHARED"],
+          "roaming": false,
+          "name": "100 international texts",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": { "value": 100, "unit": "TEXT" },
+          "used": { "value": 10, "unit": "TEXT", "bySharer": null },
+          "remaining": { "value": 90, "unit": "TEXT" },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-14T12:00:00Z",
+          "renewal": "AutoTopup"
+        }
+      ]
+    }
+  ]
+}

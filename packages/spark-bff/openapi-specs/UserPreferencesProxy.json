@@ -1,0 +1,723 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This service returns all the users preferences for a requested topic.",
+    "version": "1.0.0",
+    "title": "DESL Users Preferences Service Proxy API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "parameters": {
+    "preferenceId": {
+      "in": "path",
+      "name": "preferenceId",
+      "description": "The identifier of the preferences.",
+      "required": true,
+      "type": "string",
+      "pattern": "^\\d+$",
+      "x-example": 48323823
+    }
+  },
+  "paths": {
+    "/v1/user/preferences/me": {
+      "get": {
+        "tags": ["users-preferences", "protected", "oidc"],
+        "summary": "returns all the users preferences for a requested topic.",
+        "operationId": "getUsersPreferences",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "type",
+            "description": "This specifics the type of preferences to be returned.",
+            "type": "string",
+            "enum": ["notification"],
+            "required": true,
+            "x-example": "notification"
+          },
+          {
+            "in": "query",
+            "name": "topic",
+            "description": "This specifies topic of the returned preferences.",
+            "type": "string",
+            "x-example": "Usage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/UsersPreferencesResponse"
+            }
+          },
+          "400": {
+            "description": "bad request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/preferences/topic": {
+      "get": {
+        "tags": ["users-preferences"],
+        "summary": "returns all the topics which are eligible/available for users to set preferences.",
+        "operationId": "retrieveTopics",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "group",
+            "description": "This specifics the group of topics which should be retrieved.",
+            "type": "string",
+            "enum": ["notification"],
+            "x-example": "notification"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/AvailableTopicsResponse"
+            }
+          },
+          "400": {
+            "description": "bad request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/preferences/topic/{topicId}": {
+      "get": {
+        "tags": ["users-preferences"],
+        "summary": "This endpoint looks up a topic returning the name and description.",
+        "operationId": "getParentTopicDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "topicId",
+            "description": "This specifics the group of topics which should be retrieved.",
+            "type": "string",
+            "required": true,
+            "x-example": "privacy"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/ParentTopic"
+            }
+          },
+          "400": {
+            "description": "bad request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/preferences": {
+      "post": {
+        "tags": ["users-preferences", "protected", "oidc"],
+        "summary": "Creates a users preferences for a specific topic.",
+        "operationId": "createUserPreferences",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "PreferenceData",
+            "schema": {
+              "$ref": "#/definitions/CreatePreference"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PreferenceCreationResponse"
+            }
+          },
+          "400": {
+            "description": "Preference centre returned an error and failed to persist the preference.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Downstream failures/general breakage.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/preferences/{preferenceId}/channel": {
+      "post": {
+        "tags": ["users-preferences", "protected", "oidc"],
+        "summary": "Creates communication channels for users preference.",
+        "operationId": "createChannel",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/preferenceId"
+          },
+          {
+            "in": "body",
+            "name": "ChannelData",
+            "schema": {
+              "$ref": "#/definitions/CreateCommunicationChannels"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ChannelResponse"
+            }
+          },
+          "400": {
+            "description": "Channel not created. Invalid authorisation code or Preference centre returned an error and failed to persist the preference.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Downstream failures/general breakage.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/preferences/{preferenceId}": {
+      "put": {
+        "tags": ["users-preferences", "protected", "oidc"],
+        "summary": "Updates an existing users preference.",
+        "operationId": "updateUserPreference",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/preferenceId"
+          },
+          {
+            "in": "body",
+            "name": "UpdatePreference",
+            "schema": {
+              "$ref": "#/definitions/UpdatePreference"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Preference centre returned an error and failed to persist the preference.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Downstream failures/general breakage.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/preferences/{preferenceId}/channel/{channelId}": {
+      "put": {
+        "tags": ["users-preferences", "protected", "oidc"],
+        "summary": "Updates an existing users preference channel.",
+        "operationId": "updateUserPreferenceChannel",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/preferenceId"
+          },
+          {
+            "in": "path",
+            "name": "channelId",
+            "description": "The identifier of the channel to be updated.",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d+$",
+            "x-example": 3223342
+          },
+          {
+            "in": "body",
+            "name": "UpdateChannel",
+            "schema": {
+              "$ref": "#/definitions/UpdateCommunicationChannels"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Preference centre returned an error and failed to persist the preference.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Downstream failures/general breakage.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/preferences/channel": {
+      "delete": {
+        "tags": ["users-preferences", "protected", "oidc"],
+        "summary": "This endpoint removes the communication channels from a users preference.",
+        "operationId": "deletePreferenceChannel",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "type",
+            "description": "Type of channel to be removed.",
+            "type": "string",
+            "required": true,
+            "x-example": "sms"
+          },
+          {
+            "in": "query",
+            "name": "value",
+            "description": "Value uniquely identify the channel to be removed.",
+            "type": "string",
+            "required": true,
+            "x-example": "0275633294"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Channel was successfully removed from users preferences.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "bad request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "UsersPreferencesResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "preferences": {
+              "description": "All the preferences set by the user for the requested topic are returned.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Preference"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Preference": {
+      "type": "object",
+      "required": ["id", "value"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The uuid of the preference.",
+          "x-example": "1b5-9612-4eba-b42d"
+        },
+        "value": {
+          "type": "string",
+          "description": "Value of the preference set by user.",
+          "x-example": "OPT_IN"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the preference.",
+          "x-example": "Active"
+        },
+        "entity": {
+          "type": "string",
+          "description": "Preference is only applied to a specific entity, rather than generically.",
+          "x-example": "LINE"
+        },
+        "entityId": {
+          "type": "string",
+          "description": "This is the entity identifier that the exception applies to.",
+          "x-example": "027472913"
+        },
+        "topicId": {
+          "type": "string",
+          "description": "If the preferences is a type that relates to a topic, then topic id is returned.",
+          "x-example": "fj35-ewHmbp095-v"
+        },
+        "topicName": {
+          "type": "string",
+          "description": "If the preferences is a type that relates to a topic, then topic name is returned.",
+          "x-example": "Mobile Usage"
+        },
+        "channels": {
+          "type": "array",
+          "description": "An array of possible mediums that relate to the preference.",
+          "items": {
+            "$ref": "#/definitions/Channel"
+          }
+        }
+      }
+    },
+    "Channel": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The uuid of the medium.  If a preference medium needs to be updated, the uuid of the medium is required.",
+          "x-example": "5-9612-4e"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of the medium, which provides context for the medium value.",
+          "x-example": "EMAIL"
+        },
+        "value": {
+          "type": "string",
+          "description": "The medium value when applicable.  Not all medium types need a value.",
+          "x-example": "user@spark.co.nz"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the medium.  Not all mediums will necessarily be eligible.",
+          "x-example": "Active"
+        }
+      }
+    },
+    "AvailableTopicsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "topics": {
+              "description": "All the topics and sub-topics are returned.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Topic"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ParentTopic": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "topic": {
+              "$ref": "#/definitions/Topic"
+            }
+          }
+        }
+      ]
+    },
+    "Topic": {
+      "type": "object",
+      "required": ["name", "id", "description", "root", "parent"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the topic (or sub-topic).",
+          "x-example": "Mobile"
+        },
+        "id": {
+          "type": "string",
+          "description": "The uuid of the topic.",
+          "x-example": "1b5-9612-4eba-b42d"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the topic."
+        },
+        "root": {
+          "type": "string",
+          "description": "Provides the id of the root topic for current topic.",
+          "x-example": "hj5a-b42d-92f09cad6"
+        },
+        "parent": {
+          "type": "string",
+          "description": "If this is a sub-topic, provides the parent of this sub-topic.",
+          "x-example": "hj5a-b42d-92f09cad6"
+        },
+        "canOptInOut": {
+          "type": "boolean",
+          "description": "Identifies whether the topic/sub-topic supports topic level opt-in and opt-out.",
+          "x-example": true
+        },
+        "assetType": {
+          "type": "string",
+          "enum": [
+            "MOBILE_LINE",
+            "BROADBAND_LINE",
+            "POSTPAID_ACCOUNT",
+            "PREPAID_LINE"
+          ],
+          "description": "Identifies what type of assets topic/sub-topic relates.",
+          "x-example": "MOBILE_LINE"
+        }
+      }
+    },
+    "CreatePreference": {
+      "type": "object",
+      "required": ["topicId", "value", "status"],
+      "properties": {
+        "topicId": {
+          "type": "string",
+          "pattern": "^\\d+$",
+          "description": "The topic which the preference relates to. This can be a topic or sub-topic, and only the reference to the topic is needed.",
+          "x-example": "48323823"
+        },
+        "topicName": {
+          "type": "string",
+          "description": "Name of topic which preference relates to. This can be a topic or sub-topic, and only the reference to the topic is needed.",
+          "x-example": "Usage"
+        },
+        "value": {
+          "$ref": "#/definitions/ValueType"
+        },
+        "entity": {
+          "type": "string",
+          "enum": ["customer", "account", "asset", "user"],
+          "description": "This identifies the type of entity the preference is related to.",
+          "x-example": "LINE"
+        },
+        "entityId": {
+          "type": "string",
+          "description": "If the entity is specified, the identifier for the entity is required. So this will be a reference to the customer, account or asset depending on the entity type.",
+          "x-example": "027472913"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Unverified", "Active", "Inactive"],
+          "description": "The status to set the preference.",
+          "x-example": "Active"
+        }
+      }
+    },
+    "PreferenceCreationResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "preferenceId": {
+              "type": "string",
+              "description": "If preference was created successfully, the identifier of the created preference will be returned.",
+              "x-example": "hj5a-b42d-92f09cad6"
+            }
+          }
+        }
+      ]
+    },
+    "CreateCommunicationChannels": {
+      "type": "object",
+      "required": ["channel"],
+      "properties": {
+        "channel": {
+          "$ref": "#/definitions/ChannelType"
+        },
+        "address": {
+          "$ref": "#/definitions/AddressType"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Unverified", "Active", "Inactive"],
+          "description": "The status to channel.",
+          "x-example": "Active"
+        },
+        "authCode": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Creating active channels requires user authorisation of the address."
+        }
+      }
+    },
+    "ChannelResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "channelId": {
+              "type": "string",
+              "description": "If channel was created successfully, the identifier of the created preference will be returned.",
+              "x-example": "hj5a-b42d-92f09cad6"
+            }
+          }
+        }
+      ]
+    },
+    "ValueType": {
+      "type": "string",
+      "enum": ["OPT_IN", "OPT_OUT"],
+      "description": "Value of the preference setting.",
+      "x-example": "OPT_IN"
+    },
+    "ChannelType": {
+      "type": "string",
+      "enum": ["email", "sms", "inapp", "push"],
+      "description": "The channel for the notification communication.",
+      "x-example": "EMAIL"
+    },
+    "AddressType": {
+      "type": "string",
+      "description": "The address of the channel.",
+      "x-example": "bob_builder@mattel.com"
+    },
+    "UpdatePreference": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ValueType"
+        }
+      }
+    },
+    "UpdateCommunicationChannels": {
+      "type": "object",
+      "required": ["channel"],
+      "properties": {
+        "channel": {
+          "$ref": "#/definitions/ChannelType"
+        },
+        "address": {
+          "$ref": "#/definitions/AddressType"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

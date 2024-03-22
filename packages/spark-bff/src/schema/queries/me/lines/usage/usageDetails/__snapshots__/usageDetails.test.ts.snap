@@ -1,0 +1,420 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns all the Usage Details for line Number of line  1`] = `
+Object {
+  "balanceManagement": "PREPAID",
+  "groupCapUnit": null,
+  "groupCapValue": null,
+  "groupID": "123",
+  "groupProfile": null,
+  "lineNumber": "033227715",
+  "serviceType": "MOBILE",
+  "usages": Array [
+    Object {
+      "billingStatus": "ACTIVE",
+      "cap": Object {
+        "unit": "MB",
+        "value": 3584,
+      },
+      "category": "DATA",
+      "expiry": Array [
+        Object {
+          "date": "Expires in 398 days",
+          "unit": "MB",
+          "value": 1745.67,
+        },
+        Object {
+          "date": "Expires in 436 days",
+          "unit": "MB",
+          "value": 2000,
+        },
+      ],
+      "name": "Rollover Data",
+      "nextRenewalDate": "Renews in 155 days",
+      "priority": 650,
+      "productName": "Mobile $79.99 Rollover Plan",
+      "remaining": Object {
+        "unit": "MB",
+        "value": 3584,
+      },
+      "roaming": false,
+      "rolloverData": Object {
+        "unit": "GB",
+        "value": 3.657880859375,
+      },
+      "rolloverExpiry": Array [
+        Object {
+          "date": "2022-03-22T10:59:59Z",
+          "unit": "MB",
+          "value": 1745.67,
+        },
+        Object {
+          "date": "2022-04-29T10:59:59Z",
+          "unit": "MB",
+          "value": 2000,
+        },
+      ],
+      "types": Array [
+        "ROLLOVER",
+        "UNSHARED",
+      ],
+      "uncapped": false,
+      "used": Object {
+        "bySharer": null,
+        "unit": "MB",
+        "value": 0,
+      },
+    },
+    Object {
+      "billingStatus": null,
+      "cap": Object {
+        "unit": "MB",
+        "value": 4500,
+      },
+      "category": "DATA",
+      "expiry": Array [
+        Object {
+          "date": "Expires in 72 days",
+          "unit": "GB",
+          "value": 10,
+        },
+      ],
+      "name": "AGGREGATED",
+      "nextRenewalDate": null,
+      "priority": null,
+      "productName": null,
+      "remaining": Object {
+        "unit": "MB",
+        "value": 1000,
+      },
+      "roaming": null,
+      "rolloverData": Object {
+        "unit": "GB",
+        "value": 10,
+      },
+      "rolloverExpiry": Array [
+        Object {
+          "date": "2021-04-30T11:00:00.000Z",
+          "unit": "GB",
+          "value": 10,
+        },
+      ],
+      "types": Array [
+        "SOCIALISER",
+      ],
+      "uncapped": true,
+      "used": Object {
+        "bySharer": null,
+        "unit": "MB",
+        "value": 3500,
+      },
+    },
+    Object {
+      "billingStatus": null,
+      "cap": Object {
+        "unit": "MB",
+        "value": 6852,
+      },
+      "category": "DATA",
+      "expiry": Array [],
+      "name": "AGGREGATED",
+      "nextRenewalDate": null,
+      "priority": null,
+      "productName": null,
+      "remaining": Object {
+        "unit": "MB",
+        "value": 1680.812322,
+      },
+      "roaming": false,
+      "rolloverData": Object {
+        "unit": "MB",
+        "value": 0,
+      },
+      "rolloverExpiry": Array [],
+      "types": Array [
+        "AGGREGATED",
+      ],
+      "uncapped": false,
+      "used": Object {
+        "bySharer": null,
+        "unit": "MB",
+        "value": 5171.187678,
+      },
+    },
+    Object {
+      "billingStatus": null,
+      "cap": Object {
+        "unit": "MIN",
+        "value": 700,
+      },
+      "category": "TALK",
+      "expiry": Array [],
+      "name": "AGGREGATED",
+      "nextRenewalDate": null,
+      "priority": null,
+      "productName": null,
+      "remaining": Object {
+        "unit": "MIN",
+        "value": 684,
+      },
+      "roaming": false,
+      "rolloverData": Object {
+        "unit": "MB",
+        "value": 0,
+      },
+      "rolloverExpiry": Array [],
+      "types": Array [
+        "AGGREGATED",
+      ],
+      "uncapped": false,
+      "used": Object {
+        "bySharer": null,
+        "unit": "MIN",
+        "value": 16,
+      },
+    },
+    Object {
+      "billingStatus": null,
+      "cap": null,
+      "category": "TEXT",
+      "expiry": Array [],
+      "name": "AGGREGATED",
+      "nextRenewalDate": null,
+      "priority": null,
+      "productName": null,
+      "remaining": null,
+      "roaming": false,
+      "rolloverData": Object {
+        "unit": "MB",
+        "value": 0,
+      },
+      "rolloverExpiry": Array [],
+      "types": Array [
+        "AGGREGATED",
+      ],
+      "uncapped": true,
+      "used": Object {
+        "bySharer": null,
+        "unit": "TEXT",
+        "value": 39,
+      },
+    },
+    Object {
+      "billingStatus": "ACTIVE",
+      "cap": null,
+      "category": "DATA",
+      "expiry": Array [
+        Object {
+          "date": "Expires in 199 days",
+          "unit": "MB",
+          "value": 1000,
+        },
+      ],
+      "name": "Mobile Roaming Data Zone 6",
+      "nextRenewalDate": null,
+      "priority": 700,
+      "productName": "Smart Prepaid",
+      "remaining": null,
+      "roaming": true,
+      "rolloverData": Object {
+        "unit": "MB",
+        "value": 1000,
+      },
+      "rolloverExpiry": Array [
+        Object {
+          "date": "2021-09-04T11:59:59Z",
+          "unit": "MB",
+          "value": 1000,
+        },
+      ],
+      "types": Array [
+        "BASE_PLAN",
+        "TIERED",
+        "ROAMING",
+        "UNSHARED",
+      ],
+      "uncapped": true,
+      "used": Object {
+        "bySharer": null,
+        "unit": "MB",
+        "value": 0,
+      },
+    },
+    Object {
+      "billingStatus": "ACTIVE",
+      "cap": null,
+      "category": "DATA",
+      "expiry": Array [
+        Object {
+          "date": "Expires in 199 days",
+          "unit": "MB",
+          "value": 500,
+        },
+      ],
+      "name": "Mobile Roaming Data Zone 6",
+      "nextRenewalDate": null,
+      "priority": 700,
+      "productName": "Smart Prepaid",
+      "remaining": null,
+      "roaming": true,
+      "rolloverData": Object {
+        "unit": "MB",
+        "value": 500,
+      },
+      "rolloverExpiry": Array [
+        Object {
+          "date": "2021-09-04T11:59:59Z",
+          "unit": "MB",
+          "value": 500,
+        },
+      ],
+      "types": Array [
+        "BASE_PLAN",
+        "TIERED",
+        "ROAMING",
+        "UNSHARED",
+      ],
+      "uncapped": true,
+      "used": Object {
+        "bySharer": null,
+        "unit": "MB",
+        "value": 0,
+      },
+    },
+    Object {
+      "billingStatus": "ACTIVE",
+      "cap": Object {
+        "unit": "MIN",
+        "value": 500,
+      },
+      "category": "TALK",
+      "expiry": Array [
+        Object {
+          "date": "Expires in 199 days",
+          "unit": "MIN",
+          "value": 140,
+        },
+        Object {
+          "date": "Expires in 226 days",
+          "unit": "MIN",
+          "value": 181,
+        },
+        Object {
+          "date": "Expires in 255 days",
+          "unit": "MIN",
+          "value": 179,
+        },
+      ],
+      "name": "Rollover Voice",
+      "nextRenewalDate": null,
+      "priority": 650,
+      "productName": "Smart Prepaid",
+      "remaining": Object {
+        "unit": "MIN",
+        "value": 500,
+      },
+      "roaming": false,
+      "rolloverData": Object {
+        "unit": "GB",
+        "value": 500,
+      },
+      "rolloverExpiry": Array [
+        Object {
+          "date": "2021-09-04T11:59:59Z",
+          "unit": "MIN",
+          "value": 140,
+        },
+        Object {
+          "date": "2021-10-01T10:59:59Z",
+          "unit": "MIN",
+          "value": 181,
+        },
+        Object {
+          "date": "2021-10-30T10:59:59Z",
+          "unit": "MIN",
+          "value": 179,
+        },
+      ],
+      "types": Array [
+        "ROLLOVER",
+        "NZ",
+        "UNSHARED",
+      ],
+      "uncapped": false,
+      "used": Object {
+        "bySharer": null,
+        "unit": "MIN",
+        "value": 0,
+      },
+    },
+    Object {
+      "billingStatus": "ACTIVE",
+      "cap": Object {
+        "unit": "MIN",
+        "value": 200,
+      },
+      "category": "TALK",
+      "expiry": Array [],
+      "name": "200 international minutes",
+      "nextRenewalDate": "Renews in 147 days",
+      "priority": 300,
+      "productName": "$10 International Talk & Text Boost - 20 countries",
+      "remaining": Object {
+        "unit": "MIN",
+        "value": 190,
+      },
+      "roaming": false,
+      "rolloverData": Object {
+        "unit": "MB",
+        "value": 0,
+      },
+      "rolloverExpiry": Array [],
+      "types": Array [
+        "EXTRA",
+        "INTERNATIONAL",
+        "UNSHARED",
+      ],
+      "uncapped": false,
+      "used": Object {
+        "bySharer": null,
+        "unit": "MIN",
+        "value": 10,
+      },
+    },
+    Object {
+      "billingStatus": "ACTIVE",
+      "cap": Object {
+        "unit": "TEXT",
+        "value": 100,
+      },
+      "category": "TEXT",
+      "expiry": Array [],
+      "name": "100 international texts",
+      "nextRenewalDate": "Renews in 147 days",
+      "priority": 300,
+      "productName": "$10 International Talk & Text Boost - 20 countries",
+      "remaining": Object {
+        "unit": "TEXT",
+        "value": 90,
+      },
+      "roaming": false,
+      "rolloverData": Object {
+        "unit": "MB",
+        "value": 0,
+      },
+      "rolloverExpiry": Array [],
+      "types": Array [
+        "EXTRA",
+        "INTERNATIONAL",
+        "UNSHARED",
+      ],
+      "uncapped": false,
+      "used": Object {
+        "bySharer": null,
+        "unit": "TEXT",
+        "value": 10,
+      },
+    },
+  ],
+}
+`;

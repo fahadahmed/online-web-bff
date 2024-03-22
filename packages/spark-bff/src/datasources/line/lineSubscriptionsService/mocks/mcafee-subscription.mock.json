@@ -1,0 +1,30 @@
+{
+  "offer": {
+    "id": "mcafee-active",
+    "name": "McAfee Security Standard",
+    "productInstanceId": "1-VX31188"
+  },
+  "assetStartDate": "2021-10-12T03:31:03.964Z",
+  "accountNumber": "369121518",
+  "lineNumber": "0278675179",
+  "status": {
+    "type": "ACTIVE",
+    "label": "Active"
+  },
+  "nextRenewalDate": null,
+  "ctas": [
+    {
+      "type": "SWITCH",
+      "label": "Change to McAfee Security Premium"
+    },
+    {
+      "type": "EDIT_PARTNER_ACCOUNT",
+      "label": "Go to McAfee",
+      "webLink": "https://mcafee.com/"
+    },
+    {
+      "type": "CANCEL",
+      "label": "Cancel McAfee Security Premium"
+    }
+  ]
+}

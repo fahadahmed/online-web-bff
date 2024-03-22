@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "General validation problems: invalid units, invalid type, missing cap value, etc.",
+      "code": "4002"
+    }
+  ]
+}

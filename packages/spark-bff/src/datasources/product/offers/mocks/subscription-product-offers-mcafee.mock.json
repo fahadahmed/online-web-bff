@@ -1,0 +1,40 @@
+{
+  "offerDetails": [
+    {
+      "id": "mcafee_premium",
+      "name": "McAfee Security Premium",
+      "description": "You're currently on McAfee Security Standard. Change to McAfee Security Premium for an extra $4 per month on your Spark bill.",
+      "category": [
+        {
+          "id": "mcafee"
+        }
+      ],
+      "price": {
+        "priceType": "Recurring/OneOff",
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 8.95
+      },
+      "promotions": [
+        {
+          "name": "10 device licenses"
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "notifications": [
+    {
+      "recommendationId": "vas_downgrade_reactivate",
+      "text": "Changing to McAfee Security Standard requires you to uninstall McAfee Security from all your devices. Spark will send you a notification to support you with this, and the activation and reinstallation on up to 5 devices. \nWe suggest you do this in one go as your devices are unprotected during this change.",
+      "type": "WARN"
+    }
+  ]
+}

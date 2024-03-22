@@ -1,0 +1,76 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "accounts": [
+    {
+      "accountNumber": "180691324",
+      "accountId": "1-16PQ-3214",
+      "customerNumber": "180691308",
+      "customerSegment": "Consumer",
+      "balanceManagement": "PREPAID",
+      "status": "Active",
+      "firstName": "SHEENAL",
+      "lastName": "KUMAR",
+      "inCollections": false,
+      "products": [
+        {
+          "lineNumber": "01660802083",
+          "assetId": "1-2E3RV5SV",
+          "offerId": "misc020789",
+          "offerName": "Broadband Equipment",
+          "productInstanceId": "1-2E3GTV79"
+        },
+        {
+          "lineNumber": "096240152",
+          "assetId": "1-27X5NNAT",
+          "offerId": "misc050385",
+          "offerName": "Netflix – 6mo offer",
+          "productInstanceId": "1-27X5NNAT"
+        },
+        {
+          "lineNumber": "096240151",
+          "assetId": "1-2ASBRIIH",
+          "offerId": "bvbundle050504",
+          "offerName": "Unplan Fibre 100 with Landline 12 months",
+          "productInstanceId": "1-28YFWN77"
+        }
+      ]
+    },
+    {
+      "accountNumber": "702894573",
+      "accountId": "1-1SSSYIWO",
+      "customerNumber": "702894476",
+      "customerSegment": "Consumer",
+      "balanceManagement": "POSTPAID",
+      "status": "Active",
+      "firstName": "SAHIL",
+      "lastName": "KUMAR",
+      "inCollections": false,
+      "products": [
+        {
+          "lineNumber": "02102947234",
+          "assetId": "1-2F7FAV99",
+          "offerId": "mbundle050290",
+          "offerName": "Mobile $59.99 Rollover Plan",
+          "productInstanceId": "1-2F5IR35I"
+        }
+      ]
+    },
+    {
+      "accountNumber": "369121518",
+      "accountId": "2-3ZZZZABCD",
+      "customerNumber": "123456789",
+      "customerSegment": "Consumer",
+      "balanceManagement": "POSTPAID",
+      "status": "Active",
+      "firstName": "Ash",
+      "lastName": "Ketchum",
+      "inCollections": false,
+      "products": []
+    }
+  ]
+}

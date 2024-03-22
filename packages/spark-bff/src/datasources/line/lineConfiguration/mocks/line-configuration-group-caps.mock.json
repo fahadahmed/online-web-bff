@@ -1,0 +1,44 @@
+{
+  "group": {
+    "id": "1-189888930761",
+    "name": "1-189888930761",
+    "totalData": {
+      "value": "4",
+      "unit": "GB"
+    },
+    "members": [
+      {
+        "serviceId": "0275988271",
+        "type": "Leader",
+        "status": "Active",
+        "isUncapped": true,
+        "usedValue": "500",
+        "unit": "MB"
+      },
+      {
+        "serviceId": "0218399016",
+        "type": "MobileSharer",
+        "status": "Active",
+        "isUncapped": false,
+        "capValue": "100",
+        "usedValue": "0",
+        "unit": "MB"
+      },
+      {
+        "serviceId": "0275933747",
+        "type": "MobileSharer",
+        "status": "Active",
+        "isUncapped": false,
+        "capValue": "200",
+        "usedValue": "150",
+        "unit": "MB"
+      }
+    ],
+    "messages": [
+      {
+        "message": "Success",
+        "code": "2010"
+      }
+    ]
+  }
+}

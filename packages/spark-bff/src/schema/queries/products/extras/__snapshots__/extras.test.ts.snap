@@ -1,0 +1,1306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns success for fetching the extras based on lineNumber 1`] = `
+Object {
+  "extras": Object {
+    "extrasCategories": Array [
+      Object {
+        "defaultSelected": null,
+        "description": null,
+        "id": "prepaid_data",
+        "isCategoryContainer": null,
+        "name": "Data",
+        "offers": Array [
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_data",
+              },
+              Object {
+                "id": "prepaid_data_endless",
+              },
+            ],
+            "description": "Enjoy max speed and endless data on Endless, Prepaid and Rollover plans.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "Endless data at max speed*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "dataextra050883_prepaid",
+            "name": "24Hr Data Boost",
+            "price": Object {
+              "basePrice": 10,
+              "basePriceExcludingTax": 8.7,
+              "frequency": Object {
+                "period": "Hour",
+                "value": 24,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": null,
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "sortOrder": 2,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_data",
+              },
+              Object {
+                "id": "prepaid_data_socialiser",
+              },
+            ],
+            "description": "Enjoy catching up with your friends on selected social media apps.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "1GB Socialiser*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "dataextra050333_pre_only",
+            "name": "$9 Spark Socialiser",
+            "price": Object {
+              "basePrice": 9,
+              "basePriceExcludingTax": 7.83,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_data",
+              },
+              Object {
+                "id": "prepaid_data_dataonly",
+              },
+            ],
+            "description": "Enjoy a data boost on your mobile plan to do more of what you love.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "100MB data*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "dataextra050298_prepaid",
+            "name": "$5 Data Boost",
+            "price": Object {
+              "basePrice": 5,
+              "basePriceExcludingTax": 4.35,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_data",
+              },
+              Object {
+                "id": "prepaid_data_dataonly",
+              },
+            ],
+            "description": "Enjoy a data boost on your mobile plan to do more of what you love.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "2GB data*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "dataextra050783_prepaid",
+            "name": "2GB Data Boost",
+            "price": Object {
+              "basePrice": 23,
+              "basePriceExcludingTax": 20,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_data",
+              },
+              Object {
+                "id": "prepaid_data_dataonly",
+              },
+            ],
+            "description": "Enjoy a data boost on your mobile plan to do more of what you love.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "1GB data*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "dataextra050782_prepaid",
+            "name": "1GB Data Boost",
+            "price": Object {
+              "basePrice": 20,
+              "basePriceExcludingTax": 17.39,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": null,
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "sortOrder": 2,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+        ],
+        "sortOrder": null,
+        "subCategories": null,
+        "visibility": null,
+      },
+      Object {
+        "defaultSelected": null,
+        "description": null,
+        "id": "prepaid_roaming",
+        "isCategoryContainer": null,
+        "name": "Roaming",
+        "offers": Array [
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_roaming",
+              },
+              Object {
+                "id": "prepaid_roaming_pack",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "300 inbound mins + 300 outbound mins",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "2GB data",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "300 SMS",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+            ],
+            "id": "roamingpack050285_prepaid",
+            "name": "Roaming Pack",
+            "price": Object {
+              "basePrice": 20,
+              "basePriceExcludingTax": 17.39,
+              "frequency": Object {
+                "period": "Day",
+                "value": 7,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": null,
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "sortOrder": 2,
+              },
+            ],
+            "supportedDestinations": Array [
+              "ARE",
+              "ARG",
+              "ASM",
+              "AUS",
+              "AUT",
+              "BEL",
+              "BRA",
+              "CAN",
+              "CHE",
+              "CHN",
+              "DEU",
+              "ESP",
+              "FJI",
+              "FRA",
+              "GBR",
+              "GGY",
+              "GRC",
+              "HKG",
+              "IDN",
+              "IMN",
+              "IND",
+              "IRL",
+              "ITA",
+              "JPN",
+              "KOR",
+              "MAC",
+              "MYS",
+              "NLD",
+              "NRU",
+              "PHL",
+              "PNG",
+              "PRT",
+              "QAT",
+              "SAU",
+              "SGP",
+              "SMR",
+              "THA",
+              "TON",
+              "TWN",
+              "USA",
+              "VAT",
+              "VIR",
+              "VNM",
+              "VUT",
+              "WSM",
+              "ZAF",
+            ],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_roaming",
+              },
+              Object {
+                "id": "prepaid_roaming_data",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "2GB data",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "roamingpack050284_prepaid",
+            "name": "Roaming Data Pack",
+            "price": Object {
+              "basePrice": 15,
+              "basePriceExcludingTax": 13.04,
+              "frequency": Object {
+                "period": "Day",
+                "value": 7,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": null,
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "sortOrder": 2,
+              },
+            ],
+            "supportedDestinations": Array [
+              "ARE",
+              "ARG",
+              "ASM",
+              "AUS",
+              "AUT",
+              "BEL",
+              "BRA",
+              "CAN",
+              "CHE",
+              "CHN",
+              "DEU",
+              "ESP",
+              "FJI",
+              "FRA",
+              "GBR",
+              "GGY",
+              "GRC",
+              "HKG",
+              "IDN",
+              "IMN",
+              "IND",
+              "IRL",
+              "ITA",
+              "JPN",
+              "KOR",
+              "MAC",
+              "MYS",
+              "NLD",
+              "NRU",
+              "PHL",
+              "PNG",
+              "PRT",
+              "QAT",
+              "SAU",
+              "SGP",
+              "SMR",
+              "THA",
+              "TON",
+              "TWN",
+              "USA",
+              "VAT",
+              "VIR",
+              "VNM",
+              "VUT",
+              "WSM",
+              "ZAF",
+            ],
+          },
+        ],
+        "sortOrder": null,
+        "subCategories": null,
+        "visibility": null,
+      },
+      Object {
+        "defaultSelected": null,
+        "description": null,
+        "id": "prepaid_talk",
+        "isCategoryContainer": null,
+        "name": "Talk",
+        "offers": Array [
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_talk",
+              },
+              Object {
+                "id": "prepaid_talk_talkandtext",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "1000 NZ SMS",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "50 mins to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "talktext050337_prepaid",
+            "name": "$9 Talk and Text Boost - NZ",
+            "price": Object {
+              "basePrice": 9,
+              "basePriceExcludingTax": 7.83,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_talk",
+              },
+              Object {
+                "id": "prepaid_talk_talkonly",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "50 mins to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "talkextra050302_prepaid",
+            "name": "$5 Talk Boost - NZ",
+            "price": Object {
+              "basePrice": 5,
+              "basePriceExcludingTax": 4.35,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_talk",
+              },
+              Object {
+                "id": "prepaid_talk_textonly",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "100 NZ SMS",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "textextra050305_prepaid",
+            "name": "$5 Text Boost - NZ",
+            "price": Object {
+              "basePrice": 5,
+              "basePriceExcludingTax": 4.35,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_talk",
+              },
+              Object {
+                "id": "prepaid_talk_talkonly",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "Unlimited mins to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "talkextra050304_prepaid",
+            "name": "$15 Talk Boost - NZ",
+            "price": Object {
+              "basePrice": 15,
+              "basePriceExcludingTax": 13.04,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_talk",
+              },
+              Object {
+                "id": "prepaid_talk_textonly",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "Unlimited NZ SMS*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "textextra050306_prepaid",
+            "name": "$10 Text Boost - NZ",
+            "price": Object {
+              "basePrice": 10,
+              "basePriceExcludingTax": 8.7,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_talk",
+              },
+              Object {
+                "id": "prepaid_talk_talkonly",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "250 mins to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "id": "talkextra050303_prepaid",
+            "name": "$10 Talk Boost - NZ",
+            "price": Object {
+              "basePrice": 10,
+              "basePriceExcludingTax": 8.7,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_talk",
+              },
+              Object {
+                "id": "prepaid_talk_talkandtext",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "100 International SMS*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "200 International mins*",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+            ],
+            "id": "inttexttalk050301_prepaid",
+            "name": "$10 International Talk & Text Boost - 20 countries",
+            "price": Object {
+              "basePrice": 10,
+              "basePriceExcludingTax": 8.7,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_talk",
+              },
+              Object {
+                "id": "prepaid_talk_voicemail",
+              },
+            ],
+            "description": null,
+            "entitlements": Array [],
+            "id": "vcalling050613_pre_only",
+            "name": "Voicemail Unlimited",
+            "price": Object {
+              "basePrice": 1,
+              "basePriceExcludingTax": 0.87,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Spark Voicemail App",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Unlimited voicemail access",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+        ],
+        "sortOrder": null,
+        "subCategories": null,
+        "visibility": null,
+      },
+      Object {
+        "defaultSelected": null,
+        "description": null,
+        "id": "prepaid_pack",
+        "isCategoryContainer": null,
+        "name": "Pack",
+        "offers": Array [
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_pack",
+              },
+              Object {
+                "id": "prepaid_value_pack",
+              },
+            ],
+            "description": "Enjoy extra data to use on social media and browsing.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "Unlimited NZ SMS*",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "2GB Rollover data* + (2GB Socialiser*)",
+                "shortDescription": "",
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "300 Rollover mins to any NZ mobiles and landlines*",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+            ],
+            "id": "valuepack050313",
+            "name": "$30 Prepaid Value Pack",
+            "price": Object {
+              "basePrice": 30,
+              "basePriceExcludingTax": 26.09,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/spotify_small.png",
+                "name": "Half price Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "",
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": "data_stack.keyConditions",
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Data Stack",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot*",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_pack",
+              },
+              Object {
+                "id": "prepaid_datalovers",
+              },
+            ],
+            "description": "Ideal if you love music and occasionally browse.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "49c per min to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "1.5GB Rollover data + (1GB Socialiser*)",
+                "shortDescription": "",
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "20c per NZ SMS",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+            ],
+            "id": "valuepack050310",
+            "name": "$20 Data Lovers Pack",
+            "price": Object {
+              "basePrice": 20,
+              "basePriceExcludingTax": 17.39,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/spotify_small.png",
+                "name": "Half price Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "",
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": null,
+                "name": "Text “BUY 20DATAROLL” to 258",
+                "productType": "MARKETING",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_pack",
+              },
+              Object {
+                "id": "prepaid_value_pack",
+              },
+            ],
+            "description": "Ideal for lots of calls with extra data for social media and browsing.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "4GB Rollover data* + (2GB Socialiser*)",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "Unlimited NZ SMS*",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "500 Rollover mins to any NZ mobiles and landlines*",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+            ],
+            "id": "valuepack050314",
+            "name": "$50 Prepaid Value Pack",
+            "price": Object {
+              "basePrice": 50,
+              "basePriceExcludingTax": 43.48,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/spotify_small.png",
+                "name": "Half price Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "",
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": "data_stack.keyConditions",
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Data Stack",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot*",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_pack",
+              },
+              Object {
+                "id": "prepaid_datalovers",
+              },
+            ],
+            "description": "If you're always connected and need data - this is the plan for you!",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "49c per min to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "4.5GB Rollover data + (1GB Socialiser*)",
+                "shortDescription": "",
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "20c per NZ SMS",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+            ],
+            "id": "valuepack050311",
+            "name": "$40 Data Lovers Pack",
+            "price": Object {
+              "basePrice": 40,
+              "basePriceExcludingTax": 34.78,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/spotify_small.png",
+                "name": "Half price Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "",
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": null,
+                "name": "Text “BUY 40DATAROLL” to 258",
+                "productType": "MARKETING",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_pack",
+              },
+              Object {
+                "id": "prepaid_value_pack",
+              },
+            ],
+            "description": "Enjoy endless calls, texts, browsing and streaming on the go.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "40GB data at max speed. Endless data at reduced speed*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "Unlimited NZ/AUS SMS*",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+            ],
+            "id": "valuepack050817",
+            "name": "$80 Prepaid Value Pack",
+            "price": Object {
+              "basePrice": 80,
+              "basePriceExcludingTax": 69.57,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot*",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+              Object {
+                "contentKey": "data_stack.keyConditions",
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Data Stack",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/spotify_small.png",
+                "name": "Half price Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+          Object {
+            "category": Array [
+              Object {
+                "id": "addon_prepaid",
+              },
+              Object {
+                "id": "prepaid_extra",
+              },
+              Object {
+                "id": "prepaid_pack",
+              },
+              Object {
+                "id": "prepaid_value_pack",
+              },
+            ],
+            "description": "Ideal for those who love to text and use a small amount of data and calling.",
+            "entitlements": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "name": "Unlimited NZ SMS*",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "name": "1.25GB Rollover data*",
+                "shortDescription": null,
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "name": "200 Rollover mins to any NZ mobiles and landlines*",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+            ],
+            "id": "valuepack050312",
+            "name": "$20 Prepaid Value Pack",
+            "price": Object {
+              "basePrice": 20,
+              "basePriceExcludingTax": 17.39,
+              "frequency": Object {
+                "period": "Day",
+                "value": 28,
+              },
+              "priceType": "",
+            },
+            "promotions": Array [
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Hotspot*",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 2,
+              },
+              Object {
+                "contentKey": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/spotify_small.png",
+                "name": "Half price Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "",
+                "sortOrder": 1,
+              },
+              Object {
+                "contentKey": "data_stack.keyConditions",
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "name": "Data Stack",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": null,
+                "sortOrder": 3,
+              },
+            ],
+            "supportedDestinations": Array [],
+          },
+        ],
+        "sortOrder": null,
+        "subCategories": null,
+        "visibility": null,
+      },
+    ],
+    "notifications": null,
+  },
+}
+`;

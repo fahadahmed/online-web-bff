@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "Performing connection diagnostics on this line is unsupported.",
+      "code": 4041
+    }
+  ]
+}

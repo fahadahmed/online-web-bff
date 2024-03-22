@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns all the Group items for line Number of line  1`] = `
+Object {
+  "group": Object {
+    "id": "1-189888930761",
+    "members": Array [
+      Object {
+        "capValue": null,
+        "isUncapped": true,
+        "serviceId": "0275988271",
+        "status": "Active",
+        "type": "Leader",
+        "unit": "MB",
+        "usedValue": "500",
+      },
+      Object {
+        "capValue": "100",
+        "isUncapped": false,
+        "serviceId": "0218399016",
+        "status": "Active",
+        "type": "MobileSharer",
+        "unit": "MB",
+        "usedValue": "0",
+      },
+      Object {
+        "capValue": "200",
+        "isUncapped": false,
+        "serviceId": "0275933747",
+        "status": "Active",
+        "type": "MobileSharer",
+        "unit": "MB",
+        "usedValue": "150",
+      },
+    ],
+    "name": "1-189888930761",
+    "totalData": Object {
+      "unit": "GB",
+      "value": 4,
+    },
+  },
+}
+`;

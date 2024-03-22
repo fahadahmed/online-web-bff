@@ -1,0 +1,388 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Address MicroService",
+    "version": "1.0.0",
+    "title": "DESL Address Service API"
+  },
+  "schemes": ["https"],
+  "paths": {
+    "/v1/location/address/results/search": {
+      "get": {
+        "tags": ["Address"],
+        "summary": "This API returns all addresses that matches the search term.",
+        "operationId": "fetchAddresses",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "partialAddress",
+            "description": "Partial Address - Minimum 3 characters",
+            "type": "string",
+            "minLength": 3,
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "addressType",
+            "description": "Type of address",
+            "required": false,
+            "type": "string",
+            "enum": ["all", "physical", "postal"],
+            "default": "all"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The matching addresses have been fetched successfully.",
+            "schema": {
+              "$ref": "#/definitions/AddressSearchResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, internal error code 4200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, internal error code 5200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "504": {
+            "description": "Request Time out, internal error code 5400",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/location/address/details/{elid}": {
+      "get": {
+        "tags": ["Address"],
+        "summary": "This API will  provide details around the selected address, based on ELID.",
+        "operationId": "getAddressDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "elid",
+            "in": "path",
+            "description": "The elid to fetch the address details",
+            "type": "string",
+            "pattern": "^[0-9]+$",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddressDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to fetch usage about this line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AddressSearchResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["addresses"],
+          "properties": {
+            "addresses": {
+              "description": "Array of addresses retrieved from downstream systems.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Address"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Address": {
+      "type": "object",
+      "required": ["elid", "label", "term", "unVerified"],
+      "properties": {
+        "label": {
+          "description": "Full address",
+          "type": "string",
+          "example": "50 Auckland Road, Greenmeadows, Napier 4112"
+        },
+        "elid": {
+          "description": "Valid address identifier",
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "example": "301344270"
+        },
+        "term": {
+          "description": "Search term",
+          "type": "string",
+          "example": "50 Auc"
+        },
+        "unVerified": {
+          "description": "boolean indicating whether unverified addresses (no ELID) should be returned (default = false)",
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "AddressDetails": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "elid",
+            "addressLine1",
+            "verified",
+            "geographicCoordinate",
+            "alternateReference"
+          ],
+          "properties": {
+            "elid": {
+              "description": "Unique identifier for an address",
+              "type": "string",
+              "pattern": "^[0-9]+$",
+              "example": "302922546"
+            },
+            "addressLine1": {
+              "type": "string",
+              "pattern": "^(?!\\s*$).+",
+              "example": "Spark City"
+            },
+            "addressLine2": {
+              "type": "string",
+              "example": "167 Victoria Street West"
+            },
+            "addressLine3": {
+              "type": "string",
+              "example": "Auckland Central"
+            },
+            "addressLine4": {
+              "type": "string",
+              "example": "AUCKLAND 1010"
+            },
+            "buildingName": {
+              "description": "The name of the building",
+              "type": "string",
+              "example": "Spark City"
+            },
+            "streetNumberFirst": {
+              "description": "The begining number of a street, for address 135-137 Vincent Street the value will be 137",
+              "type": "string",
+              "example": "167"
+            },
+            "streetNumberLast": {
+              "description": "The end number of a street, for address 135-137 Vincent Street the value will be 135",
+              "type": "string",
+              "example": "167"
+            },
+            "levelNumber": {
+              "description": "The level number",
+              "type": "string",
+              "example": "1"
+            },
+            "levelType": {
+              "description": "Level type",
+              "type": "string",
+              "example": "LEVEL"
+            },
+            "streetNumberFirstSuffix": {
+              "description": "First suffix from street number",
+              "type": "string",
+              "example": "A"
+            },
+            "subUnitNumber": {
+              "description": "Sub unit number",
+              "type": "string",
+              "example": "A"
+            },
+            "subUnitType": {
+              "description": "Sub unit type",
+              "type": "string"
+            },
+            "streetName": {
+              "description": "Street name",
+              "type": "string",
+              "example": "VICTORIA"
+            },
+            "streetType": {
+              "description": "Street type",
+              "type": "string",
+              "example": "STREET"
+            },
+            "streetSuffix": {
+              "description": "Street Sufix",
+              "type": "string",
+              "example": "WEST"
+            },
+            "locality": {
+              "description": "Locality",
+              "type": "string",
+              "example": "AUCKLAND CENTRAL"
+            },
+            "townOrCity": {
+              "description": "Town or City",
+              "type": "string",
+              "example": "AUCKLAND"
+            },
+            "postcode": {
+              "description": "Postal code",
+              "type": "string",
+              "example": "1010"
+            },
+            "boxNumber": {
+              "description": "Box Number",
+              "type": "string"
+            },
+            "privateBagNumber": {
+              "description": "Private bag number",
+              "type": "string"
+            },
+            "counterDeliveryPoint": {
+              "description": "Counter delivery point",
+              "type": "string"
+            },
+            "boxLobbyName": {
+              "description": "Box lobby name",
+              "type": "string"
+            },
+            "addressType": {
+              "description": "Addres type",
+              "type": "string"
+            },
+            "region": {
+              "description": "Region",
+              "type": "string",
+              "example": "AUCKLAND REGION"
+            },
+            "terrAuthName": {
+              "type": "string",
+              "example": "AUCKLAND"
+            },
+            "verified": {
+              "description": "Addres verification status",
+              "type": "boolean",
+              "example": true
+            },
+            "ruralIdentifier": {
+              "description": "Rural identifier",
+              "type": "string"
+            },
+            "mailTown": {
+              "description": "The post mail town",
+              "type": "string",
+              "example": "AUCKLAND"
+            },
+            "geographicCoordinate": {
+              "description": "The geocode information like latitude and longitude.",
+              "$ref": "#/definitions/GeographicCoordinate"
+            },
+            "alternateReference": {
+              "description": "Alternate reference details for the given ELID",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AlternateReference"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "GeographicCoordinate": {
+      "type": "object",
+      "required": ["latitude", "longitude", "nztmX", "nztmY"],
+      "properties": {
+        "latitude": {
+          "description": "",
+          "type": "number",
+          "example": -36.8475001
+        },
+        "longitude": {
+          "description": "",
+          "type": "number",
+          "example": 174.7576072
+        },
+        "nztmX": {
+          "description": "",
+          "type": "number",
+          "example": 1756703.7
+        },
+        "nztmY": {
+          "description": "",
+          "type": "number",
+          "example": 5920603.094
+        }
+      }
+    },
+    "AlternateReference": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "A unique identifier represents the reference type.",
+          "type": "string",
+          "example": "tui"
+        },
+        "value": {
+          "description": "A value for the given reference type.",
+          "type": "string",
+          "example": "1005088463"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

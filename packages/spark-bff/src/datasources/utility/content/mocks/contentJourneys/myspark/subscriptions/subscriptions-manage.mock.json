@@ -1,0 +1,147 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/subscriptions/manage",
+  "title": "Manage Subscriptions",
+  "fields": [
+    {
+      "fieldKey": "manage.cancel.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "If you cancel {subscription.type.name}, you can still use it until {subscription.valid.date}."
+    },
+    {
+      "fieldKey": "manage.cancel.actionLayer.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Are you sure you want to cancel {subscription.type.name}?",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.cancel.actionLayer.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You'll lose access to your {subscription.type.name} benefits such as ad-free music and offline listening.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.cancel.actionLayer.footNote",
+      "fieldType": "HEADING",
+      "fieldValue": "You'll still be able to use {subscription.type.name} until {subscription.valid.date}.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.cancel.success.header",
+      "fieldType": "HEADING",
+      "fieldValue": "{subscription.type.name} has been cancelled.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.cancel.success.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You can still use {subscription.type.name} until {subscription.valid.date}. If you change your mind, you can resume it in MySpark before this date.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.changePaymentMethod.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You're currently paying with your {current.paymentmethod}. You can change it to another payment method."
+    },
+    {
+      "fieldKey": "manage.changePaymentMethod.success.header",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Your payment method has changed."
+    },
+    {
+      "fieldKey": "manage.changePaymentMethod.success.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Future payments for {offerName} will be made with your {paymentLabel}."
+    },
+    {
+      "fieldKey": "manage.editAccountPreferences.description1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Change your {subscription.type.name} account details including password or communication preferences."
+    },
+    {
+      "fieldKey": "manage.editAccountPreferences.description2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Email used for {subscription.type.name}: {user.emailId}"
+    },
+    {
+      "fieldKey": "manage.editAccountPreferences.footNote",
+      "fieldType": "HEADING",
+      "fieldValue": "You'll be taken to the {subscription.type.name} website."
+    },
+    {
+      "fieldKey": "manage.resume.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You can still use {subscription.type.name} until {subscription.valid.date}."
+    },
+    {
+      "fieldKey": "manage.resume.footNote",
+      "fieldType": "HEADING",
+      "fieldValue": "Your {subscription.type.name} ends on {subscription.valid.date}. If you change your mind, you can resume your {subscription.type.name} during this time."
+    },
+    {
+      "fieldKey": "manage.resume.success.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Great! {subscription.type.name} has been resumed.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.resume.success.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You'll restart your next payment of {subscription.type.amount} on {subscription.type.date}.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.activate.redirect.title",
+      "fieldType": "HEADING",
+      "fieldValue": "You're almost ready to start using {subscription.type.name}!",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.activate.redirect.details",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You'll be taken to the {subscription.type.name} website to sign in or create a new account",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.activate.redirect.continue.cta",
+      "fieldType": "LABEL",
+      "fieldValue": "Go to {subscription.type.name}",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.activate.processing.title",
+      "fieldType": "HEADING",
+      "fieldValue": "It looks like you're activating your {subscription.type.name} subscription",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.activate.processing.details",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You can use the {subscription.type.name} subscription as soon as it's activated. It may take up to {subscriptionActivation.lockTtl} to see it activated in MySpark.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.activate.processing.continue.cta",
+      "fieldType": "LABEL",
+      "fieldValue": "OK",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.switch.success.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Great! You've changed to {subscription.type.name}",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.switch.success.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You'll be able to use it in 15 minutes. The payment will be added to your monthly bill.",
+      "fieldUrl": null
+    }
+  ]
+}

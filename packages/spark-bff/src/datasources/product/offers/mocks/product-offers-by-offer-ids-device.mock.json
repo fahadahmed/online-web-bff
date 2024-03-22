@@ -1,0 +1,1223 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "offerDetails": [
+    {
+      "id": "iphone_13_pro_128gb_sierra_blue",
+      "grandFathered": false,
+      "externalId": "apple126135SPO",
+      "name": "iPhone 13 Pro 128GB - Sierra Blue",
+      "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+      "category": [
+        {
+          "id": "handset"
+        },
+        {
+          "id": "apple_iphone_13_pro"
+        },
+        {
+          "id": "premium_insurance"
+        }
+      ],
+      "price": {
+        "priceType": "Onetime",
+        "frequency": null,
+        "basePrice": 1799.0,
+        "basePriceExcludingTax": 1564.35,
+        "effectivePrice": null,
+        "effectivePriceExcludingTax": null,
+        "taxPercentage": "",
+        "length": null,
+        "description": "Offer Price"
+      },
+      "group": {
+        "id": "iphone_13_pro",
+        "name": "iphone 13 Pro",
+        "description": "",
+        "sortOrder": 0,
+        "isDefault": null
+      },
+      "images": [
+        {
+          "id": "blue-1",
+          "mediaType": "IMAGE",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "description": "image_1",
+          "sortOrder": 1
+        },
+        {
+          "id": "blue-2",
+          "mediaType": "IMAGE",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "description": "image_2",
+          "sortOrder": 2
+        },
+        {
+          "id": "blue-3",
+          "mediaType": "IMAGE",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "description": "image_3",
+          "sortOrder": 3
+        },
+        {
+          "id": "blue-4",
+          "mediaType": "IMAGE",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "description": "image_4",
+          "sortOrder": 4
+        },
+        {
+          "id": "blue-5",
+          "mediaType": "IMAGE",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "description": "image_5",
+          "sortOrder": 5
+        },
+        {
+          "id": "blue-6",
+          "mediaType": "IMAGE",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "description": "image_6",
+          "sortOrder": 6
+        },
+        {
+          "id": "blue-7",
+          "mediaType": "VIDEO",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+          "description": "video_1",
+          "sortOrder": 7
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "productFeatures": {
+        "color": "Sierra Blue",
+        "primaryColor": "Blue",
+        "colorHex": "#A7C1D9",
+        "brand": "Apple",
+        "band": "5G",
+        "storage": "128GB"
+      },
+      "productCharacteristics": {
+        "isShippable": true,
+        "entitledEntity": null,
+        "partnerId": null,
+        "isDeferrable": true,
+        "isIncluded": null,
+        "isFeatured": false,
+        "soldSeparately": false,
+        "balanceManageMent": "POSTPAID"
+      },
+      "associatedPriceRules": [
+        {
+          "description": "$400 Device discount split over 18 months",
+          "pricePointID": "op_zmbur_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar59_99_endless_mobile_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$59.99 Endless Mobile Plan",
+              "description": "$59.99 Endless Mobile Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "spotify_individual_half_price"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                },
+                {
+                  "id": "upgrade_cons_bus"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_18_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 18 months",
+              "description": "Interest free payment over 18 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 77.72,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 18,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 24 months",
+          "pricePointID": "op_0gndd_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar59_99_endless_mobile_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$59.99 Endless Mobile Plan",
+              "description": "$59.99 Endless Mobile Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "spotify_individual_half_price"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                },
+                {
+                  "id": "upgrade_cons_bus"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_24_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 24 months",
+              "description": "Interest free payment over 24 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 58.29,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 24,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 12 months",
+          "pricePointID": "op_ajsul_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar59_99_endless_mobile_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$59.99 Endless Mobile Plan",
+              "description": "$59.99 Endless Mobile Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "spotify_individual_half_price"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                },
+                {
+                  "id": "upgrade_cons_bus"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_12_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 12 months",
+              "description": "Interest free payment over 12 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 116.6,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 12,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 36 months",
+          "pricePointID": "op_zpnbl_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar59_99_endless_mobile_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$59.99 Endless Mobile Plan",
+              "description": "$59.99 Endless Mobile Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "spotify_individual_half_price"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                },
+                {
+                  "id": "upgrade_cons_bus"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_36_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 36 months",
+              "description": "Interest free payment over 36 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 38.86,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 36,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 12 months",
+          "pricePointID": "op_ajsul_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar79_99_endless_mobile_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$79.99 Endless Mobile Plan",
+              "description": "$79.99 Endless Mobile Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "multi_product_discount"
+                },
+                {
+                  "id": "spotify_individual_free_price"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "upgrade_cons_bus"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_12_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 12 months",
+              "description": "Interest free payment over 12 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 116.6,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 12,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 36 months",
+          "pricePointID": "op_zpnbl_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar79_99_endless_mobile_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$79.99 Endless Mobile Plan",
+              "description": "$79.99 Endless Mobile Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "multi_product_discount"
+                },
+                {
+                  "id": "spotify_individual_free_price"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "upgrade_cons_bus"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_36_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 36 months",
+              "description": "Interest free payment over 36 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 38.86,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 36,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 18 months",
+          "pricePointID": "op_zmbur_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar79_99_endless_mobile_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$79.99 Endless Mobile Plan",
+              "description": "$79.99 Endless Mobile Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "multi_product_discount"
+                },
+                {
+                  "id": "spotify_individual_free_price"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "upgrade_cons_bus"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_18_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 18 months",
+              "description": "Interest free payment over 18 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 77.72,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 18,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 24 months",
+          "pricePointID": "op_0gndd_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar79_99_endless_mobile_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$79.99 Endless Mobile Plan",
+              "description": "$79.99 Endless Mobile Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "multi_product_discount"
+                },
+                {
+                  "id": "spotify_individual_free_price"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "upgrade_cons_bus"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_24_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 24 months",
+              "description": "Interest free payment over 24 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 58.29,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 24,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 12 months",
+          "pricePointID": "op_zmbur_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar99_99_endless_group_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$99.99 Endless Group Plan",
+              "description": "$99.99 Endless Group Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "multi_product_discount"
+                },
+                {
+                  "id": "spotify_individual_free_price"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_18_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 18 months",
+              "description": "Interest free payment over 18 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 77.72,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 18,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 12 months",
+          "pricePointID": "op_ajsul_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar99_99_endless_group_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$99.99 Endless Group Plan",
+              "description": "$99.99 Endless Group Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "multi_product_discount"
+                },
+                {
+                  "id": "spotify_individual_free_price"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_12_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 12 months",
+              "description": "Interest free payment over 12 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 116.6,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 12,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 12 months",
+          "pricePointID": "op_0gndd_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar99_99_endless_group_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$99.99 Endless Group Plan",
+              "description": "$99.99 Endless Group Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "multi_product_discount"
+                },
+                {
+                  "id": "spotify_individual_free_price"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_24_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 24 months",
+              "description": "Interest free payment over 24 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 58.29,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 24,
+            "description": null
+          }
+        },
+        {
+          "description": "$400 Device discount split over 12 months",
+          "pricePointID": "op_zpnbl_1",
+          "ruleType": "IFP",
+          "sources": [
+            {
+              "id": "dollar99_99_endless_group_plan",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "$99.99 Endless Group Plan",
+              "description": "$99.99 Endless Group Plan",
+              "category": [
+                {
+                  "id": "endless_plan"
+                },
+                {
+                  "id": "multi_product_discount"
+                },
+                {
+                  "id": "spotify_individual_free_price"
+                },
+                {
+                  "id": "mobile_neon"
+                },
+                {
+                  "id": "mobile_spark_sport"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            },
+            {
+              "id": "interest_free_payment_over_36_months",
+              "grandFathered": null,
+              "externalId": null,
+              "name": "Interest free payment over 36 months",
+              "description": "Interest free payment over 36 months",
+              "category": [
+                {
+                  "id": "ifp"
+                }
+              ],
+              "price": null,
+              "group": null,
+              "images": null,
+              "entitlements": null,
+              "promotions": null,
+              "productFeatures": null,
+              "productCharacteristics": null,
+              "associatedPriceRules": null,
+              "stock": null,
+              "productSpecifications": null
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": null,
+            "basePriceExcludingTax": null,
+            "effectivePrice": 38.86,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": null,
+            "length": 36,
+            "description": null
+          }
+        }
+      ],
+      "stock": null,
+      "productSpecifications": [
+        {
+          "name": "Face Unlock",
+          "values": [{ "value": "Yes", "group": "Other Features" }],
+          "sortOrder": 1
+        },
+        {
+          "name": "Processor",
+          "values": [{ "value": "A15 Bionic", "group": "Processor" }],
+          "sortOrder": 1
+        },
+        {
+          "name": "Bluetooth",
+          "values": [{ "value": "v5.0", "group": "Connectivity" }],
+          "sortOrder": 1
+        },
+        {
+          "name": "Rear Camera 1",
+          "values": [
+            { "value": "12MP, f1.5 (wide) Camera", "group": "Camera(s)" }
+          ],
+          "sortOrder": 1
+        },
+        {
+          "name": "Mobile Network",
+          "values": [{ "value": "3G, 4G, 5G", "group": "Network" }],
+          "sortOrder": 1
+        },
+        {
+          "name": "SIM Type",
+          "values": [
+            { "value": "Dual SIM (nano+eSIM)", "group": "SIM Details" }
+          ],
+          "sortOrder": 1
+        },
+        {
+          "name": "Size",
+          "values": [
+            { "value": "146.7 x 71.5 x 7.65 (mm)", "group": "Hardware Specs" }
+          ],
+          "sortOrder": 1
+        },
+        {
+          "name": "Resolution",
+          "values": [{ "value": "2532 x 1170 px", "group": "Screen" }],
+          "sortOrder": 1
+        },
+        {
+          "name": "Wireless charging",
+          "values": [{ "value": "Yes", "group": "Battery & Charging" }],
+          "sortOrder": 1
+        },
+        {
+          "name": "NFC",
+          "values": [{ "value": "Yes", "group": "Connectivity" }],
+          "sortOrder": 2
+        },
+        {
+          "name": "Charging",
+          "values": [
+            { "value": "25W Fast charging", "group": "Battery & Charging" }
+          ],
+          "sortOrder": 2
+        },
+        {
+          "name": "Operating System",
+          "values": [{ "value": "IOS", "group": "Processor" }],
+          "sortOrder": 2
+        },
+        {
+          "name": "Rear Camera 2",
+          "values": [
+            { "value": "12MP, f1.8 (ultra-wide) Camera", "group": "Camera(s)" }
+          ],
+          "sortOrder": 2
+        },
+        {
+          "name": "Display size",
+          "values": [{ "value": "6.1 \"", "group": "Screen" }],
+          "sortOrder": 2
+        },
+        {
+          "name": "VoLTE support",
+          "values": [{ "value": "Yes", "group": "Network" }],
+          "sortOrder": 2
+        },
+        {
+          "name": "eSIM",
+          "values": [{ "value": "Yes", "group": "SIM Details" }],
+          "sortOrder": 2
+        },
+        {
+          "name": "Weight",
+          "values": [{ "value": "203 g", "group": "Hardware Specs" }],
+          "sortOrder": 2
+        },
+        {
+          "name": "Socket",
+          "values": [{ "value": "Lightning USB", "group": "Hardware Specs" }],
+          "sortOrder": 3
+        },
+        {
+          "name": "Wi-Fi",
+          "values": [{ "value": "WiFi 6", "group": "Connectivity" }],
+          "sortOrder": 3
+        },
+        {
+          "name": "Emergency Alert",
+          "values": [{ "value": "Yes", "group": "Network" }],
+          "sortOrder": 3
+        },
+        {
+          "name": "Display",
+          "values": [
+            { "value": "Super Retina XDR with ProMotion", "group": "Screen" }
+          ],
+          "sortOrder": 3
+        },
+        {
+          "name": "Dual eSIM support",
+          "values": [{ "value": "Yes", "group": "SIM Details" }],
+          "sortOrder": 3
+        },
+        {
+          "name": "Rear Camera 3",
+          "values": [
+            { "value": "12MP, f2.8 (telephoto) Camera", "group": "Camera(s)" }
+          ],
+          "sortOrder": 3
+        },
+        {
+          "name": "Rating",
+          "values": [{ "value": "IP68", "group": "Hardware Specs" }],
+          "sortOrder": 4
+        },
+        {
+          "name": "Wi-Fi hotspot",
+          "values": [{ "value": "Yes", "group": "Connectivity" }],
+          "sortOrder": 4
+        },
+        {
+          "name": "Front camera",
+          "values": [{ "value": "2MP f2.2 ", "group": "Camera(s)" }],
+          "sortOrder": 4
+        },
+        {
+          "name": "Video",
+          "values": [
+            { "value": "4K @ 60 fps Video recording", "group": "Camera(s)" }
+          ],
+          "sortOrder": 5
+        }
+      ]
+    }
+  ]
+}

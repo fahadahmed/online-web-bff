@@ -1,0 +1,106 @@
+{
+  "accountNumber": "713012977",
+  "currentBillCycle": "12",
+  "retrievalDate": "2020-01-28T08:03:44.097+1300",
+  "firstName": "Jean",
+  "lastName": "Yang",
+  "currentBalance": {
+    "due": {
+      "amount": 312.5,
+      "crDr": "DR"
+    },
+    "overdue": {
+      "amount": 0.0,
+      "crDr": "DR"
+    }
+  },
+  "lastBill": {
+    "billDate": "2020-01-11T00:00:00.000+1300",
+    "cycle": "12",
+    "dueDate": "2020-01-28T00:00:00.000+1300",
+    "closingBalance": {
+      "amount": 29.08,
+      "crDr": "DR"
+    }
+  },
+  "nextBill": {
+    "billDate": "2020-02-11T00:00:00.000+1300"
+  },
+  "lastPayment": {
+    "type": "DD",
+    "method": "Direct Debit received    ",
+    "paymentDate": "2020-01-28T00:00:00.000+1300",
+    "paymentAmount": {
+      "amount": 29.08,
+      "crDr": "CR"
+    },
+    "isInvoiced": false
+  },
+  "monthlyPaymentSetup": [
+    {
+      "type": "DD",
+      "description": "Direct Debit",
+      "status": "Active",
+      "accountDetails": {
+        "bank": "ANZ Banking Group (NZ) ltd.",
+        "accountName": "Test Customer",
+        "accountNumber": "0234533",
+        "accountNumberSuffix": "030",
+        "bankNumber": "02",
+        "branchNumber": "0849"
+      },
+      "creditCard": {
+        "lastFourDigits": "8194",
+        "ccId": "9433804662345196",
+        "cardName": "Jovita Elvis Romano",
+        "cardIssuer": "VISA",
+        "expiryMonth": "08",
+        "expiryYear": "2023"
+      },
+      "upcomingPayment": {
+        "paymentFrequency": "Monthly",
+        "paymentMethodId": "1-29P333ID"
+      }
+    }
+  ],
+  "summaryMessage": {
+    "primary": "Your balance of ``$259.92`` is due in 7 days.",
+    "secondary": "Payment due on ``30 Mar 2020``",
+    "teritary": "",
+    "status": "WARNING",
+    "primaryCta": {
+      "label": "Pay bill",
+      "code": "PAY_BILL"
+    }
+  },
+  "detailMessage": {
+    "primary": "Your balance of ``$259.92`` is due in 7 days.",
+    "secondary": "Payment due on ``30 Mar 2020``",
+    "tertiary": "``$129.00`` is overdue. Please pay this now to avoid additional fees.",
+    "status": "WARNING",
+    "primaryCta": {
+      "label": "Pay bill",
+      "code": "PAY_BILL"
+    },
+    "secondaryCta": {
+      "label": "View latest bill",
+      "code": "VIEW_LATEST_BILL"
+    },
+    "otherCtas": [
+      {
+        "label": "Setup monthly payment",
+        "code": "SETUP_MONTHLY_PAYMENT"
+      },
+      {
+        "label": "Add credit",
+        "code": "ADD_CREDIT"
+      }
+    ]
+  },
+  "messages": [
+    {
+      "message": "Request Processed Successfully.",
+      "code": 2000
+    }
+  ]
+}

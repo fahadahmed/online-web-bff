@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`biometricProgress query responds with correct mocked data 1`] = `
+Object {
+  "biometricProgress": Object {
+    "infoBanner": "NO_MATCH",
+    "isContinueEnabled": false,
+    "showResend": true,
+    "steps": Array [
+      Object {
+        "label": "Text sent",
+        "status": "DONE",
+        "stepId": "TEXT_SENT",
+      },
+      Object {
+        "label": "Results",
+        "status": "ERROR",
+        "stepId": "RESULTS",
+      },
+    ],
+  },
+}
+`;

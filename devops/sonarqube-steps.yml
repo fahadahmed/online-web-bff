@@ -1,0 +1,22 @@
+steps:
+  - task: SonarQubePrepare@4
+    displayName: 'Prepare analysis on SonarQube'
+    inputs:
+      SonarQube: 'SonarQubeDev 7'
+      scannerMode: CLI
+      configMode: manual
+      cliProjectKey: online-web-frontend
+      cliProjectName: online-web-frontend
+      cliSources: '.'
+      extraProperties: |
+        # Additional properties that will be passed to the scanner,
+        # Put one key=value per line, example:
+        sonar.exclusions=**/node_modules/**, **/scripts/**, **/dist/**, **/build/**, **/__tests__/**, **/*.config.js, **/*.test.ts, **/*.test.tsx, **/mocks/**, **/test/**,  **/__mocks__/**, **/generated/**, **/*.graphql.ts
+        sonar.javascript.lcov.reportPaths=packages/spark-bff/coverage/lcov.info
+        sonar.testExecutionReportPaths=packages/spark-bff/coverage/test-report.xml
+
+  - task: SonarQubeAnalyze@4
+    displayName: 'Run Code Analysis'
+
+  - task: SonarQubePublish@4
+    displayName: 'Publish Quality Gate Result'

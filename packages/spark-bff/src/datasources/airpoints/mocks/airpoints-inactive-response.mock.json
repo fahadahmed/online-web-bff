@@ -1,0 +1,12 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "airpointsNumber": "1234567",
+  "firstName": "Tony",
+  "lastName": "Soprano",
+  "status": "Inactive"
+}

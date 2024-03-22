@@ -1,0 +1,66 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "gold_basic",
+        "name": "Gold Basic",
+        "description": "Gold Basic",
+        "category": [
+          {
+            "id": "gold_plan"
+          }
+        ],
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 22.99
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": []
+      },
+      {
+        "id": "gold_talker",
+        "name": "Gold Talker",
+        "description": "Gold Talker",
+        "category": [
+          {
+            "id": "gold_plan"
+          },
+          {
+            "id": "multi_product_discount"
+          }
+        ],
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 22.99
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": []
+      }
+    ],
+    "id": "gold_plan",
+    "name": "Gold Plan",
+    "description": "Gold Plan",
+    "isCategoryContainer": false,
+    "subCategories": null
+  }
+}

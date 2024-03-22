@@ -1,0 +1,147 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/change/prepaidPack",
+  "tags": ["change:prepaidPack"],
+  "title": "Change prepaid pack",
+  "description": "Change prepaid pack",
+  "fields": [
+    {
+      "fieldKey": "title",
+      "fieldType": "HEADING",
+      "fieldValue": "Change pack"
+    },
+    {
+      "fieldKey": "question1",
+      "fieldType": "HEADING",
+      "fieldValue": "Unlimited usage policy"
+    },
+    {
+      "fieldKey": "answer1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "fieldKey": "question2",
+      "fieldType": "HEADING",
+      "fieldValue": "Additional charges and details"
+    },
+    {
+      "fieldKey": "answer2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "fieldKey": "question3",
+      "fieldType": "HEADING",
+      "fieldValue": "Things you should know"
+    },
+    {
+      "fieldKey": "answer3",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "fieldKey": "planCard.current",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Current pack"
+    },
+    {
+      "fieldKey": "planCard.select",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Select pack"
+    },
+    {
+      "fieldKey": "planComparer.subHeader1",
+      "fieldType": "HEADING",
+      "fieldValue": "New pack"
+    },
+    {
+      "fieldKey": "planComparer.subHeader2",
+      "fieldType": "HEADING",
+      "fieldValue": "Current pack"
+    },
+    {
+      "fieldKey": "planComparer.rolloverToRollover.footnote",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<span>You’ll use your current pack’s data, text and minutes first.</span><br><span>You’ll move to the new pack once they’re used up or once your pack expires. Any remaining data and minutes will rollover to your new pack.</span>"
+    },
+    {
+      "fieldKey": "planComparer.rolloverToDataLover.footnote",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<span>You’ll use your current pack’s data, text and minutes first.</span><br><span>You’ll move to the new pack once they’re used up or once your pack expires. Any remaining data will rollover to your new pack.</span>"
+    },
+    {
+      "fieldKey": "planComparer.dataLoverToDataLover.footnote",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<span>You’ll use your current pack’s data first.</span><br><span>You’ll move to the new pack once it’s used up or once your pack expires. Any remaining data will rollover to your new pack.</span>"
+    },
+    {
+      "fieldKey": "planComparer.dataLoverToRollover.footnote",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<span>Any remaining data from your current pack will rollover to your new pack.</span>"
+    },
+    {
+      "fieldKey": "planComparer.endlessToAny.footnote",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<span>You’ll use your current pack’s data, text and minutes first.</span><br><span>You’ll move to the new pack once your pack expires.</span>"
+    },
+    {
+      "fieldKey": "planStartDate.footnote",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<span>Your order may take up to 4 hours to process. You’ll change to your new plan once it has been processed.</span>"
+    },
+    {
+      "fieldKey": "changePlan.success.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Great! We've received your order.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "changePlan.success.subHeader",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "We’ll send a confirmation email to jeman_hema@gmail.com",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "endless_plan.keyConditions",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<h4><strong>Key conditions</strong></h4><br><br> <b>Endless data</b> <p>Allocated data at max speed, then speeds reduce to a maximum of 1.2Mbps, this will impact your experience. No tethering or hotspots, <a href=\"https://www.spark.co.nz/change/pay-monthly/extras.html\">unless you buy a Hotspot extra</a> or if hotspot data is included in your plan.</p> <br> <b>Unlimited SMS NZ/AUS</b> <p>Includes person-to-person text messages to NZ and Australia numbers only. Excludes MMS (e.g. picture messaging) and non-data video calling.</p> <br> <b>Hotspot</b><br> <p>If you use Hotspot as an extra or as part of your plan, it counts towards your total data usage on your Endless Mobile plan. After max speed data allocation is used, speeds will reduce to a maximum of 1.2Mbps; this will impact your experience. Only one hotspot extra can be added per line per month.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "rollover_plan.keyConditions",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<h4>Key conditions</h4><br><br><b>Rollover Data</b> <p>Capped at 3.5GB.</p><br> <b>Rollover mins</b> <p>Capped at 500 minutes.</p>  <b>Unlimited SMS</b> <p>Includes person-to-person messages to NZ numbers only and excludes MMS (e.g. picture messaging) and non-data video calling.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "value_pack.keyConditions",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<h4>Key conditions</h4><br><br><b>Rollover data</b><p>Capped at 3.5GB.</p><br><b>Rollover talk</b> <p>Capped at 500 minutes.</p><br><b>Endless data</b> <p>Allocated data at max speed, then speeds reduce to a maximum of 1.2Mbps. This will impact your experience. No tethering or hotspots, unless you <a href=\"/change/pay-monthly/extras.html\">buy a Hotspot extra</a> or if hotspot data is included in your plan.</p><br> <b>Socialiser</b> <p>Rollover is not applied to Socialiser data. This allocated data is to be used on Facebook, Messenger, Twitter and Spotify apps only. This won't affect your regular plan-based data.</p><br><b>Unlimited SMS NZ</b> <p>Includes person-to-person messages to NZ numbers only. Excludes SMS to short codes, MMS (e.g. picture messaging) and non-data video calling.</p><br><b>Unlimited SMS NZ/AUS</b> <p>Includes person-to-person messages to NZ numbers only. Excludes SMS to short codes, MMS (e.g. picture messaging) and non-data video calling.</p><br> <b>Hotspot</b><p>If you use Hotspot as an extra or as part of your plan, it counts towards your total data use on your Prepaid Value Pack. Once your plan data allowance is used, you'll no longer be able to hotspot, unless you buy a Data Extra. </p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "data_lover.keyConditions",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<h4>Key conditions</h4><br><br> <b>Rollover data</b> <p>Capped at 3.5GB.</p><br> <b>Socialiser</b><p>Rollover is not applied to Socialiser data. This allocated data is to be used on Facebook, Messenger, Twitter and Spotify apps only. This won’t affect your regular plan-based data.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "visual_voicemail.infoModal",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<h5>Spark Voicemail App</h5><br><br> <p><b>Visual Voicemail allows you to hear and read your voicemail messages.</b></p> <p><b>You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.</b></p> <p><a href=\"/changePlan/visual-voicemail.html\"><b>Learn more about Spark</b><br> <b>Voicemail App</a></b></p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "companions.infoModal",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<h4>Companions</h4><br><br> <p><b>Companions receive 40GB data at max speed, then Endless data at reduced speed*.</b></p> <p><b>Companions get 50% off Spotify Premium.</b></p> <p><b>Add your Companions through MySpark:</b></p> <ol><li><b>Login to MySparK</b></li><li><b>Select the number with the $99.99 Endless Group plan.</b></li><li><b>Select Add Companion.</b></li></ol> <p><a href=\"/change/pay-monthly/endless-mobile/endless-group.html\"><b>Learn more about Companions</b></a></p>",
+      "fieldUrl": null
+    }
+  ]
+}

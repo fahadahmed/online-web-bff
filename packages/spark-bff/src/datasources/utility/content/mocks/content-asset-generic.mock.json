@@ -1,0 +1,53 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "assetsV2": [
+    {
+      "id": "loremIpsum",
+      "modelId": "Assets",
+      "tags": ["loremIpsum"],
+      "referencesV2": [
+        {
+          "key": "channel",
+          "value": "web"
+        }
+      ],
+      "contents": [
+        {
+          "assetType": "TextContent",
+          "format": "text",
+          "type": "heading",
+          "value": "Lorem ipsum"
+        },
+        {
+          "assetType": "TextContent",
+          "format": "text",
+          "type": "paragraph",
+          "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin orci nec est ultrices, vel aliquam sapien elementum."
+        },
+        {
+          "assetType": "TextContent",
+          "format": "text",
+          "type": "paragraph",
+          "value": "Fusce vel nulla et leo porta faucibus sit amet sit amet ipsum. Sed iaculis ac leo ornare consequat."
+        },
+        {
+          "assetType": "TextContent",
+          "format": "text",
+          "type": "paragraph",
+          "value": "Maecenas dui felis, vestibulum in elit sed, ultrices egestas arcu. Integer aliquam turpis eget tortor blandit finibus."
+        },
+        {
+          "assetType": "TextContent",
+          "format": "text",
+          "type": "paragraph",
+          "value": "Nam ut sapien duis eu nisl aliquet, feugiat massa at, eleifend justo."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "offerDetails": [
+    {
+      "id": "netflix_premium",
+      "name": "Netflix Premium",
+      "description": "Ultra HD (4K) on 4 devices at a time",
+      "category": [
+        {
+          "id": "netflix_broadband"
+        }
+      ],
+      "price": {
+        "priceType": "Recurring/OneOff",
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 5.0,
+        "effectivePrice": 5.0
+      },
+      "promotions": [
+        {
+          "name": "Watch on 4 devices"
+        },
+        {
+          "name": "Ultra HD available"
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "notifications": [
+    {
+      "recommendationId": "vas_downgrade_reactivate",
+      "text": "All your devices will be become unprotected once you change to McAfee Standard. You'll need to choose which devices to protect again.",
+      "type": "WARN"
+    }
+  ]
+}

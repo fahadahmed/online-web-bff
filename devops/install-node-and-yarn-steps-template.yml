@@ -1,0 +1,18 @@
+steps:
+  - bash: |
+      if [[ ! -d $(Agent.ToolsDirectory)/node-v$(NODE_VER)-linux-x64/bin ]]; then
+        mkdir -p $(Agent.TempDirectory)/node-v$(NODE_VER)
+        wget http://cicdnexus.telecom.tcnz.net/repository/online-raw-thirdparty/nodejs/v$(NODE_VER)/node-v$(NODE_VER)-linux-x64.tar.xz -e use_proxy=off -P $(Agent.TempDirectory)/node-v$(NODE_VER)
+        tar xvf $(Agent.TempDirectory)/node-v$(NODE_VER)/node-v$(NODE_VER)-linux-x64.tar.xz -C $(Agent.ToolsDirectory)
+      fi
+      echo "##vso[task.prependpath]$(Agent.ToolsDirectory)/node-v$(NODE_VER)-linux-x64/bin:$PATH"
+    displayName: 'Download and Install Node'
+
+  - bash: |
+      if [[ ! -d $(Agent.ToolsDirectory)/yarn-v$(YARN_VER)/bin ]]; then
+        mkdir -p $(Agent.TempDirectory)/yarn-v$(YARN_VER)
+        wget http://cicdnexus.telecom.tcnz.net/repository/online-raw-thirdparty/yarn/v$(YARN_VER)/yarn-v$(YARN_VER).tar.gz -e use_proxy=off -P $(Agent.TempDirectory)/yarn-v$(YARN_VER)
+        tar xvzf $(Agent.TempDirectory)/yarn-v$(YARN_VER)/yarn-v$(YARN_VER).tar.gz -C $(Agent.ToolsDirectory)
+      fi
+      echo "##vso[task.prependpath]$(Agent.ToolsDirectory)/yarn-v$(YARN_VER)/bin:$PATH"
+    displayName: 'Download and Install Yarn'

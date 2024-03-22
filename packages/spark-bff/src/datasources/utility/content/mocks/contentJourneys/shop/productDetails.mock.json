@@ -1,0 +1,88 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "id": "online-shop/product-details",
+  "site": "spark",
+  "tags": ["mpa:"],
+  "title": "product details",
+  "description": "productDetails",
+  "fields": [
+    {
+      "fieldKey": "productDetails.clickAndCollect",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>Click & Collect</h6><br><br><p>Click & Collect lets you buy products online and choose which Spark store to pick them up from.</p><br><b>Buy an item using Click & Collect</b><br><br><ol><li>Select the product you want to buy and follow the on-screen prompts through to the checkout.</li><li>When you get to the delivery page, select Click & Collect.</li><li>Choose the store you want to pick the product up from.</li><li>We’ll send you an email when your order is ready for collection.</li><li>One of our team will contact you to set up an appointment to collect your order.</li></ol><br><br><p>Note: Not all products are available via Click & Collect. Look for the Click & Collect link under the product image to see if it's available for the product you want to buy. During Alert Level 3 you must not come to the store unless you have been contacted and have had an appointment time set up. This will ensure our team can discuss the measures in place to protect New Zealanders while picking up items in compliance with Alert Level 3.</p><br><br><b>Picking up your order</b><br><br><br><p>To pick up your product you will need to show one of the following forms of ID:<p><ul><li>New Zealand Driver licence</li><li> passport</li><li>An 18+ card</li></ul><p>To keep your order safe, we'll only release your order to you. The only exception to this is if you've told us when you made the order the name of the person authorised on your account who will be picking up on your behalf. To authorise someone on your account please contact us on 123. If we are unable to confirm their authority on the account, we will not be releasing your order to them.<p><br><br><p>You can select the Click & Collect store when you check out. The store will be in contact with you as soon as possible, and they'll also get in touch if they need more information from you.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "productDetails.freeDelivery",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>Spark standard delivery</h6><br><br><p>Free nationwide delivery is available for all mobile and accessory orders. For all other orders see the delivery costs on checkout.<p><br><br><p>When your order is confirmed and dispatched we'll send you an email. The email will confirm your delivery information and include your CourierPost Track and Trace number.</p><br><br><p>Our partner CourierPost will deliver your order in 1–3 working days. Rural addresses can take up to five working days. CourierPost deliver to any street, rural address or PO Box in New Zealand. CourierPost always ask for a signature on delivery. If no one is available to sign for your order, they'll leave a Card to Call.</p><br><br><p>You can manage all aspects of your delivery via the NZ Post website. You can sort parcel redirect, add delivery instructions, add an authority to leave or redirect to a new address.</p><br><br><br><h6>Pre-order</h6><br><p>Pre-orders for Samsung Galaxy Z Flip3, Z Fold3 and Watch4 will commence from Thursday 12 August as per the manufacturer's global launch date.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "productDetails.paymentOptions",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>Payment options</h6><br><br><b>Card</b><br><br><p>If you choose to pay upfront with a credit, debit or charge card, a surcharge will apply. American Express and Diners Club incur a 2% surcharge. Visa/MasterCard, Prezzy Card, international credit, debit or charge cards incur a 3% surcharge.</p><br><br><br><b>Interest free payments</b><br><br><p>With interest free payments you can pay off your item via monthly payments. You can choose to spread the cost over 12, 18, 24 or 36 months, interest free. Join any Pay Monthly plan, and if the cost of the phone is $199 incl GST ($173.04 excl GST) and above, you can pay it off over your interest free term.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "productDetails.eligibility.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Eligibility for the One Number Wearable Plan",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "productDetails.eligibility.title1",
+      "fieldType": "HEADING",
+      "fieldValue": "Connecting your Apple Watch to a cellular network requires an iPhone 6S or a later model, along with an active eligible Spark Endless Mobile plan.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "productDetails.eligibility.title2",
+      "fieldType": "HEADING",
+      "fieldValue": "If you don`t have an Endless mobile plan on your primary device, you will need to purchase the plan first before you can get One Number.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "productDetails.eligibility.link",
+      "fieldType": "HYPERLink",
+      "fieldValue": "See eligible plans.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "productDetails.eligibility.success",
+      "fieldType": "HEADING",
+      "fieldValue": "It looks like you have an eligible Spark Endless mobile plan. You can add this watch and plan to your cart to continue.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "productDetails.eligibility.error",
+      "fieldType": "HEADING",
+      "fieldValue": "When you buy an Endless Wearable plan with an eligible wearable device, you need to have a Spark Endless or Prepaid plan on your primary smartphone.  The primary smartphone is used to pair and activate the wearable device.Shop mobile plans",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "faqs.question1",
+      "fieldType": "HEADING",
+      "fieldValue": "Title0",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "faqs.answer1",
+      "fieldType": "CONTENT",
+      "fieldValue": "<p>Content0</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "faqs.question2",
+      "fieldType": "HEADING",
+      "fieldValue": "Title1",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "faqs.answer2",
+      "fieldType": "CONTENT",
+      "fieldValue": "<p>Content1</p>",
+      "fieldUrl": null
+    }
+  ]
+}

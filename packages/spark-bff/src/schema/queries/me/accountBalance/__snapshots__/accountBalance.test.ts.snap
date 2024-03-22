@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`successfully retrieves the account monetary balance details for a account from Siebel.  1`] = `
+Object {
+  "accountNumber": "713012977",
+  "currentBalance": Object {
+    "due": Object {
+      "amount": 312.5,
+      "crDr": "DR",
+    },
+    "overdue": Object {
+      "amount": 0,
+      "crDr": "DR",
+    },
+  },
+  "currentBillCycle": 12,
+  "firstName": "Jean",
+  "lastBill": Object {
+    "billDate": "2020-01-11T00:00:00.000+1300",
+  },
+  "lastName": "Yang",
+  "lastPayment": Object {
+    "paymentAmount": Object {
+      "amount": 29.08,
+      "crDr": "CR",
+    },
+    "paymentDate": "2020-01-28T00:00:00.000+1300",
+  },
+  "monthlyPaymentSetup": Array [
+    Object {
+      "accountDetails": Object {
+        "accountName": "Test Customer",
+        "accountNumber": "0234533",
+        "accountNumberSuffix": "030",
+        "bank": "ANZ Banking Group (NZ) ltd.",
+        "bankNumber": "02",
+        "branchName": null,
+        "branchNumber": "0849",
+      },
+      "creditCard": Object {
+        "cardIssuer": "VISA",
+        "cardName": "Jovita Elvis Romano",
+        "ccId": "9433804662345196",
+        "expiryMonth": "08",
+        "expiryYear": "2023",
+        "lastFourDigits": "8194",
+      },
+      "description": "Direct Debit",
+      "status": "Active",
+      "type": "DD",
+      "upcomingPayment": Object {
+        "paymentAmount": null,
+        "paymentDate": null,
+        "paymentFrequency": "Monthly",
+        "paymentMethodId": "1-29P333ID",
+      },
+    },
+  ],
+  "nextBill": Object {
+    "billDate": "2020-02-11T00:00:00.000+1300",
+  },
+  "summaryMessage": Object {
+    "otherCtas": null,
+    "primary": "Your balance of \`\`$259.92\`\` is due in 7 days.",
+    "primaryCta": Object {
+      "code": "PAY_BILL",
+      "label": "Pay bill",
+    },
+    "secondary": "Payment due on \`\`30 Mar 2020\`\`",
+    "secondaryCta": null,
+    "status": "WARNING",
+    "tertiary": null,
+  },
+}
+`;
+
+exports[`successfully retrieves the detail message directly by supplying the account number 1`] = `
+Object {
+  "otherCtas": Array [
+    Object {
+      "code": "SETUP_MONTHLY_PAYMENT",
+      "label": "Setup monthly payment",
+    },
+    Object {
+      "code": "ADD_CREDIT",
+      "label": "Add credit",
+    },
+  ],
+  "primary": "Your balance of \`\`$259.92\`\` is due in 7 days.",
+  "primaryCta": Object {
+    "code": "PAY_BILL",
+    "label": "Pay bill",
+  },
+  "secondary": "Payment due on \`\`30 Mar 2020\`\`",
+  "secondaryCta": Object {
+    "code": "VIEW_LATEST_BILL",
+    "label": "View latest bill",
+  },
+  "status": "WARNING",
+  "tertiary": "\`\`$129.00\`\` is overdue. Please pay this now to avoid additional fees.",
+}
+`;

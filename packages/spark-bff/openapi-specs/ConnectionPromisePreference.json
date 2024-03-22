@@ -1,0 +1,491 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This service Api interacts with fuse endpoints in order to retrieve and manage customer Connection Promise preferences.",
+    "version": "1.0.0",
+    "title": "Connection Promise service Api",
+    "x-ibm-name": "connection-promise-preferences-service-api"
+  },
+  "host": "0.0.0.0.8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/line/{lineNumber}/assure/promise": {
+      "get": {
+        "tags": ["connectionpromise", "protected", "oidc"],
+        "summary": "Get the Connection Promise configuration for the nominated line number. An array of Connection Promise entries are returned, which describe the assigned Spark mobile line and whether it is considered a primary or secondary Connection Promise entry.",
+        "operationId": "getConnectionPromisePreferences",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number to retrieve the Connection Promise configuration details",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "017000001"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ConnectionPromiseLinesResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid parameters provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to get connection promise preference",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["connectionpromise", "protected", "oidc"],
+        "summary": "Create a new Connection Promise record associated with the nominated line number.If the broadband line has no existing Connection Promise alternate line numbers the number will be added as the primary Connection Promise entry regardless of the attribute passed in the request body.",
+        "operationId": "addCustomerNotificationPreference",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number to retrieve the Connection Promise configuration details",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "017000001"
+          },
+          {
+            "name": "ConnectionPromiseRequestData",
+            "in": "body",
+            "description": "The connection promise record request data",
+            "schema": {
+              "$ref": "#/definitions/ConnectionPromiseRequestData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ConnectionPromiseLinesResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid parameters provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to get connection promise preference",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/line/{lineNumber}/assure/promise/{connectionPromiseId}": {
+      "patch": {
+        "tags": ["connectionpromise", "protected", "oidc"],
+        "summary": "Update an existing Connection Promise record associated with the nominated line number.",
+        "operationId": "updateCustomerNotificationPreference",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number to retrieve the Connection Promise configuration details",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "017000001"
+          },
+          {
+            "name": "connectionPromiseId",
+            "in": "path",
+            "description": "The Connection Promise record to modify.",
+            "type": "string",
+            "required": true,
+            "x-example": "1-2DPDH4UQ"
+          },
+          {
+            "name": "ConnectionPromiseUpdateRequestData",
+            "in": "body",
+            "description": "The connection promise update request data",
+            "schema": {
+              "$ref": "#/definitions/ConnectionPromiseUpdateRequestData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ConnectionPromiseLinesResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid parameters provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to get connection promise preference",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["connectionpromise", "protected", "oidc"],
+        "summary": "Delete an existing Connection Promise record associated with the nominated line number.",
+        "operationId": "deleteCustomerNotificationPreference",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number to retrieve the Connection Promise configuration details",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "017000001"
+          },
+          {
+            "name": "connectionPromiseId",
+            "in": "path",
+            "description": "The Connection Promise record to modify.",
+            "type": "string",
+            "required": true,
+            "x-example": "1-2DPDH4UQ"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Invalid parameters provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to get connection promise preference",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ConnectionPromiseRequestData": {
+      "type": "object",
+      "description": "Detail object of Connection Promise request data.",
+      "required": ["lineNumber", "primaryLine"],
+      "properties": {
+        "lineNumber": {
+          "type": "string",
+          "description": "The Spark mobile number to be associated with this Connection Promise.",
+          "pattern": "^0\\d+$",
+          "x-example": "017000001"
+        },
+        "primaryLine": {
+          "type": "boolean",
+          "example": true,
+          "description": "A flag to indicate if the Spark mobile line is considered a primary or secondary alternative connection."
+        }
+      }
+    },
+    "ConnectionPromiseUpdateRequestData": {
+      "type": "object",
+      "description": "Detail object of Connection Promise update request data.",
+      "required": ["primaryLine"],
+      "properties": {
+        "primaryLine": {
+          "type": "boolean",
+          "example": true,
+          "description": "A flag to indicate if the Spark mobile line is considered a primary or secondary alternative connection."
+        }
+      }
+    },
+    "ConnectionPromiseLinesResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "connectionPromiseLines": {
+              "type": "array",
+              "description": "A list of line details associated with this Connection Promise.",
+              "items": {
+                "$ref": "#/definitions/ConnectionPromiseData"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ConnectionPromiseData": {
+      "type": "object",
+      "description": "Detail object of line associated with Connection Promise.",
+      "required": ["connectionPromiseId", "lineNumber", "primaryLine"],
+      "properties": {
+        "connectionPromiseId": {
+          "type": "string",
+          "x-example": "1-2DPDH4UQ",
+          "description": "The unique identifier for the Connection Promise record"
+        },
+        "lineNumber": {
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "x-example": "017000001",
+          "description": "The Spark mobile line number associated with this Connection Promise."
+        },
+        "primaryLine": {
+          "type": "boolean",
+          "example": true,
+          "description": "A flag to indicate if the Spark mobile line is considered a primary (20GB data over 7 days) or secondary (5GB data over 7 days) alternative connection."
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "ST2": {
+        "properties": {
+          "endPoint": "http://iamproxy-st05.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-st2.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST3": {
+        "properties": {
+          "endPoint": "http://iamproxy-st07.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-st3.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST4": {
+        "properties": {
+          "endPoint": "http://iamproxy-st06.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-st4.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://connection-promise-preferences-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

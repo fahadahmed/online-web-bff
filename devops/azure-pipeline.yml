@@ -1,0 +1,279 @@
+# Documentation:
+# - IBM secrets: https://sparknz.atlassian.net/wiki/spaces/DC/pages/932022350/For+testing+operations
+# - Hosts: https://sparknz.atlassian.net/wiki/spaces/DC/pages/9752806395/Infrastructure+and+Networking
+#        : https://sparknz.atlassian.net/wiki/spaces/DC/pages/934118175/MySB+Environments
+
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+trigger:
+  branches:
+    include:
+      - master
+      - develop
+      - release/*
+
+variables:
+  CI: true
+  NODE_VER: '16.14.0'
+  YARN_VER: '1.22.4'
+
+stages:
+  - stage: Verify
+    pool:
+      name: DigitalChannel
+      demands: online-build
+    dependsOn: []
+    condition: eq(variables['Build.Reason'], 'PullRequest')
+    jobs:
+      - job: Build
+        steps:
+          - template: build-steps-git-verify-synced-with-prod.yml
+
+          - template: build-steps-install.yml
+
+          - template: build-steps-validate.yml
+
+          - template: build-steps-test.yml
+
+          - template: build-steps-verify-package.yml
+
+          - template: check-no-changes-template.yml
+
+  - stage: Release
+    pool:
+      name: DigitalChannel
+      demands: online-build
+    dependsOn: []
+    condition: ne(variables['Build.Reason'], 'PullRequest')
+    jobs:
+      - job: Build
+        steps:
+          - template: build-steps-install.yml
+
+          - template: build-steps-package.yml
+
+          - template: gql-create-image-steps-template.yml
+
+          # Re-add when the pipeline has permissions to commit
+          # - template: publish-auto-bump-template.yml
+
+          - template: publish-artifacts-steps-template.yml
+
+  - stage: Deploy_st05
+    displayName: Deploy to st+2/st05
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_ST05
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: ST02
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_st06
+    displayName: Deploy to st+4/st06
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_ST06
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: st06
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_st07
+    displayName: Deploy to st+3/st07
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_ST07
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: st07
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_int01
+    displayName: Deploy to int01
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_INT01
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: int01
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_int02
+    displayName: Deploy to int02
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_INT02
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: int02
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_int03
+    displayName: Deploy to int03
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_INT03
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: int03
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_int04
+    displayName: Deploy to int04
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_INT04
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: int04
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_int05
+    displayName: Deploy to int05
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_INT05
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: int05
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_NFT
+    displayName: Deploy to NFT
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_NFT
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: nft
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_staging
+    displayName: Deploy to staging
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_NPE
+      - group: Online_Web_Frontend_Spark_STAGING
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-npe01
+    jobs:
+      - deployment: Deploy
+        environment: staging
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml
+
+  - stage: Deploy_production
+    displayName: Deploy to Production
+    pool:
+      name: DigitalChannel
+      demands: online-deploy
+    dependsOn: Release
+    variables:
+      - group: Online_Web_Frontend_Spark_PRODUCTION
+      - name: kubeconfig
+        value: /appl/cicd/.kube/config-prod01
+    jobs:
+      - deployment: Deploy
+        environment: production
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yml

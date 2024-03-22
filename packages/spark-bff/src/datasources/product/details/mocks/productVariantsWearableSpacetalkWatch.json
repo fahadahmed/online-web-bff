@@ -1,0 +1,158 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "offerDetails": [
+    {
+      "id": "spacetalk_kids_smartphone_watch_and_gps_grey",
+      "grandFathered": false,
+      "externalId": "allmytribe123173SPO",
+      "name": "Spacetalk Kids Smartphone Watch and GPS - Grey",
+      "description": "Use requires AllMyTribe App and in-app subscription, at least $6.99 a month. Be able to stay in touch with your kid without having to give them their first smartphone. The Spacetalk kids watch lets your kid call, send voice messages, text messages and emojis straight from the watch.",
+      "category": [
+        {
+          "id": "wearables"
+        },
+        {
+          "id": "all_tribe_spacetalk_kids"
+        }
+      ],
+      "contentKey": null,
+      "price": {
+        "priceType": "Onetime",
+        "frequency": null,
+        "basePrice": 259.0,
+        "basePriceExcludingTax": 225.22,
+        "effectivePrice": null,
+        "effectivePriceExcludingTax": null,
+        "creditAmount": null,
+        "creditAmountExcludingTax": null,
+        "taxPercentage": "",
+        "length": null,
+        "description": null
+      },
+      "associatedPrices": [
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 18
+          },
+          "basePrice": 14.38,
+          "basePriceExcludingTax": 12.5,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": 18,
+          "description": null
+        },
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 24
+          },
+          "basePrice": 10.79,
+          "basePriceExcludingTax": 9.38,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": 24,
+          "description": null
+        },
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 36
+          },
+          "basePrice": 7.19,
+          "basePriceExcludingTax": 6.25,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": 36,
+          "description": null
+        },
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 12
+          },
+          "basePrice": 21.58,
+          "basePriceExcludingTax": 18.77,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": 12,
+          "description": null
+        }
+      ],
+      "group": {
+        "id": "spacetalk_kids_smartphone_watch_and_gps",
+        "name": "Spacetalk Kids Smartphone Watch and GPS",
+        "description": null,
+        "sortOrder": null,
+        "images": [],
+        "isDefault": null
+      },
+      "images": [
+        {
+          "description": null,
+          "id": "SpacetalkKidsSmartphoneWatchandGPSGrey",
+          "sortOrder": 1,
+          "defaultUrl": "https://www.spark.co.nz/content/dam/tnz/mobile/smarttech/spacetalk/Message%20response%20grey.png",
+          "zoomUrl": null,
+          "standardUrl": "https://www.spark.co.nz/content/dam/tnz/mobile/smarttech/spacetalk/Message%20response%20grey.png",
+          "thumbnailUrl": "https://www.spark.co.nz/content/dam/tnz/mobile/smarttech/spacetalk/Message%20response%20grey.png",
+          "tinyUrl": null,
+          "type": "GALLERY"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "productFeatures": {
+        "color": "Grey",
+        "primaryColor": "Grey",
+        "colorHex": "#D3D3D3",
+        "brand": "All Tribe",
+        "band": "4G",
+        "storage": null
+      },
+      "productCharacteristics": {
+        "isShippable": true,
+        "entitledEntity": null,
+        "partnerId": null,
+        "isDeferrable": true,
+        "isIncluded": null,
+        "addedInCart": null,
+        "isFeatured": false,
+        "soldSeparately": false,
+        "balanceManageMent": "POSTPAID"
+      },
+      "associatedPriceRules": [],
+      "stock": null,
+      "productSpecifications": [
+        {
+          "name": "Other Features",
+          "values": [{ "value": "Yes", "group": "Tech Specs" }],
+          "sortOrder": 1
+        }
+      ],
+      "ctaOverrides": [],
+      "supportedDestinations": []
+    }
+  ]
+}

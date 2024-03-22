@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns all the displaySurcharge data 1`] = `
+Object {
+  "surchargeValues": Array [
+    Object {
+      "amex": "2%",
+      "dinersClub": "2%",
+      "displayText": Array [
+        "American Express and Diners Club incur a 2% surcharge.",
+        "Visa/MasterCard, Prezzy Card, international credit, debit or charge cards incur a 3% surcharge.",
+      ],
+      "masterCard": "3%",
+      "operationType": "PAY_BILL",
+      "visa": "3%",
+    },
+    Object {
+      "amex": "2%",
+      "dinersClub": "2%",
+      "displayText": Array [
+        "Automated payments using a credit/debit card incurs a 1.5% surcharge (plus GST, if any). Surcharge applies.",
+      ],
+      "masterCard": "3%",
+      "operationType": "SETUP_MONTHLY_PAYMENT",
+      "visa": "3%",
+    },
+  ],
+}
+`;

@@ -1,0 +1,7 @@
+steps:
+  - bash: |
+      yarn test:ci
+    displayName: 'Test BFF'
+    workingDirectory: $(Build.SourcesDirectory)/packages/spark-bff
+
+  - template: sonarqube-steps.yml

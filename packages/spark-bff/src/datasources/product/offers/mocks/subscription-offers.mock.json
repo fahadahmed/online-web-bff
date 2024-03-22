@@ -1,0 +1,627 @@
+{
+  "subscriptions": [
+    {
+      "name": "Spotify Premium",
+      "lineNumbers": ["033478552", "369121518", "431586312"],
+      "accountNumbers": [],
+      "ctas": [
+        {
+          "type": "ADD",
+          "label": "Add to Pay Monthly Plan"
+        }
+      ],
+      "offerDetails": [
+        {
+          "id": "spotify_premium_half_price_postpaid",
+          "name": "Spotify Premium",
+          "description": "Endlessly stream, skip and share with Spotify Premium",
+          "category": [
+            {
+              "id": "vas_mobile"
+            }
+          ],
+          "group": {
+            "id": "spotify_premium",
+            "name": "Spotify Premium",
+            "description": "Spotify is a digital music service that gives you access to millions of songs. With tracks from thousands of artists, you can stream everything from the latest hits to the greatest hits in high-def quality. With Spotify Premium you can stream music ad-free or download your favourite music so you can listen offline.",
+            "images": [
+              {
+                "id": "BACKGROUND",
+                "type": "BACKGROUND",
+                "defaultUrl": "https://www.oxygenna.com/wp-content/uploads/2015/11/18.jpg"
+              },
+              {
+                "id": "LOGO",
+                "type": "LOGO",
+                "defaultUrl": "/online/myspark/__dev__/logos/spotify.svg"
+              }
+            ],
+            "sortOrder": 7
+          },
+          "price": {
+            "priceType": "recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 14.99,
+            "description": "Usually $14.99/month"
+          },
+          "promotions": [
+            {
+              "name": "50% discount",
+              "productType": "MARKETING",
+              "shortDescription": null
+            },
+            {
+              "name": "discount_description",
+              "productType": "FEATURE",
+              "shortDescription": "Your Pay Monthly plan gives you 50% off Spotify Premium."
+            }
+          ],
+          "productCharacteristics": {
+            "entitledEntity": "LINE",
+            "partnerId": "SPOTIFY",
+            "balanceManageMent": "POSTPAID"
+          },
+          "productFeatures": {
+            "brand": "Spotify"
+          },
+          "associatedPriceRules": [],
+          "images": [
+            {
+              "id": "FEATURED",
+              "defaultUrl": "https://www.oxygenna.com/wp-content/uploads/2015/11/18.jpg",
+              "type": "FEATURED"
+            },
+            {
+              "id": "LOGO",
+              "defaultUrl": "/online/myspark/__dev__/logos/spotify.svg",
+              "type": "LOGO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spotify Premium",
+      "lineNumbers": ["033478553", "033227715", "0276404520"],
+      "accountNumbers": [],
+      "ctas": [
+        {
+          "type": "ADD",
+          "label": "Add to Prepaid Pack"
+        }
+      ],
+      "offerDetails": [
+        {
+          "id": "spotify_premium_half_price_prepaid",
+          "name": "Spotify Premium",
+          "description": "Endlessly stream, skip and share with Spotify Premium",
+          "category": [
+            {
+              "id": "vas_mobile"
+            }
+          ],
+          "group": {
+            "id": "spotify_premium",
+            "name": "Spotify Premium",
+            "description": "Spotify is a digital music service that gives you access to millions of songs. With tracks from thousands of artists, you can stream everything from the latest hits to the greatest hits in high-def quality. With Spotify Premium you can stream music ad-free or download your favourite music so you can listen offline.",
+            "images": [{}],
+            "sortOrder": 2
+          },
+          "price": {
+            "priceType": "recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 8.25,
+            "description": "Usually $14.99/month"
+          },
+          "promotions": [
+            {
+              "name": "50% discount",
+              "productType": "MARKETING",
+              "shortDescription": null
+            },
+            {
+              "name": "discount_description",
+              "productType": "FEATURE",
+              "shortDescription": "Your Prepaid Pack gives you 50% off Spotify Premium."
+            }
+          ],
+          "productCharacteristics": {
+            "entitledEntity": "LINE",
+            "partnerId": "SPOTIFY",
+            "balanceManageMent": "PREPAID"
+          },
+          "productFeatures": {
+            "brand": "Spotify"
+          },
+          "associatedPriceRules": [],
+          "images": [
+            {
+              "id": "FEATURED",
+              "type": "FEATURED",
+              "defaultUrl": "https://www.oxygenna.com/wp-content/uploads/2017/01/header-image-6.jpg"
+            },
+            {
+              "id": "LOGO",
+              "type": "LOGO",
+              "defaultUrl": "/online/myspark/__dev__/logos/spotify.svg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spotify Premium",
+      "lineNumbers": ["033478552", "369121518", "431586312"],
+      "accountNumbers": [],
+      "ctas": [
+        {
+          "type": "ADD",
+          "label": "Add to Broadband Plan"
+        }
+      ],
+      "offerDetails": [
+        {
+          "id": "spotify_premium_full_price",
+          "name": "Spotify Premium",
+          "description": "Endlessly stream, skip and share with Spotify Premium",
+          "category": [
+            {
+              "id": "vas_broadband"
+            }
+          ],
+          "group": {
+            "id": "spotify_premium",
+            "name": "Spotify Premium",
+            "description": "Spotify is a digital music service that gives you access to millions of songs. With tracks from thousands of artists, you can stream everything from the latest hits to the greatest hits in high-def quality. With Spotify Premium you can stream music ad-free or download your favourite music so you can listen offline.",
+            "images": [{}],
+            "sortOrder": 3
+          },
+          "price": {
+            "priceType": "recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 7.99,
+            "description": "Usually $14.99/month"
+          },
+          "promotions": [
+            {
+              "name": "discount_description",
+              "productType": "FEATURE",
+              "shortDescription": "Your plan gives you a discount on Spotify Premium."
+            }
+          ],
+          "productCharacteristics": {
+            "entitledEntity": "LINE",
+            "partnerId": "SPOTIFY",
+            "balanceManageMent": "POSTPAID"
+          },
+          "productFeatures": {
+            "brand": "Spotify"
+          },
+          "associatedPriceRules": [],
+          "images": [
+            {
+              "id": "FEATURED",
+              "type": "FEATURED",
+              "defaultUrl": "https://i.pinimg.com/originals/48/d4/85/48d485cf5ba0e5fc662797c8f3cd6c5f.png"
+            },
+            {
+              "id": "LOGO",
+              "type": "LOGO",
+              "defaultUrl": "/online/myspark/__dev__/logos/spotify.svg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spark Sport",
+      "lineNumbers": [],
+      "accountNumbers": ["033478553", "033227715", "0276404520"],
+      "ctas": [
+        {
+          "type": "ADD",
+          "label": "Add Spark Sport"
+        }
+      ],
+      "offerDetails": [
+        {
+          "id": "spark_sport",
+          "name": "Spark Sport",
+          "description": "Catch the action with Spark Sport",
+          "category": [
+            {
+              "id": "vas_broadband"
+            }
+          ],
+          "group": {
+            "id": "spark_sport",
+            "name": "Spark Sport",
+            "description": "Spark Sport is bringing you the action live and on demand on a wide range of devices. Don't miss the summer of New Zealand cricket and catch the action from Premier League, UEFA Champions League, Formula One®, NBA, NFL, WTA, WRC and more.",
+            "images": [
+              {
+                "id": "BACKGROUND",
+                "type": "BACKGROUND",
+                "defaultUrl": "https://miro.medium.com/max/1200/1*l3wujEgEKOecwVzf_dqVrQ.jpeg"
+              },
+              {
+                "id": "LOGO",
+                "type": "LOGO",
+                "defaultUrl": "/online/myspark/__dev__/logos/spark_sport.svg"
+              }
+            ],
+            "sortOrder": 4
+          },
+          "price": {
+            "priceType": "recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "effectivePrice": 19.99,
+            "description": "Usually $24.99/month"
+          },
+          "promotions": [
+            {
+              "name": "discount_description",
+              "productType": "FEATURE",
+              "shortDescription": "Get a discount on Spark Sport with us."
+            }
+          ],
+          "productCharacteristics": {
+            "entitledEntity": "ACCOUNT",
+            "partnerId": "SPARK_SPORT",
+            "balanceManageMent": "POSTPAID"
+          },
+          "productFeatures": {
+            "brand": "Spark Sport"
+          },
+          "associatedPriceRules": [],
+          "images": [
+            {
+              "id": "FEATURED",
+              "type": "FEATURED",
+              "defaultUrl": "https://miro.medium.com/max/1200/1*l3wujEgEKOecwVzf_dqVrQ.jpeg"
+            },
+            {
+              "id": "LOGO",
+              "type": "LOGO",
+              "defaultUrl": "/online/myspark/__dev__/logos/spark_sport.svg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Neon",
+      "lineNumbers": [],
+      "accountNumbers": ["033478553", "033227715", "0276404520"],
+      "ctas": [
+        {
+          "type": "ADD",
+          "label": "Add Neon"
+        }
+      ],
+      "offerDetails": [
+        {
+          "id": "neon",
+          "name": "Neon",
+          "description": "Get your binge on with Neon",
+          "category": [
+            {
+              "id": "vas_broadband"
+            }
+          ],
+          "group": {
+            "id": "neon",
+            "name": "Neon",
+            "description": "Neon curate the biggest and best binge-worthy paid TV series and movies from around the world, just for New Zealanders. From guilty pleasures, action and adventure to amazing human stories. Plus, with new content added all the time, you won't be lost wondering what to watch.",
+            "images": [
+              {
+                "id": "BACKGROUND",
+                "type": "BACKGROUND",
+                "defaultUrl": "https://www.oxygenna.com/wp-content/uploads/2017/01/header-image-6.jpg"
+              },
+              {
+                "id": "LOGO",
+                "type": "LOGO",
+                "defaultUrl": "/online/myspark/__dev__/logos/neon.svg"
+              }
+            ],
+            "sortOrder": 5
+          },
+          "price": {
+            "priceType": "recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "effectivePrice": 11.99,
+            "basePrice": 15.99,
+            "description": "Usually $15.99/month"
+          },
+          "promotions": [
+            {
+              "name": "discount_description",
+              "productType": "FEATURE",
+              "shortDescription": "Get a discount on Neon with us."
+            }
+          ],
+          "productCharacteristics": {
+            "entitledEntity": "ACCOUNT",
+            "partnerId": "NEON",
+            "balanceManagement": "POSTPAID"
+          },
+          "productFeatures": {
+            "brand": "Neon"
+          },
+          "associatedPriceRules": [],
+          "images": [
+            {
+              "id": "FEATURED",
+              "type": "FEATURED",
+              "defaultUrl": "https://www.oxygenna.com/wp-content/uploads/2017/01/header-image-6.jpg"
+            },
+            {
+              "id": "LOGO",
+              "type": "LOGO",
+              "defaultUrl": "/online/myspark/__dev__/logos/neon.svg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Netflix",
+      "lineNumbers": [],
+      "accountNumbers": ["033478553", "033227715", "0276404520"],
+      "ctas": [
+        {
+          "type": "ADD",
+          "label": "Add Netflix"
+        }
+      ],
+      "offerDetails": [
+        {
+          "id": "Netflix",
+          "name": "Netflix",
+          "description": "Get your binge on with Netflix",
+          "category": [
+            {
+              "id": "vas_broadband"
+            }
+          ],
+          "group": {
+            "id": "Netflix",
+            "name": "Netflix",
+            "description": "Netflix curate the biggest and best binge-worthy paid TV series and movies from around the world, just for New Zealanders. From guilty pleasures, action and adventure to amazing human stories. Plus, with new content added all the time, you won't be lost wondering what to watch.",
+            "images": [
+              {
+                "id": "BACKGROUND",
+                "type": "BACKGROUND",
+                "defaultUrl": "https://i.pinimg.com/originals/48/d4/85/48d485cf5ba0e5fc662797c8f3cd6c5f.png"
+              },
+              {
+                "id": "LOGO",
+                "type": "LOGO",
+                "defaultUrl": "/online/myspark/__dev__/logos/netflix.svg"
+              }
+            ],
+            "sortOrder": 6
+          },
+          "price": {
+            "priceType": "recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "effectivePrice": 11.99,
+            "description": "Usually $15.99/month"
+          },
+          "promotions": [
+            {
+              "name": "discount_description",
+              "productType": "FEATURE",
+              "shortDescription": "Get a discount on Netflix with us."
+            }
+          ],
+          "productCharacteristics": {
+            "entitledEntity": "ACCOUNT",
+            "partnerId": "Netflix",
+            "balanceManageMent": "POSTPAID"
+          },
+          "productFeatures": {
+            "brand": "Netflix"
+          },
+          "associatedPriceRules": [],
+          "images": [
+            {
+              "id": "FEATURED",
+              "type": "FEATURED",
+              "defaultUrl": "https://i.pinimg.com/originals/48/d4/85/48d485cf5ba0e5fc662797c8f3cd6c5f.png"
+            },
+            {
+              "id": "LOGO",
+              "type": "LOGO",
+              "defaultUrl": "/online/myspark/__dev__/logos/netflix.svg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "McAfee Security Standard",
+      "lineNumbers": ["033478553", "033227715", "0276404520"],
+      "accountNumbers": [],
+      "ctas": [
+        {
+          "type": "ADD",
+          "label": "Add to Plan"
+        }
+      ],
+      "offerDetails": [
+        {
+          "id": "mcafee_standard",
+          "name": "McAfee Security Standard",
+          "description": null,
+          "category": [
+            {
+              "id": "vas_mobile"
+            }
+          ],
+          "group": {
+            "id": "mcafee",
+            "name": "McAfee",
+            "description": "From banking online, working remotely, or making the most of your free time to manage your day-to-day life, McAfee Security with Spark helps support your device security needs so you can better enjoy technology on your terms.",
+            "images": [
+              {
+                "id": "BACKGROUND",
+                "type": "BACKGROUND",
+                "defaultUrl": "/online/myspark/__dev__/images/subscriptions/bg-mcafee.svg"
+              },
+              {
+                "id": "LOGO",
+                "type": "LOGO",
+                "defaultUrl": "/online/myspark/__dev__/logos/mcafee.svg"
+              }
+            ],
+            "sortOrder": 1
+          },
+          "price": {
+            "priceType": "recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 4.95,
+            "description": null
+          },
+          "promotions": [
+            {
+              "name": "discount_description",
+              "productType": "FEATURE",
+              "shortDescription": "Enjoy McAfee Security with Spark on up up to 5 devices."
+            }
+          ],
+          "productCharacteristics": {
+            "entitledEntity": "LINE",
+            "partnerId": "MCAFEE",
+            "balanceManageMent": "POSTPAID"
+          },
+          "productFeatures": {
+            "brand": "McAfee"
+          },
+          "associatedPriceRules": [],
+          "images": [
+            {
+              "id": "LOGO",
+              "type": "LOGO",
+              "defaultUrl": "/online/myspark/__dev__/logos/mcafee.svg"
+            },
+            {
+              "id": "FEATURED",
+              "type": "FEATURED",
+              "defaultUrl": "/online/myspark/__dev__/images/subscriptions/offer-mcafee.png"
+            },
+            {
+              "id": "BACKGROUND",
+              "type": "BACKGROUND",
+              "defaultUrl": "/online/myspark/__dev__/images/subscriptions/offer-bg-mcafee.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "McAfee Security Premium",
+      "lineNumbers": ["033478553", "033227715", "0276404520"],
+      "accountNumbers": [],
+      "ctas": [
+        {
+          "type": "ADD",
+          "label": "Add to Plan"
+        }
+      ],
+      "offerDetails": [
+        {
+          "id": "mcafee_premium",
+          "name": "McAfee Security Premium",
+          "description": null,
+          "category": [
+            {
+              "id": "vas_mobile"
+            }
+          ],
+          "group": {
+            "id": "mcafee",
+            "name": "McAfee",
+            "description": "From banking online, working remotely, or making the most of your free time to manage your day-to-day life, McAfee Security with Spark helps support your device security needs so you can better enjoy technology on your terms.",
+            "images": [
+              {
+                "id": "BACKGROUND",
+                "type": "BACKGROUND",
+                "defaultUrl": "/online/myspark/__dev__/images/subscriptions/bg-mcafee.svg"
+              },
+              {
+                "id": "LOGO",
+                "type": "LOGO",
+                "defaultUrl": "/online/myspark/__dev__/logos/mcafee.svg"
+              }
+            ],
+            "sortOrder": 1
+          },
+          "price": {
+            "priceType": "recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 8.95,
+            "description": null
+          },
+          "promotions": [
+            {
+              "name": "discount_description",
+              "productType": "FEATURE",
+              "shortDescription": "Enjoy McAfee Security with Spark on up up to 10 devices."
+            }
+          ],
+          "productCharacteristics": {
+            "entitledEntity": "LINE",
+            "partnerId": "MCAFEE",
+            "balanceManageMent": "POSTPAID"
+          },
+          "productFeatures": {
+            "brand": "McAfee"
+          },
+          "associatedPriceRules": [],
+          "images": [
+            {
+              "id": "LOGO",
+              "type": "LOGO",
+              "defaultUrl": "/online/myspark/__dev__/logos/mcafee.svg"
+            },
+            {
+              "id": "FEATURED",
+              "type": "FEATURED",
+              "defaultUrl": "/online/myspark/__dev__/images/subscriptions/offer-mcafee.png"
+            },
+            {
+              "id": "BACKGROUND",
+              "type": "BACKGROUND",
+              "defaultUrl": "/online/myspark/__dev__/images/subscriptions/offer-bg-mcafee.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

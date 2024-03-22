@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "code": "4012",
+      "message": "Invalid authorisation code. Channel not created."
+    }
+  ]
+}

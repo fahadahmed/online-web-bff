@@ -1,0 +1,1382 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "These services manage payments and registrations for topup, autotopup, buy extra and pay bill.",
+    "version": "1.0.0",
+    "title": "DESL Payment Service API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["http"],
+  "paths": {
+    "/v1/finance/payment/creditcard/bill/{accountNumber}": {
+      "post": {
+        "tags": ["payment", "finance", "creditcard", "protected", "oidc"],
+        "summary": "Performs bill payment for the given account number using a credit card.",
+        "operationId": "payBillByCreditCard",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number for which the bill has to be paid.",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "creditCardBillPaymentRequest",
+            "in": "body",
+            "description": "The request containg the payment details.",
+            "schema": {
+              "$ref": "#/definitions/CreditCardBillPaymentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Validation failure with request.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The requested wallet item or access is not authorised.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/polipay/bill/{accountNumber}": {
+      "post": {
+        "tags": ["payment", "finance", "polipay", "protected", "oidc"],
+        "summary": "Performs bill payment for the given account number using polipay.",
+        "operationId": "payBillByPoliPay",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number for which the bill has to be paid.",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "poliPayBillRequest",
+            "in": "body",
+            "description": "Contains details needed to perform pay bill with poli.",
+            "schema": {
+              "$ref": "#/definitions/PoliPayBillRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Poli pay bill success.",
+            "schema": {
+              "$ref": "#/definitions/PoliPayResponse"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Access is not authorised.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/voucher/topup/{lineNumber}": {
+      "post": {
+        "tags": ["payment", "finance", "voucher", "topup", "protected", "oidc"],
+        "summary": "Performs topup for the given prepay line number using provided voucher.",
+        "operationId": "topupByVoucher",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number, with leading zero",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271239876"
+          },
+          {
+            "name": "voucherTopupRequest",
+            "in": "body",
+            "description": "Contains details needed to perform voucher topup.",
+            "schema": {
+              "$ref": "#/definitions/VoucherTopupRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Voucher topup success.",
+            "schema": {
+              "$ref": "#/definitions/VoucherTopupResponse"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "429": {
+            "description": "Too many attempts to topup with invalid or expired voucher code in quick succession.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/creditcard/topup/{lineNumber}": {
+      "post": {
+        "tags": [
+          "payment",
+          "finance",
+          "creditcard",
+          "topup",
+          "protected",
+          "oidc"
+        ],
+        "summary": "Performs topup for the given prepay line number using provided creditcard which could be from wallet or registered against the line or new.",
+        "operationId": "topupByCreditCard",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The prepaid line number, with leading zero",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271239876"
+          },
+          {
+            "name": "creditCardTopupRequest",
+            "in": "body",
+            "description": "Contains details needed to perform topup with creditcard.",
+            "schema": {
+              "$ref": "#/definitions/CreditCardTopupRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Credit card topup success.",
+            "schema": {
+              "$ref": "#/definitions/CreditCardTopupResponse"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/polipay/topup/{lineNumber}": {
+      "post": {
+        "tags": ["payment", "finance", "polipay", "topup", "protected", "oidc"],
+        "summary": "Performs topup for the given prepay line number using polipay.",
+        "operationId": "topupByPoliPay",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The prepaid line number, with leading zero",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271239876"
+          },
+          {
+            "name": "poliPayTopupRequest",
+            "in": "body",
+            "description": "Contains details needed to perform topup with poli-pay.",
+            "schema": {
+              "$ref": "#/definitions/PoliPayTopupRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Poli pay topup success.",
+            "schema": {
+              "$ref": "#/definitions/PoliPayResponse"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/creditcard/autotopup/{lineNumber}": {
+      "post": {
+        "tags": ["payment", "finance", "autotopup", "protected", "oidc"],
+        "summary": "Api to Setup autotopup on the given line using Registered/Wallet card. In case Of wallet cards, they will be registered while this setup is done.",
+        "operationId": "autoTopupByCreditCard",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The prepay line number that is requesting for autotopup and the user has access to.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271239876"
+          },
+          {
+            "name": "creditCardAutoTopupRequest",
+            "in": "body",
+            "description": "Contains details needed to perform autotopup with creditcard.",
+            "schema": {
+              "$ref": "#/definitions/CreditCardAutoTopupRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Credit card autotopup success.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["payment", "finance", "autotopup", "protected", "oidc"],
+        "summary": "Api to remove auto top-up for a specific prepay line number. This will only disable auto topup and will not remove the registered card.",
+        "operationId": "removeAutoTopup",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The prepay line number whose auto-topup needs to be stopped and the user has access to.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271239876"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request Processed Successfully.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/creditcard/{lineNumber}": {
+      "post": {
+        "tags": ["payment", "finance", "register", "protected", "oidc"],
+        "summary": "Api to register wallet card.",
+        "operationId": "registerCreditCard",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number that is required for registering the card.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271239876"
+          },
+          {
+            "name": "registerCreditCardRequest",
+            "in": "body",
+            "description": "Contains details needed to register creditcard.",
+            "schema": {
+              "$ref": "#/definitions/RegisterCreditCardRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Card registered successfully.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Authentication failed due to invalid or expired access token provided in the header.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/bill/{accountNumber}/paymentsetup": {
+      "post": {
+        "tags": ["payment", "finance", "protected", "oidc", "payment-setup"],
+        "summary": "Api to setup automatic bill payments for the given account using Wallet.",
+        "operationId": "setupAutoPay",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number for which automatic bill payment will be setup",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true,
+            "x-example": "123456789"
+          },
+          {
+            "name": "paymentSetupRequest",
+            "in": "body",
+            "required": true,
+            "description": "Contains details needed to perform setting up auto bill payments",
+            "schema": {
+              "$ref": "#/definitions/PaymentSetupRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Payment setup success.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Authentication failed due to invalid or expired access token provided in the header.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The requested wallet item or access is not authorised.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "429": {
+            "description": "The resource that is being accessed is locked.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/creditcard/{lineNumber}/{paymentMethodId}": {
+      "delete": {
+        "tags": ["payment", "finance", "protected", "oidc"],
+        "summary": "Api to de-register registered card.",
+        "operationId": "removeRegisteredCreditCard",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The prepay line number that is requested for card de-registration and the user has access to it.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271239876"
+          },
+          {
+            "name": "paymentMethodId",
+            "in": "path",
+            "description": "The unique identifier of the registered card.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[\\dA-Z][\\dA-Z-]+[\\dA-Z]$",
+            "x-example": "1-1SIRTRTO"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Card de-registered successfully.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Authentication failed due to invalid or expired access token provided in the header.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised on the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/bill/{accountNumber}/paymentsetup/{paymentMethodId}": {
+      "delete": {
+        "tags": ["payment", "finance", "protected", "oidc", "payment-setup"],
+        "summary": "Api to deregister a card or bank for automatic bill payment.",
+        "operationId": "removeAutoPay",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number for which automatic bill payment setup to be removed if the given registered paymentmethodid is valid",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true,
+            "x-example": 123456789
+          },
+          {
+            "name": "paymentMethodId",
+            "in": "path",
+            "description": "the unique identifier of this payment method.",
+            "type": "string",
+            "pattern": "(^[\\dA-Z][\\dA-Z-]+[\\dA-Z]$)",
+            "required": true,
+            "x-example": "1-S0123-23"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Payment method de-registered successfully.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Request validation failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Authentication failed due to invalid or expired access token provided in the header.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The registered card is not authorised.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/poli/initiate": {
+      "post": {
+        "tags": ["payment", "polipay", "protected", "oidc"],
+        "summary": "Initiates a POLi transaction and records the actual request and handshakes with POLi about the transaction.",
+        "operationId": "sendPoliInitiate",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "required": true,
+            "name": "InitiateDataRequest",
+            "schema": {
+              "$ref": "#/definitions/InitiateDataRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PoliInitiateResponse"
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": "#/definitions/PoliInitiateErrorResponse"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The provided accountNumber or lineNumber doesn't have proper right",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "504": {
+            "description": "GATEWAY_TIMEOUT",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/poli/result": {
+      "post": {
+        "tags": ["payment", "polipay"],
+        "summary": "The redirect url (used by POLi to POST data) which is responsible for receiving transaction token and the transaction status from POLi.",
+        "operationId": "receivePoliTransactionStatus",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "Token",
+            "description": "The unique identifier of a transaction sent from POLi",
+            "required": true,
+            "type": "string",
+            "x-example": "34u34g3423ghj4hjg234hjg23hg"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/payment/poli/result/{token}": {
+      "get": {
+        "tags": ["payment", "polipay", "oidc", "protected"],
+        "summary": "Fetches the transaction result based on POLi transaction token and transaction status value from database.",
+        "operationId": "getPoliTransactionResult",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "description": "The unique identifier of a transaction stored in database table",
+            "required": true,
+            "type": "string",
+            "x-example": "34u34g3423ghj4hjg234hjg23hg"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "description": "The status of the transaction as informed to client. 'Success' is considered as successful transaction.",
+            "required": false,
+            "type": "string",
+            "x-example": "Success"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PoliTransactionResultResponse"
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The queried POLi transaction result is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreditCardTopupResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/TransactionResult"
+        }
+      ]
+    },
+    "TransactionResult": {
+      "type": "object",
+      "properties": {
+        "receiptNumber": {
+          "type": "string",
+          "description": "The receipt number that uniquely identifies this transaction.",
+          "example": "1243223"
+        },
+        "availableBalance": {
+          "type": "number",
+          "description": "The total available balance.",
+          "example": "10.50"
+        },
+        "reservedBalance": {
+          "type": "number",
+          "description": "The total reserved balance.",
+          "example": "10.50"
+        }
+      }
+    },
+    "CreditCardPaymentProperties": {
+      "type": "object",
+      "required": ["source"],
+      "properties": {
+        "source": {
+          "$ref": "#/definitions/Source"
+        },
+        "oneTimeToken": {
+          "type": "string",
+          "pattern": "^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$",
+          "description": "the one time token required to pay the amount without persisting any card details.",
+          "example": "4t5h6u6d-fr45-3ef5-3ed5-r32g5j6k7h7k"
+        },
+        "secureTransactionToken": {
+          "type": "string",
+          "description": "the secure transaction token required to pay the amount without persisting any card details.",
+          "example": "4t5h6u6dfr45"
+        },
+        "paymentMethodId": {
+          "type": "string",
+          "pattern": "(^MySpark[-]SSC\\d+[-]\\d+$)|(^[\\dA-Z][\\dA-Z-]+[\\dA-Z]$)",
+          "description": "the unique identifier of this payment method.",
+          "example": "MySpark-SSC1502575177696595-29491"
+        }
+      }
+    },
+    "CreditCardBillPaymentRequest": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/CreditCardPaymentProperties"
+        },
+        {
+          "type": "object",
+          "required": ["amountType", "clientType", "setupAutoPay"],
+          "properties": {
+            "amount": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 10000,
+              "description": "The amount to be paid from the credit card.",
+              "example": "10.50"
+            },
+            "amountType": {
+              "$ref": "#/definitions/AmountType"
+            },
+            "clientType": {
+              "description": "The type of client which initiated the request.",
+              "$ref": "#/definitions/ClientType",
+              "example": "SMARTPHONE"
+            },
+            "setupAutoPay": {
+              "type": "boolean",
+              "description": "Indicates if the given cad has to be setup as autopay or not.",
+              "example": "true"
+            }
+          }
+        }
+      ]
+    },
+    "CreditCardAutoTopupRequest": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/CreditCardPaymentProperties"
+        },
+        {
+          "type": "object",
+          "required": ["amount", "setupAutoTopup", "autoTopupSettings"],
+          "properties": {
+            "amount": {
+              "type": "number",
+              "minimum": 10,
+              "maximum": 100,
+              "description": "The auto topup amount in NZD.",
+              "example": "10.50"
+            },
+            "setupAutoTopup": {
+              "type": "boolean",
+              "description": "Indicates if autopay needs to be setup.",
+              "example": "true"
+            },
+            "autoTopupSettings": {
+              "$ref": "#/definitions/AutoTopupSettings",
+              "description": "Container for all autotopup settings."
+            }
+          }
+        }
+      ]
+    },
+    "CreditCardTopupRequest": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/CreditCardPaymentProperties"
+        },
+        {
+          "type": "object",
+          "required": ["amount", "clientType", "setupAutoTopup"],
+          "properties": {
+            "amount": {
+              "type": "number",
+              "minimum": 5,
+              "maximum": 100,
+              "description": "The amount to be paid from the credit card.",
+              "example": "10.50"
+            },
+            "clientType": {
+              "description": "The type of client which initiated the request.",
+              "$ref": "#/definitions/ClientType",
+              "example": "SMARTPHONE"
+            },
+            "setupAutoTopup": {
+              "type": "boolean",
+              "description": "Indicates if the given card has to be setup for auto topup or not.",
+              "example": "true"
+            },
+            "autoTopupSettings": {
+              "$ref": "#/definitions/AutoTopupSettings",
+              "description": "Container for all autotopup settings."
+            },
+            "registerCard": {
+              "type": "boolean",
+              "description": "Indicates if the given card has to be registered or not. This would just register the card and does not setup anything.",
+              "example": "true"
+            },
+            "reserveFunds": {
+              "type": "boolean",
+              "description": "Indicates if the amount added to the account must be reserved or not.",
+              "example": "true"
+            }
+          }
+        }
+      ]
+    },
+    "VoucherTopupRequest": {
+      "type": "object",
+      "required": ["voucherNumber", "clientType"],
+      "properties": {
+        "voucherNumber": {
+          "type": "string",
+          "description": "The voucher number to be redeemed",
+          "pattern": "^\\d{12,13}$",
+          "example": "1919181716151"
+        },
+        "clientType": {
+          "description": "The type of client that initiated the request.",
+          "$ref": "#/definitions/ClientType",
+          "example": "SMARTPHONE"
+        }
+      }
+    },
+    "VoucherTopupResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/TransactionResult"
+        },
+        {
+          "type": "object",
+          "required": ["redeemedAmount"],
+          "properties": {
+            "redeemedAmount": {
+              "type": "number",
+              "description": "The amount redeemed by using given voucher.",
+              "example": "50.00"
+            }
+          }
+        }
+      ]
+    },
+    "ClientType": {
+      "type": "string",
+      "enum": ["SMARTPHONE", "CQ_DESKTOP", "CQ_MOBILE"]
+    },
+    "AutoTopupSettings": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of auto topup to be setup.",
+          "enum": ["LB", "RT"],
+          "example": "LB"
+        },
+        "firstTopupDate": {
+          "type": "string",
+          "format": "date",
+          "description": "The first date from which the RT should trigger.",
+          "example": "2020-11-04"
+        },
+        "thresholdAmount": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 30,
+          "description": "The amount at which the LB will trigger.",
+          "example": "10.0"
+        },
+        "monthlyTopupLimit": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 2800,
+          "description": "The Maximum amount beyond which LB autotopup will not happen within a month.",
+          "example": "500.0"
+        }
+      }
+    },
+    "RegisterCreditCardRequest": {
+      "type": "object",
+      "required": ["source", "paymentMethodId"],
+      "properties": {
+        "source": {
+          "$ref": "#/definitions/Source"
+        },
+        "paymentMethodId": {
+          "type": "string",
+          "pattern": "(^MySpark[-]SSC\\d+[-]\\d+$)|(^[\\dA-Z][\\dA-Z-]+[\\dA-Z]$)",
+          "description": "the unique identifier of this payment method.",
+          "example": "1-S0123-23"
+        }
+      }
+    },
+    "Source": {
+      "type": "string",
+      "description": "The source of the payment/card.",
+      "enum": ["DIRECT", "WALLET_SELF", "NEW_CARD"],
+      "example": "DIRECT"
+    },
+    "PaymentSetupRequest": {
+      "type": "object",
+      "required": ["source", "paymentMethodId", "hasPayment", "clientType"],
+      "properties": {
+        "source": {
+          "$ref": "#/definitions/Source"
+        },
+        "paymentMethodId": {
+          "type": "string",
+          "pattern": "(^MySpark[-]SSC\\d+[-]\\d+$)|(^[\\dA-Z][\\dA-Z-]+[\\dA-Z]$)",
+          "description": "the unique identifier of this payment method.",
+          "example": "MySpark-SSC1502575177696595-29491"
+        },
+        "hasPayment": {
+          "type": "boolean",
+          "description": "indicates if there has any payment to be debited too.",
+          "default": false,
+          "example": false
+        },
+        "amount": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 10000,
+          "description": "the amount to be paid in NZD. mandatory if hasPayment is true",
+          "example": "100.0"
+        },
+        "amountType": {
+          "$ref": "#/definitions/AmountType"
+        },
+        "clientType": {
+          "description": "The type of client which initiated the request.",
+          "$ref": "#/definitions/ClientType",
+          "example": "SMARTPHONE"
+        }
+      }
+    },
+    "AmountType": {
+      "type": "string",
+      "description": "The type of payment.",
+      "enum": ["ONEOFF", "TOTALDUE", "TOTALOVERDUE"],
+      "example": "TOTALOVERDUE"
+    },
+    "PoliPayBillRequest": {
+      "type": "object",
+      "required": ["amountType", "clientType"],
+      "properties": {
+        "amount": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10000,
+          "description": "The amount to be paid in NZD, mandatory for ONEOFF",
+          "example": 50.0
+        },
+        "amountType": {
+          "description": "The payment amount type of customer.",
+          "$ref": "#/definitions/AmountType",
+          "example": "ONEOFF"
+        },
+        "clientType": {
+          "description": "The type of client that initiated this request.",
+          "$ref": "#/definitions/ClientType",
+          "example": "SMARTPHONE"
+        }
+      }
+    },
+    "PoliPayTopupRequest": {
+      "type": "object",
+      "required": ["amount", "clientType"],
+      "properties": {
+        "amount": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 100,
+          "description": "The amount to be paid in NZD",
+          "example": 50.0
+        },
+        "clientType": {
+          "description": "The type of client that initiated this request.",
+          "$ref": "#/definitions/ClientType",
+          "example": "SMARTPHONE"
+        }
+      }
+    },
+    "PoliPayResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["token", "redirectUrl"],
+          "properties": {
+            "token": {
+              "type": "string",
+              "description": "Token from polipay to be used by client",
+              "example": "h4hj324hj23hj4hj234hj23hj"
+            },
+            "redirectUrl": {
+              "type": "string",
+              "description": "The URL where the client will be redirected to for proceeding with payment",
+              "example": "https://www.polipay.com/sadasda/dsada"
+            }
+          }
+        }
+      ]
+    },
+    "TransactionTypeEnum": {
+      "type": "string",
+      "enum": [
+        "PAYBILL_AUTHENTICATED",
+        "PAYBILL_UNAUTHENTICATED",
+        "CREDIT_RECONNECTION",
+        "CHANGE_PREPAID_PACK",
+        "PREPAID_BUY_EXTRAS",
+        "POSTPAID_BUY_EXTRAS",
+        "TOPUP_AUTHENTICATED",
+        "ANONYMOUS_TOPUP",
+        "SETUP_MONTHLY_PAYMENT",
+        "MANAGE_WALLET"
+      ],
+      "example": "PAYBILL_AUTHENTICATED"
+    },
+    "InitiateDataRequest": {
+      "description": "Used to store the post information to be used to initiate the POLi pay handshake.",
+      "type": "object",
+      "required": [
+        "amount",
+        "transactionType",
+        "partialPay",
+        "autoRenew",
+        "clientType"
+      ],
+      "properties": {
+        "transactionType": {
+          "description": "Indicates the type of transaction.",
+          "$ref": "#/definitions/TransactionTypeEnum"
+        },
+        "amountType": {
+          "description": "Indicates the payBill amount type.",
+          "type": "string",
+          "enum": ["ONEOFF", "TOTALDUE", "TOTALOVERDUE"],
+          "example": "TOTALDUE"
+        },
+        "amount": {
+          "description": "The amount to be paid in NZD",
+          "type": "number",
+          "minimum": 5,
+          "maximum": 10000,
+          "example": 10.5
+        },
+        "accountNumber": {
+          "description": "The account number for which the bill needs to be paid.",
+          "type": "string",
+          "pattern": "^\\d+$",
+          "example": "13123312"
+        },
+        "customerNumber": {
+          "description": "The customer number of the customer for which the bill to be paid",
+          "type": "string",
+          "pattern": "^\\d+$",
+          "example": "250058110"
+        },
+        "offerId": {
+          "description": "The offerId of the extra to be added.",
+          "type": "string",
+          "example": "valuepack12001"
+        },
+        "partialPay": {
+          "description": "Indicates partial payment. the rest has to be from account.",
+          "type": "boolean",
+          "example": false
+        },
+        "recipient": {
+          "description": "The prepay line number that is requesting for topup.",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "092342738"
+        },
+        "autoRenew": {
+          "description": "Indicates if autorenew needs to be setup on account.",
+          "type": "boolean",
+          "example": false
+        },
+        "clientType": {
+          "description": "The type of client which initiated the request.",
+          "$ref": "#/definitions/ClientType",
+          "example": "SMARTPHONE"
+        }
+      }
+    },
+    "PoliTransactionResultResponse": {
+      "description": "The response payload of POLi pay transaction result.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["transactionType", "autoRenew"],
+          "properties": {
+            "transactionType": {
+              "description": "Indicates the type of transaction.",
+              "$ref": "#/definitions/TransactionTypeEnum"
+            },
+            "transactionReference": {
+              "description": "The transaction reference provided to customer for tracking if required",
+              "type": "string",
+              "example": "transaction-reference"
+            },
+            "amount": {
+              "description": "The amount to be paid in NZD",
+              "type": "number",
+              "minimum": 5,
+              "maximum": 10000,
+              "example": 10.5
+            },
+            "accountNumber": {
+              "description": "The account number for which the bill needs to be paid.",
+              "type": "string",
+              "pattern": "^\\d+$",
+              "example": "13123312"
+            },
+            "offerId": {
+              "description": "The offerId of the extra to be added.",
+              "type": "string",
+              "example": "valuepack12001"
+            },
+            "lineNumber": {
+              "description": "The line number for which extra needs to be bought or topup needs to be done.",
+              "type": "string",
+              "pattern": "^0\\d+$",
+              "example": "092342738"
+            },
+            "offerName": {
+              "description": "The name of the offer purchased",
+              "example": "Netflix HD",
+              "type": "string"
+            },
+            "autoRenew": {
+              "description": "Have or not have auto renew setup for extra",
+              "type": "boolean",
+              "example": true
+            }
+          }
+        }
+      ]
+    },
+    "PoliInitiateResponse": {
+      "description": "The response payload of Polipay initiate endpoint.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["token", "navigationUrl"],
+          "properties": {
+            "token": {
+              "description": "The token provided by polipay as part of initiate response.",
+              "type": "string",
+              "example": "34u34g3423ghj4hjg234hjg23hg"
+            },
+            "navigationUrl": {
+              "description": "The navgationurl provided by polipay for client to redirect.",
+              "type": "string",
+              "example": "https://txn.apac.paywithpoli.com/?token=1kdk2kdfiksdaidfdfd"
+            }
+          }
+        }
+      ]
+    },
+    "PoliInitiateErrorResponse": {
+      "description": "The customized error response for polipay handshake.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["polipayErrorCode"],
+          "properties": {
+            "polipayErrorCode": {
+              "type": "integer",
+              "description": "The error code returned from polipay's initiate endpoint, 0 means a successful transaction",
+              "example": 1022
+            },
+            "polipayErrorMessage": {
+              "type": "string",
+              "description": "A string containing details about the error.",
+              "example": "Mandatory field is missing"
+            }
+          }
+        }
+      ]
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

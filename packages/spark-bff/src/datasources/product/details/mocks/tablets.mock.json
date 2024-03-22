@@ -1,0 +1,1394 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "apple126159spo",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "10.2 iPad (Gen 9) 256GB - Space Grey",
+        "description": "Powerful. Easy to use. Versatile. The new iPad has a beautiful 10.2-inch Retina display, powerful A13 Bionic chip, an Ultra Wide front camera with Center Stage, and works with Apple Pencil and the Smart Keyboard.1 iPad lets you do more, more easily. All for an incredible value.",
+        "category": [
+          {
+            "id": "tablets"
+          },
+          {
+            "id": "tablets_apple_ipad"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 1039,
+          "basePriceExcludingTax": 903.48,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 12
+            },
+            "basePrice": 86.58,
+            "basePriceExcludingTax": 75.29,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 12,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 18
+            },
+            "basePrice": 57.72,
+            "basePriceExcludingTax": 50.19,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 18,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 24
+            },
+            "basePrice": 43.29,
+            "basePriceExcludingTax": 37.64,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 24,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 36
+            },
+            "basePrice": 28.86,
+            "basePriceExcludingTax": 25.1,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 36,
+            "description": null
+          }
+        ],
+        "group": {
+          "id": "10_2_ipad_gen_9_group",
+          "name": "10.2 iPad (Gen 9)",
+          "description": null,
+          "sortOrder": null,
+          "images": [],
+          "isDefault": false
+        },
+        "images": [
+          {
+            "description": null,
+            "id": "10-2iPadGen9256GB-SpaceGrey",
+            "sortOrder": 3,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/Apple/ipad/ipad-10-2-9th-gen/ipad-10-2-3.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "10-2iPadGen9256GB-SpaceGrey",
+            "sortOrder": 1,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/Apple/ipad/ipad-10-2-9th-gen/ipad-10-2-1.jpg",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "10-2iPadGen9256GB-SpaceGrey",
+            "sortOrder": 2,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/Apple/ipad/ipad-10-2-9th-gen/ipad-10-2-2.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Grey",
+          "primaryColor": "Grey",
+          "colorHex": null,
+          "brand": "Apple",
+          "band": "5G",
+          "storage": "256GB"
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": false,
+          "soldSeparately": true,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      },
+      {
+        "id": "apple126158spo",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "10.2 iPad (Gen 9) 64GB - Space Grey",
+        "description": "Powerful. Easy to use. Versatile. The new iPad has a beautiful 10.2-inch Retina display, powerful A13 Bionic chip, an Ultra Wide front camera with Center Stage, and works with Apple Pencil and the Smart Keyboard.1 iPad lets you do more, more easily. All for an incredible value.",
+        "category": [
+          {
+            "id": "tablets"
+          },
+          {
+            "id": "tablets_apple_ipad"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 789,
+          "basePriceExcludingTax": 686.09,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 12
+            },
+            "basePrice": 65.75,
+            "basePriceExcludingTax": 57.17,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 12,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 18
+            },
+            "basePrice": 43.83,
+            "basePriceExcludingTax": 38.11,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 18,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 24
+            },
+            "basePrice": 32.88,
+            "basePriceExcludingTax": 28.59,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 24,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 36
+            },
+            "basePrice": 21.92,
+            "basePriceExcludingTax": 19.06,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 36,
+            "description": null
+          }
+        ],
+        "group": {
+          "id": "10_2_ipad_gen_9_group",
+          "name": "10.2 iPad (Gen 9)",
+          "description": null,
+          "sortOrder": null,
+          "images": [],
+          "isDefault": true
+        },
+        "images": [
+          {
+            "description": null,
+            "id": "10-2iPadGen964GB-SpaceGrey",
+            "sortOrder": 3,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/Apple/ipad/ipad-10-2-9th-gen/ipad-10-2-3.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "10-2iPadGen964GB-SpaceGrey",
+            "sortOrder": 1,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/Apple/ipad/ipad-10-2-9th-gen/ipad-10-2-1.jpg",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "10-2iPadGen964GB-SpaceGrey",
+            "sortOrder": 2,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/Apple/ipad/ipad-10-2-9th-gen/ipad-10-2-2.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Grey",
+          "primaryColor": "Grey",
+          "colorHex": null,
+          "brand": "Apple",
+          "band": "5G",
+          "storage": "64GB"
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": false,
+          "soldSeparately": true,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      },
+      {
+        "id": "samsung125973spo",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Samsung Galaxy Tab S7 FE 5G - Mystic Black",
+        "description": "Get the full tablet experience and more with the Galaxy Tab 7 FE 5G. Immerse yourself in content on the big 12.4” display, complemented by powerful Dolby Atmos sound. Outlast the longest of days with a huge 10,090 mAh battery. Get crafty with the low latency S Pen and Samsung Notes simplifying writing for you - and now, all at 5G speeds. Even get a desktop experience thanks to Samsung DeX.",
+        "category": [
+          {
+            "id": "tablets"
+          },
+          {
+            "id": "tablets_samsung_galaxy_tab"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 1299,
+          "basePriceExcludingTax": 1129.57,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 12
+            },
+            "basePrice": 108.25,
+            "basePriceExcludingTax": 94.13,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 12,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 18
+            },
+            "basePrice": 72.17,
+            "basePriceExcludingTax": 62.76,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 18,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 24
+            },
+            "basePrice": 54.12,
+            "basePriceExcludingTax": 47.06,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 24,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 36
+            },
+            "basePrice": 36.08,
+            "basePriceExcludingTax": 31.37,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 36,
+            "description": null
+          }
+        ],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabS7FE5G-MysticBlack1",
+            "sortOrder": 1,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-s7-fe/galaxy-tab-s7-fe-1.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabS7FE5G-MysticBlack3",
+            "sortOrder": 3,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-s7-fe/galaxy-tab-s7-fe-3.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabS7FE5G-MysticBlack2",
+            "sortOrder": 2,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-s7-fe/galaxy-tab-s7-fe-4.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Black",
+          "primaryColor": "Black",
+          "colorHex": null,
+          "brand": "Samsung",
+          "band": "5G",
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": false,
+          "soldSeparately": true,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      },
+      {
+        "id": "apple125745spo",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "12.9 iPad Pro (Gen 5) 256GB - Space Grey",
+        "description": "iPad Pro combines a beautiful 12.9-inch Retina XDR display1 and tremendous capability with unmatched versatility and ease of use, with 5G models for blazing-fast speeds when you’re away from Wi-Fi.2 And with the powerful M1 Bionic chip, support for Apple pencil,3 and the amazing things you can do with iPadOS 14, there’s even more to love about iPad.",
+        "category": [
+          {
+            "id": "tablets"
+          },
+          {
+            "id": "tablets_apple_ipad"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 2309,
+          "basePriceExcludingTax": 2007.83,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 12
+            },
+            "basePrice": 192.42,
+            "basePriceExcludingTax": 167.32,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 12,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 18
+            },
+            "basePrice": 128.28,
+            "basePriceExcludingTax": 111.55,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 18,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 24
+            },
+            "basePrice": 96.21,
+            "basePriceExcludingTax": 83.66,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 24,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 36
+            },
+            "basePrice": 64.14,
+            "basePriceExcludingTax": 55.77,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 36,
+            "description": null
+          }
+        ],
+        "group": {
+          "id": "12_9_ipad_pro_gen_5_group",
+          "name": "12.9 iPad Pro (Gen 5)",
+          "description": null,
+          "sortOrder": null,
+          "images": [],
+          "isDefault": true
+        },
+        "images": [
+          {
+            "description": null,
+            "id": "12.9iPadPro(Gen 5)256GBSpace Grey ",
+            "sortOrder": 0,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/Apple/ipad/ipad-2021/ipad-pro-12-9-in-cellular-space-gray-2-up.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "PRODUCT"
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Space Grey",
+          "primaryColor": "Grey",
+          "colorHex": null,
+          "brand": "Apple",
+          "band": "4G",
+          "storage": "256GB"
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": false,
+          "soldSeparately": true,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      },
+      {
+        "id": "apple125744spo",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "12.9 iPad Pro (Gen 5) 128GB - Space Grey",
+        "description": "iPad Pro combines a beautiful 12.9-inch Retina XDR display1 and tremendous capability with unmatched versatility and ease of use, with 5G models for blazing-fast speeds when you’re away from Wi-Fi.2 And with the powerful M1 Bionic chip, support for Apple pencil,3 and the amazing things you can do with iPadOS 14, there’s even more to love about iPad.",
+        "category": [
+          {
+            "id": "tablets"
+          },
+          {
+            "id": "tablets_apple_ipad"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 2129,
+          "basePriceExcludingTax": 1851.3,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 12
+            },
+            "basePrice": 177.42,
+            "basePriceExcludingTax": 154.28,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 12,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 18
+            },
+            "basePrice": 118.28,
+            "basePriceExcludingTax": 102.85,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 18,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 24
+            },
+            "basePrice": 88.71,
+            "basePriceExcludingTax": 77.14,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 24,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 36
+            },
+            "basePrice": 59.14,
+            "basePriceExcludingTax": 51.43,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 36,
+            "description": null
+          }
+        ],
+        "group": {
+          "id": "12_9_ipad_pro_gen_5_group",
+          "name": "12.9 iPad Pro (Gen 5)",
+          "description": null,
+          "sortOrder": null,
+          "images": [],
+          "isDefault": false
+        },
+        "images": [
+          {
+            "description": null,
+            "id": "12.9iPadPro(Gen 5)128GBSpaceGrey",
+            "sortOrder": 0,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/Apple/ipad/ipad-2021/ipad-pro-12-9-in-cellular-space-gray-2-up.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "PRODUCT"
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Space Grey",
+          "primaryColor": "Grey",
+          "colorHex": null,
+          "brand": "Apple",
+          "band": "4G",
+          "storage": "128GB"
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": false,
+          "soldSeparately": true,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      },
+      {
+        "id": "samsung125400spo",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Samsung Galaxy Tab A7 4G - Dark Grey",
+        "description": "The Samsung Galaxy Tab A7 4G has a modern, stylish design that’s built to impress. A wide, dynamic display for immersive viewing and Quad Stereo speakers bring content to life, while front and rear cameras enable you to capture life as it unfolds. A long-lasting battery powers you through the day.",
+        "category": [
+          {
+            "id": "tablets"
+          },
+          {
+            "id": "tablets_samsung_galaxy_tab"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 599,
+          "basePriceExcludingTax": 520.87,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 12
+            },
+            "basePrice": 49.92,
+            "basePriceExcludingTax": 43.41,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 12,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 18
+            },
+            "basePrice": 33.28,
+            "basePriceExcludingTax": 28.94,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 18,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 24
+            },
+            "basePrice": 24.96,
+            "basePriceExcludingTax": 21.7,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 24,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 36
+            },
+            "basePrice": 16.64,
+            "basePriceExcludingTax": 14.47,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 36,
+            "description": null
+          }
+        ],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabA74G-DarkGrey",
+            "sortOrder": 4,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-a7/samsung-tab-a7-horizontal-back.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabA74G-DarkGrey",
+            "sortOrder": 2,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-a7/samsung-tab-a7-horizontal-front.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabA74G-DarkGrey",
+            "sortOrder": 5,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-a7/samsung-tab-a7-rside.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabA74G-DarkGrey",
+            "sortOrder": 3,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-a7/samsung-tab-a7-lside-.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabA74G-DarkGrey",
+            "sortOrder": 1,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-a7/samsung-tab-a7-2up.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Dark Grey",
+          "primaryColor": "Grey",
+          "colorHex": null,
+          "brand": "Samsung",
+          "band": "4G",
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": false,
+          "soldSeparately": true,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [
+          {
+            "name": "Mobile Network",
+            "values": [
+              {
+                "value": "3G, 4G (CAT 6)",
+                "group": "Network",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "Size",
+            "values": [
+              {
+                "value": "247.6 x 157.4 x 7 (mm)",
+                "group": "Hardware Specs",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "Bluetooth",
+            "values": [
+              {
+                "value": "v5",
+                "group": "Connectivity",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "Face Unlock",
+            "values": [
+              {
+                "value": "Yes",
+                "group": "Other Features",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "Processor",
+            "values": [
+              {
+                "value": "Qualcomm Snapdragon 662 (Octa Core 2GHz + 1.8GHz)",
+                "group": "Processor",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "Capacity",
+            "values": [
+              {
+                "value": "7040 mAh",
+                "group": "Battery & Other Features",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "SIM Type",
+            "values": [
+              {
+                "value": "Single SIM (nano)",
+                "group": "SIM Details",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "Rear Camera",
+            "values": [
+              {
+                "value": "8MP, f2",
+                "group": "Camera (s)",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "Resolution",
+            "values": [
+              {
+                "value": "2000 x 1200 px ",
+                "group": "Screen",
+                "sortOrder": 1
+              }
+            ],
+            "sortOrder": 1
+          },
+          {
+            "name": "RAM",
+            "values": [
+              {
+                "value": "3 GB",
+                "group": "Processor",
+                "sortOrder": 2
+              }
+            ],
+            "sortOrder": 2
+          },
+          {
+            "name": "Weight",
+            "values": [
+              {
+                "value": "477 g",
+                "group": "Hardware Specs",
+                "sortOrder": 2
+              }
+            ],
+            "sortOrder": 2
+          },
+          {
+            "name": "Front camera",
+            "values": [
+              {
+                "value": "5, f2.4",
+                "group": "Camera (s)",
+                "sortOrder": 2
+              }
+            ],
+            "sortOrder": 2
+          },
+          {
+            "name": "Display size",
+            "values": [
+              {
+                "value": "10.4 \"",
+                "group": "Screen",
+                "sortOrder": 2
+              }
+            ],
+            "sortOrder": 2
+          },
+          {
+            "name": "Wi-Fi",
+            "values": [
+              {
+                "value": "WiFi 5",
+                "group": "Connectivity",
+                "sortOrder": 2
+              }
+            ],
+            "sortOrder": 2
+          },
+          {
+            "name": "Display",
+            "values": [
+              {
+                "value": "LCD",
+                "group": "Screen",
+                "sortOrder": 3
+              }
+            ],
+            "sortOrder": 3
+          },
+          {
+            "name": "Storage",
+            "values": [
+              {
+                "value": "32GB Internal Storage 1TB via external SD card (sold separately)",
+                "group": "Processor",
+                "sortOrder": 3
+              }
+            ],
+            "sortOrder": 3
+          },
+          {
+            "name": "Audio socket",
+            "values": [
+              {
+                "value": "3.5mm",
+                "group": "Hardware Specs",
+                "sortOrder": 3
+              }
+            ],
+            "sortOrder": 3
+          },
+          {
+            "name": "Video",
+            "values": [
+              {
+                "value": "1080p @ 30fps Video recording",
+                "group": "Camera (s)",
+                "sortOrder": 3
+              }
+            ],
+            "sortOrder": 3
+          },
+          {
+            "name": "Wi-Fi hotspot",
+            "values": [
+              {
+                "value": "Yes",
+                "group": "Connectivity",
+                "sortOrder": 3
+              }
+            ],
+            "sortOrder": 3
+          },
+          {
+            "name": "FM Radio",
+            "values": [
+              {
+                "value": "Yes",
+                "group": "Connectivity",
+                "sortOrder": 4
+              }
+            ],
+            "sortOrder": 4
+          },
+          {
+            "name": "USB socket",
+            "values": [
+              {
+                "value": "Type C",
+                "group": "Hardware Specs",
+                "sortOrder": 4
+              }
+            ],
+            "sortOrder": 4
+          }
+        ],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      },
+      {
+        "id": "samsung125396spo",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Samsung Galaxy Tab Active3 4G - Black",
+        "description": "The Galaxy Tab Active3 4G is tough and versatile. This durable tablet can withstand 1.5 metre drops with the included protective cover and is water and dust-resistant. It’s portable and compact and has a S Pen for an easy way to get things done on the go. Even with gloves on, you can take notes, capture ideas, and draw what inspires you all in the outdoors.",
+        "category": [
+          {
+            "id": "tablets"
+          },
+          {
+            "id": "tablets_samsung_galaxy_tab"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 949,
+          "basePriceExcludingTax": 825.22,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 12
+            },
+            "basePrice": 79.08,
+            "basePriceExcludingTax": 68.77,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 12,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 18
+            },
+            "basePrice": 52.72,
+            "basePriceExcludingTax": 45.84,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 18,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 24
+            },
+            "basePrice": 39.54,
+            "basePriceExcludingTax": 34.38,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 24,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 36
+            },
+            "basePrice": 26.36,
+            "basePriceExcludingTax": 22.92,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "creditAmount": null,
+            "creditAmountExcludingTax": null,
+            "taxPercentage": "",
+            "length": 36,
+            "description": null
+          }
+        ],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabActive34G-Black",
+            "sortOrder": 2,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-active3/samsung-tab-active3-rside.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabActive34G-Black",
+            "sortOrder": 1,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-active3/samsung-tab-active3-case-front.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabActive34G-Black",
+            "sortOrder": 5,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-active3/samsung-tab-active3-pen.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabActive34G-Black",
+            "sortOrder": 4,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-active3/samsung-tab-active3-rside.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyTabActive34G-Black",
+            "sortOrder": 3,
+            "defaultUrl": "/content/dam/tnz/mobile/tablets/samsung-galaxy-tab-active3/samsung-tab-active3-back.png",
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": null,
+            "tinyUrl": null,
+            "type": "GALLERY"
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Black",
+          "primaryColor": "Black",
+          "colorHex": null,
+          "brand": "Samsung",
+          "band": "4G",
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": false,
+          "soldSeparately": true,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      }
+    ],
+    "id": "tablets",
+    "name": "Tablets",
+    "description": "Category to group Tablets",
+    "isCategoryContainer": false,
+    "visibility": true,
+    "defaultSelected": null,
+    "sortOrder": null,
+    "subCategories": [
+      {
+        "id": "tablets_apple",
+        "name": "Apple",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "tablets_samsung",
+        "name": "Samsung",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      }
+    ]
+  }
+}

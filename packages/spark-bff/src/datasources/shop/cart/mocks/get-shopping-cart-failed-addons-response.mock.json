@@ -1,0 +1,109 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "cartId": "success-cart-failed-addons-id",
+  "accountRequired": false,
+  "channel": {
+    "id": "bo_lov_saleschannel_online",
+    "name": "Online"
+  },
+  "segment": "Consumer",
+  "price": [
+    {
+      "priceType": "OneOff",
+      "basePrice": 99.0,
+      "basePriceExcludingTax": 86.09,
+      "effectivePrice": 99.0,
+      "effectivePriceExcludingTax": 86.09
+    },
+    {
+      "priceType": "Recurring",
+      "frequency": {
+        "period": "Month",
+        "value": 1
+      },
+      "basePrice": 142.44,
+      "basePriceExcludingTax": 123.86,
+      "effectivePrice": 138.31,
+      "effectivePriceExcludingTax": 120.27
+    }
+  ],
+  "bundles": [
+    {
+      "index": 1,
+      "id": "fail-bundle-id",
+      "lineRequired": false,
+      "category": {
+        "id": "mobile",
+        "name": "Mobile"
+      },
+      "price": [
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 79.99,
+          "basePriceExcludingTax": 69.56,
+          "effectivePrice": 79.99,
+          "effectivePriceExcludingTax": 69.56
+        }
+      ],
+      "items": [
+        {
+          "index": 1,
+          "id": "fake-item-id",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 79.99,
+              "basePriceExcludingTax": 69.56,
+              "effectivePrice": 79.99,
+              "effectivePriceExcludingTax": 69.56,
+              "taxPercentage": 15.0,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "$79.99 Endless Plan",
+          "description": "Ideal if you do a lot of browsing on the go. Enjoy Spotify Premium on us!",
+          "productOfferingId": "mbundle050237",
+          "externalId": "mbundle050237",
+          "contractTerm": {
+            "name": "Endless plan Contract",
+            "description": "1 months contract",
+            "value": 1,
+            "unit": "Month"
+          },
+          "category": [
+            "endless_plans",
+            "mobile_neon",
+            "mobile_spark_sport",
+            "spotify_individual_free_price",
+            "upgrade_cons_bus",
+            "primary_mobile_plan",
+            "multi_product_discount",
+            "mobile_plan_mcafee_extra"
+          ],
+          "shippable": false,
+          "balanceManagement": "POSTPAID",
+          "isIncluded": false,
+          "removable": false
+        }
+      ]
+    }
+  ],
+  "authenticated": true,
+  "guest": true
+}

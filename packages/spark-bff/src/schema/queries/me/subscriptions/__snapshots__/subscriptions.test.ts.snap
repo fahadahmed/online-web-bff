@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Returns empty list when there is no line access. 1`] = `Array []`;
+
+exports[`Returns summary of subscription component offers for a given SparkId. Does not include billing information or CTAs. 1`] = `
+Array [
+  Object {
+    "accountNumber": "369121518",
+    "assetStartDate": "2021-10-12T03:31:03.964Z",
+    "bundleOffer": null,
+    "lineNumber": "0278675179",
+    "offer": Object {
+      "name": "Spotify Premium",
+      "offerId": "misc077770",
+      "productInstanceId": "1-2HAZ77770",
+    },
+    "status": Object {
+      "label": "Active",
+      "type": "ACTIVE",
+    },
+  },
+  Object {
+    "accountNumber": "369121518",
+    "assetStartDate": "2021-03-13T03:31:03.964Z",
+    "bundleOffer": null,
+    "lineNumber": "0278675179",
+    "offer": Object {
+      "name": "Netflix Standard",
+      "offerId": "misc050385",
+      "productInstanceId": "1-2HA22220",
+    },
+    "status": Object {
+      "label": "Active",
+      "type": "ACTIVE",
+    },
+  },
+  Object {
+    "accountNumber": "369121518",
+    "assetStartDate": "2021-10-12T03:31:03.964Z",
+    "bundleOffer": null,
+    "lineNumber": "0278675179",
+    "offer": Object {
+      "name": "Spotify Premium",
+      "offerId": "misc052451",
+      "productInstanceId": "1-2HAZ55550",
+    },
+    "status": Object {
+      "label": "Processing",
+      "type": "PROCESSING_ORDER_ADD",
+    },
+  },
+  Object {
+    "accountNumber": "369121518",
+    "assetStartDate": "2021-11-18T03:31:03.964Z",
+    "bundleOffer": Object {
+      "bundleOfferId": "misc010921",
+      "name": "Neon & Broadband",
+      "productInstanceId": "1-2HAZ11111",
+    },
+    "lineNumber": "0278675179",
+    "offer": Object {
+      "name": "Neon",
+      "offerId": "neon",
+      "productInstanceId": "1-2HAZ11110",
+    },
+    "status": Object {
+      "label": "Updating",
+      "type": "PROCESSING_ACTIVATION",
+    },
+  },
+  Object {
+    "accountNumber": "369121518",
+    "assetStartDate": "2021-09-22T03:31:03.964Z",
+    "bundleOffer": Object {
+      "bundleOfferId": "misc236443",
+      "name": "Spark Sport",
+      "productInstanceId": "1-2HA44441",
+    },
+    "lineNumber": "0278675179",
+    "offer": Object {
+      "name": "Spark Sport",
+      "offerId": "spark_sport",
+      "productInstanceId": "1-2HA44440",
+    },
+    "status": Object {
+      "label": "Ready to activate",
+      "type": "NOT_ACTIVE",
+    },
+  },
+  Object {
+    "accountNumber": "369121518",
+    "assetStartDate": "2021-09-22T03:31:03.964Z",
+    "bundleOffer": Object {
+      "bundleOfferId": "misc583865",
+      "name": "Sky Sport",
+      "productInstanceId": "1-2HA33331",
+    },
+    "lineNumber": "0278675179",
+    "offer": Object {
+      "name": "Sky Sport",
+      "offerId": "sky_sport",
+      "productInstanceId": "1-2HA33330",
+    },
+    "status": Object {
+      "label": "cancelled",
+      "type": "CANCELLED",
+    },
+  },
+  Object {
+    "accountNumber": "369121518",
+    "assetStartDate": "2021-10-12T03:31:03.964Z",
+    "bundleOffer": null,
+    "lineNumber": "0278675179",
+    "offer": Object {
+      "name": "McAfee Security Standard",
+      "offerId": "mcafee-active",
+      "productInstanceId": "1-VX31188",
+    },
+    "status": Object {
+      "label": "Active",
+      "type": "ACTIVE",
+    },
+  },
+  Object {
+    "accountNumber": "369121518",
+    "assetStartDate": "2021-10-12T03:31:03.964Z",
+    "bundleOffer": null,
+    "lineNumber": "0278675179",
+    "offer": Object {
+      "name": "McAfee Security Standard",
+      "offerId": "mcafee-not-active",
+      "productInstanceId": "1-VX31189",
+    },
+    "status": Object {
+      "label": "Ready to activate",
+      "type": "NOT_ACTIVE",
+    },
+  },
+]
+`;

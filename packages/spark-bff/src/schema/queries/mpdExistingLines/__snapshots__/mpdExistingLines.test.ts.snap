@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cart's existingMpdLines returns empty array for guest user 1`] = `Array []`;
+
+exports[`returns the existing mpd lines for account 1`] = `
+Object {
+  "existingMpdLines": Array [
+    Object {
+      "currentDiscountPercentage": Object {
+        "appliedValue": 20,
+        "discountCategory": "Percentage",
+      },
+      "currentPrice": 63.99,
+      "description": "$79.99 Endless Mobile Plan",
+      "existingDiscountPercentage": Object {
+        "appliedValue": 30,
+        "discountCategory": "Percentage",
+      },
+      "lineNumber": "••• ••• ••••",
+      "updatedPrice": 55.99,
+    },
+    Object {
+      "currentDiscountPercentage": Object {
+        "appliedValue": 20,
+        "discountCategory": "Percentage",
+      },
+      "currentPrice": 63.99,
+      "description": "$79.99 Endless Mobile Plan",
+      "existingDiscountPercentage": Object {
+        "appliedValue": 30,
+        "discountCategory": "Percentage",
+      },
+      "lineNumber": "••• ••• ••••",
+      "updatedPrice": 55.99,
+    },
+  ],
+}
+`;

@@ -1,0 +1,108 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "interval": "DAILY",
+  "accountType": "POSTPAID",
+  "sharerType": "NOT_SHARED",
+  "startDateTime": "2021-10-08T00:00:00+13:00",
+  "endDateTime": "2021-10-15T23:59:59+13:00",
+  "averagePeriodUsage": {
+    "value": 768.00293,
+    "unit": "MB"
+  },
+  "averageGroupPeriodUsage": null,
+  "summarisedPeriods": [
+    {
+      "startDateTime": "2021-10-14T11:00:00Z",
+      "endDateTime": "2021-10-15T10:59:59Z",
+      "unbilled": true,
+      "periodUsage": {
+        "value": 1500,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": null
+    },
+    {
+      "startDateTime": "2021-10-13T11:00:00Z",
+      "endDateTime": "2021-10-14T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 0,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": null
+    },
+    {
+      "startDateTime": "2021-10-12T11:00:00Z",
+      "endDateTime": "2021-10-13T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 0,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": null
+    },
+    {
+      "startDateTime": "2021-10-11T11:00:00Z",
+      "endDateTime": "2021-10-12T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 0,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": null
+    },
+    {
+      "startDateTime": "2021-10-10T11:00:00Z",
+      "endDateTime": "2021-10-11T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 2048.007813,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": null
+    },
+    {
+      "startDateTime": "2021-10-09T11:00:00Z",
+      "endDateTime": "2021-10-10T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 1024.003906,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": null
+    },
+    {
+      "startDateTime": "2021-10-08T11:00:00Z",
+      "endDateTime": "2021-10-09T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 1024.003906,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": null
+    },
+    {
+      "startDateTime": "2021-10-07T11:00:00Z",
+      "endDateTime": "2021-10-08T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 2048.007813,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": null
+    }
+  ]
+}

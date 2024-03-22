@@ -1,0 +1,12 @@
+{
+  "serviceProvider": {
+    "id": "42",
+    "name": "Skinny"
+  },
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ]
+}

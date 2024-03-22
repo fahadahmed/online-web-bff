@@ -1,0 +1,97 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/subscriptions/group/spotify_premium",
+  "tags": ["subscriptions:groupContent"],
+  "title": "subscriptions.groupContent",
+  "description": "subscriptions.groupContent",
+  "fields": [
+    {
+      "fieldKey": "faqs.question1",
+      "fieldType": "HEADER",
+      "fieldValue": "Do I have to be new to Spotify to get it with Spark, or can I already have a Spotify Premium account "
+    },
+    {
+      "fieldKey": "faqs.answer1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added Spotify Premium to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your Spotify Premium in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question2",
+      "fieldType": "HEADER",
+      "fieldValue": "How do I start using my Spotify Premium with Spark?"
+    },
+    {
+      "fieldKey": "faqs.answer2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "fieldKey": "faqs.question3",
+      "fieldType": "HEADER",
+      "fieldValue": "When do I need to activate my Spotify Premium?"
+    },
+    {
+      "fieldKey": "faqs.answer3",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added Spotify Premium to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your Spotify Premium in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question4",
+      "fieldType": "HEADER",
+      "fieldValue": "When do I pay for my Spotify Premium?"
+    },
+    {
+      "fieldKey": "faqs.answer4",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "fieldKey": "banner.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Turn up the music this summer",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "banner.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Over 60,000 tracks are uploaded to Spotify everyday."
+    },
+    {
+      "fieldKey": "banner.background",
+      "fieldType": "IMAGE",
+      "fieldValue": "",
+      "fieldUrl": "https://s3-alpha-sig.figma.com/img/011b/7562/ce3a5498b292725d4057cb932ff157a0?Expires=1635120000&Signature=I1AcgIPsh5-qWdd7qtTH1V4T~767iaSuYHwwTuxkdGX5~teGiUlOtDorCBsIoJWUWKoCdsNILBF4WsLX5HNUbud1ESNfEHXZDFbfmOPIETM1vXo4zhqFjfrIUF-LYIwv43~2j20YiYQy6uVo4-L5~sc1poDKsNWpQYIpN25TMFJmBxafuwUfvwyzJkNq8~Ea1ZCMS-5lkigdrJYH1grSEmKKOoGXUwWpahA-ZtTfK55dbcw9fmc1LB0h435d~rGZeCXuz7v3GwbzbnHes-EcHlRB98puaegz1UVDZ-PWNv25y53UExD3uOMg6i7l8kZYffBAczzNHp~RURxmRKM4hA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+      "fieldKey": "banner.link",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "",
+      "fieldUrl": "https://www.spotify.com/nz/premium"
+    },
+    {
+      "fieldKey": "manage.resume.banner.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Turn up the music this summer."
+    },
+    {
+      "fieldKey": "manage.resume.banner.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Over 60,000 tracks are uploaded to Spotify everyday."
+    },
+    {
+      "fieldKey": "manage.resume.banner.background.link",
+      "fieldType": "HYPERLINK",
+      "fieldUrl": "https://www.spotify.com/nz/premium"
+    },
+    {
+      "fieldKey": "manage.resume.banner.background",
+      "fieldType": "IMAGE",
+      "fieldUrl": "https://s3-alpha-sig.figma.com/img/011b/7562/ce3a5498b292725d4057cb932ff157a0?Expires=1635120000&Signature=I1AcgIPsh5-qWdd7qtTH1V4T~767iaSuYHwwTuxkdGX5~teGiUlOtDorCBsIoJWUWKoCdsNILBF4WsLX5HNUbud1ESNfEHXZDFbfmOPIETM1vXo4zhqFjfrIUF-LYIwv43~2j20YiYQy6uVo4-L5~sc1poDKsNWpQYIpN25TMFJmBxafuwUfvwyzJkNq8~Ea1ZCMS-5lkigdrJYH1grSEmKKOoGXUwWpahA-ZtTfK55dbcw9fmc1LB0h435d~rGZeCXuz7v3GwbzbnHes-EcHlRB98puaegz1UVDZ-PWNv25y53UExD3uOMg6i7l8kZYffBAczzNHp~RURxmRKM4hA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    }
+  ]
+}

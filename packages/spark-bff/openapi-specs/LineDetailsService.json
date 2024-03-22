@@ -1,0 +1,1995 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Provide the plan details of line",
+    "version": "2.0.0",
+    "title": "Line details service API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "parameters": {
+    "lineNumber": {
+      "in": "path",
+      "name": "lineNumber",
+      "description": "The line number to retrieve the details",
+      "type": "string",
+      "required": true,
+      "pattern": "^0\\d+$",
+      "x-example": "0275097001"
+    }
+  },
+  "paths": {
+    "/v1/line/{lineNumber}/details": {
+      "get": {
+        "operationId": "getLineDetails",
+        "summary": "Returns the plan, entitlements, extras and promotion details associated with the line",
+        "produces": ["application/json"],
+        "tags": [
+          "line-details",
+          "oidc",
+          "protected",
+          "mysb",
+          "myspark",
+          "public"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/lineNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LineDetails"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to access the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/line/{lineNumber}/plan": {
+      "get": {
+        "operationId": "getLinePlan",
+        "summary": "Returns the plan details associated with the line",
+        "produces": ["application/json"],
+        "tags": [
+          "line-details",
+          "line-plan",
+          "oidc",
+          "protected",
+          "mysb",
+          "myspark",
+          "public"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/lineNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LinePlan"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to access the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "modifyLine",
+        "summary": "This API supports changing of the details of the plan that is currently associated with a nominated line number. ",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "tags": [
+          "line-details",
+          "oidc",
+          "protected",
+          "mysb",
+          "myspark",
+          "public"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number that is nominated",
+            "type": "string",
+            "required": true,
+            "pattern": "^0\\d+$",
+            "x-example": "0275097001"
+          },
+          {
+            "in": "body",
+            "name": "modifyLineRequest",
+            "description": "Modifyline request details of the nominated line",
+            "schema": {
+              "$ref": "#/definitions/ModifyLineRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/ModifyLineResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Unauthorised access",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "Not implemented",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/line/{lineNumber}/allowances": {
+      "get": {
+        "operationId": "getLineAllowances",
+        "summary": "Returns the talk, text and data allowances, extras and entitlements associated with the line",
+        "produces": ["application/json"],
+        "tags": [
+          "line-details",
+          "allowances",
+          "extras",
+          "entitlements",
+          "oidc",
+          "protected",
+          "mysb",
+          "myspark",
+          "public"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/lineNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LineAllowances"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to access the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Plan details could not be found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "LineDetails": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "properties": {
+            "accountNumber": {
+              "description": "Account number of the line",
+              "example": "123456789",
+              "type": "string"
+            },
+            "accountStatus": {
+              "description": "Status of the account which is associated with the line",
+              "example": "Active",
+              "type": "string"
+            },
+            "aliasName": {
+              "description": "Alias name from the line access",
+              "example": "Office number",
+              "type": "string"
+            },
+            "allowChangePlan": {
+              "description": "Flag to indicate the change plan is allowed or not",
+              "example": true,
+              "type": "boolean"
+            },
+            "autoTopupDetails": {
+              "description": "Auto topup details of the line",
+              "$ref": "#/definitions/AutoTopupDetails"
+            },
+            "balanceManagement": {
+              "description": "Balance management value of account associated with line",
+              "enum": ["POSTPAID", "PREPAID"]
+            },
+            "billingFrequencyCode": {
+              "description": "Billing frequency code of the plan associated with this line",
+              "example": "monthly",
+              "type": "string"
+            },
+            "cmoServiceType": {
+              "description": "Type of CMO service",
+              "example": "FIXED VOICE",
+              "type": "string"
+            },
+            "contractEndDate": {
+              "description": "Contract end date",
+              "example": "2020-02-20T00:00:00.000+1300",
+              "format": "date-time",
+              "type": "string"
+            },
+            "contractRenewalType": {
+              "description": "Contract renewal type of plan",
+              "example": "Auto-renew",
+              "type": "string"
+            },
+            "contractStartDate": {
+              "description": "Contract start date",
+              "example": "2020-02-20T00:00:00.000+1300",
+              "format": "date-time",
+              "type": "string"
+            },
+            "contractTermFrequency": {
+              "description": "Contract term frequncy of plan",
+              "example": "No fixed contract",
+              "type": "string"
+            },
+            "contractTermNumber": {
+              "description": "Contract term value",
+              "example": -1,
+              "format": "int32",
+              "type": "integer"
+            },
+            "customerSegment": {
+              "description": "Customer segment of the line",
+              "example": "Consumer",
+              "type": "string"
+            },
+            "dataStackAllowances": {
+              "description": "Data stack allowance detail list applicable for this plan",
+              "items": {
+                "$ref": "#/definitions/DataStackAllowance"
+              },
+              "type": "array"
+            },
+            "entitlements": {
+              "description": "Entitlements of the plan",
+              "items": {
+                "$ref": "#/definitions/EntitlementDetails"
+              },
+              "type": "array"
+            },
+            "externalPromotions": {
+              "description": "External promotions of the line",
+              "items": {
+                "$ref": "#/definitions/ExternalPromotionDetails"
+              },
+              "type": "array"
+            },
+            "extras": {
+              "description": "Extras associated with the line",
+              "items": {
+                "$ref": "#/definitions/ExtraDetails"
+              },
+              "type": "array"
+            },
+            "lineDescription": {
+              "description": "Description of the line",
+              "example": "Iphone number",
+              "type": "string"
+            },
+            "lineNumber": {
+              "description": "Line number",
+              "example": "0273523053",
+              "type": "string"
+            },
+            "offerId": {
+              "description": "Offer id of the plan",
+              "example": "mbundle050289",
+              "type": "string"
+            },
+            "oneNumberDetails": {
+              "description": "One number details associated with the plan",
+              "$ref": "#/definitions/OneNumberDetails"
+            },
+            "price": {
+              "description": "Price of the plan",
+              "example": 39.99,
+              "type": "number"
+            },
+            "priceType": {
+              "example": "GST_EXEMPT",
+              "type": "string"
+            },
+            "productId": {
+              "description": "Plan product id from hybris catalog",
+              "example": "ServicePlan3067",
+              "type": "string"
+            },
+            "productInstanceId": {
+              "description": "Plan product instance id from the Siebel",
+              "example": "1-27KPQIOM",
+              "type": "string"
+            },
+            "productName": {
+              "description": "Plan product name",
+              "example": "Mobile $39.99 Rollover Plan",
+              "type": "string"
+            },
+            "planType": {
+              "description": "Type of the product",
+              "enum": [
+                "ADSL_DATA",
+                "ADSL_DATA_VOICE",
+                "ADSL_VOICE",
+                "COPPER_DATA",
+                "COPPER_DATA_VOICE",
+                "COPPER_VOICE",
+                "FIBRE_DATA",
+                "FIBRE_DATA_VOICE",
+                "FIBRE_VOICE",
+                "LIGHT_BOX",
+                "MOBILE",
+                "MOBILE_BROADBAND",
+                "MOBILE_BROADBAND_POSTPAID_NOTERM",
+                "MOBILE_BROADBAND_POSTPAID_TERM",
+                "MOBILE_BROADBAND_PREPAID",
+                "MOBILE_POSTPAID_DATA_SHARER",
+                "MOBILE_POSTPAID_NORMAL_SHARER",
+                "MOBILE_POSTPAID_NOTERM",
+                "MOBILE_POSTPAID_TERM",
+                "MOBILE_PREPAID",
+                "NONE",
+                "SMARTTECH_WEARABLE_POSTPAID_NOTERM",
+                "SMARTTECH_WEARABLE_POSTPAID_TERM",
+                "SMARTTECH_WEARABLE_PREPAID",
+                "VDSL_DATA",
+                "VDSL_DATA_VOICE",
+                "VDSL_VOICE",
+                "WIRELESS_RURAL_DATA",
+                "WIRELESS_RURAL_DATA_VOICE",
+                "WIRELESS_RURAL_VOICE",
+                "WIRELESS_URBAN_DATA",
+                "WIRELESS_URBAN_DATA_VOICE",
+                "WIRELESS_URBAN_VOICE"
+              ],
+              "example": "MOBILE_POSTPAID_NOTERM"
+            },
+            "rates": {
+              "description": "Casual rates of the plan",
+              "items": {
+                "$ref": "#/definitions/CasualRate"
+              },
+              "type": "array"
+            },
+            "wirelessServiceId": {
+              "description": "Sim number associated with the wireless connection.",
+              "pattern": "^0\\d+$",
+              "example": "0273523053",
+              "type": "string"
+            },
+            "renewalFrequency": {
+              "description": "Plan renewal frequency",
+              "example": "per month",
+              "type": "string"
+            },
+            "roamingDetails": {
+              "description": "Auto purchage roaming product details",
+              "$ref": "#/definitions/RoamingDetails"
+            },
+            "rolloverDetails": {
+              "description": "Auto purchage roaming product details",
+              "$ref": "#/definitions/RolloverDetails"
+            },
+            "serviceAddress": {
+              "description": "Service address",
+              "$ref": "#/definitions/Address"
+            },
+            "serviceEndDate": {
+              "description": "Service end date",
+              "example": "2020-02-20T00:00:00.000+1300",
+              "format": "date-time",
+              "type": "string"
+            },
+            "serviceStartDate": {
+              "description": "Service start date",
+              "example": "2018-09-17T10:05:06.000+1200",
+              "format": "date-time",
+              "type": "string"
+            },
+            "sharePlanDetails": {
+              "description": "Share plan details associated with the plan",
+              "$ref": "#/definitions/SharePlanDetails",
+              "type": "object"
+            },
+            "status": {
+              "description": "Status of the line",
+              "example": "ACTIVE",
+              "type": "string"
+            },
+            "subscriptionTermName": {
+              "description": "Plan subscription term",
+              "example": "No fixed contract",
+              "type": "string"
+            },
+            "tiers": {
+              "description": "Usage tier details associated with the plan",
+              "items": {
+                "$ref": "#/definitions/Tier"
+              },
+              "type": "array"
+            },
+            "validityMessage": {
+              "description": "Plan subscription term validity message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "accountStatus",
+            "allowChangePlan",
+            "balanceManagement",
+            "customerSegment",
+            "lineNumber",
+            "price",
+            "priceType",
+            "productId",
+            "productInstanceId",
+            "productName",
+            "productType",
+            "status"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "LinePlan": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "properties": {
+            "accountNumber": {
+              "description": "Account number of the line",
+              "example": "123456789",
+              "type": "string"
+            },
+            "accountStatus": {
+              "description": "Status of the account which is associated with the line",
+              "example": "Active",
+              "type": "string"
+            },
+            "aliasName": {
+              "description": "Alias name from the line access",
+              "example": "Office number",
+              "type": "string"
+            },
+            "allowChangePlan": {
+              "description": "Flag to indicate the change plan is allowed or not",
+              "example": true,
+              "type": "boolean"
+            },
+            "balanceManagement": {
+              "description": "Balance management value of account associated with line",
+              "enum": ["POSTPAID", "PREPAID"]
+            },
+            "billingFrequencyCode": {
+              "description": "Billing frequency code of the plan associated with this line",
+              "example": "monthly",
+              "type": "string"
+            },
+            "cmoServiceType": {
+              "description": "Type of CMO service",
+              "example": "FIXED VOICE",
+              "type": "string"
+            },
+            "contractEndDate": {
+              "description": "Contract end date",
+              "example": "2020-02-20T00:00:00.000+1300",
+              "format": "date-time",
+              "type": "string"
+            },
+            "contractRenewalType": {
+              "description": "Contract renewal type of plan",
+              "example": "Auto-renew",
+              "type": "string"
+            },
+            "contractStartDate": {
+              "description": "Contract start date",
+              "example": "2020-02-20T00:00:00.000+1300",
+              "format": "date-time",
+              "type": "string"
+            },
+            "contractTermFrequency": {
+              "description": "Contract term frequncy of plan",
+              "example": "No fixed contract",
+              "type": "string"
+            },
+            "contractTermNumber": {
+              "description": "Contract term value",
+              "example": -1,
+              "format": "int32",
+              "type": "integer"
+            },
+            "customerSegment": {
+              "description": "Customer segment of the line",
+              "example": "Consumer",
+              "type": "string"
+            },
+            "externalPromotions": {
+              "description": "External promotions of the line",
+              "items": {
+                "$ref": "#/definitions/ExternalPromotionDetails"
+              },
+              "type": "array"
+            },
+            "lineDescription": {
+              "description": "Description of the line",
+              "example": "Iphone number",
+              "type": "string"
+            },
+            "lineOfBusiness": {
+              "description": "The high-level business unit responsible for this line",
+              "example": "Spark",
+              "type": "string"
+            },
+            "legalCategory": {
+              "description": "The legal category for this line",
+              "example": "Individual",
+              "type": "string"
+            },
+            "lineNumber": {
+              "description": "Line number",
+              "example": "0273523053",
+              "type": "string"
+            },
+            "offerId": {
+              "description": "Offer id of the plan",
+              "example": "mbundle050289",
+              "type": "string"
+            },
+            "oneNumberDetails": {
+              "description": "One number details associated with the plan",
+              "$ref": "#/definitions/OneNumberDetails"
+            },
+            "price": {
+              "description": "Price of the plan",
+              "example": 39.99,
+              "type": "number"
+            },
+            "priceType": {
+              "example": "GST_EXEMPT",
+              "type": "string"
+            },
+            "productId": {
+              "description": "Plan product id from hybris catalog",
+              "example": "ServicePlan3067",
+              "type": "string"
+            },
+            "productInstanceId": {
+              "description": "Plan product instance id from the Siebel",
+              "example": "1-27KPQIOM",
+              "type": "string"
+            },
+            "productName": {
+              "description": "Plan product name",
+              "example": "Mobile $39.99 Rollover Plan",
+              "type": "string"
+            },
+            "planType": {
+              "description": "Type of the product",
+              "enum": [
+                "ADSL_DATA",
+                "ADSL_DATA_VOICE",
+                "ADSL_VOICE",
+                "COPPER_DATA",
+                "COPPER_DATA_VOICE",
+                "COPPER_VOICE",
+                "FIBRE_DATA",
+                "FIBRE_DATA_VOICE",
+                "FIBRE_VOICE",
+                "LIGHT_BOX",
+                "MOBILE",
+                "MOBILE_BROADBAND",
+                "MOBILE_BROADBAND_POSTPAID_NOTERM",
+                "MOBILE_BROADBAND_POSTPAID_TERM",
+                "MOBILE_BROADBAND_PREPAID",
+                "MOBILE_POSTPAID_DATA_SHARER",
+                "MOBILE_POSTPAID_NORMAL_SHARER",
+                "MOBILE_POSTPAID_NOTERM",
+                "MOBILE_POSTPAID_TERM",
+                "MOBILE_PREPAID",
+                "NONE",
+                "SMARTTECH_WEARABLE_POSTPAID_NOTERM",
+                "SMARTTECH_WEARABLE_POSTPAID_TERM",
+                "SMARTTECH_WEARABLE_PREPAID",
+                "VDSL_DATA",
+                "VDSL_DATA_VOICE",
+                "VDSL_VOICE",
+                "WIRELESS_RURAL_DATA",
+                "WIRELESS_RURAL_DATA_VOICE",
+                "WIRELESS_RURAL_VOICE",
+                "WIRELESS_URBAN_DATA",
+                "WIRELESS_URBAN_DATA_VOICE",
+                "WIRELESS_URBAN_VOICE"
+              ],
+              "example": "MOBILE_POSTPAID_NOTERM"
+            },
+            "rates": {
+              "description": "Casual rates of the plan",
+              "items": {
+                "$ref": "#/definitions/CasualRate"
+              },
+              "type": "array"
+            },
+            "wirelessServiceId": {
+              "description": "Sim number associated with the wireless connection.",
+              "pattern": "^0\\d+$",
+              "example": "0273523053",
+              "type": "string"
+            },
+            "renewalFrequency": {
+              "description": "Plan renewal frequency",
+              "example": "per month",
+              "type": "string"
+            },
+            "serviceAddress": {
+              "description": "Service address",
+              "$ref": "#/definitions/Address"
+            },
+            "serviceStartDate": {
+              "description": "Service start date",
+              "example": "2018-09-17T10:05:06.000+1200",
+              "format": "date-time",
+              "type": "string"
+            },
+            "sharerType": {
+              "description": "An enum that indicates whether this plan is currently shared in some manner",
+              "enum": ["NOT_SHARED", "LEADER", "SHARER"],
+              "example": "LEADER"
+            },
+            "status": {
+              "description": "Status of the line",
+              "example": "ACTIVE",
+              "type": "string"
+            },
+            "subscriptionTermName": {
+              "description": "Plan subscription term",
+              "example": "No fixed contract",
+              "type": "string"
+            },
+            "tiers": {
+              "description": "Usage tier details associated with the plan",
+              "items": {
+                "$ref": "#/definitions/Tier"
+              },
+              "type": "array"
+            },
+            "validityMessage": {
+              "description": "Plan subscription term validity message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "accountStatus",
+            "allowChangePlan",
+            "balanceManagement",
+            "customerSegment",
+            "lineOfBusiness",
+            "lineNumber",
+            "price",
+            "priceType",
+            "productId",
+            "productInstanceId",
+            "productName",
+            "productType",
+            "sharerType",
+            "status"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Address": {
+      "properties": {
+        "buildingName": {
+          "description": "Building name",
+          "example": "Palm Apartments",
+          "type": "string"
+        },
+        "dpid": {
+          "description": "Delivery Point ID of address",
+          "example": "1594401",
+          "format": "^[0-9]{7}$",
+          "type": "string"
+        },
+        "elid": {
+          "description": "Electronic Location Identification Number value of the address",
+          "example": "123445667",
+          "format": "^[0-9]+$",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "Latitude value of address",
+          "example": "-35.6865375",
+          "type": "string"
+        },
+        "levelNumber": {
+          "description": "Level number in address",
+          "example": "2",
+          "type": "string"
+        },
+        "levelType": {
+          "description": "Level type in address",
+          "example": "LEVEL",
+          "type": "string"
+        },
+        "locality": {
+          "description": "Locality of address",
+          "example": "AUCKLAND CENTRAL",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "Longitude of the address",
+          "example": "174.7576071",
+          "type": "string"
+        },
+        "postcode": {
+          "description": "Postal code value",
+          "example": "1010",
+          "format": "^[0-9]{4}$",
+          "type": "string"
+        },
+        "streetName": {
+          "description": "Street name in address",
+          "example": "HERETAUNGA",
+          "type": "string"
+        },
+        "streetNumberFirst": {
+          "description": "Street number first",
+          "example": "147",
+          "type": "string"
+        },
+        "streetNumberFirstSuffix": {
+          "description": "Street number first suffix value",
+          "example": "A",
+          "type": "string"
+        },
+        "streetNumberLast": {
+          "description": "Street number last value",
+          "example": "149",
+          "type": "string"
+        },
+        "streetSuffix": {
+          "description": "Street suffix value",
+          "example": "East",
+          "type": "string"
+        },
+        "streetType": {
+          "description": "Type of the street",
+          "example": "STREET",
+          "type": "string"
+        },
+        "subUnitNumber": {
+          "description": "Sub unit number",
+          "example": "75",
+          "type": "string"
+        },
+        "subUnitType": {
+          "description": "Sub unit type",
+          "example": "APARTMENT",
+          "type": "string"
+        },
+        "townOrCity": {
+          "description": "Name of the town or city",
+          "example": "HASTINGS",
+          "type": "string"
+        },
+        "tui": {
+          "description": "Tui value of the address",
+          "example": "1001235998",
+          "type": "string"
+        }
+      },
+      "required": ["elid"],
+      "type": "object"
+    },
+    "AutoPurchase": {
+      "properties": {
+        "description": {
+          "description": "Description of auto purchase pack",
+          "example": "When you arrive overseas in a roaming pack eligible country and start using your device, we'll automatically add and activate a roaming pack for you.",
+          "type": "string"
+        },
+        "settings": {
+          "description": "Auto purchase setting details",
+          "$ref": "#/definitions/AutoPurchaseSetting"
+        },
+        "title": {
+          "description": "Title of the auto purchase",
+          "example": "Auto Buy Roaming",
+          "type": "string"
+        }
+      },
+      "required": ["description", "title"],
+      "type": "object"
+    },
+    "AutoPurchaseSetting": {
+      "properties": {
+        "name": {
+          "description": "Name of the settings",
+          "example": "Automatically purchase pack",
+          "type": "string"
+        },
+        "valueOffers": {
+          "description": "Product details associated with the auto purchase",
+          "items": {
+            "$ref": "#/definitions/Product"
+          },
+          "type": "array"
+        },
+        "valueText": {
+          "description": "Value of the auto purchase setting",
+          "example": "Enabled",
+          "type": "string"
+        }
+      },
+      "required": ["name", "valueOffers", "valueText"],
+      "type": "object"
+    },
+    "AutoTopupDetails": {
+      "properties": {
+        "topupSettings": {
+          "description": "Topup settings associated with the line",
+          "items": {
+            "$ref": "#/definitions/TopupSetting"
+          },
+          "type": "array"
+        }
+      },
+      "required": ["topupSettings"],
+      "type": "object"
+    },
+    "TopupSetting": {
+      "properties": {
+        "cardDetails": {
+          "description": "Card details associated with the topup setting",
+          "$ref": "#/definitions/CardDetails",
+          "type": "object"
+        },
+        "monthlyTopupLimit": {
+          "description": "Maximum monthly topup limit for low balance payment preference",
+          "example": "20",
+          "minimum": 0,
+          "type": "number"
+        },
+        "nextPaymentDate": {
+          "description": "Upcoming payment date of the RT and RT28 payment preference",
+          "example": "2020-06-07T04:14:14Z",
+          "format": "date-time",
+          "type": "string"
+        },
+        "paymentMethodId": {
+          "description": "Id of payment method/setup",
+          "example": "1-2BI25OP4",
+          "type": "string"
+        },
+        "paymentMethodType": {
+          "description": "Payment method type of the payment setup",
+          "example": "CREDIT_CARD",
+          "type": "string"
+        },
+        "paymentPreferenceType": {
+          "description": "Payment preference type of the topup setting",
+          "example": "RT28",
+          "type": "string"
+        },
+        "thresholdAmount": {
+          "description": "Threshlold amount to trigger low balance auto topup payment preference",
+          "example": "20",
+          "minimum": 0,
+          "type": "number"
+        },
+        "topupAmount": {
+          "description": "Topup amount of the topup setting",
+          "example": "20",
+          "minimum": 0,
+          "type": "number"
+        },
+        "topupDay": {
+          "description": "Topup day of RT payment preference",
+          "example": "1",
+          "format": "int32",
+          "minimum": 1,
+          "maximum": 31,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "cardDetails",
+        "paymentMethodId",
+        "paymentMethodType",
+        "paymentPreferenceType",
+        "topupAmount"
+      ],
+      "type": "object"
+    },
+    "CardDetails": {
+      "properties": {
+        "expiryMonth": {
+          "description": "Month of card expiry",
+          "example": "06",
+          "format": "^[0-9]{2}$",
+          "type": "string"
+        },
+        "expiryYear": {
+          "description": "Year of card expiry",
+          "example": "2023",
+          "format": "^[0-9]{4}$",
+          "type": "string"
+        },
+        "issuer": {
+          "description": "Issuer of the card",
+          "example": "VISA",
+          "type": "string"
+        },
+        "lastFourDigits": {
+          "description": "Issuer of the card",
+          "example": "1234",
+          "format": "^[0-9]{4}$",
+          "type": "string"
+        }
+      },
+      "required": ["expiryMonth", "expiryYear", "issuer", "lastFourDigits"],
+      "type": "object"
+    },
+    "CasualRate": {
+      "properties": {
+        "name": {
+          "description": "Name of the casual rate",
+          "example": "Casual data",
+          "type": "string"
+        },
+        "value": {
+          "description": "Value of the casual rate",
+          "example": "$20.00",
+          "type": "string"
+        }
+      },
+      "required": ["name", "value"],
+      "type": "object"
+    },
+    "Country": {
+      "properties": {
+        "code": {
+          "description": "Country code value",
+          "example": "NZL",
+          "type": "string"
+        },
+        "name": {
+          "description": "Name of the country",
+          "example": "New Zealand",
+          "type": "string"
+        },
+        "network": {
+          "description": "Network type supported in country",
+          "example": "4G",
+          "type": "string"
+        }
+      },
+      "required": ["code", "name"],
+      "type": "object"
+    },
+    "DataStackAllowance": {
+      "properties": {
+        "capLimit": {
+          "description": "Limit of the data stack allowance",
+          "example": "1400",
+          "type": "number"
+        },
+        "endDateTime": {
+          "description": "Status of the data stack entitlement",
+          "example": "2020-03-07T23:59:59.000+1300",
+          "format": "date-time",
+          "type": "string"
+        },
+        "id": {
+          "description": "Id of the data stack entitlement",
+          "example": "24352_M_DATA_AUTOBOOST",
+          "type": "string"
+        },
+        "remainingVolume": {
+          "description": "Remaining from data stack allowance",
+          "example": "1400",
+          "type": "number"
+        },
+        "startDateTime": {
+          "description": "Start date of the data stack entitlement",
+          "example": "2020-03-07T23:59:59.000+1300",
+          "format": "date-time",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status of the data stack entitlement",
+          "enum": ["ACTIVE", "GRACE"],
+          "example": "ACTIVE",
+          "type": "string"
+        },
+        "usedVolume": {
+          "description": "Used data from the data stack",
+          "example": "1400",
+          "type": "number"
+        },
+        "volumeType": {
+          "description": "Type/Unit of the volume",
+          "enum": ["KB", "MB", "GB"],
+          "example": "MB"
+        }
+      },
+      "required": [
+        "capLimit",
+        "endDateTime",
+        "id",
+        "remainingVolume",
+        "startDateTime",
+        "status",
+        "volumeType"
+      ],
+      "type": "object"
+    },
+    "EntitlementDetails": {
+      "properties": {
+        "description": {
+          "description": "Description of entitlement",
+          "example": "1GB Rollover data",
+          "type": "string"
+        },
+        "detailedDescription": {
+          "description": "Detailed description of entitlement",
+          "example": "Rollover data is capped at 3.5GB + No rollover on bonus data",
+          "type": "string"
+        },
+        "displayPriority": {
+          "description": "Display priority of entitlement",
+          "example": 1,
+          "format": "int32",
+          "type": "integer"
+        },
+        "id": {
+          "description": "Id of the entitlement",
+          "example": "24037_M_DATA_1GB_ACCOUNT",
+          "type": "string"
+        },
+        "name": {
+          "description": "Name of the entitlement",
+          "example": "Netflix",
+          "type": "string"
+        },
+        "quantity": {
+          "description": "Quantity of the entitlement",
+          "example": 1024,
+          "type": "number"
+        },
+        "subtype": {
+          "description": "Subtype of the entitlement",
+          "example": "netflix",
+          "type": "string"
+        },
+        "throttleMessage": {
+          "description": "The throttle message of the entitlement",
+          "example": "Speed will be reduced after 40GB",
+          "type": "string"
+        },
+        "unlimited": {
+          "description": "True, if unlimited quantity",
+          "example": true,
+          "type": "boolean"
+        },
+        "usageType": {
+          "description": "Type of the entitlement",
+          "example": "Data",
+          "type": "string"
+        },
+        "entitlementQuantityUnit": {
+          "description": "The unit of the quantity",
+          "example": "GB",
+          "type": "string",
+          "enum": ["GB", "MB", "MIN", "TEXT", "MBPS"]
+        }
+      },
+      "required": ["id", "name", "usageType", "unlimited"],
+      "type": "object"
+    },
+    "ExternalPromotionDetails": {
+      "properties": {
+        "description": {
+          "description": "Description of the promotion",
+          "example": "Netflix Premium Ultra HD (+ $5 per month)",
+          "type": "string"
+        },
+        "redirectUrl": {
+          "description": "Redirect url to manage the promotion",
+          "example": "https://www.sandbox.netflix.com/partner/home?ptoken=",
+          "type": "string"
+        },
+        "features": {
+          "description": "Features of the promotions",
+          "example": [
+            "Watch Netflix on four screens at a time.",
+            "HD and Ultra HD available.",
+            "Download videos on four phones or tablets."
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "Name of the promotion",
+          "example": "Netflix Premium Ultra HD (+ $5 per month)",
+          "type": "string"
+        },
+        "offerId": {
+          "description": "Offer id of the promotion",
+          "example": "misc050565",
+          "type": "string"
+        },
+        "partnerPromotionId": {
+          "description": "Promotion id associated with the promotion partner",
+          "example": "79e9bc73-b2b0-41b8-86ae-915f5bdb0253",
+          "type": "string"
+        },
+        "productId": {
+          "description": "Product id of the promotion product in online catalogue",
+          "example": "ExtPromo006",
+          "type": "string"
+        },
+        "productInstanceId": {
+          "description": "Product instance id of the promotion product",
+          "example": "1-2D38T6MC",
+          "type": "string"
+        },
+        "serviceStartDate": {
+          "description": "Service start date of the promotion",
+          "example": "2020-02-24T02:38:29",
+          "format": "date-time",
+          "type": "string"
+        },
+        "state": {
+          "description": "Status of the promotion",
+          "enum": ["Activated", "Enrolled", "Pending Enrol", "PreActive"],
+          "example": "Activated",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status of the promotion",
+          "example": "Active",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type of the external promotion",
+          "enum": ["NETFLIX", "SKYFANPASS"],
+          "example": "NETFLIX",
+          "type": "string"
+        },
+        "version": {
+          "description": "Version of the promotion",
+          "enum": ["V1", "V2", "V3"],
+          "example": "V1",
+          "type": "string"
+        }
+      },
+      "required": ["name", "offerId", "productId", "status", "type", "version"],
+      "type": "object"
+    },
+    "ExtraDetails": {
+      "properties": {
+        "allowedCount": {
+          "description": "The optional number of this type of extra that the customer allowed to have available to activate.",
+          "example": 2,
+          "format": "int32",
+          "type": "integer"
+        },
+        "availableCount": {
+          "description": "The number of this type of extra that the customer currently has available to activate.",
+          "example": 2,
+          "format": "int32",
+          "type": "integer"
+        },
+        "billingFrequencyCode": {
+          "description": "Billing frequency code",
+          "example": "monthly",
+          "type": "string"
+        },
+        "billingFrequencyName": {
+          "description": "Billing frequency name",
+          "example": "per month",
+          "type": "string"
+        },
+        "contractRenewalType": {
+          "description": "Contract renewal type",
+          "example": "Auto-renew",
+          "type": "string"
+        },
+        "contractTermFrequency": {
+          "description": "Contract term frequency",
+          "example": "Month contract",
+          "type": "string"
+        },
+        "contractTermNumber": {
+          "description": "Contract term number",
+          "example": 1,
+          "format": "int32",
+          "type": "integer"
+        },
+        "countries": {
+          "items": {
+            "$ref": "#/definitions/Country"
+          },
+          "type": "array"
+        },
+        "displayPriority": {
+          "description": "Display priority of extra",
+          "example": 1,
+          "format": "int32",
+          "type": "integer"
+        },
+        "entitlements": {
+          "description": "Entitlements of the extra",
+          "items": {
+            "$ref": "#/definitions/EntitlementDetails"
+          },
+          "type": "array"
+        },
+        "renewable": {
+          "description": "Flag to indicate the extra is renewable or not",
+          "example": true,
+          "type": "boolean"
+        },
+        "offerId": {
+          "description": "Offer id of the extra",
+          "example": "mbundle050289",
+          "type": "string"
+        },
+        "periodEndDate": {
+          "description": "End date of the subscription",
+          "example": "2020-03-07T23:59:59.000+1300",
+          "format": "date-time",
+          "type": "string"
+        },
+        "prepaidBasePlanValuePack": {
+          "description": "Flag to indicate the addon/extra product is prepaid base plan value pack",
+          "example": true,
+          "type": "boolean"
+        },
+        "price": {
+          "description": "Price of the extra product",
+          "example": 9.99,
+          "type": "number"
+        },
+        "priceType": {
+          "description": "Price type of the extra",
+          "example": "GST_EXEMPT",
+          "type": "string"
+        },
+        "productId": {
+          "description": "Product id of the extra",
+          "example": "ServicePlan3067",
+          "type": "string"
+        },
+        "productInstanceId": {
+          "description": "Product instance id of the extra",
+          "example": "1-2CXSWLU4",
+          "type": "string"
+        },
+        "productName": {
+          "description": "Name of the product",
+          "example": "$20 data boost",
+          "type": "string"
+        },
+        "renewalFrequency": {
+          "description": "Renewal frequency of the extra",
+          "example": "per month",
+          "type": "string"
+        },
+        "renewalState": {
+          "description": "Renewal state of the extra",
+          "enum": ["GUARANTEE_RENEWAL", "OFF", "ON", "PENDING_PAYMENT"],
+          "example": "OFF"
+        },
+        "status": {
+          "description": "Status of the extra",
+          "example": "ACTIVE",
+          "type": "string"
+        },
+        "subscriptionTermName": {
+          "description": "Subscription term name",
+          "example": "1 Month contract - monthly billing",
+          "type": "string"
+        },
+        "subtype": {
+          "description": "Subtype of the extra",
+          "enum": ["DOMESTIC", "ROAMING"],
+          "example": "DOMESTIC",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type of extra",
+          "example": "MOBILE",
+          "type": "string"
+        },
+        "usageType": {
+          "description": "Usage type of the extra",
+          "example": "Data",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subtype",
+        "type",
+        "offerId",
+        "prepaidBasePlanValuePack",
+        "productId",
+        "productInstanceId",
+        "productName",
+        "status"
+      ],
+      "type": "object"
+    },
+    "LineAllowances": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "properties": {
+            "dataStackAllowances": {
+              "description": "Data stack allowance detail list applicable for this plan",
+              "items": {
+                "$ref": "#/definitions/DataStackAllowance"
+              },
+              "type": "array"
+            },
+            "entitlements": {
+              "description": "Entitlements of the plan",
+              "items": {
+                "$ref": "#/definitions/EntitlementDetails"
+              },
+              "type": "array"
+            },
+            "extras": {
+              "description": "Extras associated with the line",
+              "items": {
+                "$ref": "#/definitions/ExtraDetails"
+              },
+              "type": "array"
+            },
+            "rolloverDetails": {
+              "description": "Auto purchase roaming product details",
+              "$ref": "#/definitions/RolloverDetails"
+            },
+            "sharePlanDetails": {
+              "description": "Share plan details associated with the plan",
+              "$ref": "#/definitions/SharePlanDetails"
+            },
+            "speedAllowances": {
+              "description": "The information about the speed allowance associated with the plan.",
+              "$ref": "#/definitions/SpeedAllowancesDetails"
+            }
+          },
+          "type": "object"
+        }
+      ]
+    },
+    "OneNumberDetails": {
+      "properties": {
+        "primaryLine": {
+          "description": "Flag to identify the primary line",
+          "example": true,
+          "type": "boolean"
+        },
+        "primaryLineNumber": {
+          "description": "Primary line number of one number plan",
+          "example": "027000001",
+          "type": "string"
+        },
+        "secondaryLines": {
+          "description": "Secondary lines associated with the line",
+          "items": {
+            "$ref": "#/definitions/SecondaryLine"
+          },
+          "type": "array"
+        }
+      },
+      "required": ["primaryLine", "primaryLineNumber"],
+      "type": "object"
+    },
+    "RoamingDetails": {
+      "properties": {
+        "autoPurchase": {
+          "description": "Roaming auto purchase details",
+          "$ref": "#/definitions/AutoPurchase"
+        }
+      },
+      "type": "object"
+    },
+    "Product": {
+      "properties": {
+        "activationDescription": {
+          "description": "Activation description of the product",
+          "example": "This pack will automatically activate when you arrive overseas and start using your device.",
+          "type": "string"
+        },
+        "chargePeriod": {
+          "description": "Period information of pack",
+          "example": "per 7 days",
+          "type": "string"
+        },
+        "countries": {
+          "description": "List of pack applicable countries",
+          "items": {
+            "$ref": "#/definitions/Country"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "description of the pack",
+          "example": "200 outgoing mins + 200 incoming mins + 200 roaming text + 1GB roaming data",
+          "type": "string"
+        },
+        "id": {
+          "description": "Id of the product",
+          "example": "roamingpack050285",
+          "type": "string"
+        },
+        "name": {
+          "description": "Name of the product",
+          "example": "Roaming Pack",
+          "type": "string"
+        },
+        "offerId": {
+          "description": "Offer id of the product",
+          "example": "roamingpack050285",
+          "type": "string"
+        },
+        "price": {
+          "description": "Price of the product",
+          "example": "20.55",
+          "type": "number"
+        },
+        "priceType": {
+          "description": "Price type of the product",
+          "example": "GST_EXEMPT",
+          "type": "string"
+        },
+        "usageDescription": {
+          "description": "Usage description of the product",
+          "example": "Casual rates will apply once you use up all of the data, minutes, or texts in the pack.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "activationDescription",
+        "chargePeriod",
+        "countries",
+        "id",
+        "name",
+        "offerId"
+      ],
+      "type": "object"
+    },
+    "RolloverDetails": {
+      "properties": {
+        "rolloverAllowances": {
+          "description": "List of rollover allowance detail",
+          "items": {
+            "$ref": "#/definitions/RolloverAllowance"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "RolloverAllowance": {
+      "properties": {
+        "remainingAmount": {
+          "description": "Remaining amount from roll over allowance",
+          "example": 324.84,
+          "format": "double",
+          "type": "number"
+        },
+        "remainingUnit": {
+          "description": "Remaining amount unit of roll over allowance",
+          "example": "MB",
+          "type": "string"
+        },
+        "rolloverExpiry": {
+          "description": "List of roll over allowance details",
+          "items": {
+            "$ref": "#/definitions/RolloverExpiry"
+          },
+          "type": "array"
+        },
+        "rolloverPriority": {
+          "description": "Rollover priority value",
+          "example": 650,
+          "format": "int32",
+          "type": "integer"
+        },
+        "rolloverStatus": {
+          "description": "Status of the rollover",
+          "example": "ACTIVE",
+          "type": "string"
+        },
+        "rolloverType": {
+          "description": "Type of the rollover",
+          "example": "NZ_DATA",
+          "type": "string"
+        },
+        "usageType": {
+          "description": "Type of usage",
+          "example": "DATA",
+          "type": "string"
+        }
+      },
+      "required": ["remainingAmount", "remainingUnit", "usageType"],
+      "type": "object"
+    },
+    "RolloverExpiry": {
+      "properties": {
+        "expiryAmount": {
+          "description": "Value of expiry amount",
+          "example": 17.87,
+          "type": "number"
+        },
+        "expiryAmountUnit": {
+          "description": "Expiry amount unit",
+          "example": "MB",
+          "type": "string"
+        },
+        "expiryDate": {
+          "description": "Expiry date time",
+          "example": "2020-03-16T10:59:59.000+1300",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": ["expiryAmount", "expiryAmountUnit", "expiryDate"],
+      "type": "object"
+    },
+    "SecondaryLine": {
+      "properties": {
+        "lineNumber": {
+          "description": "line number of secondary line",
+          "example": "027000002",
+          "type": "string"
+        }
+      },
+      "required": ["lineNumber"],
+      "type": "object"
+    },
+    "SharePlanDetails": {
+      "properties": {
+        "groupId": {
+          "description": "Group id of the share plan",
+          "example": "1-172264831099",
+          "type": "string"
+        },
+        "lines": {
+          "description": "List of lines shared the share plan",
+          "items": {
+            "$ref": "#/definitions/SharePlanLineDetails"
+          },
+          "type": "array"
+        },
+        "type": {
+          "description": "Share plan type of the current plan",
+          "example": "SHARER",
+          "$ref": "#/definitions/SharePlanType"
+        }
+      }
+    },
+    "SharePlanLineDetails": {
+      "properties": {
+        "lineNumber": {
+          "description": "Line number of the sharer plan",
+          "example": "027000002",
+          "type": "string"
+        },
+        "planName": {
+          "description": "Plan name of the line",
+          "example": "$19 mobile plan",
+          "type": "string"
+        },
+        "serviceId": {
+          "description": "Service id of the sharer line",
+          "example": "P|1-Y8TVDXZ|SHARER_LIMIT",
+          "type": "string"
+        },
+        "sharerType": {
+          "description": "Sharer type",
+          "enum": ["DATA", "MOBILE"],
+          "example": "DATA",
+          "type": "string"
+        },
+        "type": {
+          "description": "Sharer line type",
+          "example": "SHARER",
+          "$ref": "#/definitions/SharePlanType"
+        }
+      },
+      "required": ["lineNumber", "serviceId", "type"],
+      "type": "object"
+    },
+    "SharePlanType": {
+      "type": "string",
+      "enum": ["LEADER", "SHARER"]
+    },
+    "Tier": {
+      "properties": {
+        "lowerValue": {
+          "description": "Lower value of the tier",
+          "example": 0,
+          "format": "int32",
+          "type": "integer"
+        },
+        "price": {
+          "description": "Amount value of the tier",
+          "example": 69.154,
+          "type": "number"
+        },
+        "upperValue": {
+          "description": "Upper value of the tier",
+          "example": 61440,
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": ["lowerValue", "tierPrice"],
+      "type": "object"
+    },
+    "UsageUnit": {
+      "properties": {
+        "id": {
+          "description": "Id of the usage unit",
+          "example": "PER EVENT",
+          "type": "string"
+        },
+        "name": {
+          "description": "Name of the usage unit",
+          "example": "Per event",
+          "type": "string"
+        },
+        "nameInPlural": {
+          "description": "Name of the usage unit for more than one value",
+          "example": "Per events",
+          "type": "string"
+        }
+      },
+      "required": ["id", "name", "nameInPlural"],
+      "type": "object"
+    },
+    "ModifyLineRequest": {
+      "description": "Includes neccessary information for modifyLine",
+      "properties": {
+        "billingReference": {
+          "description": "The billing reference identifier.",
+          "example": "Single Disconnect",
+          "type": "string"
+        },
+        "billingCostCentre": {
+          "description": "Name of the cost centre to record change costs against.",
+          "example": "Spark",
+          "type": "string"
+        },
+        "contacts": {
+          "description": "A list of optional contact details that holds details of the person who requested the change and the effected user (if not the requestor).",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          },
+          "type": "array"
+        },
+        "generalNotes": {
+          "description": "Notes regarding the change request for recording in the downstream systems.",
+          "example": "Returning the device, as no longer required.",
+          "type": "string"
+        },
+        "terminationDateTime": {
+          "description": "The date that the line termination is requested for.",
+          "example": "2021-02-10T13:00:00Z",
+          "format": "date-time",
+          "type": "string"
+        },
+        "terminationReason": {
+          "description": "The reason for the termination request.",
+          "example": "No Longer Required",
+          "type": "string"
+        }
+      },
+      "required": ["terminationDateTime", "terminationReason"],
+      "type": "object"
+    },
+    "Contact": {
+      "description": "The contact details for the person who should be notified about the fulfilment status of this termination request.",
+      "properties": {
+        "firstName": {
+          "description": "The first name of the contact.",
+          "type": "string",
+          "example": "John"
+        },
+        "lastName": {
+          "description": "The last name of the contact.",
+          "type": "string",
+          "example": "Doe"
+        },
+        "companyName": {
+          "description": "Name of the Company that is associated with the contact",
+          "type": "string",
+          "example": "Spark"
+        },
+        "deliveryAttention": {
+          "description": "Attention line for a delivery address if required",
+          "type": "string",
+          "example": "Doe"
+        },
+        "deliveryAddressElid": {
+          "description": "Delivery address for the contact, identified by ELID",
+          "example": "123456789",
+          "pattern": "^[0-9]+$",
+          "type": "string"
+        },
+        "email": {
+          "description": "The email address of the contact.",
+          "type": "string",
+          "example": "example@email.com"
+        },
+        "alternativePhoneNumber": {
+          "description": "The alternative phone number of the contact.",
+          "type": "string",
+          "example": "0278965242",
+          "pattern": "^0\\d+$"
+        },
+        "mobilePhoneNumber": {
+          "description": "The mobile phone number of the contact.",
+          "type": "string",
+          "example": "0278965242",
+          "pattern": "^0\\d+$"
+        },
+        "workPhoneNumber": {
+          "description": "The work phone number of the contact.",
+          "type": "string",
+          "example": "0278965242",
+          "pattern": "^0\\d+$"
+        },
+        "notificationChannel": {
+          "type": "string",
+          "description": "The notification channel",
+          "enum": ["EMAIL", "SMS", "BOTH", "NONE"],
+          "example": "EMAIL"
+        },
+        "type": {
+          "description": "Type of contact",
+          "example": "DELIVERY",
+          "enum": ["DELIVERY", "OWNER", "USER"],
+          "type": "string"
+        }
+      },
+      "required": ["firstName", "lastName", "type"],
+      "type": "object"
+    },
+    "ModifyLineResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "description": "The ModifyLine response for the nominated line.",
+          "required": [
+            "orderId",
+            "description",
+            "affectedProducts",
+            "nextSteps"
+          ],
+          "properties": {
+            "orderId": {
+              "description": "The order reference number associated with the modifyLine request.",
+              "type": "string",
+              "example": "ONL31010101"
+            },
+            "description": {
+              "description": "Description of the order type and fulfilment process.",
+              "type": "string",
+              "example": "Disconnect plan"
+            },
+            "affectedProducts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AffectedProduct"
+              }
+            },
+            "nextSteps": {
+              "description": "An array of next steps that the customer should follow.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "AffectedProduct": {
+      "type": "object",
+      "description": "The product primarily affected by this order and its subsequent fulfilment request.",
+      "required": ["productId", "productType", "description"],
+      "properties": {
+        "productId": {
+          "description": "The product identifier",
+          "type": "string",
+          "example": "1-2ERT4Y"
+        },
+        "productType": {
+          "description": "The type of product that will be affected.",
+          "type": "string",
+          "enum": ["LINE", "DEVICE"],
+          "example": "LINE"
+        },
+        "description": {
+          "description": "Description of the affected product.",
+          "type": "string"
+        }
+      }
+    },
+    "SpeedAllowancesDetails": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "description": "The status of the speed allowance",
+          "type": "string",
+          "enum": ["DEFAULT", "ACTIVE", "NEXT"],
+          "example": "DEFAULT"
+        },
+        "capLimit": {
+          "description": "The optional current speed cap limit associated with the plan in the unit of measure specified by the unitType attribute.",
+          "type": "number",
+          "example": 270
+        },
+        "unitType": {
+          "description": "The optional string representing the type of units the speed cap is measured by.",
+          "type": "string",
+          "example": "MBps"
+        },
+        "offerId": {
+          "description": "The optional identifier of the product associated with the speed allowance",
+          "type": "string",
+          "example": "boost3511"
+        },
+        "productName": {
+          "description": "The optional name of the product associated with the speed allowance",
+          "type": "string",
+          "example": "4hr Speed Boost"
+        },
+        "allowanceType": {
+          "description": "The optional type of product associated with this speed allowance",
+          "type": "string",
+          "example": "Boost"
+        },
+        "expiryDateTime": {
+          "description": "Expiry date time",
+          "example": "2020-03-16T10:59:59.000+1300",
+          "format": "date-time",
+          "type": "string"
+        },
+        "allowanceRemainingAmount": {
+          "description": "The optional data allowance remaining if the speed allowance is expired after a certain amount of data is consumed.",
+          "type": "number"
+        },
+        "allowanceRemainingUnit": {
+          "description": "The optional unit of measure for a speed allowance that is expired after a certain amount of data is consumed.",
+          "type": "string"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

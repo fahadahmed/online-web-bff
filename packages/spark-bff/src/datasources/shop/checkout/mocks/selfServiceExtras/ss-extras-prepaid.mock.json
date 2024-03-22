@@ -1,0 +1,175 @@
+{
+  "sections": [
+    {
+      "messages": [{ "message": "Success", "code": 2000 }],
+      "customAttributes": null,
+      "name": "Review",
+      "sectionId": "selfServiceReview",
+      "steps": [
+        {
+          "cartItemId": null,
+          "customAttributes": null,
+          "endpoints": null,
+          "fields": [
+            {
+              "customAttributes": [
+                { "key": "component", "value": "cartTable" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "",
+              "name": "review_cart_table",
+              "options": null,
+              "type": "cart_table",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "inlineDatePicker" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": { "expression": "false", "uiFields": null }
+              },
+              "label": "",
+              "name": "change_starting_date",
+              "options": null,
+              "type": "inline_date_picker",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "reviewFootNote" },
+                {
+                  "key": "contentKey",
+                  "value": "footNote.prepaid"
+                }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "",
+              "name": "reviewFootNote",
+              "options": null,
+              "type": "reviewFootNote",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                {
+                  "key": "customItems",
+                  "value": "existingCard, prepaidBalance, voucher, newCard"
+                },
+                {
+                  "key": "component",
+                  "value": "paymentField"
+                }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "",
+              "name": "review_payment_field",
+              "options": null,
+              "type": "review_payment_field",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "toggleButton" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "AutoRenew",
+              "name": "autoRenew",
+              "options": null,
+              "type": "toggle_button",
+              "uiRef": null
+            },
+            {
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "I have read and accept the terms and condtions",
+              "name": "terms_and_conditions",
+              "options": null,
+              "type": "checkOption",
+              "uiRef": null
+            },
+            {
+              "customAttributes": null,
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "Confirm",
+              "name": "Confirm",
+              "options": null,
+              "type": "button",
+              "uiRef": null
+            }
+          ],
+          "groupByLevelEnabled": null,
+          "level": "order",
+          "name": "SelfServiceReviewStep",
+          "offerContainerId": null,
+          "sequence": "0",
+          "stepDataRef": null,
+          "stepId": "Self_service_review",
+          "uiRef": null,
+          "validationExpressions": null,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}

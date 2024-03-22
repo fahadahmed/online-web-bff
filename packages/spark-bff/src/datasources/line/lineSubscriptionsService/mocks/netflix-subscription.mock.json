@@ -1,0 +1,43 @@
+{
+  "offer": {
+    "id": "misc050385",
+    "name": "Netflix Standard",
+    "productInstanceId": "1-2HA22220"
+  },
+  "assetStartDate": "2021-03-13T03:31:03.964Z",
+  "accountNumber": "369121518",
+  "lineNumber": "0278675179",
+  "status": {
+    "type": "ACTIVE",
+    "label": "Active"
+  },
+  "nextRenewalDate": "2021-01-01T00:00:00.000Z",
+  "ctas": [
+    {
+      "type": "ACTIVATE",
+      "label": "Activate Netflix"
+    },
+    {
+      "type": "CANCEL",
+      "label": "Cancel Netflix Standard"
+    },
+    {
+      "type": "CHANGE_PAYMENT_METHOD",
+      "label": "Change payment method"
+    },
+    {
+      "type": "EDIT_PARTNER_ACCOUNT",
+      "label": "Go to Netflix",
+      "webLink": "https://accounts.netflix.com/"
+    },
+    {
+      "type": "RESUME",
+      "label": "Resume Netflix"
+    },
+    {
+      "type": "SWITCH",
+      "label": "Change to Netflix Premium"
+    }
+  ],
+  "autoRenew": "ON"
+}

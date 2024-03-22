@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "length": 7,
+    "interval": "DAYS",
+    "dateTimeStart": "2020-12-25T00:00:00.000Z",
+    "dateTimeEnd": "2021-01-01T00:00:00.000Z",
+    "totalSmsCount": 300,
+    "sentSmsCount": 100,
+    "deliveredSmsCount": 100,
+    "failedSmsCount": 100
+  }
+}

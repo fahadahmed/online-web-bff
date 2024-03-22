@@ -1,0 +1,545 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This service currently offers the ability to update the sharer smartcap of a line.  Doubtless there will be other things added to this in the future.",
+    "version": "1.0.0",
+    "title": "DESL Line Configuration Service API"
+  },
+  "schemes": ["https"],
+  "paths": {
+    "/v1/line/configuration/{lineNumber}/smartcap": {
+      "put": {
+        "tags": ["configuration", "line", "protected", "oidc", "public"],
+        "summary": "Updates the smart cap of the given line.  Currently only works for sharer smartcaps.",
+        "operationId": "updateSharerCap",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number for which the smart caps should be changed.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "02781231123"
+          },
+          {
+            "in": "body",
+            "name": "updateSmartCapRequest",
+            "schema": {
+              "$ref": "#/definitions/UpdateSmartCapRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters were provided.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to update the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["configuration", "line", "protected", "oidc", "public"],
+        "summary": "Deletes the smart cap of the given line.  Currently only works for sharer smartcaps.",
+        "operationId": "deleteSharerCap",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number for which the smart caps should be changed.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "02781231123"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "description": "The type of smart cap to remove",
+            "type": "string",
+            "enum": ["SHARER_LIMIT"],
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters were provided.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to delete the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["configuration", "line", "protected", "oidc", "public"],
+        "summary": "Retrieves the smartcap for a given line, it can be the smart cap on a sharer plan data, or local data or roaming data.",
+        "operationId": "getSmartCap",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number for which the smart caps need to be retrieved",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "02781231123"
+          },
+          {
+            "$ref": "#/parameters/queryType"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GetSmartCapResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters were provided.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to query the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/line/configuration/{lineNumber}/smartcap": {
+      "put": {
+        "tags": ["configuration", "line", "protected", "oidc", "public"],
+        "summary": "Updates the smart cap of the given line, it can be the smart cap on a sharer plan data, or local data or roaming data.",
+        "operationId": "updateSmartCap",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number for which the smart caps should be changed.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "02781231123"
+          },
+          {
+            "in": "body",
+            "name": "updateSmartCapRequest",
+            "schema": {
+              "$ref": "#/definitions/UpdateSmartCapRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters were provided.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to update the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["configuration", "line", "protected", "oidc", "public"],
+        "summary": "Deletes the smart cap of the given line, it can be the smart cap on a sharer plan data, or local data or roaming data.",
+        "operationId": "deleteSmartCap",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number for which the smart caps should be changed.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "02781231123"
+          },
+          {
+            "$ref": "#/parameters/queryType"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters were provided.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to delete the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/line/configuration/{lineNumber}/groupcaps": {
+      "get": {
+        "tags": ["configuration", "line", "protected", "oidc", "public"],
+        "summary": "Retrieves the smartcap for a given line, it can be the smart cap on a sharer plan data, or local data or roaming data.",
+        "operationId": "getGroupCaps",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number for which the smart caps need to be retrieved",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "02781231123"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GetGroupCapsResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters were provided. Line is not part of a group or is not the leader of the group.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to query the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "queryType": {
+      "in": "query",
+      "name": "type",
+      "description": "The type of smart cap",
+      "type": "string",
+      "enum": ["SHARER_LIMIT", "LOCAL", "ROAMING"],
+      "required": true
+    }
+  },
+  "definitions": {
+    "UpdateSmartCapRequest": {
+      "$ref": "#/definitions/SmartCapData"
+    },
+    "Cap": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "The new value of the smartcap.",
+          "example": "1.5"
+        },
+        "unit": {
+          "type": "string",
+          "description": "The units of the value",
+          "enum": ["GB", "MB", "DOLLAR"]
+        }
+      }
+    },
+    "SmartCapData": {
+      "type": "object",
+      "required": ["type", "cap"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of smart cap being applied.",
+          "enum": ["SHARER_LIMIT", "LOCAL", "ROAMING"]
+        },
+        "cap": {
+          "$ref": "#/definitions/Cap"
+        },
+        "isUncapped": {
+          "$ref": "#/definitions/UncappedType"
+        }
+      }
+    },
+    "GetSmartCapResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["SmartCapDetails"],
+          "properties": {
+            "groupId": {
+              "type": "string",
+              "description": "The group id that the line is belong to, it is only required for sharer plan."
+            },
+            "isUncapped": {
+              "$ref": "#/definitions/UncappedType"
+            },
+            "SmartCapDetails": {
+              "$ref": "#/definitions/SmartCapData"
+            }
+          }
+        }
+      ]
+    },
+    "GetGroupCapsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["group"],
+          "properties": {
+            "group": {
+              "$ref": "#/definitions/Group"
+            }
+          }
+        }
+      ]
+    },
+    "Group": {
+      "type": "object",
+      "required": ["id", "name", "members", "totalData"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The Siebel reference id of the group.",
+          "example": "1-189888930761"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the group.",
+          "example": "Mobile"
+        },
+        "totalData": {
+          "description": "An object providing the total data that group has access to.",
+          "$ref": "#/definitions/TotalData"
+        },
+        "members": {
+          "type": "array",
+          "description": "An array of the members which are included in the group.",
+          "items": {
+            "$ref": "#/definitions/Member"
+          }
+        }
+      }
+    },
+    "Member": {
+      "type": "object",
+      "required": ["serviceId", "type", "status", "isUncapped"],
+      "properties": {
+        "serviceId": {
+          "type": "string",
+          "description": "The service/connection number for the group member",
+          "example": "0275988271"
+        },
+        "type": {
+          "type": "string",
+          "description": "The role of the member in the group.  Only expect 'Leader' or 'Mobile Sharer'",
+          "enum": ["Leader", "MobileSharer"],
+          "example": "Leader"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the group member.  Only expect 'Active' or 'Pending'",
+          "example": "Active"
+        },
+        "isUncapped": {
+          "$ref": "#/definitions/UncappedType"
+        },
+        "capValue": {
+          "type": "string",
+          "description": "The value of the sharer cap, it the share group member is capped. Can be 0 or any number. Optional, but required is isUncapped is false.",
+          "example": "500"
+        },
+        "usedValue": {
+          "type": "string",
+          "description": "The amount used by the sharer. Can be 0 or any number. Optional but expected, even if it's 0.",
+          "example": "100"
+        },
+        "unit": {
+          "type": "string",
+          "description": "The units of the value",
+          "enum": ["GB", "MB"],
+          "example": "GB"
+        }
+      }
+    },
+    "UncappedType": {
+      "type": "boolean",
+      "description": "Indicates if the cap is set to unlimited.  If unlimited the value will be true.",
+      "default": false
+    },
+    "TotalData": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "Total data consumed.",
+          "example": "4"
+        },
+        "unit": {
+          "type": "string",
+          "description": "Unit of value.",
+          "enum": ["GB", "MB"],
+          "example": "GB"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "accountNumber": "account-number",
+  "accountRequired": true,
+  "authenticated": true,
+  "guest": false,
+  "cartId": "success-empty-cart-id",
+  "channel": {
+    "id": "bo_lov_saleschannel_online",
+    "name": "Online"
+  },
+  "price": [],
+  "bundles": []
+}

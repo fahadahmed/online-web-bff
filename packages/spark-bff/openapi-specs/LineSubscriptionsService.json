@@ -1,0 +1,435 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Line Subscriptions service to manage line subscriptions",
+    "title": "DESL Line Subscriptions API",
+    "version": "1.0.0"
+  },
+  "schemes": ["https"],
+  "parameters": {
+    "lineNumber": {
+      "in": "path",
+      "name": "lineNumber",
+      "description": "Line number",
+      "type": "string",
+      "pattern": "^0\\d+$",
+      "required": true,
+      "x-example": "017000001"
+    },
+    "productInstanceId": {
+      "in": "path",
+      "name": "productInstanceId",
+      "description": "The product instance id of the vas product",
+      "type": "string",
+      "required": true,
+      "x-example": "1-AEX4322"
+    }
+  },
+  "paths": {
+    "/v1/lines/{lineNumber}/subscriptions/{productInstanceId}/activation": {
+      "get": {
+        "tags": [
+          "subscriptions",
+          "subscriptions activation",
+          "oidc",
+          "protected",
+          "public"
+        ],
+        "operationId": "getActivationUrlForLineProduct",
+        "produces": ["application/json"],
+        "summary": "Return the third-party activation URI that the client should allow the user to navigate to within their browser/app in order to complete the activation of the product associated with this VAS.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/lineNumber"
+          },
+          {
+            "$ref": "#/parameters/productInstanceId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ActivationResponse"
+            }
+          },
+          "400": {
+            "description": "The vas activation request is invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The system failed to process the request.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/lines/subscriptions/me": {
+      "get": {
+        "tags": ["subscriptions", "protected", "oidc", "public"],
+        "summary": "Returns summary of subscription component offers for a given SparkId. Does not include billing information or CTAs.",
+        "operationId": "getLinesSubscriptions",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/LinesSubscriptionsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated access to API",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated myspark id doesn't have access to the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "System error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "The given request type is not implemented.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/lines/{lineNumber}/subscriptions/{productInstanceId}": {
+      "get": {
+        "tags": ["subscriptions", "protected", "oidc", "public"],
+        "summary": "Returns details of subscription component offer for a given SparkId. Includes billing information and CTAs.",
+        "operationId": "getLinesSubscriptionsProductId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/lineNumber"
+          },
+          {
+            "$ref": "#/parameters/productInstanceId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/SubscriptionsProductResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated access to API",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated myspark id doesn't have access to the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "System error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "The given request type is not implemented.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ActivationResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "properties": {
+            "activationUrl": {
+              "description": "The activation url to activate the product at partner site.",
+              "example": "http://partnerxyz/path1?token=nbkjnhkjbkjbkbkjbk",
+              "type": "string"
+            },
+            "lockTtl": {
+              "description": "The lock duration TTL (Time to Live) in seconds of the subscription type for the given product instance id if configured",
+              "example": 900,
+              "type": "integer"
+            },
+            "isReactivation": {
+              "type": "boolean",
+              "description": "Identifies whether the URL is for reactivation.",
+              "example": true
+            }
+          },
+          "required": ["activationUrl", "isReactivation"],
+          "type": "object"
+        }
+      ]
+    },
+    "SubscriptionsProductResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/Subscription"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "lockTtl": {
+              "type": "integer",
+              "description": "The lock TTL (in seconds) for the correlating PROCESSING status."
+            },
+            "nextRenewalDate": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The renewal date-time when the subscription will be next renewed.",
+              "example": "2021-01-01T00:00:00.000Z"
+            },
+            "subscriptionEndDate": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The subscription date-time when the subscription will end.",
+              "example": "2021-01-01T00:00:00.000Z"
+            },
+            "username": {
+              "type": "string",
+              "description": "The username used by the customer to activate the subscription."
+            },
+            "ctas": {
+              "type": "array",
+              "description": "The Call To Actions (CTAs) available for the given Subscription.",
+              "items": {
+                "$ref": "#/definitions/Cta"
+              }
+            },
+            "autorenew": {
+              "type": "string",
+              "enum": ["ON", "OFF", "GR"],
+              "description": "Auto renew status of the asset from Siebel",
+              "example": "ON"
+            }
+          }
+        }
+      ]
+    },
+    "LinesSubscriptionsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["subscriptions"],
+          "properties": {
+            "subscriptions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Subscription"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Subscription": {
+      "type": "object",
+      "description": "Summary of the subscription product.",
+      "required": [
+        "offer",
+        "assetStartDate",
+        "accountNumber",
+        "lineNumber",
+        "status"
+      ],
+      "properties": {
+        "offer": {
+          "$ref": "#/definitions/Offer"
+        },
+        "bundleOffer": {
+          "$ref": "#/definitions/BundleOffer"
+        },
+        "assetStartDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date-time the asset was initially active in Siebel.",
+          "example": "2021-01-01T00:00:00.000Z"
+        },
+        "accountNumber": {
+          "type": "string",
+          "description": "The Siebel account number of which the Subscription product is associated with.",
+          "example": "439129069"
+        },
+        "lineNumber": {
+          "type": "string",
+          "description": "The Siebel line number of which the Subscription product is associated to.",
+          "example": "01660271210"
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
+        }
+      }
+    },
+    "Offer": {
+      "type": "object",
+      "description": "The offer for the subscription",
+      "required": ["id", "name", "productInstanceId"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The BlueMarble unique identifier of the subscription component.",
+          "example": "spotify_component_offer"
+        },
+        "name": {
+          "type": "string",
+          "description": "The BlueMarble offer name of the subscription component.",
+          "example": "Spotify Premium"
+        },
+        "productInstanceId": {
+          "type": "string",
+          "description": "The Siebel product instance id of the offer",
+          "example": "1-2HAZRF52"
+        }
+      }
+    },
+    "BundleOffer": {
+      "type": "object",
+      "description": "The parent bundle offer for the offer",
+      "required": ["id", "productInstanceId"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The BlueMarble unique identifier of the bundle.",
+          "example": "spotify_premium"
+        },
+        "name": {
+          "type": "string",
+          "description": "The BlueMarble offer name of the bundle.",
+          "example": "spotify_premium"
+        },
+        "productInstanceId": {
+          "type": "string",
+          "description": "The Siebel product instance id of the bundle",
+          "example": "1-2HAZ8767"
+        }
+      }
+    },
+    "Status": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The status of the subscription, the following values are supported",
+          "enum": [
+            "NOT_ACTIVE",
+            "ACTIVE",
+            "CANCELLED",
+            "TERMINATED",
+            "PROCESSING_ORDER_AUTORENEW_CANCEL",
+            "PROCESSING_ORDER_AUTORENEW_RESUME",
+            "PROCESSING_ORDER_ADD",
+            "PROCESSING_ORDER_CHANGEPLAN",
+            "PROCESSING_ORDER_CHANGEPAYMENTMETHOD",
+            "PROCESSING_ACTIVATION"
+          ],
+          "example": "ACTIVE"
+        },
+        "label": {
+          "type": "string",
+          "description": "The label of the subscription, the following values are supported; [\"Ready to activate\", \"Active\", \"Cancelled\",\"Cancelled\", \"Processing\", \"Processing\", \"Processing\", \"Processing\", \"Updating\"]",
+          "example": "Active"
+        }
+      }
+    },
+    "Cta": {
+      "type": "object",
+      "description": "The Call To Actions (CTAs) available for the given Subscription.",
+      "required": ["type", "label"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ACTIVATE",
+            "CANCEL",
+            "RESUME",
+            "CHANGE_PAYMENT_METHOD",
+            "EDIT_PARTNER_ACCOUNT",
+            "ACTIVATE_RETRY",
+            "REACTIVATE"
+          ],
+          "description": "The cta type. Possible values are;",
+          "example": "ACTIVATE"
+        },
+        "label": {
+          "type": "string",
+          "description": "the cta label. Possible values are; [\"Activate (offer.name)\", \"Cancel (offerBundle.name)\", \"Resume (offerBundle.name)\", \"Change payment method\", \"Go to (offer.productFeatures.brand)\", \"Start again\"]",
+          "example": "Active"
+        },
+        "webLink": {
+          "type": "string",
+          "description": "The web link if opening external tab or webview of the CTA.",
+          "example": "https://accounts.spotify.com/"
+        }
+      }
+    },
+    "Message": {
+      "properties": {
+        "code": {
+          "type": "integer"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": ["message", "code"],
+      "type": "object"
+    },
+    "Response": {
+      "properties": {
+        "messages": {
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          },
+          "type": "array"
+        }
+      },
+      "required": ["messages"],
+      "type": "object"
+    }
+  }
+}

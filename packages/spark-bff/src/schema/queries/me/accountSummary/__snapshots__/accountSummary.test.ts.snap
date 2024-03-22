@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`successfully retrieves the account summary for a valid account number 1`] = `
+Object {
+  "firstName": "DAMON GLENN",
+  "lastName": "BAKER",
+}
+`;

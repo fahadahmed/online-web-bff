@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "Unauthorised access to API",
+      "code": "4008"
+    }
+  ]
+}

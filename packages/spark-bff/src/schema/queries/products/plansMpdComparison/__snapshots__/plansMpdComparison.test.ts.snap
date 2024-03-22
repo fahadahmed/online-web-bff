@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns the plans comparison data with no errors 1`] = `
+Object {
+  "plansMpdComparison": Object {
+    "bundles": Array [
+      Object {
+        "id": "47e92b98-d01c-49f8-8b64-ec60b7d4685d",
+        "items": Array [
+          Object {
+            "action": "add",
+            "name": "$99.99 Endless Group Plan",
+            "price": Object {
+              "basePrice": 99.99,
+              "discount": Object {
+                "appliedValue": 30,
+                "discountType": "Percentage",
+              },
+              "effectivePrice": 69.99,
+              "period": "Month",
+              "priceType": "Recurring",
+            },
+            "productOfferingId": "dollar99_99_endless_group_plan",
+          },
+          Object {
+            "action": "delete",
+            "name": "$59.99 Endless Mobile Plan",
+            "price": null,
+            "productOfferingId": "dollar59_99_endless_mobile_plan",
+          },
+        ],
+        "lineNumber": "0271111111",
+      },
+    ],
+    "cartId": "23a6a542-c65b-4216-b6c7-c528d4627090",
+    "existingPlans": Array [
+      Object {
+        "currentPrice": Object {
+          "basePrice": 79.99,
+          "discount": Object {
+            "appliedValue": 20,
+            "discountType": "Percentage",
+          },
+          "effectivePrice": 63.99,
+          "period": "Month",
+          "priceType": "Recurring",
+        },
+        "name": "$79.99 Endless Mobile Plan",
+        "productOfferingId": "dollar79_99_endless_group_plan",
+        "updatedPrice": Object {
+          "basePrice": 79.99,
+          "discount": Object {
+            "appliedValue": 30,
+            "discountType": "Percentage",
+          },
+          "effectivePrice": 55.99,
+          "period": "Month",
+          "priceType": "Recurring",
+        },
+      },
+      Object {
+        "currentPrice": Object {
+          "basePrice": 79.99,
+          "discount": Object {
+            "appliedValue": 20,
+            "discountType": "Percentage",
+          },
+          "effectivePrice": 63.99,
+          "period": "Month",
+          "priceType": "Recurring",
+        },
+        "name": "$79.99 Endless Mobile Plan",
+        "productOfferingId": "dollar79_99_endless_group_plan",
+        "updatedPrice": Object {
+          "basePrice": 79.99,
+          "discount": Object {
+            "appliedValue": 30,
+            "discountType": "Percentage",
+          },
+          "effectivePrice": 55.99,
+          "period": "Month",
+          "priceType": "Recurring",
+        },
+      },
+    ],
+  },
+}
+`;

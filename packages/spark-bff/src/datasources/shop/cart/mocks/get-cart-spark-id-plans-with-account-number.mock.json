@@ -1,0 +1,499 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "accountNumber": "702894573",
+  "cartId": "success-spark-id-plans-with-account-number-cart-id",
+  "accountRequired": false,
+  "channel": {
+    "id": "bo_lov_saleschannel_online",
+    "name": "Online"
+  },
+  "segment": "Consumer",
+  "price": [
+    {
+      "priceType": "OneOff",
+      "basePrice": 99,
+      "basePriceExcludingTax": 86.09,
+      "basePriceTax": 12.91,
+      "effectivePrice": 99,
+      "effectivePriceExcludingTax": 86.09,
+      "effectivePriceTax": 12.91
+    },
+    {
+      "priceType": "OneOff",
+      "basePrice": 26.9,
+      "basePriceExcludingTax": 23.39,
+      "basePriceTax": 3.51,
+      "effectivePrice": 26.9,
+      "effectivePriceExcludingTax": 23.39,
+      "effectivePriceTax": 3.51
+    },
+    {
+      "priceType": "Recurring",
+      "frequency": {
+        "period": "Month",
+        "value": 1
+      },
+      "basePrice": 234.42,
+      "basePriceExcludingTax": 203.84,
+      "basePriceTax": 30.58,
+      "effectivePrice": 230.29,
+      "effectivePriceExcludingTax": 200.26,
+      "effectivePriceTax": 30.03,
+      "discount": {
+        "name": "Price change",
+        "discountType": "Flat",
+        "appliedValue": 4.13,
+        "appliedValueExcludingTax": 3.58,
+        "discountedValue": 4.13,
+        "discountedValueExcludingTax": 3.58
+      }
+    }
+  ],
+  "bundles": [
+    {
+      "index": 1,
+      "id": "f4abe282-ac3a-4ba9-9b84-655486784325",
+      "lineRequired": false,
+      "category": {
+        "id": "mobile",
+        "name": "Mobile"
+      },
+      "price": [
+        {
+          "priceType": "OneOff",
+          "basePrice": 99,
+          "basePriceExcludingTax": 86.09,
+          "basePriceTax": 12.91,
+          "effectivePrice": 99,
+          "effectivePriceExcludingTax": 86.09,
+          "effectivePriceTax": 12.91
+        },
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 154.95,
+          "basePriceExcludingTax": 134.74,
+          "basePriceTax": 20.21,
+          "effectivePrice": 150.82,
+          "effectivePriceExcludingTax": 131.15,
+          "effectivePriceTax": 19.67,
+          "discount": {
+            "name": "Price change",
+            "discountType": "Flat",
+            "appliedValue": 4.13,
+            "appliedValueExcludingTax": 3.59,
+            "discountedValue": 4.13,
+            "discountedValueExcludingTax": 3.59
+          }
+        }
+      ],
+      "items": [
+        {
+          "index": 1,
+          "id": "f8f3f20a-e100-4de5-b013-6effd77fe792",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 79.99,
+              "basePriceExcludingTax": 69.56,
+              "basePriceTax": 10.43,
+              "effectivePrice": 79.99,
+              "effectivePriceExcludingTax": 69.56,
+              "effectivePriceTax": 10.43,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "$79.99 Endless Plan",
+          "description": "Ideal if you do a lot of browsing on the go. Enjoy Spotify Premium on us!",
+          "productOfferingId": "mbundle050237",
+          "externalId": "mbundle050237",
+          "category": [
+            "endless_plans",
+            "mobile_neon",
+            "mobile_spark_sport",
+            "spotify_individual_free_price",
+            "upgrade_cons_bus",
+            "primary_mobile_plan"
+          ],
+          "shippable": false,
+          "balanceManagement": "POSTPAID",
+          "isIncluded": false,
+          "removable": false
+        },
+        {
+          "index": 2,
+          "id": "7b7360df-f79e-4ee5-9e03-a653d4874315",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 0,
+              "basePriceExcludingTax": 0,
+              "basePriceTax": 0,
+              "effectivePrice": 0,
+              "effectivePriceExcludingTax": 0,
+              "effectivePriceTax": 0,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "Spotify Premium",
+          "description": "Endlessly stream, skip and share music & podcasts with Spotify Premium.",
+          "productOfferingId": "spotify_premium_included",
+          "externalId": "vasbundle070019",
+          "category": ["mobile_spotify", "mobile_vas"],
+          "shippable": false,
+          "balanceManagement": "POSTPAID",
+          "isIncluded": true,
+          "removable": false
+        },
+        {
+          "index": 3,
+          "id": "f68a7ca0-e6e4-4b52-966c-29b6fd63adee",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 74.96,
+              "basePriceExcludingTax": 65.18,
+              "basePriceTax": 9.78,
+              "effectivePrice": 70.83,
+              "effectivePriceExcludingTax": 61.6,
+              "effectivePriceTax": 9.23,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0,
+              "discount": {
+                "name": "Price change",
+                "discountType": "Flat",
+                "appliedValue": 4.13,
+                "appliedValueExcludingTax": 3.58,
+                "discountedValue": 4.13,
+                "discountedValueExcludingTax": 3.58
+              }
+            },
+            {
+              "priceType": "OneOff",
+              "basePrice": 99,
+              "basePriceExcludingTax": 86.09,
+              "basePriceTax": 12.91,
+              "effectivePrice": 99,
+              "effectivePriceExcludingTax": 86.09,
+              "effectivePriceTax": 12.91,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "iPhone 13 Pro 128GB - Graphite",
+          "description": "iPhone\u202f13\u202fPro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15\u202fBionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+          "productOfferingId": "apple126132spo",
+          "externalId": "apple126132SPO",
+          "category": ["handsets", "handsets_apple_iphone_13_pro"],
+          "contractTerm": {
+            "name": "IFP Term",
+            "description": "IFP Term",
+            "value": 24,
+            "unit": "Month"
+          },
+          "shippable": true,
+          "isIncluded": false,
+          "removable": false
+        },
+        {
+          "index": 4,
+          "id": "109c861e-e438-4b47-a525-57566f290904",
+          "action": "add",
+          "quantity": 1,
+          "price": [],
+          "name": "Interest free payment over 24 months",
+          "description": "Interest free payment over 24 months",
+          "productOfferingId": "interest_free_payment_over_24_months",
+          "category": ["ifp"],
+          "shippable": false,
+          "isIncluded": false,
+          "removable": true
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "f2b09286-4a6c-4415-8571-c418e8b5ac2b",
+      "lineRequired": false,
+      "category": {
+        "id": "mobile",
+        "name": "Mobile"
+      },
+      "price": [
+        {
+          "priceType": "OneOff",
+          "basePrice": 26.9,
+          "basePriceExcludingTax": 23.39,
+          "basePriceTax": 3.51,
+          "effectivePrice": 26.9,
+          "effectivePriceExcludingTax": 23.39,
+          "effectivePriceTax": 3.51
+        }
+      ],
+      "items": [
+        {
+          "index": 1,
+          "id": "34ea9285-150a-4f62-a6ff-15cfcbcb0e8f",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "OneOff",
+              "frequency": {
+                "period": "Day",
+                "value": 28
+              },
+              "basePrice": 20,
+              "basePriceExcludingTax": 17.39,
+              "basePriceTax": 2.61,
+              "effectivePrice": 20,
+              "effectivePriceExcludingTax": 17.39,
+              "effectivePriceTax": 2.61,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "$20 Prepaid Value Pack",
+          "description": "Ideal for those who love to text and use a small amount of data and calling.",
+          "productOfferingId": "valuepack050312",
+          "externalId": "valuepack050312",
+          "category": [
+            "addon_prepaid",
+            "prepaid_value_pack",
+            "prepaid_extra_value_packs"
+          ],
+          "shippable": false,
+          "balanceManagement": "PREPAID",
+          "isIncluded": false,
+          "removable": false
+        },
+        {
+          "index": 3,
+          "id": "2ae5a775-dad8-44df-8ec0-88bee05d464b",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "OneOff",
+              "frequency": {
+                "period": "Day",
+                "value": 28
+              },
+              "basePrice": 6.9,
+              "basePriceExcludingTax": 6,
+              "basePriceTax": 0.9,
+              "effectivePrice": 6.9,
+              "effectivePriceExcludingTax": 6,
+              "effectivePriceTax": 0.9,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "Spotify Premium",
+          "description": "Endlessly stream, skip and share music & podcasts with Spotify Premium.",
+          "productOfferingId": "spotify_premium_prepaid",
+          "externalId": "vasbundle070019",
+          "category": ["mobile_spotify", "mobile_vas"],
+          "shippable": false,
+          "balanceManagement": "PREPAID",
+          "isIncluded": false,
+          "removable": true
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "bb7ee884-e02a-43c0-bcca-703ed0ec0c4d",
+      "lineRequired": false,
+      "category": {
+        "id": "account_vas",
+        "name": "Account VAS"
+      },
+      "price": [
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 11.99,
+          "basePriceExcludingTax": 10.43,
+          "basePriceTax": 1.56,
+          "effectivePrice": 11.99,
+          "effectivePriceExcludingTax": 10.43,
+          "effectivePriceTax": 1.56
+        }
+      ],
+      "items": [
+        {
+          "index": 1,
+          "id": "ce7b812f-88a5-47b3-9277-f94bbe095434",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 11.99,
+              "basePriceExcludingTax": 10.43,
+              "basePriceTax": 1.56,
+              "effectivePrice": 11.99,
+              "effectivePriceExcludingTax": 10.43,
+              "effectivePriceTax": 1.56,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "Neon",
+          "description": "Enjoy hit shows, movies and blockbusters all in one place with Neon.",
+          "productOfferingId": "neon_bundle",
+          "externalId": "vasbundle050849",
+          "category": ["account_vas", "neon"],
+          "shippable": false,
+          "balanceManagement": "POSTPAID",
+          "isIncluded": false,
+          "removable": false
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "id": "66eb43c7-295b-4d86-ad3d-5e09ce43fc37",
+      "lineRequired": false,
+      "category": {
+        "id": "mobile",
+        "name": "Mobile"
+      },
+      "price": [
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 67.48,
+          "basePriceExcludingTax": 58.68,
+          "basePriceTax": 8.8,
+          "effectivePrice": 67.48,
+          "effectivePriceExcludingTax": 58.68,
+          "effectivePriceTax": 8.8
+        }
+      ],
+      "items": [
+        {
+          "index": 1,
+          "id": "2de00c16-9e22-40af-98d2-784b64821baa",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 59.99,
+              "basePriceExcludingTax": 52.17,
+              "basePriceTax": 7.82,
+              "effectivePrice": 59.99,
+              "effectivePriceExcludingTax": 52.17,
+              "effectivePriceTax": 7.82,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "$59.99 Endless Plan",
+          "description": "Enjoy unlimited calls, texts and endless data.",
+          "productOfferingId": "mbundle050820",
+          "externalId": "mbundle050820",
+          "category": [
+            "endless_plans",
+            "mobile_neon",
+            "mobile_spark_sport",
+            "spotify_individual_half_price",
+            "upgrade_cons_bus",
+            "primary_mobile_plan"
+          ],
+          "shippable": false,
+          "balanceManagement": "POSTPAID",
+          "isIncluded": false,
+          "removable": false
+        },
+        {
+          "index": 2,
+          "id": "e258d2d9-4bf5-4686-b870-239072ee1f8d",
+          "action": "add",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 7.49,
+              "basePriceExcludingTax": 6.51,
+              "basePriceTax": 0.98,
+              "effectivePrice": 7.49,
+              "effectivePriceExcludingTax": 6.51,
+              "effectivePriceTax": 0.98,
+              "taxPercentage": 15,
+              "periodStart": 0,
+              "length": 0
+            }
+          ],
+          "name": "Spotify Premium",
+          "description": "Endlessly stream, skip and share music & podcasts with Spotify Premium.",
+          "productOfferingId": "spotify_premium_half_price",
+          "externalId": "vasbundle070019",
+          "category": ["mobile_vas", "mobile_spotify"],
+          "shippable": false,
+          "balanceManagement": "POSTPAID",
+          "isIncluded": false,
+          "removable": true
+        }
+      ]
+    }
+  ],
+  "authenticated": true,
+  "guest": false
+}

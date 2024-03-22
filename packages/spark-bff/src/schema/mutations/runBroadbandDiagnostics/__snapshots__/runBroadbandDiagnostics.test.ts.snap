@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns error response for unsupported line number 1`] = `
+Object {
+  "broadbandDiagnostics": null,
+  "code": 4041,
+  "message": "Performing connection diagnostics on this line is unsupported.",
+  "success": false,
+}
+`;
+
+exports[`returns success response for running broadband diagnostics 1`] = `
+Object {
+  "broadbandDiagnostics": Object {
+    "modemModel": "HG630b",
+    "results": Array [
+      Object {
+        "availableCTAs": Array [],
+        "desc": null,
+        "diagnosticSummaryCode": null,
+        "testExecuted": true,
+        "testLabel": "Copper network",
+        "testPassed": true,
+        "testType": "NETWORK",
+        "title": null,
+      },
+      Object {
+        "availableCTAs": Array [
+          Object {
+            "ctaType": "CONNECTION_TROUBLESHOOTER",
+            "label": "Troubleshoot",
+            "webAction": null,
+          },
+          Object {
+            "ctaType": "CHAT",
+            "label": "Message us",
+            "webAction": null,
+          },
+          Object {
+            "ctaType": "DIAGNOSTIC_CHECK",
+            "label": "Test again",
+            "webAction": null,
+          },
+        ],
+        "desc": "There are no issues with the Copper network however, we have detected an issue with your modem settings, click troubleshoot to get your internet up and running.",
+        "diagnosticSummaryCode": "internet_down-modem_can_not_reach",
+        "testExecuted": true,
+        "testLabel": "Modem",
+        "testPassed": false,
+        "testType": "ACCESS_POINT",
+        "title": "You're not connected to the internet",
+      },
+      Object {
+        "availableCTAs": Array [],
+        "desc": null,
+        "diagnosticSummaryCode": null,
+        "testExecuted": true,
+        "testLabel": "Internet",
+        "testPassed": false,
+        "testType": "CONNECTIVITY",
+        "title": null,
+      },
+    ],
+    "testSuiteCompleted": true,
+    "testSuiteType": "COPPER",
+  },
+  "code": 2000,
+  "message": "success",
+  "success": true,
+}
+`;

@@ -1,0 +1,14 @@
+{
+  "serviceRequests": [
+    {
+      "serviceRequestId": "REQ001055759",
+      "contentProviderId": 1,
+      "assignedShortcodeNumber": "1234",
+      "requestedShortcodeNumber": "1234",
+      "messageType": "STANDARD",
+      "status": "OPEN",
+      "dateTimeCreated": "2020-12-25T00:00:00.000Z",
+      "dateTimeModified": "2020-12-25T00:00:00.000Z"
+    }
+  ]
+}

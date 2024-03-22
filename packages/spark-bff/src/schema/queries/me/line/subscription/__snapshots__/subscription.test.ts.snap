@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Returns a subscription for a given lineNumber and productInstanceId. Does not include billing information but does include CTAs. 1`] = `
+Object {
+  "line": Object {
+    "subscription": Object {
+      "accountNumber": "369121518",
+      "assetStartDate": "2021-11-18T03:31:03.964Z",
+      "bundleOffer": Object {
+        "bundleOfferId": "misc010921",
+        "name": "Neon & Broadband",
+        "productInstanceId": "1-2HAZ11111",
+      },
+      "ctas": Array [
+        Object {
+          "label": "Start again",
+          "type": "ACTIVATE_RETRY",
+          "webLink": null,
+        },
+        Object {
+          "label": "Go to Neon",
+          "type": "EDIT_PARTNER_ACCOUNT",
+          "webLink": "https://accounts.neon.com/",
+        },
+      ],
+      "lineNumber": "0278675179",
+      "nextRenewalDate": "2021-01-01T00:00:00.000Z",
+      "offer": Object {
+        "name": "Neon",
+        "offerId": "neon",
+        "productInstanceId": "1-2HAZ11110",
+      },
+      "status": Object {
+        "label": "Updating",
+        "type": "PROCESSING_ACTIVATION",
+      },
+    },
+  },
+}
+`;

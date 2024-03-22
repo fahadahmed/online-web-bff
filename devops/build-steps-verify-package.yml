@@ -1,0 +1,5 @@
+steps:
+  - bash: |
+      yarn build:verify
+    displayName: 'Build Packages'
+    workingDirectory: $(Build.SourcesDirectory)

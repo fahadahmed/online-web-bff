@@ -1,0 +1,867 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "count": 3689,
+  "filters": [
+    {
+      "name": "Brand",
+      "options": [
+        {
+          "name": "Samsung",
+          "count": 60
+        },
+        {
+          "name": "Apple",
+          "count": 59
+        },
+        {
+          "name": "OPPO",
+          "count": 8
+        },
+        {
+          "name": "CAT",
+          "count": 2
+        },
+        {
+          "name": "Nokia",
+          "count": 2
+        },
+        {
+          "name": "Alcatel",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Colour",
+      "options": [
+        {
+          "name": "Black",
+          "count": 21
+        },
+        {
+          "name": "Green",
+          "count": 13
+        },
+        {
+          "name": "Midnight",
+          "count": 9
+        },
+        {
+          "name": "Graphite",
+          "count": 8
+        },
+        {
+          "name": "Phantom White",
+          "count": 7
+        },
+        {
+          "name": "Sierra Blue",
+          "count": 7
+        },
+        {
+          "name": "Blue",
+          "count": 6
+        },
+        {
+          "name": "Starlight",
+          "count": 6
+        },
+        {
+          "name": "Gold",
+          "count": 5
+        },
+        {
+          "name": "Silver",
+          "count": 5
+        },
+        {
+          "name": "Alpine Green",
+          "count": 4
+        },
+        {
+          "name": "Pink",
+          "count": 4
+        },
+        {
+          "name": "Pink Gold",
+          "count": 4
+        },
+        {
+          "name": "Red",
+          "count": 4
+        },
+        {
+          "name": "Burgundy",
+          "count": 3
+        },
+        {
+          "name": "White",
+          "count": 3
+        },
+        {
+          "name": "Awesome Black",
+          "count": 2
+        },
+        {
+          "name": "Cream",
+          "count": 2
+        },
+        {
+          "name": "Awesome Blue",
+          "count": 1
+        },
+        {
+          "name": "Awesome Grey",
+          "count": 1
+        },
+        {
+          "name": "Awesome Mint",
+          "count": 1
+        },
+        {
+          "name": "Awesome White",
+          "count": 1
+        },
+        {
+          "name": "Ceramic White",
+          "count": 1
+        },
+        {
+          "name": "Cloud Navy",
+          "count": 1
+        },
+        {
+          "name": "Cosmo Blue",
+          "count": 1
+        },
+        {
+          "name": "Dark Grey",
+          "count": 1
+        },
+        {
+          "name": "Fluid Black",
+          "count": 1
+        },
+        {
+          "name": "Glaze Black",
+          "count": 1
+        },
+        {
+          "name": "Grey",
+          "count": 1
+        },
+        {
+          "name": "Lavender",
+          "count": 1
+        },
+        {
+          "name": "Mystic Bronze",
+          "count": 1
+        },
+        {
+          "name": "Nordic Blue",
+          "count": 1
+        },
+        {
+          "name": "Olive",
+          "count": 1
+        },
+        {
+          "name": "Peach",
+          "count": 1
+        },
+        {
+          "name": "Pearl Blue",
+          "count": 1
+        },
+        {
+          "name": "Phantom Grey",
+          "count": 1
+        },
+        {
+          "name": "Violet",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Compatible SIM",
+      "options": [
+        {
+          "name": "Dual SIM (pSIM + eSIM)",
+          "count": 103
+        },
+        {
+          "name": "dual sim (pSIM + eSIM)",
+          "count": 103
+        },
+        {
+          "name": "Dual SIM (pSIM + pSIM)",
+          "count": 27
+        },
+        {
+          "name": "dual sim (pSIM + pSIM)",
+          "count": 27
+        },
+        {
+          "name": "Single SIM (eSIM)",
+          "count": 1
+        },
+        {
+          "name": "Single SIM (pSIM)",
+          "count": 1
+        },
+        {
+          "name": "single sim (eSIM)",
+          "count": 1
+        },
+        {
+          "name": "single sim (pSIM)",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Default Offer Term",
+      "options": [
+        {
+          "name": "36",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "Default Plan ID",
+      "options": [
+        {
+          "name": "mbundle050820",
+          "count": 131
+        }
+      ]
+    },
+    {
+      "name": "Deferrable Flag",
+      "options": [
+        {
+          "name": "true",
+          "count": 128
+        },
+        {
+          "name": "false",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "Delivery Message",
+      "options": [
+        {
+          "name": "3-5 working days",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "Extended Delivery",
+      "options": [
+        {
+          "name": "false",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "Featured Product",
+      "options": [
+        {
+          "name": "false",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "Hardware Only",
+      "options": [
+        {
+          "name": "true",
+          "count": 79
+        },
+        {
+          "name": "false",
+          "count": 54
+        }
+      ]
+    },
+    {
+      "name": "Hex Code",
+      "options": [
+        {
+          "name": "#000000",
+          "count": 25
+        },
+        {
+          "name": "#232A31",
+          "count": 9
+        },
+        {
+          "name": "#54524F",
+          "count": 8
+        },
+        {
+          "name": "#4E6460",
+          "count": 7
+        },
+        {
+          "name": "#A7C1D9",
+          "count": 7
+        },
+        {
+          "name": "#F1F1F3",
+          "count": 7
+        },
+        {
+          "name": "#FAF6F2",
+          "count": 6
+        },
+        {
+          "name": "#276787",
+          "count": 5
+        },
+        {
+          "name": "#DAA520",
+          "count": 5
+        },
+        {
+          "name": "#EBEBE3",
+          "count": 5
+        },
+        {
+          "name": "#FFFFFF",
+          "count": 5
+        },
+        {
+          "name": "#576856",
+          "count": 4
+        },
+        {
+          "name": "#DC4342",
+          "count": 4
+        },
+        {
+          "name": "#F4E2DE",
+          "count": 4
+        },
+        {
+          "name": "#FADDD7",
+          "count": 4
+        },
+        {
+          "name": "#0000FF",
+          "count": 3
+        },
+        {
+          "name": "#00FF00",
+          "count": 3
+        },
+        {
+          "name": "#4A5B49",
+          "count": 3
+        },
+        {
+          "name": "#7C5961",
+          "count": 3
+        },
+        {
+          "name": "#D3D3D3",
+          "count": 2
+        },
+        {
+          "name": "#F7F1D5",
+          "count": 2
+        },
+        {
+          "name": "#3A465B",
+          "count": 1
+        },
+        {
+          "name": "#3E3F43",
+          "count": 1
+        },
+        {
+          "name": "#3EA3C7",
+          "count": 1
+        },
+        {
+          "name": "#405C6F",
+          "count": 1
+        },
+        {
+          "name": "#535354",
+          "count": 1
+        },
+        {
+          "name": "#A7A98B",
+          "count": 1
+        },
+        {
+          "name": "#B3B3CC",
+          "count": 1
+        },
+        {
+          "name": "#BE938A",
+          "count": 1
+        },
+        {
+          "name": "#C5DAD2",
+          "count": 1
+        },
+        {
+          "name": "#E1D3ED",
+          "count": 1
+        },
+        {
+          "name": "#F5BC9F",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "IsShippable",
+      "options": [
+        {
+          "name": "true",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "Network Capability",
+      "options": [
+        {
+          "name": "5G",
+          "count": 116
+        },
+        {
+          "name": "4G",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "name": "Network Element Type",
+      "options": [
+        {
+          "name": "Mobile",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "Payment Type",
+      "options": [
+        {
+          "name": "Both",
+          "count": 131
+        },
+        {
+          "name": "Postpaid",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Primary Colour",
+      "options": [
+        {
+          "name": "Black",
+          "count": 43
+        },
+        {
+          "name": "White",
+          "count": 20
+        },
+        {
+          "name": "Green",
+          "count": 19
+        },
+        {
+          "name": "Blue",
+          "count": 18
+        },
+        {
+          "name": "Pink",
+          "count": 9
+        },
+        {
+          "name": "Red",
+          "count": 7
+        },
+        {
+          "name": "Gold",
+          "count": 5
+        },
+        {
+          "name": "Silver",
+          "count": 5
+        },
+        {
+          "name": "Grey",
+          "count": 3
+        },
+        {
+          "name": "Purple",
+          "count": 2
+        },
+        {
+          "name": "Brown",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Product Label",
+      "options": [
+        {
+          "name": "Device",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "Product Type",
+      "options": [
+        {
+          "name": "Handset",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "SKU",
+      "options": [
+        {
+          "name": "HDSAMA235FBK",
+          "count": 2
+        },
+        {
+          "name": "HDSAMA235FOR",
+          "count": 2
+        },
+        {
+          "name": "HDALC3082TGY",
+          "count": 1
+        },
+        {
+          "name": "HDCATB40BK",
+          "count": 1
+        },
+        {
+          "name": "HDCATS62PROBK",
+          "count": 1
+        },
+        {
+          "name": "HDNOKC01PLUSBL",
+          "count": 1
+        },
+        {
+          "name": "HDNOKG21BL",
+          "count": 1
+        },
+        {
+          "name": "HDOPPA16SBL",
+          "count": 1
+        },
+        {
+          "name": "HDOPPA54BK",
+          "count": 1
+        },
+        {
+          "name": "HDOPPA94BL",
+          "count": 1
+        },
+        {
+          "name": "HDOPPX5BK",
+          "count": 1
+        },
+        {
+          "name": "HDOPPX5LITEBK",
+          "count": 1
+        },
+        {
+          "name": "HDOPPX5PROBK",
+          "count": 1
+        },
+        {
+          "name": "HDOPPX5PROWT",
+          "count": 1
+        },
+        {
+          "name": "HDOPPX5WT",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA035FBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA135FBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA135FWT",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA226BGY",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA226BVL",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA336EBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA336EBL",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA536EBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMA536EWT",
+          "count": 1
+        },
+        {
+          "name": "HDSAMF707BBZ",
+          "count": 1
+        },
+        {
+          "name": "HDSAMG525FBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMG780GBL",
+          "count": 1
+        },
+        {
+          "name": "HDSAMG990EGR",
+          "count": 1
+        },
+        {
+          "name": "HDSAMG990EGY",
+          "count": 1
+        },
+        {
+          "name": "HDSAMG990EVL",
+          "count": 1
+        },
+        {
+          "name": "HDSAMG990EWH",
+          "count": 1
+        },
+        {
+          "name": "HDSAMG990EZGY",
+          "count": 1
+        },
+        {
+          "name": "HDSAMG991BGY",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS901EBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS901EGR",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS901EPG",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS901EWT",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS901EZBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS901EZGR",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS901EZPG",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS901EZWT",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS906EBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS906EGR",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS906EIBK",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS906EIGR",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS906EIPG",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS906EIWT",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS906EPG",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS906EWT",
+          "count": 1
+        },
+        {
+          "name": "HDSAMS908EBG",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Segment",
+      "options": [
+        {
+          "name": "Consumer",
+          "count": 132
+        }
+      ]
+    },
+    {
+      "name": "Size",
+      "options": [
+        {
+          "name": "256GB",
+          "count": 41
+        },
+        {
+          "name": "128GB",
+          "count": 39
+        },
+        {
+          "name": "512GB",
+          "count": 12
+        },
+        {
+          "name": "64GB",
+          "count": 5
+        },
+        {
+          "name": "1TB",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Charge Type",
+      "options": [
+        {
+          "name": "Onetime",
+          "count": 128
+        }
+      ]
+    },
+    {
+      "name": "Warranty Months",
+      "options": [
+        {
+          "name": "24",
+          "count": 128
+        }
+      ]
+    },
+    {
+      "name": "Price",
+      "options": [
+        {
+          "name": "0",
+          "count": 510
+        },
+        {
+          "name": "200",
+          "count": 14
+        },
+        {
+          "name": "400",
+          "count": 4
+        },
+        {
+          "name": "600",
+          "count": 7
+        },
+        {
+          "name": "800",
+          "count": 8
+        },
+        {
+          "name": "1000",
+          "count": 7
+        },
+        {
+          "name": "1200",
+          "count": 15
+        },
+        {
+          "name": "1400",
+          "count": 19
+        },
+        {
+          "name": "1600",
+          "count": 18
+        },
+        {
+          "name": "1800",
+          "count": 17
+        },
+        {
+          "name": "2000",
+          "count": 11
+        },
+        {
+          "name": "2200",
+          "count": 7
+        },
+        {
+          "name": "2400",
+          "count": 3
+        },
+        {
+          "name": "2600",
+          "count": 3
+        },
+        {
+          "name": "2800",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

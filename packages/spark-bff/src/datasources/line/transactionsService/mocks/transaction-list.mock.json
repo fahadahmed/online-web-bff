@@ -1,0 +1,366 @@
+{
+  "accountType": "PREPAID",
+  "startDateTime": "2020-01-01T00:00:00.000+13:00",
+  "endDateTime": "2020-03-02T00:00:00.000+13:00",
+  "pageSize": 20,
+  "nextPageKey": null,
+  "transactions": [
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-02-01T23:32:31.000+13:00",
+      "endDateTime": "2020-02-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 32,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$30.00 POLi payment",
+      "value": 50,
+      "isGSTInclusive": false,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-02-02T23:32:31.000+13:00",
+      "endDateTime": "2020-02-10T23:32:31.000+13:00",
+      "previousBalance": 10,
+      "currentBalance": 100,
+      "isDebit": true,
+      "type": "Payment",
+      "description": "$30.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": false,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "FAILED",
+        "paymentMethod": "FULL",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-02-03T23:32:31.000+13:00",
+      "endDateTime": "2020-02-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 32,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$30.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": false,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-07-04T23:32:31.000+13:00",
+      "endDateTime": "2020-09-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 32,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$90.00 POLi payment",
+      "value": 90,
+      "isGSTInclusive": false,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-03-05T23:32:31.000+13:00",
+      "endDateTime": "2020-04-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 57,
+      "isDebit": true,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-06T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 57,
+      "isDebit": true,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-03-07T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 57,
+      "isDebit": true,
+      "type": "Payment",
+      "description": "$15.00 Poli payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-12-08T23:32:31.000+13:00",
+      "endDateTime": "2021-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 165,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-09T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 65,
+      "isDebit": true,
+      "type": "Payment",
+      "description": "$50.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": false,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-10T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 57,
+      "isDebit": true,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-11T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 75,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$100.00 ANZ payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-12T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 86,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-13T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 86,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-14T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 86,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-15T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 86,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-16T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 86,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    },
+    {
+      "transactionType": "PAYMENT",
+      "startDateTime": "2020-09-17T23:32:31.000+13:00",
+      "endDateTime": "2020-12-10T23:32:31.000+13:00",
+      "previousBalance": 2,
+      "currentBalance": 86,
+      "isDebit": false,
+      "type": "Payment",
+      "description": "$70.00 POLi payment",
+      "value": 30,
+      "isGSTInclusive": true,
+      "paymentDetails": {
+        "paymentId": "158559663",
+        "paymentChannel": "ONLINE",
+        "paymentStatus": "APPLIED",
+        "paymentMethod": "POLI",
+        "paymentReference": "71759935"
+      },
+      "chargeDetails": null,
+      "adjustmentDetails": null
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns eligible lines details 1`] = `
+Array [
+  Object {
+    "accountNumber": "351858111",
+    "lineNumber": "0278675110",
+    "offerId": "mbundle050290",
+    "offerName": "Mobile $59.99 Rollover Plan",
+  },
+  Object {
+    "accountNumber": "351858111",
+    "lineNumber": "0278675112",
+    "offerId": "mbundle050290",
+    "offerName": "Mobile $59.99 Rollover Plan",
+  },
+  Object {
+    "accountNumber": "421858221",
+    "lineNumber": "0278675118",
+    "offerId": "mbundle050290",
+    "offerName": "Mobile $59.99 Rollover Plan",
+  },
+]
+`;

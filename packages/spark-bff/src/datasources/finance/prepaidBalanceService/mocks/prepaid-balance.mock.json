@@ -1,0 +1,49 @@
+{
+  "messages": [
+    {
+      "message": "Request Processed Successfully.",
+      "code": 2000
+    }
+  ],
+  "lineNumber": "0272547109",
+  "balanceDetails": {
+    "balance": 4.0,
+    "balanceExpiryDate": "2022-02-22T00:00:00.000+1200",
+    "retrievalDate": "2020-03-04T14:03:23.954+1300",
+    "lastTopUpAmount": 19.0,
+    "lastTopUpDate": "2019-08-19T05:16:19.000+1200"
+  },
+  "summaryMessage": {
+    "primary": "You have a balance $4.0",
+    "secondary": "",
+    "teritary": "",
+    "primaryCta": {
+      "label": "Top up",
+      "code": "TOPUP"
+    }
+  },
+  "detailMessage": {
+    "primary": "Your balance is $5.25``highlight``",
+    "secondary": "The next auto topup will be debited from your credit card in 2 days.",
+    "teritary": "",
+    "status": null,
+    "primaryCta": {
+      "label": "Top up",
+      "code": "TOPUP"
+    },
+    "secondaryCta": {
+      "label": "Manage pack or extra",
+      "code": "MANAGE_PACK_OR_EXTRA"
+    },
+    "otherCtas": [
+      {
+        "label": "Set up auto top up",
+        "code": "SETUP_AUTO_TOPUP"
+      },
+      {
+        "label": "Buy a pack",
+        "code": "BUY_PACK_OR_EXTRA"
+      }
+    ]
+  }
+}

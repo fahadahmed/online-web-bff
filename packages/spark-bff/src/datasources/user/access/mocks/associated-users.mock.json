@@ -1,0 +1,36 @@
+{
+  "access": [
+    {
+      "uuid": "SSC7333845957327295",
+      "email": "bob.builder@toytown.com",
+      "type": "GIVEN",
+      "firstName": "Bob",
+      "lastName": "Builder",
+      "role": "Owner"
+    },
+    {
+      "uuid": "SSC2423456753567743",
+      "email": "robin.hood@sherwoodforest.com.uk",
+      "type": "GIVEN",
+      "firstName": "Robin",
+      "lastName": "Hood",
+      "role": "Manager",
+      "isRevoked": true
+    },
+    {
+      "uuid": "SSC9753256789688426",
+      "email": "batman@arkhamcity.com",
+      "type": "GIVEN",
+      "firstName": "Bruce",
+      "lastName": "Wayne",
+      "role": "Manager",
+      "isPending": true
+    }
+  ],
+  "messages": [
+    {
+      "message": "Access retrieved successfully.",
+      "code": 1234
+    }
+  ]
+}

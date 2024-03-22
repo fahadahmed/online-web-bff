@@ -1,0 +1,229 @@
+{
+  "storeList": [
+    {
+      "id": "store1",
+      "name": "Chartwell Mall",
+      "address": "150/201 Hukanui Road, Chartwell, Hamilton",
+      "phoneNumber": "07-852 5480",
+      "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      "inStock": true,
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Thursday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Friday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Saturday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Sunday",
+          "open": "9am",
+          "close": "6pm"
+        }
+      ]
+    },
+    {
+      "id": "store2",
+      "name": "Centerplace Mall",
+      "address": "501 Victoria Street, Hamilton",
+      "phoneNumber": "07-852 5480",
+      "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      "inStock": true,
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Thursday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Friday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Saturday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Sunday",
+          "open": "9am",
+          "close": "6pm"
+        }
+      ]
+    },
+    {
+      "id": "store3",
+      "name": "Rototuna Centre",
+      "address": "124 Rototuna Road, Rototuna",
+      "phoneNumber": "07-852 5480",
+      "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      "inStock": true,
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Thursday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Friday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Saturday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Sunday",
+          "open": "9am",
+          "close": "6pm"
+        }
+      ]
+    },
+    {
+      "id": "store4",
+      "name": "The Base",
+      "address": "Te Rapa Road &, Wairere Drive, Hamilton",
+      "phoneNumber": "07-852 5480",
+      "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      "inStock": false,
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Thursday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Friday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Saturday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Sunday",
+          "open": "9am",
+          "close": "6pm"
+        }
+      ]
+    },
+    {
+      "id": "store5",
+      "name": "Hillcrest Mall",
+      "address": "Hillcrest Road, Hamilton East, Hamilton",
+      "phoneNumber": "07-852 5480",
+      "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      "inStock": false,
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Thursday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Friday",
+          "open": "9am",
+          "close": "7pm"
+        },
+        {
+          "day": "Saturday",
+          "open": "9am",
+          "close": "6pm"
+        },
+        {
+          "day": "Sunday",
+          "open": "9am",
+          "close": "6pm"
+        }
+      ]
+    }
+  ]
+}

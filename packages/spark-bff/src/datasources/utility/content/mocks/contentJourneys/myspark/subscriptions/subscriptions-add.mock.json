@@ -1,0 +1,75 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/subscriptions/add",
+  "tags": ["subscriptions:add"],
+  "title": "subscriptions.add",
+  "description": "subscriptions.add",
+  "fields": [
+    {
+      "fieldKey": "groups.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Add a new subscription"
+    },
+    {
+      "fieldKey": "groups.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Enjoy more benefits from Spark"
+    },
+    {
+      "fieldKey": "groups.notEmpty.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Get special offers on entertainment based on your Spark plans."
+    },
+    {
+      "fieldKey": "groups.empty.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "We'll keep you updated on new subscriptions coming to Spark via your Dashboard."
+    },
+    {
+      "fieldKey": "groups.empty.tile.description",
+      "fieldType": "HEADING",
+      "fieldValue": "You've added all subscriptions on offer to you."
+    },
+    {
+      "fieldKey": "groups.empty.tile.image",
+      "fieldType": "IMAGE",
+      "fieldValue": "Great news! image",
+      "fieldUrl": "https://www.oxygenna.com/wp-content/uploads/2015/11/18.jpg"
+    },
+    {
+      "fieldKey": "add.successLayer.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Nearly there! Get ready to activate {name}."
+    },
+    {
+      "fieldKey": "add.successLayer.description1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Your payment of {subscription.type.amount} has been taken. Before you can start using {name}, you’ll need to activate it in MySpark."
+    },
+    {
+      "fieldKey": "add.successLayer.description2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "We'll send you a notification in the next 15 minutes when its ready to activate."
+    },
+    {
+      "fieldKey": "grouped.multipleOffers.header",
+      "fieldType": "HEADING",
+      "fieldValue": "You have {subscriptions.count} {group.name} price offers to choose from."
+    },
+    {
+      "fieldKey": "grouped.singleOffer.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Your {group.name} offer is ready to be added."
+    },
+    {
+      "fieldKey": "grouped.multipleOffers.description",
+      "fieldType": "HEADING",
+      "fieldValue": "You'll see multiple {offerDetails.productFeatures.brand} offers, as pricing is based on your different Spark plans"
+    }
+  ]
+}

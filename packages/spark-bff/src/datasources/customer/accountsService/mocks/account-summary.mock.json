@@ -1,0 +1,16 @@
+{
+  "balanceManagement": "Postpaid",
+  "billEmailAddress": "baker.damon@gmail.com",
+  "billingMediaType": "Email",
+  "firstName": "DAMON GLENN",
+  "gstInclusiveFlag": true,
+  "inCollections": false,
+  "lastName": "BAKER",
+  "status": "Active",
+  "messages": [
+    {
+      "message": "Request Processed Successfully.",
+      "code": 2000
+    }
+  ]
+}

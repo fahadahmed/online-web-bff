@@ -1,0 +1,58 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "id": "online-shop/cart",
+  "site": "spark",
+  "tags": ["mpa:"],
+  "title": "cart",
+  "description": "cart",
+  "fields": [
+    {
+      "fieldKey": "deleteBundle.text",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Item removed from cart. Any offers related to that item may be removed.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "deleteItem.text",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Item removed from cart.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "deleteFailed.text",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Failed to remove from cart.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "undoFailed.text",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Failed to undo.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "discountInfoBanner.text",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You've selected multiple plans that are eligible for a Team Up discount. You can save ${discountPrice} ({percentage}% discount) if you continue with these plans in your cart",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "discountInfoLayer.title",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Changes to your existing plans",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "discountInfoLayer.subTitle",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Discounts available if you continue with the plans in your cart",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "discountInformation.text",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Some plan information may be hidden for security reasons.",
+      "fieldUrl": null
+    }
+  ]
+}

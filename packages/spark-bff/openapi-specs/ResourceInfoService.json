@@ -1,0 +1,357 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This Service provides the basic details about the resource which may be a line or account number.The incoming data(the number to be identified) is referred as a resource until it is identified to be an account or line.",
+    "version": "1.0.0",
+    "title": "DESL Resource Info Service API",
+    "x-ibm-name": "resourceinfo-service-api"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/utility/resource/{resource}": {
+      "get": {
+        "tags": ["resourceinfo", "protected", "oidc"],
+        "summary": "Provides basic resource info.",
+        "operationId": "queryResourceInfo",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "resource",
+            "description": "The resource whose basic info is requested.",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true,
+            "x-example": "3245665"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResourceInfoResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/utility/resource/{resourceId}/mobiletype": {
+      "get": {
+        "tags": ["resourceinfo", "mobiletype"],
+        "summary": "Verifies if a number is a Spark mobile, and indicates whether it's prepaid or postpaid",
+        "operationId": "queryMobileType",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "resourceId",
+            "description": "An identifier for the resource to be looked up. Logically a mobile number, but can be anything.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271234567"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MobileTypeResponse"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ResourceInfoResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/ResourceInfoObject"
+        }
+      ]
+    },
+    "ResourceInfoObject": {
+      "type": "object",
+      "required": ["isNumberIdentified"],
+      "properties": {
+        "isNumberIdentified": {
+          "type": "boolean",
+          "description": "true here Indicates the given resource has been identified as an account or line.",
+          "example": "true"
+        },
+        "lineInfo": {
+          "$ref": "#/definitions/LineInfoRecord"
+        },
+        "accountInfo": {
+          "$ref": "#/definitions/AccountInfoRecord"
+        }
+      }
+    },
+    "AccountInfoRecord": {
+      "type": "object",
+      "required": ["isAccountAccessAllowed"],
+      "properties": {
+        "isPasswordProtected": {
+          "description": "this indicates if the resource's correponding customer has a password.",
+          "type": "boolean",
+          "example": "true"
+        },
+        "isAccountAccessAllowed": {
+          "description": "This indicates whether a MySpark user can have account access or not on this resource.",
+          "type": "boolean",
+          "example": "true"
+        },
+        "hasBusinessName": {
+          "description": "This indicates if the corresponding customer has a business name.",
+          "type": "boolean",
+          "example": "true"
+        }
+      }
+    },
+    "LineInfoRecord": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/AccountInfoRecord"
+        },
+        {
+          "type": "object",
+          "required": ["lineType", "isLineAccessAllowed"],
+          "properties": {
+            "lineType": {
+              "description": "This indicates the type of line.",
+              "type": "string",
+              "enum": [
+                "MOBILE_PREPAID",
+                "MOBILE_POSTPAID",
+                "BROADBAND",
+                "UNKNOWN"
+              ],
+              "example": "MOBILE_PREPAID"
+            },
+            "isLineAccessAllowed": {
+              "description": "this indicates whether a MySpark user can have line access for this resource or not.",
+              "type": "boolean",
+              "example": "true"
+            }
+          }
+        }
+      ]
+    },
+    "MobileTypeResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "mobileType": {
+              "type": "string",
+              "enum": ["PREPAID", "POSTPAID"],
+              "description": "Will always be returned if the response is successful. It can be PREPAID, POSTPAID or null",
+              "example": "PREPAID"
+            }
+          }
+        }
+      ]
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "ST2": {
+        "properties": {
+          "endPoint": "http://iamproxy-st05.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-st2.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST3": {
+        "properties": {
+          "endPoint": "http://iamproxy-st07.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-st3.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST4": {
+        "properties": {
+          "endPoint": "http://iamproxy-st06.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-st4.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://resourceinfo-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

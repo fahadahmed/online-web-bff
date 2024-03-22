@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns troubleshooting information 1`] = `
+Object {
+  "diagnosticSummaryCode": "internet_down-line_down-modem_can_not_reach",
+  "helpSteps": Array [
+    Object {
+      "bodyList": Array [
+        Object {
+          "componentType": null,
+          "copy": "We cannot connect to your modem.",
+        },
+        Object {
+          "componentType": null,
+          "copy": "According to our records, you have a Spark modem. If you have a different modem, it might explain why we can't connect.",
+        },
+        Object {
+          "componentType": null,
+          "copy": "Have a look at the details below and let us know if this is the modem you're using?",
+        },
+        Object {
+          "componentType": "TROUBLESHOOT_MODEM_DETAILS",
+          "copy": "Detected modem details for this line",
+        },
+      ],
+      "ctaList": Array [
+        Object {
+          "label": "Yes, I am using this Spark modem",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=check_modem_cable",
+        },
+        Object {
+          "label": "Yes, I am using a different Spark modem",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=check_modem_cable",
+        },
+        Object {
+          "label": "No, I am using a non-Spark modem",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=check_modem_cable",
+        },
+      ],
+      "ctaTitle": "Are you using a Spark modem?",
+      "imageList": Array [],
+      "stepId": "check_blue_cable",
+      "title": "Check modem cables",
+    },
+    Object {
+      "bodyList": Array [
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The power cable is connected to the modem and switched on at the wall.",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The phone cable is connected to the port labelled DSL and the other end is connected to the filter",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The filter is connected to the phone jack on the wall",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The telephone is connected to the filter",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The ethernet cable is connected to your computer and the LAN ethernet port on the modem",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "Try using the internet.",
+        },
+      ],
+      "ctaList": Array [
+        Object {
+          "label": "Yes",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=success",
+        },
+        Object {
+          "label": "No",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=restart_modem",
+        },
+      ],
+      "ctaTitle": "Is your internet working?",
+      "imageList": Array [
+        Object {
+          "url": "https://www.spark.co.nz/content/dam/telecomcms/content-images/myspark/connection-promise/Copper_connection-80.jpg",
+        },
+      ],
+      "stepId": "check_modem_cable",
+      "title": "Check modem cables",
+    },
+    Object {
+      "bodyList": Array [
+        Object {
+          "componentType": null,
+          "copy": "Restarting the modem can sometimes solve connection problems.",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "Switch your modem off at the wall or unplug it.",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "Wait for 30 seconds, then turn it  back on.",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "Restart your computer, wait two minutes, and then try using the internet.",
+        },
+      ],
+      "ctaList": Array [
+        Object {
+          "label": "Yes",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=success",
+        },
+        Object {
+          "label": "No",
+          "type": "CHAT",
+          "webCTA": "#",
+        },
+      ],
+      "ctaTitle": "Is your internet working?",
+      "imageList": Array [
+        Object {
+          "url": "https://www.spark.co.nz/content/dam/telecomcms/content-images/myspark/connection-promise/modem_lg.PNG",
+        },
+      ],
+      "stepId": "restart_modem",
+      "title": "Restart modem",
+    },
+    Object {
+      "bodyList": Array [
+        Object {
+          "componentType": null,
+          "copy": "If you have any other problems with your connection, have a look at the Spark help section",
+        },
+        Object {
+          "componentType": null,
+          "copy": "Or wait 10 minutes and run the diagnostic tool again",
+        },
+      ],
+      "ctaList": Array [],
+      "ctaTitle": null,
+      "imageList": null,
+      "stepId": "success",
+      "title": "Restart modem",
+    },
+  ],
+  "initialStep": "check_blue_cable",
+  "modemImage": "https://www.spark.co.nz/assets/spark/images/modems/hg999b.png",
+  "modemManufacturer": "Huawei Technologies Co., Ltd.",
+  "modemSerialNumber": "S8G8W14B88210024",
+  "stepForModemModel": "HG999b",
+}
+`;
+
+exports[`returns troubleshooting information when optional argument is missing 1`] = `
+Object {
+  "diagnosticSummaryCode": "internet_down-line_down-modem_can_not_reach",
+  "helpSteps": Array [
+    Object {
+      "bodyList": Array [
+        Object {
+          "componentType": null,
+          "copy": "We cannot connect to your modem.",
+        },
+        Object {
+          "componentType": null,
+          "copy": "According to our records, you have a Spark modem. If you have a different modem, it might explain why we can't connect.",
+        },
+        Object {
+          "componentType": null,
+          "copy": "Have a look at the details below and let us know if this is the modem you're using?",
+        },
+        Object {
+          "componentType": "TROUBLESHOOT_MODEM_DETAILS",
+          "copy": "Detected modem details for this line",
+        },
+      ],
+      "ctaList": Array [
+        Object {
+          "label": "Yes, I am using this Spark modem",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=check_modem_cable",
+        },
+        Object {
+          "label": "Yes, I am using a different Spark modem",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=check_modem_cable",
+        },
+        Object {
+          "label": "No, I am using a non-Spark modem",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=check_modem_cable",
+        },
+      ],
+      "ctaTitle": "Are you using a Spark modem?",
+      "imageList": Array [],
+      "stepId": "check_blue_cable",
+      "title": "Check modem cables",
+    },
+    Object {
+      "bodyList": Array [
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The power cable is connected to the modem and switched on at the wall.",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The phone cable is connected to the port labelled DSL and the other end is connected to the filter",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The filter is connected to the phone jack on the wall",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The telephone is connected to the filter",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "The ethernet cable is connected to your computer and the LAN ethernet port on the modem",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "Try using the internet.",
+        },
+      ],
+      "ctaList": Array [
+        Object {
+          "label": "Yes",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=success",
+        },
+        Object {
+          "label": "No",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=restart_modem",
+        },
+      ],
+      "ctaTitle": "Is your internet working?",
+      "imageList": Array [
+        Object {
+          "url": "https://www.spark.co.nz/content/dam/telecomcms/content-images/myspark/connection-promise/Copper_connection-80.jpg",
+        },
+      ],
+      "stepId": "check_modem_cable",
+      "title": "Check modem cables",
+    },
+    Object {
+      "bodyList": Array [
+        Object {
+          "componentType": null,
+          "copy": "Restarting the modem can sometimes solve connection problems.",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "Switch your modem off at the wall or unplug it.",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "Wait for 30 seconds, then turn it  back on.",
+        },
+        Object {
+          "componentType": "CHECKLIST_ITEM",
+          "copy": "Restart your computer, wait two minutes, and then try using the internet.",
+        },
+      ],
+      "ctaList": Array [
+        Object {
+          "label": "Yes",
+          "type": "TROUBLESHOOTING_STEP",
+          "webCTA": "www.spark.co.nz/myspark/diagnosticSummaryCode=internet_down-line_down-modem_can_not_reach&troubleshootingStep=success",
+        },
+        Object {
+          "label": "No",
+          "type": "CHAT",
+          "webCTA": "#",
+        },
+      ],
+      "ctaTitle": "Is your internet working?",
+      "imageList": Array [
+        Object {
+          "url": "https://www.spark.co.nz/content/dam/telecomcms/content-images/myspark/connection-promise/modem_lg.PNG",
+        },
+      ],
+      "stepId": "restart_modem",
+      "title": "Restart modem",
+    },
+    Object {
+      "bodyList": Array [
+        Object {
+          "componentType": null,
+          "copy": "If you have any other problems with your connection, have a look at the Spark help section",
+        },
+        Object {
+          "componentType": null,
+          "copy": "Or wait 10 minutes and run the diagnostic tool again",
+        },
+      ],
+      "ctaList": Array [],
+      "ctaTitle": null,
+      "imageList": null,
+      "stepId": "success",
+      "title": "Restart modem",
+    },
+  ],
+  "initialStep": "check_blue_cable",
+  "modemImage": "https://www.spark.co.nz/assets/spark/images/modems/hg999b.png",
+  "modemManufacturer": "Huawei Technologies Co., Ltd.",
+  "modemSerialNumber": "S8G8W14B88210024",
+  "stepForModemModel": "HG999b",
+}
+`;

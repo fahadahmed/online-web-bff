@@ -1,0 +1,5 @@
+steps:
+  - checkout: self
+    persistCredentials: true
+  - bash: test $(git rev-list --left-only --count origin/master...$(Build.SourceVersion)) -eq 0
+    displayName: Verify up-to-date with production

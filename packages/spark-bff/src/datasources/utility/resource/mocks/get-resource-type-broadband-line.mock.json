@@ -1,0 +1,14 @@
+{
+  "isNumberIdentified": true,
+  "lineInfo": {
+    "lineType": "BROADBAND",
+    "isLineAccessAllowed": false,
+    "isAccountAccessAllowed": false
+  },
+  "messages": [
+    {
+      "message": "Resource identification completed Successfully.",
+      "code": 2000
+    }
+  ]
+}

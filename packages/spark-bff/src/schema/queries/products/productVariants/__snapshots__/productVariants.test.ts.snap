@@ -1,0 +1,3529 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing product variants by group id query, should return null for nullable field with no errors 1`] = `
+Object {
+  "offerDetails": Array [
+    Object {
+      "associatedPriceRules": null,
+      "associatedPrices": null,
+      "basePrice": null,
+      "basePriceExcludingTax": null,
+      "brand": null,
+      "color": null,
+      "colorHex": null,
+      "description": "A15 Bionic, the world’s fastest smartphone chip. Superfast 5G for faster download speeds and high-quality streaming.",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": null,
+      "groupDescription": null,
+      "groupId": null,
+      "groupName": null,
+      "id": "iphone_13_pro_128gb_sierra_blue",
+      "images": null,
+      "isDefault": null,
+      "isDeferrable": null,
+      "isShippable": null,
+      "name": "iPhone 13 pro 128GB - Sierra Blue",
+      "priceFrequencyPeriod": null,
+      "priceFrequencyValue": null,
+      "priceLength": null,
+      "priceType": null,
+      "primaryCategory": null,
+      "productSpecificationGroups": null,
+      "promotions": null,
+      "soldSeparately": null,
+      "stock": null,
+      "storage": null,
+    },
+  ],
+}
+`;
+
+exports[`Testing product variants by group id query, should return null when optional field is missing from desl response 1`] = `
+Object {
+  "offerDetails": Array [
+    Object {
+      "associatedPriceRules": Array [
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": 177.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": 118,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": 88.51,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": 59.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": 177.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": 118,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": 88.51,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 59,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": 177.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": 118.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": 59.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": 88.51,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+      ],
+      "associatedPrices": Array [
+        Object {
+          "basePrice": 155.5,
+          "basePriceExcludingTax": 135.22,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 233.25,
+          "basePriceExcludingTax": 202.83,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 12,
+          "priceLength": null,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 116.63,
+          "basePriceExcludingTax": 101.41,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 24,
+          "priceLength": null,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 77.75,
+          "basePriceExcludingTax": 67.61,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 36,
+          "priceLength": null,
+          "priceType": "Recurring",
+        },
+      ],
+      "basePrice": 2799,
+      "basePriceExcludingTax": 2433.91,
+      "brand": "Apple",
+      "color": "Graphite",
+      "colorHex": "#54524F",
+      "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126142SPO",
+      "groupDescription": null,
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_1tb_graphite",
+      "images": Array [
+        Object {
+          "description": "graphite-image-1",
+          "id": "graphite-1",
+          "standardUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRqkuRMLIibHUf_rp8NAYfJCmw1hcakCOwCL3meZZi_hY-6zXnXgQ4&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRqkuRMLIibHUf_rp8NAYfJCmw1hcakCOwCL3meZZi_hY-6zXnXgQ4&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRqkuRMLIibHUf_rp8NAYfJCmw1hcakCOwCL3meZZi_hY-6zXnXgQ4&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-2",
+          "id": "graphite-2",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ70itcmmqtDJh85_gdPgWJlulaKdzR7_J0u6pQSIvpKtBwcTKip8I&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ70itcmmqtDJh85_gdPgWJlulaKdzR7_J0u6pQSIvpKtBwcTKip8I&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ70itcmmqtDJh85_gdPgWJlulaKdzR7_J0u6pQSIvpKtBwcTKip8I&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-3",
+          "id": "graphite-3",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSPfxb0lEchDfAHHN8MOp_-M5hjuuyWwvhEddFaZwehBws7-jvWdw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSPfxb0lEchDfAHHN8MOp_-M5hjuuyWwvhEddFaZwehBws7-jvWdw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSPfxb0lEchDfAHHN8MOp_-M5hjuuyWwvhEddFaZwehBws7-jvWdw&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-4",
+          "id": "graphite-4",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSTlisUegjhusT_fNWyG58dnN78UnEC_wvbt65LmAvROQFalO6pkA&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSTlisUegjhusT_fNWyG58dnN78UnEC_wvbt65LmAvROQFalO6pkA&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSTlisUegjhusT_fNWyG58dnN78UnEC_wvbt65LmAvROQFalO6pkA&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-5",
+          "id": "graphite-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-6",
+          "id": "graphite-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-video-1",
+          "id": "graphite-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": true,
+      "isShippable": true,
+      "name": "iPhone 13 Pro 1TB - Graphite",
+      "priceFrequencyPeriod": null,
+      "priceFrequencyValue": null,
+      "priceLength": null,
+      "priceType": "Onetime",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": true,
+      "stock": null,
+      "storage": "1TB",
+    },
+    Object {
+      "associatedPriceRules": null,
+      "associatedPrices": Array [
+        Object {
+          "basePrice": 49.97,
+          "basePriceExcludingTax": 43.45,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 99.94,
+          "basePriceExcludingTax": 86.9,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 74.96,
+          "basePriceExcludingTax": 65.18,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 149.92,
+          "basePriceExcludingTax": 130.37,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+        },
+      ],
+      "basePrice": 1799,
+      "basePriceExcludingTax": 1564.35,
+      "brand": "Apple",
+      "color": "Sierra Blue",
+      "colorHex": "#A7C1D9",
+      "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126135SPO",
+      "groupDescription": null,
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_128gb_sierra_blue",
+      "images": Array [
+        Object {
+          "description": "blue-image-1",
+          "id": "blue-1",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-2",
+          "id": "blue-2",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-3",
+          "id": "blue-3",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-4",
+          "id": "blue-4",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-5",
+          "id": "blue-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-6",
+          "id": "blue-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "blue-video-1",
+          "id": "blue-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": true,
+      "isShippable": false,
+      "name": "iPhone 13 Pro 128GB - Sierra Blue",
+      "priceFrequencyPeriod": null,
+      "priceFrequencyValue": null,
+      "priceLength": null,
+      "priceType": "Onetime",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": false,
+      "stock": null,
+      "storage": "128GB",
+    },
+    Object {
+      "associatedPriceRules": null,
+      "associatedPrices": null,
+      "basePrice": 2399,
+      "basePriceExcludingTax": 2086.09,
+      "brand": "Apple",
+      "color": "Sierra Blue",
+      "colorHex": "#A7C1D9",
+      "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126141SPO",
+      "groupDescription": null,
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_512gb_sierra_blue",
+      "images": Array [
+        Object {
+          "description": "blue-",
+          "id": "blue-1",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+        },
+        Object {
+          "description": "image_2",
+          "id": "blue-2",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+        },
+        Object {
+          "description": "image_3",
+          "id": "blue-3",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+        },
+        Object {
+          "description": "image_4",
+          "id": "blue-4",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+        },
+        Object {
+          "description": "image_5",
+          "id": "blue-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "image_6",
+          "id": "blue-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "video_1",
+          "id": "blue-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": true,
+      "isShippable": true,
+      "name": "iPhone 13 Pro 512GB - Sierra Blue",
+      "priceFrequencyPeriod": null,
+      "priceFrequencyValue": null,
+      "priceLength": null,
+      "priceType": "Onetime",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": false,
+      "stock": null,
+      "storage": "512GB",
+    },
+    Object {
+      "associatedPriceRules": Array [
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+      ],
+      "associatedPrices": null,
+      "basePrice": 155.5,
+      "basePriceExcludingTax": null,
+      "brand": null,
+      "color": "Silver",
+      "colorHex": "#f1f2ed",
+      "description": "iPhone 13 Pro 128GB - Silver",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126143SPO",
+      "groupDescription": null,
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_128GB_silver",
+      "images": Array [
+        Object {
+          "description": "image_1",
+          "id": "silver-1",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSmoE4noN6fSyFZ1AcBXz_yh5WIlxNXEKuK4lmvfFVlXEMo068NXAQ&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSmoE4noN6fSyFZ1AcBXz_yh5WIlxNXEKuK4lmvfFVlXEMo068NXAQ&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSmoE4noN6fSyFZ1AcBXz_yh5WIlxNXEKuK4lmvfFVlXEMo068NXAQ&usqp=CAc",
+        },
+        Object {
+          "description": "image_2",
+          "id": "silver-2",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRYH9yoV3wxAq-1phmc99k4aAHsjtUjSR12WVvoXVGFDelEl7n_0Q&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRYH9yoV3wxAq-1phmc99k4aAHsjtUjSR12WVvoXVGFDelEl7n_0Q&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRYH9yoV3wxAq-1phmc99k4aAHsjtUjSR12WVvoXVGFDelEl7n_0Q&usqp=CAc",
+        },
+        Object {
+          "description": "image_3",
+          "id": "silver-3",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSgQw0-HYfrMO8blEv2YVtpkOd-Pznz-h8NR2Om3Pfrp-OWXc_10Yo&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSgQw0-HYfrMO8blEv2YVtpkOd-Pznz-h8NR2Om3Pfrp-OWXc_10Yo&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSgQw0-HYfrMO8blEv2YVtpkOd-Pznz-h8NR2Om3Pfrp-OWXc_10Yo&usqp=CAc",
+        },
+        Object {
+          "description": "image_4",
+          "id": "silver-4",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQnaD5elYSaaaJXhG67TtPYMtJJiI9bp12HTb-SOqcbI7ErYdpqXo&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQnaD5elYSaaaJXhG67TtPYMtJJiI9bp12HTb-SOqcbI7ErYdpqXo&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQnaD5elYSaaaJXhG67TtPYMtJJiI9bp12HTb-SOqcbI7ErYdpqXo&usqp=CAc",
+        },
+        Object {
+          "description": "image_5",
+          "id": "silver-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "image_6",
+          "id": "silver-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "video_1",
+          "id": "silver-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": null,
+      "isShippable": true,
+      "name": "iPhone 13 Pro 128GB - Silver",
+      "priceFrequencyPeriod": "Month",
+      "priceFrequencyValue": 1,
+      "priceLength": null,
+      "priceType": "Recurring",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": false,
+      "stock": Object {
+        "status": "OUT_OF_STOCK",
+        "storeStatus": "OUT_OF_STOCK",
+        "warehouseStatus": "OUT_OF_STOCK",
+      },
+      "storage": "128GB",
+    },
+  ],
+}
+`;
+
+exports[`Testing product variants by group id query, should return product offer of the given offerId, when groupId is null 1`] = `
+Object {
+  "offerDetails": Array [
+    Object {
+      "associatedPriceRules": Array [
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 18 months",
+          "effectivePrice": 77.72,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 24 months",
+          "effectivePrice": 58.29,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 12 months",
+          "effectivePrice": 116.6,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 36 months",
+          "effectivePrice": 38.86,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 12 months",
+          "effectivePrice": 116.6,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 36 months",
+          "effectivePrice": 38.86,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 18 months",
+          "effectivePrice": 77.72,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 24 months",
+          "effectivePrice": 58.29,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 12 months",
+          "effectivePrice": 77.72,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 12 months",
+          "effectivePrice": 116.6,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 12 months",
+          "effectivePrice": 58.29,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$400 Device discount split over 12 months",
+          "effectivePrice": 38.86,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+      ],
+      "associatedPrices": null,
+      "basePrice": 1799,
+      "basePriceExcludingTax": 1564.35,
+      "brand": "Apple",
+      "color": "Sierra Blue",
+      "colorHex": "#A7C1D9",
+      "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126135SPO",
+      "groupDescription": "",
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_128gb_sierra_blue",
+      "images": Array [
+        Object {
+          "description": "image_1",
+          "id": "blue-1",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+        },
+        Object {
+          "description": "image_2",
+          "id": "blue-2",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+        },
+        Object {
+          "description": "image_3",
+          "id": "blue-3",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+        },
+        Object {
+          "description": "image_4",
+          "id": "blue-4",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+        },
+        Object {
+          "description": "image_5",
+          "id": "blue-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "image_6",
+          "id": "blue-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "video_1",
+          "id": "blue-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": true,
+      "isShippable": true,
+      "name": "iPhone 13 Pro 128GB - Sierra Blue",
+      "priceFrequencyPeriod": null,
+      "priceFrequencyValue": null,
+      "priceLength": null,
+      "priceType": "Onetime",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": false,
+      "stock": null,
+      "storage": "128GB",
+    },
+  ],
+}
+`;
+
+exports[`Testing product variants by group id query, should return product offers of the given groupid 1`] = `
+Object {
+  "offerDetails": Array [
+    Object {
+      "associatedPriceRules": Array [
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": 177.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": 118,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": 88.51,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": 59.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": 177.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": 118,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": 88.51,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 59,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": 177.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": 118.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": 59.01,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": 88.51,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+      ],
+      "associatedPrices": Array [
+        Object {
+          "basePrice": 155.5,
+          "basePriceExcludingTax": 135.22,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 233.25,
+          "basePriceExcludingTax": 202.83,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 12,
+          "priceLength": null,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 116.63,
+          "basePriceExcludingTax": 101.41,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 24,
+          "priceLength": null,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 77.75,
+          "basePriceExcludingTax": 67.61,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 36,
+          "priceLength": null,
+          "priceType": "Recurring",
+        },
+      ],
+      "basePrice": 2799,
+      "basePriceExcludingTax": 2433.91,
+      "brand": "Apple",
+      "color": "Graphite",
+      "colorHex": "#54524F",
+      "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126142SPO",
+      "groupDescription": null,
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_1tb_graphite",
+      "images": Array [
+        Object {
+          "description": "graphite-image-1",
+          "id": "graphite-1",
+          "standardUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRqkuRMLIibHUf_rp8NAYfJCmw1hcakCOwCL3meZZi_hY-6zXnXgQ4&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRqkuRMLIibHUf_rp8NAYfJCmw1hcakCOwCL3meZZi_hY-6zXnXgQ4&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRqkuRMLIibHUf_rp8NAYfJCmw1hcakCOwCL3meZZi_hY-6zXnXgQ4&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-2",
+          "id": "graphite-2",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ70itcmmqtDJh85_gdPgWJlulaKdzR7_J0u6pQSIvpKtBwcTKip8I&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ70itcmmqtDJh85_gdPgWJlulaKdzR7_J0u6pQSIvpKtBwcTKip8I&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ70itcmmqtDJh85_gdPgWJlulaKdzR7_J0u6pQSIvpKtBwcTKip8I&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-3",
+          "id": "graphite-3",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSPfxb0lEchDfAHHN8MOp_-M5hjuuyWwvhEddFaZwehBws7-jvWdw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSPfxb0lEchDfAHHN8MOp_-M5hjuuyWwvhEddFaZwehBws7-jvWdw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSPfxb0lEchDfAHHN8MOp_-M5hjuuyWwvhEddFaZwehBws7-jvWdw&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-4",
+          "id": "graphite-4",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSTlisUegjhusT_fNWyG58dnN78UnEC_wvbt65LmAvROQFalO6pkA&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSTlisUegjhusT_fNWyG58dnN78UnEC_wvbt65LmAvROQFalO6pkA&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSTlisUegjhusT_fNWyG58dnN78UnEC_wvbt65LmAvROQFalO6pkA&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-5",
+          "id": "graphite-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-image-6",
+          "id": "graphite-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "graphite-video-1",
+          "id": "graphite-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": true,
+      "isShippable": true,
+      "name": "iPhone 13 Pro 1TB - Graphite",
+      "priceFrequencyPeriod": null,
+      "priceFrequencyValue": null,
+      "priceLength": null,
+      "priceType": "Onetime",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": true,
+      "stock": null,
+      "storage": "1TB",
+    },
+    Object {
+      "associatedPriceRules": null,
+      "associatedPrices": Array [
+        Object {
+          "basePrice": 49.97,
+          "basePriceExcludingTax": 43.45,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 99.94,
+          "basePriceExcludingTax": 86.9,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 74.96,
+          "basePriceExcludingTax": 65.18,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+        },
+        Object {
+          "basePrice": 149.92,
+          "basePriceExcludingTax": 130.37,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+        },
+      ],
+      "basePrice": 1799,
+      "basePriceExcludingTax": 1564.35,
+      "brand": "Apple",
+      "color": "Sierra Blue",
+      "colorHex": "#A7C1D9",
+      "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126135SPO",
+      "groupDescription": null,
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_128gb_sierra_blue",
+      "images": Array [
+        Object {
+          "description": "blue-image-1",
+          "id": "blue-1",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-2",
+          "id": "blue-2",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-3",
+          "id": "blue-3",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-4",
+          "id": "blue-4",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-5",
+          "id": "blue-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "blue-image-6",
+          "id": "blue-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "blue-video-1",
+          "id": "blue-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": true,
+      "isShippable": false,
+      "name": "iPhone 13 Pro 128GB - Sierra Blue",
+      "priceFrequencyPeriod": null,
+      "priceFrequencyValue": null,
+      "priceLength": null,
+      "priceType": "Onetime",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": false,
+      "stock": null,
+      "storage": "128GB",
+    },
+    Object {
+      "associatedPriceRules": null,
+      "associatedPrices": null,
+      "basePrice": 2399,
+      "basePriceExcludingTax": 2086.09,
+      "brand": "Apple",
+      "color": "Sierra Blue",
+      "colorHex": "#A7C1D9",
+      "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126141SPO",
+      "groupDescription": null,
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_512gb_sierra_blue",
+      "images": Array [
+        Object {
+          "description": "blue-",
+          "id": "blue-1",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmHgsZFAFqcLi1S6gffvKtlSlhOAkQ0FRADGzCZRgAEVNKAE6iyA&usqp=CAc",
+        },
+        Object {
+          "description": "image_2",
+          "id": "blue-2",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRSaADOjYtX1tWU2G9gFqJ9p8JAB3M0LNT6nBDDQMuD-nbgIkqaOno&usqp=CAc",
+        },
+        Object {
+          "description": "image_3",
+          "id": "blue-3",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTmPRQw2ScY0Hl_EKUGeUsA91GlYl51u0FMTQutsFT5Wj5Drp_QGw&usqp=CAc",
+        },
+        Object {
+          "description": "image_4",
+          "id": "blue-4",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHm8VP5t6RQdphJy2zT6fT13oqN9enSN-ksslyggcazhJbfZib50M&usqp=CAc",
+        },
+        Object {
+          "description": "image_5",
+          "id": "blue-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "image_6",
+          "id": "blue-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "video_1",
+          "id": "blue-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": true,
+      "isShippable": true,
+      "name": "iPhone 13 Pro 512GB - Sierra Blue",
+      "priceFrequencyPeriod": null,
+      "priceFrequencyValue": null,
+      "priceLength": null,
+      "priceType": "Onetime",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": false,
+      "stock": null,
+      "storage": "512GB",
+    },
+    Object {
+      "associatedPriceRules": Array [
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar59_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar79_99_endless_mobile_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 12 months payments",
+          "effectivePrice": 208.25,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 12,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_12_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 18 months payments",
+          "effectivePrice": 138.83,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 18,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_18_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 36 months payments",
+          "effectivePrice": 69.42,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 36,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_36_months",
+            },
+          ],
+        },
+        Object {
+          "basePrice": null,
+          "basePriceExcludingTax": null,
+          "description": "$300 Account credit is spread over 24 months payments",
+          "effectivePrice": 104.13,
+          "effectivePriceExcludingTax": null,
+          "priceFrequencyPeriod": "Month",
+          "priceFrequencyValue": 1,
+          "priceLength": 24,
+          "priceType": "Recurring",
+          "sources": Array [
+            Object {
+              "id": "dollar99_99_endless_group_plan",
+            },
+            Object {
+              "id": "interest_free_payment_over_24_months",
+            },
+          ],
+        },
+      ],
+      "associatedPrices": null,
+      "basePrice": 155.5,
+      "basePriceExcludingTax": null,
+      "brand": null,
+      "color": "Silver",
+      "colorHex": "#f1f2ed",
+      "description": "iPhone 13 Pro 128GB - Silver",
+      "effectivePrice": null,
+      "effectivePriceExcludingTax": null,
+      "externalId": "apple126143SPO",
+      "groupDescription": null,
+      "groupId": "iphone_13_pro",
+      "groupName": "iphone 13 Pro",
+      "id": "iphone_13_pro_128GB_silver",
+      "images": Array [
+        Object {
+          "description": "image_1",
+          "id": "silver-1",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSmoE4noN6fSyFZ1AcBXz_yh5WIlxNXEKuK4lmvfFVlXEMo068NXAQ&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSmoE4noN6fSyFZ1AcBXz_yh5WIlxNXEKuK4lmvfFVlXEMo068NXAQ&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSmoE4noN6fSyFZ1AcBXz_yh5WIlxNXEKuK4lmvfFVlXEMo068NXAQ&usqp=CAc",
+        },
+        Object {
+          "description": "image_2",
+          "id": "silver-2",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRYH9yoV3wxAq-1phmc99k4aAHsjtUjSR12WVvoXVGFDelEl7n_0Q&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRYH9yoV3wxAq-1phmc99k4aAHsjtUjSR12WVvoXVGFDelEl7n_0Q&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRYH9yoV3wxAq-1phmc99k4aAHsjtUjSR12WVvoXVGFDelEl7n_0Q&usqp=CAc",
+        },
+        Object {
+          "description": "image_3",
+          "id": "silver-3",
+          "standardUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSgQw0-HYfrMO8blEv2YVtpkOd-Pznz-h8NR2Om3Pfrp-OWXc_10Yo&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSgQw0-HYfrMO8blEv2YVtpkOd-Pznz-h8NR2Om3Pfrp-OWXc_10Yo&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSgQw0-HYfrMO8blEv2YVtpkOd-Pznz-h8NR2Om3Pfrp-OWXc_10Yo&usqp=CAc",
+        },
+        Object {
+          "description": "image_4",
+          "id": "silver-4",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQnaD5elYSaaaJXhG67TtPYMtJJiI9bp12HTb-SOqcbI7ErYdpqXo&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQnaD5elYSaaaJXhG67TtPYMtJJiI9bp12HTb-SOqcbI7ErYdpqXo&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQnaD5elYSaaaJXhG67TtPYMtJJiI9bp12HTb-SOqcbI7ErYdpqXo&usqp=CAc",
+        },
+        Object {
+          "description": "image_5",
+          "id": "silver-5",
+          "standardUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRcg6OuioW9-beBWaGR8rSC_JhQI2Eag1VUIu7fM1pITcfFGyQ7eU&usqp=CAc",
+        },
+        Object {
+          "description": "image_6",
+          "id": "silver-6",
+          "standardUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "thumbnailUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+          "zoomUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsSk3jZoY5umY1sKpX6i5CqdyDBGOae_x5xzDw8-UIcU08qKCfPw&usqp=CAc",
+        },
+        Object {
+          "description": "video_1",
+          "id": "silver-7",
+          "standardUrl": "https://websetnet.net/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-advertisement-1.jpg",
+          "thumbnailUrl": "https://nalamdana.in/wp-content/uploads/2015/11/play-button-overlay-sm-1.png",
+          "zoomUrl": "packages/spark-pattern-library/src/components/Carousels/GalleryWithThumbnails/apple.mov",
+        },
+      ],
+      "isDefault": null,
+      "isDeferrable": null,
+      "isShippable": true,
+      "name": "iPhone 13 Pro 128GB - Silver",
+      "priceFrequencyPeriod": "Month",
+      "priceFrequencyValue": 1,
+      "priceLength": null,
+      "priceType": "Recurring",
+      "primaryCategory": Object {
+        "id": "handset",
+        "name": "Mobile Phones",
+      },
+      "productSpecificationGroups": Array [
+        Object {
+          "group": "Battery & Charging",
+          "specifications": Array [
+            Object {
+              "name": "Wireless charging",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Charging",
+              "value": "25W Fast charging",
+            },
+          ],
+        },
+        Object {
+          "group": "Camera(s)",
+          "specifications": Array [
+            Object {
+              "name": "Rear Camera 1",
+              "value": "12MP, f1.5 (wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 2",
+              "value": "12MP, f1.8 (ultra-wide) Camera",
+            },
+            Object {
+              "name": "Rear Camera 3",
+              "value": "12MP, f2.8 (telephoto) Camera",
+            },
+            Object {
+              "name": "Front camera",
+              "value": "2MP f2.2 ",
+            },
+            Object {
+              "name": "Video",
+              "value": "4K @ 60 fps Video recording",
+            },
+          ],
+        },
+        Object {
+          "group": "Connectivity",
+          "specifications": Array [
+            Object {
+              "name": "Bluetooth",
+              "value": "v5.0",
+            },
+            Object {
+              "name": "NFC",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Wi-Fi",
+              "value": "WiFi 6",
+            },
+            Object {
+              "name": "Wi-Fi hotspot",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Hardware Specs",
+          "specifications": Array [
+            Object {
+              "name": "Size",
+              "value": "146.7 x 71.5 x 7.65 (mm)",
+            },
+            Object {
+              "name": "Weight",
+              "value": "203 g",
+            },
+            Object {
+              "name": "Socket",
+              "value": "Lightning USB",
+            },
+            Object {
+              "name": "Rating",
+              "value": "IP68",
+            },
+          ],
+        },
+        Object {
+          "group": "Network",
+          "specifications": Array [
+            Object {
+              "name": "Mobile Network",
+              "value": "3G, 4G, 5G",
+            },
+            Object {
+              "name": "VoLTE support",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Emergency Alert",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Other Features",
+          "specifications": Array [
+            Object {
+              "name": "Face Unlock",
+              "value": "Yes",
+            },
+          ],
+        },
+        Object {
+          "group": "Processor",
+          "specifications": Array [
+            Object {
+              "name": "Processor",
+              "value": "A15 Bionic",
+            },
+            Object {
+              "name": "Operating System",
+              "value": "IOS",
+            },
+          ],
+        },
+        Object {
+          "group": "Screen",
+          "specifications": Array [
+            Object {
+              "name": "Resolution",
+              "value": "2532 x 1170 px",
+            },
+            Object {
+              "name": "Display size",
+              "value": "6.1 \\"",
+            },
+            Object {
+              "name": "Display",
+              "value": "Super Retina XDR with ProMotion",
+            },
+          ],
+        },
+        Object {
+          "group": "SIM Details",
+          "specifications": Array [
+            Object {
+              "name": "SIM Type",
+              "value": "Dual SIM (nano+eSIM)",
+            },
+            Object {
+              "name": "eSIM",
+              "value": "Yes",
+            },
+            Object {
+              "name": "Dual eSIM support",
+              "value": "Yes",
+            },
+          ],
+        },
+      ],
+      "promotions": null,
+      "soldSeparately": false,
+      "stock": Object {
+        "status": "OUT_OF_STOCK",
+        "storeStatus": "OUT_OF_STOCK",
+        "warehouseStatus": "OUT_OF_STOCK",
+      },
+      "storage": "128GB",
+    },
+  ],
+}
+`;

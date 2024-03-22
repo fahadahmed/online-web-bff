@@ -1,0 +1,37 @@
+parameters:
+  useAppD: true
+  artifactsDirectory: '/'
+
+steps:
+  - bash: |
+      sed -i.bak 's,${{'${{api_gw_base_url}}'}},$(DESL_BASE_URL),' deployment-config.yml
+      sed -i.bak 's,${{'${{enable_non_prod_features}}'}},$(ENABLE_NO_PROD_FEATURES),' deployment-config.yml
+      sed -i.bak 's,${{'${{is_development_environment}}'}},$(IS_DEVELOPMENT_ENVIRONMENT),' deployment-config.yml
+      sed -i.bak 's,${{'${{appdynamics_access_key}}'}},$(APPDYNAMICS_ACCESS_KEY),' deployment-config.yml
+      sed -i.bak 's,${{'${{appdynamics_account_name}}'}},$(APPDYNAMICS_ACCOUNT_NAME),' deployment-config.yml
+      sed -i.bak 's,${{'${{appdynamics_app_name}}'}},$(APPDYNAMICS_APP_NAME),' deployment-config.yml
+      sed -i.bak 's,${{'${{appdynamics_controller_url}}'}},$(APPDYNAMICS_CONTROLLER_URL),' deployment-config.yml
+      sed -i.bak 's,${{'${{appdynamics_proxy_url}}'}},$(APPDYNAMICS_PROXY_URL),' deployment-config.yml
+      sed -i.bak 's,${{'${{monitoring_enabled}}'}},$(MONITORING_ENABLED),' deployment-config.yml
+      sed -i.bak 's,${{'${{no_of_pods}}'}},$(NO_OF_PODS),' deployment-config.yml
+      if [[ '${{ parameters.useAppD }}' = 'false' ]]; then sed -i.bak '/AppD-START/,/AppD-END/d' deployment-config.yml; fi
+    displayName: Inject environment specific data to the OpenShift deployment config
+    workingDirectory: ${{ parameters.artifactsDirectory }}
+
+  - bash: oc project $(OPENSHIFT_PROJECT_NAME)
+    displayName: Connect to OpenShift
+
+  - bash: |
+      oc apply -f deployment-config.yml
+    displayName: Apply the OpenShift deployment config resource
+    workingDirectory: ${{ parameters.artifactsDirectory }}
+
+  - bash: |
+      oc apply -f service-config.yml
+    displayName: Apply the OpenShift service resource
+    workingDirectory: ${{ parameters.artifactsDirectory }}
+
+  - bash: |
+      oc apply -f route-config.yml
+    displayName: Apply the OpenShift route resource
+    workingDirectory: ${{ parameters.artifactsDirectory }}

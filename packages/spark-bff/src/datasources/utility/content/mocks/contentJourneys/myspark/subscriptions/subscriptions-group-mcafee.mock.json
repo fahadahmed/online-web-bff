@@ -1,0 +1,93 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/subscriptions/group/mcafee",
+  "tags": ["subscriptions:groupContent"],
+  "title": "subscriptions.groupContent",
+  "description": "subscriptions.groupContent",
+  "fields": [
+    {
+      "fieldKey": "faqs.question1",
+      "fieldType": "HEADER",
+      "fieldValue": "Do I have to be new to Spotify to get it with Spark, or can I already have a McAfee account "
+    },
+    {
+      "fieldKey": "faqs.answer1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added McAfee to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your McAfee in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question2",
+      "fieldType": "HEADER",
+      "fieldValue": "How do I start using my McAfee with Spark?"
+    },
+    {
+      "fieldKey": "faqs.answer2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "fieldKey": "faqs.question3",
+      "fieldType": "HEADER",
+      "fieldValue": "When do I need to activate my McAfee?"
+    },
+    {
+      "fieldKey": "faqs.answer3",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added McAfee to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your McAfee in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question4",
+      "fieldType": "HEADER",
+      "fieldValue": "When do I pay for my McAfee?"
+    },
+    {
+      "fieldKey": "faqs.answer4",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "fieldKey": "banner.logo",
+      "fieldType": "IMAGE",
+      "fieldValue": "",
+      "fieldUrl": "/online/myspark/__dev__/images/subscriptions/banner-logo-mcafee.svg"
+    },
+    {
+      "fieldKey": "banner.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Award-winning online protection",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "banner.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Over 100 million people protected. More than 600 million devices secured."
+    },
+    {
+      "fieldKey": "banner.background",
+      "fieldType": "IMAGE",
+      "fieldValue": "",
+      "fieldUrl": "/online/myspark/__dev__/images/subscriptions/banner-mcafee.svg"
+    },
+    {
+      "fieldKey": "banner.link",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "",
+      "fieldUrl": "https://www.mcafee.com/"
+    },
+    {
+      "fieldKey": "activate.faqs.question1",
+      "fieldType": "HEADER",
+      "fieldValue": "Do I have to be new to Mcafee to get it with Spark, or can I already have a McAfee account "
+    },
+    {
+      "fieldKey": "activate.faqs.answer1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added McAfee to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your McAfee in MySpark."
+    }
+  ]
+}

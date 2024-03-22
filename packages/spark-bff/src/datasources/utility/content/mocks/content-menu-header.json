@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "headerType": "personalCategories",
+      "data": [
+        { "iconName": "home_large", "label": "Home", "url": "/home" },
+        { "iconName": "shop_large", "label": "Shop", "url": "/shop" },
+        {
+          "iconName": "benefits_large",
+          "label": "Benefits",
+          "url": "/benefits"
+        },
+        {
+          "iconName": "news_large",
+          "label": "Discover & learn",
+          "url": "/discover"
+        },
+        { "iconName": "me_large", "label": "MySpark", "url": "/myspark" },
+        { "iconName": "help_large", "label": "Help & support", "url": "/help" },
+        { "iconName": "search_large", "label": "Search", "url": "/search" }
+      ]
+    },
+    {
+      "headerType": "businessCategories",
+      "data": [
+        { "iconName": "home_large", "label": "Home", "url": "/home" },
+        {
+          "iconName": "products_solutions_large",
+          "label": "Products & solutions",
+          "url": "/products"
+        },
+        {
+          "iconName": "why_spark_large",
+          "label": "Why Spark",
+          "url": "/whyspark"
+        },
+        {
+          "iconName": "insights_events_large",
+          "label": "Insights & events",
+          "url": "/insights"
+        },
+        { "iconName": "me_large", "label": "MySpark", "url": "/myspark" },
+        { "iconName": "help_large", "label": "Help & support", "url": "/home" },
+        { "iconName": "search_large", "label": "Search", "url": "/search" }
+      ]
+    },
+    {
+      "headerType": "personalCategoriesDesktop",
+      "data": [
+        { "iconName": "shop_large", "label": "Shop", "url": "/shop" },
+        {
+          "iconName": "benefits_large",
+          "label": "Benefits",
+          "url": "/benefits"
+        },
+        {
+          "iconName": "news_large",
+          "label": "Discover & learn",
+          "url": "/discover"
+        },
+        { "iconName": "help_large", "label": "Help", "url": "/help" }
+      ]
+    },
+    {
+      "headerType": "businessCategoriesDesktop",
+      "data": [
+        { "iconName": "shop_large", "label": "Shop", "url": "/shop" },
+        {
+          "iconName": "benefits_large",
+          "label": "Benefits",
+          "url": "/benefits"
+        },
+        {
+          "iconName": "news_large",
+          "label": "Discover & learn",
+          "url": "/discover"
+        },
+        { "iconName": "help_large", "label": "Help", "url": "/help" }
+      ]
+    }
+  ]
+}

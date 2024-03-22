@@ -1,0 +1,1245 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This service returns access data about the currently logged in user.  Currently, it only returns access data relating to a specific account, line or identity.  In most cases, the use of this service will care only that data *is* returned (because if it is not returned, the user has no access).  This variant of the service works with oidc-authenticated users.",
+    "version": "2.0.0",
+    "title": "DESL Access Service API",
+    "x-ibm-name": "access-service-v2-api"
+  },
+  "schemes": ["https"],
+  "paths": {
+    "/v2/user/access/{user}": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches all the access data for the given identity.",
+        "operationId": "getFullAccessData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose access is being accessed.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "query",
+            "name": "includeRevokedAccess",
+            "description": "If true, revoked account access records will be returned",
+            "type": "boolean",
+            "required": false,
+            "x-example": true
+          },
+          {
+            "in": "query",
+            "name": "includeNotFoundRecords",
+            "description": "If true, account (or line) access records for which the account (or line, respectively) cannot be found will be returned",
+            "type": "boolean",
+            "required": false,
+            "x-example": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/account": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches all the account-level access data for the given identity.",
+        "operationId": "getFullAccountAccessData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose account-level access is being accessed.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "query",
+            "name": "includeRevokedAccess",
+            "description": "If true, revoked account access records will be returned",
+            "type": "boolean",
+            "required": false,
+            "x-example": true
+          },
+          {
+            "in": "query",
+            "name": "includeNotFoundRecords",
+            "description": "If true, account access records for which the account cannot be found will be returned",
+            "type": "boolean",
+            "required": false,
+            "x-example": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Adds an account-level access record to the given identity.",
+        "operationId": "addAccountAccess",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user to whom we are adding an account.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "body",
+            "name": "AccountAccessRequest",
+            "description": "access request",
+            "schema": {
+              "$ref": "#/definitions/AccountAccessRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "300": {
+            "description": "Insufficient authorisation data was provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "The provided data was invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/line": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches all the line-level access data for the given identity.",
+        "operationId": "getFullLineAccessData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose line-level access is being accessed.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "query",
+            "name": "includeNotFoundRecords",
+            "description": "If true, line access records for which the line cannot be found will be returned",
+            "type": "boolean",
+            "required": false,
+            "x-example": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Adds a line-level access record to the given identity.",
+        "operationId": "addLineAccess",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user to whom we are adding a line.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "body",
+            "name": "LineAccessRequest",
+            "description": "access request",
+            "schema": {
+              "$ref": "#/definitions/LineAccessRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "300": {
+            "description": "Insufficient authorisation data was provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "The provided data was invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/identity": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches all the identity-level access data for the given identity.",
+        "operationId": "getFullIdentityAccessData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose identity-level access is being accessed.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/line/{lineNumber}": {
+      "delete": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Removes access to the given line from the specified user.",
+        "operationId": "removeLineAccess",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose access is being removed.  This is either a Spark Id, or 'me' - corresponding to the current logged in user.",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number, with leading zero",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271231278"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or the user does not have (appropriate) access to the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/line/{lineNumber}/alias": {
+      "patch": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Updates the alias of the user's access to a line; note that it is not currently possible to remove an alias",
+        "operationId": "editLineAccess",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose access is being altered.  This is either a Spark Id, or 'me' - corresponding to the current logged in user.",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number, with leading zero",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271231278"
+          },
+          {
+            "in": "body",
+            "name": "EditAccessRequest",
+            "description": "edit access request",
+            "schema": {
+              "$ref": "#/definitions/EditAccessRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or the user does not have (appropriate) access to the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/account/{accountNumber}/alias": {
+      "patch": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Updates the alias of the user's access to an account; note that it is not currently possible to remove an alias",
+        "operationId": "editAccountAccess",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose access is being altered.  This is either a Spark Id, or 'me' - corresponding to the current logged in user.",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "path",
+            "name": "accountNumber",
+            "description": "The account number",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true,
+            "x-example": "123321123"
+          },
+          {
+            "in": "body",
+            "name": "EditAccessRequest",
+            "description": "edit access request",
+            "schema": {
+              "$ref": "#/definitions/EditAccessRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or the user does not have (appropriate) access to the account.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/account/{accountNumber}": {
+      "delete": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Removes access to the given account from the specified user.",
+        "operationId": "removeAccountAccess",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose access is being removed.  This is either a Spark Id, or 'me' - corresponding to the current logged in user.",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "path",
+            "name": "accountNumber",
+            "description": "The account number",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true,
+            "x-example": "123456789"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or the user does not have (appropriate) access to the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/line/{lineNumber}/{right}": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches line access data (note: may return account access data if access to this line is granted through an account).",
+        "operationId": "getLineAccessData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose access is being accessed.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number, with leading zero",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271231278"
+          },
+          {
+            "in": "path",
+            "name": "right",
+            "description": "The specific right that the user must have for this line",
+            "type": "string",
+            "pattern": "^\\w+$",
+            "required": true,
+            "x-example": "View"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessRecord"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or the user does not have (appropriate) access to the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/account/{accountNumber}/{right}": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches account access data.",
+        "operationId": "getAccountAccessData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose access is being accessed.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "path",
+            "name": "accountNumber",
+            "description": "The account number",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true,
+            "x-example": "123456789"
+          },
+          {
+            "in": "path",
+            "name": "right",
+            "description": "The specific right that the user must have for this account",
+            "type": "string",
+            "pattern": "^\\w+$",
+            "required": true,
+            "x-example": "View"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessRecord"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or the user does not have (appropriate) access to the account.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/{user}/identity/{right}": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches identity access data.",
+        "operationId": "getIdentityAccessData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user",
+            "description": "The user whose access is being accessed.  Currently restricted to 'me'",
+            "type": "string",
+            "pattern": "^(SSC\\d+|me)$",
+            "required": true,
+            "x-example": "me"
+          },
+          {
+            "in": "path",
+            "name": "right",
+            "description": "The specific right that the user must have for this identity",
+            "type": "string",
+            "pattern": "^\\w+$",
+            "required": true,
+            "x-example": "View"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessRecord"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or the identity does not have the requested right.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/account/{accountNumber}": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches who has access to a given account.",
+        "description": "Note that the requesting user must be the owner or manager of the account",
+        "operationId": "getAccessForAccount",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountNumber",
+            "description": "The account number whose access is being fetched.",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true,
+            "x-example": "123456789"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessPermissionResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user doesn't have (sufficient) access to the account.  This probably includes cases where the account doesn't exist.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/access/line/{lineNumber}": {
+      "get": {
+        "tags": ["access", "user", "protected", "oidc"],
+        "summary": "Fetches who has access to a given line.",
+        "description": "Note that the requesting user must be the owner or manager of the line",
+        "operationId": "getAccessForLine",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number whose access is being fetched.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0271234567"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccessPermissionResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user doesn't have (sufficient) access to the line.  This probably includes cases where the line doesn't exist.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AccessResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["lines", "accounts", "identities"],
+          "properties": {
+            "lines": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SingleAccessRecord"
+              }
+            },
+            "accounts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SingleAccessRecord"
+              }
+            },
+            "identities": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SingleAccessRecord"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "AccessPermissionResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["access"],
+          "properties": {
+            "access": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SinglePermissionRecord"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SingleAccessRecord": {
+      "type": "object",
+      "required": ["type", "role", "status"],
+      "properties": {
+        "lineNumber": {
+          "description": "The line of the access record (only present in line-typed records)",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "0271237654"
+        },
+        "customerNumber": {
+          "description": "The customer number of the access record (present in account & line-typed records)",
+          "type": "string",
+          "pattern": "^\\d+$",
+          "example": "124789123"
+        },
+        "accountNumber": {
+          "description": "The account of the access record (present in account & line-typed records; PP prefixed account numbers should only show up in line-typed records)",
+          "type": "string",
+          "pattern": "^(PP|)\\d+$",
+          "example": "124789123"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Active", "Revoked", "NotFound"],
+          "description": "Revoked is only for accounts, and will only show if such accounts are requested.  NotFound is only for accounts & lines, ditto.",
+          "example": "Active"
+        },
+        "type": {
+          "description": "The type of the access record",
+          "type": "string",
+          "enum": ["Line", "Account", "Identity"],
+          "example": "Line"
+        },
+        "balanceManagement": {
+          "type": "string",
+          "enum": ["PREPAID", "POSTPAID"],
+          "description": "The type of the line (if this is a line level access record), or of all the lines under the account (if this is an account level access record).  Strictly speaking, this is an account-level attribute, but we mostly use it at line level, so I have phrased it that way.",
+          "example": "PREPAID"
+        },
+        "role": {
+          "description": "The role of the access record",
+          "type": "string",
+          "pattern": "^\\w+$",
+          "example": "Owner"
+        },
+        "aliasName": {
+          "description": "The user-friendly alias for the access record",
+          "type": "string",
+          "example": "Jim's Phone"
+        },
+        "lineNumbers": {
+          "description": "The line numbers associated with this account (will only be present in non-revoked account-typed records).  If this is returned via a line-level access request, this will contain at most the requested line number.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "example": "092342738"
+          }
+        },
+        "rights": {
+          "description": "The list of rights (aka eligibilities) that the role grants (will only be present in account & line records).",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\w+$",
+            "example": "View"
+          }
+        }
+      }
+    },
+    "AccessRecord": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "description": "The access record",
+          "type": "object",
+          "required": ["access"],
+          "properties": {
+            "access": {
+              "$ref": "#/definitions/SingleAccessRecord"
+            }
+          }
+        }
+      ]
+    },
+    "SinglePermissionRecord": {
+      "type": "object",
+      "required": ["uuid", "type", "email"],
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "description": "The Spark Identity which has access.",
+          "pattern": "^SSC\\d+$",
+          "example": "SSC923173811313"
+        },
+        "type": {
+          "type": "string",
+          "description": "Indicates whether the access is given (through added or granted access) or inherited (via having high level access to the account).  Note that the current implementation will be unable to populate this accurately.",
+          "enum": ["GIVEN", "INHERITED"]
+        },
+        "email": {
+          "type": "string",
+          "description": "The email address of the Spark Identity.",
+          "example": "mike.avery@spark.co.nz"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "The first name the user has setup for their Spark Identity.",
+          "example": "Mike"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "The last name the user has setup for their Spark Identity.",
+          "example": "Avery"
+        },
+        "businessName": {
+          "type": "string",
+          "description": "The business name the user has setup for their Spark Identity.",
+          "example": "Mike's Architecture"
+        },
+        "role": {
+          "type": "string",
+          "description": "The role of the access the Spark Identity has.  This will be unpopulated when the access is still pending.",
+          "example": "Owner"
+        },
+        "isPending": {
+          "type": "boolean",
+          "description": "If access has been requested but not approved for this spark identity"
+        },
+        "isRevoked": {
+          "type": "boolean",
+          "description": "If the access has been revoked due to the Siebel password being changed"
+        }
+      }
+    },
+    "AccountAccessRequest": {
+      "type": "object",
+      "required": ["accountNumber", "authorisation", "role"],
+      "properties": {
+        "accountNumber": {
+          "description": "The account number of the account which we intend to add access to",
+          "type": "string",
+          "pattern": "^\\d+$",
+          "example": "124789123"
+        },
+        "authorisation": {
+          "$ref": "#/definitions/AccountAuthorisation"
+        },
+        "aliasName": {
+          "description": "The user-friendly alias to be assigned to the access record",
+          "type": "string",
+          "example": "Jim's Account"
+        },
+        "role": {
+          "description": "The proposed role of the access record; in some cases, a different role may be assigned",
+          "type": "string",
+          "pattern": "^\\w+$",
+          "example": "Owner"
+        }
+      }
+    },
+    "AccountAuthorisation": {
+      "description": "A bunch of properties needed to authorise the add access to this account.  Note that if the account already has an owner or manager, none of these are required.  If only the line number is provided, the API returns a 300 error response with a code indicating which of password, business name, or first/last name is also needed.",
+      "type": "object",
+      "properties": {
+        "lineNumber": {
+          "description": "A line number which belongs to the account; if authorisation is needed, this is required.",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "02714234321"
+        },
+        "firstName": {
+          "description": "The first name of the customer that owns the account; if first name is provided, so too should be lastName",
+          "type": "string",
+          "example": "Jim"
+        },
+        "lastName": {
+          "description": "The last name of the customer that owns the account",
+          "type": "string",
+          "example": "Waiari"
+        },
+        "businessName": {
+          "description": "The business name of the customer that owns the account; one of business name or first name (but not both) should be provided",
+          "type": "string",
+          "example": "WAIKATO ALUMINIUM LIMITED"
+        },
+        "password": {
+          "description": "The password attached to the customer that owns the account.  If authorisation is needed, either this, or a name is required.",
+          "type": "string"
+        }
+      }
+    },
+    "LineAccessRequest": {
+      "type": "object",
+      "required": ["lineNumber", "authorisation", "role"],
+      "properties": {
+        "lineNumber": {
+          "description": "The line number of the line which we intend to add access to",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "0279123121"
+        },
+        "authorisation": {
+          "$ref": "#/definitions/LineAuthorisation"
+        },
+        "aliasName": {
+          "description": "The user-friendly alias to be assigned to the access record",
+          "type": "string",
+          "example": "Jim's Phone"
+        },
+        "role": {
+          "description": "The proposed role of the access record; in some cases, a different role may be assigned",
+          "type": "string",
+          "pattern": "^\\w+$",
+          "example": "Owner"
+        }
+      }
+    },
+    "LineAuthorisation": {
+      "description": "A bunch of properties needed to authorise the add access to this line.",
+      "type": "object",
+      "required": ["balanceManagement"],
+      "properties": {
+        "authCode": {
+          "description": "A 4 digit SMS-sent code to authorise this access addition.  If it is not provided, one will be sent, and a 300 response returned",
+          "type": "string",
+          "pattern": "^\\d{4}$",
+          "example": "0231"
+        },
+        "balanceManagement": {
+          "type": "string",
+          "enum": ["PREPAID", "POSTPAID"],
+          "description": "The type of the line.  Strictly speaking, this is an account-level attribute, but we mostly use it at line level, so I have phrased it that way."
+        }
+      }
+    },
+    "EditAccessRequest": {
+      "type": "object",
+      "required": ["aliasName"],
+      "properties": {
+        "aliasName": {
+          "type": "string",
+          "description": "The user-friendly alias to be assigned to the access record",
+          "example": "Jim's Phone"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://access-service-v2-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://access-service-v2-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://access-service-v2-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://access-service-v2-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://access-service-v2-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://access-service-v2-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://access-service-v2-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://access-service-v2-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

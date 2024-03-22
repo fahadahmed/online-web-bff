@@ -1,0 +1,25 @@
+{
+  "preferences": [
+    {
+      "id": "ghsa34-3y3b3-jn4haj98z",
+      "value": "OPT_IN",
+      "status": "ACTIVE",
+      "entity": "account",
+      "entityId": "45678923455",
+      "topicId": "1",
+      "topicName": "Usage",
+      "channels": [
+        {
+          "type": "EMAIL",
+          "id": "po3-v221",
+          "status": "ACTIVE"
+        },
+        {
+          "type": "INAPP",
+          "id": "po5-a2211",
+          "status": "INACTIVE"
+        }
+      ]
+    }
+  ]
+}

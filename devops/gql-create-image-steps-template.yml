@@ -1,0 +1,50 @@
+steps:
+  - bash: |
+      sed -i.bak 's,${NODE_VER},$(NODE_VER),' Dockerfile.prod
+    displayName: Inject NodeJS version into the Docker file.
+    workingDirectory: $(Build.SourcesDirectory)/packages/spark-bff/dockerfiles
+
+  - bash: |
+      sed -i.bak 's,${{'${{build_id}}'}},$(Build.BuildId),' deployment-config.yml
+      sed -i.bak 's,${{'${{build_number}}'}},$(Build.BuildNumber),' deployment-config.yml
+    displayName: Inject the build data into the OpenShift deployment config.
+    workingDirectory: $(Build.SourcesDirectory)/packages/spark-bff/openshift
+
+  - task: Docker@2
+    displayName: Login to the OpenShift registry
+    inputs:
+      command: login
+      containerRegistry: digitalServiceDockerRegistryConnection
+
+  # Move this to a common repo
+  - task: Docker@2
+    displayName: Build and Push Base GQL Image
+    condition: false
+    inputs:
+      repository: digitalservices/web-bff-base
+      command: buildAndPush
+      Dockerfile: packages/spark-bff/dockerfiles/base-image/Dockerfile
+      buildContext: .
+      tags: 1.0.1
+
+  - task: Docker@2
+    displayName: Build and Push GQL Image
+    inputs:
+      repository: digitalservices/spark-web-gql-service
+      command: buildAndPush
+      Dockerfile: packages/spark-bff/dockerfiles/Dockerfile.prod
+      buildContext: .
+      tags: $(Build.BuildId)
+
+  - task: Docker@2
+    displayName: Logout of the OpenShift registry
+    inputs:
+      command: logout
+      containerRegistry: digitalServiceDockerRegistryConnection
+
+  - task: CopyFiles@2
+    displayName: 'Prepare OCP Configs'
+    inputs:
+      sourceFolder: $(Build.SourcesDirectory)/packages/spark-bff
+      contents: 'openshift/**'
+      targetFolder: $(Build.ArtifactStagingDirectory)/drop

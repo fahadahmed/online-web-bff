@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`retrieve a list of Spark consumer stores with stock details 1`] = `
+Object {
+  "clickAndCollectStores": Object {
+    "storeList": Array [
+      Object {
+        "address": "150/201 Hukanui Road, Chartwell, Hamilton",
+        "id": "store1",
+        "inStock": true,
+        "name": "Chartwell Mall",
+        "operatingHours": Array [
+          Object {
+            "close": "7pm",
+            "day": "Monday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Tuesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Wednesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Thursday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Friday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Saturday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Sunday",
+            "open": "9am",
+          },
+        ],
+        "phoneNumber": "07-852 5480",
+        "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      },
+      Object {
+        "address": "501 Victoria Street, Hamilton",
+        "id": "store2",
+        "inStock": true,
+        "name": "Centerplace Mall",
+        "operatingHours": Array [
+          Object {
+            "close": "7pm",
+            "day": "Monday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Tuesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Wednesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Thursday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Friday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Saturday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Sunday",
+            "open": "9am",
+          },
+        ],
+        "phoneNumber": "07-852 5480",
+        "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      },
+      Object {
+        "address": "124 Rototuna Road, Rototuna",
+        "id": "store3",
+        "inStock": true,
+        "name": "Rototuna Centre",
+        "operatingHours": Array [
+          Object {
+            "close": "7pm",
+            "day": "Monday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Tuesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Wednesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Thursday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Friday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Saturday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Sunday",
+            "open": "9am",
+          },
+        ],
+        "phoneNumber": "07-852 5480",
+        "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      },
+      Object {
+        "address": "Te Rapa Road &, Wairere Drive, Hamilton",
+        "id": "store4",
+        "inStock": false,
+        "name": "The Base",
+        "operatingHours": Array [
+          Object {
+            "close": "7pm",
+            "day": "Monday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Tuesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Wednesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Thursday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Friday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Saturday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Sunday",
+            "open": "9am",
+          },
+        ],
+        "phoneNumber": "07-852 5480",
+        "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      },
+      Object {
+        "address": "Hillcrest Road, Hamilton East, Hamilton",
+        "id": "store5",
+        "inStock": false,
+        "name": "Hillcrest Mall",
+        "operatingHours": Array [
+          Object {
+            "close": "7pm",
+            "day": "Monday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Tuesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Wednesday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Thursday",
+            "open": "9am",
+          },
+          Object {
+            "close": "7pm",
+            "day": "Friday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Saturday",
+            "open": "9am",
+          },
+          Object {
+            "close": "6pm",
+            "day": "Sunday",
+            "open": "9am",
+          },
+        ],
+        "phoneNumber": "07-852 5480",
+        "storeImage": "https://firebasestorage.googleapis.com/v0/b/toastty-app.appspot.com/o/spark%2Fstore.png?alt=media&token=5c702e0f-eef5-4132-9148-d0959f0b45df",
+      },
+    ],
+  },
+}
+`;

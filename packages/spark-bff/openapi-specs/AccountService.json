@@ -1,0 +1,419 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This service is for the management of accounts.",
+    "version": "1.0.0",
+    "title": "DESL Account Service API"
+  },
+  "schemes": ["https"],
+  "paths": {
+    "/v1/customer/account/{accountNumber}/deferred-payment/summary": {
+      "get": {
+        "tags": ["account", "customer", "protected", "oidc", "public"],
+        "summary": "Retrieves information about this account's interest-free deferred payments.",
+        "operationId": "getIfpDeferredPayments",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountNumber",
+            "description": "The account to fetch the deferred payments for.",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d+$",
+            "x-example": "321321311"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DeferredPaymentResponse"
+            }
+          },
+          "400": {
+            "description": "The account number doesn't look like one.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The user issuing this request is no longer authenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user issuing this request does not have access to fetch the deferred payments for the requested account",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/customer/account/me/list": {
+      "get": {
+        "tags": ["account", "customer", "protected", "oidc", "public"],
+        "summary": "This service returns a simple list of all accounts accessible by a Spark Identity. i.e. The accounts the Spark Id has access to.",
+        "operationId": "getAllAccounts",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "role",
+            "description": "Specific roles of which the user have access, If not empty this will be used to filter the accounts.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "required": false,
+            "x-example": "Owner,Manager"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccountListResponse"
+            }
+          },
+          "401": {
+            "description": "The user issuing this request is no longer authenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AccountListResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["accounts"],
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Account"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Account": {
+      "type": "object",
+      "required": [
+        "accountNumber",
+        "accountId",
+        "customerNumber",
+        "customerSegment",
+        "balanceManagement",
+        "accountStatus",
+        "inCollections",
+        "products"
+      ],
+      "properties": {
+        "accountNumber": {
+          "type": "string",
+          "description": "The Siebel account number",
+          "example": "180691324"
+        },
+        "accountId": {
+          "type": "string",
+          "description": "The Siebel account instance Id",
+          "example": "1-16PQ-3214"
+        },
+        "customerNumber": {
+          "type": "string",
+          "description": "The Siebel customer number associated with account number",
+          "example": "180691308"
+        },
+        "customerSegment": {
+          "type": "string",
+          "description": "Customer segment",
+          "example": "Consumer"
+        },
+        "balanceManagement": {
+          "description": "Balance management value of account",
+          "enum": ["POSTPAID", "PREPAID"],
+          "example": "POSTPAID"
+        },
+        "status": {
+          "type": "string",
+          "description": "Account Status",
+          "example": "Active"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "Account First name as per Siebel",
+          "example": "Joe"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Account last name as per Siebel",
+          "example": "Biden"
+        },
+        "businessName": {
+          "type": "string",
+          "description": "Account last name as per Siebel",
+          "example": "ABC Company Limited"
+        },
+        "inCollections": {
+          "type": "boolean",
+          "description": "Indicate if the account is in collection",
+          "example": false
+        },
+        "products": {
+          "description": "Products available under that account",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductData"
+          }
+        }
+      }
+    },
+    "ProductData": {
+      "type": "object",
+      "properties": {
+        "lineNumber": {
+          "type": "string",
+          "description": "Line Number for given account",
+          "example": "01660802083"
+        },
+        "assetId": {
+          "type": "string",
+          "description": "Line instance ID as per Siebel",
+          "example": "1-2E3RV5SV"
+        },
+        "offerId": {
+          "type": "string",
+          "description": "Offer id of the service connected to the line. Can be used to lookup the catalogue.",
+          "example": "mbundle050262"
+        },
+        "offerName": {
+          "type": "string",
+          "description": "The name of the line product",
+          "example": "$29.99 Spark Sharer"
+        },
+        "productInstanceId": {
+          "type": "string",
+          "description": "Siebel product instance id of the service connected to the line. Can be used to lookup the Siebel.",
+          "example": "1-2D20EFNY"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the product.  Generally, Inactive products should be ignored.",
+          "example": "Active"
+        }
+      }
+    },
+    "DeferredPaymentResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["deferredPayments"],
+          "properties": {
+            "deferredPayments": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DeferredPayment"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "DeferredPayment": {
+      "type": "object",
+      "required": [
+        "deferredPaymentID",
+        "paymentPlanType",
+        "installmentDetails",
+        "lastInstallment",
+        "totalPaid",
+        "remainingBalance",
+        "termDetails",
+        "product"
+      ],
+      "properties": {
+        "deferredPaymentId": {
+          "type": "string",
+          "description": "A unique identifier for this deferred payment plan",
+          "example": "1-29DKSY0S"
+        },
+        "paymentPlanType": {
+          "type": "string",
+          "description": "The type of this deferred payment plan",
+          "enum": ["IFP"]
+        },
+        "installmentDetails": {
+          "description": "Details of the all but the first and last installments",
+          "$ref": "#/definitions/PaymentAmount"
+        },
+        "firstInstallment": {
+          "description": "Details of the first installment to be made; note that this may differ from all the other installments.  (Also, it might not have been paid yet).",
+          "$ref": "#/definitions/PaymentAmount"
+        },
+        "lastInstallment": {
+          "description": "Details of the last installment that will be made (again, this may differ from all the others because of rounding).",
+          "$ref": "#/definitions/PaymentAmount"
+        },
+        "totalPaid": {
+          "description": "Details of the installments paid so far",
+          "$ref": "#/definitions/PaymentAmount"
+        },
+        "remainingBalance": {
+          "description": "Details of the installments left to pay",
+          "$ref": "#/definitions/PaymentAmount"
+        },
+        "termDetails": {
+          "description": "Details of the term of the payment plan",
+          "$ref": "#/definitions/TermDetails"
+        },
+        "product": {
+          "description": "Details of the product this payment plan is used to purchase",
+          "$ref": "#/definitions/Product"
+        }
+      }
+    },
+    "PaymentAmount": {
+      "type": "object",
+      "required": ["amount", "isDebit", "isGstIncluded"],
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "The amount of the payment",
+          "minimum": 0,
+          "example": 70.79
+        },
+        "isDebit": {
+          "type": "boolean",
+          "description": "True if this a debit; false if it's a credit"
+        },
+        "isGstIncluded": {
+          "type": "boolean",
+          "description": "True if gst is included in the amount.  False if not."
+        }
+      }
+    },
+    "TermDetails": {
+      "type": "object",
+      "required": ["period", "periodCompleted", "periodRemaining"],
+      "properties": {
+        "period": {
+          "description": "The number of months that the payments extend over",
+          "type": "integer",
+          "minimum": 0,
+          "example": 24
+        },
+        "periodCompleted": {
+          "description": "The number of months that have been completed.  The current author is unaware if this is paid, or elapsed.",
+          "type": "integer",
+          "minimum": 0,
+          "example": 10
+        },
+        "periodRemaining": {
+          "description": "The number of months that reamin.  The current author assumes that periodRemaining + periodCompleted is not necessarily period.",
+          "type": "integer",
+          "minimum": 0,
+          "example": 14
+        }
+      }
+    },
+    "Product": {
+      "type": "object",
+      "required": [
+        "chargeAggregationId",
+        "productId",
+        "price",
+        "productDetails"
+      ],
+      "properties": {
+        "chargeAggregationId": {
+          "type": "string",
+          "description": "The number to which this payment plan applies",
+          "example": "02737242364"
+        },
+        "productId": {
+          "type": "string",
+          "description": "A reference to the product to which this payment plan applies",
+          "example": "1-29DKSXZT"
+        },
+        "price": {
+          "type": "number",
+          "description": "The price that this product was purchased at for this payment plan",
+          "minimum": 0,
+          "example": 879
+        },
+        "productDetails": {
+          "description": "Some details about the product to which this payment plan applies",
+          "$ref": "#/definitions/ProductDetails"
+        }
+      }
+    },
+    "ProductDetails": {
+      "type": "object",
+      "required": ["name", "offerId"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the product",
+          "example": "Samsung Galaxy S10+ 128GB - Prism Black"
+        },
+        "offerId": {
+          "type": "string",
+          "description": "The offer-id of the product",
+          "example": "samsung123636SPO"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

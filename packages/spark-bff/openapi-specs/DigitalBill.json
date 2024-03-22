@@ -1,0 +1,1710 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Retrieve a specific bill information related to a specific billId and account number.",
+    "version": "1.0.0",
+    "title": "DESL Digital Bill Service API",
+    "x-ibm-name": "digital-bill-service-api"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/finance/{accountNumber}/bills/{billId}": {
+      "get": {
+        "tags": ["digitalbill", "protected"],
+        "summary": "Retrieves bill data as per provided billId ",
+        "operationId": "getDigitalBill",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "billId",
+            "in": "path",
+            "description": "The reference number of the specific bill to be retrieved",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d{9}-\\d{8}$"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DigitalBill"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/{accountNumber}/bills/{billId}.pdf": {
+      "get": {
+        "tags": ["digitalPdfBill", "protected"],
+        "summary": "Retrieve a PDF representation of a specific bill ID related to a specific account number,users credentials authenticated by OpenAM",
+        "operationId": "getDigitalPdfBill",
+        "produces": ["application/pdf"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "billId",
+            "in": "path",
+            "description": "The reference number of the specific bill to be retrieved",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d{9}-\\d{8}$"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "Header for pdf bill",
+            "type": "string",
+            "required": true,
+            "x-example": "Accept: application/pdf"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "file"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to view/download digital Pdf bills",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/{accountNumber}/bills/{billId}/item/{itemId}": {
+      "get": {
+        "tags": ["digitalbill", "protected"],
+        "summary": "Retrieves specific bill item data as per provided account number, billId and itemId",
+        "operationId": "getDigitalBillItem",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "billId",
+            "in": "path",
+            "description": "The bill id of the specific bill to be retrieved",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d{9}-\\d{8}$"
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "description": "The item id of the specific bill item to be retrieved",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "intent",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "call_type_description",
+              "late_payment_fees",
+              "threshold_details",
+              "product"
+            ],
+            "required": true,
+            "x-example": "call_type_description"
+          },
+          {
+            "name": "lineNumber",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-example": "210650602"
+          },
+          {
+            "name": "callTypeGroup",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-example": "RT"
+          },
+          {
+            "name": "jurisdictionGroup",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-example": "O"
+          },
+          {
+            "name": "offerId",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-example": "bvbundle002077"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MoreInfoItem"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/{accountNumber}/bills/summary": {
+      "get": {
+        "tags": ["digitalbill", "protected"],
+        "summary": "This operation is used to retrieve the bill information for a given duration.",
+        "operationId": "getBillSummaryOverview",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "The start date for the billing summary",
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "The end date for the billing summary",
+            "type": "string",
+            "format": "date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BillOverviewSummary"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "The provided parameters do not appear to be valid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/{accountNumber}/bills/transactions": {
+      "get": {
+        "tags": ["digitalbill", "protected"],
+        "summary": "This Service is used to retrieve a list of transaction details associated with an account over a specified period of time.",
+        "operationId": "getBillTransactionDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "The start date for the transaction details",
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "The end date for the transaction details",
+            "type": "string",
+            "format": "date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BillTransactionDetails"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "The provided parameters do not appear to be valid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/bill/unauthenticated/{billToken}": {
+      "get": {
+        "tags": ["digitalbill"],
+        "summary": "Unauthenticated user, digital bill retrieved by verified bill token",
+        "operationId": "getUnauthDigitalBillbyBillToken",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "billToken",
+            "in": "path",
+            "description": "The bill token for verifying user",
+            "type": "string",
+            "pattern": "^[A-F0-9]+$",
+            "required": true,
+            "x-example": "F138BB884AACA8BB1706B8ACC99843EE"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DigitalBill"
+            }
+          },
+          "400": {
+            "description": "The provided token is expired",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The token doesn't exist",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/finance/{accountNumber}/bills/{billId}": {
+      "get": {
+        "tags": ["digitalbill", "protected", "oidc"],
+        "summary": "Retrieves bill data as per provided billId, users credentials authenticated by oidc",
+        "operationId": "getDigitalBillByOidc",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "billId",
+            "in": "path",
+            "description": "The reference number of the specific bill to be retrieved",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d{9}-\\d{8}$"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DigitalBill"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/finance/{accountNumber}/bills/{billId}.pdf": {
+      "get": {
+        "tags": ["digitalPdfBill", "protected", "oidc"],
+        "summary": "Retrieve a PDF representation of a specific bill ID related to a specific account number, users credentials authenticated by oidc",
+        "operationId": "getDigitalPdfBillByOidc",
+        "produces": ["application/pdf"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "billId",
+            "in": "path",
+            "description": "The reference number of the specific bill to be retrieved",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d{9}-\\d{8}$"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "Header for pdf bill",
+            "type": "string",
+            "required": true,
+            "x-example": "Accept: application/pdf"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "file"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to view/download digital Pdf bills",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/finance/{accountNumber}/bills/{billId}/item/{itemId}": {
+      "get": {
+        "tags": ["digitalbill", "protected", "oidc"],
+        "summary": "Retrieves specific bill item data as per provided account number, billId and itemId, users credentials authenticated by oidc",
+        "operationId": "getDigitalBillItemByOidc",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "billId",
+            "in": "path",
+            "description": "The bill id of the specific bill to be retrieved",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d{9}-\\d{8}$"
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "description": "The item id of the specific bill item to be retrieved",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "intent",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "call_type_description",
+              "late_payment_fees",
+              "threshold_details",
+              "product"
+            ],
+            "required": true,
+            "x-example": "call_type_description"
+          },
+          {
+            "name": "lineNumber",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-example": "210650602"
+          },
+          {
+            "name": "callTypeGroup",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-example": "RT"
+          },
+          {
+            "name": "jurisdictionGroup",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-example": "O"
+          },
+          {
+            "name": "offerId",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-example": "bvbundle002077"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MoreInfoItem"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/finance/{accountNumber}/bills/summary": {
+      "get": {
+        "tags": ["digitalbill", "protected", "oidc"],
+        "summary": "This operation is used to retrieve the bill information for a given duration, users credentials authenticated by oidc",
+        "operationId": "getBillSummaryOverviewByOidc",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "The start date for the billing summary",
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "The end date for the billing summary",
+            "type": "string",
+            "format": "date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BillOverviewSummary"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "The provided parameters do not appear to be valid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/finance/{accountNumber}/bills/transactions": {
+      "get": {
+        "tags": ["digitalbill", "protected", "oidc"],
+        "summary": "This Service is used to retrieve a list of transaction details associated with an account over a specified period of time, users credentials authenticated by oidc",
+        "operationId": "getBillTransactionDetailsByOidc",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "path",
+            "description": "The account number related to the request",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": true
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "The start date for the transaction details",
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "The end date for the transaction details",
+            "type": "string",
+            "format": "date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BillTransactionDetails"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "The provided parameters do not appear to be valid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DigitalBill": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["billId", "billDate", "summary"],
+          "properties": {
+            "billId": {
+              "type": "string",
+              "pattern": "^\\d{9}-\\d{8}$"
+            },
+            "billDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date on which the bill was generated."
+            },
+            "dunningMessage": {
+              "$ref": "#/definitions/DunningMessage"
+            },
+            "summary": {
+              "$ref": "#/definitions/Summary"
+            },
+            "breakdown": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BreakdownDetail"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "BillOverviewSummary": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["startDate", "endDate", "breakdown"],
+          "properties": {
+            "startDate": {
+              "type": "string",
+              "format": "date",
+              "description": "The start date for the billing summary."
+            },
+            "endDate": {
+              "type": "string",
+              "format": "date",
+              "description": "The end date for the billing summary"
+            },
+            "breakdown": {
+              "type": "array",
+              "description": "The array of billing period breakdowns chronologically ordered (oldest to newest)",
+              "items": {
+                "$ref": "#/definitions/SummaryBreakdownDetail"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "BillTransactionDetails": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["startDate", "endDate", "details"],
+          "properties": {
+            "startDate": {
+              "type": "string",
+              "format": "date",
+              "description": "The start date for the account transactions list."
+            },
+            "endDate": {
+              "type": "string",
+              "format": "date",
+              "description": "The end date for the account transactions list"
+            },
+            "details": {
+              "type": "array",
+              "description": "The array of transaction details chronologically ordered (oldest to newest)",
+              "items": {
+                "$ref": "#/definitions/TransactionDetail"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    },
+    "DunningMessage": {
+      "type": "object",
+      "description": "Important messages related to the bill",
+      "properties": {
+        "state": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "BillMessage": {
+      "type": "object",
+      "description": "Messages that related to the billing details",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "x-example": "credit"
+        },
+        "content": {
+          "type": "string",
+          "x-example": "There is nothing to pay this month"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "urlName": {
+          "type": "string"
+        },
+        "urlLink": {
+          "type": "string"
+        }
+      }
+    },
+    "Summary": {
+      "type": "object",
+      "description": "Summary of the bill",
+      "required": ["charges", "chargesSummary", "makePaymentAvailable"],
+      "properties": {
+        "charges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Charge"
+          }
+        },
+        "chargesSummary": {
+          "$ref": "#/definitions/ChargesSummary"
+        },
+        "makePaymentAvailable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Charge": {
+      "type": "object",
+      "required": ["type", "title", "status", "value"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "x-example": "previous"
+        },
+        "title": {
+          "type": "string",
+          "x-example": "Previous charges"
+        },
+        "subTitle": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "x-example": "overdue"
+        },
+        "value": {
+          "type": "string"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BillMessage"
+          }
+        }
+      }
+    },
+    "ChargesSummary": {
+      "type": "object",
+      "description": "Outline the current billing state",
+      "required": ["content", "amount", "paymentOverdue", "paymentDueDate"],
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "paymentOverdue": {
+          "type": "boolean",
+          "default": false
+        },
+        "urlName": {
+          "type": "string"
+        },
+        "urlLink": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "paymentDueDate": {
+          "type": "string",
+          "format": "date",
+          "x-example": "2019-03-30"
+        }
+      }
+    },
+    "BreakdownDetail": {
+      "type": "object",
+      "description": "The details of the bill, previous, current and total",
+      "required": ["type", "title", "sections"],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Section"
+          }
+        }
+      }
+    },
+    "Section": {
+      "type": "object",
+      "description": "Grouping for bill items",
+      "required": ["sectionSummary"],
+      "properties": {
+        "sectionSummary": {
+          "$ref": "#/definitions/SectionSummary"
+        },
+        "subSections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SubSection"
+          }
+        },
+        "status": {
+          "type": "string",
+          "x-example": "overdue"
+        }
+      }
+    },
+    "SectionSummary": {
+      "type": "object",
+      "required": ["title", "value"],
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string",
+          "x-example": "Changes to previous balance"
+        },
+        "subTitle": {
+          "type": "string",
+          "x-example": "Payments"
+        },
+        "value": {
+          "type": "string"
+        },
+        "queryType": {
+          "description": "queryType is only used for item that is late payment fee",
+          "type": "string"
+        },
+        "queryable": {
+          "type": "boolean",
+          "default": false
+        },
+        "moreAvailable": {
+          "type": "boolean",
+          "default": false
+        },
+        "intent": {
+          "type": "string",
+          "description": "intent value is used for enquiring late payment fee"
+        }
+      }
+    },
+    "SubSection": {
+      "type": "object",
+      "properties": {
+        "subSectionSummary": {
+          "$ref": "#/definitions/SubSectionSummary"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
+          }
+        }
+      }
+    },
+    "SubSectionSummary": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "x-example": "Payments"
+        },
+        "lineNumber": {
+          "type": "string"
+        },
+        "subTitle": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "Item": {
+      "type": "object",
+      "required": ["itemId"],
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "callType": {
+          "type": "string",
+          "description": "The type of the call that was made."
+        },
+        "intent": {
+          "type": "string",
+          "description": "intent value is used for enquiring more info items, it has four options",
+          "enum": [
+            "call_type_description",
+            "late_payment_fees",
+            "threshold_details",
+            "product"
+          ],
+          "x-example": "call_type_description"
+        },
+        "offerId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string",
+          "x-example": "Payment received"
+        },
+        "value": {
+          "type": "string"
+        },
+        "jurisdiction": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "x-example": "2019-03-30"
+        },
+        "time": {
+          "type": "string"
+        },
+        "numberCalled": {
+          "type": "string"
+        },
+        "callLength": {
+          "type": "string"
+        },
+        "place": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date",
+          "x-example": "2019-03-30"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date",
+          "x-example": "2020-03-30"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "rateCode": {
+          "type": "string",
+          "description": "The rate code for the call."
+        },
+        "queryType": {
+          "type": "string",
+          "default": "ALL"
+        },
+        "querySubType": {
+          "type": "string",
+          "description": "The subtype for usage queryType"
+        },
+        "queryable": {
+          "type": "boolean",
+          "default": false
+        },
+        "moreAvailable": {
+          "type": "boolean",
+          "default": false
+        },
+        "contractInfo": {
+          "$ref": "#/definitions/ContractInfo"
+        },
+        "terms": {
+          "type": "string"
+        }
+      }
+    },
+    "ContractInfo": {
+      "type": "object",
+      "required": ["startDate", "endDate"],
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "format": "date",
+          "x-example": "2019-03-30",
+          "description": "The starting date of contract"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date",
+          "x-example": "2020-03-30",
+          "description": "The ending date of contract"
+        },
+        "cancellationFee": {
+          "type": "string",
+          "description": "The charges that is applied if the contract is cancelled before end date"
+        },
+        "rentalFee": {
+          "type": "string",
+          "description": "The rental amount of the service"
+        }
+      }
+    },
+    "MoreInfoItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["billId", "accountNumber"],
+          "properties": {
+            "billId": {
+              "type": "string",
+              "pattern": "^\\d{9}-\\d{8}$"
+            },
+            "accountNumber": {
+              "type": "string",
+              "pattern": "^\\d{9}"
+            },
+            "itemId": {
+              "type": "string"
+            },
+            "moreInfoCallTypeItem": {
+              "$ref": "#/definitions/MoreInfoCallTypeItem"
+            },
+            "moreInfoLatePaymentFeesItem": {
+              "$ref": "#/definitions/MoreInfoLatePaymentFeesItem"
+            },
+            "moreInfoThresholdDetails": {
+              "$ref": "#/definitions/MoreInfoThresholdDetails"
+            },
+            "moreInfoProductItem": {
+              "$ref": "#/definitions/MoreInfoProductItem"
+            }
+          }
+        }
+      ]
+    },
+    "MoreInfoCallTypeItem": {
+      "type": "object",
+      "required": [
+        "amount",
+        "date",
+        "time",
+        "numberCalled",
+        "callLength",
+        "place",
+        "callType",
+        "callTypeDescription"
+      ],
+      "properties": {
+        "amount": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "x-example": "2019-03-30"
+        },
+        "time": {
+          "type": "string",
+          "description": "The time at which the call was made."
+        },
+        "numberCalled": {
+          "type": "string",
+          "description": "This is the number to which call has been made."
+        },
+        "callLength": {
+          "type": "string",
+          "description": "The total duration of the call."
+        },
+        "place": {
+          "type": "string",
+          "description": "The destination of the call was made."
+        },
+        "rateCode": {
+          "type": "string"
+        },
+        "callType": {
+          "type": "string"
+        },
+        "callTypeDescription": {
+          "type": "string",
+          "description": "This defines the call type description."
+        }
+      }
+    },
+    "MoreInfoLatePaymentFeesItem": {
+      "type": "object",
+      "description": "More information about late payment fee item",
+      "required": ["description", "gstInclusiveAmt", "lastStatementDueDate"],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "late payment fee more info title"
+        },
+        "gstInclusiveAmt": {
+          "type": "string",
+          "description": "late payment fee GST inclusive amount"
+        },
+        "gstExclusiveAmt": {
+          "type": "string",
+          "description": "late payment fee GST exclusive amount"
+        },
+        "billCycleFileName": {
+          "type": "string"
+        },
+        "billCycle": {
+          "type": "string"
+        },
+        "statementDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Current statement date"
+        },
+        "lastStatementDueDate": {
+          "type": "string",
+          "format": "date",
+          "x-example": "2019-03-30",
+          "description": "The due date of last statement"
+        },
+        "latePaymentFeesDetails": {
+          "type": "array",
+          "description": "An array of late payment fee details",
+          "items": {
+            "$ref": "#/definitions/LatePaymentFeesDetail"
+          }
+        }
+      }
+    },
+    "LatePaymentFeesDetail": {
+      "type": "object",
+      "description": "Late payment fee details, including late payment fee description, previous statment due date, hyperlink of ways of payment and set up a bill reminder",
+      "required": ["detailsDescription"],
+      "properties": {
+        "detailsDescription": {
+          "type": "string",
+          "description": "late payment fee details, including description, last statemend due date, ways to pay and billing reminder"
+        },
+        "urlName": {
+          "type": "string",
+          "description": "ways to pay and billing reminder hyperlink name"
+        },
+        "urlLink": {
+          "type": "string",
+          "description": "ways to pay and billing reminder url hyperlink"
+        }
+      }
+    },
+    "MoreInfoThresholdDetails": {
+      "type": "object",
+      "required": [
+        "lineNumber",
+        "callTypeGroup",
+        "jurisdictionGroup",
+        "callTypeGroupDesc",
+        "subtotal"
+      ],
+      "properties": {
+        "lineNumber": {
+          "type": "string",
+          "description": "The line number that consumes the services"
+        },
+        "jurisdictionGroup": {
+          "type": "string",
+          "description": "The jusridiction group value from Fuse.",
+          "x-example": "O"
+        },
+        "callTypeGroup": {
+          "type": "string",
+          "description": "The call type group value from Fuse.",
+          "x-example": "RT"
+        },
+        "callTypeGroupDesc": {
+          "type": "string",
+          "description": "The description of the service that has been consumed",
+          "x-example": "Romaing Text: Nil GST"
+        },
+        "subtotal": {
+          "type": "string"
+        },
+        "moreInfoThresholdDetailsItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MoreInfoThresholdDetailsItem"
+          }
+        }
+      }
+    },
+    "MoreInfoThresholdDetailsItem": {
+      "type": "object",
+      "required": ["callDate", "callTime", "netCallAmount", "toPhone"],
+      "properties": {
+        "callDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "callReference": {
+          "type": "string"
+        },
+        "callTime": {
+          "type": "string"
+        },
+        "callType": {
+          "type": "string"
+        },
+        "customerNumber": {
+          "type": "string"
+        },
+        "durationMinutes": {
+          "type": "integer"
+        },
+        "durationSeconds": {
+          "type": "integer"
+        },
+        "fromPlace": {
+          "type": "string"
+        },
+        "fromPhone": {
+          "type": "string"
+        },
+        "gstIncExc": {
+          "type": "string"
+        },
+        "netCallAmount": {
+          "type": "string",
+          "description": "The cost of the service that is GST included."
+        },
+        "statementDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "toPhone": {
+          "type": "string"
+        },
+        "toPlace": {
+          "type": "string"
+        }
+      }
+    },
+    "MoreInfoProductItem": {
+      "type": "object",
+      "description": "product details, including description, broadband plan tiers, mobile details, entilements and what included in the plan",
+      "required": [
+        "productDesc",
+        "priceValue",
+        "formattedValue",
+        "manageMyPlanContent",
+        "manageMyPlanUrlName",
+        "manageMyPlanUrlLink"
+      ],
+      "properties": {
+        "productDesc": {
+          "type": "string",
+          "description": "the name of the product",
+          "x-example": "Unplan Entertainment Fibre"
+        },
+        "priceValue": {
+          "type": "number",
+          "description": "Monthly price of the product",
+          "x-example": "99"
+        },
+        "formattedValue": {
+          "type": "string",
+          "description": "The formatted value of the actual price of the product",
+          "x-example": "$99.00"
+        },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tier"
+          }
+        },
+        "entitlements": {
+          "type": "array",
+          "description": "A list of entitlements of a service plan product",
+          "items": {
+            "$ref": "#/definitions/Entitlement"
+          }
+        },
+        "valueAddedServices": {
+          "type": "array",
+          "description": "a list of value added services in this product",
+          "items": {
+            "$ref": "#/definitions/Entitlement"
+          }
+        },
+        "manageMyPlanContent": {
+          "type": "string",
+          "description": "manange my plan content"
+        },
+        "manageMyPlanUrlName": {
+          "type": "string",
+          "description": "manage my plan hyperlink name"
+        },
+        "manageMyPlanUrlLink": {
+          "type": "string",
+          "description": "manage my plan url hyperlink"
+        }
+      }
+    },
+    "Entitlement": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier for the entitlement",
+          "example": "LightBox"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the entitlement",
+          "x-example": "Voice"
+        },
+        "detailsDescription": {
+          "type": "string",
+          "description": "The description of the entitlement",
+          "x-example": "300 Rollover to NZ"
+        }
+      }
+    },
+    "Tier": {
+      "type": "object",
+      "description": "The monthly pricing tier of the product",
+      "required": ["lowerLimit", "upperLimit", "value", "formattedValue"],
+      "properties": {
+        "lowerLimit": {
+          "type": "integer",
+          "description": "The lower limit of the tier",
+          "x-example": 0
+        },
+        "upperLimit": {
+          "type": "integer",
+          "description": "The upper limit of the tier",
+          "x-example": 65
+        },
+        "value": {
+          "type": "number",
+          "description": "The actual price of the tier",
+          "x-example": 65
+        },
+        "formattedValue": {
+          "type": "string",
+          "description": "The formatted value of the actual price of the tier",
+          "x-example": "$65.00"
+        },
+        "tierDescription": {
+          "type": "string",
+          "description": "The description of the tier",
+          "x-example": "Up to 60GB"
+        }
+      }
+    },
+    "SummaryBreakdownDetail": {
+      "type": "object",
+      "description": "Details of the bill with break down of charges.",
+      "required": ["date", "title", "billId", "chargeSummary"],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "The generated bill date."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title associated with the bill."
+        },
+        "billId": {
+          "type": "string",
+          "pattern": "^\\d{9}-\\d{8}$",
+          "x-example": "100771810-20190503",
+          "description": "The unique identifier for the bill"
+        },
+        "chargeSummary": {
+          "type": "array",
+          "description": "The array of charge summaries associated with the billing period.",
+          "items": {
+            "$ref": "#/definitions/CurrentChargeSummary"
+          }
+        }
+      }
+    },
+    "TransactionDetail": {
+      "type": "object",
+      "description": "Details of transaction details.",
+      "required": ["date", "type", "value", "calculatedBalance"],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "The date of the transaction.",
+          "example": "2020-05-26"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of transaction.",
+          "example": "Charged",
+          "enum": [
+            "Charged",
+            "Late Fee",
+            "Surcharge",
+            "Credit",
+            "Payment",
+            "Failed"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "description": "The value of the transaction. This be positive for debits and negative for credits.",
+          "example": 95.2
+        },
+        "calculatedBalance": {
+          "type": "number",
+          "description": "The calculated balance (amount to pay) following this specific transaction.",
+          "example": 95.2
+        },
+        "billId": {
+          "type": "string",
+          "description": "Bill ID of the digital bill associated with this charge",
+          "pattern": "^\\d{9}-\\d{8}$",
+          "example": "123110000-20200000"
+        },
+        "description": {
+          "type": "string",
+          "description": "A customer-friendly description of the transaction event.",
+          "example": "Charged - May 2020"
+        }
+      }
+    },
+    "CurrentChargeSummary": {
+      "type": "object",
+      "description": "Current charge with all possible breakdown in the bill.",
+      "required": ["type", "value"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "x-example": "MONTHLY_CHARGES",
+          "description": "The type of aggregated charge"
+        },
+        "value": {
+          "type": "string",
+          "description": "The formatted NZD value of the charge"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "ST2": {
+        "properties": {
+          "endPoint": "http://iamproxy-st05.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-st2.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST3": {
+        "properties": {
+          "endPoint": "http://iamproxy-st07.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-st3.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST4": {
+        "properties": {
+          "endPoint": "http://iamproxy-st06.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-st4.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://digitalbill-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

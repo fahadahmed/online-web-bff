@@ -1,0 +1,16 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+
+  "offerDetails": [
+    {
+      "id": "iphone_13_pro_128gb_sierra_blue",
+      "name": "iPhone 13 pro 128GB - Sierra Blue",
+      "description": "A15 Bionic, the world’s fastest smartphone chip. Superfast 5G for faster download speeds and high-quality streaming."
+    }
+  ]
+}

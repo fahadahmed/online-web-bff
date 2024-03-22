@@ -1,0 +1,52 @@
+{
+  "bundles": [
+    {
+      "id": "ba3384b4-ca09-4698-b6bc-606610b06586",
+      "offerDetails": [
+        {
+          "id": "ott_netflix",
+          "name": "Netflix",
+          "description": "Enjoy Award winning movies, and must see TV shows with Netflix.",
+          "category": [
+            {
+              "id,": "vas_addon"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring/OneOff",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 99.99
+          }
+        },
+        {
+          "id": "ott_spotify",
+          "name": "Spotify",
+          "description": "Enjoy Award winning movies, and must see TV shows with Netflix.",
+          "imageUrl": "/content/dam/shop-journeys/addons/spotify.png",
+          "category": [
+            {
+              "id,": "vas_addon"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring/OneOff",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 99.99
+          }
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ]
+}

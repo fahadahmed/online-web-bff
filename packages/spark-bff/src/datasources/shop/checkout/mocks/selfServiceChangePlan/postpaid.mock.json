@@ -1,0 +1,262 @@
+{
+  "sections": [
+    {
+      "sectionId": "selfServicePostpaidSetup",
+      "name": "",
+      "steps": [
+        {
+          "stepId": "setup",
+          "name": "",
+          "fields": [
+            {
+              "name": "planComparer",
+              "datatype": "Boolean",
+              "type": "custom",
+              "customAttributes": [
+                { "key": "component", "value": "changePlanComparer" }
+              ],
+              "fieldRule": {
+                "required": {
+                  "expression": "false"
+                }
+              }
+            },
+            {
+              "name": "subscriptionComparer",
+              "datatype": "Boolean",
+              "label": "Benefits differ on this plan",
+              "type": "custom",
+              "customAttributes": [
+                { "key": "component", "value": "subscriptionComparer" }
+              ],
+              "fieldRule": {
+                "required": {
+                  "expression": "false"
+                }
+              }
+            },
+            {
+              "name": "planStartDateHeading",
+              "datatype": null,
+              "label": "Select your new plan start date",
+              "type": "custom",
+              "customAttributes": [{ "key": "component", "value": "heading" }],
+              "fieldRule": {
+                "required": {
+                  "expression": "false"
+                }
+              }
+            },
+            {
+              "name": "planStartDatePicker",
+              "datatype": "Date",
+              "label": null,
+              "type": "custom",
+              "customAttributes": [
+                { "key": "component", "value": "datePicker" }
+              ],
+              "fieldRule": {
+                "required": {
+                  "expression": "true"
+                }
+              }
+            },
+            {
+              "name": "planStartDateFootnote",
+              "datatype": "Boolean",
+              "label": null,
+              "type": "custom",
+              "customAttributes": [
+                { "key": "component", "value": "content" },
+                {
+                  "key": "contentKey",
+                  "value": "planStartDate.footnote"
+                }
+              ],
+              "fieldRule": {
+                "required": {
+                  "expression": "false"
+                }
+              }
+            },
+            {
+              "name": "continueButton",
+              "datatype": "Boolean",
+              "label": "Continue",
+              "type": "custom",
+              "customAttributes": [
+                { "key": "component", "value": "submitRecommendationButton" }
+              ],
+              "fieldRule": {
+                "required": {
+                  "expression": "false"
+                }
+              }
+            },
+            {
+              "name": "cancelButton",
+              "datatype": "Boolean",
+              "label": "Select a different plan",
+              "type": "custom",
+              "customAttributes": [
+                { "key": "component", "value": "closeButton" }
+              ],
+              "fieldRule": {
+                "required": {
+                  "expression": "false"
+                }
+              }
+            }
+          ],
+          "level": "cartItem",
+          "offerContainerId": "5236374f-81b7-40c2-9683-04f03568f590",
+          "cartItemId": "07e6a0c0-9a27-4c4a-bf9c-4598b4b3f352",
+          "sequence": "0",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "customAttributes": null,
+      "name": "Review",
+      "sectionId": "selfServiceReview",
+      "steps": [
+        {
+          "cartItemId": null,
+          "customAttributes": null,
+          "endpoints": null,
+          "fields": [
+            {
+              "customAttributes": [
+                { "key": "component", "value": "cart_table" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "",
+              "name": "review_cart_table",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "inline_date_picker" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "",
+              "name": "change_starting_date",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "reviewFootNote" },
+                {
+                  "key": "contentKey",
+                  "value": "footNote.postpaid"
+                }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "",
+              "name": "reviewFootNote",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "review_payment_field" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": { "expression": "false", "uiFields": null }
+              },
+              "label": "",
+              "name": "review_payment_field",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "I have read and accept the terms and condtions",
+              "name": "terms_and_conditions",
+              "options": null,
+              "type": "checkBox",
+              "uiRef": null
+            },
+            {
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "Confirm",
+              "name": "Confirm",
+              "options": null,
+              "type": "button",
+              "uiRef": null
+            }
+          ],
+          "groupByLevelEnabled": null,
+          "level": "order",
+          "name": "SelfServiceReview",
+          "offerContainerId": "5236374f-81b7-40c2-9683-04f03568f590",
+          "sequence": "0",
+          "stepDataRef": null,
+          "stepId": "Self_service_review",
+          "uiRef": null,
+          "validationExpressions": null,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}

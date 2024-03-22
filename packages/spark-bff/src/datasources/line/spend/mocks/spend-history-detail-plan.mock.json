@@ -1,0 +1,25 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "interval": "MONTHLY",
+  "breakdownType": "PLAN",
+  "gstInclusive": true,
+  "startDateTime": "2021-09-08T12:00:00Z",
+  "endDateTime": "2021-10-08T10:59:59Z",
+  "periodSpend": 59.99,
+  "unbilled": false,
+  "contributingProducts": [
+    {
+      "offerId": "mbundle050820",
+      "productName": "$59.99 Endless Mobile Plan",
+      "chargeStartDateTime": "2021-10-07T11:00:00Z",
+      "chargeEndDateTime": "2021-11-06T11:00:00Z",
+      "productEndDateTime": null,
+      "periodSpend": 59.99
+    }
+  ]
+}

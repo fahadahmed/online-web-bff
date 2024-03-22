@@ -1,0 +1,431 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Point of Interest MicroService",
+    "version": "1.0.0",
+    "title": "Point of Interest Service API"
+  },
+  "schemes": ["https"],
+  "paths": {
+    "/v1/location/pointsofinterest/outages": {
+      "get": {
+        "tags": ["pointsofinterest", "public"],
+        "summary": "This API supports the retrieval of all the outages across the country.",
+        "operationId": "fetchOutageData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "outageType",
+            "description": "The Type of outage the users are wanting to filter by.",
+            "required": false,
+            "type": "string",
+            "enum": ["OUTAGE", "MAINTENANCE"],
+            "x-example": "MAINTENANCE"
+          },
+          {
+            "in": "query",
+            "name": "serviceAffected",
+            "description": "The Type of service affected the users are wanting to filter by.",
+            "required": false,
+            "type": "string",
+            "enum": ["INTERNET", "LANDLINE", "MOBILE", "OTHERS"],
+            "x-example": "INTERNET"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The outage data has been successfully fetched.",
+            "schema": {
+              "$ref": "#/definitions/OutageDataResponse"
+            }
+          },
+          "400": {
+            "description": "BAD REQUEST",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL SERVER ERROR, General failure (e.g. the system that stores outage data is down).",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "There are no outages found for outage type or service affected or both (outage type & service affected).",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/location/pointsofinterest/services": {
+      "get": {
+        "tags": ["pointsofinterest", "public"],
+        "summary": "This API supports the retrieval of all the addresses and locations for the relevant spark points of interest. Results can be filtered by supplying a type as a query parameter.",
+        "operationId": "fetchServicesData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "serviceType",
+            "description": "The type of location the users are wanting to return.",
+            "required": false,
+            "type": "string",
+            "enum": ["STORE", "WIFI", "RECYCLE", "BUSINESS"],
+            "x-example": "STORE"
+          },
+          {
+            "in": "query",
+            "name": "brand",
+            "description": "The brand for which the locations are returned.",
+            "required": false,
+            "type": "string",
+            "enum": ["SPARK", "SKINNY", "OTHER"],
+            "x-example": "SPARK"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "description": "The geographic latitude and longitude co-ordinates to centre the filter.",
+            "type": "string",
+            "x-example": "-75.23,23.67"
+          },
+          {
+            "in": "query",
+            "name": "radius",
+            "description": "The radius of the search filter in metres centred around the co-ordinates supplied in the location query parameter.",
+            "type": "number",
+            "x-example": 500
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The service location data has been successfully fetched.",
+            "schema": {
+              "$ref": "#/definitions/ServiceLocationDataResponse"
+            }
+          },
+          "400": {
+            "description": "BAD REQUEST",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The requested ServiceType or Brand was not found, internal error code 4102 or 4107 or 4108 respectively.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL SERVER ERROR, General failure (e.g. the system that stores outage data is down).",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "OutageDataResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["outages"],
+          "properties": {
+            "outages": {
+              "type": "array",
+              "description": "An array of the outage data objects to be presented",
+              "items": {
+                "$ref": "#/definitions/OutageData"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "OutageData": {
+      "type": "object",
+      "required": [
+        "displayName",
+        "outageType",
+        "category",
+        "serviceAffected",
+        "longitude",
+        "latitude"
+      ],
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "The display name of the outage",
+          "example": "Waharoa Outage"
+        },
+        "outageType": {
+          "type": "string",
+          "description": "The type of the outage, this is based on where we retrieve then information from: all_network_events.xml or maintenance.xml",
+          "enum": ["MAINTENANCE", "OUTAGE"],
+          "example": "MAINTENANCE"
+        },
+        "category": {
+          "type": "string",
+          "description": "The category of the outage",
+          "enum": ["unplanned_outage", "planned_outage"],
+          "example": "unplanned_outage"
+        },
+        "serviceAffected": {
+          "type": "string",
+          "description": "The description of the service affected",
+          "enum": ["MOBILE", "INTERNET", "LANDLINE", "OTHERS"],
+          "example": "MOBILE"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the outage describing",
+          "enum": ["CURRENT", "RESOLVED", "FIXED"],
+          "example": "RESOLVED"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the outage",
+          "example": "Mobile customers in Waharoa may experience a loss of Voice"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Used to geolocate the outage location in maps , will be positive due to NZ geo location",
+          "example": 174.322556
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Used to geolocate the exact outage location in maps, will be negative due to NZ geo location",
+          "example": -35.716775
+        },
+        "startDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The start time of the outage, this may be the time logged",
+          "example": "2020-02-28T03:25:00+13:00"
+        },
+        "endDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The end time of when the outage was resolved",
+          "example": "2020-02-28T06:18:00+13:00"
+        }
+      }
+    },
+    "ServiceLocationDataResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["locations"],
+          "properties": {
+            "locations": {
+              "type": "array",
+              "description": "A list of the locations to be presented. Mandatory but the list may be empty.",
+              "items": {
+                "$ref": "#/definitions/LocationData"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "LocationData": {
+      "type": "object",
+      "required": [
+        "displayName",
+        "brand",
+        "store",
+        "businessHub",
+        "wifi",
+        "recycle",
+        "latitude",
+        "longitude",
+        "featured"
+      ],
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "Name of the location to be presented",
+          "example": "Christchurch Middle Store"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Provides the Brand identifier to filter locations when querying from different brands",
+          "enum": ["SPARK", "SKINNY", "OTHER"],
+          "example": "SPARK"
+        },
+        "store": {
+          "type": "boolean",
+          "description": "Dictates if the location is a store",
+          "example": true
+        },
+        "businessHub": {
+          "type": "boolean",
+          "description": "Dictates if the location is a businessHub",
+          "example": true
+        },
+        "wifi": {
+          "type": "boolean",
+          "description": "Dictates if the location provides wifi",
+          "example": true
+        },
+        "recycle": {
+          "type": "boolean",
+          "description": "Dictates if the location provides mobile recycling services",
+          "example": true
+        },
+        "distanceFromLocation": {
+          "type": "number",
+          "description": "Value representing the distance in metres (as the crow flies) from the point of interest to the optionally supplied location in the query URI."
+        },
+        "addressLine1": {
+          "type": "string",
+          "description": "First line of the address normally a street or building number"
+        },
+        "addressLine2": {
+          "type": "string",
+          "description": "Second line of the address normally a street or building number"
+        },
+        "suburb": {
+          "type": "string",
+          "description": "Suburb of the point of interest"
+        },
+        "city": {
+          "type": "string",
+          "description": "City of the point of interest"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Used to geolocate the exact service location in maps , will be positive due to NZ geo location",
+          "example": 174.322556
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Used to geolocate the exact service location in maps, will be negative due to NZ geo location",
+          "example": -35.716775
+        },
+        "directions": {
+          "type": "string",
+          "description": "Describes how to get to the location",
+          "example": "Left Side"
+        },
+        "image": {
+          "type": "string",
+          "description": "The url of the image of the point of interest",
+          "example": "https://www.spark.co.nz/content/dam/christchurchStore/asset.jpg"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone Number of the point of interest",
+          "example": "0800-020-7898"
+        },
+        "contacts": {
+          "type": "array",
+          "description": "An optional array of contact names and their roles associated with this point of interest.",
+          "items": {
+            "$ref": "#/definitions/Contacts"
+          }
+        },
+        "operatingHours": {
+          "type": "array",
+          "description": "A list of operating hours object which indicates what times the stores will be open. This is optional as locations such as WIFI hotspots do not have operating hours.",
+          "items": {
+            "$ref": "#/definitions/OperatingHour"
+          }
+        },
+        "featured": {
+          "type": "boolean",
+          "description": "A flag that indicates if the point of inter has been featured by the curators."
+        },
+        "emailAddress": {
+          "type": "string",
+          "description": "The optional primary email address for the point of interest."
+        }
+      }
+    },
+    "OperatingHour": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "string",
+          "description": "The day of the week",
+          "enum": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "example": "Monday"
+        },
+        "open": {
+          "type": "string",
+          "description": "The open times of the day.  This value can be empty and is normally supplied in HH:MM:SS format which is managed by AEM.",
+          "example": "08:00:00"
+        },
+        "close": {
+          "type": "string",
+          "description": "The closed times of the day. This value can be empty and is normally supplied in HH:MM:SS format which is managed by AEM.",
+          "example": "17:00:00"
+        }
+      }
+    },
+    "Contacts": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the contact.",
+          "example": "Peter"
+        },
+        "role": {
+          "type": "string",
+          "description": "The role the contact holds.",
+          "example": "Manager"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

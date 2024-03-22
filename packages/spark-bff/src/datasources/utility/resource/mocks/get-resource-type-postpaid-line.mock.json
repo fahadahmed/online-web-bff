@@ -1,0 +1,19 @@
+{
+  "isNumberIdentified": true,
+  "lineInfo": {
+    "lineType": "MOBILE_POSTPAID",
+    "isLineAccessAllowed": true,
+    "isAccountAccessAllowed": false
+  },
+  "accountInfo": {
+    "isPasswordProtected": true,
+    "isAccountAccessAllowed": true,
+    "hasBusinessName": false
+  },
+  "messages": [
+    {
+      "message": "Resource identification completed Successfully.",
+      "code": 2000
+    }
+  ]
+}

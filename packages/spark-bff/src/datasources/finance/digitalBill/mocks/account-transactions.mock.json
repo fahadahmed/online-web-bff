@@ -1,0 +1,743 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "startDate": "2020-04-30",
+  "endDate": "2021-04-30",
+  "details": [
+    {
+      "date": "2021-04-21",
+      "type": "Payment",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2021-04-03",
+      "type": "Late_Fee",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210403",
+      "description": "Late Fees - Apr 2021"
+    },
+    {
+      "date": "2021-03-18",
+      "type": "Surcharge",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Surcharge"
+    },
+    {
+      "date": "2021-03-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210303",
+      "description": "Charges - Mar 2021"
+    },
+    {
+      "date": "2021-02-18",
+      "type": "Credit",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - Feb 2021"
+    },
+    {
+      "date": "2021-02-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210203",
+      "description": "Charges - Feb 2021"
+    },
+    {
+      "date": "2021-01-20",
+      "type": "Credit",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - Jan 2020"
+    },
+    {
+      "date": "2021-01-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210103",
+      "description": "Charges - Jan 2021"
+    },
+    {
+      "date": "2020-12-18",
+      "type": "Payment",
+      "value": -17.05,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-12-03",
+      "type": "Charged",
+      "value": 35.36,
+      "calculatedBalance": 17.05,
+      "billId": "720308770-20201203",
+      "description": "Charges - Dec 2020"
+    },
+    {
+      "date": "2020-11-03",
+      "type": "Credit",
+      "value": -18.31,
+      "calculatedBalance": -18.31,
+      "billId": "720308770-20201103",
+      "description": "Credit - Nov 2020"
+    },
+    {
+      "date": "2020-10-20",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-10-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20201003",
+      "description": "Charges - Oct 2020"
+    },
+    {
+      "date": "2020-09-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-09-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200903",
+      "description": "Charges - Sep 2020"
+    },
+    {
+      "date": "2020-08-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-08-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200803",
+      "description": "Charges - Aug 2020"
+    },
+    {
+      "date": "2020-07-20",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-07-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200703",
+      "description": "Charges - Jul 2020"
+    },
+    {
+      "date": "2020-06-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-06-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200603",
+      "description": "Charges - Jun 2020"
+    },
+    {
+      "date": "2020-05-19",
+      "type": "Credit",
+      "value": -56.87,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - May 2020"
+    },
+    {
+      "date": "2020-05-03",
+      "type": "Late_Fee",
+      "value": 56.87,
+      "calculatedBalance": 56.87,
+      "billId": "720308770-20200503",
+      "description": "Charges - May 2020"
+    },
+    {
+      "date": "2021-04-21",
+      "type": "Payment",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2021-04-03",
+      "type": "Late_Fee",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210403",
+      "description": "Late Fees - Apr 2021"
+    },
+    {
+      "date": "2021-03-18",
+      "type": "Surcharge",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Surcharge"
+    },
+    {
+      "date": "2021-03-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210303",
+      "description": "Charges - Mar 2021"
+    },
+    {
+      "date": "2021-02-18",
+      "type": "Credit",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - Feb 2021"
+    },
+    {
+      "date": "2021-02-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210203",
+      "description": "Charges - Feb 2021"
+    },
+    {
+      "date": "2021-01-20",
+      "type": "Credit",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - Jan 2020"
+    },
+    {
+      "date": "2021-01-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210103",
+      "description": "Charges - Jan 2021"
+    },
+    {
+      "date": "2020-12-18",
+      "type": "Payment",
+      "value": -17.05,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-12-03",
+      "type": "Charged",
+      "value": 35.36,
+      "calculatedBalance": 17.05,
+      "billId": "720308770-20201203",
+      "description": "Charges - Dec 2020"
+    },
+    {
+      "date": "2020-11-03",
+      "type": "Credit",
+      "value": -18.31,
+      "calculatedBalance": -18.31,
+      "billId": "720308770-20201103",
+      "description": "Credit - Nov 2020"
+    },
+    {
+      "date": "2020-10-20",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-10-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20201003",
+      "description": "Charges - Oct 2020"
+    },
+    {
+      "date": "2020-09-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-09-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200903",
+      "description": "Charges - Sep 2020"
+    },
+    {
+      "date": "2020-08-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-08-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200803",
+      "description": "Charges - Aug 2020"
+    },
+    {
+      "date": "2020-07-20",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-07-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200703",
+      "description": "Charges - Jul 2020"
+    },
+    {
+      "date": "2020-06-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-06-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200603",
+      "description": "Charges - Jun 2020"
+    },
+    {
+      "date": "2020-05-19",
+      "type": "Credit",
+      "value": -56.87,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - May 2020"
+    },
+    {
+      "date": "2020-05-03",
+      "type": "Late_Fee",
+      "value": 56.87,
+      "calculatedBalance": 56.87,
+      "billId": "720308770-20200503",
+      "description": "Charges - May 2020"
+    },
+    {
+      "date": "2021-04-21",
+      "type": "Payment",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2021-04-03",
+      "type": "Late_Fee",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210403",
+      "description": "Late Fees - Apr 2021"
+    },
+    {
+      "date": "2021-03-18",
+      "type": "Surcharge",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Surcharge"
+    },
+    {
+      "date": "2021-03-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210303",
+      "description": "Charges - Mar 2021"
+    },
+    {
+      "date": "2021-02-18",
+      "type": "Credit",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - Feb 2021"
+    },
+    {
+      "date": "2021-02-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210203",
+      "description": "Charges - Feb 2021"
+    },
+    {
+      "date": "2021-01-20",
+      "type": "Credit",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - Jan 2020"
+    },
+    {
+      "date": "2021-01-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210103",
+      "description": "Charges - Jan 2021"
+    },
+    {
+      "date": "2020-12-18",
+      "type": "Payment",
+      "value": -17.05,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-12-03",
+      "type": "Charged",
+      "value": 35.36,
+      "calculatedBalance": 17.05,
+      "billId": "720308770-20201203",
+      "description": "Charges - Dec 2020"
+    },
+    {
+      "date": "2020-11-03",
+      "type": "Credit",
+      "value": -18.31,
+      "calculatedBalance": -18.31,
+      "billId": "720308770-20201103",
+      "description": "Credit - Nov 2020"
+    },
+    {
+      "date": "2020-10-20",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-10-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20201003",
+      "description": "Charges - Oct 2020"
+    },
+    {
+      "date": "2020-09-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-09-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200903",
+      "description": "Charges - Sep 2020"
+    },
+    {
+      "date": "2020-08-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-08-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200803",
+      "description": "Charges - Aug 2020"
+    },
+    {
+      "date": "2020-07-20",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-07-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200703",
+      "description": "Charges - Jul 2020"
+    },
+    {
+      "date": "2020-06-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-06-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200603",
+      "description": "Charges - Jun 2020"
+    },
+    {
+      "date": "2020-05-19",
+      "type": "Credit",
+      "value": -56.87,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - May 2020"
+    },
+    {
+      "date": "2020-05-03",
+      "type": "Late_Fee",
+      "value": 56.87,
+      "calculatedBalance": 56.87,
+      "billId": "720308770-20200503",
+      "description": "Charges - May 2020"
+    },
+    {
+      "date": "2021-04-21",
+      "type": "Payment",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2021-04-03",
+      "type": "Late_Fee",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210403",
+      "description": "Late Fees - Apr 2021"
+    },
+    {
+      "date": "2021-03-18",
+      "type": "Surcharge",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Surcharge"
+    },
+    {
+      "date": "2021-03-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210303",
+      "description": "Charges - Mar 2021"
+    },
+    {
+      "date": "2021-02-18",
+      "type": "Credit",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - Feb 2021"
+    },
+    {
+      "date": "2021-02-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210203",
+      "description": "Charges - Feb 2021"
+    },
+    {
+      "date": "2021-01-20",
+      "type": "Credit",
+      "value": -36.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - Jan 2020"
+    },
+    {
+      "date": "2021-01-03",
+      "type": "Charged",
+      "value": 36.36,
+      "calculatedBalance": 36.36,
+      "billId": "720308770-20210103",
+      "description": "Charges - Jan 2021"
+    },
+    {
+      "date": "2020-12-18",
+      "type": "Payment",
+      "value": -17.05,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-12-03",
+      "type": "Charged",
+      "value": 35.36,
+      "calculatedBalance": 17.05,
+      "billId": "720308770-20201203",
+      "description": "Charges - Dec 2020"
+    },
+    {
+      "date": "2020-11-03",
+      "type": "Credit",
+      "value": -18.31,
+      "calculatedBalance": -18.31,
+      "billId": "720308770-20201103",
+      "description": "Credit - Nov 2020"
+    },
+    {
+      "date": "2020-10-20",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-10-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20201003",
+      "description": "Charges - Oct 2020"
+    },
+    {
+      "date": "2020-09-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-09-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200903",
+      "description": "Charges - Sep 2020"
+    },
+    {
+      "date": "2020-08-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-08-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200803",
+      "description": "Charges - Aug 2020"
+    },
+    {
+      "date": "2020-07-20",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-07-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200703",
+      "description": "Charges - Jul 2020"
+    },
+    {
+      "date": "2020-06-18",
+      "type": "Payment",
+      "value": -32.36,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Direct debit payment received - Thank you"
+    },
+    {
+      "date": "2020-06-03",
+      "type": "Charged",
+      "value": 32.36,
+      "calculatedBalance": 32.36,
+      "billId": "720308770-20200603",
+      "description": "Charges - Jun 2020"
+    },
+    {
+      "date": "2020-05-19",
+      "type": "Credit",
+      "value": -56.87,
+      "calculatedBalance": 0,
+      "billId": null,
+      "description": "Credit - May 2020"
+    },
+    {
+      "date": "2020-05-03",
+      "type": "Late_Fee",
+      "value": 56.87,
+      "calculatedBalance": 56.87,
+      "billId": "720308770-20200503",
+      "description": "Charges - May 2020"
+    }
+  ]
+}

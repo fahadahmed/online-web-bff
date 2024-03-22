@@ -1,0 +1,1032 @@
+{
+  "sections": [
+    {
+      "sectionId": "account-setup",
+      "name": "Account",
+      "steps": [
+        {
+          "stepId": "personalDetails",
+          "name": "Personal details",
+          "fields": [
+            {
+              "name": "personal_details_description",
+              "type": "content_field",
+              "fieldRule": { "required": { "expression": "false" } },
+              "label": "Personal details description",
+              "customAttributes": [
+                {
+                  "key": "contentKey",
+                  "value": "checkout.account.personalDetails.description"
+                }
+              ]
+            },
+            {
+              "name": "first_name",
+              "type": "textfield",
+              "fieldRule": {
+                "validations": {
+                  "regex": {
+                    "expression": "^[A-Za-z\\s.-]{1,50}$",
+                    "message": "Please enter no more than 50 letters"
+                  }
+                }
+              },
+              "label": "First name",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "shouldMask", "value": "true" },
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Name" },
+                {
+                  "key": "summaryTemplate",
+                  "value": "first_name + ' ' + last_name"
+                },
+                { "key": "placeholder", "value": "Your first name" }
+              ]
+            },
+            {
+              "name": "middle_name",
+              "type": "textfield",
+              "fieldRule": {
+                "required": { "expression": "false" },
+                "validations": {
+                  "regex": {
+                    "expression": "^[A-Za-z\\s.-]{1,50}$",
+                    "message": "Please enter no more than 50 letters"
+                  }
+                }
+              },
+              "label": "Middle name",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "placeholder", "value": "Your middle name" },
+                { "key": "shouldMask", "value": "true" }
+              ]
+            },
+            {
+              "name": "last_name",
+              "type": "textfield",
+              "fieldRule": {
+                "validations": {
+                  "regex": {
+                    "expression": "^[A-Za-z\\s.-]{1,50}+$",
+                    "message": "Please enter no more than 50 letters"
+                  }
+                }
+              },
+              "label": "Last name",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "placeholder", "value": "Your last name" },
+                { "key": "shouldMask", "value": "true" }
+              ]
+            },
+            {
+              "name": "date_of_birth",
+              "type": "full_date_input",
+              "label": "Date of birth",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "shouldMask", "value": "true" },
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Date of birth" },
+                {
+                  "key": "summaryTemplate",
+                  "value": "formatDate(date_of_birth, 'dd/MM/yyyy')"
+                }
+              ]
+            },
+            {
+              "name": "email",
+              "type": "textfield",
+              "fieldRule": {
+                "validations": {
+                  "regex": {
+                    "expression": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
+                    "message": "Please check if your email address is correct. Example: johnsmith@gmail.com"
+                  }
+                }
+              },
+              "label": "Email",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "placeholder", "value": "Your email" },
+                { "key": "shouldMask", "value": "true" },
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Email" },
+                { "key": "summaryTemplate", "value": "email" }
+              ]
+            },
+            {
+              "name": "contact_number",
+              "type": "phone_input",
+              "fieldRule": {
+                "validations": {
+                  "regex": {
+                    "expression": "^[0-9]{9,12}$",
+                    "message": "Enter from 6 to 9 digits"
+                  }
+                }
+              },
+              "label": "Contact number",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "shouldMask", "value": "true" },
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Contact number" },
+                { "key": "summaryTemplate", "value": "contact_number" },
+                { "key": "placeholder", "value": "Your number" },
+                {
+                  "key": "customItems",
+                  "value": "021, 023, 022, 027, 028, 029, 0204"
+                },
+                { "key": "defaultValue", "value": "023" }
+              ]
+            },
+            {
+              "name": "chooseYourID",
+              "type": "radioOption",
+              "label": "Choose your ID",
+              "datatype": "String",
+              "options": [
+                {
+                  "value": "NZ driver licence",
+                  "fields": [
+                    {
+                      "name": "your_driver_licence",
+                      "type": "heading_field",
+                      "fieldRule": { "required": { "expression": "false" } },
+                      "label": "Your NZ driver Licence",
+                      "customAttributes": [
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.account.driverLicence.infoLayer"
+                        },
+                        {
+                          "key": "regionId",
+                          "value": "account.nzDriverLicence"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "licence_number",
+                      "type": "textfield",
+                      "fieldRule": {
+                        "validations": {
+                          "regex": {
+                            "expression": "^\\w{8}$",
+                            "message": "Your licence number should be 8 characters with no punctuation or symbols"
+                          }
+                        }
+                      },
+                      "label": "Licence number",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "shouldMask", "value": "true" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Licence number" },
+                        { "key": "summaryTemplate", "value": "licence_number" },
+                        { "key": "placeholder", "value": "Your licence number" }
+                      ]
+                    },
+                    {
+                      "name": "licence_version_number",
+                      "type": "textfield",
+                      "fieldRule": {
+                        "validations": {
+                          "regex": {
+                            "expression": "^[0-9]{3}$",
+                            "message": "Your licence version number should be 3 numbers only, with no punctuation or symbols"
+                          }
+                        }
+                      },
+                      "label": "Licence version number",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "shouldMask", "value": "true" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Version number" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "licence_version_number"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Your licence version number"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "licence_exp_date",
+                      "type": "full_date_input",
+                      "label": "Licence expiry date",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "shouldMask", "value": "true" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Expiry date" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "formatDate(licence_exp_date, 'dd/MM/yyyy')"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "applicationId",
+                      "type": "textfield",
+                      "fieldRule": {
+                        "visibility": { "expression": "false" },
+                        "required": { "expression": "false" }
+                      },
+                      "label": "Application ID",
+                      "datatype": "String"
+                    },
+                    {
+                      "name": "submitNZDriverLicence",
+                      "type": "button",
+                      "fieldRule": { "required": { "expression": "false" } },
+                      "label": "Save and continue",
+                      "datatype": "Boolean"
+                    }
+                  ]
+                },
+                {
+                  "value": "NZ passport",
+                  "fields": [
+                    {
+                      "name": "your_nz_passport",
+                      "type": "heading_field",
+                      "fieldRule": { "required": { "expression": "false" } },
+                      "label": "Your NZ passport",
+                      "customAttributes": [
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.account.nzPassport.infoLayer"
+                        },
+                        { "key": "regionId", "value": "account.nzPassport" },
+                        { "key": "shouldMask", "value": "true" }
+                      ]
+                    },
+                    {
+                      "name": "nz_passport_number",
+                      "type": "textfield",
+                      "fieldRule": {
+                        "validations": {
+                          "regex": {
+                            "expression": "^\\w{8}+$",
+                            "message": "Your Licence number should be 8 characters with no punctuation or symbols"
+                          }
+                        }
+                      },
+                      "label": "Passport number",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "shouldMask", "value": "true" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Passport number" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "nz_passport_number"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Your passport number"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "nz_passport_exp_date",
+                      "type": "full_date_input",
+                      "label": "Passport expiry date",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "shouldMask", "value": "true" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Expiry date" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "formatDate(nz_passport_exp_date, 'dd/MM/yyyy')"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "applicationId",
+                      "type": "textfield",
+                      "fieldRule": {
+                        "visibility": { "expression": "false" },
+                        "required": { "expression": "false" }
+                      },
+                      "label": "Application ID",
+                      "datatype": "String"
+                    },
+                    {
+                      "name": "submitNZPassport",
+                      "type": "button",
+                      "fieldRule": { "required": { "expression": "false" } },
+                      "label": "Save and continue",
+                      "datatype": "Boolean"
+                    }
+                  ]
+                },
+                {
+                  "value": "International passport",
+                  "fields": [
+                    {
+                      "name": "your_international_passport",
+                      "type": "heading_field",
+                      "fieldRule": { "required": { "expression": "false" } },
+                      "label": "Your international passport",
+                      "customAttributes": [
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.account.internationalPassport.infoLayer"
+                        },
+                        {
+                          "key": "regionId",
+                          "value": "account.internationalPassport"
+                        }
+                      ]
+                    },
+                    {
+                      "dataRef": [
+                        { "id": "AF", "text": "Afghanistan" },
+                        { "id": "AL", "text": "Albania" },
+                        { "id": "DZ", "text": "Algeria" },
+                        { "id": "AD", "text": "Andorra" },
+                        { "id": "AO", "text": "Angola" },
+                        { "id": "AG", "text": "Antigua and Barbuda" },
+                        { "id": "AR", "text": "Argentina" },
+                        { "id": "AM", "text": "Armenia" },
+                        { "id": "AU", "text": "Australia" },
+                        { "id": "AT", "text": "Austria" },
+                        { "id": "AZ", "text": "Azerbaijan" },
+                        { "id": "BS", "text": "The Bahamas" },
+                        { "id": "BH", "text": "Bahrain" },
+                        { "id": "BD", "text": "Bangladesh" },
+                        { "id": "BB", "text": "Barbados" },
+                        { "id": "BY", "text": "Belarus" },
+                        { "id": "BE", "text": "Belgium" },
+                        { "id": "BZ", "text": "Belize" },
+                        { "id": "BJ", "text": "Benin" },
+                        { "id": "BT", "text": "Bhutan" },
+                        { "id": "BO", "text": "Bolivia" },
+                        { "id": "BA", "text": "Bosnia and Herzegovina" },
+                        { "id": "BW", "text": "Botswana" },
+                        { "id": "BR", "text": "Brazil" },
+                        { "id": "BN", "text": "Brunei" },
+                        { "id": "BG", "text": "Bulgaria" },
+                        { "id": "BF", "text": "Burkina Faso" },
+                        { "id": "BI", "text": "Burundi" },
+                        { "id": "KH", "text": "Cambodia" },
+                        { "id": "CM", "text": "Cameroon" },
+                        { "id": "CA", "text": "Canada" },
+                        { "id": "CV", "text": "Cape Verde" },
+                        { "id": "KY", "text": "Cayman Islands" },
+                        { "id": "CF", "text": "Central African Republic" },
+                        { "id": "TD", "text": "Chad" },
+                        { "id": "CL", "text": "Chile" },
+                        { "id": "CN", "text": "China" },
+                        { "id": "CO", "text": "Colombia" },
+                        { "id": "KM", "text": "Comoros" },
+                        { "id": "CR", "text": "Costa Rica" },
+                        { "id": "HR", "text": "Croatia" },
+                        { "id": "CU", "text": "Cuba" },
+                        { "id": "CW", "text": "Curacao" },
+                        { "id": "CY", "text": "Cyprus" },
+                        { "id": "CZ", "text": "Czech Republic" },
+                        {
+                          "id": "CD",
+                          "text": "Democratic Republic of the Congo"
+                        },
+                        { "id": "DK", "text": "Denmark" },
+                        { "id": "DJ", "text": "Djibouti" },
+                        { "id": "DM", "text": "Dominica" },
+                        { "id": "DO", "text": "Dominican Republic" },
+                        { "id": "TL", "text": "East Timor" },
+                        { "id": "EC", "text": "Ecuador" },
+                        { "id": "EG", "text": "Egypt" },
+                        { "id": "SV", "text": "El Salvador" },
+                        { "id": "GQ", "text": "Equatorial Guinea" },
+                        { "id": "ER", "text": "Eritrea" },
+                        { "id": "EE", "text": "Estonia" },
+                        { "id": "ET", "text": "Ethiopia" },
+                        { "id": "FJ", "text": "Fiji" },
+                        { "id": "FI", "text": "Finland" },
+                        { "id": "FR", "text": "France" },
+                        { "id": "GA", "text": "Gabon" },
+                        { "id": "GM", "text": "Gambia" },
+                        { "id": "GE", "text": "Georgia" },
+                        { "id": "DE", "text": "Germany" },
+                        { "id": "GH", "text": "Ghana" },
+                        { "id": "GR", "text": "Greece" },
+                        { "id": "GD", "text": "Grenada" },
+                        { "id": "GT", "text": "Guatemala" },
+                        { "id": "GN", "text": "Guinea" },
+                        { "id": "GW", "text": "Guinea-Bissau" },
+                        { "id": "GY", "text": "Guyana" },
+                        { "id": "HT", "text": "Haiti" },
+                        { "id": "HN", "text": "Honduras" },
+                        { "id": "HU", "text": "Hungary" },
+                        { "id": "IS", "text": "Iceland" },
+                        { "id": "IN", "text": "India" },
+                        { "id": "ID", "text": "Indonesia" },
+                        { "id": "IR", "text": "Iran" },
+                        { "id": "IQ", "text": "Iraq" },
+                        { "id": "IE", "text": "Ireland" },
+                        { "id": "IL", "text": "Israel" },
+                        { "id": "IT", "text": "Italy" },
+                        { "id": "JM", "text": "Jamaica" },
+                        { "id": "JP", "text": "Japan" },
+                        { "id": "JO", "text": "Jordan" },
+                        { "id": "KZ", "text": "Kazakhstan" },
+                        { "id": "KE", "text": "Kenya" },
+                        { "id": "KI", "text": "Kiribati" },
+                        { "id": "KW", "text": "Kuwait" },
+                        { "id": "KG", "text": "Kyrgyzstan" },
+                        { "id": "LA", "text": "Laos" },
+                        { "id": "LV", "text": "Latvia" },
+                        { "id": "LB", "text": "Lebanon" },
+                        { "id": "LS", "text": "Lesotho" },
+                        { "id": "LR", "text": "Liberia" },
+                        { "id": "LY", "text": "Libya" },
+                        { "id": "LI", "text": "Liechtenstein" },
+                        { "id": "LT", "text": "Lithuania" },
+                        { "id": "LU", "text": "Luxembourg" },
+                        { "id": "MG", "text": "Madagascar" },
+                        { "id": "MW", "text": "Malawi" },
+                        { "id": "MY", "text": "Malaysia" },
+                        { "id": "MV", "text": "Maldives" },
+                        { "id": "ML", "text": "Mali" },
+                        { "id": "MT", "text": "Malta" },
+                        { "id": "MH", "text": "Marshall Islands" },
+                        { "id": "MR", "text": "Mauritania" },
+                        { "id": "MU", "text": "Mauritius" },
+                        { "id": "MX", "text": "Mexico" },
+                        { "id": "MD", "text": "Moldova" },
+                        { "id": "MC", "text": "Monaco" },
+                        { "id": "MN", "text": "Mongolia" },
+                        { "id": "ME", "text": "Montenegro" },
+                        { "id": "MA", "text": "Morocco" },
+                        { "id": "MZ", "text": "Mozambique" },
+                        { "id": "MM", "text": "Myanmar" },
+                        { "id": "NA", "text": "Namibia" },
+                        { "id": "NR", "text": "Nauru" },
+                        { "id": "NP", "text": "Nepal" },
+                        { "id": "NL", "text": "Netherlands" },
+                        { "id": "NZ", "text": "New Zealand" },
+                        { "id": "NI", "text": "Nicaragua" },
+                        { "id": "NE", "text": "Niger" },
+                        { "id": "NG", "text": "Nigeria" },
+                        { "id": "KP", "text": "North Korea" },
+                        { "id": "MK", "text": "North Macedonia" },
+                        { "id": "false", "text": "Norway" },
+                        { "id": "OM", "text": "Oman" },
+                        { "id": "PK", "text": "Pakistan" },
+                        { "id": "PW", "text": "Palau" },
+                        { "id": "PA", "text": "Panama" },
+                        { "id": "PG", "text": "Papua New Guinea" },
+                        { "id": "PY", "text": "Paraguay" },
+                        { "id": "PE", "text": "Peru" },
+                        { "id": "PH", "text": "Philippines" },
+                        { "id": "PL", "text": "Poland" },
+                        { "id": "PT", "text": "Portugal" },
+                        { "id": "QA", "text": "Qatar" },
+                        { "id": "CG", "text": "Republic of the Congo" },
+                        { "id": "RO", "text": "Romania" },
+                        { "id": "RU", "text": "Russia" },
+                        { "id": "RW", "text": "Rwanda" },
+                        { "id": "KN", "text": "Saint Kitts and Nevis" },
+                        { "id": "LC", "text": "Saint Lucia" },
+                        {
+                          "id": "VC",
+                          "text": "Saint Vincent and the Grenadines"
+                        },
+                        { "id": "WS", "text": "Samoa" },
+                        { "id": "SM", "text": "San Marino" },
+                        { "id": "ST", "text": "Sao Tome and Principe" },
+                        { "id": "SA", "text": "Saudi Arabia" },
+                        { "id": "SN", "text": "Senegal" },
+                        { "id": "RS", "text": "Serbia" },
+                        { "id": "SC", "text": "Seychelles" },
+                        { "id": "SL", "text": "Sierra Leone" },
+                        { "id": "SG", "text": "Singapore" },
+                        { "id": "SK", "text": "Slovakia" },
+                        { "id": "SI", "text": "Slovenia" },
+                        { "id": "SB", "text": "Solomon Islands" },
+                        { "id": "SO", "text": "Somalia" },
+                        { "id": "ZA", "text": "South Africa" },
+                        { "id": "KR", "text": "South Korea" },
+                        { "id": "SS", "text": "South Sudan" },
+                        { "id": "ES", "text": "Spain" },
+                        { "id": "LK", "text": "Sri Lanka" },
+                        { "id": "SD", "text": "Sudan" },
+                        { "id": "SR", "text": "Suritext" },
+                        { "id": "SE", "text": "Sweden" },
+                        { "id": "CH", "text": "Switzerland" },
+                        { "id": "SY", "text": "Syria" },
+                        { "id": "TW", "text": "Taiwan" },
+                        { "id": "TJ", "text": "Tajikistan" },
+                        { "id": "TZ", "text": "Tanzania" },
+                        { "id": "TH", "text": "Thailand" },
+                        { "id": "TG", "text": "Togo" },
+                        { "id": "TO", "text": "Tonga" },
+                        { "id": "TT", "text": "Trinidad and Tobago" },
+                        { "id": "TN", "text": "Tunisia" },
+                        { "id": "TR", "text": "Turkey" },
+                        { "id": "TM", "text": "Turkmenistan" },
+                        { "id": "TV", "text": "Tuvalu" },
+                        { "id": "UG", "text": "Uganda" },
+                        { "id": "UA", "text": "Ukraine" },
+                        { "id": "AE", "text": "United Arab Emirates" },
+                        { "id": "GB", "text": "United Kingdom" },
+                        { "id": "US", "text": "United States" },
+                        { "id": "UY", "text": "Uruguay" },
+                        { "id": "UZ", "text": "Uzbekistan" },
+                        { "id": "VU", "text": "Vanuatu" },
+                        { "id": "VA", "text": "Vatican" },
+                        { "id": "VE", "text": "Venezuela" },
+                        { "id": "VN", "text": "Vietnam" },
+                        { "id": "YE", "text": "Yemen" },
+                        { "id": "ZM", "text": "Zambia" },
+                        { "id": "ZW", "text": "Zimbabwe" }
+                      ],
+                      "name": "issueing_country",
+                      "type": "dropdown",
+                      "label": "Country of issue",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "shouldMask", "value": "true" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Country of issue" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "issuing_country"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select country of issue"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "passport_number",
+                      "type": "textfield",
+                      "label": "Passport number",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "shouldMask", "value": "true" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Passport number" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "passport_number"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Your passport number"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "passport_exp_date",
+                      "type": "full_date_input",
+                      "label": "Passport expiry date",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "shouldMask", "value": "true" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Expiry date" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "formatDate(passport_exp_date, 'dd/MM/yyyy')"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "submitInternationalPassport",
+                      "type": "button",
+                      "fieldRule": { "required": { "expression": "false" } },
+                      "label": "Save and continue",
+                      "datatype": "Boolean"
+                    }
+                  ]
+                }
+              ],
+              "customAttributes": [
+                { "key": "regionId", "value": "account.chooseYourID" },
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Form of ID" },
+                { "key": "summaryTemplate", "value": "chooseYourID" }
+              ]
+            }
+          ],
+          "level": "order",
+          "sequence": "0",
+          "visible": true
+        }
+      ],
+      "customAttributes": [
+        { "key": "contentKey", "value": "checkout.account.description" }
+      ]
+    },
+    {
+      "sectionId": "credit-history",
+      "name": "Credit History",
+      "steps": [
+        {
+          "stepId": "creditHistory",
+          "name": "Credit history",
+          "fields": [
+            {
+              "name": "credit_history_description",
+              "type": "content_field",
+              "fieldRule": { "required": { "expression": "false" } },
+              "label": "Credit History description",
+              "customAttributes": [
+                {
+                  "key": "contentKey",
+                  "value": "checkout.account.creditHistory.description"
+                }
+              ]
+            },
+            {
+              "name": "NZ_resident",
+              "type": "checkOption",
+              "label": "I am a New Zealand resident or citizen",
+              "datatype": "Boolean"
+            },
+            {
+              "name": "address",
+              "type": "address_search",
+              "label": "Your current address",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Current address" },
+                { "key": "summaryTemplate", "value": "address" },
+                { "key": "placeholder", "value": "Your current address" }
+              ]
+            },
+            {
+              "name": "elid",
+              "type": "textfield",
+              "fieldRule": {
+                "visibility": { "expression": "false" },
+                "required": { "expression": "false" }
+              },
+              "label": "elid",
+              "datatype": "String"
+            },
+            {
+              "name": "address_date",
+              "type": "month_date_input",
+              "label": "Date you moved to this address",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Move-in date" },
+                {
+                  "key": "summaryTemplate",
+                  "value": "formatDate(address_date, 'MM/yyyy')"
+                }
+              ]
+            },
+            {
+              "dataRef": [
+                { "id": "Board", "text": "Board" },
+                { "id": "Living at home", "text": "Living at home" },
+                { "id": "Owned", "text": "Owned" },
+                { "id": "Rented", "text": "Rented" },
+                { "id": "Living with Relative", "text": "Living with Relative" }
+              ],
+              "name": "housing_status",
+              "type": "dropdown",
+              "label": "Housing status",
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Housing status" },
+                { "key": "summaryTemplate", "value": "housing_status" },
+                { "key": "placeholder", "value": "Select housing status" }
+              ]
+            },
+            {
+              "name": "chooseOccupationalStatus",
+              "type": "radioOption",
+              "label": "Occupational status",
+              "datatype": "String",
+              "options": [
+                {
+                  "value": "Employed",
+                  "fields": [
+                    {
+                      "dataRef": [
+                        { "id": "Full time", "text": "Full time" },
+                        { "id": "Home business", "text": "Home business" },
+                        { "id": "Part time", "text": "Part time" },
+                        { "id": "Seasonal", "text": "Seasonal" }
+                      ],
+                      "name": "employment_status",
+                      "type": "dropdown",
+                      "label": "Employment status",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employment status" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "employment_status"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select employment status"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "employer",
+                      "type": "textfield",
+                      "fieldRule": {
+                        "validations": {
+                          "regex": {
+                            "expression": "^[A-Za-z\\s.-]{1,50}$",
+                            "message": "Please enter no more than 50 letters"
+                          }
+                        }
+                      },
+                      "label": "Employer",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employer" },
+                        { "key": "summaryTemplate", "value": "employer" },
+                        { "key": "placeholder", "value": "Your employer" }
+                      ]
+                    },
+                    {
+                      "name": "date_of_starting_work_current_employer",
+                      "type": "month_date_input",
+                      "label": "Date you started working here",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Start date" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "formatDate(date_of_starting_work_current_employer, 'MM/yyyy')"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": "Home Executive",
+                  "fields": [
+                    {
+                      "dataRef": [
+                        { "id": "Full time", "text": "Full time" },
+                        { "id": "Part time", "text": "Part time" },
+                        { "id": "Unemployed", "text": "Unemployed" }
+                      ],
+                      "name": "employment_status",
+                      "type": "dropdown",
+                      "label": "Employment status",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employment status" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "employment_status"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select employment status"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": "Student",
+                  "fields": [
+                    {
+                      "dataRef": [
+                        { "id": "Full time", "text": "Full time" },
+                        { "id": "Part time", "text": "Part time" },
+                        { "id": "Seasonal", "text": "Seasonal" },
+                        { "id": "Unemployed", "text": "Unemployed" }
+                      ],
+                      "name": "employment_status",
+                      "type": "dropdown",
+                      "label": "Employment status",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employment status" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "employment_status"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select employment status"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                { "value": "Retired" },
+                {
+                  "value": "Self employed",
+                  "fields": [
+                    {
+                      "dataRef": [
+                        { "id": "Full time", "text": "Full time" },
+                        { "id": "Home business", "text": "Home business" },
+                        { "id": "Seasonal", "text": "Seasonal" }
+                      ],
+                      "name": "employment_status",
+                      "type": "dropdown",
+                      "label": "Employment status",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employment status" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "employment_status"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select employment status"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": "Benefit",
+                  "fields": [
+                    {
+                      "dataRef": [{ "id": "Unemployed", "text": "Unemployed" }],
+                      "name": "employment_status",
+                      "type": "dropdown",
+                      "label": "Employment status",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employment status" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "employment_status"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select employment status"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": "Superannultant",
+                  "fields": [
+                    {
+                      "dataRef": [{ "id": "Unemployed", "text": "Unemployed" }],
+                      "name": "employment_status",
+                      "type": "dropdown",
+                      "label": "Employment status",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employment status" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "employment_status"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select employment status"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": "Unemployed",
+                  "fields": [
+                    {
+                      "dataRef": [
+                        { "id": "Unemployed", "text": "Unemployed" },
+                        { "id": "Seasonal", "text": "Seasonal" }
+                      ],
+                      "name": "employment_status",
+                      "type": "dropdown",
+                      "label": "Employment status",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employment status" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "employment_status"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select employment status"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": "Not willing to supply",
+                  "fields": [
+                    {
+                      "dataRef": [
+                        { "id": "Full time", "text": "Full time" },
+                        { "id": "Home business", "text": "Home business" },
+                        { "id": "Part time", "text": "Part time" },
+                        { "id": "Seasonal", "text": "Seasonal" },
+                        { "id": "Unemployed", "text": "Unemployed" }
+                      ],
+                      "name": "employment_status",
+                      "type": "dropdown",
+                      "label": "Employment status",
+                      "datatype": "String",
+                      "customAttributes": [
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Employment status" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "employment_status"
+                        },
+                        {
+                          "key": "placeholder",
+                          "value": "Select employment status"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "customAttributes": [
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Occupational status" },
+                {
+                  "key": "summaryTemplate",
+                  "value": "chooseOccupationalStatus"
+                },
+                { "key": "placeholder", "value": "Select occupational status" }
+              ]
+            },
+            {
+              "name": "accept_credit_check",
+              "type": "checkOption",
+              "label": "I authorise Spark to conduct a credit check on my credit file and I accept Spark's Credit Disclosure statement",
+              "datatype": "Boolean",
+              "customAttributes": [
+                {
+                  "key": "contentKey",
+                  "value": "checkout.account.acceotCreditCheck"
+                }
+              ]
+            },
+            {
+              "name": "submitCreditHistory",
+              "type": "button",
+              "fieldRule": { "required": { "expression": "false" } },
+              "label": "Save and continue",
+              "datatype": "Boolean"
+            },
+            {
+              "name": "disclaimer",
+              "type": "content_field",
+              "fieldRule": { "required": { "expression": "false" } },
+              "datatype": "String",
+              "customAttributes": [
+                { "key": "contentKey", "value": "checkout.account.footnote" }
+              ]
+            },
+            {
+              "name": "account_credit_history_footnote",
+              "type": "content_field",
+              "fieldRule": { "required": { "expression": "false" } },
+              "label": "Credit history footnote",
+              "customAttributes": [
+                { "key": "contentKey", "value": "checkout.account.footnote" }
+              ]
+            }
+          ],
+          "level": "order",
+          "sequence": "0",
+          "visible": true
+        }
+      ],
+      "customAttributes": [
+        { "key": "contentKey", "value": "checkout.account.description" }
+      ]
+    }
+  ]
+}

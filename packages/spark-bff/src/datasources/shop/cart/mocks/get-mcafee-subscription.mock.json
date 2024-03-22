@@ -1,0 +1,94 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "accountNumber": "9476368490",
+  "accountRequired": false,
+  "cartId": "success-cart-id",
+  "channel": {
+    "id": "bo_lov_saleschannel_online",
+    "name": "Online"
+  },
+  "price": [
+    {
+      "priceType": "Recurring",
+      "frequency": {
+        "period": "Month",
+        "value": 1
+      },
+      "basePrice": 4.95,
+      "basePriceExcludingTax": 4.5,
+      "effectivePrice": 4.95,
+      "effectivePriceExcludingTax": 4.9,
+      "periodStart": null,
+      "length": null,
+      "discount": null
+    }
+  ],
+  "bundles": [
+    {
+      "lineNumber": "0847382934",
+      "lineRequired": false,
+      "index": 0,
+      "id": "2a67cf71-bf31-44c6-bc26-e8708dd8da29",
+      "category": {
+        "id": "mobile",
+        "name": "Mobile"
+      },
+      "price": [
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 4.95,
+          "basePriceExcludingTax": 4.5,
+          "effectivePrice": 4.95,
+          "periodStart": null,
+          "length": null,
+          "discount": null
+        }
+      ],
+      "items": [
+        {
+          "id": "mcafee",
+          "index": 1,
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "periodStart": 0,
+              "length": 12,
+              "basePrice": 4.95,
+              "basePriceExcludingTax": 4.5,
+              "effectivePrice": 4.95,
+              "discount": null
+            }
+          ],
+          "action": "add",
+          "entryImageUrl": "",
+          "name": "McAfee Standard",
+          "description": "McAfee Standard Description",
+          "summary": "50% off Spotify",
+          "productOfferingId": "mcafee",
+          "category": null,
+          "contractTerm": {
+            "description": "",
+            "value": "",
+            "unit": ""
+          },
+          "isIncluded": false,
+          "balanceManagement": "POSTPAID"
+        }
+      ]
+    }
+  ]
+}

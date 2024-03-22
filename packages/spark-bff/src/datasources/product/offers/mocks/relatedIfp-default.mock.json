@@ -1,0 +1,203 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "bundles": [
+    {
+      "id": "06e41ed6-ce7a-4d03-8c04-2b7820cd6082",
+      "offerDetails": [
+        {
+          "id": "interest_free_payment_over_36_months",
+          "grandFathered": false,
+          "externalId": null,
+          "name": "Interest free payment over 36 months",
+          "description": "Interest free payment over 36 months",
+          "category": [
+            {
+              "id": "ifp"
+            }
+          ],
+          "price": null,
+          "associatedPrices": [],
+          "group": null,
+          "images": [],
+          "entitlements": [],
+          "promotions": [
+            {
+              "iconUrl": null,
+              "productType": "DEAL",
+              "name": "IFP discount",
+              "shortDescription": "Save $400 over your interest free term (included in monthly price shown)",
+              "longDescription": "Save $400 over your interest free term (included in monthly price shown)"
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": null,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isIncluded": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManageMent": null
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "interest_free_payment_over_24_months",
+          "grandFathered": false,
+          "externalId": null,
+          "name": "Interest free payment over 24 months",
+          "description": "Interest free payment over 24 months",
+          "category": [
+            {
+              "id": "ifp"
+            }
+          ],
+          "price": null,
+          "associatedPrices": [],
+          "group": null,
+          "images": [],
+          "entitlements": [],
+          "promotions": [
+            {
+              "iconUrl": null,
+              "productType": "DEAL",
+              "name": "IFP discount",
+              "shortDescription": "Save $400 over your interest free term (included in monthly price shown)",
+              "longDescription": "Save $400 over your interest free term (included in monthly price shown)"
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": null,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isIncluded": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManageMent": null
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "interest_free_payment_over_18_months",
+          "grandFathered": false,
+          "externalId": null,
+          "name": "Interest free payment over 18 months",
+          "description": "Interest free payment over 18 months",
+          "category": [
+            {
+              "id": "ifp"
+            }
+          ],
+          "price": null,
+          "associatedPrices": [],
+          "group": null,
+          "images": [],
+          "entitlements": [],
+          "promotions": [
+            {
+              "iconUrl": null,
+              "productType": "DEAL",
+              "name": "IFP discount",
+              "shortDescription": "Save $400 over your interest free term (included in monthly price shown)",
+              "longDescription": "Save $400 over your interest free term (included in monthly price shown)"
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": null,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isIncluded": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManageMent": null
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "interest_free_payment_over_12_months",
+          "grandFathered": false,
+          "externalId": null,
+          "name": "Interest free payment over 12 months",
+          "description": "Interest free payment over 12 months",
+          "category": [
+            {
+              "id": "ifp"
+            }
+          ],
+          "price": null,
+          "associatedPrices": [],
+          "group": null,
+          "images": [],
+          "entitlements": [],
+          "promotions": [
+            {
+              "iconUrl": null,
+              "productType": "DEAL",
+              "name": "IFP discount",
+              "shortDescription": "Save $400 over your interest free term (included in monthly price shown)",
+              "longDescription": "Save $400 over your interest free term (included in monthly price shown)"
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": null,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isIncluded": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManageMent": null
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        }
+      ]
+    }
+  ]
+}

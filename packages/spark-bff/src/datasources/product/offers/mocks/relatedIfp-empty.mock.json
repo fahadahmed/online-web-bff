@@ -1,0 +1,14 @@
+{
+  "bundles": [
+    {
+      "id": "bundle-1",
+      "offerDetails": []
+    }
+  ],
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ]
+}

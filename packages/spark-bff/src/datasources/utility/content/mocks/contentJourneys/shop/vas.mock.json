@@ -1,0 +1,62 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "online-shop/vas-page",
+  "tags": ["OnlineShop:vas"],
+  "title": "vas page ab",
+  "description": "vas page ab",
+  "fields": [
+    {
+      "fieldKey": "product.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Spark Sports",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "product.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Spark Sport is a monthly subscription. ab",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "product.logo",
+      "fieldType": "IMAGE",
+      "fieldValue": "Spark Sport Logo",
+      "fieldUrl": "spark.co.nz/"
+    },
+    {
+      "fieldKey": "product.features",
+      "fieldType": "UNORDERED_LIST_ITEM",
+      "fieldValue": "Access to a wide range of sports ab",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "product.features",
+      "fieldType": "ORDERED_LIST_ITEM",
+      "fieldValue": "No long-term contracts ab",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "product.link",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "Learn more about Spark Sport ab",
+      "fieldUrl": "https://www.sparksport.co.nz/"
+    },
+    {
+      "fieldKey": "purchase.confirm",
+      "fieldType": "LABEL",
+      "fieldValue": "buy Now ab",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "purchase.subheading",
+      "fieldType": "SUB_HEADING",
+      "fieldValue": "subheading test ab",
+      "fieldUrl": null
+    }
+  ]
+}

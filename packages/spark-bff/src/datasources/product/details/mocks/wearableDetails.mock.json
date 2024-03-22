@@ -1,0 +1,148 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "one_number_wearbale_plan",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "$12.99 One Number Wearable Plan",
+        "description": "$12.99 One Number Wearable Plan",
+        "category": [{ "id": "wearable_plan" }],
+        "contentKey": null,
+        "price": {
+          "priceType": "Recurring",
+          "frequency": { "period": "Month", "value": 1 },
+          "basePrice": 12.99,
+          "basePriceExcludingTax": 11.3,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [
+          {
+            "description": "Product Image",
+            "id": "img_url",
+            "sortOrder": null,
+            "defaultUrl": "",
+            "zoomUrl": "",
+            "standardUrl": "",
+            "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/plan-card-graphic-596x520.png",
+            "tinyUrl": "",
+            "type": "LOGO"
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": false,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [
+          {
+            "type": "ADD_TO_CART",
+            "label": "Add to cart",
+            "segment": null,
+            "data": "https://www.test.com/",
+            "relatesTo": "RESEARCH_PAGE",
+            "sortOrder": 1,
+            "style": "PRIMARY"
+          }
+        ]
+      },
+      {
+        "id": "dollar14_99_endless_wearable_plan",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "$14.99 Endless Wearable Plan",
+        "description": "$14.99 Endless Wearable Plan",
+        "category": [
+          { "id": "wearable_plan" },
+          { "id": "mobile_neon" },
+          { "id": "mobile_spark_sport" },
+          { "id": "spotify_individual_full_price" }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Recurring",
+          "frequency": { "period": "Month", "value": 1 },
+          "basePrice": 14.99,
+          "basePriceExcludingTax": 13.03,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": false,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [
+          {
+            "type": "ADD_TO_CART",
+            "label": "Add to cart",
+            "segment": null,
+            "data": "https://www.test.com/",
+            "relatesTo": "RESEARCH_PAGE",
+            "sortOrder": 1,
+            "style": "PRIMARY"
+          }
+        ]
+      }
+    ],
+    "id": "wearable_plan",
+    "name": "Wearable Plan",
+    "description": "Wearable Plan",
+    "isCategoryContainer": false,
+    "visibility": true,
+    "defaultSelected": null,
+    "sortOrder": 4,
+    "subCategories": null
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/subscriptions/group/neon",
+  "tags": ["subscriptions:groupContent"],
+  "title": "subscriptions.groupContent",
+  "description": "subscriptions.groupContent",
+  "fields": [
+    {
+      "fieldKey": "faqs.question1",
+      "fieldType": "HEADER",
+      "fieldValue": "Do I have to be new to Spotify to get it with Spark, or can I already have a Neon account "
+    },
+    {
+      "fieldKey": "faqs.answer1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added Neon to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your Neon in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question2",
+      "fieldType": "HEADER",
+      "fieldValue": "How do I start using my Neon with Spark?"
+    },
+    {
+      "fieldKey": "faqs.answer2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "fieldKey": "faqs.question3",
+      "fieldType": "HEADER",
+      "fieldValue": "When do I need to activate my Neon?"
+    },
+    {
+      "fieldKey": "faqs.answer3",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added Neon to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your Neon in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question4",
+      "fieldType": "HEADER",
+      "fieldValue": "When do I pay for my Neon?"
+    },
+    {
+      "fieldKey": "faqs.answer4",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "fieldKey": "banner.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Cosy up at home with Neon",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "banner.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Over 500 + movies and tv shows to enjoy."
+    },
+    {
+      "fieldKey": "banner.background",
+      "fieldType": "IMAGE",
+      "fieldValue": "",
+      "fieldUrl": "https://s3-alpha-sig.figma.com/img/0708/fda0/db180767f95b14c90c7376d89794d345?Expires=1635120000&Signature=RMJwIqPgDIfGgnFZ8vAAplt0fdoccKNvzJlrI9lXb5RdpaCQAhdOLlu30K~p5kQV~SMfIeS9WBsHCNZ6mXTFpahcdYmck0en0cOdW9-ZnEufh5EcM7GxW~AP5Z9LCmlZ2Kn6SoHkqCy9KDMp8KSGtpuLB8RM79c1Gs7WY5OFDI~4vtJX3jl4qF6fGhUlvOdMfm8faaUbGPhSPiar6-FNEpwEV~xCKayqThWClqi32rwrmVXgBfCA9VBilYbz1Gcx~e7Azy48vR97LXT~n9BPGDM7YoTCEx9AOhDUl-md5aWP3j2~PnE8rMwpFbgbAOUKB7YrrlBBlaKHAWz3nfzE8Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+      "fieldKey": "banner.link",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "",
+      "fieldUrl": "https://www.neontv.co.nz/"
+    },
+    {
+      "fieldKey": "manage.resume.banner.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Cosy up at home with Neon"
+    },
+    {
+      "fieldKey": "manage.resume.banner.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Over 500 + movies and tv shows to enjoy."
+    },
+    {
+      "fieldKey": "manage.resume.banner.background.link",
+      "fieldType": "HYPERLINK",
+      "fieldUrl": "https://www.neontv.co.nz/"
+    },
+    {
+      "fieldKey": "manage.resume.banner.background",
+      "fieldType": "IMAGE",
+      "fieldUrl": "https://s3-alpha-sig.figma.com/img/0708/fda0/db180767f95b14c90c7376d89794d345?Expires=1635120000&Signature=RMJwIqPgDIfGgnFZ8vAAplt0fdoccKNvzJlrI9lXb5RdpaCQAhdOLlu30K~p5kQV~SMfIeS9WBsHCNZ6mXTFpahcdYmck0en0cOdW9-ZnEufh5EcM7GxW~AP5Z9LCmlZ2Kn6SoHkqCy9KDMp8KSGtpuLB8RM79c1Gs7WY5OFDI~4vtJX3jl4qF6fGhUlvOdMfm8faaUbGPhSPiar6-FNEpwEV~xCKayqThWClqi32rwrmVXgBfCA9VBilYbz1Gcx~e7Azy48vR97LXT~n9BPGDM7YoTCEx9AOhDUl-md5aWP3j2~PnE8rMwpFbgbAOUKB7YrrlBBlaKHAWz3nfzE8Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    }
+  ]
+}

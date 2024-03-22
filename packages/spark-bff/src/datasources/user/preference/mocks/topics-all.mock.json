@@ -1,0 +1,32 @@
+{
+  "topics": [
+    {
+      "name": "Usage",
+      "id": "1b5-9612-4eba-b42d",
+      "description": "Usage description",
+      "root": "",
+      "parent": ""
+    },
+    {
+      "name": "Mobile",
+      "id": "hj5a-b42d-92f09cad6",
+      "description": "Blah blah blah",
+      "root": "1b5-9612-4eba-b42d",
+      "parent": "1b5-9612-4eba-b42d"
+    },
+    {
+      "name": "Broadband",
+      "id": "ghsa34-3y3b3-jn4haj98z",
+      "description": "Broadband description",
+      "root": "1b5-9612-4eba-b42d",
+      "parent": "1b5-9612-4eba-b42d"
+    },
+    {
+      "name": "Privacy",
+      "id": "bf5sa34-121b3-jn4h",
+      "description": "Privacy related preferences",
+      "root": "",
+      "parent": ""
+    }
+  ]
+}

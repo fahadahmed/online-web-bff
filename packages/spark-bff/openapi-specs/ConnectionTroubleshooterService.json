@@ -1,0 +1,469 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This API returns troubleshooting information and tailored next best steps for the connection type and router hardware associated with the line in question. The content returned by this API is primarily customer-friendly content and Call To Actions (CTAs), but the nature of this content and the respective CTAs are informed by the type of connection, router hardware and diagnosed issue the customer is attempting to resolve.",
+    "version": "1.0.0",
+    "title": "DESL Assure Connection Troubleshooter Service API",
+    "x-ibm-name": "connection-troubleshooter-service-api"
+  },
+  "host": "0.0.0.0.8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/line/{lineNumber}/assure/troubleshoot/{diagnosticSummaryCode}": {
+      "get": {
+        "tags": [
+          "assure-connection-troubleshooter",
+          "protected",
+          "oidc",
+          "line",
+          "troubleshooter"
+        ],
+        "summary": "Retrieve a set of troubleshooting steps for resolving the issue identified by the supplied diagnostic summary key and tailored to the modem hardware associated with this line.",
+        "operationId": "obtainTroubleshooterResults",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number to retrieve the connection troubleshooting steps for.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "093334444"
+          },
+          {
+            "name": "diagnosticSummaryCode",
+            "in": "path",
+            "description": "The diagnostic summary key that identifies the type of connection issue experienced by the client on this line.",
+            "type": "string",
+            "required": true,
+            "x-example": "internet_down-line_down-modem_can_not_reach"
+          },
+          {
+            "name": "modemModelOverride",
+            "in": "query",
+            "description": "A modem model parameter supplied by the client that can override the automatically detected modem model.",
+            "type": "string",
+            "required": false,
+            "x-example": "UNKNWN990-100"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TroubleshooterResultsResponse"
+            }
+          },
+          "400": {
+            "description": "The supplied modem model is not recognised, or performing connection troubleshooting on this line is unsupported",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated to this API.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Unauthorised access to this API.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "No connection troubleshooting steps available.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "TroubleshooterResultsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "diagnosticSummaryCode",
+            "stepsForModemModel",
+            "initialStepId",
+            "troubleshootingSteps",
+            "lineDetails"
+          ],
+          "properties": {
+            "diagnosticSummaryCode": {
+              "description": "The recognised diagnostic summary code that the troubleshooting steps in the result are associated with.",
+              "type": "string",
+              "example": "internet_up-modem_can_not_reach"
+            },
+            "stepsForModemModel": {
+              "description": "The modem model that these connection troubleshooting steps relate to.",
+              "type": "string",
+              "example": "HG999b"
+            },
+            "initialStepId": {
+              "description": "The first Step ID to take in the connection troubleshooting micro-journey.",
+              "type": "string",
+              "example": "check_blue_cable"
+            },
+            "troubleshootingSteps": {
+              "description": "A list of troubleshooting steps associated with this diagnostic summary code and modem model.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TroubleshootingStep"
+              }
+            },
+            "lineDetails": {
+              "description": "An object representing the basic account and hardware details for the line in question",
+              "$ref": "#/definitions/LineDetails"
+            }
+          }
+        }
+      ]
+    },
+    "TroubleshootingStep": {
+      "type": "object",
+      "required": ["stepId", "availableCTAs"],
+      "properties": {
+        "stepId": {
+          "description": "The unique identifier for the connection troubleshooting step.",
+          "type": "string",
+          "example": "check_blue_cable"
+        },
+        "title": {
+          "description": "The title/headline of the connection troubleshooting step.",
+          "type": "string",
+          "example": "Fix my broadband"
+        },
+        "body": {
+          "description": "A list of body content text that describes the troubleshooting actions for this step. If no body content is defined in the downstream source then an empty list is returned.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Body"
+          }
+        },
+        "gallery": {
+          "description": "A list of images associated with this troubleshooting step. If no images are associated with this step then an empty list is returned.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Gallery"
+          }
+        },
+        "ctaTitle": {
+          "description": "The title that a list of CTA options should be grouped under and semantically relate to.",
+          "type": "string",
+          "example": "Are you using a Spark modem?"
+        },
+        "availableCTAs": {
+          "description": "A list of Call To Actions (CTA) representing the next steps the customer can take to resolve their connection issue. If no relevant CTAs are possible for this troubleshooting step then an empty availableCTAs list will be returned.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AvailableCTA"
+          }
+        }
+      }
+    },
+    "Body": {
+      "type": "object",
+      "properties": {
+        "copy": {
+          "description": "The mandatory text copy associated with the block of content. It is assumed that a block of content will contain at least one character of text for display or screen reader purposes.",
+          "type": "string",
+          "example": "The power cable is connected to the modem and switched on at the wall.",
+          "minLength": 1
+        },
+        "componentType": {
+          "description": "The type of component that should be rendered onscreen for this body content element.",
+          "type": "string",
+          "enum": [
+            "CHECKLIST_ITEM",
+            "HIGHLIGHTED_NOTE",
+            "TROUBLESHOOT_MODEM_DETAILS",
+            "HEADING"
+          ],
+          "example": "CHECKLIST_ITEM"
+        }
+      }
+    },
+    "Gallery": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "description": "The URI to the image to render in the gallery. If a gallery item is present it is assumed that it will have an image attribute associated with it.",
+          "type": "string",
+          "example": "https://www.spark.co.nz/content/dam/telecomcms/content-images/myspark/connection-promise/Copper_connection-80.jpg"
+        },
+        "paragraph": {
+          "description": "The copy supporting the image within the gallery.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Paragraph"
+          }
+        }
+      }
+    },
+    "Paragraph": {
+      "type": "object",
+      "properties": {
+        "copy": {
+          "description": "This specifies each paragraph copy.",
+          "type": "string"
+        }
+      }
+    },
+    "AvailableCTA": {
+      "description": "The available call to actions.",
+      "type": "object",
+      "required": ["ctaLabel", "ctaType"],
+      "properties": {
+        "ctaLabel": {
+          "description": "The label for the CTA.",
+          "type": "string",
+          "example": "The cable is connected and modem powered on"
+        },
+        "ctaType": {
+          "description": "The cta type will allow for mapping to be done on the presentation side to ensure the correct CTA can be presented",
+          "type": "string",
+          "enum": ["TROUBLESHOOTING_STEP", "CHAT"],
+          "example": "TROUBLESHOOTING_STEP"
+        },
+        "webCTALink": {
+          "description": "The web link for the article CTA.",
+          "type": "string"
+        },
+        "mobileActionType": {
+          "description": "The mobile action type which will determine which journey/screen the CTA will navigate the user to on selection.",
+          "type": "string",
+          "example": "connection-troubleshooting://diagnosticSummaryCode=internet_up-modem_can_not_reach&troubleshootingStep=check_modem_cable"
+        }
+      }
+    },
+    "LineDetails": {
+      "description": "An object representing the basic account and hardware details for the line in question.",
+      "type": "object",
+      "required": ["lineNumber"],
+      "properties": {
+        "lineNumber": {
+          "description": "The line number that troubleshooting where performed on.",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "091234567"
+        },
+        "modemManufacturer": {
+          "description": "The manufacturer of the modem if known.",
+          "type": "string",
+          "example": "Huawei"
+        },
+        "modemModel": {
+          "description": "The gateway modem model if known.",
+          "type": "string",
+          "example": "HG659b"
+        },
+        "modemSerialNumber": {
+          "description": "The gateway modem serial number if known.",
+          "type": "string",
+          "example": "S8G8W14B88210024"
+        },
+        "modemIdentifier": {
+          "description": "The gateway modem identifier if known",
+          "type": "string",
+          "example": "9544661890413264469"
+        },
+        "modemImage": {
+          "description": "A URI that is a reference to the AEM DAM image resource of this specific modem model.",
+          "type": "string",
+          "example": "https://www.spark.co.nz/assets/spark/images/modems/hg659b.png"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "ST2": {
+        "properties": {
+          "endPoint": "http://iamproxy-st05.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-st2.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST3": {
+        "properties": {
+          "endPoint": "http://iamproxy-st07.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-st3.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST4": {
+        "properties": {
+          "endPoint": "http://iamproxy-st06.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-st4.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://connection-troubleshooter-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

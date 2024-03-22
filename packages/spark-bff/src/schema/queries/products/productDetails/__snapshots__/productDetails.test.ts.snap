@@ -1,0 +1,671 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing endless plan query 1`] = `
+Object {
+  "code": 2000,
+  "description": "Category to group  Endless plans",
+  "id": "endless_plans",
+  "isCategoryContainer": false,
+  "message": "Success",
+  "name": "Endless",
+  "plans": Array [
+    Object {
+      "contractTerm": null,
+      "entitlements": Array [
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.svg",
+          "longDescription": null,
+          "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+          "quantity": null,
+          "shortDescription": "",
+          "sortOrder": 3,
+        },
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.svg",
+          "longDescription": "This will impact your experience.",
+          "name": "12GB data at max speed. Endless data at reduced speed*",
+          "quantity": "10",
+          "shortDescription": "",
+          "sortOrder": 1,
+        },
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.svg",
+          "longDescription": "",
+          "name": "Unlimited NZ/AUS SMS*",
+          "quantity": null,
+          "shortDescription": "",
+          "sortOrder": 2,
+        },
+      ],
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": Array [
+          "endless_plans",
+          "mobile_neon",
+          "mobile_spark_sport",
+          "spotify_individual_half_price",
+          "upgrade_cons_bus",
+          "primary_mobile_plan",
+        ],
+        "contentKey": "endless_plan.keyConditions",
+        "description": "Enjoy unlimited calls, texts and endless data.",
+        "planId": "mbundle050820",
+        "planName": "Endless Plan",
+      },
+      "planImages": Array [
+        Object {
+          "defaultUrl": null,
+          "description": null,
+          "sortOrder": 1,
+          "standardUrl": null,
+          "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-1.svg",
+          "tinyUrl": null,
+          "zoomUrl": null,
+        },
+      ],
+      "price": Object {
+        "basePrice": 59.99,
+        "basePriceExcludingTax": 52.17,
+        "priceFrequency": 1,
+        "pricePeriod": "Month",
+        "priceType": "Recurring",
+      },
+      "productCharacteristics": Object {
+        "addedInCart": null,
+        "balanceManagement": "POSTPAID",
+        "basePlanOfferId": null,
+        "entitledEntity": null,
+        "isDeferrable": null,
+        "isFeatured": null,
+        "isIncluded": null,
+        "isShippable": null,
+        "partnerId": null,
+        "soldSeparately": null,
+      },
+      "promotions": Array [
+        Object {
+          "contentKey": null,
+          "longDescription": "Usually $14.99/month (incl GST)",
+          "name": "Half price Spotify Premium",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "sortOrder": 1,
+        },
+        Object {
+          "contentKey": "visual_voicemail.infoModal",
+          "longDescription": "",
+          "name": "Spark Voicemail App",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "sortOrder": 4,
+        },
+        Object {
+          "contentKey": null,
+          "longDescription": null,
+          "name": "3GB Hotspot data*",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "sortOrder": 2,
+        },
+      ],
+    },
+    Object {
+      "contractTerm": null,
+      "entitlements": Array [
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.svg",
+          "longDescription": null,
+          "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+          "quantity": null,
+          "shortDescription": "",
+          "sortOrder": 3,
+        },
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.svg",
+          "longDescription": "",
+          "name": "Unlimited NZ/AUS SMS*",
+          "quantity": null,
+          "shortDescription": "",
+          "sortOrder": 2,
+        },
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.svg",
+          "longDescription": "This will impact your experience.",
+          "name": "40GB data at max speed. Endless data at reduced speed*",
+          "quantity": null,
+          "shortDescription": "",
+          "sortOrder": 1,
+        },
+      ],
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": Array [
+          "endless_plans",
+          "mobile_neon",
+          "mobile_spark_sport",
+          "spotify_individual_free_price",
+          "upgrade_cons_bus",
+          "primary_mobile_plan",
+          "multi_product_discount",
+        ],
+        "contentKey": "endless_plan.keyConditions",
+        "description": "Ideal if you do a lot of browsing on the go. Enjoy Spotify Premium on us!",
+        "planId": "mbundle050237",
+        "planName": "Endless Plan",
+      },
+      "planImages": Array [
+        Object {
+          "defaultUrl": null,
+          "description": null,
+          "sortOrder": 1,
+          "standardUrl": null,
+          "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-2.svg",
+          "tinyUrl": null,
+          "zoomUrl": null,
+        },
+      ],
+      "price": Object {
+        "basePrice": 79.99,
+        "basePriceExcludingTax": 69.56,
+        "priceFrequency": 1,
+        "pricePeriod": "Month",
+        "priceType": "Recurring",
+      },
+      "productCharacteristics": Object {
+        "addedInCart": null,
+        "balanceManagement": "POSTPAID",
+        "basePlanOfferId": null,
+        "entitledEntity": null,
+        "isDeferrable": null,
+        "isFeatured": null,
+        "isIncluded": null,
+        "isShippable": null,
+        "partnerId": null,
+        "soldSeparately": null,
+      },
+      "promotions": Array [
+        Object {
+          "contentKey": null,
+          "longDescription": null,
+          "name": "5GB Hotspot data*",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "sortOrder": 2,
+        },
+        Object {
+          "contentKey": null,
+          "longDescription": "Usually $14.99/month (incl GST)",
+          "name": "Spotify Premium",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "sortOrder": 1,
+        },
+        Object {
+          "contentKey": "visual_voicemail.infoModal",
+          "longDescription": "",
+          "name": "Spark Voicemail App",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "sortOrder": 4,
+        },
+      ],
+    },
+    Object {
+      "contractTerm": null,
+      "entitlements": Array [
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.svg",
+          "longDescription": "",
+          "name": "Unlimited NZ/AUS SMS*",
+          "quantity": null,
+          "shortDescription": "",
+          "sortOrder": 2,
+        },
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.svg",
+          "longDescription": null,
+          "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+          "quantity": null,
+          "shortDescription": "",
+          "sortOrder": 3,
+        },
+        Object {
+          "contentKey": null,
+          "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.svg",
+          "longDescription": "This will impact your experience.",
+          "name": "100GB data at max speed. Endless data at reduced speed*",
+          "quantity": null,
+          "shortDescription": "",
+          "sortOrder": 1,
+        },
+      ],
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": Array [
+          "endless_plans",
+          "mobile_neon",
+          "mobile_spark_sport",
+          "spotify_individual_free_price",
+          "upgrade_cons_bus",
+          "primary_mobile_plan",
+          "multi_product_discount",
+        ],
+        "contentKey": "endless_plan.keyConditions",
+        "description": "Enjoy nonstop browsing and streaming. Plus, get Spotify Premium on us!",
+        "planId": "mbundle050516",
+        "planName": "Endless Group Plan",
+      },
+      "planImages": Array [
+        Object {
+          "defaultUrl": null,
+          "description": null,
+          "sortOrder": 1,
+          "standardUrl": null,
+          "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-parent.svg",
+          "tinyUrl": null,
+          "zoomUrl": null,
+        },
+      ],
+      "price": Object {
+        "basePrice": 99.99,
+        "basePriceExcludingTax": 86.95,
+        "priceFrequency": 1,
+        "pricePeriod": "Month",
+        "priceType": "Recurring",
+      },
+      "productCharacteristics": Object {
+        "addedInCart": null,
+        "balanceManagement": "POSTPAID",
+        "basePlanOfferId": null,
+        "entitledEntity": null,
+        "isDeferrable": null,
+        "isFeatured": null,
+        "isIncluded": null,
+        "isShippable": null,
+        "partnerId": null,
+        "soldSeparately": null,
+      },
+      "promotions": Array [
+        Object {
+          "contentKey": null,
+          "longDescription": "Usually $14.99/month (incl GST)",
+          "name": "Spotify Premium",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "sortOrder": 1,
+        },
+        Object {
+          "contentKey": "companions.infoModal",
+          "longDescription": "Max 3 users for $29.99 each (incl GST) / $26.08 each (excl GST)",
+          "name": "Add a companion",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "sortOrder": 3,
+        },
+        Object {
+          "contentKey": "visual_voicemail.infoModal",
+          "longDescription": "",
+          "name": "Spark Voicemail App",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "sortOrder": 5,
+        },
+        Object {
+          "contentKey": null,
+          "longDescription": null,
+          "name": "10GB Hotspot data*",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "sortOrder": 2,
+        },
+      ],
+    },
+  ],
+  "subCategories": null,
+  "success": true,
+}
+`;
+
+exports[`Testing gold plan query 1`] = `
+Object {
+  "code": 2000,
+  "description": "Gold Plan",
+  "id": "gold_plan",
+  "isCategoryContainer": false,
+  "message": "Success",
+  "name": "Gold Plan",
+  "plans": Array [
+    Object {
+      "entitlements": null,
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": Array [
+          "gold_plan",
+        ],
+        "description": "Gold Basic",
+        "planId": "gold_basic",
+        "planName": "Gold Basic",
+      },
+      "planImages": null,
+      "price": Object {
+        "basePrice": 22.99,
+        "priceFrequency": 1,
+        "pricePeriod": "Month",
+        "priceType": "Recurring",
+      },
+      "productCharacteristics": null,
+      "promotions": null,
+    },
+    Object {
+      "entitlements": null,
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": Array [
+          "gold_plan",
+          "multi_product_discount",
+        ],
+        "description": "Gold Talker",
+        "planId": "gold_talker",
+        "planName": "Gold Talker",
+      },
+      "planImages": null,
+      "price": Object {
+        "basePrice": 22.99,
+        "priceFrequency": 1,
+        "pricePeriod": "Month",
+        "priceType": "Recurring",
+      },
+      "productCharacteristics": null,
+      "promotions": null,
+    },
+  ],
+  "subCategories": null,
+  "success": true,
+}
+`;
+
+exports[`Testing prepaid extra pack query 1`] = `
+Object {
+  "code": 2000,
+  "description": "Extras",
+  "id": "prepaid_extra",
+  "isCategoryContainer": false,
+  "message": "Success",
+  "name": "Extras",
+  "plans": Array [
+    Object {
+      "entitlements": null,
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": Array [
+          "addon_prepaid",
+          "prepaid_extra",
+          "prepaid_voice",
+        ],
+        "description": "$15 Talk Boost - NZ",
+        "planId": "talkextra050304_prepaid",
+        "planName": "$15 Talk Boost - NZ",
+      },
+      "planImages": null,
+      "price": Object {
+        "basePrice": 15,
+        "priceFrequency": 28,
+        "pricePeriod": "Day",
+        "priceType": "Onetime",
+      },
+      "productCharacteristics": Object {
+        "addedInCart": null,
+        "balanceManagement": "PREPAID",
+        "basePlanOfferId": null,
+        "entitledEntity": null,
+        "isDeferrable": null,
+        "isFeatured": null,
+        "isIncluded": null,
+        "isShippable": null,
+        "partnerId": null,
+        "soldSeparately": null,
+      },
+      "promotions": null,
+    },
+  ],
+  "subCategories": Array [
+    Object {
+      "id": "prepaid_data",
+      "name": "Data",
+      "subCategories": Array [
+        Object {
+          "id": "prepaid_data_dataonly",
+          "name": "Data only",
+        },
+        Object {
+          "id": "prepaid_data_endless",
+          "name": "Endless",
+        },
+        Object {
+          "id": "prepaid_data_socialiser",
+          "name": "Socialiser",
+        },
+      ],
+    },
+    Object {
+      "id": "prepaid_pack",
+      "name": "Pack",
+      "subCategories": Array [
+        Object {
+          "id": "prepaid_datalovers",
+          "name": "Data lovers",
+        },
+        Object {
+          "id": "prepaid_value_pack",
+          "name": "Value pack",
+        },
+      ],
+    },
+    Object {
+      "id": "prepaid_roaming",
+      "name": "Roaming",
+      "subCategories": Array [
+        Object {
+          "id": "prepaid_roaming_data",
+          "name": "Extended data",
+        },
+        Object {
+          "id": "prepaid_roaming_aupack",
+          "name": "Australian pack",
+        },
+        Object {
+          "id": "prepaid_roaming_pack",
+          "name": "Extended pack",
+        },
+      ],
+    },
+    Object {
+      "id": "prepaid_talk",
+      "name": "Talk",
+      "subCategories": Array [
+        Object {
+          "id": "prepaid_talk_textonly",
+          "name": "Text only",
+        },
+        Object {
+          "id": "prepaid_talk_voicemail",
+          "name": "Voicemall",
+        },
+        Object {
+          "id": "prepaid_talk_talkonly",
+          "name": "Talk only",
+        },
+        Object {
+          "id": "prepaid_talk_talkandtext",
+          "name": "Talk & Text",
+        },
+      ],
+    },
+  ],
+  "success": true,
+}
+`;
+
+exports[`Testing subcategory query for postpaid plans 1`] = `
+Object {
+  "code": 2000,
+  "description": "Category to group Postpaid products offers",
+  "id": "postpaid",
+  "isCategoryContainer": false,
+  "message": "Success",
+  "name": "Postpaid",
+  "subCategories": Array [
+    Object {
+      "id": "endless_plans",
+      "name": "Endless",
+    },
+    Object {
+      "id": "rollover_plan",
+      "name": "Rollover",
+    },
+    Object {
+      "id": "data_plan",
+      "name": "Data",
+    },
+    Object {
+      "id": "wearable_plan",
+      "name": "Wearable",
+    },
+  ],
+  "success": true,
+}
+`;
+
+exports[`Testing wearable plan query 1`] = `
+Object {
+  "code": 2000,
+  "description": "Wearable Plan",
+  "id": "wearable_plan",
+  "isCategoryContainer": false,
+  "message": "Success",
+  "name": "Wearable Plan",
+  "plans": Array [
+    Object {
+      "entitlements": null,
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": Array [
+          "wearable_plan",
+        ],
+        "description": "$12.99 One Number Wearable Plan",
+        "planId": "one_number_wearbale_plan",
+        "planName": "$12.99 One Number Wearable Plan",
+      },
+      "planImages": Array [
+        Object {
+          "defaultUrl": "",
+          "description": "Product Image",
+          "sortOrder": null,
+          "standardUrl": "",
+          "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/plan-card-graphic-596x520.png",
+          "tinyUrl": "",
+          "zoomUrl": "",
+        },
+      ],
+      "price": Object {
+        "basePrice": 12.99,
+        "priceFrequency": 1,
+        "pricePeriod": "Month",
+        "priceType": "Recurring",
+      },
+      "productCharacteristics": Object {
+        "addedInCart": null,
+        "balanceManagement": "POSTPAID",
+        "basePlanOfferId": null,
+        "entitledEntity": null,
+        "isDeferrable": null,
+        "isFeatured": null,
+        "isIncluded": null,
+        "isShippable": false,
+        "partnerId": null,
+        "soldSeparately": null,
+      },
+      "promotions": null,
+    },
+    Object {
+      "entitlements": null,
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": Array [
+          "wearable_plan",
+          "mobile_neon",
+          "mobile_spark_sport",
+          "spotify_individual_full_price",
+        ],
+        "description": "$14.99 Endless Wearable Plan",
+        "planId": "dollar14_99_endless_wearable_plan",
+        "planName": "$14.99 Endless Wearable Plan",
+      },
+      "planImages": null,
+      "price": Object {
+        "basePrice": 14.99,
+        "priceFrequency": 1,
+        "pricePeriod": "Month",
+        "priceType": "Recurring",
+      },
+      "productCharacteristics": Object {
+        "addedInCart": null,
+        "balanceManagement": "POSTPAID",
+        "basePlanOfferId": null,
+        "entitledEntity": null,
+        "isDeferrable": null,
+        "isFeatured": null,
+        "isIncluded": null,
+        "isShippable": false,
+        "partnerId": null,
+        "soldSeparately": null,
+      },
+      "promotions": null,
+    },
+  ],
+  "subCategories": null,
+  "success": true,
+}
+`;
+
+exports[`testing rollover plan query 1`] = `
+Object {
+  "code": 2000,
+  "description": "Rollover plan",
+  "id": "rollover_plan",
+  "isCategoryContainer": false,
+  "message": "Success",
+  "name": "Rollover plan",
+  "plans": Array [
+    Object {
+      "entitlements": null,
+      "group": null,
+      "planDetails": Object {
+        "categoryIdentifiers": null,
+        "description": "$39.99 3GB Rollover",
+        "planId": "dollar_39_endless_mobile_plan-of_luqnb",
+        "planName": "$39.99 3GB Rollover",
+      },
+      "planImages": null,
+      "price": Object {
+        "basePrice": 40,
+        "priceFrequency": 1,
+        "pricePeriod": "Month",
+        "priceType": "Recurring",
+      },
+      "productCharacteristics": null,
+      "promotions": null,
+    },
+  ],
+  "subCategories": null,
+  "success": true,
+}
+`;

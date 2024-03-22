@@ -1,0 +1,35 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "dollar_39_endless_mobile_plan-of_luqnb",
+        "name": "$39.99 3GB Rollover",
+        "description": "$39.99 3GB Rollover",
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 40
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": []
+      }
+    ],
+    "id": "rollover_plan",
+    "name": "Rollover plan",
+    "description": "Rollover plan",
+    "isCategoryContainer": false,
+    "subCategories": null
+  }
+}

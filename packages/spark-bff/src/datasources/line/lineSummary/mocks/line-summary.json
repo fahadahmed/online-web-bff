@@ -1,0 +1,74 @@
+{
+  "lines": [
+    {
+      "accountNumber": "105336780",
+      "type": "BROADBAND",
+      "lineNumber": "033478552",
+      "status": "Active",
+      "balanceManagement": "POSTPAID",
+      "offerId": "legacy050114",
+      "offerName": "ADSL Broadband and Landline Unlimited Data - Open",
+      "secondaryLineNumbers": ["0272819459", "0272819859"],
+      "planType": "ADSL_DATA_VOICE",
+      "packageId": null
+    },
+    {
+      "accountNumber": "1053367801",
+      "type": "BROADBAND",
+      "lineNumber": "033478553",
+      "status": "Active",
+      "balanceManagement": "PREPAID",
+      "offerId": "legacy050114",
+      "offerName": "ADSL Broadband and Landline Unlimited Data - Open",
+      "secondaryLineNumbers": ["0272819459", "0272819859"],
+      "planType": "ADSL_DATA_VOICE",
+      "packageId": null
+    },
+    {
+      "accountNumber": "1053367801",
+      "type": "BROADBAND",
+      "lineNumber": "033227715",
+      "status": "Active",
+      "balanceManagement": "PREPAID",
+      "offerId": "legacy050114",
+      "offerName": "ADSL Broadband and Landline Unlimited Data - Open",
+      "secondaryLineNumbers": ["0272819459", "0272819859"],
+      "planType": "ADSL_DATA_VOICE",
+      "packageId": null
+    },
+    {
+      "accountNumber": "369121518",
+      "balanceManagement": "POSTPAID",
+      "offerName": "ADSL Broadband and Landline Unlimited Data - Open",
+      "lineNumber": "0278675179",
+      "type": "BROADBAND",
+      "status": "Active",
+      "offerId": "xyz123",
+      "secondaryLineNumbers": []
+    },
+    {
+      "accountNumber": "431586312",
+      "type": "BROADBAND",
+      "lineNumber": "0276404520",
+      "status": "Active",
+      "balanceManagement": "PREPAID",
+      "offerId": "legacy050114",
+      "offerName": "ADSL Broadband and Landline Unlimited Data - Open",
+      "secondaryLineNumbers": ["0272819459", "0272819859"],
+      "planType": "ADSL_DATA_VOICE",
+      "packageId": null
+    },
+    {
+      "accountNumber": "431586312",
+      "type": "BROADBAND",
+      "lineNumber": "0211615249",
+      "status": "Active",
+      "balanceManagement": "POSTPAID",
+      "offerId": "legacy050114",
+      "offerName": "ADSL Broadband and Landline Unlimited Data - Open",
+      "secondaryLineNumbers": ["0272819459", "0272819859"],
+      "planType": "ADSL_DATA_VOICE",
+      "packageId": null
+    }
+  ]
+}

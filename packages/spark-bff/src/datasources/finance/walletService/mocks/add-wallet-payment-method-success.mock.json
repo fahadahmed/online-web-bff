@@ -1,0 +1,10 @@
+{
+  "paymentMethodId": "MySpark-SSC1463625391900736-723",
+  "isDuplicate": null,
+  "messages": [
+    {
+      "message": "Request successfully processed",
+      "code": 2000
+    }
+  ]
+}

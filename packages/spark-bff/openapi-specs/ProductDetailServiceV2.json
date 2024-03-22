@@ -1,0 +1,2928 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Product Detail Service V2",
+    "version": "1.0.0",
+    "title": "Product Detail Service V2 API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/products/category/{categoryId}/details": {
+      "get": {
+        "tags": ["product-details-v2", "public"],
+        "summary": "Fetches product category details based on category",
+        "operationId": "fetchProductDetailsByCategoryId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "categoryId",
+            "description": "The category Id whose product details are requested",
+            "type": "string",
+            "required": true,
+            "x-example": "endless_plan"
+          },
+          {
+            "name": "includePriceRules",
+            "in": "query",
+            "description": "Indicates if associatedPriceRules need to be populated or not.",
+            "type": "boolean",
+            "default": false,
+            "x-example": false
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          },
+          {
+            "name": "recursiveSearch",
+            "in": "query",
+            "description": "if true, all the child categories(only categories) to the leaf node would be returned. else only the immediate children re returned. the recursive search only supports a depth of max 10 levels at the moment",
+            "type": "boolean",
+            "default": false,
+            "x-example": false,
+            "required": false
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "The sorting strategy to be used.",
+            "type": "string",
+            "pattern": "^(date|price|featured|alphabetical)$",
+            "x-example": "price"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched product details by category",
+            "schema": {
+              "$ref": "#/definitions/ProductDetailByCategoryResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/offers/details": {
+      "get": {
+        "tags": ["product-details-v2", "public"],
+        "summary": "Fetches product offer details based on either offerIds or externalIds",
+        "operationId": "fetchProductDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offerIds",
+            "description": "The comma separated list of multiple offerIds",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "dollar_59_endless_mobile_plan-of_tskxp,dollar_59_endless_mobile_plan-of_tskxp"
+          },
+          {
+            "in": "query",
+            "name": "externalIds",
+            "description": "The comma separated list of external Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "mbundle050237, SIMTrioSPO"
+          },
+          {
+            "name": "includePriceRules",
+            "in": "query",
+            "description": "Indicates if associatedPriceRules need to be populated or not.",
+            "type": "boolean",
+            "default": false,
+            "x-example": false
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched product details by offer Ids",
+            "schema": {
+              "$ref": "#/definitions/ProductDetailByOfferIdsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/offers/search": {
+      "post": {
+        "tags": ["product-details-v2", "protected", "oidc", "guest", "public"],
+        "summary": "Retrieves the compatible products.",
+        "operationId": "fetchCompatibleProductDetails",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fetchCompatibleProductDetailsRequest",
+            "description": "The Request Container for fetching compatible product details.",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched compatible product details",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/offers/subscriptions/search": {
+      "post": {
+        "tags": ["product-details-v2", "protected", "oidc", "guest", "public"],
+        "summary": "Retrieves the compatible subscriptions products.",
+        "operationId": "fetchCompatibleSubscriptionProductDetails",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fetchCompatibleSubscriptionProductDetailsRequest",
+            "description": "The Request Container for fetching compatible subscription product details.",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched compatible subscription product details",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/products/offers/subscriptions/me": {
+      "get": {
+        "tags": [
+          "product-details-v2",
+          "product-subscriptions",
+          "protected",
+          "oidc",
+          "public"
+        ],
+        "summary": "Retrieves the compatible grouped subscriptions products for the logged in user (includes all accounts and lines).",
+        "operationId": "fetchCompatibleGroupedSubscriptionProductDetails",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched compatible grouped subscription product details",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleGroupedSubscriptionProductDetailsResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to access the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/products/offers/subscriptions/lines/{lineNumber}/{productInstanceId}": {
+      "get": {
+        "tags": [
+          "product-details-v2",
+          "product-subscriptions",
+          "protected",
+          "oidc",
+          "public"
+        ],
+        "summary": "Returns eligible subscription offers for a given line",
+        "operationId": "fetchEligibleSubscriptionProductDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/LineNumber"
+          },
+          {
+            "in": "path",
+            "name": "productInstanceId",
+            "description": "The bundle offer product instance id of the subscription being managed.",
+            "type": "string",
+            "required": true,
+            "x-example": "1-2D20EFNY"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched compatible subscription product details",
+            "schema": {
+              "$ref": "#/definitions/FetchEligibleProductDetailsResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated user doesn't have the right to access the line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/category/{categoryId}/filters": {
+      "get": {
+        "tags": ["product-details-v2", "public"],
+        "summary": "Retrieves the filters for the given category.",
+        "operationId": "fetchProductFilters",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "categoryId",
+            "description": "The unique identifier of the category for which the filters are being requested.",
+            "required": true,
+            "type": "string",
+            "x-example": "handset"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched product filter details",
+            "schema": {
+              "$ref": "#/definitions/ProductFilterResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/group/{groupId}/variants": {
+      "get": {
+        "tags": ["product-details-v2", "public"],
+        "summary": "Retrieve product variant information based on groupid.",
+        "operationId": "fetchProductVariantByGroupId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "description": "The group ID for which the variants are to be retrieved.",
+            "required": true,
+            "type": "string",
+            "x-example": "iphone_12"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched product variant details by group id.",
+            "schema": {
+              "$ref": "#/definitions/ProductVariantResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/offers/deviceaddons/search": {
+      "post": {
+        "tags": ["product-details-v2", "protected", "oidc", "guest", "public"],
+        "summary": "Retrieves the compatible device addon products.",
+        "operationId": "fetchCompatibleDeviceAddonsProductDetails",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fetchCompatibleDeviceAddonsProductDetailsRequest",
+            "description": "The Request Container for fetching compatible device addons product details.",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched compatible device addons product details",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/offers/plans/search": {
+      "post": {
+        "tags": ["product-details-v2", "protected", "oidc", "guest", "public"],
+        "summary": "Retrieves the compatible plan products.",
+        "operationId": "fetchCompatiblePlanProductDetails",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fetchCompatiblePlanProductDetailsRequest",
+            "description": "The Request Container for fetching compatible plan product details.",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched compatible plan product details",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/offers/ifp/search": {
+      "post": {
+        "tags": ["product-details-v2", "protected", "oidc", "guest", "public"],
+        "summary": "Retrieves the compatible ifp products.",
+        "operationId": "fetchCompatibleIfpProductDetails",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fetchCompatibleIfpProductDetailsRequest",
+            "description": "The Request Container for fetching compatible ifp product details.",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched compatible ifp product details",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/promotions/mpd/search": {
+      "post": {
+        "tags": [
+          "product-details-v2",
+          "promotions",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "Retrieves the related multiple product discount promotions details.",
+        "operationId": "fetchMultipleProductDiscountPromotionsDetails",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fetchMultipleProductDiscountPromotionsDetailsRequest",
+            "description": "The Request Container for fetching multiple product discount promotions details.",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched related multiple product discount promotions details.",
+            "schema": {
+              "$ref": "#/definitions/FetchMultipleProductDiscountPromotionsDetailsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/products/offers/plans/lines/{lineNumber}": {
+      "get": {
+        "tags": [
+          "product-details-v2",
+          "protected",
+          "oidc",
+          "eligibility",
+          "public"
+        ],
+        "summary": "Retrieve eligible plans or packs for line number",
+        "operationId": "fetchEligiblePlanProductDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/LineNumber"
+          },
+          {
+            "in": "query",
+            "name": "packInstanceId",
+            "description": "The instance identifier of the value pack to be changed. If this is not supplied for prepaid then a pre to post journey will be assumed. For postpay plan this will be ignored.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched eligible product details",
+            "schema": {
+              "$ref": "#/definitions/FetchEligibleProductDetailsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "User has no right to retrieve eligible plans or packs for given line number",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/products/offers/extras/lines/{lineNumber}": {
+      "get": {
+        "tags": [
+          "product-details-v2",
+          "promotions",
+          "protected",
+          "oidc",
+          "public"
+        ],
+        "summary": "Retrieves the extras for prepaid or postpaid lines.",
+        "operationId": "getExtrasByLineNumber",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/LineNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched the compatible extras.",
+            "schema": {
+              "$ref": "#/definitions/FetchEligibleProductDetailsResponse"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The line number is forbidden.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/products/offers/extras/lines/{lineNumber}/roaming": {
+      "get": {
+        "tags": [
+          "product-details-v2",
+          "roaming",
+          "protected",
+          "oidc",
+          "public"
+        ],
+        "summary": "Retrieves the roaming extras for prepaid or postpaid lines.",
+        "operationId": "getRoamingExtrasByLineNumber",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/LineNumber"
+          },
+          {
+            "in": "query",
+            "name": "destinations",
+            "description": "The list of destination country codes that the customer intends to travel to.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "required": false,
+            "collectionFormat": "csv",
+            "x-example": "AUS,USA"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched the roaming extras.",
+            "schema": {
+              "$ref": "#/definitions/FetchEligibleProductDetailsResponse"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Unauthorised.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/offers/plans/comparison/subscriptions": {
+      "get": {
+        "tags": ["product-details-v2", "protected", "oidc", "public"],
+        "summary": "This service will determine the Subscription changes between two plans within a cart, as part of a self service change plan/pack scenario.",
+        "operationId": "retrieveSubscriptionsComparison",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/BundleId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/SubscriptionsComparisonResponse"
+            }
+          },
+          "400": {
+            "description": "No valid plans to compare.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The authenticated myspark id doesn't have access to the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "The given request type is not implemented.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/offers/plans/comparison/mpd": {
+      "get": {
+        "tags": ["product-details-v2", "protected", "oidc", "public"],
+        "summary": "Retrieve Multi Product Discount at the customer level",
+        "operationId": "fetchCustomerLevelMultiProductDiscount",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "in": "query",
+            "name": "bundleId",
+            "description": "Reference id that uniquely identifies a bundle within the given cart.",
+            "type": "string",
+            "pattern": "^\\w[\\w-]+$",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "lineNumber",
+            "description": "The current line that is being changed.",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "addOffer",
+            "description": "The to-be added plan offer id (BM external id).",
+            "type": "string",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "removeOffer",
+            "description": "The to-be removed plan offer id (BM external id).",
+            "type": "string",
+            "required": false
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched multi product discount at customer level.",
+            "schema": {
+              "$ref": "#/definitions/FetchCustomerLevelMultiProductDiscountResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "User doesn't have access to the line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/eligibility/plans/{offerId}/me/lines": {
+      "get": {
+        "tags": ["product-details-v2", "protected", "oidc", "public"],
+        "summary": "Retrieve list of eligible line numbers (with associated account numbers) that support changing to the supplied plan offer ID.",
+        "operationId": "fetchEligibleLinesToChange",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "offerId",
+            "description": "The offer ID associated to the plan that the client is checking the account/line-level eligibility for.",
+            "type": "string",
+            "required": true,
+            "x-example": "mbundle050290"
+          },
+          {
+            "$ref": "#/parameters/AccountNumber"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/FetchEligibleLinesToChangeResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated access to API.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Unauthorised access to API.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something went wrong.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "Not supported yet/Not implemented yet.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/eligibility/wearables/{offerId}/me/lines": {
+      "get": {
+        "tags": ["product-details-v2", "protected", "oidc", "public"],
+        "summary": "Retrieve list of eligible line numbers (with associated account numbers) that support the purchase of the supplied wearable plan offer ID.",
+        "operationId": "fetchEligibleWearableLinesToChange",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "offerId",
+            "description": "The offer ID associated to the wearable plan that the client is checking the account/line-level eligibility for.",
+            "type": "string",
+            "required": true,
+            "x-example": "mbundle050290"
+          },
+          {
+            "$ref": "#/parameters/AccountNumber"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/FetchEligibleWearableLinesToChangeResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated access to API.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Unauthorised access to API.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something went wrong.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/products/promotions/mpd/search/internal": {
+      "post": {
+        "tags": ["product-details-v2", "promotions", "internal", "private"],
+        "summary": "Internal api that retrieves the related multiple product discount promotions details.",
+        "operationId": "fetchMultipleProductDiscountPromotionsDetailsInternally",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fetchMultipleProductDiscountPromotionsDetailsRequest",
+            "description": "The Request Container for fetching multiple product discount promotions details.",
+            "schema": {
+              "$ref": "#/definitions/FetchCompatibleProductDetailsRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          },
+          {
+            "in": "query",
+            "name": "customerNumber",
+            "description": "The customer number of the customer for which the mpd is requested.",
+            "type": "string",
+            "pattern": "^\\d+$",
+            "required": false,
+            "x-example": "777255803"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched related multiple product discount promotions details.",
+            "schema": {
+              "$ref": "#/definitions/FetchMultipleProductDiscountPromotionsDetailsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/products/offers/extras/lines/{lineNumber}/categories": {
+      "get": {
+        "tags": ["product-details-v2", "extras", "protected", "oidc", "public"],
+        "summary": "Retrieves the extras for prepaid or postpaid lines and returns response with extras grouped by categories.",
+        "operationId": "getExtrasGroupedByCategory",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/LineNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched the compatible extras grouped under categories.",
+            "schema": {
+              "$ref": "#/definitions/ExtrasByCategoryResponse"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The line number is forbidden.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "Channel": {
+      "in": "query",
+      "name": "channel",
+      "type": "string",
+      "pattern": "^(personalshop|personalss|businessshop)$",
+      "required": false,
+      "x-example": "personalshop",
+      "default": "personalshop"
+    },
+    "CartId": {
+      "in": "query",
+      "name": "cartId",
+      "description": "Reference id that uniquely identifies a cart in blue marble.",
+      "type": "string",
+      "pattern": "^\\w[\\w-]+$",
+      "x-example": "10abf706-a90d-4029-a007-1a4422f75829",
+      "required": true
+    },
+    "BundleId": {
+      "in": "query",
+      "name": "bundleId",
+      "description": "Reference id that uniquely identifies a bundle within the given cart which identifies the line number.",
+      "type": "string",
+      "pattern": "^\\w[\\w-]+$",
+      "x-example": "ba3384b4-ca09-4698-b6bc-606610b06586",
+      "required": true
+    },
+    "AccountNumber": {
+      "in": "query",
+      "name": "accountNumber",
+      "description": "The account number of the customer that is considering the change.",
+      "type": "string",
+      "pattern": "^\\d+$",
+      "required": false,
+      "x-example": "35151131"
+    },
+    "LineNumber": {
+      "in": "path",
+      "name": "lineNumber",
+      "description": "The postpaid or prepaid line number.",
+      "type": "string",
+      "pattern": "^0\\d+$",
+      "required": true,
+      "x-example": "0275097001"
+    }
+  },
+  "definitions": {
+    "SubscriptionsComparisonResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/SubscriptionsComparisonDetail"
+        }
+      ]
+    },
+    "SubscriptionsComparisonDetail": {
+      "type": "object",
+      "required": ["comparisons"],
+      "properties": {
+        "comparisons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Comparison"
+          },
+          "description": "The array object to hold changes for each subscription."
+        }
+      }
+    },
+    "Comparison": {
+      "type": "object",
+      "required": ["recommendationId"],
+      "properties": {
+        "recommendationId": {
+          "type": "string",
+          "description": "The unique identifier for the recommendation.",
+          "example": "vas_downgrade_keep_change_free_to_half"
+        },
+        "unavailable": {
+          "description": "The subscriptions which are no longer available.",
+          "$ref": "#/definitions/UnavailableSubscriptions"
+        },
+        "available": {
+          "description": "The subscriptions which are now available.",
+          "$ref": "#/definitions/AvailableSubscriptions"
+        },
+        "ctas": {
+          "description": "The actions to be taken on the subscription.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CtaComparison"
+          }
+        }
+      }
+    },
+    "UnavailableSubscriptions": {
+      "type": "object",
+      "required": ["offerId"],
+      "properties": {
+        "offerId": {
+          "description": "The offerId of the unavailable subscription",
+          "type": "string",
+          "x-example": "spotify_individual_included"
+        }
+      }
+    },
+    "AvailableSubscriptions": {
+      "type": "object",
+      "required": ["offerId"],
+      "properties": {
+        "offerId": {
+          "description": "The offerId of the available subscription",
+          "type": "string",
+          "x-example": "spotify_individual_half_price_2"
+        }
+      }
+    },
+    "CtaComparison": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["INFORM", "KEEP", "CANCEL"],
+          "description": "The action type.",
+          "x-example": "KEEP"
+        }
+      }
+    },
+    "FetchEligibleProductDetailsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/OfferDetails"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "notifications": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Notification"
+              },
+              "description": "Array of notifications to be presented to frontend."
+            }
+          }
+        }
+      ]
+    },
+    "FetchCompatibleGroupedSubscriptionProductDetailsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["subscriptions"],
+          "properties": {
+            "subscriptions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Subscription"
+              },
+              "description": "The array object to hold subscription details."
+            }
+          }
+        }
+      ]
+    },
+    "FetchCustomerLevelMultiProductDiscountResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/MpdCartResponse"
+        },
+        {
+          "$ref": "#/definitions/ExistingPlansResponse"
+        }
+      ]
+    },
+    "Subscription": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OfferDetails"
+        },
+        {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The title of subscription.",
+              "example": "Spotify Premium"
+            },
+            "lineNumbers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true,
+              "description": "The lines that the product offer is eligible for.",
+              "example": "[\"0278675179\",\"0278675180\",\"0271234567\"]"
+            },
+            "accountNumbers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true,
+              "description": "The accounts that the product offer is eligible for.",
+              "example": "[\"369121518\",\"246810121\",\"123456789\"]"
+            },
+            "ctas": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Cta"
+              },
+              "description": "The Call to Action displayed to user."
+            }
+          }
+        }
+      ]
+    },
+    "Cta": {
+      "description": "The available call to actions.",
+      "type": "object",
+      "required": ["type", "label"],
+      "properties": {
+        "type": {
+          "description": "The type of Call to Action.",
+          "type": "string",
+          "enum": ["ADD"],
+          "example": "ADD"
+        },
+        "label": {
+          "description": "The formatted label of the Call to Action.",
+          "type": "string",
+          "example": "Add to Prepaid Pack"
+        }
+      }
+    },
+    "ProductDetailByCategoryResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["category"],
+          "properties": {
+            "category": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        }
+      ]
+    },
+    "Category": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OfferDetails"
+        },
+        {
+          "type": "object",
+          "required": ["id", "name", "isCategoryContainer"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Id of the category",
+              "example": "endless_plan"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of the category",
+              "example": "Endless plan"
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the category",
+              "example": "Endless plan"
+            },
+            "isCategoryContainer": {
+              "type": "boolean",
+              "description": "False if contains offer details, True if contains subcategories",
+              "example": "true"
+            },
+            "visibility": {
+              "type": "boolean",
+              "description": "Boolean to decide if this has to be visible to online or not.",
+              "example": true
+            },
+            "defaultSelected": {
+              "type": "boolean",
+              "description": "Boolean that indicates if this has to be selected by default.",
+              "example": true
+            },
+            "sortOrder": {
+              "type": "integer",
+              "format": "int32",
+              "description": "Represents the sorting order.",
+              "example": 1
+            },
+            "subCategories": {
+              "type": "array",
+              "description": "List of SubCategory objects",
+              "items": {
+                "$ref": "#/definitions/SubCategory"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ProductDetailByOfferIdsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/OfferDetails"
+        }
+      ]
+    },
+    "FetchCompatibleProductDetailsRequest": {
+      "type": "object",
+      "required": ["bundles"],
+      "properties": {
+        "cartId": {
+          "type": "string",
+          "description": "The unique identifier of cart id",
+          "pattern": "^\\w[\\w-]+$",
+          "example": "1151522d-7522-46cb-9524-1c035b9ac5c8"
+        },
+        "simulated": {
+          "type": "boolean",
+          "description": "This would indicate that the cart does not exist but compatibility is required.",
+          "example": true
+        },
+        "bundles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BundleDetail"
+          },
+          "description": "The array objects to hold bundle details.",
+          "minItems": 1
+        }
+      }
+    },
+    "FetchCompatibleProductDetailsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/CompatibleProductDetail"
+        }
+      ]
+    },
+    "FetchMultipleProductDiscountPromotionsDetailsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/CartDetails"
+        }
+      ]
+    },
+    "CartDetails": {
+      "type": "object",
+      "required": ["cartId"],
+      "properties": {
+        "cartId": {
+          "type": "string",
+          "pattern": "^\\w[\\w-]+$",
+          "description": "The unique identifier of the cart in blue marble.",
+          "example": "10abf706-a90d-4029-a007-1a4422f75829"
+        },
+        "price": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartPrice"
+          },
+          "description": "The array of cart price objects."
+        },
+        "bundles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartBundle"
+          }
+        }
+      }
+    },
+    "CartPrice": {
+      "type": "object",
+      "description": "The price information.",
+      "required": ["priceType", "basePrice", "effectivePrice"],
+      "properties": {
+        "priceType": {
+          "type": "string",
+          "description": "The price type.",
+          "enum": ["Recurring", "OneOff"],
+          "example": "Recurring"
+        },
+        "frequency": {
+          "$ref": "#/definitions/Frequency"
+        },
+        "basePrice": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The actual price of the product.",
+          "example": 99.99
+        },
+        "effectivePrice": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The final price of the product calculated after deducting the discount(both percentage and flat).",
+          "example": 90.99
+        },
+        "basePriceExcludingTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Same as basePrice but excluding tax.",
+          "example": 99.99
+        },
+        "effectivePriceExcludingTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Same as effectivePrice but excluding tax.",
+          "example": 90.99
+        },
+        "discount": {
+          "$ref": "#/definitions/Discount"
+        }
+      }
+    },
+    "Discount": {
+      "type": "object",
+      "description": "The discount information.",
+      "required": [
+        "name",
+        "description",
+        "discountType",
+        "appliedValue",
+        "discountCategory",
+        "discountedValue"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the discount.",
+          "example": "10 percentage Discount"
+        },
+        "description": {
+          "type": "string",
+          "description": "The discount description.",
+          "example": "10 percentage Discount on MRC Dollar 99 Plan for first 12 Months"
+        },
+        "discountType": {
+          "type": "string",
+          "description": "The unit used to represent discount.",
+          "enum": ["Percentage", "Flat"],
+          "example": "Percentage"
+        },
+        "appliedValue": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The amount of discount applied.",
+          "example": 10.99
+        },
+        "appliedValueExcludingTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Same as appliedValue but excluding tax.",
+          "example": 10.99
+        },
+        "discountCategory": {
+          "type": "string",
+          "description": "The discount category identified from the promotions applicable.",
+          "example": "mpd"
+        },
+        "discountedValue": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The value reduced as a result of the discount.",
+          "example": 9.99
+        },
+        "discountedValueExcludingTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Same as discountedValue but excluding tax.",
+          "example": 9.99
+        }
+      }
+    },
+    "CartBundle": {
+      "type": "object",
+      "description": "Represents a bundled product.",
+      "required": ["id", "price", "items"],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 1,
+          "description": "The index of each Cart Bundle within cart data starting from 1.",
+          "example": 1
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of Cart Bundle.",
+          "example": "ba3384b4-ca09-4698-b6bc-606610b06586"
+        },
+        "category": {
+          "$ref": "#/definitions/CartCategory"
+        },
+        "price": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartPrice"
+          },
+          "description": "The array of cart bundle price objects."
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BundleEntry"
+          }
+        }
+      }
+    },
+    "CartCategory": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The category id.",
+          "example": "mobile_postpaid-pc_wx7fl"
+        },
+        "name": {
+          "type": "string",
+          "description": "The category name.",
+          "example": "Mobile Plans"
+        }
+      }
+    },
+    "BundleEntry": {
+      "type": "object",
+      "description": "Represents a product.",
+      "required": ["index", "id", "price", "productOfferingId"],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 1,
+          "description": "The index of each entry/item of the Cart Bundle starting from 1.",
+          "example": 1
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of bundle entry.",
+          "example": "bc7e89a7-af37-4b40-9c78-c10e0a411357"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0,
+          "description": "Represents the quantity or the number of products.",
+          "example": 1
+        },
+        "price": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartPrice"
+          },
+          "description": "The array of bundle entry price objects."
+        },
+        "productOfferingId": {
+          "type": "string",
+          "description": "The product offering id."
+        },
+        "balanceManagement": {
+          "type": "string",
+          "description": "Balance management of the account.",
+          "enum": ["PREPAID", "POSTPAID"],
+          "example": "POSTPAID"
+        },
+        "category": {
+          "type": "array",
+          "description": "The product categories.",
+          "example": [
+            "endless_postpaid_plans-pc_k01ab",
+            "endless_postpaid_plans-pc_k01a1"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ProductFilterResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["count", "filters"],
+          "properties": {
+            "count": {
+              "type": "integer",
+              "description": "Total count of the results.",
+              "example": 2
+            },
+            "filters": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductFilter"
+              },
+              "description": "Array to hold the filter objects."
+            }
+          }
+        }
+      ]
+    },
+    "ProductFilter": {
+      "type": "object",
+      "required": ["name", "options"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the filter",
+          "example": "Brand"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FilterOption"
+          },
+          "description": "Array to hold the options."
+        }
+      }
+    },
+    "FilterOption": {
+      "type": "object",
+      "required": ["name", "count"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the option",
+          "example": "Apple"
+        },
+        "count": {
+          "type": "integer",
+          "description": "The count of results under this option.",
+          "example": 2
+        }
+      }
+    },
+    "ProductVariantResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/OfferDetails"
+        }
+      ]
+    },
+    "CompatibleProductDetail": {
+      "type": "object",
+      "required": ["bundles"],
+      "properties": {
+        "bundles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bundle"
+          },
+          "description": "The array object to hold bundle details."
+        }
+      }
+    },
+    "Bundle": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OfferDetails"
+        },
+        {
+          "type": "object",
+          "required": ["id"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "The unique identifier of bundle id",
+              "pattern": "^\\w[\\w-]+$",
+              "example": "1151522d-7522-46cb-9524-1c035b9ac5c8"
+            }
+          }
+        }
+      ]
+    },
+    "BundleDetail": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of cart, bundle or item id",
+          "pattern": "^\\w[\\w-]+$",
+          "example": "1151522d-7522-46cb-9524-1c035b9ac5c8"
+        },
+        "categoryId": {
+          "type": "string",
+          "description": "The category corresponding to the bundle",
+          "example": "mobile"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemDetail"
+          },
+          "description": "The array objects to hold item details."
+        }
+      }
+    },
+    "ItemDetail": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of item id",
+          "pattern": "^\\w[\\w-]+$",
+          "example": "1151522d-7522-46cb-9524-1c035b9ac5c8"
+        },
+        "offeringId": {
+          "type": "string",
+          "description": "The offering id whose related products are to be fetched.",
+          "example": "19_endless_plan"
+        }
+      }
+    },
+    "SubCategory": {
+      "type": "object",
+      "description": "Sub category",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of a particular offer",
+          "example": "dollar_59_endless_mobile_plan-of_tskxp"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the offer",
+          "example": "Dollar 59 Endless Mobile Plan"
+        },
+        "visibility": {
+          "type": "boolean",
+          "description": "Boolean to decide if this has to be visible to online or not.",
+          "example": true
+        },
+        "defaultSelected": {
+          "type": "boolean",
+          "description": "Boolean that indicates if this has to be selected by default.",
+          "example": true
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Represents the sorting order.",
+          "example": 1
+        },
+        "isCategoryContainer": {
+          "type": "boolean",
+          "description": "False if contains offer details, True if contains subcategories",
+          "example": true
+        },
+        "subCategories": {
+          "type": "array",
+          "description": "List of SubCategory objects",
+          "items": {
+            "$ref": "#/definitions/SubCategory"
+          }
+        },
+        "offerDetails": {
+          "type": "array",
+          "description": "List of offer detail objects.",
+          "items": {
+            "$ref": "#/definitions/OfferDetail"
+          }
+        }
+      }
+    },
+    "OfferDetails": {
+      "type": "object",
+      "required": ["offerDetails"],
+      "properties": {
+        "offerDetails": {
+          "type": "array",
+          "description": "List of OfferDetail objects",
+          "items": {
+            "$ref": "#/definitions/OfferDetail"
+          }
+        }
+      }
+    },
+    "OfferDetail": {
+      "type": "object",
+      "description": "Offer Detail objects (not anchorCategory)",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of a particular offer",
+          "example": "dollar_59_endless_mobile_plan-of_tskxp"
+        },
+        "grandFathered": {
+          "type": "boolean",
+          "description": "True indicates that the product is grandFathered.",
+          "example": true
+        },
+        "productType": {
+          "type": "string",
+          "description": "Type of the product.",
+          "example": "Mobile Subscription"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "The e2e identifier of the product",
+          "example": "mbundle001"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the offer",
+          "example": "Dollar 59 Endless Mobile Plan"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the offer",
+          "example": "$59 Endless Mobile Plan"
+        },
+        "launchDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The launch date of the product",
+          "example": "2021-11-11T14:00:33.542Z"
+        },
+        "category": {
+          "type": "array",
+          "description": "Array of Categories",
+          "items": {
+            "$ref": "#/definitions/CategoryRef"
+          }
+        },
+        "contractTerm": {
+          "$ref": "#/definitions/Term"
+        },
+        "contentKey": {
+          "type": "string",
+          "description": "The journeyStepId value to associate with the product. This additional information in the form of text, lists and links to be displayed to the customer in an information sidebar.",
+          "example": "retail/products/product-offer-id-1"
+        },
+        "price": {
+          "description": "The container object for price details.",
+          "$ref": "#/definitions/Price"
+        },
+        "associatedPrices": {
+          "type": "array",
+          "description": "Array of Associated prices other than the base price",
+          "items": {
+            "$ref": "#/definitions/Price"
+          }
+        },
+        "group": {
+          "description": "Container to hold the product group information.",
+          "$ref": "#/definitions/Group"
+        },
+        "images": {
+          "type": "array",
+          "description": "Array of image details",
+          "items": {
+            "$ref": "#/definitions/Image"
+          }
+        },
+        "entitlements": {
+          "type": "array",
+          "description": "Array of entitlement details",
+          "items": {
+            "$ref": "#/definitions/Entitlement"
+          }
+        },
+        "promotions": {
+          "type": "array",
+          "description": "The promotions associated with the product.",
+          "items": {
+            "$ref": "#/definitions/Promotion"
+          }
+        },
+        "productFeatures": {
+          "description": "The container object for product features.",
+          "$ref": "#/definitions/ProductFeature"
+        },
+        "productCharacteristics": {
+          "description": "Container to hold productCharacteristics",
+          "$ref": "#/definitions/ProductCharacteristic"
+        },
+        "associatedPriceRules": {
+          "type": "array",
+          "description": "Array of rules",
+          "items": {
+            "$ref": "#/definitions/AssociatedPriceRule"
+          }
+        },
+        "stock": {
+          "description": "The container object to hold stock details.",
+          "$ref": "#/definitions/Stock"
+        },
+        "productSpecifications": {
+          "type": "array",
+          "description": "Array to hold the specification objects like display specs, camera specs etc",
+          "items": {
+            "$ref": "#/definitions/ProductSpecification"
+          }
+        },
+        "ctaOverrides": {
+          "type": "array",
+          "description": "Array to hold the information to override CTAs in UI.",
+          "items": {
+            "$ref": "#/definitions/CtaOverride"
+          }
+        },
+        "supportedDestinations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "The supported list of destinations in ISO Alpha-3 country code format",
+          "example": "[\"ASM\",\"ARG\"]"
+        },
+        "defaultPlan": {
+          "description": "The container object to hold default plan details.",
+          "$ref": "#/definitions/OfferDetail"
+        },
+        "defaultPrice": {
+          "description": "The container object to hold default price details.",
+          "$ref": "#/definitions/Price"
+        },
+        "defaultTerm": {
+          "description": "The container object to hold default term details.",
+          "$ref": "#/definitions/Term"
+        }
+      }
+    },
+    "Term": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the contract term.",
+          "example": "IFP Contract"
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the contract term.",
+          "example": "12 months contract"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0,
+          "description": "The value of the contract term.",
+          "example": 12
+        },
+        "unit": {
+          "type": "string",
+          "description": "The unit representation of the contract term.",
+          "enum": ["Hour", "Day", "Week", "Month", "Year"],
+          "example": "Month"
+        }
+      }
+    },
+    "ProductSpecification": {
+      "type": "object",
+      "required": ["name", "values"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The Name of the specification",
+          "example": "Power Supply"
+        },
+        "values": {
+          "type": "array",
+          "description": "Array to hold the values of specifications.",
+          "items": {
+            "$ref": "#/definitions/Value"
+          }
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int32",
+          "description": "the sort order of the specification",
+          "example": 1
+        }
+      }
+    },
+    "CtaOverride": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of CTA.",
+          "example": "ADD_TO_CART"
+        },
+        "label": {
+          "type": "string",
+          "description": "The label of CTA.",
+          "example": "Buy Pack"
+        },
+        "segment": {
+          "type": "string",
+          "description": "The segment which this CTA override applies to.",
+          "enum": ["CONSUMER", "BUSINESS"],
+          "example": "CONSUMER"
+        },
+        "data": {
+          "type": "string",
+          "description": "The data which can be configured to drive the CTA process (links/urls).",
+          "example": "/gallery/wearbles"
+        },
+        "relatesTo": {
+          "type": "string",
+          "description": "The related digital component/page that this CTA override relates to.",
+          "example": "RESEARCH_PAGE"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The sort order of the CTA within the given product set.",
+          "example": 1
+        },
+        "style": {
+          "type": "string",
+          "description": "The type of styling to apply to the CTA.",
+          "enum": ["PRIMARY", "SECONDARY"],
+          "example": "PRIMARY"
+        }
+      }
+    },
+    "Value": {
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "The Name of the specification",
+          "example": "19VDC, 3A"
+        },
+        "group": {
+          "type": "string",
+          "description": "The group name under which specs can be to grouped together",
+          "example": "Tech Specs"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int32",
+          "description": "the sort order of the value",
+          "example": 1
+        }
+      }
+    },
+    "Stock": {
+      "type": "object",
+      "required": ["status", "storeStatus", "warehouseStatus"],
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/StockStatus",
+          "description": "Identifies the overall Stock status."
+        },
+        "storeStatus": {
+          "$ref": "#/definitions/StockStatus",
+          "description": "Identifies the store Stock status."
+        },
+        "warehouseStatus": {
+          "$ref": "#/definitions/StockStatus",
+          "description": "Identifies the warehouse Stock status."
+        }
+      }
+    },
+    "StockStatus": {
+      "type": "string",
+      "enum": ["IN_STOCK", "OUT_OF_STOCK"],
+      "example": "OUT_OF_STOCK"
+    },
+    "AssociatedPriceRule": {
+      "type": "object",
+      "required": [
+        "description",
+        "pricePointID",
+        "ruleType",
+        "sources",
+        "price"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "The description of the rule.",
+          "example": "400$ credit with 59.99$ plan With 36 months IFP."
+        },
+        "pricePointID": {
+          "type": "string",
+          "description": "The unique identifier of the rule.",
+          "example": "4536478"
+        },
+        "ruleType": {
+          "type": "string",
+          "enum": ["IFP", "REGULAR"],
+          "description": "Whether its IFP or Regular rule",
+          "example": "IFP"
+        },
+        "sources": {
+          "type": "array",
+          "description": "Array of OfferDetail Objects.",
+          "items": {
+            "$ref": "#/definitions/OfferDetail"
+          }
+        },
+        "price": {
+          "description": "The container object for price details.",
+          "$ref": "#/definitions/Price"
+        }
+      }
+    },
+    "ProductFeature": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "string",
+          "description": "The color name provided by the manufacturer.",
+          "example": "Jet Black"
+        },
+        "primaryColor": {
+          "type": "string",
+          "description": "A more generic color classification.",
+          "example": "Black"
+        },
+        "colorHex": {
+          "type": "string",
+          "description": "the color of the product in hexcode format.",
+          "example": "#0000FF"
+        },
+        "brand": {
+          "type": "string",
+          "description": "the brand name.",
+          "example": "Apple/Spotify"
+        },
+        "band": {
+          "type": "string",
+          "description": "The network band supported by the device.",
+          "example": "5G"
+        },
+        "storage": {
+          "type": "string",
+          "description": "The storage capacity of the device in GB.",
+          "example": "65"
+        }
+      }
+    },
+    "ProductCharacteristic": {
+      "type": "object",
+      "properties": {
+        "isShippable": {
+          "type": "boolean",
+          "description": "True if the product is shippable.",
+          "example": true
+        },
+        "entitledEntity": {
+          "type": "string",
+          "description": "the vas type.",
+          "enum": ["LINE", "ACCOUNT"],
+          "example": "LINE"
+        },
+        "partnerId": {
+          "type": "string",
+          "description": "Identifies partner id of subscription. This value used for downstrean orchestration. ie. for activation flows",
+          "example": "SPOTIFY"
+        },
+        "isDeferrable": {
+          "type": "boolean",
+          "description": "True is the product supports IFP.",
+          "example": true
+        },
+        "isIncluded": {
+          "type": "boolean",
+          "description": "True if the subscription is included or can be purchased standalone.",
+          "example": true
+        },
+        "basePlanOfferId": {
+          "type": "string",
+          "description": "Identifies the base subscription plan if applicable.",
+          "example": "netflix_standard"
+        },
+        "addedInCart": {
+          "type": "boolean",
+          "description": "True if this offer is already part of the cart.",
+          "example": true
+        },
+        "isFeatured": {
+          "type": "boolean",
+          "description": "True indicates that the product is a featured Product.",
+          "example": true
+        },
+        "soldSeparately": {
+          "type": "boolean",
+          "description": "True indicates that the product can be sold separately as a standalone product without plans.",
+          "example": true
+        },
+        "balanceManageMent": {
+          "type": "string",
+          "description": "PREPAID or POSTPAID",
+          "enum": ["PREPAID", "POSTPAID"],
+          "example": "PREPAID"
+        }
+      }
+    },
+    "CategoryRef": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Offer details category",
+          "example": "endless_plan"
+        }
+      }
+    },
+    "Group": {
+      "type": "object",
+      "description": "Container to hold the product group information",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "An identifier which groups related offer ids.",
+          "example": "SPOTIFY_HALF_PRICE_PRE"
+        },
+        "name": {
+          "type": "string",
+          "description": "a display name of the group",
+          "example": "50% off Spotify Premium"
+        },
+        "description": {
+          "type": "string",
+          "description": "description of the group",
+          "example": "Get 50% off Spotify Premium"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int32",
+          "description": "a sort order (or effectively a rank) used in scenarios where related offer positioning is important. For example, subscriptions.",
+          "example": 1
+        },
+        "images": {
+          "type": "array",
+          "description": "Array of image details",
+          "items": {
+            "$ref": "#/definitions/Image"
+          }
+        },
+        "isDefault": {
+          "type": "boolean",
+          "description": "Identifies if this produst is the default amongst the group.",
+          "example": true
+        }
+      }
+    },
+    "Image": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "description about the image, can be used as alternate message.",
+          "example": "sdas das d sa dsa"
+        },
+        "id": {
+          "type": "string",
+          "description": "the unique identifier of the image",
+          "example": "67f5ds78f"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int32",
+          "description": "the sort order for the promotion and this need not be in sequence. This can be used to display the images in certain order, the lowest values come first.",
+          "example": 1
+        },
+        "defaultUrl": {
+          "type": "string",
+          "description": "the default image url",
+          "example": "https://spark.nz/icon/plans-default.jpeg"
+        },
+        "zoomUrl": {
+          "type": "string",
+          "description": "the url of the zoomed image",
+          "example": "https://spark.nz/icon/plans-zoomed.jpeg "
+        },
+        "standardUrl": {
+          "type": "string",
+          "description": "the url of the standard image",
+          "example": "https://spark.nz/icon/plans-standard.jpeg  "
+        },
+        "thumbnailUrl": {
+          "type": "string",
+          "description": "the url of the thumbnail",
+          "example": "https://spark.nz/icon/plans-thumbnail.jpeg  "
+        },
+        "tinyUrl": {
+          "type": "string",
+          "description": "the tiny url",
+          "example": "https://spark.nz/icon/plans-tiny.jpeg  "
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of image.",
+          "enum": [
+            "LOGO",
+            "PRODUCT",
+            "GALLERY",
+            "FEATURED",
+            "SHOWCASE",
+            "BACKGROUND",
+            "OTHER"
+          ],
+          "example": "LOGO"
+        }
+      }
+    },
+    "Entitlement": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the entitlement.",
+          "example": "Unlimited** to NZ and AUS"
+        },
+        "contentKey": {
+          "type": "string",
+          "description": "The journeyStepId value to associate with the entitlement. This additional information in the form of text, lists and links to be displayed to the customer in an information sidebar.",
+          "example": "retail/entitlements/entitlement-id-1"
+        },
+        "shortDescription": {
+          "type": "string",
+          "description": "The short description about the entitlement.",
+          "example": "Unlimited SMS to AUS and NZ numbers, excludes to short codes"
+        },
+        "longDescription": {
+          "type": "string",
+          "description": "The long description about the entitlement",
+          "example": "Unlimited texts for person-to-person text messages (SMS) to AUS and NZ numbers and excludes text messages to short codes"
+        },
+        "quantity": {
+          "type": "string",
+          "description": "the count of the entitlement provided",
+          "example": "4"
+        },
+        "iconUrl": {
+          "type": "string",
+          "description": "the url if the image icon for the entitlement",
+          "example": "https://spark.nz/icon/plans.jpeg"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "description": "the sort order for the entitlement. need not be a sequence.",
+          "example": 1
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of the entitlement.",
+          "example": "Data"
+        }
+      }
+    },
+    "Promotion": {
+      "type": "object",
+      "required": ["name", "productType"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "the name of the promotion.",
+          "example": "spotify free"
+        },
+        "contentKey": {
+          "type": "string",
+          "description": "The journeyStepId value to associate with the promotion. This additional information in the form of text, lists and links to be displayed to the customer in an information sidebar.",
+          "example": "retail/promotions/promotion-id-1"
+        },
+        "productType": {
+          "type": "string",
+          "description": "the type of promotion.",
+          "enum": ["MARKETING", "DEAL", "CHARACTERISTIC", "FEATURE"],
+          "example": "MARKETING"
+        },
+        "shortDescription": {
+          "type": "string",
+          "description": "the short description about the promotion.",
+          "example": "spotify product for free sample"
+        },
+        "longDescription": {
+          "type": "string",
+          "description": "the long description about the promotion.",
+          "example": "spotify product for free sample"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "description": "the sort order for the promotion.need not be in sequence..",
+          "example": 1
+        },
+        "iconUrl": {
+          "type": "string",
+          "description": "The icon image url",
+          "example": "https://spark.nz/icon/plans.jpeg"
+        }
+      }
+    },
+    "Price": {
+      "type": "object",
+      "required": ["priceType"],
+      "properties": {
+        "priceType": {
+          "type": "string",
+          "description": "Price type of the product",
+          "example": "Recurring/OneOff"
+        },
+        "frequency": {
+          "type": "object",
+          "description": "Frequency",
+          "$ref": "#/definitions/Frequency"
+        },
+        "basePrice": {
+          "type": "number",
+          "description": "The actual price of the product",
+          "example": 99.99
+        },
+        "basePriceExcludingTax": {
+          "type": "number",
+          "description": "Same as base price with tax deducted, to be shown where gst exclusive price is required.",
+          "example": 90.99
+        },
+        "effectivePrice": {
+          "type": "number",
+          "description": "The actual price of the product incase a rule changes the base price.",
+          "example": 14.99
+        },
+        "effectivePriceExcludingTax": {
+          "type": "number",
+          "description": "Same as effective price with tax deducted, to be shown where gst exclusive price is required",
+          "example": 14.0
+        },
+        "creditAmount": {
+          "type": "number",
+          "description": "The credit amount applied to the product",
+          "example": 14.99
+        },
+        "creditAmountExcludingTax": {
+          "type": "number",
+          "description": "Same as credit amount with tax deducted, to be shown where gst exclusive price is required",
+          "example": 14.0
+        },
+        "taxPercentage": {
+          "type": "string",
+          "description": "Tax percentage",
+          "example": "10.00"
+        },
+        "length": {
+          "type": "integer",
+          "description": "The application duration of this price. Only required if the price is applicable to a certain duration.",
+          "example": 12
+        },
+        "description": {
+          "type": "string",
+          "description": "The price description used for display on the product card.",
+          "example": "Usually $14.99/month"
+        }
+      }
+    },
+    "Frequency": {
+      "type": "object",
+      "required": ["period", "value"],
+      "properties": {
+        "period": {
+          "type": "string",
+          "enum": ["Hour", "Day", "Week", "Month", "Year"],
+          "description": "Indicates the frequency values.",
+          "example": "Month"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The value of the frequency. This is to indicate frequencies like 4 weekly.",
+          "example": 1
+        }
+      }
+    },
+    "ExistingPlansResponse": {
+      "type": "object",
+      "properties": {
+        "existingPlans": {
+          "type": "array",
+          "description": "List of Existing Plans.",
+          "items": {
+            "$ref": "#/definitions/ExistingPlanDetails"
+          }
+        }
+      }
+    },
+    "ExistingPlanDetails": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/CommonProductDetails"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "currentPrice": {
+              "$ref": "#/definitions/CartPrice"
+            },
+            "updatedPrice": {
+              "$ref": "#/definitions/CartPrice"
+            }
+          }
+        }
+      ]
+    },
+    "CommonProductDetails": {
+      "type": "object",
+      "description": "Represents a common product information",
+      "required": ["productOfferingId", "externalId", "name", "action"],
+      "properties": {
+        "productOfferingId": {
+          "type": "string",
+          "description": "Unique identifier of a particular offer",
+          "example": "dollar_59_endless_mobile_plan-of_tskxp"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "The e2e identifier of the product",
+          "example": "mbundle001"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the offer",
+          "example": "Dollar 59 Endless Mobile Plan"
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the product",
+          "example": "$39 Endless Mobile Plan"
+        },
+        "action": {
+          "type": "string",
+          "description": "The action type",
+          "enum": ["keep", "modify", "add", "delete"],
+          "example": "keep"
+        }
+      }
+    },
+    "MpdCartResponse": {
+      "type": "object",
+      "required": ["cart"],
+      "properties": {
+        "cart": {
+          "$ref": "#/definitions/MpdCartDetails"
+        }
+      }
+    },
+    "MpdCartDetails": {
+      "type": "object",
+      "required": ["cartId"],
+      "properties": {
+        "cartId": {
+          "type": "string",
+          "pattern": "^\\w[\\w-]+$",
+          "description": "The unique identifier of the cart in blue marble.",
+          "example": "10abf706-a90d-4029-a007-1a4422f75829"
+        },
+        "bundles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MpdCartBundleResponse"
+          }
+        }
+      }
+    },
+    "MpdCartBundleResponse": {
+      "type": "object",
+      "description": "Represents a bundled product in the cart along with the plan indicated as add or remove offer.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of Cart Bundle.",
+          "example": "ba3384b4-ca09-4698-b6bc-606610b06586"
+        },
+        "lineNumber": {
+          "type": "string",
+          "description": "The line number of the product",
+          "example": "0271111111"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MpdBundleEntryResponse"
+          }
+        }
+      }
+    },
+    "MpdBundleEntryResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/CommonProductDetails"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "The unique identifier of bundle entry.",
+              "example": "bc7e89a7-af37-4b40-9c78-c10e0a411357"
+            },
+            "price": {
+              "$ref": "#/definitions/CartPrice"
+            }
+          }
+        }
+      ]
+    },
+    "EligibleLine": {
+      "type": "object",
+      "required": ["accountNumber", "lineNumber", "offerId", "offerName"],
+      "properties": {
+        "accountNumber": {
+          "type": "string",
+          "description": "The account number associated with the eligible line number.",
+          "example": "35151131"
+        },
+        "lineNumber": {
+          "type": "string",
+          "description": "The line number that the product offer is eligible for.",
+          "example": "0278675179"
+        },
+        "offerId": {
+          "type": "string",
+          "description": "The current plan offer ID associated to the eligible line number.",
+          "example": "mbundle050290"
+        },
+        "offerName": {
+          "type": "string",
+          "description": "The customer-facing name of the current plan associated to the eligible line number.",
+          "example": "Mobile $59.99 Rollover Plan"
+        }
+      }
+    },
+    "EligibleLines": {
+      "type": "object",
+      "required": ["eligibleLines"],
+      "properties": {
+        "eligibleLines": {
+          "type": "array",
+          "description": "List of eligibleLine objects",
+          "items": {
+            "$ref": "#/definitions/EligibleLine"
+          }
+        }
+      }
+    },
+    "FetchEligibleLinesToChangeResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/EligibleLines"
+        }
+      ]
+    },
+    "FetchEligibleWearableLinesToChangeResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/EligibleLines"
+        }
+      ]
+    },
+    "Notification": {
+      "type": "object",
+      "required": ["recommendationId", "text", "type"],
+      "properties": {
+        "recommendationId": {
+          "type": "string",
+          "description": "The identifier of the Blue Marble recommendation rule used to trigger the notification.",
+          "example": "vas_downgrade_reactivate"
+        },
+        "text": {
+          "type": "string",
+          "description": "Recommendation text.",
+          "example": "All your devices will be become unprotected once you change to McAfee Standard. You'll need to choose which devices to protect again."
+        },
+        "title": {
+          "type": "string",
+          "description": "Recommendation title.",
+          "example": "Notification"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["SUCCESS", "INFO", "WARN", "ERROR"],
+          "description": "Notification type.",
+          "x-example": "WARN"
+        }
+      }
+    },
+    "ExtrasByCategoryResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "category": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        }
+      ]
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

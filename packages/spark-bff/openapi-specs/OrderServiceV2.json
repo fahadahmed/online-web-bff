@@ -1,0 +1,582 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Supports order related functions such as order submission etc",
+    "version": "1.0.0",
+    "title": "DESL Order Service V2 API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/shopping/order/{orderId}/status": {
+      "get": {
+        "tags": ["order", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Service to retrieve the order status.",
+        "operationId": "getOrderStatus",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "description": "The unique identifier of the order.",
+            "type": "string",
+            "x-example": "ONL36752564563",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "type": "string",
+            "pattern": "^(summary|detail)$",
+            "x-example": "summary",
+            "default": "summary",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order status retrieved Successfully.",
+            "schema": {
+              "$ref": "#/definitions/OrderStatusResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Authentication Failure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Forbidden.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Order not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/order/cart/{cartId}": {
+      "post": {
+        "tags": ["order", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Service to submit the order to Blue Marble",
+        "operationId": "submitOrder",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cartId",
+            "description": "Reference id that uniquely identifies a cart in blue marble.",
+            "type": "string",
+            "pattern": "^\\w[\\w-]+",
+            "x-example": "10abf706-a90d-4029-a007-1a4422f7582",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          },
+          {
+            "in": "body",
+            "name": "payment",
+            "description": "The Request Container for payment details required for order submission.",
+            "schema": {
+              "$ref": "#/definitions/PaymentInfo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order submitted successfully.",
+            "schema": {
+              "$ref": "#/definitions/SubmitOrderResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/SubmitOrderDataValidationResponse"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "order",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "private"
+        ],
+        "summary": "Service to generate order number for the provided cart id.",
+        "operationId": "generateOrderNumber",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cartId",
+            "description": "Reference id that uniquely identifies a cart in blue marble.",
+            "type": "string",
+            "pattern": "^\\w[\\w-]+",
+            "x-example": "10abf706-a90d-4029-a007-1a4422f7582",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order number generated successfully.",
+            "schema": {
+              "$ref": "#/definitions/GenerateOrderNumberResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/SubmitOrderDataValidationResponse"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/order/feasibility/plans/lines/{lineNumber}": {
+      "get": {
+        "tags": [
+          "order",
+          "feasibility",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "Checks order feasibility for a line and provides an indication whether change plan order is feasible at the current time.",
+        "operationId": "checkChangePlanOrderFeasibility",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/LineNumber"
+          },
+          {
+            "name": "planChangeDate",
+            "in": "query",
+            "type": "string",
+            "format": "date",
+            "x-example": "2022-05-24",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/FeasibilityResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated access",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Line details could not be found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/order/feasibility/extras/lines/{lineNumber}": {
+      "get": {
+        "tags": [
+          "order",
+          "feasibility",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "Checks order feasibility for a line and provides an indication whether an extra purchase or modification is feasible at the current time.",
+        "operationId": "checkExtrasOrderFeasibility",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/LineNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/FeasibilityResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated access",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Line details could not be found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "Channel": {
+      "name": "channel",
+      "in": "query",
+      "type": "string",
+      "pattern": "^(personalshop|personalss|businessshop)$",
+      "x-example": "personalshop",
+      "default": "personalshop",
+      "required": false
+    },
+    "LineNumber": {
+      "name": "lineNumber",
+      "in": "path",
+      "description": "The line number for which order feasibility has to be checked",
+      "type": "string",
+      "pattern": "^0\\d+$",
+      "x-example": "0273761425",
+      "required": true
+    }
+  },
+  "definitions": {
+    "PaymentInfo": {
+      "type": "object",
+      "properties": {
+        "payment": {
+          "$ref": "#/definitions/Payment"
+        }
+      }
+    },
+    "Payment": {
+      "type": "object",
+      "required": ["source", "amount", "clientType", "partialPay"],
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "The source of the payment/card",
+          "enum": [
+            "DIRECT",
+            "WALLET_SELF",
+            "NEW_CARD",
+            "VOUCHER",
+            "ACCOUNT",
+            "POLI_PAY"
+          ],
+          "example": "DIRECT"
+        },
+        "voucherNumber": {
+          "type": "string",
+          "description": "the voucher number.",
+          "example": "2134234kj23hg423"
+        },
+        "amount": {
+          "type": "number",
+          "description": "The amount to be paid in NZD. This can either be an entire amount or a partial amount.",
+          "minimum": 0,
+          "maximum": 4000,
+          "example": 10
+        },
+        "secureTransactionToken": {
+          "type": "string",
+          "description": "The secure transaction token required to pay the amount without persisting any card details.",
+          "example": "321-3-213-21-3-12-321-321"
+        },
+        "paymentMethodId": {
+          "type": "string",
+          "pattern": "(^MySpark[-]SSC\\d+[-]\\d+$)|(^[\\dA-Z][\\dA-Z-]+[\\dA-Z]$)",
+          "description": "The unique identifier of the payment method.",
+          "example": "1-SR234-12"
+        },
+        "clientType": {
+          "type": "string",
+          "description": "The type of client which initiated the request.",
+          "enum": ["SMARTPHONE", "CQ_DESKTOP", "CQ_MOBILE"],
+          "example": "SMARTPHONE"
+        },
+        "partialPay": {
+          "type": "boolean",
+          "description": "Indicates partial payment.",
+          "example": false
+        }
+      }
+    },
+    "SubmitOrderResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "orderNumber": {
+              "description": "Reference number of the order.",
+              "type": "string",
+              "example": "ONL36752564563"
+            },
+            "confirmationEmailId": {
+              "description": "The email to which the confirmation mail is sent.",
+              "type": "string",
+              "example": "John@spark.co.nz"
+            }
+          }
+        }
+      ]
+    },
+    "SubmitOrderDataValidationResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/SubmitOrderResponse"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "sections": {
+              "type": "array",
+              "description": "The object to hold the section id and steps object as applicable to indicate the missing data.",
+              "items": {
+                "$ref": "#/definitions/Section"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "OrderStatusResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["orderStatus", "errorsPresent"],
+          "properties": {
+            "orderStatus": {
+              "description": "Status of the order.",
+              "type": "string",
+              "enum": ["INPROGRESS", "COMPLETED", "FAILURE", "QUEUEDFORRETRY"],
+              "example": "COMPLETED"
+            },
+            "errorsPresent": {
+              "type": "boolean",
+              "description": "True if there are any errors with the order. These might have reached bm with errors.",
+              "example": false
+            }
+          }
+        }
+      ]
+    },
+    "GenerateOrderNumberResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["orderNumber"],
+          "properties": {
+            "orderNumber": {
+              "description": "Reference number of the order.",
+              "type": "string",
+              "example": "ONL36752564563"
+            }
+          }
+        }
+      ]
+    },
+    "Section": {
+      "type": "object",
+      "required": ["sectionId"],
+      "properties": {
+        "sectionId": {
+          "type": "string",
+          "example": "account"
+        },
+        "steps": {
+          "type": "array",
+          "description": "The object to hold the step id field object as applicable to indicate the missing data.",
+          "items": {
+            "$ref": "#/definitions/Step"
+          }
+        }
+      }
+    },
+    "Step": {
+      "type": "object",
+      "required": ["stepId"],
+      "properties": {
+        "stepId": {
+          "type": "string",
+          "example": "personalDetails"
+        },
+        "fields": {
+          "type": "array",
+          "description": "The object to hold the field name as applicable to indicate the missing data.",
+          "items": {
+            "$ref": "#/definitions/Field"
+          }
+        }
+      }
+    },
+    "Field": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "first_name",
+          "description": "The name of the missing field."
+        }
+      }
+    },
+    "FeasibilityResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["orderFeasible", "feasibilityReason"],
+          "properties": {
+            "orderFeasible": {
+              "description": "A flag to indicate if the order if feasible.",
+              "type": "boolean"
+            },
+            "feasibilityReason": {
+              "type": "string",
+              "description": "The reason associated with the feasibility outcome.",
+              "enum": [
+                "ALLOWED",
+                "IN_PROGRESS",
+                "CALL_CENTRE",
+                "TERMINATE",
+                "CHANGE_OFFER",
+                "PORT_OUT",
+                "SERVICE_NOT_ACTIVATED",
+                "UNKNOWN"
+              ],
+              "example": "IN_PROGRESS"
+            }
+          }
+        }
+      ]
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    }
+  }
+}

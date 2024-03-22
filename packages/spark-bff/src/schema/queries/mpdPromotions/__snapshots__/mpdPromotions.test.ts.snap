@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns the multi product discount for the selected eligible plans 1`] = `
+Object {
+  "mpdPromotions": Object {
+    "bundles": Array [
+      Object {
+        "id": "a4861d40-0d0b-449d-a328-0755d6d984c0",
+        "items": Array [
+          Object {
+            "id": "6d1751c3-ff75-4ab3-b695-decc0862c3f4",
+            "price": Array [
+              Object {
+                "basePrice": 79.99,
+                "discount": Object {
+                  "appliedValue": 20,
+                  "discountCategory": "MPDDiscount",
+                  "discountedValue": 15.99,
+                },
+                "effectivePrice": 64,
+              },
+            ],
+            "productOfferingId": "dollar79_99_endless_mobile_plan",
+          },
+        ],
+      },
+      Object {
+        "id": "d40ee188-56b0-41b4-9bc8-0ca5c460e5e8",
+        "items": Array [
+          Object {
+            "id": "a7530f19-40ca-4e27-b04c-811849e1ef26",
+            "price": Array [
+              Object {
+                "basePrice": 99.99,
+                "discount": Object {
+                  "appliedValue": 20,
+                  "discountCategory": "MPDDiscount",
+                  "discountedValue": 19.99,
+                },
+                "effectivePrice": 80,
+              },
+            ],
+            "productOfferingId": "dollar99_99_endless_group_plan",
+          },
+        ],
+      },
+      Object {
+        "id": "f434c441-55a3-4d5a-bd8a-f2bf75aaa372",
+        "items": Array [
+          Object {
+            "id": "c12d5b01-67d0-45f0-8bf0-5f99462ca89b",
+            "price": Array [
+              Object {
+                "basePrice": 59.99,
+                "discount": null,
+                "effectivePrice": 59.99,
+              },
+            ],
+            "productOfferingId": "dollar59_99_endless_mobile_plan",
+          },
+        ],
+      },
+    ],
+    "price": Array [
+      Object {
+        "basePrice": 239.97,
+        "discount": Object {
+          "appliedValue": 20,
+          "discountCategory": "MPDDiscount",
+          "discountedValue": 35.99,
+        },
+        "effectivePrice": 203.98,
+      },
+    ],
+  },
+}
+`;

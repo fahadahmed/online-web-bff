@@ -1,0 +1,117 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "endless_value_pack",
+        "name": "Endless Value Pack",
+        "description": "Endless Value Pack",
+        "category": [
+          {
+            "id": "value_packs"
+          }
+        ],
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "weeks",
+            "value": 4
+          },
+          "basePrice": 79
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": [
+          { "name": "Grab 50% off Spotify Premium", "productType": "MARKETING" }
+        ]
+      },
+      {
+        "id": "4gb_value_pack",
+        "name": "4GB Value Pack",
+        "description": "4GB Value Pack",
+        "category": [
+          {
+            "id": "value_packs"
+          }
+        ],
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "weeks",
+            "value": 4
+          },
+          "basePrice": 49
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": [
+          { "name": "Grab 50% off Spotify Premium", "productType": "MARKETING" }
+        ]
+      },
+      {
+        "id": "2gb_value_pack",
+        "name": "2GB Value Pack",
+        "description": "2GB Value Pack",
+        "category": [
+          {
+            "id": "value_packs"
+          }
+        ],
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "weeks",
+            "value": 4
+          },
+          "basePrice": 29
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": [
+          { "name": "Grab 50% off Spotify Premium", "productType": "MARKETING" }
+        ]
+      },
+      {
+        "id": "1gb_value_pack",
+        "name": "1GB Value Pack",
+        "description": "1GB Value Pack",
+        "category": [
+          {
+            "id": "value_packs"
+          }
+        ],
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "weeks",
+            "value": 4
+          },
+          "basePrice": 19
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": [
+          { "name": "Grab 50% off Spotify Premium", "productType": "MARKETING" }
+        ]
+      }
+    ],
+    "id": "value_packs",
+    "name": "Value Packs",
+    "description": "Value Packs",
+    "isCategoryContainer": false,
+    "subCategories": null
+  }
+}

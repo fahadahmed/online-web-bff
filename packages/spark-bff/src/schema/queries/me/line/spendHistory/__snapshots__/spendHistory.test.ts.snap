@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns usage charge history detail for a line  1`] = `
+Object {
+  "spendHistoryDetail": Object {
+    "breakdownType": "PLAN",
+    "contributingProducts": Array [
+      Object {
+        "chargeEndDateTime": "2021-11-06T11:00:00Z",
+        "chargeStartDateTime": "2021-10-07T11:00:00Z",
+        "offerId": "mbundle050820",
+        "periodSpend": 59.99,
+        "productEndDateTime": null,
+        "productName": "Endless Mobile Plan",
+      },
+    ],
+    "endDateTime": "2021-10-08T10:59:59Z",
+    "gstInclusive": true,
+    "interval": "MONTHLY",
+    "periodSpend": 59.99,
+    "startDateTime": "2021-09-08T12:00:00Z",
+    "unbilled": false,
+  },
+}
+`;
+
+exports[`returns usage charge history for a line  1`] = `
+Object {
+  "spendHistory": Object {
+    "accountType": "POSTPAID",
+    "averagePeriodSpend": 10,
+    "endDateTime": "2021-10-31T23:59:59+13:00",
+    "gstInclusive": true,
+    "interval": "MONTHLY",
+    "startDateTime": "2020-10-01T00:00:00+13:00",
+    "summarisedPeriods": Array [
+      Object {
+        "endDateTime": "2021-11-08T10:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2021-10-08T11:00:00Z",
+        "unbilled": true,
+      },
+      Object {
+        "endDateTime": "2021-10-08T10:59:59Z",
+        "periodBreakdown": Array [
+          Object {
+            "breakdownType": "ADDITIONAL_PAID",
+            "periodBreakdownId": "ADDITIONAL_PAID|2021-09-08T12:00:00.000Z|2021-10-08T10:59:59.000Z",
+            "periodSpend": 10,
+          },
+          Object {
+            "breakdownType": "PLAN",
+            "periodBreakdownId": "PLAN|2021-09-08T12:00:00.000Z|2021-10-08T10:59:59.000Z",
+            "periodSpend": 59.99,
+          },
+        ],
+        "periodSpend": 69.99,
+        "startDateTime": "2021-09-08T12:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-09-08T11:59:59Z",
+        "periodBreakdown": Array [
+          Object {
+            "breakdownType": "PLAN",
+            "periodBreakdownId": "PLAN|2021-08-08T12:00:00.000Z|2021-09-08T11:59:59.000Z",
+            "periodSpend": 59.99,
+          },
+        ],
+        "periodSpend": 59.99,
+        "startDateTime": "2021-08-08T12:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-08-08T11:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2021-07-08T12:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-07-08T11:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2021-06-08T12:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-06-08T11:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2021-05-08T12:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-05-08T11:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2021-04-08T12:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-04-08T11:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2021-03-08T11:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-03-08T10:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2021-02-08T11:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-02-08T10:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2021-01-08T11:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2021-01-08T10:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2020-12-08T11:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2020-12-08T10:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2020-11-08T11:00:00Z",
+        "unbilled": false,
+      },
+      Object {
+        "endDateTime": "2020-11-08T10:59:59Z",
+        "periodBreakdown": Array [],
+        "periodSpend": 0,
+        "startDateTime": "2020-10-08T11:00:00Z",
+        "unbilled": false,
+      },
+    ],
+  },
+}
+`;

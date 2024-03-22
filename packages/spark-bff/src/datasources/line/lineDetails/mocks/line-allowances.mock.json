@@ -1,0 +1,96 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "dataStackAllowances": [],
+  "entitlements": [
+    {
+      "description": "120GB included data",
+      "detailedDescription": null,
+      "displayPriority": null,
+      "id": "29357_M_DATA(WB)_120GB",
+      "name": "Data",
+      "quantity": 120,
+      "subtype": null,
+      "throttleMessage": null,
+      "unlimited": false,
+      "usageType": "Data",
+      "entitlementQuantityUnit": "GB"
+    },
+    {
+      "description": "Data Lift",
+      "detailedDescription": null,
+      "displayPriority": null,
+      "id": "24226_M_DATA-WB-TIER_1_10GB",
+      "name": "Data",
+      "quantity": 10,
+      "subtype": null,
+      "throttleMessage": null,
+      "unlimited": false,
+      "usageType": "Data",
+      "entitlementQuantityUnit": "GB"
+    },
+    {
+      "description": "500 minutes included voice",
+      "detailedDescription": null,
+      "displayPriority": null,
+      "id": "29357_M_VOICE(WB)_500MIN",
+      "name": "Voice",
+      "quantity": 500,
+      "subtype": null,
+      "throttleMessage": null,
+      "unlimited": false,
+      "usageType": "Voice",
+      "entitlementQuantityUnit": "MIN"
+    },
+    {
+      "description": "unlimited texts",
+      "detailedDescription": null,
+      "displayPriority": null,
+      "id": "29357_M_TEXT(WB)_UNLIMITED",
+      "name": "Text",
+      "quantity": null,
+      "subtype": null,
+      "throttleMessage": null,
+      "unlimited": true,
+      "usageType": "Text",
+      "entitlementQuantityUnit": "TEXT"
+    }
+  ],
+  "extras": [
+    {
+      "allowedCount": null,
+      "availableCount": null,
+      "billingFrequencyCode": "monthly",
+      "billingFrequencyName": "Monthly",
+      "contractRenewalType": "auto_renewing",
+      "contractTermFrequency": "monthly",
+      "contractTermNumber": 0,
+      "countries": [],
+      "displayPriority": null,
+      "entitlements": [],
+      "renewable": true,
+      "offerId": "legacy050114",
+      "periodEndDate": null,
+      "prepaidBasePlanValuePack": false,
+      "price": 8,
+      "priceType": "GST_EXEMPT",
+      "productId": "VoFFeaturePack2003",
+      "productInstanceId": "1-1MSNNLMR",
+      "productName": "Connector Feature Pack",
+      "renewalFrequency": "Monthly",
+      "renewalState": "OFF",
+      "status": "ACTIVE",
+      "subscriptionTermName": "1 Month contract - monthly billing",
+      "subtype": "DOMESTIC",
+      "type": "ServiceAddOn",
+      "usageType": "Voice"
+    }
+  ],
+  "rolloverDetails": null,
+  "sharePlanDetails": null,
+  "speedAllowances": null
+}

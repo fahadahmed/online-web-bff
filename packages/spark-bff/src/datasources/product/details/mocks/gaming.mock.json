@@ -1,0 +1,45 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [],
+    "id": "gaming",
+    "name": "Gaming",
+    "description": "Gaming",
+    "isCategoryContainer": false,
+    "subCategories": [
+      {
+        "id": "astro_gaming",
+        "name": "Astro"
+      },
+      {
+        "id": "gaming_microsoft",
+        "name": "Microsoft"
+      },
+      {
+        "id": "gaming_my-arcade",
+        "name": "My Arcade"
+      },
+      {
+        "id": "gaming_nacon",
+        "name": "Nacon"
+      },
+      {
+        "id": "gaming_razer",
+        "name": "Razer"
+      },
+      {
+        "id": "gaming_rig",
+        "name": "Rig"
+      },
+      {
+        "id": "gaming_seagate",
+        "name": "Seagate"
+      }
+    ]
+  }
+}

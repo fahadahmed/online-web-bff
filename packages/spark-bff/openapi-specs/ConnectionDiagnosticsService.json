@@ -1,0 +1,442 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This API is used to initiate and retrieve the results from a set of downstream process that perform line and internet access checks for the nominated broadband line.",
+    "version": "1.0.0",
+    "title": "DESL Assure Connection Diagnostics Service API",
+    "x-ibm-name": "connection-diagnostics-service-api"
+  },
+  "host": "0.0.0.0.8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/line/{lineNumber}/assure/diagnostics": {
+      "post": {
+        "tags": [
+          "assure-connection-diagnostics",
+          "protected",
+          "oidc",
+          "line",
+          "diagnostics"
+        ],
+        "summary": "Initiate a series of downstream diagnostic checks on the line identified in the request URI and return a summary of the results and relevant line details for diagnostic purposes",
+        "operationId": "obtainDiagnosticTestResults",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DiagnosticResultsResponse"
+            }
+          },
+          "400": {
+            "description": "Performing connection diagnostics on this line is unsupported",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated to this api.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Unauthorised access to api or connection diagnostic cannot be performed on a locked line.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DiagnosticResultsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "testSuiteType",
+            "testSuiteComplete",
+            "diagnosticResults",
+            "lineDetails"
+          ],
+          "properties": {
+            "testSuiteType": {
+              "description": "The type of diagnostic test suite run against the line number.",
+              "type": "string",
+              "enum": ["FIBRE_CHORUS", "FIBRE_OTHER", "COPPER", "WIRELESS_BB"],
+              "example": "FIBRE_CHORUS"
+            },
+            "testSuiteComplete": {
+              "description": "For the v1 implementation, it will always return true. Included as a future-proofing option.",
+              "type": "boolean"
+            },
+            "diagnosticResults": {
+              "description": "A list of diagnostic results. If there are no results then an empty array will be returned.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DiagnosticResult"
+              }
+            },
+            "lineDetails": {
+              "description": "An object representing the basic account and hardware details for the line in question",
+              "$ref": "#/definitions/LineDetails"
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosticResult": {
+      "type": "object",
+      "required": [
+        "testType",
+        "testLabel",
+        "testExecuted",
+        "testPassed",
+        "body",
+        "availableCTAs"
+      ],
+      "properties": {
+        "testType": {
+          "description": "The type of diagnostic test performed",
+          "type": "string",
+          "enum": ["NETWORK", "ACCESS_POINT", "CONNECTIVITY"],
+          "example": "NETWORK"
+        },
+        "testLabel": {
+          "description": "The customer-facing label associated with the diagnostic test result",
+          "type": "string",
+          "example": "Fibre network"
+        },
+        "testExecuted": {
+          "description": "A flag indicated whether this particular diagnostic test has been executed or was not performed due to connectivity issues identified earlier.",
+          "type": "boolean",
+          "example": true
+        },
+        "testPassed": {
+          "description": "A flag indicating whether the diagnostic test has been completed successfully.",
+          "type": "boolean",
+          "example": true
+        },
+        "diagnosticSummaryCode": {
+          "description": "If an issue was encountered during the execution of this test, this attribute is the key that represents the nature of the issue experienced.",
+          "type": "string",
+          "example": "internet_down-line_down-modem_can_not_reach"
+        },
+        "title": {
+          "description": "The title/headline of the diagnostic result",
+          "type": "string",
+          "example": "You're not connected to the internet"
+        },
+        "body": {
+          "description": "An array of body content text that summarises the result of the test and call to action options. If no body text is defined an empty array is returned.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "availableCTAs": {
+          "description": "The array of Call To Actions(CTA) representing the next steps the customer can take to troubleshoot their connection should an issue be identified. If no relevant CTAs are possible for this diagnostic result then an empty available CTAs will be returned.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AvailableCTA"
+          }
+        }
+      }
+    },
+    "AvailableCTA": {
+      "description": "The available call to actions",
+      "type": "object",
+      "required": ["ctaLabel", "ctaType"],
+      "properties": {
+        "ctaLabel": {
+          "description": "The label for the CTA",
+          "type": "string",
+          "example": "Troubleshoot"
+        },
+        "ctaType": {
+          "description": "The cta type will allow for mapping to be done on the presentation side to ensure the correct CTA can be presented",
+          "type": "string",
+          "enum": ["CONNECTION_TROUBLESHOOTER", "CHAT", "DIAGNOSTIC_CHECK"],
+          "example": "DIAGNOSTIC_CHECK"
+        },
+        "webCTALink": {
+          "description": "The web link for the article CTA",
+          "type": "string"
+        },
+        "mobileActionType": {
+          "description": "The mobile action type which will determine which journey/screen the CTA will navigate the user to on selection",
+          "type": "string",
+          "example": "diagnostic-check"
+        }
+      }
+    },
+    "LineDetails": {
+      "description": "An object representing the basic account and hardware details for the line in question",
+      "type": "object",
+      "required": ["lineNumber", "accountName", "accountNumber", "productType"],
+      "properties": {
+        "lineNumber": {
+          "description": "The line number that diagnostics where performed on",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "091234567"
+        },
+        "accountName": {
+          "description": "The account name associated with this line",
+          "type": "string"
+        },
+        "accountNumber": {
+          "description": "The account number associated with this line",
+          "type": "string",
+          "pattern": "^\\d+$",
+          "example": "123456789"
+        },
+        "productType": {
+          "description": "The type of product associated with this line",
+          "type": "string",
+          "enum": [
+            "ADSL_DATA",
+            "ADSL_DATA_VOICE",
+            "ADSL_VOICE",
+            "COPPER_DATA",
+            "COPPER_DATA_VOICE",
+            "COPPER_VOICE",
+            "FIBRE_DATA",
+            "FIBRE_DATA_VOICE",
+            "FIBRE_VOICE",
+            "VDSL_DATA",
+            "VDSL_DATA_VOICE",
+            "VDSL_VOICE",
+            "WIRELESS_RURAL_DATA",
+            "WIRELESS_RURAL_DATA_VOICE",
+            "WIRELESS_RURAL_VOICE",
+            "WIRELESS_URBAN_DATA",
+            "WIRELESS_URBAN_DATA_VOICE",
+            "WIRELESS_URBAN_VOICE"
+          ],
+          "example": "FIBRE_DATA"
+        },
+        "modemManufacturer": {
+          "description": "The manufacturer of the modem if known",
+          "type": "string",
+          "example": "Huawei"
+        },
+        "modemModel": {
+          "description": "The gateway modem model if known",
+          "type": "string",
+          "example": "HG659b"
+        },
+        "modemSerialNumber": {
+          "description": "The gateway modem serial number if known",
+          "type": "string",
+          "example": "S8G8W14B88210024"
+        },
+        "modemIdentifier": {
+          "description": "The gateway modem identifier if known",
+          "type": "string",
+          "example": "9544661890413264469"
+        },
+        "modemImage": {
+          "description": "A reference to an AEM DAM image resource.",
+          "type": "string",
+          "example": "https://www.spark.co.nz/assets/spark/images/modems/hg659b.png"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "ST2": {
+        "properties": {
+          "endPoint": "http://iamproxy-st05.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-st2.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST3": {
+        "properties": {
+          "endPoint": "http://iamproxy-st07.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-st3.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST4": {
+        "properties": {
+          "endPoint": "http://iamproxy-st06.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-st4.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://connection-diagnostics-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

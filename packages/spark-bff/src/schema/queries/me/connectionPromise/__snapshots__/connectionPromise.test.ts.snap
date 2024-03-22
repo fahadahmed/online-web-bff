@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns connection promise configuration for the nominated line number 1`] = `
+Object {
+  "lines": Array [
+    Object {
+      "connectionPromiseId": "1-2DPDH4UQ",
+      "lineNumber": "0219876543",
+      "primaryLine": true,
+    },
+    Object {
+      "connectionPromiseId": "1-2DPDH2UQ",
+      "lineNumber": "0210123456",
+      "primaryLine": false,
+    },
+  ],
+}
+`;

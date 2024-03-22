@@ -1,0 +1,308 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Supports network setting related services such as get or update number withhold setting.",
+    "version": "1.0.0",
+    "title": "DESL Network Setting Service API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/technology/{technologyType}/configuration/{lineNumber}": {
+      "get": {
+        "tags": [
+          "network-setting-service",
+          "protected",
+          "line",
+          "oidc",
+          "public"
+        ],
+        "summary": "This api is used to retrieve the network setting for provided line number.",
+        "operationId": "retrieveNetworkSetting",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "technologyType",
+            "description": "The technology type associated with line number.",
+            "enum": ["fibre", "wirelessbb", "copper", "mobile"],
+            "type": "string",
+            "required": true,
+            "x-example": "mobile"
+          },
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number to retrieve the network setting details for.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0642356785"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/NetworkSettingResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid request to get network setting details",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to get network setting details",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Line number not associated with associated technology type",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "Technology type not supported",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "network-setting-service",
+          "protected",
+          "line",
+          "oidc",
+          "public"
+        ],
+        "summary": "This api is used to update the network setting for provided line number.",
+        "operationId": "updateNetworkSetting",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "technologyType",
+            "description": "The technology type associated with line number.",
+            "enum": ["fibre", "wirelessbb", "copper", "mobile"],
+            "type": "string",
+            "required": true,
+            "x-example": "mobile"
+          },
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number to retrieve the network setting details for.",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true,
+            "x-example": "0642356785"
+          },
+          {
+            "in": "body",
+            "name": "updateNetworkSetting",
+            "description": "Network setting details to be updated",
+            "schema": {
+              "$ref": "#/definitions/NetworkSettingRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid request to get network setting details",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to get network setting details",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Line number not associated with associated technology type",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "Technology type not supported",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/technology/mobile/{mobileNumber}/provider": {
+      "get": {
+        "tags": [
+          "network-setting-service",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "This api is used to get the service provider details for provided line number.",
+        "operationId": "retrieveServiceProviderDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mobileNumber",
+            "description": "The line number to retrieve the service provider details for.",
+            "type": "string",
+            "pattern": "^(020|021|022|027|028|029|0204)\\d+$",
+            "required": true,
+            "x-example": "02105462214"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceProviderResponse"
+            }
+          },
+          "404": {
+            "description": "Mobile number provider not known",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "NetworkSettingResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["numberWithheld"],
+          "properties": {
+            "numberWithheld": {
+              "description": "The flag to indicate if the number is withheld from recipients when an outbound call is being made.",
+              "type": "boolean",
+              "example": true
+            }
+          }
+        }
+      ]
+    },
+    "NetworkSettingRequest": {
+      "type": "object",
+      "required": ["numberWithheld"],
+      "properties": {
+        "numberWithheld": {
+          "description": "The flag to indicate if the number is withheld from recipients when an outbound call is being made.",
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "ServiceProviderResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["serviceProvider"],
+          "properties": {
+            "serviceProvider": {
+              "$ref": "#/definitions/ServiceProvider"
+            }
+          }
+        }
+      ]
+    },
+    "ServiceProvider": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "description": "The id of the service provider",
+          "type": "string",
+          "example": "5"
+        },
+        "name": {
+          "description": "The name of the service provider.",
+          "type": "string",
+          "example": "Vodafone"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

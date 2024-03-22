@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When addonProducts query fails but has a matching bundleId & itemId "showErrorScreen" should be shown 1`] = `
+Object {
+  "relatedAddons": Object {
+    "addonAction": "showErrorScreen",
+    "addonsCart": Object {
+      "accountNumber": null,
+      "cartId": "success-cart-failed-addons-id",
+      "isAccountNumberRequired": false,
+    },
+    "addonsProducts": null,
+  },
+}
+`;
+
+exports[`When addonProducts query fails due to mismatch bundleId "navigateBack" should be shown 1`] = `
+Object {
+  "relatedAddons": Object {
+    "addonAction": "navigateBack",
+    "addonsCart": Object {
+      "accountNumber": null,
+      "cartId": "success-cart-id",
+      "isAccountNumberRequired": false,
+    },
+    "addonsProducts": null,
+  },
+}
+`;
+
+exports[`When cart query fails "showErrorScreen" should be shown 1`] = `
+Object {
+  "relatedAddons": Object {
+    "addonAction": "showErrorScreen",
+    "addonsCart": null,
+    "addonsProducts": null,
+  },
+}
+`;
+
+exports[`When related addons displays no products it should return cart but no products and give a "redirect" action 1`] = `
+Object {
+  "relatedAddons": Object {
+    "addonAction": "redirect",
+    "addonsCart": Object {
+      "accountNumber": null,
+      "cartId": "success-cart-id",
+      "isAccountNumberRequired": false,
+    },
+    "addonsProducts": Object {
+      "accessoryBundles": Array [],
+      "insuranceBundles": Array [],
+      "vasBundles": Array [],
+    },
+  },
+}
+`;
+
+exports[`returns success for fetching the related plans based on categoryId and offeringId 1`] = `
+Object {
+  "relatedAddons": Object {
+    "addonAction": "displayProducts",
+    "addonsCart": Object {
+      "accountNumber": null,
+      "cartId": "success-cart-id",
+      "isAccountNumberRequired": false,
+    },
+    "addonsProducts": Object {
+      "accessoryBundles": Array [
+        Object {
+          "description": "AirPods Pro provides Active Noise Cancellation that blocks outside noise, while Transparency mode lets it in. Spatial audio with dynamic head tracking gives cinema-like sound that surrounds you. Airpods have three sizes of soft, tapered silicone tips for a customisable fit, and are sweat- and water-resistant. The Wireless Charging Case delivers more than 24 hours of battery life.",
+          "id": "airpods_max_space_grey",
+          "name": "AirPods Max - Space Grey",
+          "price": Object {
+            "basePrice": 999,
+            "frequency": null,
+            "priceType": "Onetime",
+          },
+        },
+        Object {
+          "description": "AirPods Pro provides Active Noise Cancellation that blocks outside noise, while Transparency mode lets it in. Spatial audio with dynamic head tracking gives cinema-like sound that surrounds you. Airpods have three sizes of soft, tapered silicone tips for a customisable fit, and are sweat- and water-resistant. The Wireless Charging Case delivers more than 24 hours of battery life.",
+          "id": "airpods_max_sky_blue",
+          "name": "AirPods Max - Sky Blue",
+          "price": Object {
+            "basePrice": 999,
+            "frequency": null,
+            "priceType": "Onetime",
+          },
+        },
+      ],
+      "insuranceBundles": Array [
+        Object {
+          "description": "Mobile Insurance Premium",
+          "id": "mobile_insurance_premium",
+          "name": "Mobile Insurance Premium",
+          "price": Object {
+            "basePrice": 15.95,
+            "frequency": Object {
+              "period": "Month",
+              "value": 0,
+            },
+            "priceType": "Recurring",
+          },
+        },
+      ],
+      "vasBundles": Array [
+        Object {
+          "description": "Stream millions of songs with high-def quality ad-free.",
+          "id": "spotify_individual_half_price_2",
+          "name": "Spotify Premium",
+          "price": Object {
+            "basePrice": 7.49,
+            "frequency": Object {
+              "period": "Month",
+              "value": 1,
+            },
+            "priceType": "Recurring",
+          },
+        },
+        Object {
+          "description": "Get access to a range of sports LIVE and On Demand.",
+          "id": "spark_sport_basic",
+          "name": "Spark Sport",
+          "price": Object {
+            "basePrice": 19.99,
+            "frequency": Object {
+              "period": "Month",
+              "value": 1,
+            },
+            "priceType": "Recurring",
+          },
+        },
+        Object {
+          "description": "Watch the biggest binge-worthy TV shows and movies.",
+          "id": "neon_1",
+          "name": "Neon",
+          "price": Object {
+            "basePrice": 11.99,
+            "frequency": Object {
+              "period": "Month",
+              "value": 1,
+            },
+            "priceType": "Recurring",
+          },
+        },
+      ],
+    },
+  },
+}
+`;

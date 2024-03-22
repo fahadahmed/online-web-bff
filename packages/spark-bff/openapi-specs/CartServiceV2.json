@@ -1,0 +1,1325 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Supports cart related functions like retrieve, create, update and Delete. This swagger exposes api for managing carts in BlueMarble system.",
+    "version": "1.0.0",
+    "title": "DESL Cart Service V2 API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/shopping/cart/{cartId}": {
+      "get": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Retrieves the cart from blue marble by the given cart id.",
+        "operationId": "retrieveCartById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the cart from blue marble.",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Updates the shopping cart with customer details. Supports only patching of accountNumber for now.",
+        "operationId": "updateCart",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "in": "body",
+            "name": "updateCartRequest",
+            "description": "Customer details",
+            "schema": {
+              "$ref": "#/definitions/CustomerDetails"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Unauthorised account.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Endpoint to delete an existing cart in Blue Marble based on cart id",
+        "operationId": "deleteCartById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully deleted the cart from blue marble.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart": {
+      "get": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Retrieves the cart from blue marble by the given cart id.",
+        "operationId": "retrieveCart",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the cart from blue marble.",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "204": {
+            "description": "The user has not yet created cart."
+          },
+          "401": {
+            "description": "unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart/{cartId}/bundle/{bundleId}": {
+      "delete": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Remove an existing bundle from the cart in Blue Marble based on cart id and bundle id",
+        "operationId": "removeBundleById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/BundleId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully removed the bundle from blue marble.",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id or bundle id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart/{cartId}/bundle/{bundleId}/items/{itemId}": {
+      "delete": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Remove an existing item from the bundle in Blue Marble based on item id and bundle id",
+        "operationId": "removeItemFromExistingBundleById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/BundleId"
+          },
+          {
+            "$ref": "#/parameters/ItemId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully removed the item from blue marble.",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart/items": {
+      "post": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Creates a new cart with a bundle within it and adds the item to the bundle if there is no available cart already. If available already, adds items to it.",
+        "operationId": "addItemsToCart",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "addToCartRequest",
+            "description": "The Request Container.",
+            "schema": {
+              "$ref": "#/definitions/AddToCartRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully added items to new cart in blue marble",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart/{cartId}/bundle/{bundleId}/items": {
+      "post": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Add item to an existing bundle in a cart.",
+        "operationId": "addItemToExistingBundle",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/BundleId"
+          },
+          {
+            "in": "body",
+            "name": "addItemsToCartRequest",
+            "description": "The Request Container.",
+            "schema": {
+              "$ref": "#/definitions/AddItemsToCartRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessfully added item to existing bundle in blue marble",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart/{cartId}/items": {
+      "post": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Add item to a new bundle in a cart.",
+        "operationId": "addItemToNewBundle",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "in": "body",
+            "name": "addToCartRequest",
+            "description": "The Request Container.",
+            "schema": {
+              "$ref": "#/definitions/AddToCartRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucessfully added item to new bundle in blue marble",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart/{cartId}/checkout": {
+      "post": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Initiates checkout process.",
+        "operationId": "initiateCheckout",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Checkout process initiated successfully.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart/{cartId}/bundle/{bundleId}/recommendations": {
+      "post": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Modifies the cart based on the selected subscription cta returned by the product comparison service for a given cart and offer container.",
+        "operationId": "submitCartRecommendations",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/BundleId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          },
+          {
+            "in": "body",
+            "name": "submitRecommendationCartRequest",
+            "description": "The Request Container.",
+            "schema": {
+              "$ref": "#/definitions/SubmitRecommendationCartRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successfully processed.",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/cart/lines/{lineNumber}/extra": {
+      "post": {
+        "tags": ["cart", "bluemarble", "protected", "oidc", "guest", "public"],
+        "summary": "Adds the required products to cart to facilitate buy extras journey",
+        "operationId": "addExtrasToCart",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/LineNumber"
+          },
+          {
+            "in": "body",
+            "name": "buyExtraRequest",
+            "description": "Buy Extras request.",
+            "schema": {
+              "$ref": "#/definitions/BuyExtraRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successfully processed.",
+            "headers": {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Contains Cart cookie(JWT encoded).",
+                "x-example": "CART.SUMMARY.ENV=DQAAAEaem_vYg; Path=/; Secure; HttpOnly;"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CartResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "CartId": {
+      "in": "path",
+      "name": "cartId",
+      "description": "Reference id that uniquely identifies a cart in blue marble.",
+      "type": "string",
+      "pattern": "^\\w[\\w-]+$",
+      "x-example": "10abf706-a90d-4029-a007-1a4422f75829",
+      "required": true
+    },
+    "BundleId": {
+      "in": "path",
+      "name": "bundleId",
+      "description": "Reference id that uniquely identifies a bundle within the given cart in blue marble.",
+      "type": "string",
+      "pattern": "^\\w[\\w-]+$",
+      "x-example": "ba3384b4-ca09-4698-b6bc-606610b06586",
+      "required": true
+    },
+    "ItemId": {
+      "in": "path",
+      "name": "itemId",
+      "description": "Reference id that uniquely identifies a cart item within the given bundle in blue marble.",
+      "type": "string",
+      "pattern": "^\\w[\\w-]+$",
+      "x-example": "c187a1b0-38fe-408c-b0fa-3f62d9a2b7f9",
+      "required": true
+    },
+    "Channel": {
+      "name": "channel",
+      "in": "query",
+      "type": "string",
+      "pattern": "^(personalshop|personalss|businessshop)$",
+      "x-example": "personalshop",
+      "default": "personalshop"
+    },
+    "LineNumber": {
+      "in": "path",
+      "name": "lineNumber",
+      "description": "The line number of the user",
+      "type": "string",
+      "required": true,
+      "pattern": "^0\\d+$",
+      "x-example": "0275097001"
+    }
+  },
+  "definitions": {
+    "CartResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/CartData"
+        }
+      ]
+    },
+    "CartData": {
+      "type": "object",
+      "required": ["cartId"],
+      "properties": {
+        "cartId": {
+          "type": "string",
+          "pattern": "^\\w[\\w-]+$",
+          "description": "The unique identifier of the cart in blue marble.",
+          "example": "10abf706-a90d-4029-a007-1a4422f75829"
+        },
+        "accountNumber": {
+          "type": "string",
+          "description": "The account number of the user.",
+          "example": "3456334534"
+        },
+        "accountRequired": {
+          "type": "boolean",
+          "description": "True if account selection is required",
+          "example": false
+        },
+        "channel": {
+          "$ref": "#/definitions/Channel"
+        },
+        "segment": {
+          "type": "string",
+          "description": "Segment assigned to the cart",
+          "example": "PERSONAL"
+        },
+        "price": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Price"
+          },
+          "description": "The array of cart price objects."
+        },
+        "bundles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartBundle"
+          }
+        },
+        "authenticated": {
+          "type": "boolean",
+          "description": "true if logged in user.",
+          "example": false
+        },
+        "guest": {
+          "type": "boolean",
+          "description": "true if guest user.",
+          "example": false
+        }
+      }
+    },
+    "Channel": {
+      "type": "object",
+      "description": "The channel information.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The channel id.",
+          "example": "bo_lov_saleschannel_telesales"
+        },
+        "name": {
+          "type": "string",
+          "description": "The channel name.",
+          "example": "Telesales"
+        }
+      }
+    },
+    "Price": {
+      "type": "object",
+      "description": "The price information.",
+      "required": [
+        "priceType",
+        "basePrice",
+        "basePriceExcludingTax",
+        "basePriceTax",
+        "effectivePrice",
+        "effectivePriceExcludingTax",
+        "effectivePriceTax"
+      ],
+      "properties": {
+        "priceType": {
+          "type": "string",
+          "description": "The price type.",
+          "enum": ["Recurring", "OneOff"],
+          "example": "Recurring"
+        },
+        "frequency": {
+          "$ref": "#/definitions/Frequency"
+        },
+        "basePrice": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The base price.",
+          "example": 99.99
+        },
+        "basePriceExcludingTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The base price excluding GST.",
+          "example": 86.94
+        },
+        "basePriceTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The applied GST on basePrice",
+          "example": 13.05
+        },
+        "effectivePrice": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The actual applicable price.",
+          "example": 90.99
+        },
+        "effectivePriceExcludingTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The actual applicable price excluding GST.",
+          "example": 78.26
+        },
+        "effectivePriceTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The applied GST on effectivePrice.",
+          "example": 12.73
+        },
+        "taxPercentage": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The percentage of GST applicable.",
+          "example": 15.0
+        },
+        "periodStart": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The period from which the pricing would start.",
+          "example": 0
+        },
+        "length": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The number of months/weeks/days the pricing would be applied.",
+          "example": 12
+        },
+        "discount": {
+          "$ref": "#/definitions/Discount"
+        }
+      }
+    },
+    "Discount": {
+      "type": "object",
+      "description": "The discount information.",
+      "required": ["name", "discountType", "appliedValue", "discountedValue"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the discount.",
+          "example": "10 percentage Discount on MRC Dollar 99 Plan  for first 12 Months"
+        },
+        "description": {
+          "type": "string",
+          "description": "The discount description.",
+          "example": "10 percentage Discount on MRC Dollar 99 Plan  for first 12 Months"
+        },
+        "discountType": {
+          "type": "string",
+          "description": "The unit used to represent discount.",
+          "enum": ["Percentage", "Flat"],
+          "example": "Percentage"
+        },
+        "appliedValue": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The discount value.",
+          "example": 10.99
+        },
+        "appliedValueExcludingTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The discount value excluding GST.",
+          "example": 10
+        },
+        "discountedValue": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The actual discounted amount.",
+          "example": 9.99
+        },
+        "discountedValueExcludingTax": {
+          "type": "number",
+          "minimum": 0,
+          "description": "The actual discounted amount excluding GST.",
+          "example": 9
+        }
+      }
+    },
+    "Frequency": {
+      "type": "object",
+      "required": ["period", "value"],
+      "properties": {
+        "period": {
+          "type": "string",
+          "description": "The unit used for representing frequency.",
+          "enum": ["Hour", "Day", "Week", "Month", "Year"],
+          "example": "Month"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0,
+          "description": "The numerical representation of frequency.",
+          "example": 1
+        }
+      }
+    },
+    "CartBundle": {
+      "type": "object",
+      "description": "Represents a bundled product.",
+      "required": ["id", "bundleEntries"],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 1,
+          "description": "The index of each Cart Bundle within cart data starting from 1.",
+          "example": 1
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of Cart Bundle.",
+          "example": "ba3384b4-ca09-4698-b6bc-606610b06586"
+        },
+        "lineNumber": {
+          "type": "string",
+          "description": "Line number.",
+          "example": "0272534888"
+        },
+        "lineRequired": {
+          "type": "boolean",
+          "description": "True when the offer container requires a linenumber.",
+          "example": false
+        },
+        "affected": {
+          "type": "boolean",
+          "description": "True when the offer container is newly added or if a new item is added to the offer container.",
+          "example": false
+        },
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "price": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Price"
+          },
+          "description": "The array of cart bundle price objects."
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BundleEntry"
+          }
+        }
+      }
+    },
+    "Category": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The category id.",
+          "example": "mobile_postpaid-pc_wx7fl"
+        },
+        "name": {
+          "type": "string",
+          "description": "The category name.",
+          "example": "Mobile Plans"
+        }
+      }
+    },
+    "BundleEntry": {
+      "type": "object",
+      "description": "Represents a product.",
+      "required": ["id"],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 1,
+          "description": "The index of each entry/item of the Cart Bundle starting from 1.",
+          "example": 1
+        },
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of bundle entry.",
+          "example": "bc7e89a7-af37-4b40-9c78-c10e0a411357"
+        },
+        "action": {
+          "type": "string",
+          "description": "The action to perform on the cart item by BM during submit customer order.",
+          "enum": ["keep", "modify", "add", "delete"],
+          "default": "add",
+          "example": "add"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0,
+          "description": "Represents the quantity or the number of products.",
+          "example": 1
+        },
+        "price": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Price"
+          },
+          "description": "The array of bundle entry price objects."
+        },
+        "entryImageUrl": {
+          "type": "string",
+          "description": "The image representation of the bundle entry.",
+          "example": "/test-image.png"
+        },
+        "name": {
+          "type": "string",
+          "description": "The bundle entry name.",
+          "example": "plan"
+        },
+        "description": {
+          "type": "string",
+          "description": "The bundle entry description."
+        },
+        "summary": {
+          "type": "string",
+          "description": "The summary text."
+        },
+        "productOfferingId": {
+          "type": "string",
+          "description": "The product offering id."
+        },
+        "externalId": {
+          "type": "string",
+          "description": "The external id of the product."
+        },
+        "category": {
+          "type": "array",
+          "description": "The product categories.",
+          "example": [
+            "endless_postpaid_plans-pc_k01ab",
+            "endless_postpaid_plans-pc_k01a1"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "contractTerm": {
+          "$ref": "#/definitions/Term"
+        },
+        "shippable": {
+          "type": "boolean",
+          "description": "true if the product needs shipping.",
+          "example": false
+        },
+        "balanceManagement": {
+          "type": "string",
+          "description": "Balance management of the account.",
+          "enum": ["PREPAID", "POSTPAID"],
+          "example": "POSTPAID"
+        },
+        "isIncluded": {
+          "type": "boolean",
+          "description": "true if subscription is included with plan.",
+          "example": false
+        },
+        "removable": {
+          "type": "boolean",
+          "description": "true if the product can be removed.",
+          "example": false
+        },
+        "affected": {
+          "type": "boolean",
+          "description": "True when the item is added for the first time to the cart.",
+          "example": false
+        }
+      }
+    },
+    "Term": {
+      "type": "object",
+      "required": ["name", "value", "unit"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the contract term.",
+          "example": "IFP Contract"
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the contract term.",
+          "example": "12 months contract"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0,
+          "description": "The value of the contract term.",
+          "example": 12
+        },
+        "unit": {
+          "type": "string",
+          "description": "The unit representation of the contract term.",
+          "enum": ["Hour", "Day", "Week", "Month", "Year"],
+          "example": "Month"
+        }
+      }
+    },
+    "AddToCartRequest": {
+      "type": "object",
+      "required": ["bundles"],
+      "properties": {
+        "bundles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bundle"
+          },
+          "description": "The array of cart bundle to be added to the cart.",
+          "minItems": 1
+        }
+      }
+    },
+    "Bundle": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "lineNumber": {
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "description": "The line number of the offer container.",
+          "example": "0273523053"
+        },
+        "accountNumber": {
+          "type": "string",
+          "pattern": "^(PP|)\\d+$",
+          "description": "The account number for the offer container.",
+          "example": "123456789"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
+          },
+          "description": "The array of item information within each bundle to be added to the cart.",
+          "minItems": 1
+        }
+      }
+    },
+    "Item": {
+      "type": "object",
+      "required": ["productOfferingId"],
+      "properties": {
+        "quantity": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0,
+          "default": 1,
+          "description": "Represents the quantity or the number of products.",
+          "example": 1
+        },
+        "productOfferingId": {
+          "type": "string",
+          "description": "the unique identifier of the product.",
+          "example": "doller_39_endless_mobile_plan-of_8ggwa"
+        },
+        "action": {
+          "type": "string",
+          "description": "The action to perform on the cart item by BM during submit customer order.",
+          "enum": ["keep", "modify", "add", "delete"],
+          "default": "add",
+          "example": "add"
+        },
+        "productInstanceId": {
+          "type": "string",
+          "description": "Product instance id of the Siebel asset.",
+          "example": "1-2DGHV1J4"
+        },
+        "productCharacteristics": {
+          "$ref": "#/definitions/ProductCharacteristics"
+        }
+      }
+    },
+    "AddItemsToCartRequest": {
+      "$ref": "#/definitions/Bundle"
+    },
+    "CustomerDetails": {
+      "type": "object",
+      "required": ["accountNumber"],
+      "properties": {
+        "accountNumber": {
+          "type": "string",
+          "description": "The account number of the user.",
+          "example": "3456334534"
+        }
+      }
+    },
+    "SubmitRecommendationCartRequest": {
+      "type": "object",
+      "required": ["recommendations"],
+      "properties": {
+        "recommendations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Recommendation"
+          },
+          "description": "The collection of recommendations.",
+          "minItems": 1
+        }
+      }
+    },
+    "Recommendation": {
+      "type": "object",
+      "required": ["recommendationId", "action"],
+      "properties": {
+        "recommendationId": {
+          "type": "string",
+          "description": "The unique identifier of the recommendation.",
+          "example": "vas_downgrade_keep_change_free_to_half"
+        },
+        "action": {
+          "type": "string",
+          "description": "The the action chosen based on the subscription comparison response.",
+          "enum": ["INFORM", "KEEP", "CANCEL"],
+          "example": "KEEP"
+        }
+      }
+    },
+    "BuyExtraRequest": {
+      "type": "object",
+      "description": "Includes necessary information for the extra purchase.",
+      "required": ["offerId", "autoRenew"],
+      "properties": {
+        "offerId": {
+          "description": "Offer id of the extra to be purchased.",
+          "type": "string",
+          "example": "valuepack050313"
+        },
+        "autoRenew": {
+          "type": "boolean",
+          "description": "True indicates that auto renewal should be set up for the extra purchased.",
+          "example": true
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    },
+    "ProductCharacteristics": {
+      "type": "object",
+      "properties": {
+        "autorenew": {
+          "type": "string",
+          "description": "Use to cancel or resume an existing product.",
+          "enum": ["ON", "GR", "OFF"],
+          "example": "ON"
+        },
+        "systemAction": {
+          "type": "string",
+          "description": "Use to send action to downstream CRM to invoke follow on orders.",
+          "enum": ["CANCEL", "TERMINATE", "UPDATE", "RESUME", "ADDED", "NONE"],
+          "example": "ADDED"
+        }
+      }
+    }
+  }
+}

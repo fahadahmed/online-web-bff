@@ -1,0 +1,10 @@
+steps:
+  - bash: |
+      yarn lint
+    displayName: 'Run static analysis'
+    workingDirectory: $(Build.SourcesDirectory)
+
+  - bash: |
+      yarn prettier
+    displayName: 'Check formatting'
+    workingDirectory: $(Build.SourcesDirectory)

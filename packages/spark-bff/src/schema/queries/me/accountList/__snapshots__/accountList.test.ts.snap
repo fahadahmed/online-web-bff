@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get a simple list of accounts and related product information 1`] = `
+Object {
+  "accountList": Array [
+    Object {
+      "accountId": "1-16PQ-3214",
+      "accountNumber": "180691324",
+      "balanceManagement": "PREPAID",
+      "customerNumber": "180691308",
+      "customerSegment": "Consumer",
+      "firstName": "SHEENAL",
+      "inCollections": false,
+      "lastName": "KUMAR",
+      "products": Array [
+        Object {
+          "assetId": "1-2E3RV5SV",
+          "ifpEligible": false,
+          "lineNumber": "01660802083",
+          "offerId": "misc020789",
+          "offerName": "Broadband Equipment",
+          "productInstanceId": "1-2E3GTV79",
+        },
+        Object {
+          "assetId": "1-27X5NNAT",
+          "ifpEligible": false,
+          "lineNumber": "096240152",
+          "offerId": "misc050385",
+          "offerName": "Netflix – 6mo offer",
+          "productInstanceId": "1-27X5NNAT",
+        },
+        Object {
+          "assetId": "1-2ASBRIIH",
+          "ifpEligible": false,
+          "lineNumber": "096240151",
+          "offerId": "bvbundle050504",
+          "offerName": "Unplan Fibre 100 with Landline 12 months",
+          "productInstanceId": "1-28YFWN77",
+        },
+      ],
+      "segment": "personal",
+      "status": "Active",
+    },
+    Object {
+      "accountId": "1-1SSSYIWO",
+      "accountNumber": "702894573",
+      "balanceManagement": "POSTPAID",
+      "customerNumber": "702894476",
+      "customerSegment": "Consumer",
+      "firstName": "SAHIL",
+      "inCollections": false,
+      "lastName": "KUMAR",
+      "products": Array [
+        Object {
+          "assetId": "1-2F7FAV99",
+          "ifpEligible": true,
+          "lineNumber": "02102947234",
+          "offerId": "mbundle050290",
+          "offerName": "Mobile $59.99 Rollover Plan",
+          "productInstanceId": "1-2F5IR35I",
+        },
+      ],
+      "segment": "personal",
+      "status": "Active",
+    },
+    Object {
+      "accountId": "2-3ZZZZABCD",
+      "accountNumber": "369121518",
+      "balanceManagement": "POSTPAID",
+      "customerNumber": "123456789",
+      "customerSegment": "Consumer",
+      "firstName": "Ash",
+      "inCollections": false,
+      "lastName": "Ketchum",
+      "products": Array [],
+      "segment": "personal",
+      "status": "Active",
+    },
+  ],
+}
+`;
+
+exports[`accountList query returns an empty list when guest 1`] = `
+Object {
+  "accountList": Array [],
+}
+`;
+
+exports[`accountList query returns an empty list when unauthenticated 1`] = `
+Object {
+  "accountList": Array [],
+}
+`;

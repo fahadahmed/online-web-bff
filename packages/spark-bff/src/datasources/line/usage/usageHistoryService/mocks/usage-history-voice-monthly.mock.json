@@ -1,0 +1,70 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "interval": "MONTHLY",
+  "accountType": "POSTPAID",
+  "sharerType": "NOT_SHARED",
+  "startDateTime": "2021-09-08T12:00:00Z",
+  "endDateTime": "2021-11-08T10:59:59Z",
+  "averagePeriodUsage": {
+    "value": 171,
+    "unit": "MIN"
+  },
+  "averageGroupPeriodUsage": null,
+  "summarisedPeriods": [
+    {
+      "startDateTime": "2021-10-08T11:00:00Z",
+      "endDateTime": "2021-11-08T10:59:59Z",
+      "unbilled": true,
+      "periodUsage": {
+        "value": 104,
+        "unit": "MIN"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": [
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-10-08T11:00:00.000Z|2021-11-08T10:59:59.000Z",
+          "periodUsage": {
+            "value": 104,
+            "unit": "MIN"
+          },
+          "periodGroupUsage": null,
+          "periodLimit": null,
+          "periodGroupLimit": null,
+          "periodRemaining": null,
+          "periodGroupRemaining": null
+        }
+      ]
+    },
+    {
+      "startDateTime": "2021-09-08T12:00:00Z",
+      "endDateTime": "2021-10-08T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 238,
+        "unit": "MIN"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": [
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-09-08T12:00:00.000Z|2021-10-08T10:59:59.000Z",
+          "periodUsage": {
+            "value": 238,
+            "unit": "MIN"
+          },
+          "periodGroupUsage": null,
+          "periodLimit": null,
+          "periodGroupLimit": null,
+          "periodRemaining": null,
+          "periodGroupRemaining": null
+        }
+      ]
+    }
+  ]
+}

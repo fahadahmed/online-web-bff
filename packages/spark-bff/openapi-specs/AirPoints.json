@@ -1,0 +1,254 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Used to create, retrieve and delete the Airpoints details associated with an Account number.",
+    "version": "1.0.0",
+    "title": "Airpoints service"
+  },
+  "host": "0.0.0.0.8080",
+  "schemes": ["https"],
+  "parameters": {
+    "AccountNumber": {
+      "name": "accountNumber",
+      "in": "path",
+      "description": "The account number related to the Airpoints request",
+      "type": "string",
+      "pattern": "^\\d+$",
+      "required": true
+    }
+  },
+  "paths": {
+    "/v1/services/external/airpoints/{accountNumber}": {
+      "get": {
+        "tags": ["airpoints", "protected", "oidc"],
+        "summary": "Retrieve airpoints information from Siebel based on accountNumber.",
+        "operationId": "getAirpointsDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/AccountNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AirpointsDetails"
+            }
+          },
+          "400": {
+            "description": "Invalid parameters provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to retrieve the Airpoints details for this account",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["airpoints", "protected", "oidc"],
+        "summary": "Create airpoints details for account",
+        "operationId": "submitAirpointsDetails",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/AccountNumber"
+          },
+          {
+            "name": "AirpointsRequestData",
+            "in": "body",
+            "description": "Airpounts submit request",
+            "schema": {
+              "$ref": "#/definitions/AirpointsRequestData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AirpointsDetails"
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to create the Airpoints details for this account",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["airpoints", "protected", "oidc"],
+        "summary": "Remove/Unlink Airports number from account",
+        "operationId": "deleteAirpointsDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/AccountNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters provided",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to delete the Airpoints details for this account",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AirpointsRequestData": {
+      "type": "object",
+      "required": ["firstName", "lastName", "airpointsNumber"],
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "description": "First name of the Airpoints membership",
+          "pattern": "^(?!\\s+$).+"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Last name of the Airpoints membership",
+          "pattern": "^(?!\\s+$).+"
+        },
+        "airpointsNumber": {
+          "type": "string",
+          "description": "Airpoints Membership number",
+          "pattern": "^(?!\\s+$).+"
+        }
+      }
+    },
+    "AirpointsDetails": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "airpointsNumber",
+            "firstName",
+            "lastName",
+            "accountNumber",
+            "status"
+          ],
+          "properties": {
+            "airpointsNumber": {
+              "type": "string",
+              "description": "Airpoints membership number",
+              "pattern": "^(?!\\s+$).+"
+            },
+            "firstName": {
+              "type": "string",
+              "description": "First name of Airpoints membership",
+              "pattern": "^(?!\\s+$).+"
+            },
+            "lastName": {
+              "type": "string",
+              "description": "Last name of Airpoints membership",
+              "pattern": "^(?!\\s+$).+"
+            },
+            "accountNumber": {
+              "type": "string",
+              "description": "Account number associated with the Airpoints",
+              "pattern": "^\\d+$"
+            },
+            "status": {
+              "type": "string",
+              "description": "Status of the Airpoints linking",
+              "pattern": "^(?!\\s+$).+"
+            }
+          }
+        }
+      ]
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

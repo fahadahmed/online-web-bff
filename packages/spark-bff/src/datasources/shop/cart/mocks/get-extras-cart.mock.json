@@ -1,0 +1,96 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "accountNumber": "9476368490",
+  "accountRequired": false,
+  "cartId": "ss-buy-extras-prepaid",
+  "segment": "BUSINESS",
+  "channel": {
+    "id": "bo_lov_saleschannel_online",
+    "name": "Online"
+  },
+  "price": [
+    {
+      "priceType": "Recurring",
+      "frequency": {
+        "period": "Day",
+        "value": 28
+      },
+      "basePrice": 5.0,
+      "basePriceExcludingTax": 4.5,
+      "taxExclusiveValue": 4.4,
+      "effectivePrice": 5.0,
+      "effectivePriceExcludingTax": 4.5,
+      "periodStart": null,
+      "length": null,
+      "discount": null
+    }
+  ],
+  "bundles": [
+    {
+      "lineNumber": "0276398120",
+      "lineRequired": false,
+      "index": 0,
+      "id": "f10176ee-acc0-4263-b6dc-a11d9df87607",
+      "category": {
+        "id": "mobile",
+        "name": "Mobile"
+      },
+      "price": [
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Day",
+            "value": 28
+          },
+          "basePrice": 5.0,
+          "basePriceExcludingTax": 4.5,
+          "taxExclusiveValue": 4.4,
+          "effectivePrice": 5.0,
+          "effectivePriceExcludingTax": 4.5,
+          "periodStart": null,
+          "length": null,
+          "discount": null
+        }
+      ],
+      "items": [
+        {
+          "id": "$5_Data_Boost",
+          "index": 1,
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Day",
+                "value": 28
+              },
+              "basePrice": 5.0,
+              "basePriceExcludingTax": 4.5,
+              "taxExclusiveValue": 4.4,
+              "effectivePrice": 5.0,
+              "effectivePriceExcludingTax": 4.5,
+              "periodStart": null,
+              "length": null,
+              "discount": null
+            }
+          ],
+          "action": "add",
+          "entryImageUrl": "",
+          "name": "$5 Data Boost",
+          "description": "",
+          "summary": null,
+          "productOfferingId": "$5_Data_Boost",
+          "category": null,
+          "contractTerm": null,
+          "isIncluded": false,
+          "balanceManagement": "PREPAID"
+        }
+      ]
+    }
+  ]
+}

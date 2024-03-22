@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "The user must provide first & last names",
+      "code": 3002
+    }
+  ]
+}

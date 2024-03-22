@@ -1,0 +1,546 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Retrieve usage service on a line-by-line basis.",
+    "version": "1.0.0",
+    "title": "DESL Line Usage Service",
+    "x-ibm-name": "usage-service-api"
+  },
+  "schemes": ["https"],
+  "paths": {
+    "/v1/line/usage/me": {
+      "get": {
+        "tags": ["usage", "protected", "oidc"],
+        "summary": "Retrieves usage for all this user's lines",
+        "operationId": "getAllUsage",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsageSummary"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/line/usage/me/{lineNumber}": {
+      "get": {
+        "tags": ["usage", "protected", "oidc"],
+        "summary": "Retrieves usage for the specified line of this user",
+        "operationId": "getUsage",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number to fetch the usage for",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsageSummary"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to fetch usage about this line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "UsageSummary": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["line"],
+          "properties": {
+            "line": {
+              "description": "A list of the usage for each requested line, by line",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Line"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Line": {
+      "type": "object",
+      "description": "The usage for a single line",
+      "required": [
+        "serviceType",
+        "connectionNumber",
+        "balanceManagement",
+        "planName",
+        "offerId",
+        "usage"
+      ],
+      "properties": {
+        "serviceType": {
+          "description": "The type of service the usage is for",
+          "type": "string",
+          "enum": ["MOBILE", "BROADBAND", "WIRELESS_BROADBAND", "COPPER"]
+        },
+        "balanceManagement": {
+          "description": "Whether the service follows a prepaid billing model, or a postpaid model",
+          "type": "string",
+          "enum": ["PREPAID", "POSTPAID"]
+        },
+        "connectionNumber": {
+          "description": "If the service type is a connection, this is the associated line number",
+          "type": "string",
+          "pattern": "^0\\d+$"
+        },
+        "planName": {
+          "description": "The name of the plan as it's marketed and shown to customers on the bill",
+          "type": "string",
+          "example": "Mobile $59 Rollover Plan"
+        },
+        "offerId": {
+          "description": "The offer id for the primary plan on the connection.",
+          "type": "string",
+          "example": "mbundle050292"
+        },
+        "message": {
+          "$ref": "#/definitions/UsageMessage"
+        },
+        "group": {
+          "description": "The group and role within the group this line has.",
+          "$ref": "#/definitions/Group"
+        },
+        "usage": {
+          "description": "An array of the types of usage that are applicable to the connection",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Usage"
+          }
+        }
+      }
+    },
+    "UsageMessage": {
+      "type": "object",
+      "description": "The message/text details, generated based on the status and type of the service",
+      "properties": {
+        "primary": {
+          "description": "A message based on the status and type of the service",
+          "type": "string",
+          "example": "Enjoy Unlimited Freedom"
+        },
+        "secondary": {
+          "description": "A message based on the status and type of the service.  This is broken in two so that the client can manage the presentation as required for the channel.",
+          "type": "string",
+          "example": "2.03GB used."
+        },
+        "tertiary": {
+          "description": "Pertinent information about the connection",
+          "type": "string",
+          "example": "Expires in 36 hours"
+        },
+        "status": {
+          "description": "Status to indicate how to render the primary, secondary and tertiary properties",
+          "type": "string",
+          "enum": ["WARNING", "IMPORTANT"]
+        }
+      }
+    },
+    "Group": {
+      "type": "object",
+      "description": "The group and role within the group this line has.",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "description": "A reference to the group",
+          "type": "string"
+        },
+        "shareProfile": {
+          "description": "In the case of shared group constructs the role of the line within the share construct is available",
+          "type": "string"
+        },
+        "softcapValue": {
+          "description": "The optional soft cap (will only be present for some sharers)",
+          "type": "number"
+        },
+        "softcapUnit": {
+          "description": "The units of the soft cap",
+          "type": "string",
+          "enum": ["GB", "MB"]
+        }
+      }
+    },
+    "Usage": {
+      "type": "object",
+      "description": "A particular type of usage that's applicable to the connection",
+      "required": ["category", "types", "unCapped", "used"],
+      "properties": {
+        "priority": {
+          "type": "integer",
+          "description": "Indicates the order in which allowances are used."
+        },
+        "category": {
+          "type": "string",
+          "description": "The type of usage represented by this object",
+          "enum": ["DATA", "TALK", "TEXT"]
+        },
+        "productId": {
+          "type": "string",
+          "description": "The Siebel product instance id of the product this usage relates to."
+        },
+        "productName": {
+          "type": "string",
+          "description": "The name of the product which the usage relates to."
+        },
+        "productType": {
+          "type": "string",
+          "description": "The type of the product the usage relates to"
+        },
+        "offerId": {
+          "type": "string",
+          "description": "The catalogue offer id of the product"
+        },
+        "types": {
+          "type": "array",
+          "description": "The type of usage",
+          "items": {
+            "type": "string"
+          }
+        },
+        "roaming": {
+          "type": "boolean",
+          "description": "whether this usage was roaming or local"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the pack or extra this usage instance relates to",
+          "example": "10GB Extra Data"
+        },
+        "billingStatus": {
+          "type": "string",
+          "description": "The billing status for the plan or extra.",
+          "enum": [
+            "ACTIVE",
+            "PENDING_FIRST_USE",
+            "PENDING_PAYMENT",
+            "PENDING_GR",
+            "STOPPED",
+            "GRACE"
+          ]
+        },
+        "unCapped": {
+          "type": "boolean",
+          "description": "Uncapped means the usage is Unlimited"
+        },
+        "cap": {
+          "description": "The maximum for the type of usage; for this, a value of UNLIMITED represents an uncapped usage allowance",
+          "$ref": "#/definitions/UsageValue"
+        },
+        "used": {
+          "description": "the current amount used.  If there is an UNLIMITED cap, the value will be UNLIMITED.",
+          "$ref": "#/definitions/SharerUsageValue"
+        },
+        "remaining": {
+          "description": "the current amount remaining.  If there is an UNLIMITED cap, the value will be UNLIMITED",
+          "$ref": "#/definitions/UsageValue"
+        },
+        "tiers": {
+          "description": "Contains the the data tiers",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tier"
+          }
+        },
+        "expiry": {
+          "description": "Details related to when the pack or plan expires",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExpiryDetails"
+          }
+        },
+        "nextRenewalDate": {
+          "description": "The date this usage rolls over (renews)",
+          "type": "string",
+          "format": "date-time"
+        },
+        "renewal": {
+          "description": "If the product that contains this usage auto-renews, contains how it auto renews.",
+          "type": "string",
+          "enum": ["AutoTopup", "GuaranteedRenewal"]
+        }
+      }
+    },
+    "SharerUsageValue": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/UsageValue"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "bySharer": {
+              "description": "The amount used by this sharer (optional; only returned for sharer lines).",
+              "type": "number"
+            }
+          }
+        }
+      ]
+    },
+    "UsageValue": {
+      "type": "object",
+      "description": "A representation of an amount of usage",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "the amount"
+        },
+        "unit": {
+          "type": "string",
+          "description": "the units the value represents",
+          "enum": ["GB", "MB", "MIN", "TEXT"]
+        }
+      }
+    },
+    "Tier": {
+      "type": "object",
+      "required": ["cap"],
+      "properties": {
+        "cap": {
+          "type": "number",
+          "description": "The current data tier the connection is on"
+        }
+      }
+    },
+    "ExpiryDetails": {
+      "type": "object",
+      "required": ["date"],
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "The date when the plan or pack expires",
+          "format": "date-time"
+        },
+        "value": {
+          "type": "number",
+          "description": "The amount of usage which is going to expire"
+        },
+        "unit": {
+          "type": "string",
+          "description": "the units the value represents",
+          "enum": ["GB", "MB", "MIN", "TEXT"]
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "ST2": {
+        "properties": {
+          "endPoint": "http://iamproxy-st05.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-st2.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST3": {
+        "properties": {
+          "endPoint": "http://iamproxy-st07.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-st3.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST4": {
+        "properties": {
+          "endPoint": "http://iamproxy-st06.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-st4.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://usage-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

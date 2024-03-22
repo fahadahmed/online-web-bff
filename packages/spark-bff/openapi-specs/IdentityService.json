@@ -1,0 +1,1156 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This service is for the creation and management of MySpark identities.",
+    "version": "1.0.0",
+    "title": "DESL Identity Service API"
+  },
+  "schemes": ["https"],
+  "parameters": {
+    "realmParam": {
+      "in": "header",
+      "name": "realm",
+      "description": "Identifies the user realm, failure to provide a value would result in defaulting to SPARK_ID realm.",
+      "type": "string",
+      "required": false,
+      "enum": ["SPARK_ID", "MYSB", "SKINNY"],
+      "x-example": "SPARK_ID",
+      "default": "SPARK_ID"
+    }
+  },
+  "paths": {
+    "/v1/user/identity/availability/{email}": {
+      "get": {
+        "tags": ["identity", "user", "public"],
+        "summary": "Determines if the given email address can be used for a new MySpark id.  That it *is* an email address, or a valid email address is not checked.",
+        "operationId": "getIdentityAvailability",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realmParam"
+          },
+          {
+            "in": "path",
+            "name": "email",
+            "description": "The email address to be used for a MySpark id",
+            "type": "string",
+            "required": true,
+            "minLength": 3,
+            "maxLength": 50,
+            "pattern": "^[-_\\w\\+]+(\\.[-_\\w]+)*@[-\\w]+(\\.\\w+)*\\.[A-Za-z]{2,}$",
+            "x-example": "mike.avery@spark.co.nz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AvailabilityResponse"
+            }
+          },
+          "400": {
+            "description": "The provided email address does not look like one.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity/me": {
+      "get": {
+        "tags": ["identity", "user", "protected", "public"],
+        "summary": "Fetches logged-in MySpark identity data, but only from OpenAM",
+        "operationId": "getIdentity",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MinimalIdentityResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["identity", "user", "protected", "oidc", "public"],
+        "summary": "Performs updates of some attributes of a Spark Id (but not necessarily all at once)",
+        "operationId": "updateIdentity",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token",
+            "description": "The token used to verify the Spark id.  Only one of code or token should be specified, and only if email is present in the body.",
+            "type": "string",
+            "pattern": "^[A-F0-9]{32}$",
+            "x-example": "F138BB884AACA8BB1706B8ACC99843EE"
+          },
+          {
+            "in": "query",
+            "name": "code",
+            "description": "The code used to verify the MySpark id.  Only one of code or token should be specified, and only if email is present in the body.",
+            "type": "string",
+            "pattern": "^[0-9]{6}$",
+            "x-example": "123456"
+          },
+          {
+            "in": "query",
+            "name": "verifyBy",
+            "type": "string",
+            "enum": ["Code", "Token"],
+            "description": "Should only be used if email is present in the body; in that case, this indicates which of a code or token should be used to verify the Spark id (and code and token shouldn't be present)."
+          },
+          {
+            "in": "body",
+            "name": "updateIdentityRequest",
+            "schema": {
+              "$ref": "#/definitions/UpdateIdentityRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "The provided UpdateIdentityRequest does not appear to be valid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "No, invalid, or expired code and/or token was provided (if no code or token was provided, one will have been sent).",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "429": {
+            "description": "Too many recent attempts to change the email address of this Spark Id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/user/identity/me": {
+      "patch": {
+        "tags": [
+          "identity",
+          "user",
+          "protected",
+          "oidc",
+          "skinny",
+          "myspark",
+          "public"
+        ],
+        "summary": "Performs updates of some attributes of a Spark Id (but not necessarily all at once)",
+        "operationId": "updateIdentityV2",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realmParam"
+          },
+          {
+            "in": "query",
+            "name": "token",
+            "description": "The token used to verify the Spark id.  Only one of code or token should be specified, and only if email is present in the body.",
+            "type": "string",
+            "pattern": "^[A-F0-9]{32}$",
+            "x-example": "F138BB884AACA8BB1706B8ACC99843EE"
+          },
+          {
+            "in": "query",
+            "name": "code",
+            "description": "The code used to verify the MySpark id.  Only one of code or token should be specified, and only if email is present in the body.",
+            "type": "string",
+            "pattern": "^[0-9]{6}$",
+            "x-example": "123456"
+          },
+          {
+            "in": "query",
+            "name": "verifyBy",
+            "type": "string",
+            "enum": ["Code", "Token"],
+            "description": "Should only be used if email is present in the body; in that case, this indicates which of a code or token should be used to verify the Spark id (and code and token shouldn't be present)."
+          },
+          {
+            "in": "body",
+            "name": "updateIdentityRequest",
+            "schema": {
+              "$ref": "#/definitions/UpdateIdentityRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "The provided UpdateIdentityRequest does not appear to be valid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "No, invalid, or expired code and/or token was provided (if no code or token was provided, one will have been sent).",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "429": {
+            "description": "Too many recent attempts to change the email address of this Spark Id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity": {
+      "get": {
+        "tags": ["identity", "user", "public"],
+        "summary": "Queries a number of existing MySpark identities, based on the provided parameters.  Note that the result will be a list of unique masked email addresses; many different email addresses may map to the same masked value - in this case, we return only one masked value.",
+        "operationId": "queryIdentities",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realmParam"
+          },
+          {
+            "in": "query",
+            "description": "The first name of the myspark identities that should be returned.  If this is provided, lastName must also be.",
+            "name": "firstName",
+            "type": "string",
+            "pattern": "^[^\\*]+$",
+            "minLength": 3
+          },
+          {
+            "in": "query",
+            "description": "The last name of the myspark identities that should be returned.  If this is provided, firstName must also be.",
+            "name": "lastName",
+            "type": "string",
+            "pattern": "^[^\\*]+$",
+            "minLength": 3
+          },
+          {
+            "in": "query",
+            "description": "The business name of the myspark identities that should be returned.  If this is provided, firstName and lastName must not be.",
+            "name": "businessName",
+            "type": "string",
+            "pattern": "^[^\\*]+$",
+            "minLength": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/IdentityListResponse"
+            }
+          },
+          "400": {
+            "description": "The provided parameters do not appear to be valid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "No such identities were found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["identity", "user", "public"],
+        "summary": "Creates a new MySpark identity",
+        "operationId": "createIdentity",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realmParam"
+          },
+          {
+            "in": "body",
+            "name": "identityRequest",
+            "schema": {
+              "$ref": "#/definitions/IdentityRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MinimalIdentityResponse"
+            }
+          },
+          "400": {
+            "description": "The provided IdentityRequest does not appear to be valid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity/me/verified": {
+      "patch": {
+        "tags": ["identity", "user", "public"],
+        "summary": "Verifies a Myspark Id using a token",
+        "description": "If the value of verified in the body is false, and the myspark id is non-verified, sends a new token.",
+        "operationId": "verifyWithToken",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "token",
+            "description": "The token used to verify the MySpark id.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[A-F0-9]{32}$",
+            "x-example": "F138BB884AACA8BB1706B8ACC99843EE"
+          },
+          {
+            "in": "query",
+            "name": "verifyBy",
+            "type": "string",
+            "enum": ["Code", "Token"],
+            "description": "If the value of verified in the body is false, this is used to determine how the resend of the verification should proceed; note that one can convert a token into a code & vice-versa"
+          },
+          {
+            "in": "body",
+            "name": "verificationRequest",
+            "schema": {
+              "$ref": "#/definitions/VerificationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MinimalIdentityResponse"
+            }
+          },
+          "400": {
+            "description": "One of many possible validation failures.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The provided token is invalid or expired.  If the token is expired, the uuid corresponding to it will be returned.",
+            "schema": {
+              "$ref": "#/definitions/OptionalIdentityResponse"
+            }
+          },
+          "404": {
+            "description": "The requested identity doesn't exist.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "429": {
+            "description": "There have been too many recent requests to validate this identity.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity/{email}/verified": {
+      "patch": {
+        "tags": ["identity", "user", "public"],
+        "summary": "Verifies a MySpark Id using a code, or a token",
+        "description": "Only one of code, or token should be specified.  This sends the user a new code/token if the value of verified in the body is 'false' (and the user isn't already verified).",
+        "operationId": "verifyWithCodeOrToken",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realmParam"
+          },
+          {
+            "in": "query",
+            "name": "code",
+            "description": "The code used to verify the MySpark id.",
+            "type": "string",
+            "pattern": "^[0-9]{6}$",
+            "x-example": "123456"
+          },
+          {
+            "in": "query",
+            "name": "token",
+            "description": "The token used to verify the MySpark id.",
+            "type": "string",
+            "pattern": "^[A-F0-9]{32}$",
+            "x-example": "F138BB884AACA8BB1706B8ACC99843EE"
+          },
+          {
+            "in": "query",
+            "name": "verifyBy",
+            "type": "string",
+            "enum": ["Code", "Token"],
+            "description": "If the value of verified in the body is false, this is used to determine how the resend of the verification should proceed; note that one can convert a token into a code & vice-versa, or not even have a code or token provided in this request."
+          },
+          {
+            "in": "path",
+            "name": "email",
+            "description": "The email address of the Spark id to verify",
+            "type": "string",
+            "required": true,
+            "minLength": 3,
+            "maxLength": 50,
+            "pattern": "^[-_\\w\\+]+(\\.[-_\\w]+)*@[-\\w]+(\\.\\w+)*\\.[A-Za-z]{2,}$",
+            "x-example": "mike.avery@spark.co.nz"
+          },
+          {
+            "in": "body",
+            "name": "verificationRequest",
+            "schema": {
+              "$ref": "#/definitions/VerificationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MinimalIdentityResponse"
+            }
+          },
+          "400": {
+            "description": "One of many possible validation failures.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The provided token is invalid or expired.  If the token is expired, the uuid corresponding to it will be returned.",
+            "schema": {
+              "$ref": "#/definitions/OptionalIdentityResponse"
+            }
+          },
+          "404": {
+            "description": "The requested identity doesn't exist.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "429": {
+            "description": "There have been too many recent requests to validate this identity.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity/{email}/password": {
+      "patch": {
+        "tags": ["identity", "user", "public"],
+        "summary": "Resets a user's password.",
+        "operationId": "resetPassword",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realmParam"
+          },
+          {
+            "in": "path",
+            "name": "email",
+            "description": "The email address which is the public name of the MySpark id to reset the password of.",
+            "type": "string",
+            "required": true,
+            "x-example": "mike.avery@spark.co.nz",
+            "minLength": 3,
+            "maxLength": 50,
+            "pattern": "^[-_\\w\\+]+(\\.[-_\\w]+)*@[-\\w]+(\\.\\w+)*\\.[A-Za-z]{2,}$"
+          },
+          {
+            "in": "query",
+            "name": "token",
+            "description": "The token used to grant permission to reset password.",
+            "type": "string",
+            "required": true,
+            "pattern": "^[A-F0-9]{32}$",
+            "x-example": "F138BB884AACA8BB1706B8ACC99843EE"
+          },
+          {
+            "in": "body",
+            "name": "changePasswordRequest",
+            "schema": {
+              "$ref": "#/definitions/ChangePasswordRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "One of many possible validation failures.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The provided token is invalid or expired.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "429": {
+            "description": "There have been too many recent requests to reset this identity's password.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity/{email}/action/sparkForgottenPassword": {
+      "put": {
+        "tags": ["identity", "user", "public"],
+        "summary": "Initiates a forgotten password journey",
+        "operationId": "initiateForgottenPassword",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realmParam"
+          },
+          {
+            "in": "path",
+            "name": "email",
+            "description": "The email address which is the public name of the MySpark id to initiate forgotten password on.",
+            "type": "string",
+            "required": true,
+            "x-example": "mike.avery@spark.co.nz",
+            "minLength": 3,
+            "maxLength": 50,
+            "pattern": "^[-_\\w\\+]+(\\.[-_\\w]+)*@[-\\w]+(\\.\\w+)*\\.[A-Za-z]{2,}$"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "One of many possible validation failures.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The spark id selected is a social one, and can't be used with forgotten password.",
+            "schema": {
+              "$ref": "#/definitions/SocialProviderResponse"
+            }
+          },
+          "404": {
+            "description": "No such identity was found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity/{maskedemail}/action/sparkForgottenUserId": {
+      "put": {
+        "tags": ["identity", "user", "public"],
+        "summary": "Initiates a forgotten username journey",
+        "description": "The name parameters should match the GET /v1/user/identity request that provided the obfuscated email address",
+        "operationId": "initiateForgottenUsername",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realmParam"
+          },
+          {
+            "in": "query",
+            "description": "The first name of the myspark identities that should be returned.  If this is provided, lastName must also be.",
+            "name": "firstName",
+            "type": "string",
+            "pattern": "^[^\\*]+$",
+            "minLength": 3
+          },
+          {
+            "in": "query",
+            "description": "The last name of the myspark identities that should be returned.  If this is provided, firstName must also be.",
+            "name": "lastName",
+            "type": "string",
+            "pattern": "^[^\\*]+$",
+            "minLength": 3
+          },
+          {
+            "in": "query",
+            "description": "The business name of the myspark identities that should be returned.  If this is provided, firstName and lastName must not be.",
+            "name": "businessName",
+            "type": "string",
+            "pattern": "^[^\\*]+$",
+            "minLength": 3
+          },
+          {
+            "in": "query",
+            "description": "The rowId that corresponds to the maskedemail",
+            "name": "rowId",
+            "required": true,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 50
+          },
+          {
+            "in": "path",
+            "name": "maskedemail",
+            "description": "The obfuscated MySpark id to send a forgotten username mail to.",
+            "type": "string",
+            "required": true,
+            "x-example": "m*******ry@s********nz",
+            "minLength": 3,
+            "maxLength": 50,
+            "pattern": "^[-_\\w\\+\\*]+(\\.[-_\\w\\*]+)*@[-\\w\\*]+(\\.[\\w\\*]+)*[\\.\\*][A-Za-z\\*]{2,}$"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "One of many possible validation failures.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The spark id selected is a social one, and can't be used with forgotten username (or forgotten password).",
+            "schema": {
+              "$ref": "#/definitions/SocialProviderResponse"
+            }
+          },
+          "404": {
+            "description": "No such identities were found (either via the name look up, or the obfuscated name isn't one returned by the name lookup).",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity/biometrics": {
+      "post": {
+        "tags": ["identity", "biometrics", "public"],
+        "summary": "Creates an Identity Biometrics request as part of the pre-approval process.",
+        "operationId": "requestBiometricsIdentityBySMS",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "biometricsRequest",
+            "schema": {
+              "$ref": "#/definitions/BiometricsRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BiometricsResponse"
+            }
+          },
+          "400": {
+            "description": "One of many possible validation failures.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/user/identity/biometrics/status/{transactionId}": {
+      "get": {
+        "tags": ["identity", "biometrics", "public"],
+        "summary": "Retrieve Identity Biometrics results as part of the pre-approval process.",
+        "operationId": "requestBiometricsProgressStatus",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "description": "This is Online Order Number and is used as transactionId to retrieve the IDV transaction results",
+            "type": "string",
+            "required": true,
+            "x-example": "ONL123090"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BiometricsStatusResponse"
+            }
+          },
+          "400": {
+            "description": "One of many possible validation failures.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AvailabilityResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["available"],
+          "properties": {
+            "available": {
+              "type": "boolean",
+              "description": "If the MySpark id is available for creation, true; false otherwise",
+              "example": true
+            }
+          }
+        }
+      ]
+    },
+    "MinimalIdentityResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["uuid"],
+          "properties": {
+            "uuid": {
+              "description": "The MySpark/Skinny id corresponding to the provided token",
+              "type": "string",
+              "pattern": "(^SSC\\d+$)|(^SKI\\d+$)",
+              "example": "SSC89284874822376237"
+            }
+          }
+        }
+      ]
+    },
+    "OptionalIdentityResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "uuid": {
+              "description": "The MySpark/Skinny id corresponding to the provided token",
+              "type": "string",
+              "pattern": "(^SSC\\d+$)|(^SKI\\d+$)",
+              "example": "SSC89284874822376237"
+            }
+          }
+        }
+      ]
+    },
+    "VerificationRequest": {
+      "type": "object",
+      "required": ["verified"],
+      "properties": {
+        "verified": {
+          "description": "Whether this MySpark id has been verified",
+          "type": "boolean"
+        }
+      }
+    },
+    "ChangePasswordRequest": {
+      "type": "object",
+      "required": ["password"],
+      "properties": {
+        "password": {
+          "description": "The proposed new password of the MySpark id.",
+          "$ref": "#/definitions/Password"
+        }
+      }
+    },
+    "IdentityRequest": {
+      "type": "object",
+      "required": ["email", "firstName", "lastName", "password"],
+      "properties": {
+        "email": {
+          "description": "The email address which is to be the public name of the MySpark id",
+          "type": "string",
+          "example": "mike.avery@spark.co.nz",
+          "minLength": 3,
+          "maxLength": 50,
+          "pattern": "^[-_\\w\\+]+(\\.[-_\\w]+)*@[-\\w]+(\\.\\w+)*\\.[A-Za-z]{2,}$"
+        },
+        "firstName": {
+          "description": "The first name of the owner of the MySpark id.",
+          "type": "string",
+          "minLength": 1,
+          "example": "Mike"
+        },
+        "lastName": {
+          "description": "The last name of the owner of the MySpark id.",
+          "type": "string",
+          "minLength": 1,
+          "example": "Avery"
+        },
+        "password": {
+          "description": "The password of the MySpark id.",
+          "$ref": "#/definitions/Password"
+        },
+        "verificationType": {
+          "description": "What type of verification process should be (initially?) used to verify this MySpark id",
+          "type": "string",
+          "enum": ["Token", "Code"],
+          "default": "Token"
+        }
+      }
+    },
+    "UpdateIdentityRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "description": "The email address which is to be the new public name of the Spark id",
+          "type": "string",
+          "example": "mike.avery@spark.co.nz",
+          "minLength": 3,
+          "maxLength": 50,
+          "pattern": "^[-_\\w\\+]+(\\.[-_\\w]+)*@[-\\w]+(\\.\\w+)*\\.[A-Za-z]{2,}$"
+        },
+        "firstName": {
+          "description": "The new first name of the owner of the Spark id.",
+          "type": "string",
+          "minLength": 1,
+          "example": "Mike"
+        },
+        "lastName": {
+          "description": "The new last name of the owner of the Spark id.",
+          "type": "string",
+          "minLength": 1,
+          "example": "Avery"
+        },
+        "password": {
+          "description": "The new password of the Spark id.",
+          "$ref": "#/definitions/Password"
+        },
+        "origin": {
+          "description": "The new origin of the Spark id.  One can only set this to MySpark, and one must provide a password when the current origin is not MySpark.",
+          "type": "string",
+          "enum": ["MySpark"]
+        },
+        "mfaEnabled": {
+          "description": "The new value of the mfa enabled flag.  If mfa is enabled, when the user logs in, they have to provide a one-time-password (sent to them via email).",
+          "type": "boolean"
+        }
+      }
+    },
+    "Password": {
+      "type": "string",
+      "minLength": 8,
+      "pattern": "^(?=(?:.*[A-Z]){1})(?=(?:.*[0-9]){1})(?=(?:.*[^0-9a-zA-Z]){1}).*$",
+      "description": "A valid password is at least 8 characters long, has at least one capital letter, at least one number and at least one special character.  This still isn't ideal: see the example I've chosen.",
+      "example": "Telec0m!"
+    },
+    "IdentityListResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["identities"],
+          "properties": {
+            "identities": {
+              "description": "A list of identities (restricted to a masked email address).",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ObfuscatedIdentity"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ObfuscatedIdentity": {
+      "type": "object",
+      "required": ["email", "rowId"],
+      "properties": {
+        "email": {
+          "description": "The email address which is the public name of the MySpark id; note that this is masked with '*'",
+          "type": "string",
+          "example": "m*******ry@s********nz",
+          "minLength": 3,
+          "maxLength": 50,
+          "pattern": "^[-_\\w\\+\\*]+(\\.[-_\\w\\*]+)*@[-\\w\\*]+(\\.[\\w\\*]+)*[\\.\\*][A-Za-z\\*]{2,}$"
+        },
+        "rowId": {
+          "description": "A unique identifier (in the context of the response) for this email",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 50,
+          "example": 17
+        }
+      }
+    },
+    "SocialProviderResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["socialProvider"],
+          "properties": {
+            "socialProvider": {
+              "description": "The social provider that should actually be used to manage this identity.",
+              "type": "string",
+              "enum": ["Google", "Facebook"]
+            }
+          }
+        }
+      ]
+    },
+    "BiometricsRequest": {
+      "type": "object",
+      "required": ["onlineOrderNumber", "name", "phoneNumber"],
+      "properties": {
+        "onlineOrderNumber": {
+          "description": "Online order number, required to match order with biometrics results.",
+          "type": "string",
+          "example": "ONL121212121",
+          "pattern": "(?!\\s+$).+"
+        },
+        "phoneNumber": {
+          "description": "The phone number that the SMS should be sent to, only New Zealand numbers are permitted.",
+          "type": "string",
+          "pattern": "^0(?:[0-9]){6,14}[0-9]$",
+          "example": "0273121800"
+        },
+        "name": {
+          "description": "Customer full name",
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 50,
+          "example": "amin dezfuli"
+        }
+      }
+    },
+    "BiometricsStatusResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["biometrics"],
+          "properties": {
+            "biometrics": {
+              "$ref": "#/definitions/BiometricsStatus"
+            }
+          }
+        }
+      ]
+    },
+    "BiometricsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["biometrics"],
+          "properties": {
+            "biometrics": {
+              "$ref": "#/definitions/Biometrics"
+            }
+          }
+        }
+      ]
+    },
+    "Biometrics": {
+      "type": "object",
+      "required": ["id", "status"],
+      "properties": {
+        "id": {
+          "description": "Transaction ID (OnlineOrderNumber)",
+          "type": "string",
+          "example": "ONL121212121",
+          "pattern": "(?!\\s+$).+"
+        },
+        "status": {
+          "description": "Status as per response from OCRLabs",
+          "type": "string",
+          "example": "success",
+          "enum": ["success", "error"]
+        }
+      }
+    },
+    "BiometricsStatus": {
+      "type": "object",
+      "required": ["transactionId", "status"],
+      "properties": {
+        "transactionId": {
+          "description": "Online Order Number that passed to OCRLabs",
+          "type": "string",
+          "example": "ONL121212121",
+          "pattern": "(?!\\s+$).+"
+        },
+        "status": {
+          "description": "Transaction status",
+          "enum": [
+            "PENDING",
+            "COMPLETED_PASS",
+            "COMPLETED_FLAGGED",
+            "CANCELLED",
+            "INPROGRESS"
+          ],
+          "example": "PENDING"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

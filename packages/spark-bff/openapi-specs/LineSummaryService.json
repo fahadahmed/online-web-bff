@@ -1,0 +1,166 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Retrieve a simple summary for all lines associated with a Spark ID",
+    "version": "1.0.0",
+    "title": "Line summary service API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/lines/me/summary": {
+      "get": {
+        "operationId": "getLineSummaries",
+        "summary": "This API returns the simple summary data associated with the line",
+        "produces": ["application/json"],
+        "tags": ["line-summary", "oidc", "protected", "public"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LineSummaryResponse"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "LineSummaryResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["lines"],
+          "properties": {
+            "lines": {
+              "type": "array",
+              "description": "A list of the line summary data to be presented.",
+              "items": {
+                "$ref": "#/definitions/LineSummaryData"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "LineSummaryData": {
+      "type": "object",
+      "required": [
+        "accountNumber",
+        "lineNumber",
+        "status",
+        "balanceManagement",
+        "offerId",
+        "offerName",
+        "secondaryLineNumbers"
+      ],
+      "properties": {
+        "accountNumber": {
+          "description": "Account Number",
+          "type": "string",
+          "pattern": "^(PP|)\\d+$",
+          "example": "123456789"
+        },
+        "type": {
+          "description": "The type of the service on the line",
+          "type": "string",
+          "enum": ["MOBILE_PREPAID", "MOBILE_POSTPAID", "BROADBAND", "UNKNOWN"],
+          "example": "MOBILE_PREPAID"
+        },
+        "lineNumber": {
+          "description": "The line number",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "0271231278"
+        },
+        "status": {
+          "description": "The status of line number",
+          "type": "string",
+          "example": "Active"
+        },
+        "balanceManagement": {
+          "description": "Account balance management value",
+          "type": "string",
+          "enum": ["PREPAID", "POSTPAID"],
+          "example": "PREPAID"
+        },
+        "offerId": {
+          "description": "Line offer id",
+          "type": "string",
+          "example": "mbundle050262"
+        },
+        "offerName": {
+          "description": "The name of the line product",
+          "type": "string",
+          "example": "$29.99 Spark Sharer"
+        },
+        "parentLine": {
+          "description": "The parent line number",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "0271231278"
+        },
+        "secondaryLineNumbers": {
+          "type": "array",
+          "description": "A list of secondary line numbers associated with the primary line, mandatory but could be empty",
+          "items": {
+            "description": "The line number",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "example": "0271231278"
+          }
+        },
+        "planType": {
+          "type": "string",
+          "description": "Plan type of a product",
+          "example": "FIBRE_DATA"
+        },
+        "packageId": {
+          "type": "string",
+          "description": "Package id of a product",
+          "example": "FIBRE_NAKED"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

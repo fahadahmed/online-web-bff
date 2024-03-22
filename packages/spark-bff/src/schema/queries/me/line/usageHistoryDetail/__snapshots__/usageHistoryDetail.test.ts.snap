@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`additional included sms usage history detail 1`] = `
+Object {
+  "usageHistoryDetail": Object {
+    "breakdownType": "ADDITIONAL_INCLUDED",
+    "contributingProducts": Array [
+      Object {
+        "acquisitionDate": "2021-08-08T12:00:00Z",
+        "offerId": "mbundle050820",
+        "periodLimit": Object {
+          "unit": "TEXT",
+          "value": 500,
+        },
+        "periodRemaining": Object {
+          "unit": "TEXT",
+          "value": 100,
+        },
+        "periodUsage": Object {
+          "unit": "TEXT",
+          "value": 400,
+        },
+        "productName": "$59.99 Endless Mobile Plan",
+      },
+    ],
+    "endDateTime": "2021-09-08T11:59:59Z",
+    "interval": "MONTHLY",
+    "periodUsage": Object {
+      "unit": "TEXT",
+      "value": 400,
+    },
+    "startDateTime": "2021-08-08T12:00:00Z",
+  },
+}
+`;
+
+exports[`additional paid voice usage history detail 1`] = `
+Object {
+  "usageHistoryDetail": Object {
+    "breakdownType": "ADDITIONAL_PAID",
+    "contributingProducts": Array [
+      Object {
+        "acquisitionDate": "2021-07-08T12:00:00Z",
+        "offerId": "mbundle050820",
+        "periodGroupLimit": null,
+        "periodGroupRemaining": null,
+        "periodGroupUsage": null,
+        "periodLimit": null,
+        "periodRemaining": null,
+        "periodUsage": Object {
+          "unit": "MIN",
+          "value": 200,
+        },
+        "productName": "$59.99 Endless Mobile Plan",
+      },
+    ],
+    "endDateTime": "2021-08-08T11:59:59Z",
+    "interval": "MONTHLY",
+    "periodGroupUsage": Object {
+      "unit": "MIN",
+      "value": 0,
+    },
+    "periodUsage": Object {
+      "unit": "MIN",
+      "value": 200,
+    },
+    "startDateTime": "2021-07-08T12:00:00Z",
+  },
+}
+`;
+
+exports[`plan data usage history detail 1`] = `
+Object {
+  "usageHistoryDetail": Object {
+    "breakdownType": "PLAN",
+    "contributingProducts": Array [
+      Object {
+        "acquisitionDate": "2021-08-08T12:00:00Z",
+        "offerId": "mbundle050820",
+        "periodGroupLimit": null,
+        "periodGroupRemaining": null,
+        "periodGroupUsage": null,
+        "periodLimit": Object {
+          "unit": "MB",
+          "value": 12288,
+        },
+        "periodRemaining": Object {
+          "unit": "MB",
+          "value": 2047.960936,
+        },
+        "periodUsage": Object {
+          "unit": "MB",
+          "value": 10240.039064,
+        },
+        "productName": "$59.99 Endless Mobile Plan",
+      },
+      Object {
+        "acquisitionDate": "2021-08-08T12:00:00Z",
+        "offerId": "mbundle050821",
+        "periodGroupLimit": null,
+        "periodGroupRemaining": null,
+        "periodGroupUsage": null,
+        "periodLimit": Object {
+          "unit": "MB",
+          "value": 12288,
+        },
+        "periodRemaining": Object {
+          "unit": "MB",
+          "value": 2047.960936,
+        },
+        "periodUsage": Object {
+          "unit": "MB",
+          "value": 10240.039064,
+        },
+        "productName": "$59.99 Endless Mobile Plank",
+      },
+    ],
+    "endDateTime": "2021-09-08T11:59:59Z",
+    "interval": "MONTHLY",
+    "periodGroupUsage": Object {
+      "unit": "MB",
+      "value": 0,
+    },
+    "periodUsage": Object {
+      "unit": "MB",
+      "value": 10240.039064,
+    },
+    "startDateTime": "2021-08-08T12:00:00Z",
+    "unbilled": false,
+  },
+}
+`;

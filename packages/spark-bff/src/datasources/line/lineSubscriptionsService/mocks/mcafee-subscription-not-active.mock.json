@@ -1,0 +1,21 @@
+{
+  "offer": {
+    "id": "mcafee-not-active",
+    "name": "McAfee Security Standard",
+    "productInstanceId": "1-VX31189"
+  },
+  "assetStartDate": "2021-10-12T03:31:03.964Z",
+  "accountNumber": "369121518",
+  "lineNumber": "0278675179",
+  "status": {
+    "type": "NOT_ACTIVE",
+    "label": "Ready to activate"
+  },
+  "nextRenewalDate": null,
+  "ctas": [
+    {
+      "type": "ACTIVATE",
+      "label": "Activate McAfee Security Standard"
+    }
+  ]
+}

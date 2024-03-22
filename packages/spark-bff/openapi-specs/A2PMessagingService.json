@@ -1,0 +1,1761 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "The A2P Messaging API provides metrics to understand the near-real time performance of message carriage including message statuses, delivery rates, volumes and average delivery time.",
+    "version": "1.0.0",
+    "title": "DESL A2P Messaging - Customer & Shortcode API"
+  },
+  "schemes": ["https"],
+  "parameters": {
+    "DateRange": {
+      "in": "query",
+      "name": "dateRange",
+      "description": "Date Range",
+      "type": "string",
+      "required": true,
+      "enum": ["last7days", "last30days", "last6months", "last12months"],
+      "x-example": "last7days"
+    },
+    "CustomerNumber": {
+      "in": "path",
+      "name": "customerNumber",
+      "description": "MySparkDigital customer number.",
+      "type": "string",
+      "required": true,
+      "x-example": "123456789"
+    },
+    "ContentProviderId": {
+      "in": "path",
+      "name": "contentProviderId",
+      "description": "Content Provider Identifier.",
+      "type": "string",
+      "required": true,
+      "x-example": "1234"
+    },
+    "ShortcodeNumber": {
+      "in": "path",
+      "name": "shortcodeNumber",
+      "description": "Shortcode Number.",
+      "type": "string",
+      "required": true,
+      "x-example": "1234"
+    }
+  },
+  "paths": {
+    "/v1/services/a2p-messaging/customers/overview": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "overview",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Returns overview of sms metrics for all customers. Admin dashboard overview for admin role.",
+        "operationId": "get-customers-overview",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/DateRange"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CustomerAdminOverviewDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/customers/{customerNumber}/overview": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "overview",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Returns overview of sms metrics for a given customer. Customer dashboard overview and graph components for user role.",
+        "operationId": "get-v1-services-external-a2p-messaging-customers-customerNumber-overview",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "$ref": "#/parameters/DateRange"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CustomerOverviewDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/customers/{customerNumber}/usage": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "usage",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Returns series data for a given customer by date range.",
+        "operationId": "get-v1-services-external-a2p-messaging-customers-customerNumber-usage",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "$ref": "#/parameters/DateRange"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsageDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/customers/{customerNumber}/shortcodes": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "shortcodes",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Return shortcodes for customer dashboard top N shortcodes component with usage for user role.",
+        "operationId": "get-v1-services-external-a2p-messaging-customers-customerNumber-shortcodes",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "in": "query",
+            "name": "dateRange",
+            "description": "Date Range",
+            "type": "string",
+            "required": false,
+            "enum": ["last7days", "last30days", "last6months", "last12months"],
+            "x-example": "last7days"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ShortcodesDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/customers/{customerNumber}/shortcodes/{shortcodeNumber}": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "shortcodes",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Returns a shortcode joined on latest fulfilled new or edit service request for a given shortcode number",
+        "operationId": "get-shortcodes-shortcodeNumber",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "$ref": "#/parameters/ShortcodeNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ShortcodesWithServiceRequestDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "shortcodes",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Requests to modify a shortcode status by creating a new service request.",
+        "operationId": "patch-shortcodes-shortcodeNumber",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "$ref": "#/parameters/ShortcodeNumber"
+          },
+          {
+            "in": "body",
+            "name": "status",
+            "schema": {
+              "$ref": "#/definitions/ShortcodeStatus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/customers/{customerNumber}/content-providers": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "content-providers",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Return all Content Providers for a given Customer.",
+        "operationId": "get-v1-services-a2p-messaging-customers-customerNumber-contentProviders-get",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContentProvidersDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "content-providers",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Create a new Content Provider for a given Customer.",
+        "operationId": "post-v1-services-a2p-messaging-customers-customerNumber-contentProviders-post",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "in": "body",
+            "name": "contentProvider",
+            "schema": {
+              "$ref": "#/definitions/ContentProviderPostForm"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ContentProviderIdDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/customers/{customerNumber}/content-providers/{contentProviderId}": {
+      "put": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "content-providers",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Update a Content Provider for a given Customer and Content Provider.",
+        "operationId": "put-contentProviders",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "$ref": "#/parameters/ContentProviderId"
+          },
+          {
+            "in": "body",
+            "name": "contentProvider",
+            "schema": {
+              "$ref": "#/definitions/ContentProviderPostForm"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "content-providers",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Deletes a Content Provider for a given Customer and Content Provider.",
+        "operationId": "delete-contentProviders",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "$ref": "#/parameters/ContentProviderId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/shortcodes/overview": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "shortcodes",
+          "overview",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Returns overview of sms metrics for all shortcodes used by the admin dashboard overview for admin role.",
+        "operationId": "get-v1-services-a2p-messaging-shortcodes-overview",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/DateRange"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ShortcodeOverviewDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/shortcodes": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "shortcodes",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Return shortcodes for all customers with usage for admin role.",
+        "operationId": "get-v1-services-a2p-messaging-shortcodes",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/DateRange"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ShortcodesWithUsagesDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/services/a2p-messaging/customers/{customerNumber}/service-requests": {
+      "get": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "service-requests",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Get service requests by customer number.",
+        "operationId": "get-customerNumber-service-requests",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceRequestsDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "The resource is not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "a2p-messaging",
+          "customers",
+          "service-requests",
+          "protected",
+          "oidc",
+          "mysb",
+          "public"
+        ],
+        "summary": "Submits request for shortcode to be created.",
+        "operationId": "post-customerNumber-service-requests",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CustomerNumber"
+          },
+          {
+            "in": "body",
+            "name": "serviceRequest",
+            "schema": {
+              "$ref": "#/definitions/ServiceRequestPostForm"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceRequestIdDatabaseResource"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or expired. Authentication failed",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "The user does not have the right to perform the action. Authorisation failed.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CustomerOverviewDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["overview"],
+          "properties": {
+            "overview": {
+              "$ref": "#/definitions/CustomerOverview"
+            }
+          }
+        }
+      ]
+    },
+    "CustomerOverview": {
+      "type": "object",
+      "required": [
+        "length",
+        "interval",
+        "dateTimeStart",
+        "dateTimeEnd",
+        "totalSmsCount",
+        "sentSmsCount",
+        "deliveredSmsCount",
+        "failedSmsCount"
+      ],
+      "properties": {
+        "length": {
+          "description": "The length of the date range.",
+          "type": "integer",
+          "example": 7
+        },
+        "interval": {
+          "$ref": "#/definitions/Interval"
+        },
+        "dateTimeStart": {
+          "description": "The start datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-04-19T00:00:00.000Z"
+        },
+        "dateTimeEnd": {
+          "description": "The end datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-04-26T00:00:00.000Z"
+        },
+        "totalSmsCount": {
+          "description": "The total sms message count.",
+          "type": "integer",
+          "example": 300
+        },
+        "sentSmsCount": {
+          "description": "The sent sms message count.",
+          "type": "integer",
+          "example": 100
+        },
+        "deliveredSmsCount": {
+          "description": "The delivered sms message count.",
+          "type": "integer",
+          "example": 100
+        },
+        "failedSmsCount": {
+          "description": "The failed sms message count.",
+          "type": "integer",
+          "example": 100
+        }
+      }
+    },
+    "UsageDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["usage"],
+          "properties": {
+            "usage": {
+              "$ref": "#/definitions/Usage"
+            }
+          }
+        }
+      ]
+    },
+    "Usage": {
+      "type": "object",
+      "required": ["length", "interval", "dateTimeStart", "dateTimeEnd"],
+      "properties": {
+        "length": {
+          "description": "The length of the date range.",
+          "type": "integer",
+          "example": 7
+        },
+        "interval": {
+          "$ref": "#/definitions/Interval"
+        },
+        "dateTimeStart": {
+          "description": "The start datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-12-25T00:00:00.000Z"
+        },
+        "dateTimeEnd": {
+          "description": "The end datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-01-01T00:00:00.000Z"
+        },
+        "series": {
+          "description": "List of the series data.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Series"
+          }
+        }
+      }
+    },
+    "Series": {
+      "type": "object",
+      "required": ["dateTimeStart", "dateTimeEnd"],
+      "properties": {
+        "dateTimeStart": {
+          "description": "The start datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-12-25T00:00:00.000Z"
+        },
+        "dateTimeEnd": {
+          "description": "The end datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-01-01T00:00:00.000Z"
+        },
+        "totalSmsCount": {
+          "type": "integer",
+          "example": 3
+        },
+        "sentSmsCount": {
+          "type": "integer",
+          "example": 1
+        },
+        "deliveredSmsCount": {
+          "type": "integer",
+          "example": 1
+        },
+        "failedSmsCount": {
+          "type": "integer",
+          "example": 1
+        }
+      }
+    },
+    "ShortcodesDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["shortcodes"],
+          "properties": {
+            "shortcodes": {
+              "description": "The list of the shortcodes.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Shortcode"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Shortcode": {
+      "type": "object",
+      "required": [
+        "customerNumber",
+        "customerName",
+        "shortCodeNumber",
+        "status",
+        "type",
+        "ctas",
+        "usage"
+      ],
+      "properties": {
+        "customerNumber": {
+          "type": "string",
+          "example": "1"
+        },
+        "customerName": {
+          "type": "string",
+          "example": "Spark"
+        },
+        "shortCodeNumber": {
+          "type": "integer",
+          "example": 1243
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "ACTIVE", "SUSPENDED", "INACTIVE"],
+          "example": "ACTIVE"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["STANDARD", "ZERO_RATED"],
+          "example": "STANDARD"
+        },
+        "ctas": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["VIEW", "EDIT", "DEACTIVATE"]
+          },
+          "example": ["VIEW", "EDIT", "DEACTIVATE"]
+        },
+        "usage": {
+          "$ref": "#/definitions/Usage"
+        }
+      }
+    },
+    "Interval": {
+      "description": "The unit of date range.",
+      "type": "string",
+      "enum": ["DAYS", "MONTHS", "YEARS"],
+      "example": "DAYS"
+    },
+    "ContentProvidersDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["contentProviders"],
+          "properties": {
+            "contentProviders": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ContentProvider"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ContentProvider": {
+      "type": "object",
+      "required": [
+        "customerNumber",
+        "customerName",
+        "contentProviderId",
+        "contentProviderName",
+        "ctas"
+      ],
+      "properties": {
+        "customerNumber": {
+          "type": "string",
+          "example": "1"
+        },
+        "customerName": {
+          "type": "string",
+          "example": "Twilio"
+        },
+        "contentProviderId": {
+          "type": "integer",
+          "example": 1
+        },
+        "contentProviderName": {
+          "type": "string",
+          "example": "Lyft"
+        },
+        "helpdeskEmail": {
+          "type": "string",
+          "example": "support@lyft.co.nz"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "example": "0800 022 3022"
+        },
+        "customerCareUrl": {
+          "type": "string",
+          "example": "https://www.lyft.com/support"
+        },
+        "ctas": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["EDIT", "DELETE"]
+          },
+          "example": ["EDIT", "DELETE"]
+        }
+      }
+    },
+    "CustomerAdminOverviewDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["overview"],
+          "properties": {
+            "overview": {
+              "$ref": "#/definitions/CustomerAdminOverview"
+            }
+          }
+        }
+      ]
+    },
+    "CustomerAdminOverview": {
+      "type": "object",
+      "required": [
+        "length",
+        "interval",
+        "dateTimeStart",
+        "dateTimeEnd",
+        "totalCustomersCount",
+        "totalShortcodesCount",
+        "pendingShortcodesCount",
+        "suspendedShortcodesCount"
+      ],
+      "properties": {
+        "length": {
+          "description": "The length of the date range.",
+          "type": "integer",
+          "example": 7
+        },
+        "interval": {
+          "$ref": "#/definitions/Interval"
+        },
+        "dateTimeStart": {
+          "description": "The start datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-04-19T00:00:00.000Z"
+        },
+        "dateTimeEnd": {
+          "description": "The end datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-04-26T00:00:00.000Z"
+        },
+        "totalCustomersCount": {
+          "description": "The total customer count.",
+          "type": "integer",
+          "example": 25
+        },
+        "totalShortcodesCount": {
+          "description": "The total shortcodes count.",
+          "type": "integer",
+          "example": 540
+        },
+        "pendingShortcodesCount": {
+          "description": "The pending shortcodes count.",
+          "type": "integer",
+          "example": 7323
+        },
+        "suspendedShortcodesCount": {
+          "description": "The suspended shortcodes count.",
+          "type": "integer",
+          "example": 100
+        }
+      }
+    },
+    "ShortcodeOverviewDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["overview"],
+          "properties": {
+            "overview": {
+              "$ref": "#/definitions/ShortcodeOverview"
+            }
+          }
+        }
+      ]
+    },
+    "ShortcodeOverview": {
+      "type": "object",
+      "required": [
+        "length",
+        "interval",
+        "dateTimeStart",
+        "dateTimeEnd",
+        "totalShortcodesCount",
+        "activeShortcodesCount",
+        "pendingShortcodesCount",
+        "suspendedShortcodesCount"
+      ],
+      "properties": {
+        "length": {
+          "description": "The length of the date range.",
+          "type": "integer",
+          "example": 7
+        },
+        "interval": {
+          "$ref": "#/definitions/Interval"
+        },
+        "dateTimeStart": {
+          "description": "The start datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-04-19T00:00:00.000Z"
+        },
+        "dateTimeEnd": {
+          "description": "The end datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-04-26T00:00:00.000Z"
+        },
+        "totalShortcodesCount": {
+          "description": "The total shortcodes count.",
+          "type": "integer",
+          "example": 25
+        },
+        "activeShortcodesCount": {
+          "description": "The active shortcodes count.",
+          "type": "integer",
+          "example": 540
+        },
+        "pendingShortcodesCount": {
+          "description": "The pending shortcodes count.",
+          "type": "integer",
+          "example": 7323
+        },
+        "suspendedShortcodesCount": {
+          "description": "The suspended shortcodes count.",
+          "type": "integer",
+          "example": 100
+        }
+      }
+    },
+    "ShortcodesWithUsagesDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["shortcodes"],
+          "properties": {
+            "shortcodes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ShortcodeWithUsage"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ShortcodeWithUsage": {
+      "type": "object",
+      "required": [
+        "customerNumber",
+        "customerName",
+        "shortCodeNumber",
+        "status",
+        "type",
+        "ctas",
+        "totalSmsCount",
+        "sentSmsCount",
+        "deliveredSmsCount",
+        "failedSmsCount"
+      ],
+      "properties": {
+        "customerNumber": {
+          "type": "string",
+          "example": "1"
+        },
+        "customerName": {
+          "type": "string",
+          "example": "Spark"
+        },
+        "shortCodeNumber": {
+          "type": "integer",
+          "example": 1243
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "ACTIVE", "SUSPENDED", "INACTIVE"],
+          "example": "ACTIVE"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["STANDARD", "ZERO_RATED"],
+          "example": "STANDARD"
+        },
+        "ctas": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["VIEW", "EDIT", "DEACTIVATE"]
+          },
+          "example": ["VIEW", "EDIT", "DEACTIVATE"]
+        },
+        "totalSmsCount": {
+          "type": "integer",
+          "example": 3
+        },
+        "sentSmsCount": {
+          "type": "integer",
+          "example": 1
+        },
+        "deliveredSmsCount": {
+          "type": "integer",
+          "example": 1
+        },
+        "failedSmsCount": {
+          "type": "integer",
+          "example": 1
+        }
+      }
+    },
+    "ContentProviderPostForm": {
+      "type": "object",
+      "required": ["contentProviderName"],
+      "properties": {
+        "contentProviderName": {
+          "type": "string",
+          "example": "Lyft"
+        },
+        "helpdeskEmail": {
+          "type": "string",
+          "example": "support@lyft.co.nz"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "example": "0800 022 3022"
+        },
+        "customerCareUrl": {
+          "type": "string",
+          "example": "https://www.lyft.com/support"
+        }
+      }
+    },
+    "ContentProviderIdDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["contentProviderId"],
+          "properties": {
+            "contentProviderId": {
+              "type": "string",
+              "example": "1"
+            }
+          }
+        }
+      ]
+    },
+    "ServiceRequestsDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["serviceRequests"],
+          "properties": {
+            "serviceRequests": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ServiceRequest"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ServiceRequest": {
+      "type": "object",
+      "required": [
+        "requestType",
+        "serviceRequestId",
+        "contentProviderId",
+        "messageType",
+        "status",
+        "dateTimeCreated",
+        "dateTimeModified"
+      ],
+      "properties": {
+        "requestType": {
+          "description": "The service request.",
+          "type": "string",
+          "enum": ["NEW", "EDIT", "DEACTIVATE"],
+          "example": "NEW"
+        },
+        "serviceRequestId": {
+          "type": "string",
+          "example": "REQ001055759"
+        },
+        "contentProviderId": {
+          "type": "integer",
+          "example": 1
+        },
+        "assignedShortcodeNumber": {
+          "type": "integer",
+          "example": 1234
+        },
+        "requestedShortcodeNumber": {
+          "type": "integer",
+          "example": 1234
+        },
+        "messageType": {
+          "$ref": "#/definitions/MessageType"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["OPEN", "APPROVED", "REJECTED"],
+          "example": "OPEN"
+        },
+        "dateTimeCreated": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-12-25T00:00:00.000Z"
+        },
+        "dateTimeModified": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2021-01-01T00:00:00.000Z"
+        }
+      }
+    },
+    "ServiceRequestPostForm": {
+      "type": "object",
+      "required": [
+        "requestType",
+        "contentProviderId",
+        "messageType",
+        "messageUsage",
+        "serviceEndDateTime",
+        "carriers",
+        "serviceName",
+        "serviceDescription",
+        "mobileTerminatingMessageExample",
+        "mobileOriginatingMessageExample",
+        "serviceMarketingChannels",
+        "expectedMessageVolume",
+        "expectedMessageVolumeDescription",
+        "predictedPeakTimeDescription",
+        "firstName",
+        "lastName",
+        "jobTitle",
+        "serviceComplianceDescription",
+        "signature",
+        "companyName",
+        "address",
+        "technicalContact"
+      ],
+      "properties": {
+        "requestType": {
+          "description": "The service request.",
+          "type": "string",
+          "enum": ["NEW", "EDIT", "DEACTIVATE"],
+          "example": "NEW"
+        },
+        "contentProviderId": {
+          "description": "Identifier of the Content Provider",
+          "type": "integer",
+          "example": 1
+        },
+        "requestedNumber": {
+          "description": "Requested short code number, on fulfilment of order this may not necessarily be what the customer gets.",
+          "type": "integer",
+          "example": 1234
+        },
+        "messageType": {
+          "$ref": "#/definitions/MessageType"
+        },
+        "messageUsage": {
+          "description": "The message usage.",
+          "type": "string",
+          "enum": ["MARKETING", "TRANSACTIONAL"],
+          "example": "MARKETING"
+        },
+        "serviceEndDateTime": {
+          "description": "Service end datetime.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-12-25T00:00:00.000Z"
+        },
+        "carriers": {
+          "description": "The carrier of content provider.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["SPARK", "TWODEGREES", "VODAFONE"]
+          },
+          "example": ["SPARK", "TWODEGREES", "VODAFONE"]
+        },
+        "serviceName": {
+          "description": "The service name.",
+          "type": "string",
+          "example": "Two-factor authentication for email account log-in"
+        },
+        "serviceDescription": {
+          "description": "The service description.",
+          "type": "string",
+          "example": "Every seven days, employees using their company email account on their mobile phones are automatically logged out of the network and required to log back in for security reasons. As part of this they are sent a code via SMS and asked to enter this along with their email network password in order to log in."
+        },
+        "mobileTerminatingMessageExample": {
+          "description": "The mobile terminating message example.",
+          "type": "string",
+          "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut."
+        },
+        "mobileOriginatingMessageExample": {
+          "description": "The mobile originating message example.",
+          "type": "string",
+          "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut."
+        },
+        "serviceMarketingChannels": {
+          "description": "The service marketing channels.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["PRINT", "ONLINE", "RADIO"]
+          },
+          "example": ["PRINT", "ONLINE", "RADIO"]
+        },
+        "expectedMessageVolume": {
+          "description": "The expected message volume.",
+          "type": "string",
+          "enum": ["LOW", "MEDIUM", "HIGH"],
+          "example": "LOW"
+        },
+        "expectedMessageVolumeDescription": {
+          "description": "The expected message volume description.",
+          "type": "string",
+          "example": "5000 - 10,000"
+        },
+        "predictedPeakTimeDescription": {
+          "description": "The predicted peak time description.",
+          "type": "string",
+          "example": "Every Friday, Christmas eve"
+        },
+        "firstName": {
+          "description": "The first name.",
+          "type": "string",
+          "example": "John"
+        },
+        "lastName": {
+          "description": "The last name.",
+          "type": "string",
+          "example": "Doe"
+        },
+        "jobTitle": {
+          "description": "The job title.",
+          "type": "string",
+          "example": "Master Roaster"
+        },
+        "serviceComplianceDescription": {
+          "description": "The job title.",
+          "type": "string",
+          "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut."
+        },
+        "signature": {
+          "description": "The signature.",
+          "type": "string"
+        },
+        "companyName": {
+          "description": "The company name.",
+          "type": "string",
+          "example": "Twilio"
+        },
+        "phoneNumber": {
+          "description": "The phone number.",
+          "type": "string",
+          "example": "+6427427527"
+        },
+        "address": {
+          "description": "The enterprise address.",
+          "$ref": "#/definitions/Address"
+        },
+        "technicalContact": {
+          "description": "The technical contact.",
+          "$ref": "#/definitions/TechnicalContact"
+        }
+      }
+    },
+    "ServiceRequestIdDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["serviceRequestId"],
+          "properties": {
+            "serviceRequestId": {
+              "description": "The service request identifier from the downstream service. In the case of ServiceNow this is the task tracking identifier (RITM*).",
+              "type": "string",
+              "example": "REQ001055759"
+            }
+          }
+        }
+      ]
+    },
+    "ShortcodesWithServiceRequestDatabaseResource": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/ShortcodesWithoutUsage"
+        },
+        {
+          "$ref": "#/definitions/ServiceRequestPostForm"
+        }
+      ]
+    },
+    "ShortcodesWithoutUsage": {
+      "type": "object",
+      "required": [
+        "customerNumber",
+        "customerName",
+        "shortCodeNumber",
+        "status",
+        "type",
+        "ctas"
+      ],
+      "properties": {
+        "customerNumber": {
+          "type": "string",
+          "example": "1"
+        },
+        "customerName": {
+          "type": "string",
+          "example": "Spark"
+        },
+        "shortCodeNumber": {
+          "type": "integer",
+          "example": 1243
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "ACTIVE", "SUSPENDED", "INACTIVE"],
+          "example": "ACTIVE"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["STANDARD", "ZERO_RATED"],
+          "example": "STANDARD"
+        },
+        "ctas": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["VIEW", "EDIT", "DEACTIVATE"]
+          },
+          "example": ["VIEW", "EDIT", "DEACTIVATE"]
+        }
+      }
+    },
+    "ShortcodeStatus": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["INACTIVE"],
+          "example": "INACTIVE"
+        }
+      }
+    },
+    "Address": {
+      "type": "object",
+      "required": ["label"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "example": "50 Auckland Road, Greenmeadows, Napier 4112"
+        },
+        "elid": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "example": "301344270"
+        }
+      }
+    },
+    "TechnicalContact": {
+      "type": "object",
+      "required": ["firstName", "lastName", "email"],
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": "Fred"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Smith"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "example": "+6427427527"
+        },
+        "email": {
+          "type": "string",
+          "example": "fred.smith@tech.co"
+        }
+      }
+    },
+    "MessageType": {
+      "description": "The message type.",
+      "type": "string",
+      "enum": ["STANDARD", "ZERO_RATED"],
+      "example": "STANDARD"
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

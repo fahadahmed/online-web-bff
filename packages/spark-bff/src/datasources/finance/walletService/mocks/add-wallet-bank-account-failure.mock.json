@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "Bank account Details missing for adding bank account to wallet.",
+      "code": 4100
+    }
+  ]
+}

@@ -1,0 +1,982 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "locations": [
+    {
+      "displayName": "Spark Business Hub West Coast",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "65 Mackay Street",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Greymouth",
+      "longitude": 171.209845,
+      "latitude": -42.44865215,
+      "directions": "We are in the Network Photos Store, near corner of Mackay St and Albert St",
+      "image": null,
+      "phoneNumber": "0800-126 279",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Marlborough",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "77 Market Street",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Blenheim",
+      "longitude": 173.9567373,
+      "latitude": -41.51303587,
+      "directions": "We are next door to Herd's Jewellery.",
+      "image": null,
+      "phoneNumber": "0800-482 672",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "9:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "9:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Friday",
+          "open": "9:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "9:30:00",
+          "close": "16:00:00"
+        },
+        {
+          "day": "Sunday",
+          "open": "10:00:00",
+          "close": "16:00:00"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Southland",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "239 Dee Street",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Invercargill",
+      "longitude": 168.3475034,
+      "latitude": -46.40365999,
+      "directions": "We are near (just to the north of) the corner of Earnslaw and Dee Streets.",
+      "image": null,
+      "phoneNumber": "0800-784 482",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Waikato",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "77B Victoria Street",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Cambridge",
+      "longitude": 175.4683783,
+      "latitude": -37.8936581,
+      "directions": "We are next to Westpac Bank, on the other side of Alpha Street from Jubilee Gardens.",
+      "image": null,
+      "phoneNumber": "0800-482 924",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Bay of Plenty",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "1130 Pukaki Street",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Rotorua",
+      "longitude": 176.2521886,
+      "latitude": -38.1341823,
+      "directions": "We are next to the Pukaki Centre.",
+      "image": null,
+      "phoneNumber": "0800-266 753",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Hutt-Kapiti",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": false,
+      "recycle": false,
+      "addressLine1": "31 Marsden Street or 16 Ihakara Street Parapararumu",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Lower Hutt",
+      "longitude": 174.8962106,
+      "latitude": -41.21217869,
+      "directions": "We are over the road from the Hutt City Church, near the Ewing Bridge at the intersection of Railway Ave and Marsden St.",
+      "image": null,
+      "phoneNumber": "0800-482 488",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Waitakere",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": false,
+      "recycle": false,
+      "addressLine1": "Level 1, 559 Rosebank Road",
+      "addressLine2": null,
+      "suburb": "Avondale",
+      "city": "Auckland",
+      "longitude": 174.6711534,
+      "latitude": -36.87857492,
+      "directions": "We are upstairs from Blackwoods Paykels engineering supplies.",
+      "image": null,
+      "phoneNumber": "0800-824 924",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub North Shore",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "1 Campbell Road",
+      "addressLine2": null,
+      "suburb": "Takapuna",
+      "city": "Auckland",
+      "longitude": 174.772699,
+      "latitude": -36.78513,
+      "directions": null,
+      "image": null,
+      "phoneNumber": "0800-482 746",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub King Country",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": false,
+      "recycle": false,
+      "addressLine1": "Unit A, 77-81 Spa Road",
+      "addressLine2": "(corner Spa Road & Titiraupenga Street)",
+      "suburb": null,
+      "city": "Taupo",
+      "longitude": 176.076104,
+      "latitude": -38.683079,
+      "directions": "We are on the corner of Spa Road and Titiraupenga Street.",
+      "image": null,
+      "phoneNumber": "0800-482 828",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Hamilton",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "53a King Street",
+      "addressLine2": null,
+      "suburb": "Frankton",
+      "city": "Hamilton",
+      "longitude": 175.2675725,
+      "latitude": -37.78868534,
+      "directions": "We are next to Kia Motors, which is on the corner of Lake Road and King Street at the roundabout.",
+      "image": null,
+      "phoneNumber": "0800-482 426",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Northland",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "196 Bank Street",
+      "addressLine2": "Regent",
+      "suburb": null,
+      "city": "Whangarei",
+      "longitude": 174.3225467,
+      "latitude": -35.71674675,
+      "directions": "We are over the road from New World supermarket.",
+      "image": null,
+      "phoneNumber": "0800-366 784",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Tasman",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "173 Haven Road",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Nelson",
+      "longitude": 173.2749507,
+      "latitude": -41.26633356,
+      "directions": "We are next to Para Rubber.",
+      "image": null,
+      "phoneNumber": "0800-482 827",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:00:00",
+          "close": "17:30:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Tauranga",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "75 Elizabeth Street",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Tauranga",
+      "longitude": 176.1675536,
+      "latitude": -37.68702109,
+      "directions": null,
+      "image": null,
+      "phoneNumber": "0800-482 842",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Hawkes Bay",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "66 Carlyle Street",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Napier",
+      "longitude": 176.9090728,
+      "latitude": -39.4927414,
+      "directions": "We are between Burger Fuel and the Good Food Store.",
+      "image": null,
+      "phoneNumber": "0800-482 422",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Manawatu",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "Shop 3, 251 Broadway Avenue",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Palmerston North",
+      "longitude": 175.621081,
+      "latitude": -40.35013927,
+      "directions": "We are next to the corner of Vivian Street and Broadway Avenue.",
+      "image": null,
+      "phoneNumber": "0800-242 883",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Manukau",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "Unit 25",
+      "addressLine2": "761 Great South Rd",
+      "suburb": "Penrose",
+      "city": "Auckland",
+      "longitude": 174.8295271,
+      "latitude": -36.92404944,
+      "directions": "We are at the Penrose end of Great South Road.",
+      "image": null,
+      "phoneNumber": "0800-610 450",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Canterbury",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "3/92B Russley Rd",
+      "addressLine2": null,
+      "suburb": null,
+      "city": "Christchurch",
+      "longitude": 172.5388885,
+      "latitude": -43.51410932,
+      "directions": "We're based here but we aren't a retail store - we usually come to visit you! The best thing to do is call us first and we can chat about your needs.",
+      "image": null,
+      "phoneNumber": "0800-246 027",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "8:30:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    },
+    {
+      "displayName": "Spark Business Hub Dunedin",
+      "brand": "SPARK",
+      "store": false,
+      "businessHub": true,
+      "wifi": true,
+      "recycle": false,
+      "addressLine1": "34 McBride Street",
+      "addressLine2": null,
+      "suburb": "South Dunedin",
+      "city": "Dunedin",
+      "longitude": 170.5004922,
+      "latitude": -45.89456721,
+      "directions": null,
+      "image": null,
+      "phoneNumber": "0800-482 386",
+      "operatingHours": [
+        {
+          "day": "Monday",
+          "open": "10:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Tuesday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Wednesday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Thursday",
+          "open": "9:00:00",
+          "close": "17:00:00"
+        },
+        {
+          "day": "Friday",
+          "open": "9:00:00",
+          "close": "16:00:00"
+        },
+        {
+          "day": "Saturday",
+          "open": "NULL",
+          "close": "NULL"
+        },
+        {
+          "day": "Sunday",
+          "open": "NULL",
+          "close": "NULL"
+        }
+      ]
+    }
+  ]
+}

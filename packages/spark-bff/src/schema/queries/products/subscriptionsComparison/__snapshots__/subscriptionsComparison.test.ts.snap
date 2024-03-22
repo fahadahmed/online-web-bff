@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns the subscriptions comparison data with no errors 1`] = `
+Object {
+  "subscriptionsComparison": Object {
+    "comparisons": Array [
+      Object {
+        "available": Object {
+          "brand": "Spotify",
+          "isIncluded": false,
+          "offerId": "spotify_individual_half_price_2",
+          "offerName": "Spotify individual half price",
+          "price": Object {
+            "basePrice": 14.99,
+            "description": null,
+            "frequencyPeriod": "Month",
+          },
+        },
+        "ctas": Array [
+          Object {
+            "type": "KEEP",
+          },
+          Object {
+            "type": "CANCEL",
+          },
+        ],
+        "recommendationId": "vas_downgrade_keep_change_free_to_half",
+        "unavailable": Object {
+          "brand": "Spotify",
+          "isIncluded": true,
+          "offerId": "spotify_individual_included",
+          "offerName": "Spotify individual",
+          "price": Object {
+            "basePrice": 14.99,
+            "description": null,
+            "frequencyPeriod": "Month",
+          },
+        },
+      },
+    ],
+  },
+}
+`;

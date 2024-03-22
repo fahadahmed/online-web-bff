@@ -1,0 +1,1350 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Supports checkout related functions like retrieve, submit, etc.",
+    "version": "1.0.0",
+    "title": "DESL Checkout Service V2 API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/shopping/checkout/cart/{cartId}/summary": {
+      "get": {
+        "tags": [
+          "checkout",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "Retrieves the summary of checkout structure from the downstream by given cart id.",
+        "operationId": "retrieveCheckoutSummary",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the summary of checkout structure from blue marble.",
+            "schema": {
+              "$ref": "#/definitions/CheckoutSummaryResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/checkout/cart/{cartId}/section/{sectionId}": {
+      "get": {
+        "tags": [
+          "checkout",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "Retrieves the checkout section structure from blue marble by the given cart id and section id",
+        "operationId": "retrieveCheckoutSectionStructure",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/SectionId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the checkout section structure from blue marble.",
+            "schema": {
+              "$ref": "#/definitions/CheckoutSectionStructureResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id, invalid section id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "checkout",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "Submit a checkout section to Blue Marble.",
+        "operationId": "submitCheckoutSection",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/SectionId"
+          },
+          {
+            "in": "body",
+            "name": "submitCheckoutSectionRequest",
+            "description": "The Request Container for submiting checkout section data",
+            "schema": {
+              "$ref": "#/definitions/SubmitCheckoutSectionRequest"
+            },
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the checkout section structure from blue marble.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id, invalid section id, validation fails.",
+            "schema": {
+              "$ref": "#/definitions/SubmitCheckoutSectionErrorResponse"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Expired validity token.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/checkout/cart/{cartId}/details": {
+      "get": {
+        "tags": [
+          "checkout",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "Retrieves the checkout section structure details from blue marble by the given cart id",
+        "operationId": "retrieveCheckoutSectionDetails",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the checkout section structure from blue marble.",
+            "schema": {
+              "$ref": "#/definitions/CheckoutSectionDetailResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/checkout/cart/{cartId}": {
+      "get": {
+        "tags": [
+          "checkout",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "Retrieves the stored checkout data from the downstream by given cart id.",
+        "operationId": "retrieveCheckoutData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the summary of checkout structure from blue marble.",
+            "schema": {
+              "$ref": "#/definitions/CheckoutDataResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/checkout/cart/{cartId}/internal": {
+      "get": {
+        "tags": [
+          "checkout",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "private"
+        ],
+        "summary": "This is a private api and this needs to be called to retrieve checkout data. Cart will be retrieved irrespective of its Locked status. This is to enable order process to fetch it internally post locking it when the process began.",
+        "operationId": "retrieveCheckoutDataInternally",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the summary of checkout structure from blue marble.",
+            "schema": {
+              "$ref": "#/definitions/CheckoutDataResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/checkout/cart/{cartId}/validate": {
+      "post": {
+        "tags": [
+          "checkout",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "private"
+        ],
+        "summary": "Validates the checkout data.",
+        "operationId": "validateCheckoutData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully validated the checkout data against the checkout structure.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id, validation fails.",
+            "schema": {
+              "$ref": "#/definitions/ValidateCheckoutDataErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Expired validity token.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shopping/checkout/cart/{cartId}/deliveryoption/clicktocollect": {
+      "get": {
+        "tags": [
+          "checkout",
+          "bluemarble",
+          "protected",
+          "oidc",
+          "guest",
+          "public"
+        ],
+        "summary": "API to retrieve the store information for shippable products in the cart.",
+        "operationId": "retrieveStoreStockData",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/CartId"
+          },
+          {
+            "$ref": "#/parameters/Channel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the store information for click to collect items.",
+            "schema": {
+              "$ref": "#/definitions/StoreStockDataResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, invalid cart id.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided access token is invalid or Unauthorised cart.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Cart not found.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, something went wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "CartId": {
+      "in": "path",
+      "name": "cartId",
+      "description": "Reference id that uniquely identifies a cart in blue marble.",
+      "type": "string",
+      "pattern": "^\\w[\\w-]+$",
+      "x-example": "10abf706-a90d-4029-a007-1a4422f75829",
+      "required": true
+    },
+    "SectionId": {
+      "in": "path",
+      "name": "sectionId",
+      "description": "The unique identifier of the section.",
+      "type": "string",
+      "pattern": "^\\w[\\w-]{2,100}$",
+      "x-example": "yourDeliveryDetails",
+      "required": true
+    },
+    "Channel": {
+      "name": "channel",
+      "in": "query",
+      "type": "string",
+      "pattern": "^(personalshop|personalss|businessshop)$",
+      "x-example": "personalshop",
+      "default": "personalshop"
+    }
+  },
+  "definitions": {
+    "CheckoutSummaryResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/MinimalCheckoutResponse"
+        }
+      ]
+    },
+    "CheckoutDataResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "sections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SectionData"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SectionData": {
+      "type": "object",
+      "properties": {
+        "sectionId": {
+          "type": "string",
+          "description": "Unique Id for a section as defined in configuration file"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CaptureStepData"
+          }
+        }
+      },
+      "description": "Checkour flow is divided into sections. Each section can have one or more steps within it"
+    },
+    "MinimalCheckoutResponse": {
+      "type": "object",
+      "properties": {
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SectionSummary"
+          }
+        }
+      },
+      "title": "MinimumCheckoutResponse"
+    },
+    "SectionSummary": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the section"
+        },
+        "sectionId": {
+          "type": "string",
+          "description": "Unique Id for a section"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StepSummary"
+          }
+        }
+      }
+    },
+    "StepSummary": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the step"
+        },
+        "stepId": {
+          "type": "string",
+          "description": "Unique Id for a step"
+        }
+      }
+    },
+    "CheckoutSectionDetailResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["sections"],
+          "properties": {
+            "sections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CheckoutStructureSection"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "CheckoutSectionStructureResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/CheckoutStructureSection"
+        }
+      ]
+    },
+    "SubmitCheckoutSectionRequest": {
+      "type": "object",
+      "required": ["steps"],
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CaptureStepData"
+          }
+        }
+      }
+    },
+    "SubmitCheckoutSectionErrorResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["steps"],
+          "properties": {
+            "steps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CaptureStepData"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ValidateCheckoutDataErrorResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["sections"],
+          "properties": {
+            "sections": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SectionData"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "CheckoutStructureSection": {
+      "type": "object",
+      "properties": {
+        "customAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Attribute0"
+          }
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the section"
+        },
+        "sectionId": {
+          "type": "string",
+          "description": "Unique Id for a section"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CheckoutStructureStep"
+          }
+        }
+      },
+      "title": "CheckoutStructureSection",
+      "description": "Each section has a sectionId, name and list of steps in it"
+    },
+    "Attribute0": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "Name of the key. For e.g. category"
+        },
+        "value": {
+          "type": "string",
+          "description": "Value of the key"
+        }
+      },
+      "title": "Attribute0",
+      "description": "List of custom attributes with key and value"
+    },
+    "CheckoutStructureStep": {
+      "type": "object",
+      "properties": {
+        "cartItemId": {
+          "type": "string",
+          "description": "Associated cart item id for which this step is being captured"
+        },
+        "customAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Attribute0"
+          }
+        },
+        "endpoints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EndPoint"
+          }
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Field"
+          }
+        },
+        "groupByLevelEnabled": {
+          "type": "boolean",
+          "description": "If this flag is set to true and if the level of the step is offerContainer / cartItem / cartItemQuantity then user will be prompted if user wants to keep same data for each offer container or cart item or wants to provide different information for different offer container / cart items. If user selects yes, then UI will capture the data only once. The selection of the user will be stored in capture Data request as groupByLevel."
+        },
+        "level": {
+          "type": "string",
+          "description": "Possible values: order, offerContainer, cartItem, cartItemQuantity\norder: step must be captured only once\nofferContainer: step must be captured once for each offer container\ncartItem: step must be captured once for each cart item\ncartItemQuantity: step must be captured for each cart item as many times as the quantity of the cart item"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the step"
+        },
+        "offerContainerId": {
+          "type": "string",
+          "description": "Associated offer container id for which this step is being captured"
+        },
+        "sequence": {
+          "type": "string",
+          "description": "If level is cartItemQuantity, then each step for the same cart item is differentiated using sequence which is auto populated by the service\ndefalut value: 1, possible values: 1,2,3,4... so on"
+        },
+        "stepDataRef": {
+          "type": "string",
+          "description": "The id of the step from which the data in this step can be copied. If stepDataRef is defined, UI will give option to user if the information in this step is same as the step as defined by stepDataRef. For e.g. user has already filled Billing Address and Delivery Address has stepDataRef defined in Billing Address then when user reached Delivery Address step, user will be asked if the delivery address is same as the billing address. If user selects yes then user is not required to fill information for this step and UI will copy the data. Assumption is that the fields in stepDataRef must be same."
+        },
+        "stepId": {
+          "type": "string",
+          "description": "Unique Id for a step"
+        },
+        "uiRef": {
+          "type": "string",
+          "description": "Id of the referenced ui component"
+        },
+        "validationExpressions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ValidationExpressions"
+          }
+        },
+        "visible": {
+          "type": "boolean"
+        }
+      },
+      "title": "CheckoutStructureStep",
+      "description": "Step consists of options and fields for capturing necessary input from user. It also has certain attributes which defines how the information is captured in User Interface"
+    },
+    "EndPoint": {
+      "type": "object",
+      "properties": {
+        "basePath": {
+          "type": "string",
+          "description": "Endpoing URL\nIf this contains any dynamic parameter (enclosed in curly brackets), UI component needs to evaluate it"
+        },
+        "method": {
+          "type": "string",
+          "description": "Method such as GET, POST"
+        },
+        "name": {
+          "type": "string",
+          "description": "If there are multiple end points defined in a step, name can be used to unique identify a endpoint"
+        },
+        "requestMapping": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RequestMapping"
+          }
+        },
+        "responseMapping": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FieldMapping"
+          }
+        },
+        "uiFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UiField0"
+          }
+        }
+      },
+      "title": "EndPoint",
+      "description": "This object provides endpoint, request inputs and also the response mappings. Request mappings with source=UI are derived by UI component while user fills the data in UI"
+    },
+    "Field": {
+      "type": "object",
+      "properties": {
+        "customAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Attribute0"
+          }
+        },
+        "dataRef": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataRef"
+          }
+        },
+        "dataRefURL": {
+          "type": "string",
+          "description": "URL to retrieve list of possible values for this field"
+        },
+        "datatype": {
+          "type": "string",
+          "description": "Data type of the field. For e.g. string, number, date etc."
+        },
+        "defaultValue": {
+          "type": "string",
+          "description": "Default value of the field"
+        },
+        "fieldRule": {
+          "$ref": "#/definitions/FieldRule0"
+        },
+        "label": {
+          "type": "string",
+          "description": "Label of the field to be shown in UI"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the field"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Option0"
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of the field. This will be used by UI to display field in UI. For e.g. text field, dropdown, radioOption, checkOption etc."
+        },
+        "uiRef": {
+          "type": "string",
+          "description": "Id of the UI component referenced"
+        }
+      },
+      "title": "Field"
+    },
+    "ValidationExpressions": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "uiFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UiField0"
+          }
+        }
+      },
+      "title": "ValidationExpressions"
+    },
+    "RequestMapping": {
+      "type": "object",
+      "properties": {
+        "defaultValue": {
+          "type": "string",
+          "description": "If evaluated value is blank then default value should be used as input parameter value"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the input parameter"
+        },
+        "source": {
+          "type": "string",
+          "description": "Source from where the input parameter's value needs to be retrieved\nIf value is 'UI' then UI component needs to evaluate\nIf value is 'Context', value will be prepopulated"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of the input. For e.g. header, body"
+        },
+        "value": {
+          "type": "string",
+          "description": "Expression containing input parameters (enclosed in curly brackets)"
+        }
+      },
+      "title": "RequestMapping",
+      "description": "Define input parameters for the endpoint"
+    },
+    "FieldMapping": {
+      "type": "object",
+      "properties": {
+        "sourceField": {
+          "type": "string",
+          "description": "Name of the field in step"
+        },
+        "targetField": {
+          "type": "string",
+          "description": "Path of the parameter in response. For e.g. data.appointment.referenceId"
+        }
+      },
+      "title": "FieldMapping",
+      "description": "Mapping of fields in step with response paramter"
+    },
+    "UiField0": {
+      "type": "object",
+      "properties": {
+        "cartItemId": {
+          "type": "string",
+          "description": "Cart Item Id associated to the step"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the field"
+        },
+        "offerContainerId": {
+          "type": "string",
+          "description": "Offer container Id associated to the step"
+        },
+        "sectionId": {
+          "type": "string",
+          "description": "Id of the section"
+        },
+        "sequence": {
+          "type": "string",
+          "description": "Unique sequence number associated to the step"
+        },
+        "stepId": {
+          "type": "string",
+          "description": "Id of the step"
+        }
+      },
+      "title": "UiField0"
+    },
+    "DataRef": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of the value"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text value to be shown in dropdown"
+        }
+      },
+      "title": "DataRef",
+      "description": "Provides list of values allowed in a field"
+    },
+    "FieldRule0": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "$ref": "#/definitions/Required"
+        },
+        "state": {
+          "$ref": "#/definitions/State"
+        },
+        "validations": {
+          "$ref": "#/definitions/Validations"
+        },
+        "visibility": {
+          "$ref": "#/definitions/Visibility"
+        }
+      },
+      "title": "FieldRule0"
+    },
+    "Option0": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Field"
+          }
+        },
+        "value": {
+          "type": "string",
+          "description": "Value of the option selected"
+        },
+        "visibility": {
+          "$ref": "#/definitions/Visibility"
+        }
+      },
+      "title": "Option0",
+      "description": "Define the list of fields to capture for each value defined with in option. For e.g each paymeth method requires different set of fields to be captured"
+    },
+    "Required": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "Expression which if evaluates to true then this field is mandatory"
+        },
+        "uiFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UiField0"
+          }
+        }
+      },
+      "title": "Required"
+    },
+    "State": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "Expression which if evaluates to true then this field is shown as enabled in UI"
+        },
+        "uiFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UiField0"
+          }
+        }
+      },
+      "title": "State"
+    },
+    "Validations": {
+      "type": "object",
+      "properties": {
+        "compare": {
+          "type": "string",
+          "description": "Name of the field in this step which must have same value as this field"
+        },
+        "maxLength": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Maximum length of this field value"
+        },
+        "maxValue": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Maximum value of this field. This attribute can be defined when it's data type is number"
+        },
+        "minLength": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Minimum length of this field value"
+        },
+        "minValue": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Minimum value of this field. This attribute can be defined when it's data type is number"
+        },
+        "regex": {
+          "$ref": "#/definitions/Regex01"
+        }
+      },
+      "title": "Validations"
+    },
+    "Visibility": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "Expression which if evaluates to true then this field / option value is visible to the user"
+        },
+        "uiFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UiField0"
+          }
+        }
+      },
+      "title": "Visibility"
+    },
+    "Regex01": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "Regular expression to verify the expected pattern of the field value"
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message to be displayed if value provided in the field does not match the pattern defined using regular expression"
+        }
+      },
+      "title": "Regex01"
+    },
+    "CaptureStepData": {
+      "type": "object",
+      "required": ["stepId"],
+      "properties": {
+        "cartItemId": {
+          "type": "string",
+          "description": "Associated cart item id for which this step is being captured"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CaptureFieldData"
+          }
+        },
+        "groupByLevel": {
+          "type": "boolean",
+          "description": "This attribute will store the choice of the user about capturing the information either once for each offerContainer / cartItem or separately for each of them when step level = offerContainer / cartItem / cartItemQuantity. If user has selected yes / no then next time when UI loads this information, it displays the information based on the choice already selected"
+        },
+        "offerContainerId": {
+          "type": "string",
+          "description": "Associated offer container id for which this step is being captured"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CaptureOptionData"
+          }
+        },
+        "sequence": {
+          "type": "string",
+          "description": "If level is cartItemQuantity, then each step for the same cart item is differentiated using sequence"
+        },
+        "stepDataRefChoice": {
+          "type": "boolean",
+          "description": "This attribute will store the choice of the user about using same data as captured in the step referred in this step. If user has choosen to keep the information same in this step as the step already captured and defined as stepDateRef in this step, then next time when UI loads this step, it does ask user to choose if he wants to fill the information or keep it same as referred step"
+        },
+        "stepId": {
+          "type": "string",
+          "description": "Unique Id for a step as defined in configuration file"
+        }
+      },
+      "title": "CaptureStepData"
+    },
+    "CaptureFieldData": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the field"
+        },
+        "value": {
+          "type": "string",
+          "description": "Value captured for this field"
+        }
+      },
+      "title": "CaptureFieldData"
+    },
+    "CaptureOptionData": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CaptureFieldData"
+          }
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the option"
+        },
+        "value": {
+          "type": "string",
+          "description": "Value of the option selected"
+        }
+      },
+      "title": "CaptureOptionData"
+    },
+    "StoreStockDataResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["stores"],
+          "properties": {
+            "stores": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/StoreStockData"
+              }
+            }
+          },
+          "title": "StoreStockDataResponse"
+        }
+      ]
+    },
+    "StoreStockData": {
+      "type": "object",
+      "required": ["id", "stockStatus", "displayName", "latitude", "longitude"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The StoreId that uniquely identifies the store.",
+          "example": "Takapuna_store"
+        },
+        "stockStatus": {
+          "type": "string",
+          "description": "Identifies the store's stock status.",
+          "enum": ["IN_STOCK", "OUT_OF_STOCK"],
+          "example": "OUT_OF_STOCK"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The name of the location.",
+          "example": "Spark Store Takapuna"
+        },
+        "addressLine1": {
+          "type": "string",
+          "description": "The first line of the address associated with the location, normally a street or building number.",
+          "example": "167 victoria street west"
+        },
+        "addressLine2": {
+          "type": "string",
+          "description": "The second line of the address associated with the location.",
+          "example": "auckland"
+        },
+        "suburb": {
+          "type": "string",
+          "description": "The suburb where the location resides within.",
+          "example": "Auckland"
+        },
+        "city": {
+          "type": "string",
+          "description": "The city where the location resides within.",
+          "example": "Auckland"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "The geographic latitude of the location. ",
+          "example": -75.234678
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double",
+          "description": "The geographic longitude of the location. ",
+          "example": 23.67899
+        },
+        "directions": {
+          "type": "string",
+          "description": "The URL representation of customer-friendly directions for getting to the location.",
+          "example": "https://www.google.com/maps/dir/currentLocation/-45.345345345,34.5464"
+        },
+        "image": {
+          "type": "string",
+          "description": "An image of the point of interest.",
+          "example": "www.spark.co.nz/content/dam/someimage.jpg"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "The optional primary contact phone number of the store.",
+          "example": "0272994568"
+        },
+        "emailAddress": {
+          "type": "string",
+          "description": "The optional primary email address of the store.",
+          "example": "karthick.gopalakrishnan@spark.co.nz"
+        },
+        "operatingHours": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OperatingHoursData"
+          }
+        }
+      },
+      "title": "StoreStockData"
+    },
+    "OperatingHoursData": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "string",
+          "description": "The day of the week associated with the opening hours record.",
+          "enum": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "example": "Monday"
+        },
+        "open": {
+          "type": "string",
+          "description": "The local time that the location is opens for operation on the nominated day.",
+          "example": "09:00:00"
+        },
+        "close": {
+          "type": "string",
+          "description": "The local time that the location is closes for operation on the nominated day.",
+          "example": "17:00:00"
+        }
+      },
+      "title": "StoreStockDataResponse"
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

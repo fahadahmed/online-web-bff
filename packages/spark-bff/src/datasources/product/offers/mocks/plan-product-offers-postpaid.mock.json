@@ -1,0 +1,468 @@
+{
+  "offerDetails": [
+    {
+      "id": "mbundle050516",
+      "name": "$99.99 Endless Group Plan",
+      "category": [
+        {
+          "id": "endless_plans"
+        },
+        {
+          "id": "mobile_neon"
+        },
+        {
+          "id": "mobile_spark_sport"
+        },
+        {
+          "id": "spotify_individual_free_price"
+        },
+        {
+          "id": "upgrade_cons_bus"
+        },
+        {
+          "id": "primary_mobile_plan"
+        },
+        {
+          "id": "mobile_plan_mcafee_extra"
+        }
+      ],
+      "description": "Enjoy nonstop browsing and streaming. Plus, get Spotify Premium on us!",
+      "contentKey": "endless_plan.keyConditions",
+      "price": {
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 99.99
+      },
+      "entitlements": [
+        {
+          "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+          "shortDescription": "",
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.png",
+          "sortOrder": 3,
+          "contentKey": null
+        },
+        {
+          "name": "Unlimited NZ/AUS SMS*",
+          "shortDescription": "",
+          "longDescription": "",
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.png",
+          "sortOrder": 2,
+          "contentKey": null
+        },
+        {
+          "name": "100GB data at max speed. Endless data at reduced speed*",
+          "shortDescription": "",
+          "longDescription": "This will impact your experience.",
+          "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.png",
+          "sortOrder": 1,
+          "contentKey": null
+        }
+      ],
+      "promotions": [
+        {
+          "name": "Landline on Mobile",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 4,
+          "contentKey": null
+        },
+        {
+          "name": "Spotify Premium",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "longDescription": "Usually $14.99/month (incl GST)",
+          "iconUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon.png",
+          "sortOrder": 1,
+          "contentKey": null
+        },
+        {
+          "name": "Add a companion",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "longDescription": "Max 3 users for $29.99 each (incl GST) / $26.08 each (excl GST)",
+          "iconUrl": "/content/dam/spark/images/icons/green-plus-icon.png",
+          "sortOrder": 3,
+          "contentKey": null
+        },
+        {
+          "name": "10GB Hotspot data*",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 2,
+          "contentKey": null
+        },
+        {
+          "name": "Spark Voicemail App",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "longDescription": "",
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 5,
+          "contentKey": null
+        }
+      ]
+    },
+    {
+      "id": "mbundle050820",
+      "name": "$59.99 Endless Plan",
+      "category": [
+        {
+          "id": "endless_plans"
+        },
+        {
+          "id": "mobile_neon"
+        },
+        {
+          "id": "mobile_spark_sport"
+        },
+        {
+          "id": "spotify_individual_half_price"
+        },
+        {
+          "id": "upgrade_cons_bus"
+        },
+        {
+          "id": "primary_mobile_plan"
+        },
+        {
+          "id": "mobile_plan_mcafee_extra"
+        }
+      ],
+      "description": "Enjoy unlimited calls, texts and endless data.",
+      "contentKey": "endless_plan.keyConditions",
+      "price": {
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 59.99
+      },
+      "entitlements": [
+        {
+          "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+          "shortDescription": "",
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.png",
+          "sortOrder": 3,
+          "contentKey": null
+        },
+        {
+          "name": "12GB data at max speed. Endless data at reduced speed*",
+          "shortDescription": "",
+          "longDescription": "This will impact your experience.",
+          "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.png",
+          "sortOrder": 1,
+          "contentKey": null
+        },
+        {
+          "name": "Unlimited NZ/AUS SMS*",
+          "shortDescription": "",
+          "longDescription": "",
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.png",
+          "sortOrder": 2,
+          "contentKey": null
+        }
+      ],
+      "promotions": [
+        {
+          "name": "3GB Hotspot data*",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 2,
+          "contentKey": null
+        },
+        {
+          "name": "Landline on Mobile",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 3,
+          "contentKey": null
+        },
+        {
+          "name": "Half price Spotify Premium",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "longDescription": "Usually $14.99/month (incl GST)",
+          "iconUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon.png",
+          "sortOrder": 1,
+          "contentKey": null
+        },
+        {
+          "name": "Spark Voicemail App",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "longDescription": "",
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 4,
+          "contentKey": null
+        }
+      ]
+    },
+    {
+      "id": "mbundle050586",
+      "name": "$39.99 Rollover Plan",
+      "category": [
+        {
+          "id": "rollover_plan"
+        },
+        {
+          "id": "mobile_neon"
+        },
+        {
+          "id": "mobile_spark_sport"
+        },
+        {
+          "id": "spotify_individual_half_price"
+        },
+        {
+          "id": "upgrade_cons_bus"
+        },
+        {
+          "id": "primary_mobile_plan"
+        },
+        {
+          "id": "mobile_plan_mcafee_extra"
+        }
+      ],
+      "description": "Ideal if you like to text a lot and like to browse on the go.",
+      "contentKey": "rollover_plan.keyConditions",
+      "price": {
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 39.99
+      },
+      "entitlements": [
+        {
+          "name": "Unlimited NZ SMS*",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.png",
+          "sortOrder": 2,
+          "contentKey": null
+        },
+        {
+          "name": "3GB Rollover data*",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/rollover-icon.png",
+          "sortOrder": 1,
+          "contentKey": null
+        },
+        {
+          "name": "300 Rollover mins to any NZ mobiles and landlines*",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.png",
+          "sortOrder": 3,
+          "contentKey": null
+        }
+      ],
+      "promotions": [
+        {
+          "name": "Spark Voicemail App",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 6,
+          "contentKey": null
+        },
+        {
+          "name": "Hotspot*",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 7,
+          "contentKey": null
+        },
+        {
+          "name": "Half price Spotify Premium",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": "",
+          "longDescription": "Usually $14.99/month (incl GST)",
+          "iconUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon.png",
+          "sortOrder": 1,
+          "contentKey": null
+        }
+      ]
+    },
+    {
+      "id": "mbundle050666",
+      "name": "$25 Rollover Plan",
+      "category": [
+        {
+          "id": "rollover_plan"
+        },
+        {
+          "id": "mobile_neon"
+        },
+        {
+          "id": "mobile_spark_sport"
+        },
+        {
+          "id": "spotify_individual_full_price"
+        },
+        {
+          "id": "upgrade_cons"
+        },
+        {
+          "id": "primary_mobile_plan"
+        },
+        {
+          "id": "mobile_plan_mcafee_extra"
+        }
+      ],
+      "description": "Ideal if you like to call and text a lot, with a bit more data.",
+      "contentKey": "rollover_plan.keyConditions",
+      "price": {
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 25
+      },
+      "entitlements": [
+        {
+          "name": "Unlimited mins to any NZ mobiles and landlines",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.png",
+          "sortOrder": 4,
+          "contentKey": null
+        },
+        {
+          "name": "Unlimited NZ SMS*",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.png",
+          "sortOrder": 3,
+          "contentKey": null
+        },
+        {
+          "name": "500MB Rollover data*",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/rollover-icon.png",
+          "sortOrder": 2,
+          "contentKey": null
+        }
+      ],
+      "promotions": [
+        {
+          "name": "Spark Voicemail App",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 5,
+          "contentKey": null
+        },
+        {
+          "name": "Hotspot*",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 6,
+          "contentKey": null
+        }
+      ]
+    },
+    {
+      "id": "mbundle050665",
+      "name": "$15 Rollover Plan",
+      "category": [
+        {
+          "id": "rollover_plan"
+        },
+        {
+          "id": "mobile_neon"
+        },
+        {
+          "id": "mobile_spark_sport"
+        },
+        {
+          "id": "spotify_individual_full_price"
+        },
+        {
+          "id": "upgrade_cons"
+        },
+        {
+          "id": "primary_mobile_plan"
+        },
+        {
+          "id": "mobile_plan_mcafee_extra"
+        }
+      ],
+      "description": "Ideal for calling NZ landlines and Spark mobiles with a bit of data.",
+      "contentKey": "rollover_plan.keyConditions",
+      "price": {
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 15
+      },
+      "entitlements": [
+        {
+          "name": "Unlimited mins to Spark mobiles and NZ landlines + 100 mins to any NZ mobiles",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/landline-icon.png",
+          "sortOrder": 4,
+          "contentKey": null
+        },
+        {
+          "name": "100MB Rollover data*",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/rollover-icon.png",
+          "sortOrder": 2,
+          "contentKey": null
+        },
+        {
+          "name": "100 NZ SMS",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/sms-icon.png",
+          "sortOrder": 3,
+          "contentKey": null
+        }
+      ],
+      "promotions": [
+        {
+          "name": "Spark Voicemail App",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 1,
+          "contentKey": null
+        },
+        {
+          "name": "Hotspot*",
+          "productType": "CHARACTERISTIC",
+          "shortDescription": null,
+          "longDescription": null,
+          "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.png",
+          "sortOrder": 2,
+          "contentKey": null
+        }
+      ]
+    }
+  ]
+}

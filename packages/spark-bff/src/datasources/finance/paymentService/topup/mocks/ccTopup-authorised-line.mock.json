@@ -1,0 +1,11 @@
+{
+  "receiptNumber": "123562",
+  "availableBalance": 20,
+  "reservedBalance": 15.5,
+  "messages": [
+    {
+      "message": "Request Processed Successfully.",
+      "code": 2000
+    }
+  ]
+}

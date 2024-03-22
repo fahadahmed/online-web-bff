@@ -1,0 +1,113 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "lines": [
+    {
+      "lineNumber": "0276404520",
+      "customerNumber": "431586312",
+      "accountNumber": "PP9772450",
+      "status": "Active",
+      "type": "Line",
+      "balanceManagement": "PREPAID",
+      "role": "Owner",
+      "aliasName": "My prepaid line",
+      "lineNumbers": null,
+      "rights": [
+        "View",
+        "ChangeLine",
+        "PayByAccount",
+        "ChangeAccount",
+        "ManageAccess",
+        "ManageSharers",
+        "ChangeOwner",
+        "VAS",
+        "Billing",
+        "PairWearable"
+      ]
+    },
+    {
+      "lineNumber": "0211615249",
+      "customerNumber": "400830207",
+      "accountNumber": "PP6536986",
+      "status": "Active",
+      "type": "Line",
+      "balanceManagement": "PREPAID",
+      "role": "Owner",
+      "aliasName": "My other prepaid",
+      "lineNumbers": null,
+      "rights": [
+        "View",
+        "ChangeLine",
+        "PayByAccount",
+        "ChangeAccount",
+        "ManageAccess",
+        "ManageSharers",
+        "ChangeOwner",
+        "VAS",
+        "Billing",
+        "PairWearable"
+      ]
+    },
+    {
+      "aliasName": "My prepaid line",
+      "lineNumber": "0278675179"
+    },
+    {
+      "aliasName": "My prepaid",
+      "lineNumber": "0276398120"
+    }
+  ],
+  "accounts": [
+    {
+      "lineNumber": null,
+      "customerNumber": "261077485",
+      "accountNumber": "267148112",
+      "status": "Active",
+      "type": "Account",
+      "balanceManagement": "POSTPAID",
+      "role": "Owner",
+      "aliasName": null,
+      "lineNumbers": ["033227715", "033227716", "033227717", "0272651690"],
+      "rights": [
+        "View",
+        "ChangeLine",
+        "PayByAccount",
+        "ChangeAccount",
+        "ManageAccess",
+        "ManageSharers",
+        "ChangeOwner",
+        "VAS",
+        "Billing",
+        "PairWearable"
+      ]
+    },
+    {
+      "lineNumber": null,
+      "customerNumber": "449098927",
+      "accountNumber": "449099052",
+      "status": "Active",
+      "type": "Account",
+      "balanceManagement": "POSTPAID",
+      "role": "Owner",
+      "aliasName": null,
+      "lineNumbers": ["0273215879"],
+      "rights": [
+        "View",
+        "ChangeLine",
+        "PayByAccount",
+        "ChangeAccount",
+        "ManageAccess",
+        "ManageSharers",
+        "ChangeOwner",
+        "VAS",
+        "Billing",
+        "PairWearable"
+      ]
+    }
+  ],
+  "identities": []
+}

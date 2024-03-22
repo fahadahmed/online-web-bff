@@ -1,0 +1,9 @@
+parameters:
+  useAppD: false
+  graphqlURL: '/graphql'
+
+steps:
+  - template: gql-deploy-container-steps-template.yml
+    parameters:
+      useAppD: ${{ parameters.useAppD }}
+      artifactsDirectory: $(Pipeline.Workspace)/drop/openshift

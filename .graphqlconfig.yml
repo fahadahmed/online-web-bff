@@ -1,0 +1,5 @@
+# Configuration for the prisma.vscode-graphql plug-in
+schema: packages/spark-bff/generated/schema.graphql
+extensions:
+  endpoints:
+    default: 'http://localhost:3001/graphql'

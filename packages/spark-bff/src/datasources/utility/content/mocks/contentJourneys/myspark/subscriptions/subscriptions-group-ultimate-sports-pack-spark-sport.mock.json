@@ -1,0 +1,58 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/subscriptions/group/ultimate_spark_sport",
+  "tags": ["productDetails:groupContent"],
+  "title": "Product Details Group Content - Ultimate Spark Sport",
+  "description": "Ultimate Spark Sport product details group content",
+  "fields": [
+    {
+      "fieldKey": "faqs.question1",
+      "fieldType": "HEADER",
+      "fieldValue": "How do I activate Spark Sport?"
+    },
+    {
+      "fieldKey": "faqs.answer1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added Spark Sport to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spark Sport has been processed and is ready for activation. The link in this notification will take you to the Spark Sport website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your Spark Sport in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question2",
+      "fieldType": "HEADER",
+      "fieldValue": "Lorem ipsum dolor sit amet?"
+    },
+    {
+      "fieldKey": "faqs.answer2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "fieldKey": "banner.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Catch the action with Spark Sport.",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "banner.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Enjoy a serious selection of international and domestic sport live, on-demand and via six 24/7 channels."
+    },
+
+    {
+      "fieldKey": "banner.background",
+      "fieldType": "IMAGE",
+      "fieldValue": "",
+      "fieldUrl": "https://s3-alpha-sig.figma.com/img/8bd5/ab72/8e5a891f77dd8ae5e78b5594e6a4f81c?Expires=1635120000&Signature=F6lfJuY8fbrThd3MUvjb7n7LVUrBjXRB6UOrAWSsgajtxENfoMPDvbslfUfUyXYAOGsqNaia10oloUctHlVPGHG4fvdKaZgMkfM6-CiFJ2MzLbyTy6SuBImQACbp~7WopwhhU75W6BL-d4fq2c3yFwevqy8fPc59YsVzlsiwZUGvZH5~3StyUSVpzMJuvXEPajmIiU-bAd~FcoGtOI-SoukYZMztUecuvzC~l90AjppvEvapQ-gCNU4MTn2SQnmExUWUho4c5MDX313CiRl04yIegZNsYhMCnEz0bQqCPvzZ392Id4Hh-wLAArxfBoQoXrm~b9td4jFrgmsGYw2EFg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+      "fieldKey": "banner.link",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "",
+      "fieldUrl": "https://www.sparksport.co.nz/"
+    }
+  ]
+}

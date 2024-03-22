@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a broadband line number, returns line access information  1`] = `
+Object {
+  "isNumberIdentified": true,
+  "line": Object {
+    "lineType": "BROADBAND",
+  },
+}
+`;
+
+exports[`a postpaid line number, returns account and line access information 1`] = `
+Object {
+  "account": Object {
+    "hasBusinessName": false,
+    "isAccountAccessAllowed": true,
+    "isPasswordProtected": true,
+  },
+  "isNumberIdentified": true,
+  "line": Object {
+    "isLineAccessAllowed": true,
+    "lineType": "MOBILE_POSTPAID",
+  },
+}
+`;
+
+exports[`a prepaid line number, returns line access information 1`] = `
+Object {
+  "isNumberIdentified": true,
+  "line": Object {
+    "isLineAccessAllowed": true,
+    "lineType": "MOBILE_PREPAID",
+  },
+}
+`;

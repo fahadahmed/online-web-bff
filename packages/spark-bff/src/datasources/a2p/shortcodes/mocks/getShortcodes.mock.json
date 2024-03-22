@@ -1,0 +1,64 @@
+{
+  "shortcodes": [
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 1243,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "totalSmsCount": 300,
+      "sentSmsCount": 100,
+      "deliveredSmsCount": 100,
+      "failedSmsCount": 100,
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"]
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 5463,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "totalSmsCount": 300,
+      "sentSmsCount": 100,
+      "deliveredSmsCount": 100,
+      "failedSmsCount": 100,
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"]
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 5654,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "totalSmsCount": 300,
+      "sentSmsCount": 100,
+      "deliveredSmsCount": 100,
+      "failedSmsCount": 100,
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"]
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 7545,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "totalSmsCount": 300,
+      "sentSmsCount": 100,
+      "deliveredSmsCount": 100,
+      "failedSmsCount": 100,
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"]
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 4543,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "totalSmsCount": 300,
+      "sentSmsCount": 100,
+      "deliveredSmsCount": 100,
+      "failedSmsCount": 100,
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"]
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns success for fetching the related plans based on categoryId and offeringId 1`] = `
+Object {
+  "relatedPlans": Object {
+    "bundles": Array [
+      Object {
+        "id": "d18a3d99-2cb7-47a3-a295-e10b6bc298ca",
+        "offerDetails": Array [
+          Object {
+            "description": "$79.99 Endless Mobile Plan",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Roaming data",
+                "type": "Roaming",
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Unlimited NZ Landline and On Net Mins",
+                "type": "Voice",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": "Text your friends, its unlimited!!",
+                "name": "Unlimited texts (NZ only)",
+                "type": "SMS",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Endless data (40GB)",
+                "type": "Data",
+              },
+            ],
+            "id": "dollar79_99_endless_mobile_plan",
+            "images": Array [],
+            "name": "$79.99 Endless Mobile Plan",
+            "price": Object {
+              "basePrice": 79.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": null,
+                "longDescription": null,
+                "name": "Eligible for group discount",
+                "productType": "MARKETING",
+                "shortDescription": "",
+              },
+              Object {
+                "iconUrl": "https://cdn-icons-png.flaticon.com/512/2111/2111624.png",
+                "longDescription": "Browse and stream while enjoying Spotify on us!",
+                "name": "Included Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Browse and stream while enjoying Spotify on us!",
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+                "name": "Visual Voicemail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Visual Voicemail",
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": null,
+                "name": "Save up to 35% on multiple plans",
+                "productType": "DEAL",
+                "shortDescription": "",
+              },
+            ],
+          },
+          Object {
+            "description": "$99.99 Endless Group Plan",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Roaming data",
+                "type": "Roaming",
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Unlimited NZ Landline and On Net Mins",
+                "type": "Voice",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": "Text your friends, its unlimited!!",
+                "name": "Unlimited texts (NZ only)",
+                "type": "SMS",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Endless data (100GB)",
+                "type": "Data",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Total Data Used",
+                "type": "Data",
+              },
+            ],
+            "id": "dollar99_99_endless_group_plan",
+            "images": Array [],
+            "name": "$99.99 Endless Group Plan",
+            "price": Object {
+              "basePrice": 99.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": "https://cdn-icons-png.flaticon.com/512/2111/2111624.png",
+                "longDescription": "Browse and stream while enjoying Spotify on us!",
+                "name": "Included Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Browse and stream while enjoying Spotify on us!",
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+                "name": "Visual Voicemail",
+                "productType": "DEAL",
+                "shortDescription": "Visual Voicemail",
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": null,
+                "name": "Eligible for group discount",
+                "productType": "MARKETING",
+                "shortDescription": "",
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": null,
+                "name": "Save up to 35% on multiple plans",
+                "productType": "DEAL",
+                "shortDescription": "",
+              },
+            ],
+          },
+          Object {
+            "description": "$59.99 Endless Mobile Plan",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Roaming data",
+                "type": "Roaming",
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Unlimited NZ Landline and On Net Mins",
+                "type": "Voice",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": "Text your friends, its unlimited!!",
+                "name": "Unlimited texts (NZ only)",
+                "type": "SMS",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Endless data (10GB)",
+                "type": "Data",
+              },
+            ],
+            "id": "dollar59_99_endless_mobile_plan",
+            "images": Array [],
+            "name": "$59.99 Endless Mobile Plan",
+            "price": Object {
+              "basePrice": 59.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": "https://cdn-icons-png.flaticon.com/512/2111/2111624.png",
+                "longDescription": "If you're on an eligible mobile plan that gives you 50% off Spotify Premium, or if you want to buy Spotify Premium for $14.99 per month, go to My Mobile > buy Extras or pack. Spotify Premium is included in selected mobile plans. To find out more, select View Plans.",
+                "name": "Half price Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Enjoy non-stop music with Spotify Premium so you can access millions of songs ad-free and on-demand",
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+                "name": "Visual Voicemail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Visual Voicemail",
+              },
+            ],
+          },
+          Object {
+            "description": "$39.99 3GB Rollover",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Roaming data",
+                "type": "Roaming",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Overage Data",
+                "type": "Data",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": "Really great for video streaming",
+                "name": "3GB Rollover data",
+                "type": "Data",
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Rollover Voice",
+                "type": "Voice",
+              },
+              Object {
+                "iconUrl": "unlimited_small",
+                "longDescription": null,
+                "name": "Rollover Data",
+                "type": "Rollover Data",
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": "Chat for a really long time",
+                "name": "300 Rollover NZ mins",
+                "type": "Voice",
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": "Text your friends, its unlimited!!",
+                "name": "Unlimited texts (NZ only)",
+                "type": "SMS",
+              },
+            ],
+            "id": "dollar_39_endless_mobile_plan-of_luqnb",
+            "images": Array [],
+            "name": "$39.99 3GB Rollover",
+            "price": Object {
+              "basePrice": 39.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": "https://cdn-icons-png.flaticon.com/512/2111/2111624.png",
+                "longDescription": "If you're on an eligible mobile plan that gives you 50% off Spotify Premium, or if you want to buy Spotify Premium for $14.99 per month, go to My Mobile > buy Extras or pack. Spotify Premium is included in selected mobile plans. To find out more, select View Plans.",
+                "name": "Half price Spotify Premium",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Enjoy non-stop music with Spotify Premium so you can access millions of songs ad-free and on-demand",
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+                "name": "Visual Voicemail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Visual Voicemail",
+              },
+            ],
+          },
+          Object {
+            "description": "Smart Plan",
+            "entitlements": Array [],
+            "id": "wearableplan_smart-of_oh42p",
+            "images": Array [],
+            "name": "Smart Plan",
+            "price": Object {
+              "basePrice": 7.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [],
+          },
+          Object {
+            "description": "$12.99 One Number Wearable Plan",
+            "entitlements": Array [],
+            "id": "one_number_wearbale_plan",
+            "images": Array [],
+            "name": "$12.99 One Number Wearable Plan",
+            "price": Object {
+              "basePrice": 12.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [],
+          },
+          Object {
+            "description": "$14.99 Endless Wearable Plan",
+            "entitlements": Array [],
+            "id": "endless_wearable_plan",
+            "images": Array [],
+            "name": "$14.99 Endless Wearable Plan",
+            "price": Object {
+              "basePrice": 14.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [],
+          },
+          Object {
+            "description": "$25 Rollover Plan(Gold Talker)",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Roaming data",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "500 NZ Text",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Unlimited NZ Landline and On Net Mins",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Rollover Data",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "500MB NZ Rollover Data",
+                "type": null,
+              },
+            ],
+            "id": "gold_talker",
+            "images": Array [],
+            "name": "$25 Rollover Plan",
+            "price": Object {
+              "basePrice": 25,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": null,
+                "longDescription": null,
+                "name": "Eligible for group discount",
+                "productType": "MARKETING",
+                "shortDescription": "",
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": "\\"Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.\\"",
+                "name": "Visual Voicemail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Visual Voicemail",
+              },
+            ],
+          },
+          Object {
+            "description": "$15 Rollover Plan(Gold Basic)",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "100 On net minutes",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "100MB NZ Rollover Data",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Roaming data",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": "",
+                "name": "Unlimited NZ Landline and On Net Mins",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "100 SMS",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Rollover Data",
+                "type": null,
+              },
+              Object {
+                "iconUrl": "check_small",
+                "longDescription": null,
+                "name": "Rollover Voice",
+                "type": null,
+              },
+            ],
+            "id": "gold_basic",
+            "images": Array [],
+            "name": "$15 Rollover Plan",
+            "price": Object {
+              "basePrice": 15,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+              "priceType": "Recurring",
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": null,
+                "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+                "name": "Visual Voicemail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Visual Voicemail",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+}
+`;

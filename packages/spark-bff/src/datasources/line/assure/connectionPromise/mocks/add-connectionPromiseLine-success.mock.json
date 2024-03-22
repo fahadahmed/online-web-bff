@@ -1,0 +1,15 @@
+{
+  "connectionPromiseLines": [
+    {
+      "connectionPromiseId": "1-2DPDH4UQ",
+      "lineNumber": "0219876543",
+      "primaryLine": true
+    }
+  ],
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ]
+}

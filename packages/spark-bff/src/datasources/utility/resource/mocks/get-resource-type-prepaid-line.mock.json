@@ -1,0 +1,16 @@
+{
+  "isNumberIdentified": true,
+  "lineInfo": {
+    "lineType": "MOBILE_PREPAID",
+    "isLineAccessAllowed": true,
+    "isAccountAccessAllowed": true,
+    "isPasswordProtected": true,
+    "hasBusinessName": false
+  },
+  "messages": [
+    {
+      "message": "Resource identification completed Successfully.",
+      "code": 2000
+    }
+  ]
+}

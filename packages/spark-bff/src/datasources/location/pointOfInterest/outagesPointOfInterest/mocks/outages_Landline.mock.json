@@ -1,0 +1,58 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "outages": [
+    {
+      "displayName": "DSS Central Outage",
+      "outageType": "OUTAGE",
+      "category": "unplanned_outage",
+      "serviceAffected": "LANDLINE",
+      "status": "CURRENT",
+      "description": "3G/4G Landline customers in Auckland Central may be experiencing a loss of Voice, Data & SMS services.The outage started 2nd August 2019 at 18:33. Our techs are working on it and we'll show a green icon on this map when it's back up and running.",
+      "longitude": 175.7699432,
+      "latitude": -36.8477364,
+      "startDateTime": "2019-08-02T18:33:00+12:00",
+      "endDateTime": null
+    },
+    {
+      "displayName": "Fuli Range Outage",
+      "outageType": "OUTAGE",
+      "category": "unplanned_outage",
+      "serviceAffected": "LANDLINE",
+      "status": "CURRENT",
+      "description": "3G/4G Landline customers in Braeburn Range may be experiencing a loss of Voice, Data & SMS services.The outage started 6th August 2019 at 11:34. Our techs are working on it and we'll show a green icon on this map when it's back up and running.",
+      "longitude": 171.4989624,
+      "latitude": -41.729557,
+      "startDateTime": "2019-08-06T11:34:00+12:00",
+      "endDateTime": null
+    },
+    {
+      "displayName": "Milo flat Outage",
+      "outageType": "MAINTENANCE",
+      "category": "unplanned_outage",
+      "serviceAffected": "LANDLINE",
+      "status": "CURRENT",
+      "description": "Customers in the dairy flat may be experiencing a loss of landline services. The outage started 3rd Febuary 2020 at 21:33.We have our techs working on it now and when it's back up and running this message will be removed.",
+      "longitude": 174.6645639,
+      "latitude": -36.6857297,
+      "startDateTime": "2020-02-03T21:33:42+13:00",
+      "endDateTime": null
+    },
+    {
+      "displayName": "Rosa Outage",
+      "outageType": "MAINTENANCE",
+      "category": "unplanned_outage",
+      "serviceAffected": "LANDLINE",
+      "status": "CURRENT",
+      "description": "Customers in albany may be experiencing a loss of landline service.The outage started 3rd Febuary 2020 at 21:33. Our techs are working on it and we'll show a green icon on this map when it's back up and running.",
+      "longitude": 174.6957398,
+      "latitude": -36.7250023,
+      "startDateTime": "2020-02-03T21:33:42+13:00",
+      "endDateTime": null
+    }
+  ]
+}

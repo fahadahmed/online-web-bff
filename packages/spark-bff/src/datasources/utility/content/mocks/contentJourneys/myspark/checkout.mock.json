@@ -1,0 +1,123 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/checkout",
+  "site": "spark",
+  "tags": ["mpa:"],
+  "title": "checkout",
+  "description": "checkout",
+  "fields": [
+    {
+      "fieldKey": "checkout.setup.simCardType.infoLayer",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6 className='test'>What type of SIM card do you need.</h6><Br><b>Trio SIM</b><br><br><p>If you choose the Trio SIM card, it will be shipped to the address provided during checkout. Trio SIM cards are standard cards that let you pop out the micro or nano size. Choose the size that fits your device’s SIM card tray. Keep all the pieces so you can swap sizes later if needed.</p><br><b>eSIM</b><br><br><p>If you choose an eSIM, you can activate it by using a QR code. We’ll email you the QR code and instructions after you complete your order. See eligible devices below.*</p><br><b>Handsets:</b><p>Apple: iPhone 11 and later</p><p> Samsung: Galaxy Fold, Z Flip, S20 and later</p><p>Huawei: P40 Pro and later</p><br><b>Tablets:</b><p>Apple: iPad Pro (11-inch) and later, iPad Pro (3rd gen, 12.9-inch) and later, iPad Air (3rd gen) and later, iPad (7th gen) and later, iPad Mini (5th gen) and later</p><br><p>*We can’t guarantee an eSIM will work on devices not bought from Spark.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.setup.simNumber.infoLayer",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>How to find your SIM Number</h6><br><b>Your SIM number has between 16 to 22 digits depending on the type of SIM, and the provider.</b><br><ol><li>Go into Settings on your mobile phone</li><li>Go to General, then About or scroll to About phone</li><li>Scroll down to ICCID. This is your SIM number</li></ol><br><h6>How to find your eSIM number</h6><br><ol><li>Go into Settings on your mobile phone</li><li>Go to General, then About or scroll to About phone</li><li>Scroll down to ICCID (for iPhones), and IMEI (for Androids). This is your SIM number</li></ol>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.setup.accountNumber.infoLayer",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>How to find your account number</h6><br><ul><li>On your bill, you can find your account number in the top right hand corner</li><br><li>Sign in to the Spark app and your account number is at the top right of the My plan details screen.</li><br><li>Sign in to MySpark and your account number is at the top right corner of the Welcome page</li><br><li>If you can't find it, phone Service Express on 0800 000 000 or use Live Chat to request your account number</li></ul>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.account.description",
+      "fieldType": "HEADING",
+      "fieldValue": "<p>We require a few more details from you. This is so we can set up your Spark account and process your payment.</p><br><p>We always respect the use of your personal information which is held in accordance with our <a href='/help/other/about-your-privacy-with-spark/'> Privacy Policy </a></p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.account.personalDetails.description",
+      "fieldType": "HEADING",
+      "fieldValue": "<p>Please ensure that your personal details match the details on your chosen ID.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.account.driverLicence.infoLayer",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>Your NZ driver licence</h6><br><b>You will find the driver licence version number on the front of your driver licence, and the expiry date on the back of your driver licence.</b>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.account.nzPassport.infoLayer",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>Your NZ passport</h6><br><b>You will find the expiry date and passport type in the first page of your passport. </b>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.account.internationalPassport.infoLayer",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>International passport</h6><br><b>You will find the expiry date and passport type in the first page of your passport. </b>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.account.creditHistory.description",
+      "fieldType": "HEADING",
+      "fieldValue": "<p>The more information you can provide, the more accurate your credit check will be.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.account.footnote",
+      "fieldType": "HEADING",
+      "fieldValue": "<div><span>Your order will be subject to the successful creation of this account. You will be advised of this once you have placed your order. If any further information is required, we’ll be in contact.<span></div>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.delivery.courier.description",
+      "fieldType": "HEADING",
+      "fieldValue": "<b>Some things to keep in mind:</b><br><br><p>Delivered by CourierPost. A signature will be required.</p><br><p>Rural addresses can take up to 10 working days.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.delivery.clickAndCollect.description",
+      "fieldValue": "<b>Some things to keep in mind:</b><br><br><p>You will need to provide an ID when collecting your item(s).</p><br><p>We accept:</p><ul><li>New Zealand driver licence</li><li>Passport</li><li>18+ Card\"</li>",
+      "fieldType": "HEADING",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.delivery.description",
+      "fieldType": "HEADING",
+      "fieldValue": "<p>Choose how you want your items delivered.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.delivery.address.infoLayer",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>If you can’t find your address, try the following:</h6><br><ol><li>Start by entering your street number and name.<br><br><b>For a street address: </b><br><br><b>123 Mount Test Road...</b><br><br><b>For apartments or flats: </b><br><br><b>2/123 Mount Test Road...</b><br><br><b>123A Mount Test Road...</b><br><br><b>2b/123 Mount Test Road...</b><br><br><b>For rural addresses: </b><br><br><b>2134 Mount Test Road, RD1...</b></li><li>Expand abbreviations like 'Mount' rather than 'Mt'.</li><br><li>If your address is a range (e.g. 22-24 Smith St) search using just the lower number in the range.</li><br><li>If you’re searching for an address which has the same street name as multiple other suburbs across New Zealand (e.g. Queen St), type the suburb name into the search bar along with the address (e.g. 50 Queen St, Dunedin) and you should find it.</li><br><li>Note that you cannot search with a level number (for an apartment.) Search with the street number, and you’ll find the address.</li><br><li>Check your spelling.</li><br><li>Contact us via <a href='#' onclick='javascript:gwc.getChatBot(); return false;'> Chat with us </a></li></ol>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.review.headernote",
+      "fieldType": "HEADING",
+      "fieldValue": "<p>Below is a summary of your items and total costs. View and change any details by expanding the sections above.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.review.footnote",
+      "fieldType": "HEADING",
+      "fieldValue": "<span>All the payments for this order will be added to your Spark Bill. Your bill will be emailed to you each month. A paper bill service is available on request for $2.50 per month.</span>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.payment.creditDebitCard.description",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>Credit/debit card</h6><br /><p>All the payments for this order will be added to your Spark Bill. Your bill will be emailed to you each month. A paper bill service is available on request for $2.50 per month.</p>",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "checkout.payment.sparkBill.description",
+      "fieldType": "HEADING",
+      "fieldValue": "<h6>Pay on your Spark account</h6><br /><p>The One-off payment will be put on your next bill.</p>",
+      "fieldUrl": null
+    }
+  ]
+}

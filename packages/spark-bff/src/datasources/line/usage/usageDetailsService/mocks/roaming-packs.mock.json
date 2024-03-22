@@ -1,0 +1,185 @@
+{
+  "line": [
+    {
+      "serviceType": "MOBILE",
+      "balanceManagement": "PREPAID",
+      "connectionNumber": "033227715",
+      "planName": "Smart Prepaid",
+      "offerId": "smartprepaidBPO",
+      "message": {
+        "primary": "You have",
+        "secondary": "``1.6GB left.``",
+        "tertiary": "1.3GB expires in 5 days",
+        "status": "IMPORTANT"
+      },
+      "group": {
+        "id": 123,
+        "profile": null
+      },
+      "usage": [
+        {
+          "priority": 200,
+          "category": "TEXT",
+          "productId": "1-280X6VRB",
+          "productName": "Mobile $79.99 Rollover Plan",
+          "productType": "Offer",
+          "offerId": "mbundle050335",
+          "types": ["BASE_PLAN", "NZ_AUS", "UNSHARED"],
+          "roaming": false,
+          "name": "Unlimited texts",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": { "value": 1, "unit": "TEXT", "bySharer": null },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-22T12:00:00Z",
+          "renewal": null
+        },
+        {
+          "priority": 200,
+          "category": "TALK",
+          "productId": "1-280X6VRB",
+          "productName": "Mobile $79.99 Rollover Plan",
+          "productType": "Offer",
+          "offerId": "mbundle050335",
+          "types": ["BASE_PLAN", "NZ_AUS", "UNSHARED"],
+          "roaming": false,
+          "name": "Unlimited minutes",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": { "value": 100, "unit": "MIN", "bySharer": null },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-22T12:00:00Z",
+          "renewal": null
+        },
+        {
+          "priority": 300,
+          "category": "DATA",
+          "productId": "1-280X6VRB",
+          "productName": "Mobile $79.99 Rollover Plan",
+          "productType": "Offer",
+          "offerId": "mbundle050335",
+          "types": ["BASE_PLAN", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "7.5GB data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": { "value": 7680, "unit": "MB" },
+          "used": { "value": 120.947266, "unit": "MB", "bySharer": null },
+          "remaining": { "value": 7559.052734, "unit": "MB" },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-22T12:00:00Z",
+          "renewal": null
+        },
+        {
+          "priority": 999,
+          "category": "DATA",
+          "productId": "1-280X6VRB",
+          "productName": "Mobile $79.99 Rollover Plan",
+          "productType": "Offer",
+          "offerId": "mbundle050335",
+          "types": ["BASE_PLAN", "CASUAL", "UNSHARED"],
+          "roaming": false,
+          "name": "Data overage MB",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": { "value": 0, "unit": "MB", "bySharer": null },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-22T12:00:00Z",
+          "renewal": null
+        },
+        {
+          "priority": 300,
+          "category": "DATA",
+          "productId": "1-2C6NZ3OH",
+          "productName": "Roaming Data Pack",
+          "productType": "Extra",
+          "offerId": "roamingpack050284",
+          "types": ["EXTRA", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "1GB roaming data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": { "value": 1024, "unit": "MB" },
+          "used": { "value": 412, "unit": "MB", "bySharer": null },
+          "remaining": { "value": 612, "unit": "MB" },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-14T12:00:00Z",
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 300,
+          "category": "TEXT",
+          "productId": "1-2C6NZ3OH",
+          "productName": "Roaming Data Pack",
+          "productType": "Extra",
+          "offerId": "roamingpack050284",
+          "types": ["EXTRA", "ROAMING_TERMINATING", "UNSHARED"],
+          "roaming": true,
+          "name": "100 roaming text",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 100,
+            "unit": "TEXT",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 18,
+            "unit": "TEXT",
+            "bySharer": null
+          },
+          "used": {
+            "value": 82,
+            "unit": "TEXT",
+            "bySharer": null
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-14T12:00:00Z",
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 300,
+          "category": "TALK",
+          "productId": "1-2C6NZ3OH",
+          "productName": "Roaming Data Pack",
+          "productType": "Extra",
+          "offerId": "roamingpack050284",
+          "types": ["EXTRA", "ROAMING_TERMINATING", "UNSHARED"],
+          "roaming": true,
+          "name": "700 mins roaming talk",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 700,
+            "unit": "MIN"
+          },
+          "used": {
+            "value": 16,
+            "unit": "MIN",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 684,
+            "unit": "MIN"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-07-14T12:00:00Z",
+          "renewal": "AutoTopup"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "interval": "MONTHLY",
+  "breakdownType": "ADDITIONAL_PAID",
+  "startDateTime": "2021-07-08T12:00:00Z",
+  "endDateTime": "2021-08-08T11:59:59Z",
+  "unbilled": false,
+  "periodUsage": {
+    "value": 200,
+    "unit": "MIN"
+  },
+  "periodGroupUsage": {
+    "value": 0,
+    "unit": "MIN"
+  },
+  "contributingProducts": [
+    {
+      "offerId": "mbundle050820",
+      "productName": "$59.99 Endless Mobile Plan",
+      "acquisitionDate": "2021-07-08T12:00:00Z",
+      "periodUsage": {
+        "value": 200,
+        "unit": "MIN"
+      },
+      "periodGroupUsage": null,
+      "periodLimit": null,
+      "periodGroupLimit": null,
+      "periodRemaining": null,
+      "periodGroupRemaining": null
+    }
+  ]
+}

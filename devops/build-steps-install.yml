@@ -1,0 +1,19 @@
+steps:
+  - template: install-node-and-yarn-steps-template.yml
+
+  - task: npmAuthenticate@0
+    inputs:
+      workingFile: .npmrc
+    displayName: 'Login to Azure Artifacts NPM'
+
+  - bash: |
+      CKSUM_BEFORE=$(cksum yarn.lock)
+      yarn install
+      CKSUM_AFTER=$(cksum yarn.lock)
+
+      if [[ $CKSUM_BEFORE != $CKSUM_AFTER ]]; then
+        echo "yarn_frozen_lockfile.sh: yarn.lock was modified unexpectedly - terminating"
+        exit 1
+      fi
+    displayName: 'Install dependencies'
+    workingDirectory: $(Build.SourcesDirectory)

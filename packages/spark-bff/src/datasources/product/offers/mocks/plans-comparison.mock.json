@@ -1,0 +1,157 @@
+{
+  "cart": {
+    "cartId": "23a6a542-c65b-4216-b6c7-c528d4627090",
+    "bundles": [
+      {
+        "lineNumber": "0271111111",
+        "id": "47e92b98-d01c-49f8-8b64-ec60b7d4685d",
+        "items": [
+          {
+            "id": "3c7b5de2-788f-4228-9495-966202657398",
+            "productOfferingId": "dollar99_99_endless_group_plan",
+            "externalId": "mbundle050516",
+            "name": "$99.99 Endless Group Plan",
+            "description": "$99.99 Endless Group Plan",
+            "action": "add",
+            "price": {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 99.99,
+              "basePriceExcludingTax": 86.95,
+              "effectivePrice": 69.99,
+              "effectivePriceExcludingTax": 60.86,
+              "taxPercentage": 15,
+              "discount": {
+                "discountType": "Percentage",
+                "appliedValue": 30,
+                "appliedValueExcludingTax": 30,
+                "discountCategory": "MPDDiscount",
+                "discountedValue": 30,
+                "discountedValueExcludingTax": 30,
+                "taxPercentage": 15
+              }
+            }
+          },
+          {
+            "id": "cc6182b1-9350-452f-b4fb-d822dca218c4",
+            "productOfferingId": "dollar59_99_endless_mobile_plan",
+            "externalId": "mbundle050820",
+            "name": "$59.99 Endless Mobile Plan",
+            "description": "$59.99 Endless Mobile Plan",
+            "action": "delete"
+          }
+        ]
+      }
+    ]
+  },
+  "existingPlans": [
+    {
+      "productOfferingId": "dollar79_99_endless_group_plan",
+      "externalId": "mbundle050237",
+      "name": "$79.99 Endless Mobile Plan",
+      "description": "$79.99 Endless Mobile Plan",
+      "action": "keep",
+      "category": ["endless_plan"],
+      "currentPrice": {
+        "priceType": "Recurring",
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 79.99,
+        "basePriceExcludingTax": 69.56,
+        "effectivePrice": 63.99,
+        "effectivePriceExcludingTax": 55.65,
+        "taxPercentage": 15,
+        "discount": {
+          "discountType": "Percentage",
+          "appliedValue": 20,
+          "appliedValueExcludingTax": 20,
+          "discountCategory": "MPDDiscount",
+          "discountedValue": 20,
+          "discountedValueExcludingTax": 16.49,
+          "taxPercentage": 15
+        }
+      },
+      "updatedPrice": {
+        "priceType": "Recurring",
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 79.99,
+        "basePriceExcludingTax": 69.56,
+        "effectivePrice": 55.99,
+        "effectivePriceExcludingTax": 48.69,
+        "taxPercentage": 15,
+        "discount": {
+          "discountType": "Percentage",
+          "appliedValue": 30,
+          "appliedValueExcludingTax": 30,
+          "discountCategory": "MPDDiscount",
+          "discountedValue": 30,
+          "discountedValueExcludingTax": 30,
+          "taxPercentage": 15
+        }
+      }
+    },
+    {
+      "productOfferingId": "dollar79_99_endless_group_plan",
+      "externalId": "mbundle050237",
+      "name": "$79.99 Endless Mobile Plan",
+      "description": "$79.99 Endless Mobile Plan",
+      "action": "keep",
+      "currentPrice": {
+        "priceType": "Recurring",
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 79.99,
+        "basePriceExcludingTax": 69.56,
+        "effectivePrice": 63.99,
+        "effectivePriceExcludingTax": 55.65,
+        "taxPercentage": 15,
+        "discount": {
+          "discountType": "Percentage",
+          "appliedValue": 20,
+          "appliedValueExcludingTax": 20,
+          "discountCategory": "MPDDiscount",
+          "discountedValue": 20,
+          "discountedValueExcludingTax": 16.49,
+          "taxPercentage": 15
+        }
+      },
+      "updatedPrice": {
+        "priceType": "Recurring",
+        "frequency": {
+          "period": "Month",
+          "value": 1
+        },
+        "basePrice": 79.99,
+        "basePriceExcludingTax": 69.56,
+        "effectivePrice": 55.99,
+        "effectivePriceExcludingTax": 48.69,
+        "taxPercentage": 15,
+        "discount": {
+          "discountType": "Percentage",
+          "appliedValue": 30,
+          "appliedValueExcludingTax": 30,
+          "discountCategory": "MPDDiscount",
+          "discountedValue": 30,
+          "discountedValueExcludingTax": 30,
+          "taxPercentage": 15
+        }
+      }
+    }
+  ],
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ]
+}

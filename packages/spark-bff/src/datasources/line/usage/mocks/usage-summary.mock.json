@@ -1,0 +1,1503 @@
+{
+  "line": [
+    {
+      "serviceType": "MOBILE",
+      "balanceManagement": "PREPAID",
+      "connectionNumber": "033227715",
+      "planName": "Smart Prepaid",
+      "offerId": "smartprepaidBPO",
+      "message": {
+        "primary": "You have",
+        "secondary": "``1.6GB left.``",
+        "tertiary": "1.3GB expires in 5 days",
+        "status": "IMPORTANT"
+      },
+      "group": {
+        "id": 123,
+        "shareProfile": "LEADER"
+      },
+      "usage": [
+        {
+          "category": "DATA",
+          "name": "AGGREGATED",
+          "types": ["SOCIALISER"],
+          "unCapped": true,
+          "cap": {
+            "value": 4500,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 1000,
+            "unit": "MB"
+          },
+          "expiry": [
+            {
+              "date": "2021-04-30T11:00:00.000Z",
+              "value": 10,
+              "unit": "GB"
+            }
+          ]
+        },
+        {
+          "category": "DATA",
+          "name": "DATA",
+          "types": ["SOCIALISER"],
+          "unCapped": false,
+          "billingStatus": "ACTIVE",
+          "cap": {
+            "value": 4500,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 1000,
+            "unit": "MB"
+          },
+          "expiry": [
+            {
+              "date": "2021-04-30T11:00:00.000Z",
+              "value": 10,
+              "unit": "GB"
+            }
+          ],
+          "renewal": null
+        },
+        {
+          "priority": null,
+          "category": "DATA",
+          "productId": null,
+          "productName": null,
+          "productType": null,
+          "offerId": null,
+          "types": ["AGGREGATED"],
+          "roaming": false,
+          "name": "AGGREGATED",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 6852,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 6852,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "priority": null,
+          "category": "TALK",
+          "productId": null,
+          "productName": null,
+          "productType": null,
+          "offerId": null,
+          "types": ["AGGREGATED"],
+          "roaming": false,
+          "name": "AGGREGATED",
+          "billingStatus": null,
+          "unCapped": true,
+          "cap": {
+            "value": 700,
+            "unit": "MIN"
+          },
+          "used": {
+            "value": 16,
+            "unit": "MIN",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 684,
+            "unit": "MIN"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": null,
+          "category": "TEXT",
+          "productId": null,
+          "productName": null,
+          "productType": null,
+          "offerId": null,
+          "types": ["AGGREGATED"],
+          "roaming": false,
+          "name": "AGGREGATED",
+          "billingStatus": null,
+          "unCapped": false,
+          "cap": null,
+          "used": {
+            "value": 39,
+            "unit": "TEXT",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 30,
+            "unit": "TEXT"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-04-30T11:00:00.000Z",
+              "value": 10,
+              "unit": "GB"
+            }
+          ],
+          "nextRenewalDate": null,
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "CASUAL", "UNSHARED"],
+          "roaming": false,
+          "name": "10MB of data for $1 a day",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 684,
+            "unit": "MIN"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": null,
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 500,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "Data Stack",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 2500,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 819.187678,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-04-30T18:50:00.000Z",
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "TIERED", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "Mobile Roaming Data Zone 1",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-04-30T18:50:00.000Z",
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "TIERED", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "Mobile Roaming Data Zone 2",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-04-30T18:50:00.000Z",
+          "renewal": null
+        },
+        {
+          "priority": 700,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["BASE_PLAN", "TIERED", "ROAMING", "UNSHARED"],
+          "roaming": true,
+          "name": "Mobile Roaming Data Zone 6",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 1680.812322,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [],
+          "nextRenewalDate": "2021-04-30T18:50:00.000Z",
+          "renewal": null
+        },
+        {
+          "priority": 650,
+          "category": "TALK",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["ROLLOVER", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "Rollover Voice",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": {
+            "value": 500,
+            "unit": "MIN"
+          },
+          "used": {
+            "value": 200,
+            "unit": "MIN",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MIN"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-04-30T18:50:00.000Z",
+              "value": 140,
+              "unit": "MIN"
+            },
+            {
+              "date": "2021-04-29T10:59:59Z",
+              "value": 181,
+              "unit": "MIN"
+            },
+            {
+              "date": "2021-10-30T10:59:59Z",
+              "value": 179,
+              "unit": "MIN"
+            }
+          ],
+          "nextRenewalDate": null,
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 650,
+          "category": "DATA",
+          "productId": "1-KQ9R1AK",
+          "productName": "Smart Prepaid",
+          "productType": "Offer",
+          "offerId": "smartprepaidBPO",
+          "types": ["ROLLOVER", "UNSHARED"],
+          "roaming": false,
+          "name": "Rollover Data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 3584,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 140,
+              "unit": "MB"
+            },
+            {
+              "date": "2021-09-03T11:59:59Z",
+              "value": 181,
+              "unit": "MB"
+            },
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 123,
+              "unit": "MB"
+            },
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 149,
+              "unit": "MB"
+            },
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 199,
+              "unit": "MB"
+            },
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 119,
+              "unit": "MB"
+            },
+            {
+              "date": "2021-09-04T11:59:59Z",
+              "value": 170,
+              "unit": "MB"
+            },
+            {
+              "date": "2021-07-04T11:59:59Z",
+              "value": 17,
+              "unit": "MB"
+            }
+          ],
+          "nextRenewalDate": "2021-04-30T18:50:00.000Z",
+          "renewal": null
+        },
+        {
+          "priority": 300,
+          "category": "DATA",
+          "productId": "1-2FFFVOD1",
+          "productName": "2GB Data Boost",
+          "productType": "Extra",
+          "offerId": "dataextra050783",
+          "types": ["EXTRA", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "2GB data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 2048,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 2048,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-01-06T10:59:59Z",
+              "value": 2048,
+              "unit": "MB"
+            }
+          ],
+          "nextRenewalDate": "2021-01-06T11:00:00Z",
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 200,
+          "category": "TEXT",
+          "productId": "1-2FC1LNCZ",
+          "productName": "$19 Rollover Value Pack",
+          "productType": "VPSpotifyExtra",
+          "offerId": "valuepack050312",
+          "types": ["EXTRA", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "Non-stop texts",
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "cap": null,
+          "used": {
+            "value": 39,
+            "unit": "TEXT",
+            "bySharer": null
+          },
+          "remaining": null,
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2021-04-30T11:00:00.000Z",
+              "value": 10,
+              "unit": "TEXT"
+            }
+          ],
+          "nextRenewalDate": "2020-12-26T11:00:00Z",
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 300,
+          "category": "DATA",
+          "productId": "1-2FC1LNCZ",
+          "productName": "$19 Rollover Value Pack",
+          "productType": "VPSpotifyExtra",
+          "offerId": "valuepack050312",
+          "types": ["EXTRA", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "1.25GB data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 1280,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 1280,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2020-12-26T10:59:59Z",
+              "value": 1280,
+              "unit": "MB"
+            }
+          ],
+          "nextRenewalDate": "2020-12-26T11:00:00Z",
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 300,
+          "category": "TALK",
+          "productId": "1-2FC1LNCZ",
+          "productName": "$19 Rollover Value Pack",
+          "productType": "VPSpotifyExtra",
+          "offerId": "valuepack050312",
+          "types": ["EXTRA", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "200 minutes",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 200,
+            "unit": "MIN"
+          },
+          "used": {
+            "value": 16,
+            "unit": "MIN",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 184,
+            "unit": "MIN"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2020-12-26T10:59:59Z",
+              "value": 200,
+              "unit": "MIN"
+            }
+          ],
+          "nextRenewalDate": "2020-12-26T11:00:00Z",
+          "renewal": "AutoTopup"
+        },
+        {
+          "priority": 250,
+          "category": "DATA",
+          "productId": "1-2FC1LNCZ",
+          "productName": "$19 Rollover Value Pack",
+          "productType": "VPSpotifyExtra",
+          "offerId": "valuepack050312",
+          "types": ["BONUS", "NZ", "UNSHARED"],
+          "roaming": false,
+          "name": "1GB Bonus Data",
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 1024,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 1024,
+            "unit": "MB",
+            "bySharer": null
+          },
+          "remaining": {
+            "value": 0,
+            "unit": "MB"
+          },
+          "tiers": null,
+          "expiry": [
+            {
+              "date": "2020-12-26T10:59:59Z",
+              "value": 1024,
+              "unit": "MB"
+            }
+          ],
+          "nextRenewalDate": "2020-12-26T11:00:00Z",
+          "renewal": "AutoTopup"
+        }
+      ]
+    },
+    {
+      "serviceType": "BROADBAND",
+      "balanceManagement": "POSTPAID",
+      "connectionNumber": "0276404520",
+      "group": {
+        "shareProfile": "sharer",
+        "capUnit": "MB"
+      },
+      "message": {
+        "primary": "Message",
+        "secondary": "Key call-out",
+        "tertiary": "Time to renew/expire"
+      },
+      "usage": [
+        {
+          "category": "DATA",
+          "name": "AGGREGATED",
+          "types": [],
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Rollover Data",
+          "cap": {
+            "value": 3.5,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 3.5,
+            "unit": "GB"
+          },
+          "expiry": {
+            "date": "2020-02-09T11:00:00.000Z",
+            "value": 65,
+            "unit": "MB"
+          },
+          "nextRenewalDate": "2020-02-09T11:00:00.000Z"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "Bonus Data 1GB - 12 Months",
+          "offerId": "bonusdata050282",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Bonus Data",
+          "cap": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "renewal": "AutoTopup"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "name": "Rollover Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "billingStatus": "ACTIVE",
+          "cap": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0.8,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 3.2,
+            "unit": "GB"
+          },
+          "expires": {
+            "date": "2020-02-09T11:00:00.000Z",
+            "value": 4,
+            "unit": "GB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "9719_DATA",
+          "productName": "Unplan Entertainment Fibre 100 with Landline 12 months",
+          "offerId": "bvbundle050558",
+          "name": "Tiered Unlimited Data",
+          "types": ["BASE_PLAN", "TIERED"],
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "used": {
+            "value": 811.4,
+            "unit": "GB"
+          }
+        },
+        {
+          "category": "TALK",
+          "name": "AGGREGATED",
+          "unCapped": true,
+          "types": {},
+          "used": {
+            "value": 89,
+            "unit": "MIN"
+          }
+        },
+        {
+          "category": "TALK",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "name": "Unlimited Talk",
+          "types": ["BASE_PLAN", "CASUAL"],
+          "unCapped": true,
+          "used": {
+            "value": 89,
+            "unit": "MIN"
+          },
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "category": "TEXT",
+          "name": "AGGREGATED",
+          "types": [],
+          "unCapped": true,
+          "used": {
+            "value": 112,
+            "unit": "TEXT"
+          }
+        },
+        {
+          "category": "TEXT",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Unlimited Texts",
+          "roaming": false,
+          "unCapped": true,
+          "used": {
+            "value": 112,
+            "unit": "TEXT"
+          },
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "Bonus Data 1GB - 12 Months",
+          "offerId": "bonusdata050282",
+          "name": "1GB Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "roaming": false,
+          "billingStatus": "PENDING_FIRST_USE",
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "24911_M_DATA_4GB_ACCOUNT",
+          "offerId": "bonusdata050282",
+          "name": "4GB Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "roaming": false,
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 1500,
+            "unit": "MB",
+            "bySharer": "800"
+          },
+          "remaining": {
+            "value": 2596,
+            "unit": "MB"
+          }
+        }
+      ]
+    },
+    {
+      "serviceType": "BROADBAND",
+      "balanceManagement": "POSTPAID",
+      "connectionNumber": "0211615249",
+      "message": {
+        "primary": "Enjoy Unlimited Freedom",
+        "secondary": "2.03GB used.",
+        "tertiary": "Expires in 36 hours",
+        "status": "IMPORTANT"
+      },
+      "usage": [
+        {
+          "category": "DATA",
+          "name": "AGGREGATED",
+          "types": [],
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Rollover Data",
+          "cap": {
+            "value": 3.5,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 3.5,
+            "unit": "GB"
+          },
+          "expiry": {
+            "date": "2020-02-09T11:00:00.000Z",
+            "value": 65,
+            "unit": "MB"
+          },
+          "nextRenewalDate": "2020-02-09T11:00:00.000Z"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "Bonus Data 1GB - 12 Months",
+          "offerId": "bonusdata050282",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Bonus Data",
+          "cap": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "renewal": "AutoTopup"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "name": "Rollover Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "billingStatus": "ACTIVE",
+          "cap": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0.8,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 3.2,
+            "unit": "GB"
+          },
+          "expires": {
+            "date": "2020-02-09T11:00:00.000Z",
+            "value": 4,
+            "unit": "GB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "9719_DATA",
+          "productName": "Unplan Entertainment Fibre 100 with Landline 12 months",
+          "offerId": "bvbundle050558",
+          "name": "Tiered Unlimited Data",
+          "types": ["BASE_PLAN", "TIERED"],
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "used": {
+            "value": 811.4,
+            "unit": "GB"
+          }
+        },
+        {
+          "category": "TALK",
+          "name": "AGGREGATED",
+          "unCapped": true,
+          "types": {},
+          "used": {
+            "value": 89,
+            "unit": "MIN"
+          }
+        },
+        {
+          "category": "TALK",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "name": "Unlimited Talk",
+          "types": ["BASE_PLAN", "CASUAL"],
+          "unCapped": true,
+          "used": {
+            "value": 89,
+            "unit": "MIN"
+          },
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "category": "TEXT",
+          "name": "AGGREGATED",
+          "types": [],
+          "unCapped": true,
+          "used": {
+            "value": 112,
+            "unit": "TEXT"
+          }
+        },
+        {
+          "category": "TEXT",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Unlimited Texts",
+          "roaming": false,
+          "unCapped": true,
+          "used": {
+            "value": 112,
+            "unit": "TEXT"
+          },
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "Bonus Data 1GB - 12 Months",
+          "offerId": "bonusdata050282",
+          "name": "1GB Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "roaming": false,
+          "billingStatus": "PENDING_FIRST_USE",
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "24911_M_DATA_4GB_ACCOUNT",
+          "offerId": "bonusdata050282",
+          "name": "4GB Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "roaming": false,
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 1500,
+            "unit": "MB",
+            "bySharer": "800"
+          },
+          "remaining": {
+            "value": 2596,
+            "unit": "MB"
+          }
+        }
+      ]
+    },
+
+    {
+      "serviceType": "MOBILE",
+      "balanceManagement": "POSTPAID",
+      "connectionNumber": "0273215879",
+      "message": {
+        "primary": "Enjoy Unlimited Freedom",
+        "secondary": "2.03GB used.",
+        "tertiary": "Expires in 36 hours"
+      },
+      "usage": [
+        {
+          "category": "DATA",
+          "name": "AGGREGATED",
+          "types": [],
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Rollover Data",
+          "cap": {
+            "value": 3.5,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 3.5,
+            "unit": "GB"
+          },
+          "expiry": {
+            "date": "2020-02-09T11:00:00.000Z",
+            "value": 65,
+            "unit": "MB"
+          },
+          "nextRenewalDate": "2020-02-09T11:00:00.000Z"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "Bonus Data 1GB - 12 Months",
+          "offerId": "bonusdata050282",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Bonus Data",
+          "cap": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "renewal": "autoRenew"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "name": "Rollover Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "billingStatus": "ACTIVE",
+          "cap": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0.8,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 3.2,
+            "unit": "GB"
+          },
+          "expires": {
+            "date": "2020-02-09T11:00:00.000Z",
+            "value": 4,
+            "unit": "GB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "9719_DATA",
+          "productName": "Unplan Entertainment Fibre 100 with Landline 12 months",
+          "offerId": "bvbundle050558",
+          "name": "Tiered Unlimited Data",
+          "types": ["BASE_PLAN", "TIERED"],
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "used": {
+            "value": 811.4,
+            "unit": "GB"
+          }
+        },
+        {
+          "category": "TALK",
+          "name": "AGGREGATED",
+          "unCapped": true,
+          "types": {},
+          "used": {
+            "value": 89,
+            "unit": "MIN"
+          }
+        },
+        {
+          "category": "TALK",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "name": "Unlimited Talk",
+          "types": ["BASE_PLAN", "CASUAL"],
+          "unCapped": true,
+          "used": {
+            "value": 89,
+            "unit": "MIN"
+          },
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "category": "TEXT",
+          "name": "AGGREGATED",
+          "types": [],
+          "unCapped": true,
+          "used": {
+            "value": 112,
+            "unit": "TEXT"
+          }
+        },
+        {
+          "category": "TEXT",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Unlimited Texts",
+          "roaming": false,
+          "unCapped": true,
+          "used": {
+            "value": 112,
+            "unit": "TEXT"
+          },
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "Bonus Data 1GB - 12 Months",
+          "offerId": "bonusdata050282",
+          "name": "1GB Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "roaming": false,
+          "billingStatus": "PENDING_FIRST_USE",
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "24911_M_DATA_4GB_ACCOUNT",
+          "offerId": "bonusdata050282",
+          "name": "4GB Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "roaming": false,
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 1500,
+            "unit": "MB",
+            "bySharer": "800"
+          },
+          "remaining": {
+            "value": 2596,
+            "unit": "MB"
+          }
+        }
+      ]
+    },
+    {
+      "serviceType": "MOBILE",
+      "balanceManagement": "POSTPAID",
+      "connectionNumber": "0272651690",
+      "message": {
+        "primary": "Enjoy Unlimited Freedom",
+        "secondary": "2.03GB used.",
+        "tertiary": "Expires in 36 hours"
+      },
+      "group": {
+        "id": 123,
+        "shareProfile": null
+      },
+      "usage": [
+        {
+          "category": "DATA",
+          "name": "AGGREGATED",
+          "types": [],
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Rollover Data",
+          "cap": {
+            "value": 3.5,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 3.5,
+            "unit": "GB"
+          },
+          "expiry": {
+            "date": "2020-02-09T11:00:00.000Z",
+            "value": 65,
+            "unit": "MB"
+          },
+          "nextRenewalDate": "2020-02-09T11:00:00.000Z"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "Bonus Data 1GB - 12 Months",
+          "offerId": "bonusdata050282",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Bonus Data",
+          "cap": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "renewal": "autoRenew"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "name": "Rollover Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "billingStatus": "ACTIVE",
+          "cap": {
+            "value": 4,
+            "unit": "GB"
+          },
+          "used": {
+            "value": 0.8,
+            "unit": "GB"
+          },
+          "remaining": {
+            "value": 3.2,
+            "unit": "GB"
+          },
+          "expires": {
+            "date": "2020-02-09T11:00:00.000Z",
+            "value": 4,
+            "unit": "GB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "9719_DATA",
+          "productName": "Unplan Entertainment Fibre 100 with Landline 12 months",
+          "offerId": "bvbundle050558",
+          "name": "Tiered Unlimited Data",
+          "types": ["BASE_PLAN", "TIERED"],
+          "billingStatus": "ACTIVE",
+          "unCapped": true,
+          "used": {
+            "value": 811.4,
+            "unit": "GB"
+          }
+        },
+        {
+          "category": "TALK",
+          "name": "AGGREGATED",
+          "unCapped": true,
+          "types": {},
+          "used": {
+            "value": 89,
+            "unit": "MIN"
+          }
+        },
+        {
+          "category": "TALK",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "name": "Unlimited Talk",
+          "types": ["BASE_PLAN", "CASUAL"],
+          "unCapped": true,
+          "used": {
+            "value": 89,
+            "unit": "MIN"
+          },
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "category": "TEXT",
+          "name": "AGGREGATED",
+          "types": [],
+          "unCapped": true,
+          "used": {
+            "value": 112,
+            "unit": "TEXT"
+          }
+        },
+        {
+          "category": "TEXT",
+          "productId": "1-2CDTNHT4",
+          "productName": "Mobile $59 Rollover Plan",
+          "offerId": "mbundle050292",
+          "types": ["BASE_PLAN", "NZ"],
+          "name": "Unlimited Texts",
+          "roaming": false,
+          "unCapped": true,
+          "used": {
+            "value": 112,
+            "unit": "TEXT"
+          },
+          "renewal": "gauranteedRenewal"
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "Bonus Data 1GB - 12 Months",
+          "offerId": "bonusdata050282",
+          "name": "1GB Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "roaming": false,
+          "billingStatus": "PENDING_FIRST_USE",
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 500,
+            "unit": "MB"
+          }
+        },
+        {
+          "category": "DATA",
+          "productId": "1-2AIQ4AQY",
+          "productName": "24911_M_DATA_4GB_ACCOUNT",
+          "offerId": "bonusdata050282",
+          "name": "4GB Data",
+          "types": ["BASE_PLAN", "NZ"],
+          "roaming": false,
+          "billingStatus": "ACTIVE",
+          "unCapped": false,
+          "cap": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 1500,
+            "unit": "MB",
+            "bySharer": "800"
+          },
+          "remaining": {
+            "value": 2596,
+            "unit": "MB"
+          }
+        }
+      ]
+    },
+    {
+      "serviceType": "MOBILE",
+      "balanceManagement": "PREPAID",
+      "connectionNumber": "033227716",
+      "planName": "Smart Prepaid",
+      "offerId": "smartprepaidBPO",
+      "message": {
+        "primary": "You have",
+        "secondary": "``1.6GB left.``",
+        "tertiary": "1.3GB expires in 5 days",
+        "status": "IMPORTANT"
+      },
+      "group": {
+        "profile": "Sharer"
+      },
+      "usage": [
+        {
+          "category": "DATA",
+          "name": "AGGREGATED",
+          "types": ["SOCIALISER"],
+          "unCapped": true,
+          "cap": {
+            "value": 4500,
+            "unit": "MB"
+          },
+          "used": {
+            "value": 3500,
+            "unit": "MB"
+          },
+          "remaining": {
+            "value": 1000,
+            "unit": "MB"
+          },
+          "expiry": [
+            {
+              "date": "2021-04-30T11:00:00.000Z",
+              "value": 10,
+              "unit": "GB"
+            }
+          ],
+          "renewal": null
+        }
+      ]
+    }
+  ]
+}

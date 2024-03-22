@@ -1,0 +1,901 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "bundles": [
+    {
+      "offerDetails": [
+        {
+          "id": "dollar79_99_endless_mobile_plan",
+          "name": "$79.99 Endless Mobile Plan",
+          "description": "$79.99 Endless Mobile Plan",
+          "category": [
+            {
+              "id": "endless_plan"
+            },
+            {
+              "id": "multi_product_discount"
+            },
+            {
+              "id": "spotify_individual_free_price"
+            },
+            {
+              "id": "mobile_spark_sport"
+            },
+            {
+              "id": "mobile_neon"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 79.99,
+            "basePriceExcludingTax": 68,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [
+            {
+              "name": "Roaming data",
+              "shortDescription": "Roaming data",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 5,
+              "type": "Roaming"
+            },
+            {
+              "name": "Unlimited NZ Landline and On Net Mins",
+              "shortDescription": "Unlimited NZ Landline + Unlimited Spark to Spark Mobile Calling",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2,
+              "type": "Voice"
+            },
+            {
+              "name": "Unlimited texts (NZ only)",
+              "shortDescription": "Text your friends in NZ",
+              "longDescription": "Text your friends, its unlimited!!",
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 3,
+              "type": "SMS"
+            },
+            {
+              "name": "Endless data (40GB)",
+              "shortDescription": "Endless data",
+              "longDescription": null,
+              "quantity": "10",
+              "iconUrl": "unlimited_small",
+              "sortOrder": 1,
+              "type": "Data"
+            }
+          ],
+          "promotions": [
+            {
+              "name": "Eligible for group discount",
+              "productType": "MARKETING",
+              "shortDescription": "",
+              "longDescription": null,
+              "sortOrder": 1
+            },
+            {
+              "name": "Included Spotify Premium",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Browse and stream while enjoying Spotify on us!",
+              "longDescription": "Browse and stream while enjoying Spotify on us!",
+              "sortOrder": 1,
+              "iconUrl": "https://cdn-icons-png.flaticon.com/512/2111/2111624.png"
+            },
+            {
+              "name": "Visual Voicemail",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Visual Voicemail",
+              "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+              "sortOrder": 2
+            },
+            {
+              "name": "Save up to 35% on multiple plans",
+              "productType": "DEAL",
+              "shortDescription": "",
+              "longDescription": null,
+              "sortOrder": 1
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "dollar99_99_endless_group_plan",
+          "name": "$99.99 Endless Group Plan",
+          "description": "$99.99 Endless Group Plan",
+          "category": [
+            {
+              "id": "endless_plan"
+            },
+            {
+              "id": "multi_product_discount"
+            },
+            {
+              "id": "spotify_individual_free_price"
+            },
+            {
+              "id": "mobile_neon"
+            },
+            {
+              "id": "mobile_spark_sport"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 99.99,
+            "basePriceExcludingTax": 85,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [
+            {
+              "name": "Roaming data",
+              "shortDescription": "Roaming data",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 5,
+              "type": "Roaming"
+            },
+            {
+              "name": "Unlimited NZ Landline and On Net Mins",
+              "shortDescription": "Unlimited NZ Landline + Unlimited Spark to Spark Mobile Calling",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2,
+              "type": "Voice"
+            },
+            {
+              "name": "Unlimited texts (NZ only)",
+              "shortDescription": "Text your friends in NZ",
+              "longDescription": "Text your friends, its unlimited!!",
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 3,
+              "type": "SMS"
+            },
+            {
+              "name": "Endless data (100GB)",
+              "shortDescription": "Endless data",
+              "longDescription": null,
+              "quantity": "10",
+              "iconUrl": "unlimited_small",
+              "sortOrder": 1,
+              "type": "Data"
+            },
+            {
+              "name": "Total Data Used",
+              "shortDescription": null,
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 4,
+              "type": "Data"
+            }
+          ],
+          "promotions": [
+            {
+              "name": "Included Spotify Premium",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Browse and stream while enjoying Spotify on us!",
+              "longDescription": "Browse and stream while enjoying Spotify on us!",
+              "sortOrder": 1,
+              "iconUrl": "https://cdn-icons-png.flaticon.com/512/2111/2111624.png"
+            },
+            {
+              "name": "Visual Voicemail",
+              "productType": "DEAL",
+              "shortDescription": "Visual Voicemail",
+              "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+              "sortOrder": 2
+            },
+            {
+              "name": "Eligible for group discount",
+              "productType": "MARKETING",
+              "shortDescription": "",
+              "longDescription": null,
+              "sortOrder": null
+            },
+            {
+              "name": "Save up to 35% on multiple plans",
+              "productType": "DEAL",
+              "shortDescription": "",
+              "longDescription": null,
+              "sortOrder": null
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "dollar59_99_endless_mobile_plan",
+          "name": "$59.99 Endless Mobile Plan",
+          "description": "$59.99 Endless Mobile Plan",
+          "category": [
+            {
+              "id": "endless_plan"
+            },
+            {
+              "id": "spotify_individual_half_price"
+            },
+            {
+              "id": "mobile_neon"
+            },
+            {
+              "id": "mobile_spark_sport"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 59.99,
+            "basePriceExcludingTax": 51,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [
+            {
+              "name": "Roaming data",
+              "shortDescription": "Roaming data",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 5,
+              "type": "Roaming"
+            },
+            {
+              "name": "Unlimited NZ Landline and On Net Mins",
+              "shortDescription": "Unlimited NZ Landline + Unlimited Spark to Spark Mobile Calling",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2,
+              "type": "Voice"
+            },
+            {
+              "name": "Unlimited texts (NZ only)",
+              "shortDescription": "Text your friends in NZ",
+              "longDescription": "Text your friends, its unlimited!!",
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 3,
+              "type": "SMS"
+            },
+            {
+              "name": "Endless data (10GB)",
+              "shortDescription": "Endless data",
+              "longDescription": null,
+              "quantity": "10",
+              "iconUrl": "unlimited_small",
+              "sortOrder": 1,
+              "type": "Data"
+            }
+          ],
+          "promotions": [
+            {
+              "name": "Half price Spotify Premium",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Enjoy non-stop music with Spotify Premium so you can access millions of songs ad-free and on-demand",
+              "longDescription": "If you're on an eligible mobile plan that gives you 50% off Spotify Premium, or if you want to buy Spotify Premium for $14.99 per month, go to My Mobile > buy Extras or pack. Spotify Premium is included in selected mobile plans. To find out more, select View Plans.",
+              "sortOrder": 1,
+              "iconUrl": "https://cdn-icons-png.flaticon.com/512/2111/2111624.png"
+            },
+            {
+              "name": "Visual Voicemail",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Visual Voicemail",
+              "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+              "sortOrder": 2
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "dollar_39_endless_mobile_plan-of_luqnb",
+          "name": "$39.99 3GB Rollover",
+          "description": "$39.99 3GB Rollover",
+          "category": [
+            {
+              "id": "rollover_plan"
+            },
+            {
+              "id": "spotify_individual_half_price"
+            },
+            {
+              "id": "mobile_neon"
+            },
+            {
+              "id": "mobile_spark_sport"
+            },
+            {
+              "id": "subscriptions"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 39.99,
+            "basePriceExcludingTax": 34,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [
+            {
+              "name": "Roaming data",
+              "shortDescription": "Roaming data",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 5,
+              "type": "Roaming"
+            },
+            {
+              "name": "Overage Data",
+              "shortDescription": null,
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": 4,
+              "type": "Data"
+            },
+            {
+              "name": "3GB Rollover data",
+              "shortDescription": "Great for video streaming",
+              "longDescription": "Really great for video streaming",
+              "quantity": "3",
+              "iconUrl": "unlimited_small",
+              "sortOrder": 1,
+              "type": "Data"
+            },
+            {
+              "name": "Rollover Voice",
+              "shortDescription": null,
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2,
+              "type": "Voice"
+            },
+            {
+              "name": "Rollover Data",
+              "shortDescription": null,
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "unlimited_small",
+              "sortOrder": null,
+              "type": "Rollover Data"
+            },
+            {
+              "name": "300 Rollover NZ mins",
+              "shortDescription": "Call your friends in NZ",
+              "longDescription": "Chat for a really long time",
+              "quantity": "300",
+              "iconUrl": "check_small",
+              "sortOrder": 2,
+              "type": "Voice"
+            },
+            {
+              "name": "Unlimited texts (NZ only)",
+              "shortDescription": "Text your friends in NZ",
+              "longDescription": "Text your friends, its unlimited!!",
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 3,
+              "type": "SMS"
+            }
+          ],
+          "promotions": [
+            {
+              "name": "Half price Spotify Premium",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Enjoy non-stop music with Spotify Premium so you can access millions of songs ad-free and on-demand",
+              "longDescription": "If you're on an eligible mobile plan that gives you 50% off Spotify Premium, or if you want to buy Spotify Premium for $14.99 per month, go to My Mobile > buy Extras or pack. Spotify Premium is included in selected mobile plans. To find out more, select View Plans.",
+              "sortOrder": 1,
+              "iconUrl": "https://cdn-icons-png.flaticon.com/512/2111/2111624.png"
+            },
+            {
+              "name": "Visual Voicemail",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Visual Voicemail",
+              "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+              "sortOrder": 2
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "wearableplan_smart-of_oh42p",
+          "name": "Smart Plan",
+          "description": "Smart Plan",
+          "category": [
+            {
+              "id": "wearable_plan"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 7.99,
+            "basePriceExcludingTax": 6.8,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [],
+          "promotions": [],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "one_number_wearbale_plan",
+          "name": "$12.99 One Number Wearable Plan",
+          "description": "$12.99 One Number Wearable Plan",
+          "category": [
+            {
+              "id": "wearable_plan"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 12.99,
+            "basePriceExcludingTax": 12.87,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [],
+          "promotions": [],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "endless_wearable_plan",
+          "name": "$14.99 Endless Wearable Plan",
+          "description": "$14.99 Endless Wearable Plan",
+          "category": [
+            {
+              "id": "wearable_plan"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 14.99,
+            "basePriceExcludingTax": 12.75,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [],
+          "promotions": [],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "gold_talker",
+          "name": "$25 Rollover Plan",
+          "description": "$25 Rollover Plan(Gold Talker)",
+          "category": [
+            {
+              "id": "rollover_plan"
+            },
+            {
+              "id": "mobile_spark_sport"
+            },
+            {
+              "id": "mobile_neon"
+            },
+            {
+              "id": "multi_product_discount"
+            },
+            {
+              "id": "spotify_individual_full_price"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 25,
+            "basePriceExcludingTax": 21.25,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [
+            {
+              "name": "Roaming data",
+              "shortDescription": "Roaming data",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 5
+            },
+            {
+              "name": "500 NZ Text",
+              "shortDescription": "500 NZ Text",
+              "longDescription": null,
+              "quantity": "500",
+              "iconUrl": "check_small",
+              "sortOrder": 3
+            },
+            {
+              "name": "Unlimited NZ Landline and On Net Mins",
+              "shortDescription": "Unlimited NZ Landline + Unlimited Spark to Spark Mobile Calling",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2
+            },
+            {
+              "name": "Rollover Data",
+              "shortDescription": "",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": null
+            },
+            {
+              "name": "500MB NZ Rollover Data",
+              "shortDescription": "500MB NZ Rollover Data",
+              "longDescription": null,
+              "quantity": "500",
+              "iconUrl": "check_small",
+              "sortOrder": 3
+            }
+          ],
+          "promotions": [
+            {
+              "name": "Eligible for group discount",
+              "productType": "MARKETING",
+              "shortDescription": "",
+              "longDescription": null,
+              "sortOrder": 1
+            },
+            {
+              "name": "Visual Voicemail",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Visual Voicemail",
+              "longDescription": "\"Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.\"",
+              "sortOrder": 2
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "gold_basic",
+          "name": "$15 Rollover Plan",
+          "description": "$15 Rollover Plan(Gold Basic)",
+          "category": [
+            {
+              "id": "spotify_individual_full_price"
+            },
+            {
+              "id": "mobile_neon"
+            },
+            {
+              "id": "mobile_spark_sport"
+            },
+            {
+              "id": "rollover_plan"
+            }
+          ],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 15,
+            "basePriceExcludingTax": 12.75,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [
+            {
+              "name": "100 On net minutes",
+              "shortDescription": "100 On net minutes",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2
+            },
+            {
+              "name": "100MB NZ Rollover Data",
+              "shortDescription": "",
+              "longDescription": null,
+              "quantity": "100",
+              "iconUrl": "check_small",
+              "sortOrder": 1
+            },
+            {
+              "name": "Roaming data",
+              "shortDescription": "Roaming data",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 5
+            },
+            {
+              "name": "Unlimited NZ Landline and On Net Mins",
+              "shortDescription": "Unlimited NZ Landline + Unlimited Spark to Spark Mobile Calling",
+              "longDescription": "",
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2
+            },
+            {
+              "name": "100 SMS",
+              "shortDescription": "100 SMS",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2
+            },
+            {
+              "name": "Rollover Data",
+              "shortDescription": "",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": null
+            },
+            {
+              "name": "Rollover Voice",
+              "shortDescription": "",
+              "longDescription": null,
+              "quantity": null,
+              "iconUrl": "check_small",
+              "sortOrder": 2
+            }
+          ],
+          "promotions": [
+            {
+              "name": "Visual Voicemail",
+              "productType": "CHARACTERISTIC",
+              "shortDescription": "Visual Voicemail",
+              "longDescription": "Visual Voicemail allows you to hear and read your voicemail messages.  You can still use the traditional voice prompted voicemail. Any change you make in the app, is made in the traditional voicemail.",
+              "sortOrder": 2
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": false,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManagement": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        }
+      ],
+      "id": "d18a3d99-2cb7-47a3-a295-e10b6bc298ca"
+    }
+  ]
+}

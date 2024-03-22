@@ -1,0 +1,716 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "DESL Balance API",
+    "description": "This service is to retrieve balance details",
+    "version": "1.0.0",
+    "x-ibm-name": "balance-service-api"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/finance/balance/account/{accountNumber}": {
+      "get": {
+        "summary": "Returns balance and basic payment information associated with the queried account number",
+        "operationId": "getAccountBalance",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountNumber",
+            "description": "The account number for which balance details are to be retrieved",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d+$",
+            "x-example": "719714501"
+          },
+          {
+            "in": "query",
+            "name": "includeBalanceOnly",
+            "description": "If true, only the basic balance details will be included in the response",
+            "type": "boolean",
+            "required": false,
+            "x-example": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccountBalanceDetails"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        },
+        "tags": ["balance", "oidc", "protected"]
+      }
+    },
+    "/v1/finance/balance/prepaid/{lineNumber}": {
+      "get": {
+        "summary": "Returns balance details associated with the queried prepaid line number",
+        "operationId": "getPrepaidBalance",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lineNumber",
+            "description": "The line number for which balance details are to be retrieved",
+            "type": "string",
+            "required": true,
+            "pattern": "^\\d+$",
+            "x-example": "0272547109"
+          },
+          {
+            "in": "query",
+            "name": "includeBalanceOnly",
+            "description": "If true, only the balance details will be returned in the response",
+            "type": "boolean",
+            "required": false,
+            "x-example": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PrepaidBalanceResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid or access is denied",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "The server failed to process the request properly.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        },
+        "tags": ["balance", "oidc", "protected"]
+      }
+    }
+  },
+  "definitions": {
+    "AccountBalanceDetails": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "accountNumber": {
+              "description": "Account number",
+              "type": "string",
+              "pattern": "^\\d+$",
+              "x-example": "719714501"
+            },
+            "firstName": {
+              "description": "First name",
+              "type": "string",
+              "example": "Jean"
+            },
+            "lastName": {
+              "description": "Last name",
+              "type": "string",
+              "example": "Yang"
+            },
+            "currentBillCycle": {
+              "description": "Current billing cycle of the account",
+              "type": "integer",
+              "example": "12"
+            },
+            "retrievalDate": {
+              "description": "Retrieval date",
+              "type": "string",
+              "format": "date-time",
+              "example": "2020-02-20T00:00:00.000+1300"
+            },
+            "currentBalance": {
+              "description": "Current balance of the account",
+              "$ref": "#/definitions/CurrentBalance"
+            },
+            "lastBill": {
+              "description": "Last bill details",
+              "$ref": "#/definitions/LastBill"
+            },
+            "nextBill": {
+              "description": "Next bill details",
+              "$ref": "#/definitions/NextBill"
+            },
+            "lastPayment": {
+              "description": "Last payment details",
+              "$ref": "#/definitions/LastPayment"
+            },
+            "monthlyPaymentSetup": {
+              "description": "Current monthly payment setup(s) associated with the account",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MonthlyPaymentSetup"
+              }
+            },
+            "summaryMessage": {
+              "description": "Contains messages to be shown in summary page",
+              "$ref": "#/definitions/InfoMessage"
+            },
+            "detailMessage": {
+              "description": "Contains messages to be shown in detail page",
+              "$ref": "#/definitions/InfoMessage"
+            }
+          },
+          "required": ["accountNumber"]
+        }
+      ]
+    },
+    "CurrentBalance": {
+      "type": "object",
+      "properties": {
+        "due": {
+          "description": "Current due amount",
+          "$ref": "#/definitions/Amount"
+        },
+        "overdue": {
+          "description": "Current overdue amount",
+          "$ref": "#/definitions/Amount"
+        }
+      }
+    },
+    "Amount": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "Amount value",
+          "type": "number",
+          "example": "20.50"
+        },
+        "crDr": {
+          "description": "Credit/Debit marker",
+          "enum": ["CR", "DR"],
+          "example": "CR"
+        }
+      }
+    },
+    "LastBill": {
+      "type": "object",
+      "properties": {
+        "billDate": {
+          "description": "Last bill date",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-20T00:00:00.000+1300"
+        },
+        "cycle": {
+          "description": "Billing cycle of the last bill",
+          "type": "integer",
+          "example": "12"
+        },
+        "dueDate": {
+          "description": "Due date of the last bill",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-20T00:00:00.000+1300"
+        },
+        "closingBalance": {
+          "description": "Closing balance in the last bill",
+          "$ref": "#/definitions/Amount"
+        }
+      }
+    },
+    "NextBill": {
+      "type": "object",
+      "properties": {
+        "billDate": {
+          "description": "Next bill date",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-20T00:00:00.000+1300"
+        }
+      }
+    },
+    "LastPayment": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Last payment type",
+          "enum": ["CC", "DD", "UNKNOWN"],
+          "example": "CC"
+        },
+        "method": {
+          "description": "Last payment method",
+          "type": "string",
+          "example": "Direct Debit received"
+        },
+        "paymentDate": {
+          "description": "Last payment date",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-20T00:00:00.000+1300"
+        },
+        "paymentAmount": {
+          "description": "Last payment amount",
+          "$ref": "#/definitions/Amount"
+        },
+        "isInvoiced": {
+          "description": "Flag indicating whether payment was invoiced or not",
+          "type": "boolean"
+        }
+      }
+    },
+    "MonthlyPaymentSetup": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Monthly payment setup type",
+          "enum": ["CC", "DD", "RCC"],
+          "example": "CC"
+        },
+        "description": {
+          "description": "Description of the monthly payment setup type",
+          "type": "string",
+          "example": "Direct Debit"
+        },
+        "status": {
+          "description": "Monthly payment setup status",
+          "type": "string",
+          "example": "Active"
+        },
+        "accountDetails": {
+          "description": "Direct debit/Bank account details",
+          "$ref": "#/definitions/BankAccountDetails"
+        },
+        "creditCard": {
+          "description": "Credit card details",
+          "$ref": "#/definitions/CreditCardDetails"
+        },
+        "upcomingPayment": {
+          "description": "Upcoming payment details",
+          "$ref": "#/definitions/UpcomingPayment"
+        }
+      }
+    },
+    "BankAccountDetails": {
+      "type": "object",
+      "properties": {
+        "bank": {
+          "description": "Bank name",
+          "type": "string",
+          "example": "ANZ Banking Group (NZ) ltd."
+        },
+        "accountName": {
+          "description": "Account holder's name",
+          "type": "string",
+          "example": "David Jones"
+        },
+        "accountNumber": {
+          "description": "Bank account number",
+          "type": "string",
+          "example": "0234533"
+        },
+        "accountNumberSuffix": {
+          "description": "Bank account suffix",
+          "type": "string",
+          "example": "030"
+        },
+        "bankNumber": {
+          "description": "Bank number",
+          "type": "string",
+          "example": "02"
+        },
+        "branchNumber": {
+          "description": "Branch number",
+          "type": "string",
+          "example": "0849"
+        },
+        "branchName": {
+          "description": "Branch name",
+          "type": "string",
+          "example": "Lower Hutt"
+        }
+      }
+    },
+    "CreditCardDetails": {
+      "type": "object",
+      "properties": {
+        "lastFourDigits": {
+          "description": "Last 4 digits of the card",
+          "type": "string",
+          "example": "0023"
+        },
+        "ccId": {
+          "description": "Credit card token of the card",
+          "type": "string",
+          "example": "96912322323230"
+        },
+        "cardName": {
+          "description": "Card name",
+          "type": "string",
+          "example": "David Jones"
+        },
+        "cardIssuer": {
+          "description": "Card issuer",
+          "type": "string",
+          "example": "VISA CARD"
+        },
+        "expiryMonth": {
+          "description": "Card expiry month",
+          "type": "string",
+          "example": "11"
+        },
+        "expiryYear": {
+          "description": "Card expiry year",
+          "type": "string",
+          "example": "2021"
+        }
+      }
+    },
+    "UpcomingPayment": {
+      "type": "object",
+      "properties": {
+        "paymentDate": {
+          "description": "Future dated payment date",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-20T00:00:00.000+1300"
+        },
+        "paymentFrequency": {
+          "description": "Payment frequency",
+          "type": "string",
+          "example": "Monthly"
+        },
+        "paymentMethodId": {
+          "description": "Payment method id",
+          "type": "string",
+          "example": "1-18XP-3824"
+        },
+        "paymentAmount": {
+          "description": "Upcoming payment amount",
+          "$ref": "#/definitions/Amount"
+        }
+      }
+    },
+    "InfoMessage": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "description": "Primary message",
+          "type": "string",
+          "example": "Your balance of ``$259.92`` is due in 7 days."
+        },
+        "secondary": {
+          "description": "Secondary message",
+          "type": "string",
+          "example": "Payment due on ``30 Mar 2020``"
+        },
+        "tertiary": {
+          "description": "Tertiary message",
+          "type": "string",
+          "example": "You may wish to review your automatic payment to ensure the amount is enough to cover monthly costs."
+        },
+        "status": {
+          "description": "Message status",
+          "enum": ["WARNING", "IMPORTANT", "POSITIVE", "NORMAL", "UNAVAILABLE"],
+          "example": "WARNING"
+        },
+        "primaryCta": {
+          "description": "Primary CTA details",
+          "$ref": "#/definitions/CtaDetails"
+        },
+        "secondaryCta": {
+          "description": "Secondary CTA details",
+          "$ref": "#/definitions/CtaDetails"
+        },
+        "otherCtas": {
+          "description": "Other CTA details",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CtaDetails"
+          }
+        }
+      }
+    },
+    "CtaDetails": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "description": "CTA label",
+          "type": "string",
+          "example": "Pay bill"
+        },
+        "code": {
+          "description": "CTA code",
+          "enum": [
+            "PAY_BILL",
+            "SETUP_MONTHLY_PAYMENT",
+            "MANAGE_MONTHLY_PAYMENT",
+            "VIEW_LATEST_BILL",
+            "VIEW_IFP",
+            "ADD_CREDIT",
+            "GET_HELP_WITH_BILL",
+            "VIEW_TRANSACTION_DETAIL",
+            "TOPUP",
+            "MANAGE_AUTO_TOPUP",
+            "SETUP_AUTO_TOPUP",
+            "BUY_PACK_OR_EXTRA",
+            "MANAGE_PACK_OR_EXTRA",
+            "MESSAGE_US"
+          ],
+          "example": "PAY_BILL"
+        }
+      }
+    },
+    "PrepaidBalanceResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "lineNumber": {
+              "description": "Line number",
+              "type": "string",
+              "pattern": "^\\d+$",
+              "x-example": "0272547109"
+            },
+            "balanceDetails": {
+              "description": "Prepaid balance details",
+              "$ref": "#/definitions/PrepaidBalanceDetails"
+            },
+            "summaryMessage": {
+              "description": "Contains messages to be shown in summary page",
+              "$ref": "#/definitions/InfoMessage"
+            },
+            "detailMessage": {
+              "description": "Contains messages to be shown in detail page",
+              "$ref": "#/definitions/InfoMessage"
+            }
+          },
+          "required": ["lineNumber", "balanceDetails"]
+        }
+      ]
+    },
+    "PrepaidBalanceDetails": {
+      "type": "object",
+      "properties": {
+        "balance": {
+          "description": "Balance",
+          "type": "number",
+          "example": "20.50"
+        },
+        "balanceExpiryDate": {
+          "description": "Balance expiry date",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-20T00:00:00.000+1300"
+        },
+        "retrievalDate": {
+          "description": "Retrieval date",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-20T00:00:00.000+1300"
+        },
+        "lastTopUpAmount": {
+          "description": "Last topup amount",
+          "type": "number",
+          "example": "20.50"
+        },
+        "lastTopUpDate": {
+          "description": "Last topup date",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-20T00:00:00.000+1300"
+        }
+      },
+      "required": ["balance"]
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "ST2": {
+        "properties": {
+          "endPoint": "http://iamproxy-st05.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-st2.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST3": {
+        "properties": {
+          "endPoint": "http://iamproxy-st07.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-st3.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST4": {
+        "properties": {
+          "endPoint": "http://iamproxy-st06.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-st4.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://balance-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

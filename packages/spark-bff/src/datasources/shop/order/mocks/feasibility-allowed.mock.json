@@ -1,0 +1,10 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "orderFeasible": true,
+  "feasibilityReason": "ALLOWED"
+}

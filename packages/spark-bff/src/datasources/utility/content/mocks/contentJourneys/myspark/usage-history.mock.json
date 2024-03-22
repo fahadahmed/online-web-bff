@@ -1,0 +1,116 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/usage/history",
+  "tags": ["myspark:usage"],
+  "title": "",
+  "description": "",
+  "fields": [
+    {
+      "fieldKey": "yearInReview.viewMobilePlans",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "View mobile plans",
+      "fieldUrl": "/shop/mobile-plans/paymonthly"
+    },
+    {
+      "fieldKey": "breakdown.data.plan",
+      "fieldType": "LABEL",
+      "fieldValue": "Plan data",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.data.additional.included",
+      "fieldType": "LABEL",
+      "fieldValue": "Rollover data",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.data.additional.paid",
+      "fieldType": "LABEL",
+      "fieldValue": "Additional paid data",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.voice.plan",
+      "fieldType": "LABEL",
+      "fieldValue": "Plan minutes",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.voice.additional.included",
+      "fieldType": "LABEL",
+      "fieldValue": "Rollover minutes",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.voice.additional.paid",
+      "fieldType": "LABEL",
+      "fieldValue": "Additional talk minutes",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.sms.plan",
+      "fieldType": "LABEL",
+      "fieldValue": "Plan texts",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.sms.additional.included",
+      "fieldType": "LABEL",
+      "fieldValue": "Rollover texts",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.sms.additional.paid",
+      "fieldType": "LABEL",
+      "fieldValue": "Additional texts",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.spend.plan",
+      "fieldType": "LABEL",
+      "fieldValue": "Plan cost",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.spend.credit",
+      "fieldType": "LABEL",
+      "fieldValue": "Credit",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "breakdown.spend.additional.paid",
+      "fieldType": "LABEL",
+      "fieldValue": "Additional costs",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "info.spend.graph.title",
+      "fieldType": "HEADING",
+      "fieldValue": "What this graph displays",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "info.spend.graph.description.part1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "This graph shows your monthly costs for {lineNumber}. It includes your plan, additional usage costs and any promotional credits. It will only show your spend for months that have been completed.",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "info.spend.graph.description.part2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "View your bill to see any other subscriptions and charges for this mobile number, or credits and items related to your account.",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "info.spend.graph.viewBill",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "View bill",
+      "fieldUrl": "/secure/myspark/billandpayments?tab=myBills"
+    }
+  ]
+}

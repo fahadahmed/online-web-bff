@@ -1,0 +1,27 @@
+{
+  "preferences": [
+    {
+      "id": "acd-9612-4eba-b412",
+      "value": "OPT_IN",
+      "status": "ACTIVE",
+      "topicId": "broadband-asdgas87-iv",
+      "topicName": "Broadband Usage",
+      "entity": "ASSET",
+      "entityId": "Home broadband",
+      "channels": [
+        {
+          "type": "EMAIL",
+          "id": "bu3-jn4ha",
+          "value": "bob.builder@toyworld.com",
+          "status": "ACTIVE"
+        },
+        {
+          "type": "SMS",
+          "id": "bu4-jn4ha",
+          "value": "0277320153",
+          "status": "ACTIVE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "outages": [
+    {
+      "displayName": "bunnythorpe Outage",
+      "outageType": "OUTAGE",
+      "category": "unplanned_outage",
+      "serviceAffected": "OTHERS",
+      "status": "CURRENT",
+      "description": "Customers in the bunnythorpe may be experiencing a loss ofservices. The outage started 26th May 2020 at 14:00.We have our techs working on it now and when it's back up and running this message will be removed.",
+      "longitude": 175.6311493,
+      "latitude": -40.2821503,
+      "startDateTime": "2020-05-26T14:00:00+12:00",
+      "endDateTime": null
+    },
+    {
+      "displayName": "ngakuru Outage",
+      "outageType": "OUTAGE",
+      "category": "unplanned_outage",
+      "serviceAffected": "OTHERS",
+      "status": "CURRENT",
+      "description": "Customers in the ngakuru may be experiencing a loss ofservices. The outage started 10th June 2020 at 11:55.We have our techs working on it now and when it's back up and running this message will be removed.",
+      "longitude": 176.1908775,
+      "latitude": -38.323572,
+      "startDateTime": "2020-06-10T11:55:00+12:00",
+      "endDateTime": null
+    },
+    {
+      "displayName": "red beach Outage",
+      "outageType": "OUTAGE",
+      "category": "unplanned_outage",
+      "serviceAffected": "OTHERS",
+      "status": "CURRENT",
+      "description": "Customers in the red beach may be experiencing a loss ofservices. The outage started 20th June 2020 at 10:55.We have our techs working on it now and when it's back up and running this message will be removed.",
+      "longitude": 174.6960144,
+      "latitude": -36.6044159,
+      "startDateTime": "2020-06-20T10:55:00+12:00",
+      "endDateTime": null
+    },
+    {
+      "displayName": "remuera Outage",
+      "outageType": "OUTAGE",
+      "category": "unplanned_outage",
+      "serviceAffected": "OTHERS",
+      "status": "CURRENT",
+      "description": "Customers in the remuera may be experiencing a loss ofservices. The outage started 6th May 2020 at 11:25.We have our techs working on it now and when it's back up and running this message will be removed.",
+      "longitude": 174.7821373,
+      "latitude": -36.8789214,
+      "startDateTime": "2020-05-06T11:25:00+12:00",
+      "endDateTime": null
+    },
+    {
+      "displayName": "stokes valley Outage",
+      "outageType": "OUTAGE",
+      "category": "unplanned_outage",
+      "serviceAffected": "OTHERS",
+      "status": "CURRENT",
+      "description": "Customers in the stokes valley may be experiencing a loss ofservices. The outage started 7th May 2020 at 15:30.We have our techs working on it now and when it's back up and running this message will be removed.",
+      "longitude": 174.9824982,
+      "latitude": -41.1771812,
+      "startDateTime": "2020-05-07T15:30:00+12:00",
+      "endDateTime": null
+    },
+    {
+      "displayName": "wanaka Outage",
+      "outageType": "OUTAGE",
+      "category": "unplanned_outage",
+      "serviceAffected": "OTHERS",
+      "status": "CURRENT",
+      "description": "Customers in the wanaka may be experiencing a loss ofservices. The outage started 31st January 2020 at 12:38.We have our techs working on it now and when it's back up and running this message will be removed.",
+      "longitude": 169.1392287,
+      "latitude": -44.6947132,
+      "startDateTime": "2020-01-31T12:38:45+13:00",
+      "endDateTime": null
+    }
+  ]
+}

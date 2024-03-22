@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`successfully retrieves the menu content for footer.  1`] = `
+Object {
+  "footerLegalLinks": Array [
+    Object {
+      "iconName": null,
+      "id": "consumer-footer-secondary-section-1-item-0",
+      "label": "Privacy policy",
+      "url": "/help/other/about-your-privacy-with-spark",
+    },
+    Object {
+      "iconName": null,
+      "id": "consumer-footer-secondary-section-1-item-1",
+      "label": "Legal Disclaimer",
+      "url": "/help/other/legaldisclaimer/",
+    },
+    Object {
+      "iconName": null,
+      "id": "consumer-footer-secondary-section-1-item-2",
+      "label": "Accessibility",
+      "url": "/help/other/accessibilities",
+    },
+    Object {
+      "iconName": null,
+      "id": "consumer-footer-secondary-section-1-item-3",
+      "label": "Print this Page",
+      "url": "window.print()",
+    },
+  ],
+  "footerLinkMenu": Array [
+    Object {
+      "heading": "Shop",
+      "id": "consumer-footer-primary-section-0",
+      "items": Array [
+        Object {
+          "id": "consumer-footer-primary-section-0-item-0",
+          "label": "Plans",
+          "url": "/shop/mobile-plans",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-0-item-1",
+          "label": "Mobile plans",
+          "url": "/shop/mobile-plans.html",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-0-item-2",
+          "label": "Device & accesories",
+          "url": "/shop/mobile",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-0-item-3",
+          "label": "Subscriptions",
+          "url": "/shop/vas",
+        },
+      ],
+      "url": "/shop",
+    },
+    Object {
+      "heading": "Benefits",
+      "id": "consumer-footer-primary-section-1",
+      "items": Array [
+        Object {
+          "id": "consumer-footer-primary-section-1-item-0",
+          "label": "Spotify",
+          "url": "/getmore/spotify",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-1-item-1",
+          "label": "Netflix",
+          "url": "/getmore/netflix",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-1-item-2",
+          "label": "Spark sport",
+          "url": "/getmore/sport",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-1-item-3",
+          "label": "Neon",
+          "url": "/getmore/neon",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-1-item-4",
+          "label": "Xbox",
+          "url": "/getmore/xbox",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-1-item-5",
+          "label": "Online security tools",
+          "url": "/getmore/netshield",
+        },
+      ],
+      "url": "/getmore",
+    },
+    Object {
+      "heading": "Discover & learn",
+      "id": "consumer-footer-primary-section-2",
+      "items": Array [
+        Object {
+          "id": "consumer-footer-primary-section-2-item-0",
+          "label": "5G for you",
+          "url": "/5g/home",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-2-item-1",
+          "label": "Learn about IoT",
+          "url": "/iot/home",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-2-item-2",
+          "label": "Play",
+          "url": "/play",
+        },
+      ],
+      "url": "/discover",
+    },
+    Object {
+      "heading": "Help & Support",
+      "id": "consumer-footer-primary-section-3",
+      "items": Array [
+        Object {
+          "id": "consumer-footer-primary-section-3-item-0",
+          "label": "Accont & billing",
+          "url": "/help/account",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-3-item-1",
+          "label": "Broadband",
+          "url": "/help/internet",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-3-item-2",
+          "label": "Mobile",
+          "url": "/help/mobileandmobilebroadband",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-3-item-3",
+          "label": "Landline",
+          "url": "/help/landline",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-3-item-4",
+          "label": "Contact us",
+          "url": "/help/contacts/support/phone-numbers",
+        },
+      ],
+      "url": "/help",
+    },
+    Object {
+      "heading": "MySpark",
+      "id": "consumer-footer-primary-section-4",
+      "items": Array [
+        Object {
+          "id": "consumer-footer-primary-section-4-item-0",
+          "label": "Dashboard",
+          "url": "/myspark",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-4-item-1",
+          "label": "Usage",
+          "url": "/myspark",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-4-item-2",
+          "label": "Billing",
+          "url": "/myspark/billandpayments",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-4-item-3",
+          "label": "Product",
+          "url": "/myspark",
+        },
+      ],
+      "url": "/myspark",
+    },
+    Object {
+      "heading": "About",
+      "id": "consumer-footer-primary-section-5",
+      "items": Array [
+        Object {
+          "id": "consumer-footer-primary-section-5-item-0",
+          "label": "News",
+          "url": "/news",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-5-item-1",
+          "label": "Careers",
+          "url": "https://careers.sparknz.co.nz/home",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-5-item-2",
+          "label": "Investors",
+          "url": "http://investors.sparknz.co.nz/Investor-Centre/",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-5-item-3",
+          "label": "Sustainability",
+          "url": "/sustainability",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-5-item-4",
+          "label": "Suppliers",
+          "url": "/suppliers",
+        },
+        Object {
+          "id": "consumer-footer-primary-section-5-item-5",
+          "label": "Spark foundation",
+          "url": "/substainability/foundation",
+        },
+      ],
+      "url": "/about",
+    },
+  ],
+  "footerSocialMediaLinks": Array [
+    Object {
+      "iconName": "instagram_extra_small",
+      "id": "consumer-footer-secondary-section-0-item-0",
+      "label": "instagram_extra_small",
+      "url": "https://www.instagram.com/sparknz/",
+    },
+    Object {
+      "iconName": "facebook_extra_small",
+      "id": "consumer-footer-secondary-section-0-item-1",
+      "label": "facebook_extra_small",
+      "url": "https://www.facebook.com/spark4nz/",
+    },
+    Object {
+      "iconName": "youtube_extra_small",
+      "id": "consumer-footer-secondary-section-0-item-2",
+      "label": "youtube_extra_small",
+      "url": "https://www.facebook.com/spark4nz/",
+    },
+    Object {
+      "iconName": null,
+      "id": "consumer-footer-secondary-section-0-item-3",
+      "label": "Go to business",
+      "url": "/business",
+    },
+  ],
+}
+`;

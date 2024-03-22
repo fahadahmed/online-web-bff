@@ -1,0 +1,125 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "cartId": "67049139-8024-4e49-b87b-a79f8a4d74b1",
+  "price": [
+    {
+      "priceType": "Recurring",
+      "frequency": null,
+      "basePrice": 239.97,
+      "effectivePrice": 203.98,
+      "discount": {
+        "name": "20percentdiscount",
+        "description": "20percentdiscount",
+        "discountType": "Percentage",
+        "appliedValue": 20,
+        "discountCategory": "MPDDiscount",
+        "discountedValue": 35.99
+      }
+    }
+  ],
+  "bundles": [
+    {
+      "index": 1,
+      "id": "a4861d40-0d0b-449d-a328-0755d6d984c0",
+      "category": null,
+      "price": [],
+      "items": [
+        {
+          "index": 1,
+          "id": "6d1751c3-ff75-4ab3-b695-decc0862c3f4",
+          "quantity": null,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 79.99,
+              "effectivePrice": 64,
+              "discount": {
+                "name": "20percentdiscount",
+                "description": "20percentdiscount",
+                "discountType": "Percentage",
+                "appliedValue": 20,
+                "discountCategory": "MPDDiscount",
+                "discountedValue": 15.99
+              }
+            }
+          ],
+          "productOfferingId": "dollar79_99_endless_mobile_plan",
+          "balanceManagement": null,
+          "category": null
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "d40ee188-56b0-41b4-9bc8-0ca5c460e5e8",
+      "category": null,
+      "price": [],
+      "items": [
+        {
+          "index": 1,
+          "id": "a7530f19-40ca-4e27-b04c-811849e1ef26",
+          "quantity": null,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 99.99,
+              "effectivePrice": 80,
+              "discount": {
+                "name": "20percentdiscount",
+                "description": "20percentdiscount",
+                "discountType": "Percentage",
+                "appliedValue": 20,
+                "discountCategory": "MPDDiscount",
+                "discountedValue": 19.99
+              }
+            }
+          ],
+          "productOfferingId": "dollar99_99_endless_group_plan",
+          "balanceManagement": null,
+          "category": null
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "f434c441-55a3-4d5a-bd8a-f2bf75aaa372",
+      "category": null,
+      "price": [],
+      "items": [
+        {
+          "index": 1,
+          "id": "c12d5b01-67d0-45f0-8bf0-5f99462ca89b",
+          "quantity": null,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 59.99,
+              "effectivePrice": 59.99,
+              "discount": null
+            }
+          ],
+          "productOfferingId": "dollar59_99_endless_mobile_plan",
+          "balanceManagement": null,
+          "category": null
+        }
+      ]
+    }
+  ]
+}

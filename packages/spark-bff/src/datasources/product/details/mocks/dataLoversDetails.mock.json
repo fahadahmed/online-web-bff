@@ -1,0 +1,67 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "4.5gb_data_lover_pack",
+        "name": "4.5GB Data Lover Pack",
+        "description": "4.5GB Data Lover Pack",
+        "category": [
+          {
+            "id": "data_lovers"
+          }
+        ],
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "weeks",
+            "value": 4
+          },
+          "basePrice": 40
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": [
+          { "name": "Grab 50% off Spotify Premium", "productType": "MARKETING" }
+        ]
+      },
+      {
+        "id": "1_5gb_data_lover_pack",
+        "name": "1.5GB Data Lover Pack",
+        "description": "1.5GB Data Lover Pack",
+        "category": [
+          {
+            "id": "data_lovers"
+          }
+        ],
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "weeks",
+            "value": 4
+          },
+          "basePrice": 20
+        },
+        "group": null,
+        "subscriptionType": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": [
+          { "name": "Grab 50% off Spotify Premium", "productType": "MARKETING" }
+        ]
+      }
+    ],
+    "id": "data_lovers",
+    "name": "Data Lovers",
+    "description": "Data Lovers",
+    "isCategoryContainer": false,
+    "subCategories": null
+  }
+}

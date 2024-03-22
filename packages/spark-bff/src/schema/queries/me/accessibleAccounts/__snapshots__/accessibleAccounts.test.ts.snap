@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns active accounts when status is Active 1`] = `
+Object {
+  "activeAccounts": Array [
+    Object {
+      "accountNumber": "267148112",
+      "associatedUsers": Array [
+        Object {
+          "businessName": null,
+          "email": "bob.builder@toytown.com",
+          "firstName": "Bob",
+          "lastName": "Builder",
+          "role": "Owner",
+        },
+        Object {
+          "businessName": null,
+          "email": "robin.hood@sherwoodforest.com.uk",
+          "firstName": "Robin",
+          "lastName": "Hood",
+          "role": "Manager",
+        },
+        Object {
+          "businessName": null,
+          "email": "batman@arkhamcity.com",
+          "firstName": "Bruce",
+          "lastName": "Wayne",
+          "role": "Manager",
+        },
+      ],
+      "balanceManagement": "POSTPAID",
+      "displayName": null,
+      "lines": Array [
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "033227715",
+        },
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "033227716",
+        },
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "033227717",
+        },
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "0272651690",
+        },
+      ],
+    },
+    Object {
+      "accountNumber": "449099052",
+      "associatedUsers": Array [
+        Object {
+          "businessName": null,
+          "email": "bob.builder@toytown.com",
+          "firstName": "Bob",
+          "lastName": "Builder",
+          "role": "Owner",
+        },
+        Object {
+          "businessName": null,
+          "email": "robin.hood@sherwoodforest.com.uk",
+          "firstName": "Robin",
+          "lastName": "Hood",
+          "role": "Manager",
+        },
+        Object {
+          "businessName": null,
+          "email": "batman@arkhamcity.com",
+          "firstName": "Bruce",
+          "lastName": "Wayne",
+          "role": "Manager",
+        },
+      ],
+      "balanceManagement": "POSTPAID",
+      "displayName": null,
+      "lines": Array [
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "0273215879",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`returns active accounts when status is Active 2`] = `
+Object {
+  "activeAccounts": Array [
+    Object {
+      "accountNumber": "267148112",
+      "associatedUsers": Array [
+        Object {
+          "businessName": null,
+          "email": "bob.builder@toytown.com",
+          "firstName": "Bob",
+          "lastName": "Builder",
+          "role": "Owner",
+        },
+        Object {
+          "businessName": null,
+          "email": "robin.hood@sherwoodforest.com.uk",
+          "firstName": "Robin",
+          "lastName": "Hood",
+          "role": "Manager",
+        },
+        Object {
+          "businessName": null,
+          "email": "batman@arkhamcity.com",
+          "firstName": "Bruce",
+          "lastName": "Wayne",
+          "role": "Manager",
+        },
+      ],
+      "balanceManagement": "POSTPAID",
+      "displayName": null,
+      "lines": Array [
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "033227715",
+        },
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "033227716",
+        },
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "033227717",
+        },
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "0272651690",
+        },
+      ],
+    },
+    Object {
+      "accountNumber": "449099052",
+      "associatedUsers": Array [
+        Object {
+          "businessName": null,
+          "email": "bob.builder@toytown.com",
+          "firstName": "Bob",
+          "lastName": "Builder",
+          "role": "Owner",
+        },
+        Object {
+          "businessName": null,
+          "email": "robin.hood@sherwoodforest.com.uk",
+          "firstName": "Robin",
+          "lastName": "Hood",
+          "role": "Manager",
+        },
+        Object {
+          "businessName": null,
+          "email": "batman@arkhamcity.com",
+          "firstName": "Bruce",
+          "lastName": "Wayne",
+          "role": "Manager",
+        },
+      ],
+      "balanceManagement": "POSTPAID",
+      "displayName": null,
+      "lines": Array [
+        Object {
+          "associatedUsers": Array [
+            Object {
+              "businessName": null,
+              "email": "bob.builder@toytown.com",
+              "firstName": "Bob",
+              "lastName": "Builder",
+              "role": "Owner",
+            },
+            Object {
+              "businessName": null,
+              "email": "robin.hood@sherwoodforest.com.uk",
+              "firstName": "Robin",
+              "lastName": "Hood",
+              "role": "Manager",
+            },
+            Object {
+              "businessName": null,
+              "email": "batman@arkhamcity.com",
+              "firstName": "Bruce",
+              "lastName": "Wayne",
+              "role": "Manager",
+            },
+          ],
+          "displayName": null,
+          "lineNumber": "0273215879",
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`returns all accounts when no status is passed 1`] = `
+Object {
+  "accessibleAccounts": Array [
+    Object {
+      "accountNumber": "267148112",
+    },
+    Object {
+      "accountNumber": "449099052",
+    },
+  ],
+}
+`;

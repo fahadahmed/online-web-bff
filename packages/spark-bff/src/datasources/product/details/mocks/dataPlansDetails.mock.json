@@ -1,0 +1,513 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "data_dollar_29_99_plan",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Data $29.99 Plan",
+        "description": "Data $29.99 Plan",
+        "category": [
+          {
+            "id": "data_plan"
+          },
+          {
+            "id": "upgrade_cons_bus"
+          },
+          {
+            "id": "mobile_spark_sport"
+          },
+          {
+            "id": "mobile_neon"
+          },
+          {
+            "id": "spotify_individual_full_price"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 29.99,
+          "basePriceExcludingTax": 26.08,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "Data$29.99Plan",
+            "sortOrder": null,
+            "defaultUrl": null,
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/plan-card-graphic-596x520.png",
+            "tinyUrl": null,
+            "type": null
+          }
+        ],
+        "entitlements": [
+          {
+            "name": "Data overage MB",
+            "contentKey": null,
+            "shortDescription": null,
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 5,
+            "type": "Data"
+          },
+          {
+            "name": "10GB data",
+            "contentKey": null,
+            "shortDescription": "10GB data",
+            "longDescription": null,
+            "quantity": "10",
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": null,
+            "type": "Data"
+          },
+          {
+            "name": "Roaming data",
+            "contentKey": null,
+            "shortDescription": "Roaming data",
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 5,
+            "type": "Roaming"
+          }
+        ],
+        "promotions": [
+          {
+            "name": "Marketing",
+            "productType": "MARKETING",
+            "shortDescription": "Marketing tag",
+            "longDescription": "Marketing tag",
+            "iconUrl": null,
+            "sortOrder": null
+          }
+        ],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": false,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      },
+      {
+        "id": "data_dollar_49_99_plan",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Data $49.99 Plan",
+        "description": "Data $49.99 Plan",
+        "category": [
+          {
+            "id": "data_plan"
+          },
+          {
+            "id": "upgrade_cons_bus"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 49.99,
+          "basePriceExcludingTax": 43.47,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "Data$49.99Planicon",
+            "sortOrder": null,
+            "defaultUrl": null,
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/plan-card-graphic-596x520.png",
+            "tinyUrl": null,
+            "type": null
+          }
+        ],
+        "entitlements": [
+          {
+            "name": "Data overage MB",
+            "contentKey": null,
+            "shortDescription": null,
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 5,
+            "type": "Data"
+          },
+          {
+            "name": "Roaming data",
+            "contentKey": null,
+            "shortDescription": "Roaming data",
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 5,
+            "type": "Roaming"
+          },
+          {
+            "name": "20GB data",
+            "contentKey": null,
+            "shortDescription": "20GB data",
+            "longDescription": null,
+            "quantity": "20",
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 1,
+            "type": "Data"
+          }
+        ],
+        "promotions": [],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": false,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      },
+      {
+        "id": "data_dollar_69_99_plan",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Data $69.99 Plan",
+        "description": "Data $69.99 Plan",
+        "category": [
+          {
+            "id": "data_plan"
+          },
+          {
+            "id": "upgrade_cons_bus"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 69.99,
+          "basePriceExcludingTax": 60.86,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "Data69.99Plan",
+            "sortOrder": null,
+            "defaultUrl": null,
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/plan-card-graphic-596x520.png",
+            "tinyUrl": null,
+            "type": null
+          }
+        ],
+        "entitlements": [
+          {
+            "name": "Data overage MB",
+            "contentKey": null,
+            "shortDescription": null,
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 5,
+            "type": "Data"
+          },
+          {
+            "name": "Roaming data",
+            "contentKey": null,
+            "shortDescription": "Roaming data",
+            "longDescription": "",
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 5,
+            "type": "Roaming"
+          },
+          {
+            "name": "Overage Data Only",
+            "contentKey": null,
+            "shortDescription": null,
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 4,
+            "type": "Data"
+          },
+          {
+            "name": "Total Data Used",
+            "contentKey": null,
+            "shortDescription": null,
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 4,
+            "type": "Data"
+          },
+          {
+            "name": "Endless data",
+            "contentKey": null,
+            "shortDescription": "Max Speed data reduces after 40GB",
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/data-icon.svg",
+            "sortOrder": 1,
+            "type": "Data"
+          }
+        ],
+        "promotions": [],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": false,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      },
+      {
+        "id": "data_dollar_15_plan",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Data $15 Plan",
+        "description": "Data $15 Plan",
+        "category": [
+          {
+            "id": "data_plan"
+          },
+          {
+            "id": "upgrade_cons_bus"
+          },
+          {
+            "id": "mobile_spark_sport"
+          },
+          {
+            "id": "spotify_individual_full_price"
+          },
+          {
+            "id": "mobile_neon"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 15.0,
+          "basePriceExcludingTax": 13.04,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": false,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      },
+      {
+        "id": "mbundle050752",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Endless Data Plan",
+        "description": "Ideal if you need Endless data on the go and already have an eligible plan.",
+        "category": [
+          {
+            "id": "upgrade_cons_bus"
+          },
+          {
+            "id": "mobile_spark_sport"
+          },
+          {
+            "id": "mobile_neon"
+          },
+          {
+            "id": "spotify_individual_full_price"
+          },
+          {
+            "id": "data_plan"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 22.99,
+          "basePriceExcludingTax": 19.99,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "Data$29.99Plan",
+            "sortOrder": null,
+            "defaultUrl": null,
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/plan-card-graphic-596x520.png",
+            "tinyUrl": null,
+            "type": null
+          }
+        ],
+        "entitlements": [
+          {
+            "name": "40GB data at max speed. Endless data at reduced speed*",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": "This will impact your experience.",
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.svg",
+            "sortOrder": 1,
+            "type": "Data"
+          }
+        ],
+        "promotions": [],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": false,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      }
+    ],
+    "id": "data_plan",
+    "name": "Data plan",
+    "description": "Data plan",
+    "isCategoryContainer": false,
+    "visibility": true,
+    "defaultSelected": null,
+    "sortOrder": 3,
+    "subCategories": null
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "messages": [
+    {
+      "message": "Either OneTimeToken Or SecureTransactionToken is mandatory for add a card to wallet.",
+      "code": 4101,
+      "success": false
+    }
+  ]
+}

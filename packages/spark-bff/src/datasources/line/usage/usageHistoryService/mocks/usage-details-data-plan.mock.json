@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "interval": "MONTHLY",
+  "breakdownType": "PLAN",
+  "startDateTime": "2021-08-08T12:00:00Z",
+  "endDateTime": "2021-09-08T11:59:59Z",
+  "unbilled": false,
+  "periodUsage": {
+    "value": 10240.039064,
+    "unit": "MB"
+  },
+  "periodGroupUsage": {
+    "value": 0,
+    "unit": "MB"
+  },
+  "contributingProducts": [
+    {
+      "offerId": "mbundle050820",
+      "productName": "$59.99 Endless Mobile Plan",
+      "acquisitionDate": "2021-08-08T12:00:00Z",
+      "periodUsage": {
+        "value": 10240.039064,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodLimit": {
+        "value": 12288,
+        "unit": "MB"
+      },
+      "periodGroupLimit": null,
+      "periodRemaining": {
+        "value": 2047.960936,
+        "unit": "MB"
+      },
+      "periodGroupRemaining": null
+    },
+    {
+      "offerId": "mbundle050821",
+      "productName": "$59.99 Endless Mobile Plank",
+      "acquisitionDate": "2021-08-08T12:00:00Z",
+      "periodUsage": {
+        "value": 10240.039064,
+        "unit": "MB"
+      },
+      "periodGroupUsage": null,
+      "periodLimit": {
+        "value": 12288,
+        "unit": "MB"
+      },
+      "periodGroupLimit": null,
+      "periodRemaining": {
+        "value": 2047.960936,
+        "unit": "MB"
+      },
+      "periodGroupRemaining": null
+    }
+  ]
+}

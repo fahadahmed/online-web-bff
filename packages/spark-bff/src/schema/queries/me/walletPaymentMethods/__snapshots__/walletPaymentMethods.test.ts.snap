@@ -1,0 +1,368 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns cardDetails and bankAccountDetails 1`] = `
+Array [
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "LINE",
+        "accountNumber": null,
+        "lineNumber": "0278675180",
+        "paymentMethodId": "MySpark-SSC1463625391900736-721",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": null,
+    "cardDetail": Object {
+      "brand": "mastercard",
+      "cardName": "Karthick CC",
+      "cardType": "MASTER CARD",
+      "creditCardType": "mastercard",
+      "expiryMonth": 5,
+      "expiryYear": 2025,
+      "maskedCardNumber": "512345******2346",
+    },
+    "isPreferred": true,
+    "paymentMethodId": "MySpark-SSC1463625391900736-721",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "CREDIT",
+  },
+  Object {
+    "associations": null,
+    "bankAccountDetail": null,
+    "cardDetail": Object {
+      "brand": "visa",
+      "cardName": "Karthick CC",
+      "cardType": "VISA CARD",
+      "creditCardType": "visa",
+      "expiryMonth": 5,
+      "expiryYear": 2025,
+      "maskedCardNumber": "512345******3425",
+    },
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC1463625391900736-722",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "CREDIT",
+  },
+  Object {
+    "associations": null,
+    "bankAccountDetail": null,
+    "cardDetail": Object {
+      "brand": "amex",
+      "cardName": "Karthick CC",
+      "cardType": "AMEX",
+      "creditCardType": "amex",
+      "expiryMonth": 5,
+      "expiryYear": 2025,
+      "maskedCardNumber": "512345******3521",
+    },
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC1463625391900736-723",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "CREDIT",
+  },
+  Object {
+    "associations": null,
+    "bankAccountDetail": null,
+    "cardDetail": Object {
+      "brand": "diners",
+      "cardName": "Karthick CC",
+      "cardType": "DINERS CARD",
+      "creditCardType": "diners",
+      "expiryMonth": 5,
+      "expiryYear": 2025,
+      "maskedCardNumber": "512345******3111",
+    },
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC1463625391900736-725",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "CREDIT",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": "448159183",
+        "lineNumber": null,
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196000",
+      "bankName": "ANZ Bank New Zealand",
+      "bankType": "ANZ_Bank",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC1463625391900736-724",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": "448159183",
+        "lineNumber": null,
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196001",
+      "bankName": "Bank of New Zealand",
+      "bankType": "Bank_of_New_Zealand",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC1433625391900736-724",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": "448159183",
+        "lineNumber": null,
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196002",
+      "bankName": "Westpac",
+      "bankType": "Westpac",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC1463643391900736-724",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": "448159183",
+        "lineNumber": null,
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196003",
+      "bankName": "Industrial and Commercial Bank of China (New Zealand) Ltd",
+      "bankType": "Industrial_and_Commercial_Bank_of_China_Limited_NZ",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC12363625391900736-724",
+    "personalisedName": null,
+    "source": "WALLET_OTHER",
+    "type": "BANK",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": "448159183",
+        "lineNumber": null,
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196004",
+      "bankName": "ASB Bank",
+      "bankType": "ASB_Bank",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC14636835391900736-724",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": "448159183",
+        "lineNumber": null,
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196005",
+      "bankName": "TSB Bank",
+      "bankType": "TSB_Bank",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC146362500900736-724",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": "448159183",
+        "lineNumber": null,
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196006",
+      "bankName": "HSBC New Zealand",
+      "bankType": "HSBC_Bank_NZ",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC1463625389700736-724",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": "448159183",
+        "lineNumber": null,
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196007",
+      "bankName": "Citibank N.A.",
+      "bankType": "Citibank_N_A",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC14609625391900736-724",
+    "personalisedName": null,
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "associations": Array [
+      Object {
+        "accessType": "ACCOUNT",
+        "accountNumber": null,
+        "lineNumber": "0278675180",
+        "paymentMethodId": "1-ST0123",
+        "type": "RECURRING",
+      },
+    ],
+    "bankAccountDetail": Object {
+      "accountName": "K D DUNN",
+      "accountNumber": "1539590055196008",
+      "bankName": "Kiwibank",
+      "bankType": "Kiwibank",
+    },
+    "cardDetail": null,
+    "isPreferred": false,
+    "paymentMethodId": "MySpark-SSC1463687391900736-724",
+    "personalisedName": null,
+    "source": "DIRECT",
+    "type": "BANK",
+  },
+]
+`;
+
+exports[`returns payment methods filtered by associated line number 1`] = `
+Array [
+  Object {
+    "paymentMethodId": "MySpark-SSC1463687391900736-724",
+    "source": "DIRECT",
+    "type": "BANK",
+  },
+]
+`;
+
+exports[`returns payment methods filtered by sources 1`] = `
+Array [
+  Object {
+    "paymentMethodId": "MySpark-SSC1463625391900736-721",
+    "source": "WALLET_SELF",
+    "type": "CREDIT",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC1463625391900736-722",
+    "source": "WALLET_SELF",
+    "type": "CREDIT",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC1463625391900736-723",
+    "source": "WALLET_SELF",
+    "type": "CREDIT",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC1463625391900736-725",
+    "source": "WALLET_SELF",
+    "type": "CREDIT",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC1463625391900736-724",
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC1433625391900736-724",
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC1463643391900736-724",
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC14636835391900736-724",
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC146362500900736-724",
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC1463625389700736-724",
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC14609625391900736-724",
+    "source": "WALLET_SELF",
+    "type": "BANK",
+  },
+  Object {
+    "paymentMethodId": "MySpark-SSC1463687391900736-724",
+    "source": "DIRECT",
+    "type": "BANK",
+  },
+]
+`;

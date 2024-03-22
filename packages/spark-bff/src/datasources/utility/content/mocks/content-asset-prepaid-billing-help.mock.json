@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "message": "string",
+      "code": 0
+    }
+  ],
+  "assets": [
+    {
+      "id": "termsConditions",
+      "modelId": "Assets",
+      "tags": ["prepaidBillingHelp"],
+      "format": "text",
+      "referencesV2": [
+        {
+          "key": "channel",
+          "value": "web"
+        }
+      ],
+      "contents": [
+        {
+          "assetType": "TextContent",
+          "format": "text",
+          "type": "heading",
+          "value": "Find out how to top up your plan or buy extras."
+        },
+        {
+          "assetType": "CTA",
+          "format": "cta",
+          "type": "cta",
+          "text": "Ways to top up",
+          "value": "https://www.spark.co.nz/help/account/bill/account-fees/"
+        },
+        {
+          "assetType": "TextContent",
+          "format": "text",
+          "type": "heading",
+          "value": "The Spark app is a handy way to manage your prepaid plan."
+        },
+        {
+          "assetType": "CTA",
+          "format": "cta",
+          "type": "cta",
+          "text": "Set up the Spark app",
+          "value": "https://www.spark.co.nz/help/mobile-data/getstarted/interest-free-mobile-phones-deferred-payments/"
+        },
+        {
+          "assetType": "TextContent",
+          "format": "text",
+          "type": "heading",
+          "value": "Learn more about rollover data and minutes, and how it works with shared plans"
+        },
+        {
+          "assetType": "CTA",
+          "format": "cta",
+          "type": "cta",
+          "text": "Understand rollover",
+          "value": "https://www.spark.co.nz/help/mobile-data/getstarted/interest-free-mobile-phones-deferred-payments/"
+        }
+      ]
+    }
+  ]
+}

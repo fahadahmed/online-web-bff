@@ -1,0 +1,95 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "interval": "MONTHLY",
+  "accountType": "POSTPAID",
+  "sharerType": "NOT_SHARED",
+  "startDateTime": "2021-08-08T12:00:00Z",
+  "endDateTime": "2021-11-08T10:59:59Z",
+  "averagePeriodUsage": {
+    "value": 238,
+    "unit": "TEXT"
+  },
+  "averageGroupPeriodUsage": null,
+  "summarisedPeriods": [
+    {
+      "startDateTime": "2021-10-08T11:00:00Z",
+      "endDateTime": "2021-11-08T10:59:59Z",
+      "unbilled": true,
+      "periodUsage": {
+        "value": 203,
+        "unit": "TEXT"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": [
+        {
+          "breakdownType": "ADDITIONAL_INCLUDED",
+          "periodBreakdownId": "ADDITIONAL_INCLUDED|2021-10-08T11:00:00.000Z|2021-11-08T10:59:59.000Z",
+          "periodUsage": {
+            "value": 203,
+            "unit": "TEXT"
+          },
+          "periodGroupUsage": null,
+          "periodLimit": null,
+          "periodGroupLimit": null,
+          "periodRemaining": null,
+          "periodGroupRemaining": null
+        }
+      ]
+    },
+    {
+      "startDateTime": "2021-09-08T12:00:00Z",
+      "endDateTime": "2021-10-08T10:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 360,
+        "unit": "TEXT"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": [
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-09-08T12:00:00.000Z|2021-10-08T10:59:59.000Z",
+          "periodUsage": {
+            "value": 360,
+            "unit": "TEXT"
+          },
+          "periodGroupUsage": null,
+          "periodLimit": null,
+          "periodGroupLimit": null,
+          "periodRemaining": null,
+          "periodGroupRemaining": null
+        }
+      ]
+    },
+    {
+      "startDateTime": "2021-08-08T12:00:00Z",
+      "endDateTime": "2021-09-08T11:59:59Z",
+      "unbilled": false,
+      "periodUsage": {
+        "value": 151,
+        "unit": "TEXT"
+      },
+      "periodGroupUsage": null,
+      "periodBreakdown": [
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-08-08T12:00:00.000Z|2021-09-08T11:59:59.000Z",
+          "periodUsage": {
+            "value": 151,
+            "unit": "TEXT"
+          },
+          "periodGroupUsage": null,
+          "periodLimit": null,
+          "periodGroupLimit": null,
+          "periodRemaining": null,
+          "periodGroupRemaining": null
+        }
+      ]
+    }
+  ]
+}

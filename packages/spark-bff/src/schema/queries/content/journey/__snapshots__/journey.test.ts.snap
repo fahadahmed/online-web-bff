@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`successfully retrieves the content for journey id myspark/profile.  1`] = `
+Array [
+  Object {
+    "key": "manage.sparkId.title",
+    "type": "HEADING",
+    "url": null,
+    "value": "Spark ID",
+  },
+  Object {
+    "key": "manage.sparkId.description",
+    "type": "SUB_HEADING",
+    "url": null,
+    "value": "Email, contact info and password",
+  },
+  Object {
+    "key": "manage.access.title",
+    "type": "HEADING",
+    "url": null,
+    "value": "Access",
+  },
+  Object {
+    "key": "manage.access.description",
+    "type": "SUB_HEADING",
+    "url": null,
+    "value": "Manage access to your products",
+  },
+  Object {
+    "key": "manage.notifications.title",
+    "type": "HEADING",
+    "url": null,
+    "value": "Notifications",
+  },
+  Object {
+    "key": "manage.notifications.description",
+    "type": "SUB_HEADING",
+    "url": null,
+    "value": "Notification alerts",
+  },
+  Object {
+    "key": "legal.privacy.title",
+    "type": "HYPERLINK",
+    "url": "https://www.spark.co.nz/help/other/about-your-privacy-with-spark/",
+    "value": "Privacy Policy",
+  },
+  Object {
+    "key": "legal.termsandconditions.title",
+    "type": "HYPERLINK",
+    "url": "https://www.spark.co.nz/help/other/terms/",
+    "value": "Terms and conditions",
+  },
+]
+`;

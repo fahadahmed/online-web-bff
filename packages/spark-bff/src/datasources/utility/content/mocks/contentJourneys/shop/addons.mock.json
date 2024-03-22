@@ -1,0 +1,34 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "id": "online-shop/addon",
+  "site": "spark",
+  "tags": ["mpa:"],
+  "title": "addon",
+  "description": "addon",
+  "fields": [
+    {
+      "fieldKey": "intro.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Get more value with your plan",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "intro.text",
+      "fieldType": "SUB_HEADING",
+      "fieldValue": "All Spark broadband or Pay Monthly mobile customers can get exclusive deals on movies, sports, music and more. Subscribe and save.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "info.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Subscriptions",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "info.text",
+      "fieldType": "SUB_HEADING",
+      "fieldValue": "Limit of one Netflix, Neon, Spark Sport or McAfee subscription per account and one Spotify Premium Individual or Premium Family per eligible mobile plan.",
+      "fieldUrl": null
+    }
+  ]
+}

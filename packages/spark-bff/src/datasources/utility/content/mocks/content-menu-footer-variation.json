@@ -1,0 +1,69 @@
+{
+  "id": "consumer-footer",
+  "tags": ["marketing-test"],
+  "title": "Consumer Footer - Marketing Test",
+  "description": "The footer to be rendered to consumers on the Spark Website.",
+  "menus": [
+    {
+      "menuType": "SECONDARY",
+      "menuSections": [
+        {
+          "menuItems": [
+            {
+              "itemType": "IMAGE",
+              "itemValue": "instagram_extra_small",
+              "itemUrl": "https://www.instagram.com/sparknz/",
+              "itemImageUrl": "/dam/images/logos/instagram_extra_small.svg"
+            },
+            {
+              "itemType": "IMAGE",
+              "itemValue": "facebook_extra_small",
+              "itemUrl": "https://www.facebook.com/spark4nz/",
+              "itemImageUrl": "/dam/images/logos/facebook_extra_small.svg"
+            },
+            {
+              "itemType": "IMAGE",
+              "itemValue": "youtube_extra_small",
+              "itemUrl": "https://www.facebook.com/spark4nz/",
+              "itemImageUrl": "/dam/images/logos/facebook_extra_small.svg"
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Go to business",
+              "itemUrl": "/business",
+              "itemImageUrl": null
+            }
+          ]
+        },
+        {
+          "menuItems": [
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Privacy policy",
+              "itemUrl": "/help/other/about-your-privacy-with-spark",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Legal Disclaimer",
+              "itemUrl": "/help/other/legaldisclaimer/",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Accessibility",
+              "itemUrl": "/help/other/accessibilities",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Print this Page",
+              "itemUrl": "window.print()",
+              "itemImageUrl": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

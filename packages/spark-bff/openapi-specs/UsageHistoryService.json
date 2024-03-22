@@ -1,0 +1,592 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Retrieve usage history service on a line-by-line basis.",
+    "version": "1.0.0",
+    "title": "DESL Line Usage History Service"
+  },
+  "schemes": ["https"],
+  "parameters": {
+    "lineNumber": {
+      "name": "lineNumber",
+      "in": "path",
+      "description": "The line number to fetch the usage history for",
+      "type": "string",
+      "pattern": "^0\\d+$",
+      "x-example": "02712381239",
+      "required": true
+    },
+    "usageType": {
+      "name": "usageType",
+      "in": "path",
+      "description": "The type of usage required",
+      "type": "string",
+      "enum": ["data", "voice", "sms"],
+      "required": true
+    },
+    "interval": {
+      "name": "interval",
+      "in": "path",
+      "description": "The unit of time to aggregate usage data by",
+      "type": "string",
+      "enum": ["hourly", "daily", "monthly"],
+      "required": true
+    },
+    "start": {
+      "name": "start",
+      "in": "query",
+      "description": "The start timestamp of the historical data to fetch; the default value for this depends on the value of summaryType",
+      "type": "string",
+      "format": "date-time",
+      "required": false
+    },
+    "end": {
+      "name": "end",
+      "in": "query",
+      "description": "The end timestamp of the historical data to fetch; the default value for this depends on the value of summaryType",
+      "type": "string",
+      "format": "date-time",
+      "required": false
+    },
+    "periodBreakdownId": {
+      "name": "periodBreakdownId",
+      "in": "path",
+      "description": "The identifier for the period and usage type combination that product-level usage details should be returned for",
+      "type": "string",
+      "required": true
+    }
+  },
+  "paths": {
+    "/v1/line/usage/me/{lineNumber}/{usageType}/{summaryType}": {
+      "get": {
+        "tags": ["usage", "history", "protected", "oidc", "public"],
+        "summary": "Retrieves usage history for the specified line of this user",
+        "operationId": "getUsageHistory",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/lineNumber"
+          },
+          {
+            "$ref": "#/parameters/usageType"
+          },
+          {
+            "name": "summaryType",
+            "in": "path",
+            "description": "The unit of time to aggregate usage data by",
+            "type": "string",
+            "enum": ["hourly", "daily", "monthly"],
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/start"
+          },
+          {
+            "$ref": "#/parameters/end"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsageHistory"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to fetch usage history about this line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/line/{lineNumber}/usage/{usageType}/{interval}": {
+      "get": {
+        "tags": ["usage", "history", "protected", "oidc", "public"],
+        "summary": "Returns a summary of a specific type of usage (data, voice, sms) associated to the supplied line number for a defined summarised period length (hourly, daily, monthly) with period-level breakdowns of usage if that information is available.",
+        "operationId": "getUsageHistoryV2",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/lineNumber"
+          },
+          {
+            "$ref": "#/parameters/usageType"
+          },
+          {
+            "$ref": "#/parameters/interval"
+          },
+          {
+            "$ref": "#/parameters/start"
+          },
+          {
+            "$ref": "#/parameters/end"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsageHistoryV2"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Line not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/line/{lineNumber}/usage/{usageType}/{interval}/{periodBreakdownId}": {
+      "get": {
+        "tags": ["usage", "history", "protected", "oidc", "public"],
+        "summary": "Returns a list of the products that contributed to a type of usage (plan, rollover, international or additional) during a specific period of time identified by the periodBreakdownId.",
+        "operationId": "getUsageHistoryV2ByPeriodBreakdownId",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/lineNumber"
+          },
+          {
+            "$ref": "#/parameters/usageType"
+          },
+          {
+            "$ref": "#/parameters/interval"
+          },
+          {
+            "$ref": "#/parameters/periodBreakdownId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsageHistoryByPeriodBreakdownIDV2"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Line or Breakdown period not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "UsageHistory": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "summaryType",
+            "accountType",
+            "startDateTime",
+            "endDateTime",
+            "averagePeriodUsage",
+            "summarisedPeriods"
+          ],
+          "properties": {
+            "summaryType": {
+              "type": "string",
+              "description": "The unit of time that the usage data is aggregated by",
+              "enum": ["HOURLY", "DAILY", "MONTHLY"]
+            },
+            "accountType": {
+              "type": "string",
+              "description": "The type of account associated with this usage summary.",
+              "enum": ["POSTPAID", "PREPAID"]
+            },
+            "startDateTime": {
+              "type": "string",
+              "description": "The start of the usage history summary",
+              "format": "date-time"
+            },
+            "endDateTime": {
+              "type": "string",
+              "description": "The end of the usage history summary",
+              "format": "date-time"
+            },
+            "averagePeriodUsage": {
+              "description": "The average for the type of usage covered by this response",
+              "$ref": "#/definitions/PeriodUsage"
+            },
+            "summarisedPeriods": {
+              "type": "array",
+              "description": "Summarised periods covered in this historical usage query sorted chronologically based on startDateTime",
+              "items": {
+                "$ref": "#/definitions/SummaryPeriodUsage"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "UsageHistoryV2": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "interval",
+            "accountType",
+            "sharerType",
+            "startDateTime",
+            "endDateTime",
+            "averagePeriodUsage",
+            "summarisedPeriods"
+          ],
+          "properties": {
+            "interval": {
+              "type": "string",
+              "description": "The unit of time that the usage data is aggregated by",
+              "enum": ["HOURLY", "DAILY", "MONTHLY"],
+              "example": "DAILY"
+            },
+            "accountType": {
+              "type": "string",
+              "description": "The type of account associated with this usage summary.",
+              "enum": ["POSTPAID", "PREPAID"],
+              "example": "POSTPAID"
+            },
+            "sharerType": {
+              "type": "string",
+              "description": "An enum that indicates whether this plan is currently shared in some manner.",
+              "enum": ["NOT_SHARED", "LEADER", "SHARER"],
+              "example": "NOT_SHARED"
+            },
+            "startDateTime": {
+              "type": "string",
+              "description": "The start of the usage history summary",
+              "format": "date-time",
+              "example": "2020-08-16T01:00:00.000+13:00"
+            },
+            "endDateTime": {
+              "type": "string",
+              "description": "The end of the usage history summary",
+              "format": "date-time",
+              "example": "2020-08-16T23:59:00.000+13:00"
+            },
+            "averagePeriodUsage": {
+              "description": "The average for the type of usage covered by this response",
+              "$ref": "#/definitions/PeriodUsage"
+            },
+            "averageGroupPeriodUsage": {
+              "description": "The average for the type of usage covered by this response",
+              "$ref": "#/definitions/PeriodUsage"
+            },
+            "summarisedPeriods": {
+              "type": "array",
+              "description": "Summarised periods covered in this historical usage query sorted chronologically based on startDateTime",
+              "items": {
+                "$ref": "#/definitions/SummaryPeriodUsage"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "UsageHistoryByPeriodBreakdownIDV2": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "interval",
+            "breakdownType",
+            "startDateTime",
+            "endDateTime",
+            "periodUsage",
+            "contributingProducts"
+          ],
+          "properties": {
+            "interval": {
+              "type": "string",
+              "description": "The unit of time that the usage data is aggregated by",
+              "enum": ["HOURLY", "DAILY", "MONTHLY"],
+              "example": "DAILY"
+            },
+            "breakdownType": {
+              "type": "string",
+              "description": "Represents the high-level product type associated with the breakdown",
+              "enum": ["PLAN", "ADDITIONAL_INCLUDED", "ADDITIONAL_PAID"],
+              "example": "ROLLOVER"
+            },
+            "startDateTime": {
+              "type": "string",
+              "description": "The start of the usage history summary",
+              "format": "date-time",
+              "example": "2020-08-16T01:00:00.000+13:00"
+            },
+            "endDateTime": {
+              "type": "string",
+              "description": "The end of the usage history summary",
+              "format": "date-time",
+              "example": "2020-08-16T23:59:00.000+13:00"
+            },
+            "periodUsage": {
+              "description": "The value representing the total usage for this breakdown during the period.",
+              "$ref": "#/definitions/PeriodUsage"
+            },
+            "periodGroupUsage": {
+              "description": "The value representing the total usage for this breakdown during the period.",
+              "$ref": "#/definitions/PeriodUsage"
+            },
+            "unbilled": {
+              "type": "boolean",
+              "description": "Whether this summarised period has been billed - always false if PREPAID.",
+              "example": false
+            },
+            "contributingProducts": {
+              "type": "array",
+              "description": "An array of the products that contributed to this usage over the nominated period.",
+              "items": {
+                "$ref": "#/definitions/ContributingProduct"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PeriodUsage": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "The usage during this period; this should be rounded to have no more than two decimal places",
+          "example": 1024.23
+        },
+        "unit": {
+          "type": "string",
+          "description": "The units of the value",
+          "enum": ["GB", "MB", "MIN", "TEXT"]
+        }
+      }
+    },
+    "SummaryPeriodUsage": {
+      "type": "object",
+      "required": ["startDateTime", "endDateTime", "periodUsage"],
+      "properties": {
+        "startDateTime": {
+          "type": "string",
+          "description": "The start of this specific time period",
+          "format": "date-time"
+        },
+        "endDateTime": {
+          "type": "string",
+          "description": "The end of this specific time period",
+          "format": "date-time"
+        },
+        "periodUsage": {
+          "$ref": "#/definitions/PeriodUsage"
+        },
+        "periodGroupUsage": {
+          "$ref": "#/definitions/PeriodUsage"
+        },
+        "unbilled": {
+          "type": "boolean",
+          "description": "Whether this summarised period has been billed - always false if PREPAID.",
+          "example": true
+        },
+        "periodBreakdown": {
+          "type": "array",
+          "description": "Represents a breakdown of the high-level product types that contributed to the overall usage of this period.",
+          "items": {
+            "$ref": "#/definitions/PeriodBreakdown"
+          }
+        }
+      }
+    },
+    "PeriodBreakdown": {
+      "type": "object",
+      "required": ["breakdownType", "periodUsage"],
+      "properties": {
+        "breakdownType": {
+          "type": "string",
+          "description": "Represents the high-level product type associated with the breakdown",
+          "enum": ["PLAN", "ADDITIONAL_INCLUDED", "ADDITIONAL_PAID"]
+        },
+        "periodBreakdownId": {
+          "type": "string",
+          "description": "Represents an identifier for a specific period",
+          "example": "breakdown-id"
+        },
+        "periodUsage": {
+          "$ref": "#/definitions/PeriodUsage"
+        },
+        "periodGroupUsage": {
+          "$ref": "#/definitions/PeriodUsage"
+        },
+        "periodLimit": {
+          "$ref": "#/definitions/PeriodLimit"
+        },
+        "periodGroupLimit": {
+          "$ref": "#/definitions/PeriodLimit"
+        },
+        "periodRemaining": {
+          "$ref": "#/definitions/PeriodRemaining"
+        },
+        "periodGroupRemaining": {
+          "$ref": "#/definitions/PeriodRemaining"
+        }
+      }
+    },
+    "PeriodLimit": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "The value of the usage limit for this type of breakdown during the time period in question",
+          "example": 1024.23
+        },
+        "unit": {
+          "type": "string",
+          "description": "The units of the value",
+          "enum": ["GB", "MB", "MIN", "TEXT"]
+        }
+      }
+    },
+    "PeriodRemaining": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "The value of the usage remaining for this type of breakdown during the time period in question.",
+          "example": 1024.23
+        },
+        "unit": {
+          "type": "string",
+          "description": "The units of the value",
+          "enum": ["GB", "MB", "MIN", "TEXT"]
+        }
+      }
+    },
+    "ContributingProduct": {
+      "type": "object",
+      "required": ["productName", "acquisitionDate", "periodUsage"],
+      "properties": {
+        "offerId": {
+          "type": "string",
+          "description": "The downstream Offer ID associated to this product.",
+          "example": "misc352122"
+        },
+        "productName": {
+          "type": "string",
+          "description": "The customer-facing name for this product.",
+          "example": "24 Hours Unlimited Max Speed Data"
+        },
+        "acquisitionDate": {
+          "type": "string",
+          "description": "The date when the instance of this product was purchased, renewed or activated.",
+          "format": "date-time",
+          "example": "2020-08-16T05:00:00.000+13:00"
+        },
+        "periodUsage": {
+          "$ref": "#/definitions/PeriodUsage"
+        },
+        "periodGroupUsage": {
+          "$ref": "#/definitions/PeriodUsage"
+        },
+        "periodLimit": {
+          "$ref": "#/definitions/PeriodLimit"
+        },
+        "periodGroupLimit": {
+          "$ref": "#/definitions/PeriodLimit"
+        },
+        "periodRemaining": {
+          "$ref": "#/definitions/PeriodRemaining"
+        },
+        "periodGroupRemaining": {
+          "$ref": "#/definitions/PeriodRemaining"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

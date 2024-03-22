@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns all the product offer details data with no errors 1`] = `
+Object {
+  "me": Object {
+    "line": Object {
+      "planProductOffers": Object {
+        "notifications": Array [
+          Object {
+            "recommendationId": "vas_downgrade_reactivate",
+            "text": "All your devices will be become unprotected once you change to McAfee Standard. You'll need to choose which devices to protect again.",
+            "title": null,
+            "type": "WARN",
+          },
+        ],
+        "offerDetails": Array [
+          Object {
+            "description": "Ideal for online gaming, HD video streaming, file downloads and more",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/prepaid_small.png",
+                "longDescription": "Lorem ipsum dolor sit amet, cosectetur adipiscing eli suspendisse. Lorem dolor sit ame.",
+                "name": "40GB",
+                "shortDescription": "40GB Max Speed Data",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": "Excludes MMS (e.g. picture messaging) and non-data video calling.",
+                "name": "300",
+                "shortDescription": "300 Rollover mins (NZ only)",
+                "sortOrder": 2,
+              },
+            ],
+            "id": "32b96d99-2a34-4fc2-a0a5-111c4d36579e",
+            "name": "3GB Rollover Plan",
+            "price": Object {
+              "basePrice": 39.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": null,
+                "longDescription": null,
+                "name": "Marketing",
+                "productType": "MARKETING",
+                "shortDescription": "Marketing tag",
+                "sortOrder": null,
+              },
+              Object {
+                "iconUrl": null,
+                "longDescription": null,
+                "name": "Save",
+                "productType": "DEAL",
+                "shortDescription": "Save up to 20% on multiple plans",
+                "sortOrder": null,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/spotify_small.png",
+                "longDescription": "Usually $14.99/month",
+                "name": "Spotify",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Half Price Spotify Premium",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/plus_small.png",
+                "longDescription": "Hotspot counts towards your total data usage on your Mobile plan. One hotspot extra can be added per line per month.",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Hotspot your data for $10/month",
+                "sortOrder": 2,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "contracts",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "No contracts, 30 days notice",
+                "sortOrder": 3,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "VoiceMail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Spark Voicemail App",
+                "sortOrder": 4,
+              },
+            ],
+          },
+          Object {
+            "description": "Ideal for online gaming, HD video streaming, file downloads and more",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/prepaid_small.png",
+                "longDescription": "Lorem ipsum dolor sit amet, cosectetur adipiscing eli suspendisse. Lorem dolor sit ame.",
+                "name": "12GB",
+                "shortDescription": "12GB Max Speed Data",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": "Excludes MMS (e.g. picture messaging) and non-data video calling.",
+                "name": "Unlimited",
+                "shortDescription": "Unlimited AU/NZ Mins & SMS",
+                "sortOrder": 2,
+              },
+            ],
+            "id": "1f0b37dc-0987-4aed-b2aa-a8f22c277e46",
+            "name": "Endless Mobile Plan",
+            "price": Object {
+              "basePrice": 59.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": null,
+                "longDescription": null,
+                "name": "Save",
+                "productType": "DEAL",
+                "shortDescription": "Save up to 20% on multiple plans",
+                "sortOrder": null,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/spotify_small.png",
+                "longDescription": "Usually $14.99/month",
+                "name": "Spotify",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Half Price Spotify Premium",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/plus_small.png",
+                "longDescription": "Hotspot counts towards your total data usage on your Mobile plan. One hotspot extra can be added per line per month.",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Hotspot your data for $10/month",
+                "sortOrder": 2,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "contracts",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "No contracts, 30 days notice",
+                "sortOrder": 3,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "VoiceMail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Spark Voicemail App",
+                "sortOrder": 4,
+              },
+            ],
+          },
+          Object {
+            "description": "Ideal for online gaming, HD video streaming, file downloads and more",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/prepaid_small.png",
+                "longDescription": "Lorem ipsum dolor sit amet, cosectetur adipiscing eli suspendisse. Lorem dolor sit ame.",
+                "name": "40GB",
+                "shortDescription": "40GB Rollover Data",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": "Excludes MMS (e.g. picture messaging) and non-data video calling.",
+                "name": "Unlimited",
+                "shortDescription": "Unlimited AU/NZ Mins & SMS",
+                "sortOrder": 2,
+              },
+            ],
+            "id": "f8f6d39c-32ca-4f85-af08-360bae815a76",
+            "name": "Endless Mobile Plan",
+            "price": Object {
+              "basePrice": 79.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/spotify_small.png",
+                "longDescription": "Usually $14.99/month",
+                "name": "Spotify",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Half Price Spotify Premium",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/plus_small.png",
+                "longDescription": "Hotspot counts towards your total data usage on your Mobile plan. One hotspot extra can be added per line per month.",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Hotspot your data for $10/month",
+                "sortOrder": 2,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "contracts",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "No contracts, 30 days notice",
+                "sortOrder": 3,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "VoiceMail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Spark Voicemail App",
+                "sortOrder": 4,
+              },
+            ],
+          },
+          Object {
+            "description": "Ideal for online gaming, HD video streaming, file downloads and more",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/prepaid_small.png",
+                "longDescription": "Lorem ipsum dolor sit amet, cosectetur adipiscing eli suspendisse. Lorem dolor sit ame.",
+                "name": "40GB",
+                "shortDescription": "40GB Rollover Data",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": "Excludes MMS (e.g. picture messaging) and non-data video calling.",
+                "name": "Unlimited",
+                "shortDescription": "Unlimited AU/NZ Mins & SMS",
+                "sortOrder": 2,
+              },
+            ],
+            "id": "f8f6d39c-32ca-4f85-af08-360bae815a86",
+            "name": "Prepaid Value Pack",
+            "price": Object {
+              "basePrice": 79.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/spotify_small.png",
+                "longDescription": "Usually $14.99/month",
+                "name": "Spotify",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Half Price Spotify Premium",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/plus_small.png",
+                "longDescription": "Hotspot counts towards your total data usage on your Mobile plan. One hotspot extra can be added per line per month.",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Hotspot your data for $10/month",
+                "sortOrder": 2,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "contracts",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "No contracts, 30 days notice",
+                "sortOrder": 3,
+              },
+            ],
+          },
+          Object {
+            "description": "Ideal for online gaming, HD video streaming, file downloads and more",
+            "entitlements": Array [
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/prepaid_small.png",
+                "longDescription": "Lorem ipsum dolor sit amet, cosectetur adipiscing eli suspendisse. Lorem dolor sit ame.",
+                "name": "40GB",
+                "shortDescription": "40GB Rollover Data",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": "Excludes MMS (e.g. picture messaging) and non-data video calling.",
+                "name": "Unlimited",
+                "shortDescription": "Unlimited AU/NZ Mins & SMS",
+                "sortOrder": 2,
+              },
+            ],
+            "id": "f8f6d39c-32ca-4f85-af08-360bae815a96",
+            "name": "Data Lovers Pack",
+            "price": Object {
+              "basePrice": 79.99,
+              "frequency": Object {
+                "period": "Month",
+                "value": 1,
+              },
+            },
+            "promotions": Array [
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/spotify_small.png",
+                "longDescription": "Usually $14.99/month",
+                "name": "Spotify",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Half Price Spotify Premium",
+                "sortOrder": 1,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/plus_small.png",
+                "longDescription": "Hotspot counts towards your total data usage on your Mobile plan. One hotspot extra can be added per line per month.",
+                "name": "Hotspot",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Hotspot your data for $10/month",
+                "sortOrder": 2,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "contracts",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "No contracts, 30 days notice",
+                "sortOrder": 3,
+              },
+              Object {
+                "iconUrl": "/online/myspark/__dev__/logos/changePlan/check_small.png",
+                "longDescription": null,
+                "name": "VoiceMail",
+                "productType": "CHARACTERISTIC",
+                "shortDescription": "Spark Voicemail App",
+                "sortOrder": 4,
+              },
+            ],
+          },
+        ],
+      },
+    },
+  },
+}
+`;

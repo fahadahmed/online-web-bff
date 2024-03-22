@@ -1,0 +1,1765 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "sections": [
+    {
+      "customAttributes": [{ "key": "type", "value": "setup" }],
+      "name": "Setup",
+      "sectionId": "setup",
+      "steps": [
+        {
+          "cartItemId": "bf028bfd-dabb-460c-aad5-58b744f37b40",
+          "customAttributes": [
+            { "key": "nameExpression", "value": "cartItem.title" }
+          ],
+          "endpoints": null,
+          "fields": [
+            {
+              "customAttributes": [
+                {
+                  "key": "componentViewId",
+                  "value": "shop.checkout.setup.mobileNumberOption"
+                },
+                { "key": "componentViewName", "value": "Mobile Number Option" },
+                { "key": "regionId", "value": "setup.mobileNumberOption" },
+                { "key": "shouldHideWhenSingleOption", "value": "true" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": null,
+              "label": "What would you like to do with your number?",
+              "name": "chooseNumber",
+              "options": [
+                {
+                  "customAttributes": null,
+                  "fields": [
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "selectNumber" },
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.selectNewMobileNumber"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Select New Mobile Number"
+                        },
+                        {
+                          "key": "regionId",
+                          "value": "setup.chooseYourNewNumber"
+                        },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Your number" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "new_mobile_number"
+                        }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "Choose your new number",
+                      "name": "new_mobile_number",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": null,
+                      "name": "reservation_id",
+                      "options": null,
+                      "type": "hidden",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.selectNewMobileNumber"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Select New Mobile Number"
+                        },
+                        { "key": "regionId", "value": "setup.simCardType" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "SIM option" },
+                        { "key": "summaryTemplate", "value": "chooseSIMType" },
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.setup.simCardType.infoLayer"
+                        }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "Choose your SIM card type",
+                      "name": "chooseSIMType",
+                      "options": [
+                        {
+                          "customAttributes": [
+                            { "key": "label", "value": "Trio SIM" },
+                            {
+                              "key": "sublabel",
+                              "value": "Multi sized SIM card"
+                            }
+                          ],
+                          "fields": null,
+                          "value": "trio_sim",
+                          "visibility": {
+                            "expression": "true",
+                            "uiFields": null
+                          }
+                        },
+                        {
+                          "customAttributes": [
+                            { "key": "label", "value": "eSIM" },
+                            {
+                              "key": "sublabel",
+                              "value": "Use the device?s embedded SIM"
+                            }
+                          ],
+                          "fields": null,
+                          "value": "esim",
+                          "visibility": {
+                            "expression": "true",
+                            "uiFields": null
+                          }
+                        }
+                      ],
+                      "type": "radioOption",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "airpoints" },
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.setup.airpoints.infoLayer"
+                        },
+                        { "key": "placeholder", "value": "Card number" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Airpoints card number",
+                      "name": "airpoints",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Save and continue",
+                      "name": "submitNewNumber",
+                      "options": null,
+                      "type": "button",
+                      "uiRef": null
+                    }
+                  ],
+                  "value": "Select a new number",
+                  "visibility": { "expression": "true", "uiFields": null }
+                },
+                {
+                  "customAttributes": null,
+                  "fields": [
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "heading" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Enter your current number",
+                      "name": "enter_mobile_number",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "phoneInput" },
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.keepMyCurrentMobileNumber.currentNumber"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Current number and plan details"
+                        },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Your number" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "current_mobile_number"
+                        },
+                        { "key": "placeholder", "value": "Your number" },
+                        {
+                          "key": "customItems",
+                          "value": "020, 021, 022, 027, 028, 029, 0204, 03, 04, 06, 07, 09, 00"
+                        },
+                        { "key": "defaultValue", "value": "027" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": null,
+                        "state": null,
+                        "validations": {
+                          "compare": null,
+                          "maxLength": null,
+                          "maxValue": null,
+                          "minLength": null,
+                          "minValue": null,
+                          "regex": {
+                            "expression": "^(027|020|021|022|028|029|0204|03|04|06|07|09|00)[0-9]{6,9}$",
+                            "message": "Enter 6 to 9 digits"
+                          }
+                        },
+                        "visibility": null
+                      },
+                      "label": "Your number",
+                      "name": "current_mobile_number",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": {
+                          "expression": "false",
+                          "uiFields": null
+                        }
+                      },
+                      "label": null,
+                      "name": "service_provider_id",
+                      "options": null,
+                      "type": "hidden",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "serviceProvider" },
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.keepMyCurrentMobileNumber.currentNumber"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Current number and plan details"
+                        },
+                        { "key": "placeholder", "value": "Current provider" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "Current provider" },
+                        {
+                          "key": "summaryTemplate",
+                          "value": "service_provider_name"
+                        }
+                      ],
+                      "dataRef": [
+                        { "id": "4", "text": "TelstraClear" },
+                        { "id": "5", "text": "Vodafone" },
+                        { "id": "24", "text": "Orcon" },
+                        { "id": "25", "text": "M2 Mobile" },
+                        { "id": "26", "text": "B+W" },
+                        { "id": "27", "text": "2degrees" },
+                        { "id": "33", "text": "Farmside" },
+                        { "id": "42", "text": "Skinny" },
+                        { "id": "50", "text": "Zintel Cogent" },
+                        { "id": "51", "text": "Kiwitel Mobile" },
+                        { "id": "52", "text": "Megatel Mobile" },
+                        { "id": "53", "text": "Snap Internet" },
+                        { "id": "80", "text": "Kogan Mobile" },
+                        { "id": "91", "text": "Compass" },
+                        { "id": "92", "text": "CallPlus Mobile" },
+                        { "id": "101", "text": "FBN Telecom Mobile" },
+                        { "id": "121", "text": "Warehouse Mobile" },
+                        { "id": "129", "text": "Trustpower" },
+                        { "id": "152", "text": "Digital Island" },
+                        { "id": "193", "text": "CallPlus Reseller" },
+                        { "id": "221", "text": "TelstraClear Reseller" }
+                      ],
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "Who is your current provider?",
+                      "name": "service_provider_name",
+                      "options": null,
+                      "type": "dropdown",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.keepMyCurrentMobileNumber.currentNumber"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Current number and plan details"
+                        },
+                        { "key": "regionId", "value": "setup.currentPlanType" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "Choose your current plan type",
+                      "name": "chooseCurrentPlanType",
+                      "options": [
+                        {
+                          "customAttributes": [
+                            { "key": "label", "value": "I'm on prepaid" }
+                          ],
+                          "fields": [
+                            {
+                              "customAttributes": [
+                                { "key": "component", "value": "heading" },
+                                {
+                                  "key": "infoLayerContentKey",
+                                  "value": "checkout.setup.simNumber.infoLayer"
+                                }
+                              ],
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": null,
+                              "defaultValue": null,
+                              "fieldRule": {
+                                "required": {
+                                  "expression": "false",
+                                  "uiFields": null
+                                },
+                                "state": null,
+                                "validations": null,
+                                "visibility": null
+                              },
+                              "label": "Enter your SIM number",
+                              "name": "enter_sim_number",
+                              "options": null,
+                              "type": "custom",
+                              "uiRef": null
+                            },
+                            {
+                              "customAttributes": [
+                                { "key": "component", "value": "simNumber" },
+                                { "key": "placeholder", "value": "SIM number" },
+                                {
+                                  "key": "regionId",
+                                  "value": "setup.simNumber"
+                                },
+                                { "key": "showInSummary", "value": "true" },
+                                {
+                                  "key": "summaryLabel",
+                                  "value": "SIM number"
+                                },
+                                {
+                                  "key": "summaryTemplate",
+                                  "value": "sim_number"
+                                }
+                              ],
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": "String",
+                              "defaultValue": null,
+                              "fieldRule": {
+                                "required": null,
+                                "state": null,
+                                "validations": {
+                                  "compare": null,
+                                  "maxLength": null,
+                                  "maxValue": null,
+                                  "minLength": null,
+                                  "minValue": null,
+                                  "regex": {
+                                    "expression": "^[0-9]{12,25}$",
+                                    "message": "Please enter at least 12 digits"
+                                  }
+                                },
+                                "visibility": null
+                              },
+                              "label": "SIM number",
+                              "name": "sim_number",
+                              "options": null,
+                              "type": "custom",
+                              "uiRef": null
+                            }
+                          ],
+                          "value": "prepaid",
+                          "visibility": null
+                        },
+                        {
+                          "customAttributes": [
+                            {
+                              "key": "label",
+                              "value": "I receive a monthly bill"
+                            }
+                          ],
+                          "fields": [
+                            {
+                              "customAttributes": [
+                                { "key": "component", "value": "heading" },
+                                {
+                                  "key": "infoLayerContentKey",
+                                  "value": "checkout.setup.accountNumber.infoLayer"
+                                }
+                              ],
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": null,
+                              "defaultValue": null,
+                              "fieldRule": {
+                                "required": {
+                                  "expression": "false",
+                                  "uiFields": null
+                                },
+                                "state": null,
+                                "validations": null,
+                                "visibility": null
+                              },
+                              "label": "Enter your account number",
+                              "name": "enter_account_number",
+                              "options": null,
+                              "type": "custom",
+                              "uiRef": null
+                            },
+                            {
+                              "customAttributes": [
+                                {
+                                  "key": "component",
+                                  "value": "accountNumber"
+                                },
+                                {
+                                  "key": "placeholder",
+                                  "value": "Account number"
+                                },
+                                {
+                                  "key": "regionId",
+                                  "value": "setup.accountNumber"
+                                },
+                                { "key": "showInSummary", "value": "true" },
+                                {
+                                  "key": "summaryLabel",
+                                  "value": "Account number"
+                                },
+                                {
+                                  "key": "summaryTemplate",
+                                  "value": "account_number"
+                                }
+                              ],
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": "String",
+                              "defaultValue": null,
+                              "fieldRule": {
+                                "required": null,
+                                "state": null,
+                                "validations": {
+                                  "compare": null,
+                                  "maxLength": null,
+                                  "maxValue": null,
+                                  "minLength": null,
+                                  "minValue": null,
+                                  "regex": {
+                                    "expression": "^[0-9]{4,13}$",
+                                    "message": "Please enter at least 4 digits, at most 13 digits"
+                                  }
+                                },
+                                "visibility": null
+                              },
+                              "label": "Account number",
+                              "name": "account_number",
+                              "options": null,
+                              "type": "custom",
+                              "uiRef": null
+                            }
+                          ],
+                          "value": "postpaid",
+                          "visibility": null
+                        }
+                      ],
+                      "type": "radioOption",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.keepMyCurrentMobileNumber.currentNumber"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Current number and plan details"
+                        },
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.setup.simCardType.infoLayer"
+                        },
+                        { "key": "regionId", "value": "setup.simCardType" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "SIM option" },
+                        { "key": "summaryTemplate", "value": "chooseSIMType" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "Choose your SIM card type",
+                      "name": "chooseSIMType",
+                      "options": [
+                        {
+                          "customAttributes": [
+                            { "key": "label", "value": "Trio SIM" },
+                            {
+                              "key": "sublabel",
+                              "value": "Multi sized SIM card"
+                            }
+                          ],
+                          "fields": null,
+                          "value": "trio_sim",
+                          "visibility": {
+                            "expression": "true",
+                            "uiFields": null
+                          }
+                        },
+                        {
+                          "customAttributes": [
+                            { "key": "label", "value": "eSIM" },
+                            {
+                              "key": "sublabel",
+                              "value": "Use the device?s embedded SIM"
+                            }
+                          ],
+                          "fields": null,
+                          "value": "esim",
+                          "visibility": {
+                            "expression": "true",
+                            "uiFields": null
+                          }
+                        }
+                      ],
+                      "type": "radioOption",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.keepMyCurrentMobileNumber.currentNumber"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Current number and plan details"
+                        },
+                        { "key": "regionId", "value": "setup.connectionDate" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "Choose your connection date",
+                      "name": "chooseConnectionDate",
+                      "options": [
+                        {
+                          "customAttributes": null,
+                          "fields": null,
+                          "value": "As soon as possible",
+                          "visibility": null
+                        },
+                        {
+                          "customAttributes": null,
+                          "fields": [
+                            {
+                              "customAttributes": [
+                                { "key": "component", "value": "datePicker" },
+                                { "key": "filterDate", "value": "weekend" },
+                                {
+                                  "key": "minimumRuleExpression",
+                                  "value": "addBusinessDays(today(), 5)"
+                                },
+                                {
+                                  "key": "minimumRuleMessage",
+                                  "value": "The date entered does not exist, please enter a valid date"
+                                },
+                                { "key": "placeholder", "value": "DD/MM/YYYY" },
+                                { "key": "showInSummary", "value": "true" },
+                                {
+                                  "key": "summaryLabel",
+                                  "value": "Connection date"
+                                },
+                                {
+                                  "key": "summaryTemplate",
+                                  "value": "formatDate(connection_date, 'dd/MM/yyyy')"
+                                }
+                              ],
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": "String",
+                              "defaultValue": null,
+                              "fieldRule": null,
+                              "label": "Connection date",
+                              "name": "connection_date",
+                              "options": null,
+                              "type": "custom",
+                              "uiRef": null
+                            }
+                          ],
+                          "value": "Choose a date",
+                          "visibility": null
+                        }
+                      ],
+                      "type": "radioOption",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "airpoints" },
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.setup.airpoints.infoLayer"
+                        },
+                        { "key": "placeholder", "value": "Card number" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Airpoints card number",
+                      "name": "airpoints",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Save and continue",
+                      "name": "submitCurrentNumber",
+                      "options": null,
+                      "type": "button",
+                      "uiRef": null
+                    }
+                  ],
+                  "value": "Keep my current number",
+                  "visibility": { "expression": "true", "uiFields": null }
+                },
+                {
+                  "customAttributes": null,
+                  "fields": [
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": null,
+                      "name": "targetOfferId",
+                      "options": null,
+                      "type": "hidden",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": null,
+                      "name": "sourceLineNumber",
+                      "options": null,
+                      "type": "hidden",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": null,
+                      "name": "sourceOfferId",
+                      "options": null,
+                      "type": "hidden",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": null,
+                      "name": "sourcePack",
+                      "options": null,
+                      "type": "hidden",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "changePlanComparer" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": null,
+                      "name": "changePlanComparer",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "mpdComparer" },
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.changePlan.mpdComparerInfoLayer"
+                        }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": null,
+                      "name": "mpdComparer",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "subscriptionComparer" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Benefits differ on this plan",
+                      "name": "subscriptionComparer",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "datePicker" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": null,
+                      "name": "changeStartingDate",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "footnote" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": null,
+                      "name": "changePlanFootnote",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        {
+                          "key": "component",
+                          "value": "submitRecommendationButton"
+                        }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Continue",
+                      "name": "submitChangePlan",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "Boolean",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": null,
+                      "name": "isRecommendationDefaultSystemActionSet",
+                      "options": null,
+                      "type": "hidden",
+                      "uiRef": null
+                    }
+                  ],
+                  "value": "Keep my existing Spark number",
+                  "visibility": { "expression": "false", "uiFields": null }
+                },
+                {
+                  "customAttributes": null,
+                  "fields": [
+                    {
+                      "customAttributes": [
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.selectNewMobileNumber"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Select New Mobile Number"
+                        },
+                        { "key": "regionId", "value": "setup.simCardType" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "SIM option" },
+                        { "key": "summaryTemplate", "value": "chooseSIMType" },
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.setup.simCardType.infoLayer"
+                        }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "Choose your SIM card type",
+                      "name": "chooseSIMType",
+                      "options": [
+                        {
+                          "customAttributes": [
+                            { "key": "label", "value": "Trio SIM" },
+                            {
+                              "key": "sublabel",
+                              "value": "Multi sized SIM card"
+                            }
+                          ],
+                          "fields": null,
+                          "value": "trio_sim",
+                          "visibility": {
+                            "expression": "true",
+                            "uiFields": null
+                          }
+                        },
+                        {
+                          "customAttributes": [
+                            { "key": "label", "value": "eSIM" },
+                            {
+                              "key": "sublabel",
+                              "value": "Use the device?s embedded SIM"
+                            }
+                          ],
+                          "fields": null,
+                          "value": "esim",
+                          "visibility": {
+                            "expression": "true",
+                            "uiFields": null
+                          }
+                        }
+                      ],
+                      "type": "radioOption",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Save and continue",
+                      "name": "submitNewDataPlan",
+                      "options": null,
+                      "type": "button",
+                      "uiRef": null
+                    }
+                  ],
+                  "value": "Select a new number data plan",
+                  "visibility": { "expression": "false", "uiFields": null }
+                },
+                {
+                  "customAttributes": null,
+                  "fields": [
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "planComparer" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": null,
+                      "name": "plan_comparer",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": [
+                        {
+                          "key": "componentViewId",
+                          "value": "shop.checkout.setup.changeWearablePlan"
+                        },
+                        {
+                          "key": "componentViewName",
+                          "value": "Select New Mobile Number"
+                        },
+                        {
+                          "key": "infoLayerContentKey",
+                          "value": "checkout.setup.simCardType.infoLayer"
+                        },
+                        { "key": "regionId", "value": "setup.simCardType" },
+                        { "key": "showInSummary", "value": "true" },
+                        { "key": "summaryLabel", "value": "SIM option" },
+                        { "key": "summaryTemplate", "value": "chooseSIMType" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "Choose your SIM card type",
+                      "name": "chooseSIMType",
+                      "options": [
+                        {
+                          "customAttributes": [
+                            { "key": "label", "value": "eSIM" },
+                            {
+                              "key": "sublabel",
+                              "value": "Use the device?s embedded SIM"
+                            }
+                          ],
+                          "fields": null,
+                          "value": "esim",
+                          "visibility": null
+                        }
+                      ],
+                      "type": "radioOption",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Save and continue",
+                      "name": "submitWearableChangePlan",
+                      "options": null,
+                      "type": "button",
+                      "uiRef": null
+                    }
+                  ],
+                  "value": "Change my Wearable plan",
+                  "visibility": { "expression": "false", "uiFields": null }
+                }
+              ],
+              "type": "radioOption",
+              "uiRef": null
+            }
+          ],
+          "groupByLevelEnabled": null,
+          "level": "cartItem",
+          "name": "Set up your Products",
+          "offerContainerId": "55a1d113-2182-43ae-a448-9813dd838eab",
+          "sequence": "0",
+          "stepDataRef": null,
+          "stepId": "setUpYourProducts",
+          "uiRef": null,
+          "validationExpressions": null,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "customAttributes": [
+        {
+          "key": "contentKey",
+          "value": "checkout.prepaidPersonalDetails.description"
+        }
+      ],
+      "name": "Personal details",
+      "sectionId": "prepaidPersonalDetails",
+      "steps": [
+        {
+          "cartItemId": null,
+          "customAttributes": null,
+          "endpoints": null,
+          "fields": [
+            {
+              "customAttributes": [
+                { "key": "shouldMask", "value": "true" },
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Name" },
+                {
+                  "key": "summaryTemplate",
+                  "value": "firstName + ' ' + lastName"
+                },
+                { "key": "placeholder", "value": "Your first name" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": null,
+                "state": null,
+                "validations": {
+                  "compare": null,
+                  "maxLength": null,
+                  "maxValue": null,
+                  "minLength": null,
+                  "minValue": null,
+                  "regex": {
+                    "expression": "^[A-Za-z\\s.-]{1,50}$",
+                    "message": "Please enter no more than 50 letters"
+                  }
+                },
+                "visibility": null
+              },
+              "label": "First name",
+              "name": "firstName",
+              "options": null,
+              "type": "textfield",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "placeholder", "value": "Your last name" },
+                { "key": "shouldMask", "value": "true" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": null,
+                "state": null,
+                "validations": {
+                  "compare": null,
+                  "maxLength": null,
+                  "maxValue": null,
+                  "minLength": null,
+                  "minValue": null,
+                  "regex": {
+                    "expression": "^[A-Za-z\\s.-]{1,50}$",
+                    "message": "Please enter no more than 50 letters"
+                  }
+                },
+                "visibility": null
+              },
+              "label": "Last name",
+              "name": "lastName",
+              "options": null,
+              "type": "textfield",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "placeholder", "value": "Your email" },
+                { "key": "shouldMask", "value": "true" },
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Email" },
+                { "key": "summaryTemplate", "value": "email" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": null,
+                "state": null,
+                "validations": {
+                  "compare": null,
+                  "maxLength": null,
+                  "maxValue": null,
+                  "minLength": null,
+                  "minValue": null,
+                  "regex": {
+                    "expression": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
+                    "message": "Please check if your email address is correct. Example: johnsmith@gmail.com"
+                  }
+                },
+                "visibility": null
+              },
+              "label": "Email",
+              "name": "email",
+              "options": null,
+              "type": "textfield",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "phoneInput" },
+                { "key": "shouldMask", "value": "true" },
+                { "key": "showInSummary", "value": "true" },
+                { "key": "summaryLabel", "value": "Contact number" },
+                { "key": "summaryTemplate", "value": "contact_number" },
+                { "key": "placeholder", "value": "Your number" },
+                {
+                  "key": "customItems",
+                  "value": "020, 021, 022, 027, 028, 029, 0204, 03, 04, 06, 07, 09, 00"
+                },
+                { "key": "defaultValue", "value": "027" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": null,
+                "state": null,
+                "validations": {
+                  "compare": null,
+                  "maxLength": null,
+                  "maxValue": null,
+                  "minLength": null,
+                  "minValue": null,
+                  "regex": {
+                    "expression": "^(027|020|021|022|028|029|0204|03|04|06|07|09|00)[0-9]{6,9}$",
+                    "message": "Enter 6 to 9 digits"
+                  }
+                },
+                "visibility": null
+              },
+              "label": "Contact number",
+              "name": "contact_number",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": null,
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "Save and continue",
+              "name": "submitPersonalDetails",
+              "options": null,
+              "type": "button",
+              "uiRef": null
+            }
+          ],
+          "groupByLevelEnabled": null,
+          "level": "order",
+          "name": "Your details",
+          "offerContainerId": null,
+          "sequence": "0",
+          "stepDataRef": null,
+          "stepId": "yourDetails",
+          "uiRef": null,
+          "validationExpressions": null,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "customAttributes": null,
+      "name": "Review",
+      "sectionId": "review",
+      "steps": [
+        {
+          "cartItemId": null,
+          "customAttributes": null,
+          "endpoints": null,
+          "fields": [
+            {
+              "customAttributes": [
+                { "key": "component", "value": "content" },
+                { "key": "contentKey", "value": "checkout.review.headernote" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": null,
+              "label": null,
+              "name": "reviewHeadnote",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "cartTable" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": null,
+              "name": "review_cart_table",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "mobileTransferMessage" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": { "expression": "false", "uiFields": null }
+              },
+              "label": null,
+              "name": "mobile_transfer_message",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                {
+                  "key": "contentKey",
+                  "value": "checkout.review.termsAndConditions"
+                }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "Boolean",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "true", "uiFields": null },
+                "state": null,
+                "validations": {
+                  "compare": null,
+                  "maxLength": null,
+                  "maxValue": null,
+                  "minLength": null,
+                  "minValue": null,
+                  "regex": { "expression": "^true$", "message": "" }
+                },
+                "visibility": null
+              },
+              "label": "I agree to the terms and conditions",
+              "name": "terms_and_conditions",
+              "options": null,
+              "type": "checkBox",
+              "uiRef": null
+            },
+            {
+              "customAttributes": null,
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "Confirm",
+              "name": "submit",
+              "options": null,
+              "type": "button",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "footnote" },
+                { "key": "contentKey", "value": "checkout.review.footnote" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": null,
+              "name": "review_footnote",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": null,
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": { "expression": "false", "uiFields": null }
+              },
+              "label": null,
+              "name": "creditCheckRequired",
+              "options": [
+                {
+                  "customAttributes": null,
+                  "fields": null,
+                  "value": "yes",
+                  "visibility": { "expression": "false", "uiFields": null }
+                },
+                {
+                  "customAttributes": null,
+                  "fields": null,
+                  "value": "no",
+                  "visibility": { "expression": "true", "uiFields": null }
+                }
+              ],
+              "type": "radioOption",
+              "uiRef": null
+            },
+            {
+              "customAttributes": null,
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": { "expression": "false", "uiFields": null }
+              },
+              "label": null,
+              "name": "minimumUpfrontAmount",
+              "options": null,
+              "type": "hidden",
+              "uiRef": null
+            },
+            {
+              "customAttributes": null,
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": { "expression": "false", "uiFields": null }
+              },
+              "label": null,
+              "name": "cartValidityToken",
+              "options": null,
+              "type": "hidden",
+              "uiRef": null
+            },
+            {
+              "customAttributes": null,
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": { "expression": "false", "uiFields": null }
+              },
+              "label": null,
+              "name": "applicationStatus",
+              "options": null,
+              "type": "hidden",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [{ "key": "component", "value": "blackbox" }],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": null,
+              "label": null,
+              "name": "blackboxId",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            }
+          ],
+          "groupByLevelEnabled": null,
+          "level": "order",
+          "name": null,
+          "offerContainerId": null,
+          "sequence": "0",
+          "stepDataRef": null,
+          "stepId": "review",
+          "uiRef": null,
+          "validationExpressions": null,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "customAttributes": null,
+      "name": "Payment",
+      "sectionId": "payment",
+      "steps": [
+        {
+          "cartItemId": null,
+          "customAttributes": null,
+          "endpoints": null,
+          "fields": [
+            {
+              "customAttributes": [
+                { "key": "component", "value": "paymentAmount" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": null,
+              "defaultValue": null,
+              "fieldRule": {
+                "required": { "expression": "false", "uiFields": null },
+                "state": null,
+                "validations": null,
+                "visibility": null
+              },
+              "label": "Payment amount",
+              "name": "paymentAmount",
+              "options": null,
+              "type": "custom",
+              "uiRef": null
+            },
+            {
+              "customAttributes": [
+                { "key": "component", "value": "paymentOptions" }
+              ],
+              "dataRef": null,
+              "dataRefURL": null,
+              "datatype": "String",
+              "defaultValue": null,
+              "fieldRule": null,
+              "label": "Choose your payment method",
+              "name": "choosePaymentMethod",
+              "options": [
+                {
+                  "customAttributes": [
+                    { "key": "label", "value": "Pay on your Spark account" },
+                    { "key": "iconName", "value": "spark_bill_large" }
+                  ],
+                  "fields": [
+                    {
+                      "customAttributes": [
+                        { "key": "component", "value": "content" },
+                        { "key": "contentKey", "value": "payWithAccount.text" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Pay on your Spark account",
+                      "name": "payWithAccountContent",
+                      "options": null,
+                      "type": "custom",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Place order",
+                      "name": "submit_spark_account_payment",
+                      "options": null,
+                      "type": "button",
+                      "uiRef": null
+                    }
+                  ],
+                  "value": "Pay on your Spark account",
+                  "visibility": { "expression": "false", "uiFields": null }
+                },
+                {
+                  "customAttributes": [
+                    { "key": "label", "value": "New credit/debit card" },
+                    { "key": "iconName", "value": "credit_card_large" }
+                  ],
+                  "fields": [
+                    {
+                      "customAttributes": [
+                        { "key": "contentKey", "value": "cardInput.text" }
+                      ],
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": "String",
+                      "defaultValue": null,
+                      "fieldRule": null,
+                      "label": "New or Existing Card",
+                      "name": "Choose_card_option",
+                      "options": [
+                        {
+                          "customAttributes": null,
+                          "fields": [
+                            {
+                              "customAttributes": [
+                                { "key": "component", "value": "content" },
+                                {
+                                  "key": "contentKey",
+                                  "value": "payment.newCard.text"
+                                }
+                              ],
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": "String",
+                              "defaultValue": null,
+                              "fieldRule": null,
+                              "label": null,
+                              "name": "newCardContentField",
+                              "options": null,
+                              "type": "custom",
+                              "uiRef": null
+                            },
+                            {
+                              "customAttributes": [
+                                { "key": "component", "value": "cardInput" }
+                              ],
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": "String",
+                              "defaultValue": null,
+                              "fieldRule": null,
+                              "label": null,
+                              "name": "token",
+                              "options": null,
+                              "type": "custom",
+                              "uiRef": null
+                            },
+                            {
+                              "customAttributes": null,
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": "Boolean",
+                              "defaultValue": null,
+                              "fieldRule": {
+                                "required": {
+                                  "expression": "false",
+                                  "uiFields": null
+                                },
+                                "state": null,
+                                "validations": null,
+                                "visibility": {
+                                  "expression": "false",
+                                  "uiFields": null
+                                }
+                              },
+                              "label": "Save this card for future payments",
+                              "name": "saveCard",
+                              "options": null,
+                              "type": "checkBox",
+                              "uiRef": null
+                            }
+                          ],
+                          "value": "New Card",
+                          "visibility": null
+                        },
+                        {
+                          "customAttributes": null,
+                          "fields": [
+                            {
+                              "customAttributes": null,
+                              "dataRef": null,
+                              "dataRefURL": null,
+                              "datatype": "String",
+                              "defaultValue": null,
+                              "fieldRule": null,
+                              "label": null,
+                              "name": "paymentMethodId",
+                              "options": null,
+                              "type": "hidden",
+                              "uiRef": null
+                            }
+                          ],
+                          "value": "Existing Card",
+                          "visibility": null
+                        }
+                      ],
+                      "type": "radioOption",
+                      "uiRef": null
+                    },
+                    {
+                      "customAttributes": null,
+                      "dataRef": null,
+                      "dataRefURL": null,
+                      "datatype": null,
+                      "defaultValue": null,
+                      "fieldRule": {
+                        "required": { "expression": "false", "uiFields": null },
+                        "state": null,
+                        "validations": null,
+                        "visibility": null
+                      },
+                      "label": "Place order",
+                      "name": "placeOrderButton",
+                      "options": null,
+                      "type": "button",
+                      "uiRef": null
+                    }
+                  ],
+                  "value": "Credit/Debit Card",
+                  "visibility": null
+                }
+              ],
+              "type": "radioOption",
+              "uiRef": null
+            }
+          ],
+          "groupByLevelEnabled": null,
+          "level": "order",
+          "name": null,
+          "offerContainerId": null,
+          "sequence": "0",
+          "stepDataRef": null,
+          "stepId": "checkout_payment",
+          "uiRef": null,
+          "validationExpressions": null,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}

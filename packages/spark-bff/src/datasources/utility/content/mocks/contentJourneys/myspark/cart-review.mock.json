@@ -1,0 +1,128 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/cart/review",
+  "tags": ["myspark"],
+  "title": "Review foot note",
+  "description": "",
+  "fields": [
+    {
+      "fieldKey": "footNote.prepaid",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Your {subscription.frequency} recurring payment will begin today.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "footNote.postpaid",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "This will be updated on your monthly bill.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "review.footNote.renewalDate",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "You'll restart your {subscription.frequency} recurring payment on your next renewal date.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "termsAndConditions.title",
+      "fieldType": "HEADING",
+      "fieldValue": "I have read and accept the",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "termsAndConditions.link",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "terms and conditions",
+      "fieldUrl": "http://www.spark.co.nz"
+    },
+    {
+      "fieldKey": "autoRenew.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Auto renew",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "autoRenew.renewalDate",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Renews on {renewalDate}",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "autoRenew.futurePayments.prepaidBalance",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Your prepaid balance will be charged every {billingFrequency}. Please ensure there are sufficient funds available.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "autoRenew.futurePayments.savedCard",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "This card will be charged for all your future payments. Please ensure you always have sufficient funds available.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "surcharge.info",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Payments by credit or debit card will incur a surcharge. This surcharge depends on the type of card used and whether it’s recurring or one-off.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "surcharge.link",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "View credit/debit card charges",
+      "fieldUrl": "https://www.spark.co.nz/help/account/bill/pay-bill/"
+    },
+    {
+      "fieldKey": "voucher.note",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Any credit remaining on the voucher will be added to your account balance. If the value of the voucher is not enough, you will have the option to split payment.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "voucher.messagestatus",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Your voucher credit of ${redeemedAmount} has been successfully added to your prepaid balance.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "prepaidBalance.insufficient.note",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Your prepaid balance is not enough to complete the purchase. Pay the remaining with a debit/credit card.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "mcafeeTermsAndConditions.title",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "I understand that with this change all of my currently activated devices will be unprotected by McAfee Security and I will need to reactivate selected devices",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "mcafeeTermsAndConditions.subtitle1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "All your current McAfee Security protected devices will become unprotected automatically.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "mcafeeTermsAndConditions.subtitle2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "To protect your devices again, you'll need to uninstall McAfee Security from all your devices. Spark will send you a notification to support you with this, and the activation and reinstallation on up to 5 devices.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "mcafeeTermsAndConditions.subtitle3",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "On McAfee Security Standard, you will have less devices you can protect.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "gst.information",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Price exclude GST",
+      "fieldUrl": null
+    }
+  ]
+}

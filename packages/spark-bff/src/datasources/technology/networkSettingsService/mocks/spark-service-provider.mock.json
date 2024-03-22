@@ -1,0 +1,12 @@
+{
+  "serviceProvider": {
+    "id": "2",
+    "name": "Spark New Zealand"
+  },
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ]
+}

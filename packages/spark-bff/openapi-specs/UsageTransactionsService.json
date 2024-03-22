@@ -1,0 +1,584 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Retrieve usage transactions on a line-by-line basis.",
+    "version": "1.0.0",
+    "title": "DESL Line Usage Transactions Service",
+    "x-ibm-name": "usage-transactions-service-api"
+  },
+  "schemes": ["https"],
+  "paths": {
+    "/v1/line/usage/me/{lineNumber}/transactions": {
+      "get": {
+        "tags": ["usage", "transactions", "protected", "oidc"],
+        "summary": "Retrieves payment, adjustment and charge transactions for the specified line of this user",
+        "operationId": "getUsageTransactions",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number to fetch the transactions for",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "x-example": "02712381239",
+            "required": true
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start timestamp of the transactional data to fetch; the default value for this is 12am, four months ago",
+            "type": "string",
+            "format": "date-time",
+            "required": false
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end timestamp of the transactional data to fetch; the default value for this is tomorrow, 12am",
+            "type": "string",
+            "format": "date-time",
+            "required": false
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The maximum number of transactions to return in a single response (note: out-of range values will be clamped to the range of valid values: 1-100).",
+            "type": "integer",
+            "required": false,
+            "default": 20
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsageTransactions"
+            }
+          },
+          "400": {
+            "description": "Bad request data",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to fetch usage transactions about this line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/line/usage/me/{lineNumber}/transactions/pages/{key}": {
+      "get": {
+        "tags": ["usage", "transactions", "protected", "oidc"],
+        "summary": "Retrieves payment, adjustment and charge transactions for the specified line of this user",
+        "operationId": "getPagedUsageTransactions",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "lineNumber",
+            "in": "path",
+            "description": "The line number to fetch the transactions for",
+            "type": "string",
+            "pattern": "^0\\d+$",
+            "x-example": "02712381239",
+            "required": true
+          },
+          {
+            "name": "key",
+            "in": "path",
+            "description": "The key to request for the next set of results relating to the supplied line number, date-time range and page size; this should be obtained from the previous response",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start timestamp of the transactional data to fetch",
+            "type": "string",
+            "format": "date-time",
+            "required": true
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end timestamp of the transactional data to fetch",
+            "type": "string",
+            "format": "date-time",
+            "required": true
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The maximum number of transactions to return in a single response",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsageTransactions"
+            }
+          },
+          "400": {
+            "description": "Bad request data",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to fetch usage transactions about this line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "UsageTransactions": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "accountType",
+            "startDateTime",
+            "endDateTime",
+            "pageSize",
+            "transactions"
+          ],
+          "properties": {
+            "accountType": {
+              "type": "string",
+              "description": "Identifies the type of account associated with this usage transaction response.",
+              "enum": ["POSTPAID", "PREPAID"]
+            },
+            "startDateTime": {
+              "type": "string",
+              "description": "The start date-time used in the query placed to the downstream SingleView datasource",
+              "format": "date-time"
+            },
+            "endDateTime": {
+              "type": "string",
+              "description": "The end date-time used in the query placed to the downstream SingleView datasource",
+              "format": "date-time"
+            },
+            "pageSize": {
+              "type": "integer",
+              "description": "The number of transaction results requested as part of downstream query.  Important note: this is *not* the same as the number of results returned",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "nextPageKey": {
+              "type": "string",
+              "description": "Present if additional pages of results are available."
+            },
+            "transactions": {
+              "type": "array",
+              "description": "The transactions associated with this line sorted in reverse chronological order (i.e. newest first).",
+              "items": {
+                "$ref": "#/definitions/Transaction"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Transaction": {
+      "type": "object",
+      "required": [
+        "transactionType",
+        "startDateTime",
+        "endDateTime",
+        "previousBalance",
+        "currentBalance",
+        "isDebit",
+        "type",
+        "description",
+        "value",
+        "isGstInclusive"
+      ],
+      "description": "This is not complete yet, as the design hasn't been completed",
+      "properties": {
+        "transactionType": {
+          "type": "string",
+          "description": "The type of transaction",
+          "enum": ["CHARGE", "PAYMENT", "ADJUSTMENT"]
+        },
+        "startDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The start of this transaction"
+        },
+        "endDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The end of this transaction.  In the case of a payment or adjustment the endDateTime will be equal to the startDateTime as those are instantaneous events"
+        },
+        "previousBalance": {
+          "type": "number",
+          "description": "The line balance prior to this transaction in NZD"
+        },
+        "currentBalance": {
+          "type": "number",
+          "description": "The line balance following this transaction in NZD"
+        },
+        "isDebit": {
+          "type": "boolean",
+          "description": "Indicates if the transaction is a debit, e.g. charge, or credit (payment). Note adjustments could potentially be either a debit or credit depending on the type applied."
+        },
+        "type": {
+          "type": "string",
+          "description": "A customer-friendly term for the type of transaction"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the transaction, e.g. the type of activity or product purchase."
+        },
+        "value": {
+          "type": "number",
+          "description": "The value of the transaction in NZD"
+        },
+        "isGstInclusive": {
+          "type": "boolean",
+          "description": "Indicates if this value includes a GST component."
+        },
+        "paymentDetails": {
+          "description": "The payment details associated with this transaction if it is of type PAYMENT.",
+          "$ref": "#/definitions/Payment"
+        },
+        "chargeDetails": {
+          "description": "The charge details associated with this transaction if it is of type CHARGE.",
+          "$ref": "#/definitions/Charge"
+        },
+        "adjustmentDetails": {
+          "description": "The adjustment details associated with this transaction if it is of type ADJUSTMENTD.",
+          "$ref": "#/definitions/Adjustment"
+        }
+      }
+    },
+    "Payment": {
+      "type": "object",
+      "required": [
+        "paymentId",
+        "paymentChannel",
+        "paymentStatus",
+        "paymentMethod"
+      ],
+      "properties": {
+        "paymentId": {
+          "type": "string",
+          "description": "The downstream identifier for the payment"
+        },
+        "paymentChannel": {
+          "type": "string",
+          "description": "The payment channel that received/processed the payment request.",
+          "example": "ONLINE"
+        },
+        "paymentStatus": {
+          "description": "The status of the payment.  Deliberately not an enum",
+          "example": "APPLIED"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "description": "The method of payment.  Again, deliberately not an enum",
+          "example": "POLI"
+        },
+        "paymentReference": {
+          "type": "string",
+          "description": "The payment reference"
+        }
+      }
+    },
+    "Charge": {
+      "type": "object",
+      "required": ["chargeType", "eventType"],
+      "properties": {
+        "chargeType": {
+          "type": "string",
+          "description": "The type of charge.  Also, not an enum",
+          "example": "PRODUCT_CHARGE"
+        },
+        "chargeSource": {
+          "type": "string",
+          "description": "The source of the charge if applicable.  Not an enum",
+          "example": "IME"
+        },
+        "eventId": {
+          "type": "string",
+          "description": "The event ID associated to the usage charge"
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of event.  Still not an enum",
+          "example": "VOICE_CALL"
+        },
+        "eventSubType": {
+          "type": "string",
+          "description": "The sub-category of event type if applicable.  Not even an enum"
+        },
+        "toNumber": {
+          "type": "string",
+          "description": "The line number that was contacted during the charge event, e.g. the phone number the customer called from this line."
+        },
+        "usage": {
+          "description": "The total data/call/txt(?) usage related to this transaction.",
+          "$ref": "#/definitions/Usage"
+        }
+      }
+    },
+    "Adjustment": {
+      "type": "object",
+      "required": ["adjustmendId", "adjustmentType", "adjustmentStatus"],
+      "properties": {
+        "adjustmentId": {
+          "type": "string",
+          "description": "The identifier of the adjustment"
+        },
+        "adjustmentType": {
+          "type": "string",
+          "description": "The type of adjustment applied."
+        },
+        "adjustmentStatus": {
+          "type": "string",
+          "description": "The status of the adjustment",
+          "example": "APPLIED"
+        },
+        "reasonCode": {
+          "type": "string",
+          "description": "The reason code for the adjustment."
+        },
+        "reasonDescription": {
+          "type": "string",
+          "description": "The reason description for the adjustment."
+        }
+      }
+    },
+    "Usage": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "The total usage during the time period covered",
+          "example": 125.333334
+        },
+        "unit": {
+          "type": "string",
+          "description": "the units the value represents",
+          "enum": ["GB", "MB", "MIN", "TEXT"]
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "ST2": {
+        "properties": {
+          "endPoint": "http://iamproxy-st05.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-st2.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST3": {
+        "properties": {
+          "endPoint": "http://iamproxy-st07.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-st3.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "ST4": {
+        "properties": {
+          "endPoint": "http://iamproxy-st06.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-st4.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://usage-transactions-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

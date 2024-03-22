@@ -1,0 +1,525 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns a list of bill details on success 1`] = `
+Object {
+  "bills": Array [
+    Object {
+      "billId": "720308770-20200503",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 176.87,
+        },
+        Object {
+          "type": "USAGE",
+          "value": 0,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 119.51,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-05-03",
+      "title": "2020-05-03",
+    },
+    Object {
+      "billId": "720308770-20200603",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "USAGE",
+          "value": 0,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-06-03",
+      "title": "2020-06-03",
+    },
+    Object {
+      "billId": "720308770-20200703",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-07-03",
+      "title": "2020-07-03",
+    },
+    Object {
+      "billId": "720308770-20200803",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-08-03",
+      "title": "2020-08-03",
+    },
+    Object {
+      "billId": "720308770-20200903",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-09-03",
+      "title": "2020-09-03",
+    },
+    Object {
+      "billId": "720308770-20201003",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-10-03",
+      "title": "2020-10-03",
+    },
+    Object {
+      "billId": "720308770-20201103",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 101.69,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 44.33,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-11-03",
+      "title": "2020-11-03",
+    },
+    Object {
+      "billId": "720308770-20201203",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 155.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 98,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-12-03",
+      "title": "2020-12-03",
+    },
+    Object {
+      "billId": "720308770-20210103",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-01-03",
+      "title": "2021-01-03",
+    },
+    Object {
+      "billId": "720308770-20210203",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-02-03",
+      "title": "2021-02-03",
+    },
+    Object {
+      "billId": "720308770-20210303",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-03-03",
+      "title": "2021-03-03",
+    },
+    Object {
+      "billId": "720308770-20210403",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-04-03",
+      "title": "2021-04-03",
+    },
+    Object {
+      "billId": "720308770-20210503",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-05-03",
+      "title": "2021-05-03",
+    },
+  ],
+}
+`;
+
+exports[`returns a list of bill details when provided with start and end dates 1`] = `
+Object {
+  "bills": Array [
+    Object {
+      "billId": "720308770-20200503",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 176.87,
+        },
+        Object {
+          "type": "USAGE",
+          "value": 0,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 119.51,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-05-03",
+      "title": "2020-05-03",
+    },
+    Object {
+      "billId": "720308770-20200603",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "USAGE",
+          "value": 0,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-06-03",
+      "title": "2020-06-03",
+    },
+    Object {
+      "billId": "720308770-20200703",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-07-03",
+      "title": "2020-07-03",
+    },
+    Object {
+      "billId": "720308770-20200803",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-08-03",
+      "title": "2020-08-03",
+    },
+    Object {
+      "billId": "720308770-20200903",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-09-03",
+      "title": "2020-09-03",
+    },
+    Object {
+      "billId": "720308770-20201003",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 152.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 95,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-10-03",
+      "title": "2020-10-03",
+    },
+    Object {
+      "billId": "720308770-20201103",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 101.69,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 44.33,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-11-03",
+      "title": "2020-11-03",
+    },
+    Object {
+      "billId": "720308770-20201203",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 155.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 98,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2020-12-03",
+      "title": "2020-12-03",
+    },
+    Object {
+      "billId": "720308770-20210103",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-01-03",
+      "title": "2021-01-03",
+    },
+    Object {
+      "billId": "720308770-20210203",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-02-03",
+      "title": "2021-02-03",
+    },
+    Object {
+      "billId": "720308770-20210303",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-03-03",
+      "title": "2021-03-03",
+    },
+    Object {
+      "billId": "720308770-20210403",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-04-03",
+      "title": "2021-04-03",
+    },
+    Object {
+      "billId": "720308770-20210503",
+      "charges": Array [
+        Object {
+          "type": "ALL_CHARGES",
+          "value": 156.36,
+        },
+        Object {
+          "type": "MONTHLY_CHARGES",
+          "value": 99,
+        },
+        Object {
+          "type": "OTHER",
+          "value": 57.36,
+        },
+      ],
+      "date": "2021-05-03",
+      "title": "2021-05-03",
+    },
+  ],
+}
+`;

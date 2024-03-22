@@ -1,0 +1,152 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "interval": "MONTHLY",
+  "accountType": "POSTPAID",
+  "sharerType": "LEADER",
+  "startDateTime": "2021-08-12T12:00:00Z",
+  "endDateTime": "2021-11-12T10:59:59Z",
+  "averagePeriodUsage": {
+    "value": 1010.307618,
+    "unit": "MB"
+  },
+  "averageGroupPeriodUsage": {
+    "value": 1899.448243,
+    "unit": "MB"
+  },
+  "summarisedPeriods": [
+    {
+      "startDateTime": "2021-10-12T11:00:00Z",
+      "endDateTime": "2021-11-12T10:59:59Z",
+      "periodUsage": {
+        "value": 1183.242187,
+        "unit": "MB"
+      },
+      "periodGroupUsage": {
+        "value": 1664.296876,
+        "unit": "MB"
+      },
+      "unbilled": true,
+      "periodBreakdown": [
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-10-12T11:00:00.000Z|2021-11-12T10:59:59.000Z",
+          "periodUsage": {
+            "value": 1183.242187,
+            "unit": "MB"
+          },
+          "periodGroupUsage": {
+            "value": 1664.296876,
+            "unit": "MB"
+          },
+          "periodLimit": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "periodGroupLimit": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "periodRemaining": {
+            "value": 2912.757813,
+            "unit": "MB"
+          },
+          "periodGroupRemaining": {
+            "value": 2431.703124,
+            "unit": "MB"
+          }
+        }
+      ]
+    },
+    {
+      "startDateTime": "2021-09-12T12:00:00Z",
+      "endDateTime": "2021-10-12T10:59:59Z",
+      "periodUsage": {
+        "value": 108.4375,
+        "unit": "MB"
+      },
+      "periodGroupUsage": {
+        "value": 207.333984,
+        "unit": "MB"
+      },
+      "unbilled": false,
+      "periodBreakdown": [
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-09-12T12:00:00.000Z|2021-10-12T10:59:59.000Z",
+          "periodUsage": {
+            "value": 108.4375,
+            "unit": "MB"
+          },
+          "periodGroupUsage": {
+            "value": 207.333984,
+            "unit": "MB"
+          },
+          "periodLimit": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "periodGroupLimit": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "periodRemaining": {
+            "value": 3987.5625,
+            "unit": "MB"
+          },
+          "periodGroupRemaining": {
+            "value": 3888.666016,
+            "unit": "MB"
+          }
+        }
+      ]
+    },
+    {
+      "startDateTime": "2021-08-12T12:00:00Z",
+      "endDateTime": "2021-09-12T11:59:59Z",
+      "periodUsage": {
+        "value": 1912.177735,
+        "unit": "MB"
+      },
+      "periodGroupUsage": {
+        "value": 3591.562501,
+        "unit": "MB"
+      },
+      "unbilled": false,
+      "periodBreakdown": [
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-08-12T12:00:00.000Z|2021-09-12T11:59:59.000Z",
+          "periodUsage": {
+            "value": 1912.177735,
+            "unit": "MB"
+          },
+          "periodGroupUsage": {
+            "value": 3591.562501,
+            "unit": "MB"
+          },
+          "periodLimit": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "periodGroupLimit": {
+            "value": 4096,
+            "unit": "MB"
+          },
+          "periodRemaining": {
+            "value": 2183.822265,
+            "unit": "MB"
+          },
+          "periodGroupRemaining": {
+            "value": 504.437499,
+            "unit": "MB"
+          }
+        }
+      ]
+    }
+  ]
+}

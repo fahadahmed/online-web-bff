@@ -1,0 +1,93 @@
+{
+  "id": "online-shop/header-menu",
+  "tags": ["personal"],
+  "title": "Header menu",
+  "site": "spark",
+  "description": "Header Menu for Shop",
+  "menus": [
+    {
+      "menuType": "PRIMARY",
+      "menuSections": [
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "Shop",
+              "itemUrl": "/shop",
+              "itemImageUrl": "shop_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Benefits",
+              "itemUrl": "/benefits",
+              "itemImageUrl": "benefits_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Discover & learn",
+              "itemUrl": "/discover",
+              "itemImageUrl": "news_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Help",
+              "itemUrl": "/help",
+              "itemImageUrl": "help_large"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menuType": "SECONDARY",
+      "menuSections": [
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "Home",
+              "itemUrl": "/home",
+              "itemImageUrl": "home_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Shop",
+              "itemUrl": "/shop",
+              "itemImageUrl": "shop_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Benefits",
+              "itemUrl": "/benefits",
+              "itemImageUrl": "benefits_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Discover & learn",
+              "itemUrl": "/discover",
+              "itemImageUrl": "news_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Help & Support",
+              "itemUrl": "/help",
+              "itemImageUrl": "help_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "MySpark",
+              "itemUrl": "/myspark",
+              "itemImageUrl": "me_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Search",
+              "itemUrl": "/search",
+              "itemImageUrl": "search_large"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

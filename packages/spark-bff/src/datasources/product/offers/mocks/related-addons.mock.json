@@ -1,0 +1,406 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "bundles": [
+    {
+      "offerDetails": [
+        {
+          "id": "airpods_max_space_grey",
+          "grandFathered": false,
+          "externalId": "apple125469SPO",
+          "name": "AirPods Max - Space Grey",
+          "description": "AirPods Pro provides Active Noise Cancellation that blocks outside noise, while Transparency mode lets it in. Spatial audio with dynamic head tracking gives cinema-like sound that surrounds you. Airpods have three sizes of soft, tapered silicone tips for a customisable fit, and are sweat- and water-resistant. The Wireless Charging Case delivers more than 24 hours of battery life.",
+          "category": [
+            { "id": "headphones" },
+            { "id": "headphones_apple_airpods" },
+            { "id": "accessories" }
+          ],
+          "price": {
+            "priceType": "Onetime",
+            "frequency": null,
+            "basePrice": 999.0,
+            "basePriceExcludingTax": 868.7,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": null
+          },
+          "group": {
+            "id": "airpods_max",
+            "name": "Airpods Max",
+            "description": "",
+            "sortOrder": 0,
+            "images": null,
+            "isDefault": null
+          },
+          "images": [
+            {
+              "description": null,
+              "id": "AirPodsMaxSpaceGrey",
+              "sortOrder": null,
+              "defaultUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Space_Gray_Pure_Back_Pure_Side_2-up_400x800.png",
+              "zoomUrl": null,
+              "standardUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Space_Gray_Pure_Back_400x800.png",
+              "thumbnailUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Space_Gray_Pure_Back_400x800.png",
+              "tinyUrl": null
+            }
+          ],
+          "entitlements": [],
+          "promotions": [],
+          "productFeatures": {
+            "color": "Space Grey",
+            "primaryColor": "Grey",
+            "colorHex": "#52514F",
+            "brand": "Apple",
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": true,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": true,
+            "isIncluded": null,
+            "isFeatured": false,
+            "soldSeparately": false,
+            "balanceManageMent": null
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "mobile_insurance_premium",
+          "grandFathered": false,
+          "externalId": "misc040223",
+          "name": "Mobile Insurance Premium",
+          "description": "Mobile Insurance Premium",
+          "category": [{ "id": "insurance" }],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": { "period": "Month", "value": 0 },
+            "basePrice": 15.95,
+            "basePriceExcludingTax": 13.87,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": null
+          },
+          "group": null,
+          "images": [],
+          "entitlements": [],
+          "promotions": [],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": null,
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": null,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": null,
+            "isIncluded": null,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManageMent": null
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "spotify_individual_half_price_2",
+          "grandFathered": false,
+          "externalId": "vasbundle070019",
+          "name": "Spotify Premium",
+          "description": "Stream millions of songs with high-def quality ad-free.",
+          "category": [{ "id": "mobile_spotify" }, { "id": "mobile_vas" }],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": { "period": "Month", "value": 1 },
+            "basePrice": 7.49,
+            "basePriceExcludingTax": 6.51,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": "Usually $14.99/month"
+          },
+          "group": {
+            "id": "spotify_premium",
+            "name": "Spotify Premium",
+            "description": "",
+            "sortOrder": 1,
+            "images": null,
+            "isDefault": null
+          },
+          "images": [
+            {
+              "description": null,
+              "id": "TheSpotifyPremium$7.49(PayMonthly)",
+              "sortOrder": null,
+              "zoomUrl": null,
+              "thumbnailUrl": null,
+              "tinyUrl": null
+            },
+            {
+              "imageType": "FEATURED",
+              "description": null,
+              "id": "TheSpotifyPremium$7.49(PayMonthly) ",
+              "sortOrder": null,
+              "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/Retail/spotify-premium-desktop-1436x800.jpg",
+              "zoomUrl": null,
+              "standardUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/Retail/spotify-premium-desktop-1436x800.jpg",
+              "thumbnailUrl": null,
+              "tinyUrl": null
+            }
+          ],
+          "entitlements": [],
+          "promotions": [
+            {
+              "name": "Your plan gives you 50% off Spotify Premium",
+              "productType": "FEATURE",
+              "shortDescription": null,
+              "longDescription": "Your plan gives you 50% off Spotify Premium",
+              "sortOrder": null,
+              "iconUrl": null
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": "Spotify",
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": null,
+            "entitledEntity": "LINE",
+            "partnerId": null,
+            "isDeferrable": null,
+            "isIncluded": false,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManageMent": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "airpods_max_sky_blue",
+          "grandFathered": false,
+          "externalId": "apple125471SPO",
+          "name": "AirPods Max - Sky Blue",
+          "description": "AirPods Pro provides Active Noise Cancellation that blocks outside noise, while Transparency mode lets it in. Spatial audio with dynamic head tracking gives cinema-like sound that surrounds you. Airpods have three sizes of soft, tapered silicone tips for a customisable fit, and are sweat- and water-resistant. The Wireless Charging Case delivers more than 24 hours of battery life.",
+          "category": [
+            { "id": "headphones" },
+            { "id": "headphones_apple_airpods" },
+            { "id": "accessories" }
+          ],
+          "price": {
+            "priceType": "Onetime",
+            "frequency": null,
+            "basePrice": 999.0,
+            "basePriceExcludingTax": 868.7,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": null
+          },
+          "group": null,
+          "images": [
+            {
+              "description": null,
+              "id": "AirPodsMaxSkyBlue",
+              "sortOrder": null,
+              "defaultUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Sky_Blue_Pure_Back_Pure_Side_2-up_400x800.png",
+              "zoomUrl": null,
+              "standardUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Sky_Blue_Pure_Back_SCREEN__USEN.png",
+              "thumbnailUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Sky_Blue_Pure_Back_SCREEN__USEN.png",
+              "tinyUrl": null
+            }
+          ],
+          "entitlements": [],
+          "promotions": [],
+          "productFeatures": {
+            "color": "Blue",
+            "primaryColor": "Blue",
+            "colorHex": "#0000FF",
+            "brand": "Apple",
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": true,
+            "entitledEntity": null,
+            "partnerId": null,
+            "isDeferrable": true,
+            "isIncluded": null,
+            "isFeatured": false,
+            "soldSeparately": false,
+            "balanceManageMent": null
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        }
+      ],
+      "id": "2e662f3f-12f4-4ca2-9d01-a073ae1f5430"
+    },
+    {
+      "offerDetails": [
+        {
+          "id": "spark_sport_basic",
+          "grandFathered": false,
+          "externalId": "vasbundle050831",
+          "name": "Spark Sport",
+          "description": "Get access to a range of sports LIVE and On Demand.",
+          "category": [{ "id": "spark_sport" }, { "id": "account_vas" }],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": { "period": "Month", "value": 1 },
+            "basePrice": 19.99,
+            "basePriceExcludingTax": 17.38,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": "Usually $24.99/month"
+          },
+          "group": {
+            "id": "spark_sports",
+            "name": "Spark Sport",
+            "description": "Spark Sport is bringing you the action live and on demand on a wide range of devices. Don't miss the summer of New Zealand cricket and catch the action from Premier League, UEFA Champions League, Formula One?, NBA, NFL, WTA, WRC and more.",
+            "sortOrder": 2,
+            "images": null,
+            "isDefault": null
+          },
+          "images": [
+            {
+              "description": null,
+              "id": "TheSparkSport$19.99tileimagery",
+              "sortOrder": null,
+              "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/SparkSport/Retail/spark-sport-logo-desktop-1436x800.jpg",
+              "zoomUrl": null,
+              "standardUrl": "/content/dam/spark/images/product-images/subscriptions/SparkSport/Retail/spark-sport-logo-desktop-1436x800.jpg",
+              "thumbnailUrl": null,
+              "tinyUrl": null
+            }
+          ],
+          "entitlements": [],
+          "promotions": [
+            {
+              "name": "Your plan gives you 20% off Spark Sport",
+              "productType": "FEATURE",
+              "shortDescription": null,
+              "longDescription": "Your plan gives you 20% off Spark Sport",
+              "sortOrder": null,
+              "iconUrl": "/content/dam/spark/images/product-images/subscriptions/SparkSport/Self-service/spark-sport-subscription-tile-medium-1867x1147.jpg"
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": "Spark Sport",
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": null,
+            "entitledEntity": "ACCOUNT",
+            "partnerId": null,
+            "isDeferrable": null,
+            "isIncluded": false,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManageMent": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        },
+        {
+          "id": "neon_1",
+          "grandFathered": false,
+          "externalId": "vasbundle050849",
+          "name": "Neon",
+          "description": "Watch the biggest binge-worthy TV shows and movies.",
+          "category": [{ "id": "neon" }, { "id": "account_vas" }],
+          "price": {
+            "priceType": "Recurring",
+            "frequency": { "period": "Month", "value": 1 },
+            "basePrice": 11.99,
+            "basePriceExcludingTax": 10.43,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": "Usually $15.99/month"
+          },
+          "group": {
+            "id": "neon_id",
+            "name": "Neon",
+            "description": "Neon curate the biggest and best binge-worthy paid TV series and movies from around the world, just for New Zealanders. From guilty pleasures, action and adventure to amazing human stories. Plus, with new content added all the time, you won't be lost wondering what to watch.",
+            "sortOrder": 3,
+            "images": null,
+            "isDefault": null
+          },
+          "images": [
+            {
+              "description": null,
+              "id": "TheNeon$11.99permonthtileimagery",
+              "sortOrder": null,
+              "defaultUrl": "/content/dam/spark/images/product-images/subscriptions/Neon/Retail/neon-logo-desktop-1436x800.jpg",
+              "zoomUrl": null,
+              "standardUrl": "/content/dam/spark/images/product-images/subscriptions/Neon/Retail/neon-logo-desktop-1436x800.jpg",
+              "thumbnailUrl": null,
+              "tinyUrl": null
+            }
+          ],
+          "entitlements": [],
+          "promotions": [
+            {
+              "name": "Your plan gives you 25% off Neon",
+              "productType": "FEATURE",
+              "shortDescription": null,
+              "longDescription": "Your plan gives you 25% off Neon",
+              "sortOrder": null,
+              "iconUrl": null
+            }
+          ],
+          "productFeatures": {
+            "color": null,
+            "primaryColor": null,
+            "colorHex": null,
+            "brand": "Neon",
+            "band": null,
+            "storage": null
+          },
+          "productCharacteristics": {
+            "isShippable": null,
+            "entitledEntity": "ACCOUNT",
+            "partnerId": null,
+            "isDeferrable": null,
+            "isIncluded": false,
+            "isFeatured": null,
+            "soldSeparately": null,
+            "balanceManageMent": "POSTPAID"
+          },
+          "associatedPriceRules": null,
+          "stock": null,
+          "productSpecifications": []
+        }
+      ],
+      "id": "simulated"
+    }
+  ]
+}

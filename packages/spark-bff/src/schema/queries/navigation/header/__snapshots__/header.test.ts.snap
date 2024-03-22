@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validate headerContent query returns menus with no errors 1`] = `
+Object {
+  "headerContent": Object {
+    "businessCategories": Array [
+      Object {
+        "iconName": "home_large",
+        "label": "Home",
+      },
+      Object {
+        "iconName": "products_solutions_large",
+        "label": "Products & solutions",
+      },
+      Object {
+        "iconName": "why_spark_large",
+        "label": "Why Spark",
+      },
+      Object {
+        "iconName": "insights_events_large",
+        "label": "Insights & events",
+      },
+      Object {
+        "iconName": "me_large",
+        "label": "MySpark",
+      },
+      Object {
+        "iconName": "help_large",
+        "label": "Help & Support",
+      },
+      Object {
+        "iconName": "search_large",
+        "label": "Search",
+      },
+    ],
+    "businessCategoriesDesktop": Array [
+      Object {
+        "iconName": "home_large",
+        "label": "Home",
+      },
+      Object {
+        "iconName": "products_solutions_large",
+        "label": "Products & solutions",
+      },
+      Object {
+        "iconName": "why_spark_large",
+        "label": "Why Spark",
+      },
+      Object {
+        "iconName": "insights_events_large",
+        "label": "Insights & events",
+      },
+      Object {
+        "iconName": "me_large",
+        "label": "MySpark",
+      },
+    ],
+    "personalCategories": Array [
+      Object {
+        "iconName": "home_large",
+        "label": "Home",
+      },
+      Object {
+        "iconName": "shop_large",
+        "label": "Shop",
+      },
+      Object {
+        "iconName": "benefits_large",
+        "label": "Benefits",
+      },
+      Object {
+        "iconName": "news_large",
+        "label": "Discover & learn",
+      },
+      Object {
+        "iconName": "help_large",
+        "label": "Help & Support",
+      },
+      Object {
+        "iconName": "me_large",
+        "label": "MySpark",
+      },
+      Object {
+        "iconName": "search_large",
+        "label": "Search",
+      },
+    ],
+    "personalCategoriesDesktop": Array [
+      Object {
+        "iconName": "shop_large",
+        "label": "Shop",
+      },
+      Object {
+        "iconName": "benefits_large",
+        "label": "Benefits",
+      },
+      Object {
+        "iconName": "news_large",
+        "label": "Discover & learn",
+      },
+      Object {
+        "iconName": "help_large",
+        "label": "Help",
+      },
+    ],
+  },
+}
+`;

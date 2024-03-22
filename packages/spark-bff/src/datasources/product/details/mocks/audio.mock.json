@@ -1,0 +1,343 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "airpods_max_space_grey",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "AirPods Max - Space Grey",
+        "description": "AirPods Pro provides Active Noise Cancellation that blocks outside noise, while Transparency mode lets it in. Spatial audio with dynamic head tracking gives cinema-like sound that surrounds you. Airpods have three sizes of soft, tapered silicone tips for a customisable fit, and are sweat- and water-resistant. The Wireless Charging Case delivers more than 24 hours of battery life.",
+        "category": [
+          {
+            "id": "headphones"
+          },
+          {
+            "id": "headphones_apple_airpods"
+          },
+          {
+            "id": "accessories"
+          }
+        ],
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 999.0,
+          "basePriceExcludingTax": 868.7,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "group": {
+          "id": "airpods_max",
+          "name": "Airpods Max",
+          "description": null,
+          "sortOrder": null,
+          "images": null,
+          "isDefault": null
+        },
+        "images": [
+          {
+            "description": null,
+            "id": "AirPodsMaxSpaceGrey",
+            "sortOrder": null,
+            "defaultUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Space_Gray_Pure_Back_Pure_Side_2-up_400x800.png",
+            "zoomUrl": null,
+            "standardUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Space_Gray_Pure_Back_Pure_Side_2-up_400x800.png",
+            "thumbnailUrl": null,
+            "tinyUrl": null
+          },
+          {
+            "description": null,
+            "id": "AirPodsMaxSpaceGrey",
+            "sortOrder": null,
+            "defaultUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Space_Gray_Pure_Back_400x800.png",
+            "zoomUrl": null,
+            "standardUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Space_Gray_Pure_Back_400x800.png",
+            "thumbnailUrl": "",
+            "tinyUrl": null
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Space Grey",
+          "primaryColor": "Grey",
+          "colorHex": "#52514F",
+          "brand": "Apple",
+          "band": "N/A",
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "isFeatured": false,
+          "soldSeparately": null,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      },
+      {
+        "id": "airpods_max_sky_blue",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "AirPods Max - Sky Blue",
+        "description": "AirPods Pro provides Active Noise Cancellation that blocks outside noise, while Transparency mode lets it in. Spatial audio with dynamic head tracking gives cinema-like sound that surrounds you. Airpods have three sizes of soft, tapered silicone tips for a customisable fit, and are sweat- and water-resistant. The Wireless Charging Case delivers more than 24 hours of battery life.",
+        "category": [
+          {
+            "id": "headphones"
+          },
+          {
+            "id": "headphones_apple_airpods"
+          },
+          {
+            "id": "accessories"
+          }
+        ],
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 999.0,
+          "basePriceExcludingTax": null,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "AirPodsMaxSkyBlue",
+            "sortOrder": null,
+            "defaultUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Sky_Blue_Pure_Back_SCREEN__USEN.png",
+            "zoomUrl": null,
+            "standardUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Sky_Blue_Pure_Back_SCREEN__USEN.png",
+            "thumbnailUrl": "",
+            "tinyUrl": null
+          },
+          {
+            "description": null,
+            "id": "AirPodsMaxSkyBlue",
+            "sortOrder": null,
+            "defaultUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Sky_Blue_Pure_Back_Pure_Side_2-up_400x800.png",
+            "zoomUrl": null,
+            "standardUrl": "/content/dam/tnz/accessories/apple/audio/AirPods_Max_Sky_Blue_Pure_Back_Pure_Side_2-up_400x800.png",
+            "thumbnailUrl": null,
+            "tinyUrl": null
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Blue",
+          "primaryColor": "Blue",
+          "colorHex": "#0000FF",
+          "brand": "Apple",
+          "band": "N/A",
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "isFeatured": false,
+          "soldSeparately": null,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      },
+      {
+        "id": "samsung_galaxy_buds_pro_phantom_black",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Samsung Galaxy Buds Pro - Phantom Black",
+        "description": "The Galaxy Buds Pro have Active Noise Cancelling which blocks out up to 99% of background noise, cinematic surround sound with 360 Audio and clear calling with a 3-mic system.",
+        "category": [
+          {
+            "id": "headphones"
+          },
+          {
+            "id": "headphones_samsung_galaxy_buds"
+          },
+          {
+            "id": "accessories"
+          }
+        ],
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 389.0,
+          "basePriceExcludingTax": null,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "SamsungGalaxyBudsProPhantomBlack",
+            "sortOrder": null,
+            "defaultUrl": "/content/dam/tnz/accessories/Samsung/galaxy-buds-pro/samsung_galaxy_buds_pro_black.png",
+            "zoomUrl": null,
+            "standardUrl": "/content/dam/tnz/accessories/Samsung/galaxy-buds-pro/samsung_galaxy_buds_pro_black.png",
+            "thumbnailUrl": "",
+            "tinyUrl": null
+          },
+          {
+            "description": null,
+            "id": "SamsungGalaxyBudsProPhantomBlack",
+            "sortOrder": null,
+            "defaultUrl": "/content/dam/tnz/accessories/Samsung/galaxy-buds-pro/samsung_galaxy_buds_pro_black_case.png",
+            "zoomUrl": null,
+            "standardUrl": "/content/dam/tnz/accessories/Samsung/galaxy-buds-pro/samsung_galaxy_buds_pro_black_case.png",
+            "thumbnailUrl": null,
+            "tinyUrl": null
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Black",
+          "primaryColor": "Black",
+          "colorHex": "#000000",
+          "brand": "Samsung",
+          "band": "N/A",
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "isFeatured": false,
+          "soldSeparately": null,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      },
+      {
+        "id": "samsung_galaxy_buds_live_mystic_black",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Samsung Galaxy Buds Live - Mystic Black",
+        "description": "Galaxy Buds Live reflect the curves of the ear and face for a natural look and all-day comfort. Featuring Active Noise Cancellation and a unique Voice Pickup Unit, they make every sound come alive and ensure your voice always comes through crisp and clear. With up to 21 hours of playback time, Galaxy Buds Live are designed to help you tune into every moment.",
+        "category": [
+          {
+            "id": "headphones"
+          },
+          {
+            "id": "headphones_samsung_galaxy_buds"
+          },
+          {
+            "id": "accessories"
+          }
+        ],
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 299.0,
+          "basePriceExcludingTax": null,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "SamsungGalaxyBudsLiveMysticBlack",
+            "sortOrder": null,
+            "defaultUrl": "/content/dam/tnz/accessories/Samsung/earbuds/galaxy-buds-live-black.png",
+            "zoomUrl": null,
+            "standardUrl": "/content/dam/tnz/accessories/Samsung/earbuds/galaxy-buds-live-black.png",
+            "thumbnailUrl": "",
+            "tinyUrl": null
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Black",
+          "primaryColor": "Black",
+          "colorHex": "#000000",
+          "brand": "Samsung",
+          "band": "N/A",
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "isFeatured": false,
+          "soldSeparately": null,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": [],
+        "stock": null,
+        "productSpecifications": []
+      }
+    ],
+    "id": "headphones",
+    "name": "Headphones",
+    "description": "Headphones",
+    "isCategoryContainer": false,
+    "subCategories": [
+      {
+        "id": "headphones_apple",
+        "name": "Apple"
+      },
+      {
+        "id": "headphones_astro",
+        "name": "Astro"
+      },
+      {
+        "id": "headphones_beats",
+        "name": "Beats"
+      },
+      {
+        "id": "headphones_defunc",
+        "name": "Defunc"
+      },
+      {
+        "id": "headphones_jbl",
+        "name": "JBL"
+      },
+      {
+        "id": "headphones_oppo",
+        "name": "OPPO"
+      },
+      {
+        "id": "headphones_samsung",
+        "name": "Samsung"
+      }
+    ]
+  }
+}

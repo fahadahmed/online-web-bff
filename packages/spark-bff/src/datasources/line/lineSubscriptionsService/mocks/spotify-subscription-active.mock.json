@@ -1,0 +1,42 @@
+{
+  "offer": {
+    "id": "misc077770",
+    "name": "Spotify Premium",
+    "productInstanceId": "1-2HAZ77770"
+  },
+  "assetStartDate": "2021-10-12T03:31:03.964Z",
+  "accountNumber": "369121518",
+  "lineNumber": "0278675179",
+  "status": {
+    "type": "ACTIVE",
+    "label": "Active"
+  },
+  "nextRenewalDate": "2021-01-01T00:00:00.000Z",
+  "ctas": [
+    {
+      "type": "ACTIVATE",
+      "label": "Activate Spotify"
+    },
+    {
+      "type": "CANCEL",
+      "label": "Cancel Spotify Premium"
+    },
+    {
+      "type": "CHANGE_PAYMENT_METHOD",
+      "label": "Change payment method"
+    },
+    {
+      "type": "EDIT_PARTNER_ACCOUNT",
+      "label": "Go to Spotify",
+      "webLink": "https://accounts.spotify.com/"
+    },
+    {
+      "type": "RESUME",
+      "label": "Resume Spotify"
+    },
+    {
+      "type": "SWITCH",
+      "label": "Change to Spotify Premium"
+    }
+  ]
+}

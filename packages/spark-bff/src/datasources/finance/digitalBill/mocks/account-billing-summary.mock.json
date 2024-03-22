@@ -1,0 +1,126 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "startDate": "2020-05-01",
+  "endDate": "2021-05-05",
+  "breakdown": [
+    {
+      "date": "2020-05-03",
+      "title": "2020-05-03",
+      "billId": "720308770-20200503",
+      "chargeSummary": [
+        { "type": "USAGE", "value": "$0.00" },
+        { "type": "MONTHLY_CHARGES", "value": "$119.51" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2020-06-03",
+      "title": "2020-06-03",
+      "billId": "720308770-20200603",
+      "chargeSummary": [
+        { "type": "USAGE", "value": "$0.00" },
+        { "type": "MONTHLY_CHARGES", "value": "$95.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2020-07-03",
+      "title": "2020-07-03",
+      "billId": "720308770-20200703",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$95.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2020-08-03",
+      "title": "2020-08-03",
+      "billId": "720308770-20200803",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$95.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2020-09-03",
+      "title": "2020-09-03",
+      "billId": "720308770-20200903",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$95.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2020-10-03",
+      "title": "2020-10-03",
+      "billId": "720308770-20201003",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$95.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2020-11-03",
+      "title": "2020-11-03",
+      "billId": "720308770-20201103",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$44.33" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2020-12-03",
+      "title": "2020-12-03",
+      "billId": "720308770-20201203",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$98.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2021-01-03",
+      "title": "2021-01-03",
+      "billId": "720308770-20210103",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$99.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2021-02-03",
+      "title": "2021-02-03",
+      "billId": "720308770-20210203",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$99.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2021-03-03",
+      "title": "2021-03-03",
+      "billId": "720308770-20210303",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$99.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2021-04-03",
+      "title": "2021-04-03",
+      "billId": "720308770-20210403",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$99.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    },
+    {
+      "date": "2021-05-03",
+      "title": "2021-05-03",
+      "billId": "720308770-20210503",
+      "chargeSummary": [
+        { "type": "MONTHLY_CHARGES", "value": "$99.00" },
+        { "type": "OTHER", "value": "$57.36" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "interval": "MONTHLY",
+  "accountType": "POSTPAID",
+  "startDateTime": "2020-10-01T00:00:00+13:00",
+  "endDateTime": "2021-10-31T23:59:59+13:00",
+  "gstInclusive": true,
+  "averagePeriodSpend": 10,
+  "summarisedPeriods": [
+    {
+      "startDateTime": "2021-10-08T11:00:00Z",
+      "endDateTime": "2021-11-08T10:59:59Z",
+      "periodSpend": 0,
+      "unbilled": true,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2021-09-08T12:00:00Z",
+      "endDateTime": "2021-10-08T10:59:59Z",
+      "periodSpend": 69.99,
+      "unbilled": false,
+      "periodBreakdown": [
+        {
+          "breakdownType": "ADDITIONAL_PAID",
+          "periodBreakdownId": "ADDITIONAL_PAID|2021-09-08T12:00:00.000Z|2021-10-08T10:59:59.000Z",
+          "periodSpend": 10
+        },
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-09-08T12:00:00.000Z|2021-10-08T10:59:59.000Z",
+          "periodSpend": 59.99
+        }
+      ]
+    },
+    {
+      "startDateTime": "2021-08-08T12:00:00Z",
+      "endDateTime": "2021-09-08T11:59:59Z",
+      "periodSpend": 59.99,
+      "unbilled": false,
+      "periodBreakdown": [
+        {
+          "breakdownType": "PLAN",
+          "periodBreakdownId": "PLAN|2021-08-08T12:00:00.000Z|2021-09-08T11:59:59.000Z",
+          "periodSpend": 59.99
+        }
+      ]
+    },
+    {
+      "startDateTime": "2021-07-08T12:00:00Z",
+      "endDateTime": "2021-08-08T11:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2021-06-08T12:00:00Z",
+      "endDateTime": "2021-07-08T11:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2021-05-08T12:00:00Z",
+      "endDateTime": "2021-06-08T11:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2021-04-08T12:00:00Z",
+      "endDateTime": "2021-05-08T11:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2021-03-08T11:00:00Z",
+      "endDateTime": "2021-04-08T11:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2021-02-08T11:00:00Z",
+      "endDateTime": "2021-03-08T10:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2021-01-08T11:00:00Z",
+      "endDateTime": "2021-02-08T10:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2020-12-08T11:00:00Z",
+      "endDateTime": "2021-01-08T10:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2020-11-08T11:00:00Z",
+      "endDateTime": "2020-12-08T10:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    },
+    {
+      "startDateTime": "2020-10-08T11:00:00Z",
+      "endDateTime": "2020-11-08T10:59:59Z",
+      "periodSpend": 0,
+      "unbilled": false,
+      "periodBreakdown": []
+    }
+  ]
+}

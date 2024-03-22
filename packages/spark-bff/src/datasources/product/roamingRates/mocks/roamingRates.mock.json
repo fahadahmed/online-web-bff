@@ -1,0 +1,105 @@
+{
+  "destinations": [
+    {
+      "destinationName": "Australia",
+      "destinationCode": {
+        "isoAlpha3": "AUS"
+      },
+      "network": "4G",
+      "zone": "Zone 5",
+      "rates": [
+        {
+          "accountType": "PREPAID",
+          "data": "$10 per 200MB blocks of data per day up to 14 blocks then $0.50 per/MB",
+          "dataOverage": "$0.50/MB",
+          "moc": "$0.49/min Outgoing",
+          "mtc": "$1/min Incoming",
+          "text": "$0.80/text"
+        },
+        {
+          "accountType": "POSTPAID",
+          "data": "$10 per 200MB blocks of data per day up to 14 blocks then $0.50 per/MB",
+          "dataOverage": "$0.50/MB",
+          "moc": "$0.49/min Outgoing",
+          "mtc": "$1/min Incoming",
+          "text": "$0.80/text"
+        }
+      ]
+    },
+    {
+      "destinationName": "Venezuela",
+      "destinationCode": {
+        "isoAlpha3": "VEN"
+      },
+      "zone": "Zone 5",
+      "rates": [
+        {
+          "accountType": "PREPAID",
+          "data": "Not available",
+          "dataOverage": "",
+          "moc": "Not available",
+          "mtc": "Not available",
+          "text": "Not available"
+        },
+        {
+          "accountType": "PREPAID",
+          "data": "$10 per 200MB blocks of data per day up to 14 blocks then $1 per/MB",
+          "dataOverage": "$1/MB",
+          "moc": "$2.49/min Outgoing",
+          "mtc": "$1/min Incoming",
+          "text": "$0.80/text"
+        }
+      ]
+    },
+    {
+      "destinationName": "Uruguay",
+      "destinationCode": {
+        "isoAlpha3": "URY"
+      },
+      "zone": "Zone 5",
+      "rates": [
+        {
+          "accountType": "PREPAID",
+          "data": "Not available",
+          "dataOverage": "",
+          "moc": "Not available",
+          "mtc": "Not available",
+          "text": "Not available"
+        },
+        {
+          "accountType": "PREPAID",
+          "data": "$10 per 200MB blocks of data per day up to 14 blocks then $1 per/MB",
+          "dataOverage": "$1/MB",
+          "moc": "$2.49/min Outgoing",
+          "mtc": "$1/min Incoming",
+          "text": "$0.80/text"
+        }
+      ]
+    },
+    {
+      "destinationName": "Canada",
+      "destinationCode": {
+        "isoAlpha3": "CAN"
+      },
+      "zone": "Zone 5",
+      "rates": [
+        {
+          "accountType": "PREPAID",
+          "data": "Not available",
+          "dataOverage": "",
+          "moc": "Not available",
+          "mtc": "Not available",
+          "text": "Not available"
+        },
+        {
+          "accountType": "PREPAID",
+          "data": "$10 per 200MB blocks of data per day up to 14 blocks then $1 per/MB",
+          "dataOverage": "$1/MB",
+          "moc": "$2.49/min Outgoing",
+          "mtc": "$1/min Incoming",
+          "text": "$0.80/text"
+        }
+      ]
+    }
+  ]
+}

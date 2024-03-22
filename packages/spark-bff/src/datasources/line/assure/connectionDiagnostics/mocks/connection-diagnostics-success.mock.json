@@ -1,0 +1,67 @@
+{
+  "testSuiteType": "COPPER",
+  "testSuiteComplete": true,
+  "diagnosticResults": [
+    {
+      "testType": "NETWORK",
+      "testLabel": "Copper network",
+      "testExecuted": true,
+      "testPassed": true,
+      "body": [],
+      "availableCTAs": []
+    },
+    {
+      "testType": "ACCESS_POINT",
+      "testLabel": "Modem",
+      "testExecuted": true,
+      "testPassed": false,
+      "diagnosticSummaryCode": "internet_down-modem_can_not_reach",
+      "title": "You're not connected to the internet",
+      "body": [
+        "There are no issues with the Copper network however, we have detected an issue with your modem settings, click troubleshoot to get your internet up and running."
+      ],
+      "availableCTAs": [
+        {
+          "ctaLabel": "Troubleshoot",
+          "ctaType": "CONNECTION_TROUBLESHOOTER",
+          "mobileActionType": "connection_troubleshooter"
+        },
+        {
+          "ctaLabel": "Message us",
+          "ctaType": "CHAT",
+          "mobileActionType": "LivePerson://journey=no_internet_issue&serviceID=099991111"
+        },
+        {
+          "ctaLabel": "Test again",
+          "ctaType": "DIAGNOSTIC_CHECK",
+          "mobileActionType": "diagnostic_check"
+        }
+      ]
+    },
+    {
+      "testType": "CONNECTIVITY",
+      "testLabel": "Internet",
+      "testExecuted": true,
+      "testPassed": false,
+      "body": [],
+      "availableCTAs": []
+    }
+  ],
+  "lineDetails": {
+    "lineNumber": "099991111",
+    "accountName": "JO E BLOGGS",
+    "accountNumber": "303830000",
+    "productType": "COPPER_BROADBAND_AND_VOICE",
+    "modemManufacturer": "Huawei Technologies Co., Ltd.",
+    "modemModel": "HG630b",
+    "modemSerialNumber": "S8G8W14B88210024",
+    "modemIdentifier": "9544661890413264469",
+    "modemImage": "https://www.spark.co.nz/assets/spark/images/modems/hg630b.png"
+  },
+  "messages": [
+    {
+      "message": "success",
+      "code": 2000
+    }
+  ]
+}

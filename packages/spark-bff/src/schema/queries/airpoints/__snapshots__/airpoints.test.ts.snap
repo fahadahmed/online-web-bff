@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns all the airpoints data for accountNumber 1`] = `
+Object {
+  "airpointsNumber": "123456789",
+  "firstName": "John",
+  "lastName": "Rambo",
+  "status": "Active",
+}
+`;

@@ -1,0 +1,21 @@
+{
+  "comparisons": [
+    {
+      "recommendationId": "vas_downgrade_keep_change_free_to_half",
+      "unavailable": {
+        "offerId": "spotify_individual_included"
+      },
+      "available": {
+        "offerId": "spotify_individual_half_price_2"
+      },
+      "ctas": [
+        {
+          "type": "KEEP"
+        },
+        {
+          "type": "CANCEL"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "The user doesn't have sufficient permission to remove access to the account (because it's not the owner, etc)",
+      "code": 4183
+    }
+  ]
+}

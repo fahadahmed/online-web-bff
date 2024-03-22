@@ -1,0 +1,23 @@
+{
+  "PAY_BILL": {
+    "operationType": "PAY_BILL",
+    "masterCard": "3%",
+    "visa": "3%",
+    "amex": "2%",
+    "dinersClub": "2%",
+    "displayText": [
+      "American Express and Diners Club incur a 2% surcharge.",
+      "Visa/MasterCard, Prezzy Card, international credit, debit or charge cards incur a 3% surcharge."
+    ]
+  },
+  "SETUP_MONTHLY_PAYMENT": {
+    "operationType": "SETUP_MONTHLY_PAYMENT",
+    "masterCard": "3%",
+    "visa": "3%",
+    "amex": "2%",
+    "dinersClub": "2%",
+    "displayText": [
+      "Automated payments using a credit/debit card incurs a 1.5% surcharge (plus GST, if any). Surcharge applies."
+    ]
+  }
+}

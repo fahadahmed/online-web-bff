@@ -1,0 +1,34 @@
+{
+  "contentProviders": [
+    {
+      "customerNumber": 1,
+      "customerName": "Twilio",
+      "contentProviderId": 1,
+      "contentProviderName": "Lyft",
+      "helpdeskEmail": "support@lyft.co.nz",
+      "phoneNumber": "0800 022 3022",
+      "customerCareUrl": "https://www.lyft.com/support",
+      "ctas": ["EDIT", "DELETE"]
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Twilio",
+      "contentProviderId": 2,
+      "contentProviderName": "Airbnb",
+      "helpdeskEmail": "support@airbnb.co.nz",
+      "phoneNumber": "0800 022 2222",
+      "customerCareUrl": "https://www.airbnb.com/support",
+      "ctas": ["EDIT", "DELETE"]
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Twilio",
+      "contentProviderId": 3,
+      "contentProviderName": "Uber",
+      "helpdeskEmail": "support@uber.co.nz",
+      "phoneNumber": "0800 022 9233",
+      "customerCareUrl": "https://www.uber.com/support",
+      "ctas": ["EDIT", "DELETE"]
+    }
+  ]
+}

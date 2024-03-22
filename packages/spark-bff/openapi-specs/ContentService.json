@@ -1,0 +1,1172 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This service is for the retrieval of content articles to support the Gen-3 app News feed.",
+    "version": "1.0.0",
+    "title": "DESL Content Service API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/utility/content/articles": {
+      "get": {
+        "tags": ["content", "public"],
+        "summary": "Fetches a list of content articles for the News feed.",
+        "operationId": "getArticleList",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "tags",
+            "description": "A list of content article tags.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "required": true,
+            "minimum": 1,
+            "x-example": "spark-core:AppGen2/homePageTile,spark-core:brands/apple,spark-core:products/phones"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ArticleTileListResponse"
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/utility/content/articles/{articleId}": {
+      "get": {
+        "tags": ["content", "public"],
+        "summary": "Fetches a content article by its corresponding articleId.",
+        "operationId": "getArticleDetail",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "articleId",
+            "description": "Uniform  Identifier pertaining to the content of the article.",
+            "type": "string",
+            "required": true,
+            "x-example": "iPhonePromo123456"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ArticleDetailResponse"
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/utility/content/help/categories/{rootCategory}": {
+      "get": {
+        "tags": ["content", "help", "categories", "public"],
+        "summary": "An unauthenticated API that supports the retrieval of the content which dictates the top level groupings of help and support.",
+        "operationId": "getHelpCategories",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "rootCategory",
+            "description": "The root category that is requested.",
+            "type": "string",
+            "enum": ["help", "learn", "legal", "popular", "terms"],
+            "required": true,
+            "x-example": "help"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CategoriesResponse"
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/utility/content/assets": {
+      "get": {
+        "tags": ["content", "asset", "private"],
+        "operationId": "getAssets",
+        "produces": ["application/json"],
+        "summary": "Return the assets from AEM based on tags",
+        "parameters": [
+          {
+            "$ref": "#/parameters/tags"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "description": "The type of asset",
+            "type": "string",
+            "enum": ["Image", "Icon", "Document"],
+            "required": false,
+            "x-example": "Image"
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "description": "The format of asset",
+            "type": "string",
+            "enum": ["png", "jpg", "zip", "pdf"],
+            "required": false,
+            "x-example": "png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Assets fetched successfully",
+            "schema": {
+              "$ref": "#/definitions/AssetsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, internal error code 4200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, internal error code 5200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/utility/content/assets/{assetId}": {
+      "get": {
+        "tags": ["content", "asset", "private"],
+        "operationId": "getAssetById",
+        "produces": ["application/json"],
+        "summary": "Return the asset by asset id from AEM",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "assetId",
+            "description": "The unique assetId that is to be queried from AEM",
+            "required": true,
+            "type": "string",
+            "x-example": "westpacIcon"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "description": "The type of asset",
+            "type": "string",
+            "enum": ["Image", "Icon", "Document"],
+            "required": false,
+            "x-example": "Image"
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "description": "The format of asset",
+            "type": "string",
+            "enum": ["png", "jpg", "zip", "pdf"],
+            "required": false,
+            "x-example": "png"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Asset fetched successfully",
+            "schema": {
+              "$ref": "#/definitions/AssetResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, internal error code 4200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, internal error code 5200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v2/utility/content/assets": {
+      "get": {
+        "tags": ["content", "asset", "private"],
+        "operationId": "getAssetsV2",
+        "produces": ["application/json"],
+        "summary": "The API supports the retrieval of content assets maintained in AEM via content fragments",
+        "parameters": [
+          {
+            "$ref": "#/parameters/tags"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "description": "The type of asset",
+            "type": "string",
+            "enum": [
+              "Image",
+              "Icon",
+              "Document",
+              "Video",
+              "TextContent",
+              "CTA"
+            ],
+            "required": false,
+            "x-example": "Image"
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "description": "The format of asset",
+            "type": "string",
+            "enum": ["png", "gif", "jpg", "zip", "pdf", "text"],
+            "required": false,
+            "x-example": "png"
+          },
+          {
+            "in": "query",
+            "name": "referenceFilters",
+            "description": "Provides the ability to filter based on asset references key/value pairs",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-example": "channel:app"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Assets fetched successfully",
+            "schema": {
+              "$ref": "#/definitions/AssetsV2Response"
+            }
+          },
+          "400": {
+            "description": "Bad Request, internal error code 4200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "No contents found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, internal error code 5200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/utility/content/journey": {
+      "get": {
+        "tags": ["content", "journey", "public"],
+        "operationId": "getJourneyContentDetail",
+        "produces": ["application/json"],
+        "summary": "The API supports the retrieval of content pertaining to a specific journey step",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "The string representing the folder(s) and content fragment path pertaining to the journey step",
+            "type": "string",
+            "required": true,
+            "x-example": "%2Fself-service%2Fjourney-a%2Fextras%2Fbuy-extra"
+          },
+          {
+            "$ref": "#/parameters/variation"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Journey details fetched successfully",
+            "schema": {
+              "$ref": "#/definitions/JourneyDetailResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request, internal error code 4200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "No contents found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, internal error code 5200",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/utility/content/menu": {
+      "get": {
+        "tags": ["content", "menu", "public"],
+        "operationId": "getMenuContentDetail",
+        "produces": ["application/json"],
+        "summary": "The API supports the retrieval of menu content associated with a particular aspect of a screen/channel",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "The string representing the folder(s) and content fragment path pertaining to the requested menu",
+            "type": "string",
+            "required": true,
+            "x-example": "%3Dself-service%2Fconsumer-footer"
+          },
+          {
+            "$ref": "#/parameters/variation"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consumer footer menu fetched successfully",
+            "schema": {
+              "$ref": "#/definitions/FooterMenuResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "No menu content found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "tags": {
+      "in": "query",
+      "name": "tags",
+      "description": "The tags to search for the specific content fragments in AEM",
+      "required": true,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minItems": 1,
+        "maxItems": 20
+      },
+      "x-example": "bankCards"
+    },
+    "variation": {
+      "in": "query",
+      "name": "variation",
+      "description": "The name of the variation to return, defaults to master if not provided",
+      "type": "string",
+      "required": false,
+      "default": "master",
+      "x-example": "marketing-test"
+    }
+  },
+  "definitions": {
+    "ArticleTileListResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["articles"],
+          "properties": {
+            "articles": {
+              "description": "An array of the articles to be presented, either as article tiles or a single article detail view. Mandatory but the array may be empty.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ArticleItem"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ArticleDetailResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/ArticleItem"
+        }
+      ]
+    },
+    "CategoriesResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["categories"],
+          "properties": {
+            "categories": {
+              "description": "An array of the help article categories to be presented. Mandatory but the array may be empty.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HelpArticleCategoryItem"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ArticleItem": {
+      "description": "An individual newsfeed article tile object.",
+      "type": "object",
+      "required": ["articleId", "layoutType", "categoryType", "articleType"],
+      "properties": {
+        "articleId": {
+          "description": "Uniform Identifier pertaining to the content of the article (not the tag). This is used to allow the UI to request content based on the URI",
+          "type": "string",
+          "example": "iPhonePromo12345"
+        },
+        "layoutType": {
+          "description": "The presentation layout that should be presented for the article.",
+          "type": "string",
+          "example": "splitImage"
+        },
+        "categoryType": {
+          "description": "Category of the article, this categoryType will determine the backend services for the channel to determine the relevant CTA to use.",
+          "type": "string",
+          "example": "SHOP"
+        },
+        "productOfferId": {
+          "description": "The product or event for which the article relates too. This is not always populated.",
+          "type": "string",
+          "example": "iphone11xs"
+        },
+        "presentationDate": {
+          "description": "The date which is to be presented to the customer in ISO 8601 format.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2020-02-17T04:12:08+00:00"
+        },
+        "articleType": {
+          "description": "This defines if the article is a detail view or a tile view.",
+          "type": "string",
+          "enum": ["Tile", "Detail"],
+          "x-example": "Tile"
+        },
+        "image": {
+          "description": "A path to the relevant image content.",
+          "type": "string",
+          "example": "https://www.spark.co.nz/content/dam/spark-aem/products/apple/iphone-11/Apple_iPhone_11_Promo_1_1364_812.png"
+        },
+        "title": {
+          "description": "The title/headline of the article.",
+          "type": "string",
+          "example": "The new iPhones are out"
+        },
+        "body": {
+          "description": "The array of copy required to build single or multiple paragraphs.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CopyItem"
+          }
+        },
+        "tags": {
+          "description": "The tags defined for this article.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "spark-aem:brands/upsell"
+          }
+        },
+        "gallery": {
+          "description": "Defines if a gallery should be presented within the article.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GalleryItem"
+          }
+        },
+        "availableCTAs": {
+          "description": "Array of CTA's of which any one can be used.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CTAItem"
+          }
+        }
+      }
+    },
+    "GalleryItem": {
+      "description": "A gallery item to be presented within the article as part of a image gallery.",
+      "type": "object",
+      "properties": {
+        "image": {
+          "description": "URL to the image within the dam.",
+          "type": "string",
+          "example": "https://www.spark.co.nz/content/dam/spark-aem/products/apple/iphone-11/Apple_iPhone_11_Promo_2_1111.png"
+        },
+        "paragraph": {
+          "description": "The copy supporting the image within the gallery.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CopyItem"
+          }
+        }
+      }
+    },
+    "CTAItem": {
+      "description": "A single article CTA item.",
+      "type": "object",
+      "required": ["ctaLabel"],
+      "properties": {
+        "title": {
+          "description": "Title of the CTA.",
+          "type": "string",
+          "example": "Pre-order any version of the iPhone right now."
+        },
+        "paragraph": {
+          "description": "The copy supporting the CTA.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CopyItem"
+          }
+        },
+        "ctaLabel": {
+          "description": "The Label to be placed on the CTA button.",
+          "type": "string",
+          "example": "Pre-order iPhone"
+        },
+        "ctaType": {
+          "description": "The ctaType will allow for mapping to be done on the presentation side to ensure the correct CTA can be presented.",
+          "type": "string",
+          "example": "PRE_ORDER"
+        },
+        "webCTALink": {
+          "description": "The web link for the article CTA",
+          "type": "string",
+          "example": "https://spark.co.nz"
+        },
+        "mobileActionType": {
+          "description": "The mobile action type which will determine which journey/screen the CTA will navigate to.",
+          "type": "string",
+          "example": ""
+        },
+        "shouldAuth": {
+          "description": "Determines if authentication is required, this occurs when we move from App to Web. Although journeys should be native, this is being included to allow for versatility within the news feed.",
+          "type": "boolean",
+          "example": "true"
+        }
+      }
+    },
+    "HelpArticleCategoryItem": {
+      "description": "An individual help article category object.",
+      "type": "object",
+      "required": ["uri", "menuLabel", "categoryId", "label", "hierarchy"],
+      "properties": {
+        "uri": {
+          "description": "The unique resource identifier for the content.",
+          "type": "string",
+          "format": "uri",
+          "example": "/content/dam/headless/utility/helpsupport/legal/legal/"
+        },
+        "menuLabel": {
+          "description": "The label shown on the menu structure.",
+          "type": "string",
+          "example": "Legal"
+        },
+        "menuDescription": {
+          "description": "The description shown on the menu structure",
+          "type": "string"
+        },
+        "categoryId": {
+          "description": "The unique ID of the category.",
+          "type": "string",
+          "example": "legal"
+        },
+        "parentCategoryPath": {
+          "description": "The parent category path within AEM, not including the routepath.",
+          "type": "string",
+          "example": "/legal/"
+        },
+        "label": {
+          "description": "The label shown within the category, this can sometimes be longer than the menuLabel.",
+          "type": "string",
+          "example": "Legal"
+        },
+        "description1": {
+          "description": "The label to be presented for each grouping.",
+          "type": "string",
+          "example": "See our Privacy Policy here"
+        },
+        "description2": {
+          "description": "The product or event for which the article relates to. This is used to retrieve the sub-category in order to navigate to the relevant page.",
+          "type": "string",
+          "example": "We’ll tell you how we collect, use and protect your personal information."
+        },
+        "hierarchy": {
+          "description": "The level in the hierarchy structure 0=root category, 1 = sub category.",
+          "type": "integer",
+          "minimum": 0,
+          "example": 1
+        },
+        "presentationOrder": {
+          "description": "The order in which categories must be presented 1 = first category to be presented.",
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "articleURL": {
+          "description": "Provides the URL to the article.",
+          "type": "string",
+          "example": "https://www.spark.co.nz/help/other/about-your-privacy-with-spark/"
+        }
+      }
+    },
+    "CopyItem": {
+      "description": "A single paragraph of text.",
+      "type": "object",
+      "properties": {
+        "copy": {
+          "type": "string",
+          "example": "Have a browse at the latest tech and place your order."
+        }
+      }
+    },
+    "AssetsResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "properties": {
+            "assets": {
+              "description": "An array of assets",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Asset"
+              }
+            }
+          },
+          "required": ["assets"],
+          "type": "object"
+        }
+      ]
+    },
+    "AssetsV2Response": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "properties": {
+            "assets": {
+              "description": "An array of assets",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AssetV2"
+              }
+            }
+          },
+          "required": ["assets"],
+          "type": "object"
+        }
+      ]
+    },
+    "AssetResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/Asset"
+        }
+      ],
+      "type": "object"
+    },
+    "Asset": {
+      "type": "object",
+      "required": [
+        "id",
+        "modelId",
+        "type",
+        "format",
+        "url",
+        "uri",
+        "tags",
+        "references"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The id of the content fragment",
+          "example": "westpacIcon"
+        },
+        "modelId": {
+          "type": "string",
+          "description": "The unique content model name in AEM",
+          "example": "Assets"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of asset",
+          "enum": ["Image", "Icon", "Document"],
+          "example": "Image"
+        },
+        "format": {
+          "type": "string",
+          "description": "The format of asset",
+          "enum": ["png", "jpg", "zip", "pdf"],
+          "example": "png"
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL to retrieve the asset from the AEM dam.",
+          "example": "https://www.spark.co.nz/content/dam/spark-aem/assets/banks/westpac/iconwestpac.png"
+        },
+        "uri": {
+          "type": "string",
+          "description": "The URI is the unique resource indicator to the content fragment within AEM.",
+          "example": "/content/dam/spark-aem/assets/westpacIcon"
+        },
+        "tags": {
+          "description": "The tags of the content fragments",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": ["bankCards", "bankProviders"]
+        },
+        "references": {
+          "description": "The key value pairs that allow for the service to map the asset to the presentation",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Reference"
+          }
+        }
+      }
+    },
+    "AssetV2": {
+      "type": "object",
+      "required": ["id", "modelId", "tags", "references", "contents"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The id of the content fragment",
+          "example": "westpacIcon"
+        },
+        "modelId": {
+          "type": "string",
+          "description": "The unique content model name in AEM",
+          "example": "Assets"
+        },
+        "tags": {
+          "description": "The tags of the content fragments",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": ["bankCards", "bankProviders"]
+        },
+        "references": {
+          "description": "The key value pairs that allow for the service to map the asset to the presentation",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ReferenceV2"
+          }
+        },
+        "contents": {
+          "description": "An array of one or more content types",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Content"
+          }
+        }
+      }
+    },
+    "Content": {
+      "type": "object",
+      "required": ["assetType", "format"],
+      "properties": {
+        "assetType": {
+          "type": "string",
+          "description": "The type of asset",
+          "enum": ["Image", "Icon", "Document", "Video", "TextContent", "CTA"],
+          "example": "image"
+        },
+        "format": {
+          "type": "string",
+          "description": "The format of asset",
+          "enum": ["png", "gif", "jpg", "zip", "pdf", "mp4", "text", "cta"],
+          "example": "png"
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL to retrieve the asset from the AEM dam.",
+          "example": "https://www.spark.co.nz/content/dam/spark-aem/assets/banks/westpac/iconwestpac.png"
+        },
+        "uri": {
+          "type": "string",
+          "description": "The URI is the unique resource indicator to the content fragment within AEM.",
+          "example": "/content/dam/spark-aem/assets/westpacIcon"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of asset",
+          "enum": ["heading", "cta", "paragraph"],
+          "example": "Image"
+        },
+        "text": {
+          "type": "string",
+          "description": "Usually blank, only populated if component type is cta. Where friendly text is displayed instead of hyperlink",
+          "example": "Find out about account fees"
+        },
+        "value": {
+          "type": "string",
+          "description": "Content value for given type.",
+          "example": "Spark Mobile terms and conditions and charges apply."
+        }
+      }
+    },
+    "Reference": {
+      "type": "object",
+      "required": ["key", "value"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "The reference identifier that the service will use to map the asset to the context to be presented",
+          "enum": [
+            "productOfferId",
+            "cardProvider",
+            "bankProvider",
+            "campaignId",
+            "productName",
+            "shopCategories"
+          ],
+          "example": "bankProvider"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value to be mapped against to determine the correct asset to be presented",
+          "example": "Westpac"
+        }
+      }
+    },
+    "ReferenceV2": {
+      "type": "object",
+      "required": ["key", "value"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "The v2 version reference identifier that the service will use to map the asset to the context to be presented",
+          "enum": [
+            "productOfferId",
+            "cardProvider",
+            "bankProvider",
+            "campaignId",
+            "productName",
+            "shopCategories",
+            "channel",
+            "assetFilter"
+          ],
+          "example": "channel"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value to be mapped against to determine the correct asset to be presented",
+          "example": "app"
+        }
+      }
+    },
+    "FooterMenuResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/FooterMenu"
+        }
+      ],
+      "type": "object"
+    },
+    "FooterMenu": {
+      "type": "object",
+      "required": ["id", "tags", "title", "description", "menus"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The string representing the API reference-able ID for the menu and content fragment path pertaining to the menu",
+          "example": "%3Dself-service%2Fconsumer-footer"
+        },
+        "tags": {
+          "description": "The tags assigned to the menu.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": ["OnlineShop:vas", "OnlineShop:research"]
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the menu.",
+          "example": "Help & Support"
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the menu. This almost certainly has no customer-facing use-case, but is returned for completeness.",
+          "example": "Consumer footer mwnu"
+        },
+        "menus": {
+          "description": "The array of menu definitions associated with the menu area. If no menu entries have been curated for this menu then an empty array should be returned to the client.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuFields"
+          }
+        }
+      }
+    },
+    "MenuFields": {
+      "type": "object",
+      "required": ["menuType", "menuSections"],
+      "properties": {
+        "menuType": {
+          "type": "string",
+          "description": "The type of menu, where the type = the first part of the downstream AEM menu-type attribute associated with a menu field.",
+          "enum": ["PRIMARY", "SECONDARY", "TERTIARY"],
+          "example": "PRIMARY"
+        },
+        "menuSections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuSections"
+          }
+        }
+      }
+    },
+    "MenuSections": {
+      "type": "object",
+      "required": ["menuItems"],
+      "properties": {
+        "menuItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuItemType"
+          }
+        }
+      }
+    },
+    "MenuItemType": {
+      "type": "object",
+      "required": ["itemType", "itemValue", "itemUrl"],
+      "properties": {
+        "itemType": {
+          "type": "string",
+          "description": "An enum representing the type of content represented by this menu item.",
+          "enum": ["HEADING", "HYPERLINK", "IMAGE"],
+          "example": "IMAGE"
+        },
+        "itemValue": {
+          "type": "string",
+          "description": "The required text value of the menu item.",
+          "example": "Shop"
+        },
+        "itemUrl": {
+          "type": "string",
+          "description": "The required URL corresponding to the href rendered for the <a> tag that encapsulates the menu item text or image.",
+          "example": "/content/dam/5g/Images_5G_Landing"
+        },
+        "itemImageUrl": {
+          "type": "string",
+          "description": "The optional URL corresponding to the URL of the image if the field is of type IMAGE.",
+          "example": "/content/dam/5g/Images_5G_Landing/5G map.jpeg"
+        }
+      }
+    },
+    "JourneyDetailResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/JourneyDetail"
+        }
+      ],
+      "type": "object"
+    },
+    "JourneyDetail": {
+      "type": "object",
+      "required": ["id", "tags", "title", "description", "fields"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The string representing the folder(s) and content fragment path pertaining to the journey step",
+          "example": "%2Fself-service%2Fjourney-a%2Fextras%2Fbuy-extra"
+        },
+        "tags": {
+          "description": "The tags assigned to the journey step.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": ["OnlineShop:vas", "OnlineShop:research"]
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the journey step.",
+          "example": "Buy Extras"
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the journey step for rendering as <meta> tags SEO and usability purposes such as screen readers.",
+          "example": "Buy Extras journey"
+        },
+        "fields": {
+          "description": "The array of content fields associated with the journey step.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fields"
+          }
+        }
+      }
+    },
+    "Fields": {
+      "type": "object",
+      "required": ["fieldKey", "fieldType"],
+      "properties": {
+        "fieldKey": {
+          "type": "string",
+          "description": "The key associated to the content field.",
+          "example": "product.title"
+        },
+        "fieldType": {
+          "type": "string",
+          "description": "An enum representing the type of content represented by this field",
+          "enum": [
+            "HEADING",
+            "SUB_HEADING",
+            "PARAGRAPH",
+            "LABEL",
+            "IMAGE",
+            "UNORDERED_LIST_ITEM",
+            "ORDERED_LIST_ITEM",
+            "HYPERLINK"
+          ],
+          "example": "HEADING"
+        },
+        "fieldValue": {
+          "type": "string",
+          "description": "The optional text value of the field",
+          "example": "Spark Sports"
+        },
+        "fieldUrl": {
+          "type": "string",
+          "description": "The URL corresponding to the URL of the image or hyperlink",
+          "example": "https://www.spark.co.nz/content/dam/spark-aem/assets/phone/iphone.png"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

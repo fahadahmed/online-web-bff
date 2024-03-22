@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`successfully retrieves the prepaid balance details for a linenumber.  1`] = `
+Object {
+  "balance": 4,
+  "balanceExpiryDate": "2022-02-22T00:00:00.000+1200",
+  "detailMessage": Object {
+    "otherCtas": Array [
+      Object {
+        "code": "SETUP_AUTO_TOPUP",
+        "label": "Set up auto top up",
+      },
+      Object {
+        "code": "BUY_PACK_OR_EXTRA",
+        "label": "Buy a pack",
+      },
+    ],
+    "primary": "Your balance is $5.25\`\`highlight\`\`",
+    "primaryCta": Object {
+      "code": "TOPUP",
+      "label": "Top up",
+    },
+    "secondary": "The next auto topup will be debited from your credit card in 2 days.",
+    "secondaryCta": Object {
+      "code": "MANAGE_PACK_OR_EXTRA",
+      "label": "Manage pack or extra",
+    },
+    "status": null,
+    "tertiary": null,
+  },
+  "lastTopUpAmount": 19,
+  "lastTopUpDate": "2019-08-19T05:16:19.000+1200",
+  "lineNumber": "0272547109",
+  "retrievalDate": "2020-03-04T14:03:23.954+1300",
+  "summaryMessage": Object {
+    "otherCtas": null,
+    "primary": "You have a balance $4.0",
+    "primaryCta": Object {
+      "code": "TOPUP",
+      "label": "Top up",
+    },
+    "secondary": "",
+    "secondaryCta": null,
+    "status": null,
+    "tertiary": null,
+  },
+}
+`;

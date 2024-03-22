@@ -1,0 +1,900 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [],
+    "id": "postpaid_extra",
+    "name": "Extras",
+    "description": null,
+    "isCategoryContainer": false,
+    "visibility": null,
+    "defaultSelected": null,
+    "sortOrder": null,
+    "subCategories": [
+      {
+        "id": "postpaid_data",
+        "name": "Data",
+        "sortOrder": null,
+        "offerDetails": [
+          {
+            "id": "dataextra050883_postpaid",
+            "name": "24Hr Data Boost",
+            "description": "Enjoy max speed and endless data on Endless, Prepaid and Rollover plans.",
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_data"
+              },
+              {
+                "id": "postpaid_data_endless"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Hour",
+                "value": 24
+              },
+              "basePrice": 10,
+              "basePriceExcludingTax": 8.7,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "Endless data at max speed*",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [
+              {
+                "name": "Hotspot",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "productType": "CHARACTERISTIC",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "supportedDestinations": []
+          },
+          {
+            "id": "dataextra050333_post_only",
+            "name": "$9 Spark Socialiser",
+            "description": "Enjoy catching up with your friends on selected social media apps.",
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_data"
+              },
+              {
+                "id": "postpaid_data_socialiser"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 9,
+              "basePriceExcludingTax": 7.83,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "1GB Socialiser*",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [
+              {
+                "name": "Hotspot",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "productType": "CHARACTERISTIC",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "supportedDestinations": []
+          },
+          {
+            "id": "dataextra050298_postpaid",
+            "name": "$5 Data Boost",
+            "description": "Enjoy a data boost on your mobile plan to do more of what you love.",
+            "contentKey": "endless_plan.keyConditions",
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_data"
+              },
+              {
+                "id": "postpaid_data_dataonly"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 5,
+              "basePriceExcludingTax": 4.35,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "100MB data*",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [
+              {
+                "name": "Hotspot",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "productType": "CHARACTERISTIC",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "supportedDestinations": []
+          },
+          {
+            "id": "dataextra050783_postpaid",
+            "name": "2GB Data Boost",
+            "description": "Enjoy a data boost on your mobile plan to do more of what you love.",
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_data"
+              },
+              {
+                "id": "postpaid_data_dataonly"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 23,
+              "basePriceExcludingTax": 20,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "2GB data*",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [
+              {
+                "name": "Hotspot",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "productType": "CHARACTERISTIC",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "supportedDestinations": []
+          },
+          {
+            "id": "dataextra050782_postpaid",
+            "name": "1GB Data Boost",
+            "description": "Enjoy a data boost on your mobile plan to do more of what you love.",
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_data"
+              },
+              {
+                "id": "postpaid_data_dataonly"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 20,
+              "basePriceExcludingTax": 17.39,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "1GB data*",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/mobile_data.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [
+              {
+                "name": "Hotspot",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/check_small.png",
+                "productType": "CHARACTERISTIC",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "supportedDestinations": []
+          }
+        ]
+      },
+      {
+        "id": "postpaid_roaming",
+        "name": "Roaming",
+        "sortOrder": null,
+        "offerDetails": [
+          {
+            "id": "roamingpack050284_postpaid",
+            "name": "Roaming Data Pack",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_roaming"
+              },
+              {
+                "id": "postpaid_roaming_data"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Day",
+                "value": 7
+              },
+              "basePrice": 15,
+              "basePriceExcludingTax": 13.04,
+              "effectivePrice": null
+            },
+            "entitlements": [],
+            "promotions": [],
+            "supportedDestinations": [
+              "ARE",
+              "ARG",
+              "ASM",
+              "AUS",
+              "AUT",
+              "BEL",
+              "BRA",
+              "CAN",
+              "CHE",
+              "CHN",
+              "DEU",
+              "ESP",
+              "FJI",
+              "FRA",
+              "GBR",
+              "GGY",
+              "GRC",
+              "HKG",
+              "IDN",
+              "IMN",
+              "IND",
+              "IRL",
+              "ITA",
+              "JPN",
+              "KOR",
+              "MAC",
+              "MYS",
+              "NLD",
+              "NRU",
+              "PHL",
+              "PNG",
+              "PRT",
+              "QAT",
+              "SAU",
+              "SGP",
+              "SMR",
+              "THA",
+              "TON",
+              "TWN",
+              "USA",
+              "VAT",
+              "VEN",
+              "VIR",
+              "VNM",
+              "VUT",
+              "WSM",
+              "ZAF"
+            ]
+          },
+          {
+            "id": "roamingpack050285_postpaid",
+            "name": "Roaming Pack",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_roaming"
+              },
+              {
+                "id": "postpaid_roaming_pack"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Day",
+                "value": 7
+              },
+              "basePrice": 20,
+              "basePriceExcludingTax": 17.39,
+              "effectivePrice": null
+            },
+            "entitlements": [],
+            "promotions": [
+              {
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "longDescription": null,
+                "iconUrl": null,
+                "sortOrder": 2
+              }
+            ],
+            "supportedDestinations": [
+              "ARE",
+              "ARG",
+              "ASM",
+              "AUS",
+              "AUT",
+              "BEL",
+              "BRA",
+              "CAN",
+              "CHE",
+              "CHN",
+              "DEU",
+              "ESP",
+              "FJI",
+              "FRA",
+              "GBR",
+              "GGY",
+              "GRC",
+              "HKG",
+              "IDN",
+              "IMN",
+              "IND",
+              "IRL",
+              "ITA",
+              "JPN",
+              "KOR",
+              "MAC",
+              "MYS",
+              "NLD",
+              "NRU",
+              "PHL",
+              "PNG",
+              "PRT",
+              "QAT",
+              "SAU",
+              "SGP",
+              "SMR",
+              "THA",
+              "TON",
+              "TWN",
+              "USA",
+              "VAT",
+              "VEN",
+              "VIR",
+              "VNM",
+              "VUT",
+              "WSM",
+              "ZAF"
+            ]
+          },
+          {
+            "id": "roamingpack050697_post_only",
+            "name": "$7 Roaming Pack",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_roaming"
+              },
+              {
+                "id": "postpaid_roaming_pack"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 8.05,
+              "basePriceExcludingTax": 7,
+              "effectivePrice": null
+            },
+            "entitlements": [],
+            "promotions": [
+              {
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "longDescription": null,
+                "iconUrl": null,
+                "sortOrder": 2
+              }
+            ],
+            "supportedDestinations": [
+              "ARE",
+              "ARG",
+              "ASM",
+              "AUS",
+              "BRA",
+              "CAN",
+              "CHE",
+              "CHN",
+              "DEU",
+              "ESP",
+              "FJI",
+              "FRA",
+              "GBR",
+              "HKG",
+              "IDN",
+              "IND",
+              "IRL",
+              "ITA",
+              "JPN",
+              "KOR",
+              "MAC",
+              "MYS",
+              "NRU",
+              "PHL",
+              "PNG",
+              "QAT",
+              "SAU",
+              "SGP",
+              "THA",
+              "TON",
+              "TWN",
+              "USA",
+              "VEN",
+              "VNM",
+              "VUT",
+              "WSM",
+              "ZAF"
+            ]
+          },
+          {
+            "id": "roamingpack050574_post_only",
+            "name": "$5 Roaming Pack",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_roaming"
+              },
+              {
+                "id": "postpaid_roaming_pack"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 5.75,
+              "basePriceExcludingTax": 5,
+              "effectivePrice": null
+            },
+            "entitlements": [],
+            "promotions": [],
+            "supportedDestinations": [
+              "ARE",
+              "ARG",
+              "ASM",
+              "AUS",
+              "BRA",
+              "CAN",
+              "CHE",
+              "CHN",
+              "DEU",
+              "ESP",
+              "FJI",
+              "FRA",
+              "GBR",
+              "HKG",
+              "IDN",
+              "IND",
+              "IRL",
+              "ITA",
+              "JPN",
+              "KOR",
+              "MAC",
+              "MYS",
+              "NRU",
+              "PHL",
+              "PNG",
+              "QAT",
+              "SAU",
+              "SGP",
+              "THA",
+              "TON",
+              "TWN",
+              "USA",
+              "VEN",
+              "VNM",
+              "VUT",
+              "WSM",
+              "ZAF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "postpaid_talk",
+        "name": "Talk",
+        "sortOrder": null,
+        "offerDetails": [
+          {
+            "id": "talktext050337_postpaid",
+            "name": "$9 Talk and Text Boost - NZ",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_talk"
+              },
+              {
+                "id": "postpaid_talk_talkandtext"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 9,
+              "basePriceExcludingTax": 7.83,
+              "effectivePrice": null
+            },
+            "entitlements": [],
+            "promotions": [],
+            "supportedDestinations": []
+          },
+          {
+            "id": "talkextra050302_postpaid",
+            "name": "$5 Talk Boost - NZ",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_talk"
+              },
+              {
+                "id": "postpaid_talk_talkonly"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 5,
+              "basePriceExcludingTax": 4.35,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "50 mins to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [
+              {
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "longDescription": null,
+                "iconUrl": null,
+                "sortOrder": 2
+              }
+            ],
+            "supportedDestinations": []
+          },
+          {
+            "id": "talkextra050304_postpaid",
+            "name": "$15 Talk Boost - NZ",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_talk"
+              },
+              {
+                "id": "postpaid_talk_talkonly"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 15,
+              "basePriceExcludingTax": 13.04,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "Unlimited mins to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [],
+            "supportedDestinations": []
+          },
+          {
+            "id": "textextra050306_postpaid",
+            "name": "$10 Text Boost - NZ",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_talk"
+              },
+              {
+                "id": "postpaid_talk_textonly"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 10,
+              "basePriceExcludingTax": 8.7,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "Unlimited NZ SMS*",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [],
+            "supportedDestinations": []
+          },
+          {
+            "id": "talkextra050303_postpaid",
+            "name": "$10 Talk Boost - NZ",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_talk"
+              },
+              {
+                "id": "postpaid_talk_talkonly"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 10,
+              "basePriceExcludingTax": 8.7,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "250 mins to any NZ mobiles and landlines",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "contentKey": null,
+                "sortOrder": 1
+              }
+            ],
+            "promotions": [
+              {
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "longDescription": null,
+                "iconUrl": null,
+                "sortOrder": 2
+              }
+            ],
+            "supportedDestinations": []
+          },
+          {
+            "id": "inttexttalk050301_postpaid",
+            "name": "$10 International Talk & Text Boost - 20 countries",
+            "description": null,
+            "contentKey": null,
+            "category": [
+              {
+                "id": "addon_postpaid"
+              },
+              {
+                "id": "postpaid_extra"
+              },
+              {
+                "id": "postpaid_talk"
+              },
+              {
+                "id": "postpaid_talk_talkandtext"
+              }
+            ],
+            "price": {
+              "priceType": "",
+              "description": null,
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 10,
+              "basePriceExcludingTax": 8.7,
+              "effectivePrice": null
+            },
+            "entitlements": [
+              {
+                "name": "100 International SMS*",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/sms_small.png",
+                "contentKey": null,
+                "sortOrder": 1
+              },
+              {
+                "name": "200 International mins*",
+                "shortDescription": null,
+                "iconUrl": "/online/myspark/__dev__/logos/buyExtras/landline_small.png",
+                "contentKey": null,
+                "sortOrder": 2
+              }
+            ],
+            "promotions": [
+              {
+                "name": "20DATAROLL",
+                "productType": "MARKETING",
+                "shortDescription": "Text “BUY 20DATAROLL” to 258",
+                "longDescription": null,
+                "iconUrl": null,
+                "sortOrder": 2
+              }
+            ],
+            "supportedDestinations": []
+          }
+        ]
+      }
+    ]
+  }
+}

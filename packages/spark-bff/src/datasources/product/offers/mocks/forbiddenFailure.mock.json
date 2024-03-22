@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "Forbidden for guest user",
+      "code": 4030
+    }
+  ]
+}

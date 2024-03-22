@@ -1,0 +1,47 @@
+{
+  "elid": "302922546",
+  "addressLine1": "Spark City",
+  "addressLine2": "167 Victoria Street West",
+  "addressLine3": "Auckland Central",
+  "addressLine4": "AUCKLAND 1010",
+  "buildingName": "Spark City",
+  "streetNumberFirst": "137",
+  "streetNumberLast": "135",
+  "levelNumber": 1,
+  "levelType": "LEVEL",
+  "streetNumberFirstSuffix": "A",
+  "subUnitNumber": "A",
+  "subUnitType": "",
+  "streetName": "VICTORIA",
+  "streetType": "STREET",
+  "streetSuffix": "WEST",
+  "locality": "AUCKLAND CENTRAL",
+  "townOrCity": "AUCKLAND",
+  "postcode": "1010",
+  "boxNumber": "",
+  "privateBagNumber": "",
+  "counterDeliveryPoint": "",
+  "boxLobbyName": "",
+  "addressType": "Street",
+  "region": "AUCKLAND REGION",
+  "terrAuthName": "AUCKLAND",
+  "verified": true,
+  "ruralIdentifier": "",
+  "mailTown": "AUCKLAND",
+  "geographicCoordinate": {
+    "latitude": -36.8475001,
+    "longitude": 174.7576072,
+    "nztmX": 1756703.7,
+    "nztmY": 5920603.094
+  },
+  "alternateReference": [
+    {
+      "type": "tui",
+      "value": "1005088463"
+    },
+    {
+      "type": "dpid",
+      "value": "108003"
+    }
+  ]
+}

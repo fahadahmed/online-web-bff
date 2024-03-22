@@ -1,0 +1,62 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/profile",
+  "tags": ["myspark:profile"],
+  "title": "profile page",
+  "description": "profile page",
+  "fields": [
+    {
+      "fieldKey": "manage.sparkId.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Spark ID",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.sparkId.description",
+      "fieldType": "SUB_HEADING",
+      "fieldValue": "Email, contact info and password",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.access.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Access",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.access.description",
+      "fieldType": "SUB_HEADING",
+      "fieldValue": "Manage access to your products",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.notifications.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Notifications",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "manage.notifications.description",
+      "fieldType": "SUB_HEADING",
+      "fieldValue": "Notification alerts",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "legal.privacy.title",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "Privacy Policy",
+      "fieldUrl": "https://www.spark.co.nz/help/other/about-your-privacy-with-spark/"
+    },
+    {
+      "fieldKey": "legal.termsandconditions.title",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "Terms and conditions",
+      "fieldUrl": "https://www.spark.co.nz/help/other/terms/"
+    }
+  ]
+}

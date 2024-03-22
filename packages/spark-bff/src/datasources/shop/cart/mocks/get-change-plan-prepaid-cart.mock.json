@@ -1,0 +1,121 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "cartId": "ss-change-plan-prepaid",
+  "accountNumber": "702894573",
+  "accountRequired": false,
+  "authenticated": true,
+  "guest": true,
+  "channel": {
+    "id": "bo_lov_saleschannel_online",
+    "name": "Online"
+  },
+  "price": [
+    {
+      "priceType": "Recurring",
+      "frequency": {
+        "period": "Month",
+        "value": 1
+      },
+      "basePrice": 59.99,
+      "basePriceExcludingTax": 54.5,
+      "effectivePrice": 59.99,
+      "periodStart": null,
+      "length": null,
+      "discount": null
+    }
+  ],
+  "bundles": [
+    {
+      "lineNumber": "0947382764",
+      "lineRequired": false,
+      "index": 0,
+      "id": "f10176ee-acc0-4263-b6dc-a11d9df87607",
+      "category": {
+        "id": "mobile",
+        "name": "Mobile"
+      },
+      "price": [
+        {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 59.99,
+          "basePriceExcludingTax": 54.5,
+          "effectivePrice": 59.99,
+          "periodStart": null,
+          "length": null,
+          "discount": null
+        }
+      ],
+      "items": [
+        {
+          "index": 0,
+          "id": "ada35552-abb2-470c-af85-87792b7be96i",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 39.99,
+              "basePriceExcludingTax": 34.5,
+              "effectivePrice": 39.99,
+              "periodStart": null,
+              "length": null,
+              "discount": null
+            }
+          ],
+          "action": "modify",
+          "entryImageUrl": null,
+          "name": "Dollar 39 Endless Mobile Pack",
+          "description": "$39 Endless Mobile Pack",
+          "summary": null,
+          "isIncluded": false,
+          "productOfferingId": "dollar_39_endless_mobile_plan-of_tskxp",
+          "category": ["endless_plan"],
+          "contractTerm": null,
+          "balanceManagement": "PREPAID"
+        },
+        {
+          "index": 0,
+          "id": "bad35552-abb2-470c-af85-87792b7be96i",
+          "quantity": 1,
+          "price": [
+            {
+              "priceType": "Recurring",
+              "frequency": {
+                "period": "Month",
+                "value": 1
+              },
+              "basePrice": 59.99,
+              "basePriceExcludingTax": 54.5,
+              "effectivePrice": 59.99,
+              "periodStart": null,
+              "length": null,
+              "discount": null
+            }
+          ],
+          "action": "add",
+          "entryImageUrl": null,
+          "name": "Dollar 59 Endless Mobile Pack",
+          "description": "$59 Endless Mobile Pack",
+          "summary": null,
+          "isIncluded": false,
+          "productOfferingId": "dollar_59_endless_mobile_plan-of_tskxp",
+          "category": ["endless_plan"],
+          "contractTerm": null,
+          "balanceManagement": "PREPAID"
+        }
+      ]
+    }
+  ]
+}

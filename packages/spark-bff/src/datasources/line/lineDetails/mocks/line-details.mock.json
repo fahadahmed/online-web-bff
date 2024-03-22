@@ -1,0 +1,191 @@
+{
+  "accountNumber": "3247651",
+  "accountStatus": "Active",
+  "aliasName": "Office Number",
+  "allowChangePlan": true,
+  "balanceManagement": "PREPAID",
+  "billingFrequencyCode": "monthly",
+  "cmoServiceType": "FIXED VOICE",
+  "contractRenewalType": "Auto-renew",
+  "contractStartDate": "2021-01-01T00:00:00.000+1300",
+  "contractEndDate": "2021-01-31T00:00:00.000+1300",
+  "contractTermFrequency": "No fixed contract",
+  "contractTermNumber": 1,
+  "customerSegment": "Consumer",
+  "autoTopupDetails": {
+    "topupSettings": [
+      {
+        "cardDetails": {
+          "expiryMonth": "08",
+          "expiryYear": "2024",
+          "issuer": "MASTER CARD",
+          "lastFourDigits": "6543"
+        },
+        "nextPaymentDate": "2021-02-07T08:34:14Z",
+        "paymentMethodId": "1-2BI25OP4",
+        "paymentMethodType": "CREDIT_CARD",
+        "paymentPreferenceType": "RT28",
+        "topupAmount": "25"
+      }
+    ]
+  },
+  "dataStackAllowances": [
+    {
+      "capLimit": "1300",
+      "endDateTime": "2021-02-31T11:59:59.000+1300",
+      "remainingVolume": "650",
+      "usedVolume": "500.755",
+      "volumeType": "MB",
+      "startDateTime": "2021-01-15T11:59:59.000+1300",
+      "id": "75341_M_DATA_BOOSTER",
+      "name": "400MB",
+      "status": "ACTIVE"
+    }
+  ],
+  "entitlements": [
+    {
+      "description": "1GB Rollover data",
+      "displayPriority": 1,
+      "id": "75341_M_DATA_BOOSTER_ACCOUNT",
+      "name": "$19 Rollover Value Pack",
+      "status": "Activated",
+      "subtype": "DATASTACK",
+      "unlimited": false,
+      "usageType": "Data",
+      "entitlementQuantityUnit": "MB"
+    }
+  ],
+  "extras": [
+    {
+      "billingFrequencyCode": "monthly",
+      "billingFrequencyName": "per month",
+      "contractRenewalType": "Auto-renew",
+      "contractTermFrequency": "Month contract",
+      "contractTermNumber": 1,
+      "countries": [
+        {
+          "code": "NZL",
+          "name": "New Zealand",
+          "network": "4G"
+        }
+      ],
+      "displayPriority": 1,
+      "entitlements": [
+        {
+          "description": "1GB Rollover data",
+          "displayPriority": 1,
+          "id": "75341_M_DATA_BOOSTER_ACCOUNT",
+          "name": "$19 Rollover Value Pack",
+          "status": "Activated",
+          "subtype": "DATASTACK",
+          "unlimited": false,
+          "usageType": "Data",
+          "entitlementQuantityUnit": "GB"
+        }
+      ],
+      "renewable": true,
+      "offerId": "mbundle050289",
+      "periodEndDate": "2020-03-07T23:59:59.000+1300",
+      "price": 9,
+      "priceType": "GST_EXEMPT",
+      "productId": "ServicePlan3067",
+      "productInstanceId": "1-2CXSWLU4",
+      "productName": "$20 data boost",
+      "renewalFrequency": "per month",
+      "renewalState": "OFF",
+      "status": "ACTIVE",
+      "subscriptionTermName": "1 Month contract - monthly billing",
+      "subtype": "DOMESTIC",
+      "type": "MOBILE",
+      "usageType": "Data"
+    }
+  ],
+  "lineDescription": "Iphone number",
+  "lineNumber": "0273523053",
+  "offerId": "mbundle050289",
+  "oneNumberDetails": {
+    "description": "Minutes and texts are shared with your devices using one number",
+    "primaryLine": true,
+    "primaryLineNumber": "027000001",
+    "secondaryLines": [
+      {
+        "lineNumber": "027000002"
+      }
+    ]
+  },
+  "price": 39.99,
+  "priceType": "GST_EXEMPT",
+  "productId": "ServicePlan3067",
+  "productInstanceId": "1-27KPQIOM",
+  "productName": "Mobile $39.99 Rollover Plan",
+  "planType": "MOBILE_POSTPAID_NOTERM",
+  "rates": [
+    {
+      "name": "Additional MB",
+      "value": "$3 for 10MB for one day"
+    }
+  ],
+  "renewalFrequency": "per month",
+  "roamingDetails": {
+    "autoPurchase": {
+      "description": "When you arrive overseas in a roaming pack eligible country and start using your device, we'll automatically add and activate a roaming pack for you.",
+      "settings": {
+        "name": "Automatically purchase pack",
+        "valueOffers": [
+          {
+            "activationDescription": "This pack will automatically activate when you arrive overseas and start using your device.",
+            "chargePeriod": "per 7 days",
+            "countries": [
+              {
+                "code": "NZL",
+                "name": "New Zealand",
+                "network": "4G"
+              }
+            ],
+            "description": "200 outgoing mins + 200 incoming mins + 200 roaming text + 1GB roaming data",
+            "id": "roamingpack050285",
+            "name": "Roaming Pack",
+            "offerId": "roamingpack050285",
+            "price": "20",
+            "priceType": "GST_EXEMPT",
+            "usageDescription": "Casual rates will apply once you use up all of the data, minutes, or texts in the pack."
+          }
+        ],
+        "valueText": "Enabled"
+      },
+      "title": "Auto Buy Roaming"
+    }
+  },
+  "rolloverDetails": {
+    "rolloverAllowances": [
+      {
+        "remainingAmount": 324.84,
+        "remainingUnit": "MB",
+        "rolloverExpiry": [
+          {
+            "expiryAmount": 17.87,
+            "expiryAmountUnit": "MB",
+            "expiryDate": "2020-03-16T10:59:59.000+1300"
+          }
+        ],
+        "rolloverPriority": 650,
+        "rolloverStatus": "ACTIVE",
+        "rolloverType": "NZ_DATA",
+        "usageType": "DATA"
+      }
+    ]
+  },
+  "serviceAddressElid": "14005226",
+  "serviceEndDate": "2021-02-02T00:00:00.000+1300",
+  "serviceStartDate": "2021-02-17T10:05:06.000+1200",
+  "status": "ACTIVE",
+  "subscriptionTermName": "No fixed contract",
+  "wirelessServiceId": "0273523053",
+  "tiers": [
+    {
+      "lowerValue": 0,
+      "price": 69,
+      "upperValue": 61440
+    }
+  ]
+}

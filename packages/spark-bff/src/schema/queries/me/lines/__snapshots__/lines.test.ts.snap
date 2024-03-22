@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns lines that the user has access to 1`] = `
+Array [
+  Object {
+    "associatedUsers": Array [
+      Object {
+        "businessName": null,
+        "email": "bob.builder@toytown.com",
+        "firstName": "Bob",
+        "lastName": "Builder",
+        "role": "Owner",
+      },
+      Object {
+        "businessName": null,
+        "email": "robin.hood@sherwoodforest.com.uk",
+        "firstName": "Robin",
+        "lastName": "Hood",
+        "role": "Manager",
+      },
+      Object {
+        "businessName": null,
+        "email": "batman@arkhamcity.com",
+        "firstName": "Bruce",
+        "lastName": "Wayne",
+        "role": "Manager",
+      },
+    ],
+    "displayName": "My prepaid line",
+    "lineNumber": "0276404520",
+  },
+  Object {
+    "associatedUsers": Array [
+      Object {
+        "businessName": null,
+        "email": "bob.builder@toytown.com",
+        "firstName": "Bob",
+        "lastName": "Builder",
+        "role": "Owner",
+      },
+      Object {
+        "businessName": null,
+        "email": "robin.hood@sherwoodforest.com.uk",
+        "firstName": "Robin",
+        "lastName": "Hood",
+        "role": "Manager",
+      },
+      Object {
+        "businessName": null,
+        "email": "batman@arkhamcity.com",
+        "firstName": "Bruce",
+        "lastName": "Wayne",
+        "role": "Manager",
+      },
+    ],
+    "displayName": "My other prepaid",
+    "lineNumber": "0211615249",
+  },
+  Object {
+    "associatedUsers": Array [
+      Object {
+        "businessName": null,
+        "email": "bob.builder@toytown.com",
+        "firstName": "Bob",
+        "lastName": "Builder",
+        "role": "Owner",
+      },
+      Object {
+        "businessName": null,
+        "email": "robin.hood@sherwoodforest.com.uk",
+        "firstName": "Robin",
+        "lastName": "Hood",
+        "role": "Manager",
+      },
+      Object {
+        "businessName": null,
+        "email": "batman@arkhamcity.com",
+        "firstName": "Bruce",
+        "lastName": "Wayne",
+        "role": "Manager",
+      },
+    ],
+    "displayName": "My prepaid line",
+    "lineNumber": "0278675179",
+  },
+  Object {
+    "associatedUsers": Array [
+      Object {
+        "businessName": null,
+        "email": "bob.builder@toytown.com",
+        "firstName": "Bob",
+        "lastName": "Builder",
+        "role": "Owner",
+      },
+      Object {
+        "businessName": null,
+        "email": "robin.hood@sherwoodforest.com.uk",
+        "firstName": "Robin",
+        "lastName": "Hood",
+        "role": "Manager",
+      },
+      Object {
+        "businessName": null,
+        "email": "batman@arkhamcity.com",
+        "firstName": "Bruce",
+        "lastName": "Wayne",
+        "role": "Manager",
+      },
+    ],
+    "displayName": "My prepaid",
+    "lineNumber": "0276398120",
+  },
+]
+`;
+
+exports[`returns lines that the user has access to when accessLevel is passed 1`] = `
+Array [
+  Object {
+    "lineNumber": "0276404520",
+  },
+  Object {
+    "lineNumber": "0211615249",
+  },
+  Object {
+    "lineNumber": "0278675179",
+  },
+  Object {
+    "lineNumber": "0276398120",
+  },
+]
+`;

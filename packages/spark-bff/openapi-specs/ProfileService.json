@@ -1,0 +1,107 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "DESL Marketing Profile Service",
+    "description": "This API supports the retrieval of all the required properties that are to be used within the profile extensions.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "DC Digital Services",
+      "email": "DCDevOpsOnline@spark.co.nz"
+    }
+  },
+  "schemes": ["https"],
+  "paths": {
+    "/v1/marketing/profile/me": {
+      "get": {
+        "tags": ["profile", "protected", "oidc", "public"],
+        "summary": "Fetches profile data for a MySpark user.",
+        "operationId": "getProfileData",
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ProfileResponse"
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ProfileResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["profileData"],
+          "properties": {
+            "profileData": {
+              "description": "An array containing all the profile data as key value pairs.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/KeyValuePair"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "KeyValuePair": {
+      "type": "object",
+      "required": ["key", "value"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "This contains the key name and is named according to W3C standards.",
+          "example": "user.profile.profileID"
+        },
+        "value": {
+          "type": "string",
+          "description": "Provides the value of the key.",
+          "example": "SSC1489617860094393"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

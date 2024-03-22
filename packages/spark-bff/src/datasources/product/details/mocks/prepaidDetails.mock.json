@@ -1,0 +1,44 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [],
+    "id": "addon_prepaid",
+    "name": "Prepaid",
+    "description": "Category to group Prepaid Addon",
+    "isCategoryContainer": false,
+    "visibility": null,
+    "defaultSelected": null,
+    "sortOrder": null,
+    "subCategories": [
+      {
+        "id": "prepaid_value_pack",
+        "name": "Value Pack",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": 1,
+        "subCategories": null
+      },
+      {
+        "id": "prepaid_datalovers",
+        "name": "Data Lovers",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": 2,
+        "subCategories": null
+      },
+      {
+        "id": "prepaid_extra",
+        "name": "Extras",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null,
+        "subCategories": null
+      }
+    ]
+  }
+}

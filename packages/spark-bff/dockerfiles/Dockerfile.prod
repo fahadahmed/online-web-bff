@@ -1,0 +1,23 @@
+
+FROM docker-registry-default.reg.ocp.internal.spark.co.nz/digitalservices/web-bff-base:1.0.1
+
+ENV TMP_PATH=/tmp
+ENV APP_PATH=/usr/src/app
+
+ADD packages/spark-bff/docker-entrypoint.sh ${APP_PATH}/
+RUN chmod +x ${APP_PATH}/docker-entrypoint.sh
+
+ADD packages/spark-bff/package.json ${TMP_PATH}/package.json
+ADD yarn.lock ${TMP_PATH}/yarn.lock
+RUN cd ${TMP_PATH} && yarn install
+RUN cp -a ${TMP_PATH}/node_modules ${APP_PATH}/
+
+WORKDIR ${APP_PATH}
+ADD packages/spark-bff/build ./build
+
+EXPOSE 3001
+
+ENV http_proxy=
+ENV https_proxy=
+
+ENTRYPOINT [ "/usr/src/app/docker-entrypoint.sh" ]

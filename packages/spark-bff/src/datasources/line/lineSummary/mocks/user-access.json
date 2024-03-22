@@ -1,0 +1,58 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "lines": [],
+  "accounts": [
+    {
+      "lineNumber": null,
+      "customerNumber": "433136063",
+      "accountNumber": "105336780",
+      "status": "Active",
+      "type": "Account",
+      "balanceManagement": "POSTPAID",
+      "role": "Owner",
+      "aliasName": null,
+      "lineNumbers": ["033478552"],
+      "rights": [
+        "View",
+        "ChangeLine",
+        "PayByAccount",
+        "ChangeAccount",
+        "ManageAccess",
+        "ManageSharers",
+        "ChangeOwner",
+        "VAS",
+        "Billing",
+        "PairWearable"
+      ]
+    },
+    {
+      "lineNumber": null,
+      "customerNumber": "433136063",
+      "accountNumber": "1053367801",
+      "status": "Active",
+      "type": "Account",
+      "balanceManagement": "POSTPAID",
+      "role": "Owner",
+      "aliasName": null,
+      "lineNumbers": ["033478553"],
+      "rights": [
+        "View",
+        "ChangeLine",
+        "PayByAccount",
+        "ChangeAccount",
+        "ManageAccess",
+        "ManageSharers",
+        "ChangeOwner",
+        "VAS",
+        "Billing",
+        "PairWearable"
+      ]
+    }
+  ],
+  "identities": []
+}

@@ -1,0 +1,177 @@
+{
+  "category": {
+    "id": "hardware",
+    "name": "hardware",
+    "description": "hardware",
+    "isCategoryContainer": true,
+    "subCategories": [
+      {
+        "id": "accessories",
+        "name": "Accessories",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": null,
+        "subCategories": [
+          {
+            "id": "accessories_watch",
+            "name": "Watch Accessories",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "accessories_tablet",
+            "name": "Tablet Accessories",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "smart_home",
+            "name": "Smart Decor",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "speakers",
+            "name": "Portable Speakers",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": 5,
+            "subCategories": null
+          },
+          {
+            "id": "drones_photography",
+            "name": "Drones & Photography",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "gaming",
+            "name": "Gaming",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "accessories_wearables",
+            "name": "Wearables Accessories",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "gift_cards",
+            "name": "Gift Cards",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "cases_and_protection",
+            "name": "Cases & Protection",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "security",
+            "name": "Security",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "cables_and_chargers",
+            "name": "Cables & Chargers",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "powerbanks",
+            "name": "Powerbanks",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": null,
+            "subCategories": null
+          },
+          {
+            "id": "headphones",
+            "name": "Headphones & earphones",
+            "visibility": true,
+            "defaultSelected": null,
+            "sortOrder": 4,
+            "subCategories": null
+          }
+        ]
+      },
+      {
+        "id": "data_devices",
+        "name": "Data Devices",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": null,
+        "subCategories": null
+      },
+      {
+        "id": "device_credit",
+        "name": "Device Credit",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null,
+        "subCategories": null
+      },
+      {
+        "id": "handsets",
+        "name": "Mobile phones",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": 1,
+        "subCategories": null
+      },
+      {
+        "id": "sim",
+        "name": "SIM",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null,
+        "subCategories": null
+      },
+      {
+        "id": "tablets",
+        "name": "Tablets",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": 2,
+        "subCategories": null
+      },
+      {
+        "id": "wearables",
+        "name": "Wearables",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": null,
+        "subCategories": null
+      }
+    ]
+  },
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ]
+}

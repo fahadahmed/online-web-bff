@@ -1,0 +1,53 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+
+  "offerDetails": [
+    {
+      "stock": {
+        "status": "IN_STOCK",
+        "storeStatus": "IN_STOCK",
+        "warehouseStatus": "IN_STOCK"
+      },
+      "id": "apple_watch_7_gps_cell_45",
+      "externalId": "applewatch7",
+      "name": "Apple Watch Series 7 GPS + Cell 45mm",
+      "description": "A15 Bionic, the world’s fastest smartphone chip. Superfast 5G for faster download speeds and high-quality streaming.",
+      "category": [
+        {
+          "id": "apple"
+        },
+        {
+          "id": "wearable"
+        }
+      ],
+      "price": {
+        "priceType": "OneOff",
+        "frequency": null,
+        "basePrice": 999
+      },
+      "group": {
+        "id": "apple_watch_7",
+        "name": "Apple Watch Series 7",
+        "description": "Apple Watch Series 7 GPS + Cell 45mm",
+        "isDefault": true
+      },
+      "images": [],
+      "entitlements": [],
+      "promotions": [],
+      "productFeatures": {},
+      "productCharacteristics": {
+        "isShippable": true,
+        "balanceManageMent": "PREPAID/POSTPAID",
+        "isDeferrable": true,
+        "isFeatured": true
+      },
+      "productSpecifications": [],
+      "associatedPriceRules": []
+    }
+  ]
+}

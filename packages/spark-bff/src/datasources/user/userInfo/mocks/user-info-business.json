@@ -1,0 +1,25 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "sub": "SSC1555381442996828",
+  "firstName": null,
+  "lastName": null,
+  "lastLogin": "1585027622",
+  "isVerified": true,
+  "company": "Business",
+  "origin": "MySpark",
+  "updated_at": "0",
+  "loginOption": "Spark",
+  "sparkID": "SSC1555381442996828",
+  "email": "jon.doe@spark.co.nz",
+  "socialFBId": null,
+  "socialGGId": null,
+  "mfaOption": "none",
+  "act": {
+    "sub": "T816654"
+  }
+}

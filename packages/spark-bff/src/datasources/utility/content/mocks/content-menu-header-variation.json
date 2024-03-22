@@ -1,0 +1,99 @@
+{
+  "id": "online-shop/header-menu",
+  "tags": ["business"],
+  "title": "Header menu",
+  "site": "spark",
+  "description": "Header Menu for Shop",
+  "menus": [
+    {
+      "menuType": "PRIMARY",
+      "menuSections": [
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "Home",
+              "itemUrl": "/home",
+              "itemImageUrl": "home_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Products & solutions",
+              "itemUrl": "/products",
+              "itemImageUrl": "products_solutions_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Why Spark",
+              "itemUrl": "/whyspark",
+              "itemImageUrl": "why_spark_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Insights & events",
+              "itemUrl": "/insights",
+              "itemImageUrl": "insights_events_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "MySpark",
+              "itemUrl": "/myspark",
+              "itemImageUrl": "me_large"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menuType": "SECONDARY",
+      "menuSections": [
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "Home",
+              "itemUrl": "/home",
+              "itemImageUrl": "home_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Products & solutions",
+              "itemUrl": "/products",
+              "itemImageUrl": "products_solutions_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Why Spark",
+              "itemUrl": "/whyspark",
+              "itemImageUrl": "why_spark_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Insights & events",
+              "itemUrl": "/insights",
+              "itemImageUrl": "insights_events_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "MySpark",
+              "itemUrl": "/myspark",
+              "itemImageUrl": "me_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Help & Support",
+              "itemUrl": "/help",
+              "itemImageUrl": "help_large"
+            },
+            {
+              "itemType": "HEADING",
+              "itemValue": "Search",
+              "itemUrl": "/search",
+              "itemImageUrl": "search_large"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

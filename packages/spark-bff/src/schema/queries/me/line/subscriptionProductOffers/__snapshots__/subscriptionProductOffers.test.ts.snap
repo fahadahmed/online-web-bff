@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns all the product offer details data with no errors 1`] = `
+Object {
+  "me": Object {
+    "line": Object {
+      "subscriptionProductOffers": Object {
+        "notifications": null,
+        "offerDetails": Array [],
+      },
+    },
+  },
+}
+`;
+
+exports[`subscriptionProductOffers with invalid product instance ids responds with empty array 1`] = `
+Object {
+  "me": Object {
+    "line": Object {
+      "subscriptionProductOffers": Object {
+        "notifications": null,
+        "offerDetails": Array [],
+      },
+    },
+  },
+}
+`;

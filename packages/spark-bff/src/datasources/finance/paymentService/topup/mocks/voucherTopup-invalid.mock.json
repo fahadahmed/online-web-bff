@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "The provided token is invalid or expired.",
+      "code": "4001"
+    }
+  ]
+}

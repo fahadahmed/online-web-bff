@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`retrieve marketing related data for analytics 1`] = `
+Object {
+  "attributes": Object {
+    "access": Object {
+      "numberOfAccess": "Mobile $59.99 Rollover Plan,Unplan Fibre 100 12 Months",
+      "numberOfAccount": "1",
+      "numberOfPostpaidMobile": "1",
+      "numberOfPrepaidMobile": "0",
+    },
+    "authState": "Authenticated",
+    "loginOption": "Spark",
+    "product": Object {
+      "numberOfBroadband": "1",
+      "numberOfLandline": "1",
+      "numberOfProduct": "10",
+      "productTypes": "MOBILE_PREPAID,MOBILE_POSTPAID_NOTERM",
+    },
+    "rememberMe": null,
+    "sparkCRM": Object {
+      "legalCategory": "Individual",
+      "lineOfBusiness": "Spark",
+      "segment": "Consumer",
+    },
+  },
+  "profileInfo": Object {
+    "profileID": "SSC1541554309763970",
+  },
+}
+`;

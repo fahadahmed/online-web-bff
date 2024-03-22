@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "The user isn't a myspark id.  This should never happen",
+      "code": 4065
+    }
+  ]
+}

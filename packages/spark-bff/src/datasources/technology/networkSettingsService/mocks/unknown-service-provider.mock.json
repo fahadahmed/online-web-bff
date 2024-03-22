@@ -1,0 +1,12 @@
+{
+  "serviceProvider": {
+    "id": null,
+    "name": null
+  },
+  "messages": [
+    {
+      "message": "Could not match liner number to a service provider",
+      "code": 9001
+    }
+  ]
+}

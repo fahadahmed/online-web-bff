@@ -1,0 +1,34 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "accountNumber": "3434343442",
+  "accountRequired": false,
+  "cartId": "90b37788-3f82-4c51-96a1-76190ee6cf58",
+  "bundles": [
+    {
+      "lineNumber": "9449873265",
+      "lineRequired": false,
+      "id": "47e92b98-d01c-49f8-8b64-ec60b7d4685d",
+      "category": {
+        "id": "mobile",
+        "name": "Mobile"
+      },
+      "items": [
+        {
+          "id": "3c7b5de2-788f-4228-9495-966202657398",
+          "productOfferingId": "dollar_39_endless_mobile_plan-of_luqnb",
+          "category": ["endless_plan"]
+        },
+        {
+          "id": "cc6182b1-9350-452f-b4fb-d822dca218c4",
+          "productOfferingId": "trio_sim",
+          "category": ["sims"]
+        }
+      ]
+    }
+  ]
+}

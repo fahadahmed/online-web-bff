@@ -1,0 +1,302 @@
+{
+  "id": "consumer-footer",
+  "tags": ["daft", "test-a"],
+  "title": "Consumer Footer",
+  "description": "The footer to be rendered to consumers on the Spark Website.",
+  "menus": [
+    {
+      "menuType": "PRIMARY",
+      "menuSections": [
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "Shop",
+              "itemUrl": "/shop",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Plans",
+              "itemUrl": "/shop/mobile-plans",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Mobile plans",
+              "itemUrl": "/shop/mobile-plans.html",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Device & accesories",
+              "itemUrl": "/shop/mobile",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Subscriptions",
+              "itemUrl": "/shop/vas",
+              "itemImageUrl": null
+            }
+          ]
+        },
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "Benefits",
+              "itemUrl": "/getmore",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Spotify",
+              "itemUrl": "/getmore/spotify",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Netflix",
+              "itemUrl": "/getmore/netflix",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Spark sport",
+              "itemUrl": "/getmore/sport",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Neon",
+              "itemUrl": "/getmore/neon",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Xbox",
+              "itemUrl": "/getmore/xbox",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Online security tools",
+              "itemUrl": "/getmore/netshield",
+              "itemImageUrl": null
+            }
+          ]
+        },
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "Discover & learn",
+              "itemUrl": "/discover",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "5G for you",
+              "itemUrl": "/5g/home",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Learn about IoT",
+              "itemUrl": "/iot/home",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Play",
+              "itemUrl": "/play",
+              "itemImageUrl": null
+            }
+          ]
+        },
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "Help & Support",
+              "itemUrl": "/help",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Accont & billing",
+              "itemUrl": "/help/account",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Broadband",
+              "itemUrl": "/help/internet",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Mobile",
+              "itemUrl": "/help/mobileandmobilebroadband",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Landline",
+              "itemUrl": "/help/landline",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Contact us",
+              "itemUrl": "/help/contacts/support/phone-numbers",
+              "itemImageUrl": null
+            }
+          ]
+        },
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "MySpark",
+              "itemUrl": "/myspark",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Dashboard",
+              "itemUrl": "/myspark",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Usage",
+              "itemUrl": "/myspark",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Billing",
+              "itemUrl": "/myspark/billandpayments",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Product",
+              "itemUrl": "/myspark",
+              "itemImageUrl": null
+            }
+          ]
+        },
+        {
+          "menuItems": [
+            {
+              "itemType": "HEADING",
+              "itemValue": "About",
+              "itemUrl": "/about",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "News",
+              "itemUrl": "/news",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Careers",
+              "itemUrl": "https://careers.sparknz.co.nz/home",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Investors",
+              "itemUrl": "http://investors.sparknz.co.nz/Investor-Centre/",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Sustainability",
+              "itemUrl": "/sustainability",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Suppliers",
+              "itemUrl": "/suppliers",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Spark foundation",
+              "itemUrl": "/substainability/foundation",
+              "itemImageUrl": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menuType": "SECONDARY",
+      "menuSections": [
+        {
+          "menuItems": [
+            {
+              "itemType": "IMAGE",
+              "itemValue": "instagram_extra_small",
+              "itemUrl": "https://www.instagram.com/sparknz/",
+              "itemImageUrl": "/dam/images/logos/instagram_extra_small.svg"
+            },
+            {
+              "itemType": "IMAGE",
+              "itemValue": "facebook_extra_small",
+              "itemUrl": "https://www.facebook.com/spark4nz/",
+              "itemImageUrl": "/dam/images/logos/facebook_extra_small.svg"
+            },
+            {
+              "itemType": "IMAGE",
+              "itemValue": "youtube_extra_small",
+              "itemUrl": "https://www.facebook.com/spark4nz/",
+              "itemImageUrl": "/dam/images/logos/facebook_extra_small.svg"
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Go to business",
+              "itemUrl": "/business",
+              "itemImageUrl": null
+            }
+          ]
+        },
+        {
+          "menuItems": [
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Privacy policy",
+              "itemUrl": "/help/other/about-your-privacy-with-spark",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Legal Disclaimer",
+              "itemUrl": "/help/other/legaldisclaimer/",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Accessibility",
+              "itemUrl": "/help/other/accessibilities",
+              "itemImageUrl": null
+            },
+            {
+              "itemType": "HYPERLINK",
+              "itemValue": "Print this Page",
+              "itemUrl": "window.print()",
+              "itemImageUrl": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`return null on non-exist line number  1`] = `
+Object {
+  "groupProfile": "LEADER",
+  "usageSummary": null,
+}
+`;
+
+exports[`returns usage summary for a line  1`] = `
+Object {
+  "usageSummary": Object {
+    "groupProfile": "sharer",
+    "lineNumber": "0276404520",
+    "messagePrimary": "Message",
+    "messageSecondary": "Key call-out",
+    "messageStatus": null,
+    "messageTertiary": "Time to renew/expire",
+    "productIcon": "BROADBAND",
+    "topUpBuyExtra": null,
+  },
+}
+`;

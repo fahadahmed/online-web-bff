@@ -1,0 +1,93 @@
+{
+  "preferences": [
+    {
+      "id": "1b5-9612-4eba-b412",
+      "value": "OPT_IN",
+      "status": "ACTIVE",
+      "topicId": "mobile-ewHmbp095-v",
+      "topicName": "Mobile Usage",
+      "entity": "ASSET",
+      "entityId": "0274722432",
+      "channels": [
+        {
+          "id": "3-jn4ha",
+          "type": "EMAIL",
+          "value": "bob.builder@toyworld.com",
+          "status": "ACTIVE",
+          "entityId": "sss-961Z-4eba-b42d"
+        }
+      ]
+    },
+    {
+      "id": "1b5-9612-4eba-b42d",
+      "value": "OPT_IN",
+      "status": "ACTIVE",
+      "topicId": "mobile-ewHmbp095-v",
+      "topicName": "Mobile Usage",
+      "entity": "ASSET",
+      "entityId": "0274722111",
+      "channels": [
+        {
+          "id": "4-jn4ha",
+          "type": "EMAIL",
+          "value": "bob.builder@toyworld.com",
+          "status": "ACTIVE",
+          "entityId": "1b5-9612-4eba-b42d"
+        },
+        {
+          "id": "5-jn4ha",
+          "type": "SMS",
+          "value": "0277320153",
+          "status": "ACTIVE",
+          "entityId": "2c6-9612-4eba-b42d"
+        }
+      ]
+    },
+    {
+      "id": "hj5a-b42d-92f09cad6",
+      "value": "OPT_OUT",
+      "status": "ACTIVE",
+      "topicId": "mobile-ewHmbp095-v",
+      "topicName": "Mobile Usage",
+      "entity": "ASSET",
+      "entityId": "0274722913"
+    },
+    {
+      "id": "ghsa34-3y3b3-jn4haj98z",
+      "value": "OPT_IN",
+      "status": "ACTIVE",
+      "topicId": "mobile-ewHmbp095-v",
+      "topicName": "Mobile Usage",
+      "entity": "ASSET",
+      "entityId": "0275016162",
+      "channels": [
+        {
+          "id": "6-jn4ha",
+          "type": "SMS",
+          "value": "0277320153",
+          "status": "ACTIVE",
+          "entityId": "1b5-9713-4eba-b42d"
+        },
+        {
+          "id": "7-jn4ha",
+          "type": "EMAIL",
+          "value": "test@gmail.com",
+          "status": "ACTIVE",
+          "entityId": "1b5-9622-5eba-b42d"
+        },
+        {
+          "id": "8-jn4ha",
+          "type": "INAPP",
+          "status": "INACTIVE",
+          "entityId": "1b5-9612-5edb-b42d"
+        },
+        {
+          "id": "9-jn4ha",
+          "type": "PUSH",
+          "status": "INACTIVE",
+          "entityId": "1b5-9612-4eba-c71f"
+        }
+      ]
+    }
+  ]
+}

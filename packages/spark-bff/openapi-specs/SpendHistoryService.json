@@ -1,0 +1,460 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "provides a means of returning an aggregated history of the spend (charges, discounts, credits, etc.) associated to a specific line number over a period of time.",
+    "version": "1.0.0",
+    "title": "DESL Line Spend History Service"
+  },
+  "schemes": ["https"],
+  "parameters": {
+    "realm": {
+      "name": "realm",
+      "in": "header",
+      "description": "Identifies the user realm, optional for MySpark/Gen3 App, but mandatory for MySB.",
+      "type": "string",
+      "enum": ["SPARK_ID", "MYSB"],
+      "x-example": "SPARK_ID",
+      "default": "SPARK_ID",
+      "required": false
+    },
+    "lineNumber": {
+      "name": "lineNumber",
+      "in": "path",
+      "description": "The line number to retrieve historical spend details for.",
+      "type": "string",
+      "pattern": "^0\\d+$",
+      "x-example": "0271234567",
+      "required": true
+    },
+    "interval": {
+      "name": "interval",
+      "in": "path",
+      "description": "The unit of time to aggregate spend data by.",
+      "type": "string",
+      "enum": ["monthly"],
+      "x-example": "monthly",
+      "required": true
+    }
+  },
+  "paths": {
+    "/v1/line/{lineNumber}/spend/{interval}": {
+      "get": {
+        "tags": ["spend", "history", "interval", "protected", "oidc", "public"],
+        "summary": "Returns a summary of a spend (charges, discounts, credits, etc) associated to the supplied line number for a defined interval. Note currently only a monthly reporting period is supported.",
+        "operationId": "getIntervalSpendHistory",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realm"
+          },
+          {
+            "$ref": "#/parameters/lineNumber"
+          },
+          {
+            "$ref": "#/parameters/interval"
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start date of the historical query in ISO8601 date format.",
+            "type": "string",
+            "format": "date-time",
+            "x-example": "2021-08-01T00:00:00.000+1300",
+            "required": false
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end date of the historical query in ISO8601 date format",
+            "type": "string",
+            "format": "date-time",
+            "x-example": "2021-08-08T00:00:00.000+1300",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/IntervalSpendHistoryResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to fetch spend history details about this line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Line not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Failed to fetch spend history details due to internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "Line not supported",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/line/{lineNumber}/spend/{interval}/{periodBreakdownId}": {
+      "get": {
+        "tags": [
+          "spend",
+          "history",
+          "interval",
+          "periodbreakdown",
+          "protected",
+          "oidc",
+          "public"
+        ],
+        "summary": "Returns a list of the products that contributed to a type of spend (current plan, previous plan, international, additional, debit or credit) during a specific period of time identified by the periodBreakdownId request path parameter.",
+        "operationId": "getPeriodBreakdownSpendHistory",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "$ref": "#/parameters/realm"
+          },
+          {
+            "$ref": "#/parameters/lineNumber"
+          },
+          {
+            "$ref": "#/parameters/interval"
+          },
+          {
+            "name": "periodBreakdownId",
+            "in": "path",
+            "description": "The identifier for the period that product-level spend details should be returned for.",
+            "type": "string",
+            "x-example": "fgNaGUKJHUWCj5WhoE1lZw",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PeriodBreakdownSpendHistoryResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid input parameters",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthenticated",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "403": {
+            "description": "Not authorised to fetch spend history details about this line",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "404": {
+            "description": "Line not found",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Failed to fetch spend history details due to internal server error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "501": {
+            "description": "Line not supported",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "IntervalSpendHistoryResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "interval",
+            "accountType",
+            "startDateTime",
+            "endDateTime",
+            "gstInclusive",
+            "averagePeriodSpend",
+            "summarisedPeriods"
+          ],
+          "properties": {
+            "interval": {
+              "$ref": "#/definitions/interval"
+            },
+            "accountType": {
+              "$ref": "#/definitions/accountType"
+            },
+            "startDateTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The ISO8601 date-time representing the start of the spend history summary response.",
+              "example": "2020-08-01T00:00:00.000+13:00"
+            },
+            "endDateTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The ISO8601 date-time representing the end of the spend history summary response.",
+              "example": "2020-09-01T00:00:00.000+13:00"
+            },
+            "gstInclusive": {
+              "type": "boolean",
+              "description": "A flag to indicate whether the spend values (charges, discounts, credits, etc) are inclusive of GST.",
+              "example": true
+            },
+            "averagePeriodSpend": {
+              "type": "number",
+              "description": "The average period spend, it will have 2 d.p.",
+              "example": 79.7
+            },
+            "summarisedPeriods": {
+              "description": "An array of the summarised periods covered in this historical spend query sorted chronologically based on the object's startDateTime attribute value.  If no periods are covered then an empty array should be returned.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SummarisedPeriodSpend"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SummarisedPeriodSpend": {
+      "type": "object",
+      "required": [
+        "startDateTime",
+        "endDateTime",
+        "periodSpend",
+        "unbilled",
+        "periodBreakdown"
+      ],
+      "properties": {
+        "startDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The ISO8601 date-time representing the start of this specific time period.",
+          "example": "2020-03-01T00:00:00.000+13:00"
+        },
+        "endDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The ISO8601 date-time representing the end of this specific time period.",
+          "example": "2020-03-08T00:00:00.000+13:00"
+        },
+        "periodSpend": {
+          "type": "number",
+          "description": "The period spend, it will have 2 d.p.",
+          "example": 86.3
+        },
+        "unbilled": {
+          "type": "boolean",
+          "description": "Whether this summarised period has been billed - always false if PREPAID.",
+          "example": true
+        },
+        "periodBreakdown": {
+          "description": "An array of objects representing a breakdown of the high-level product types that contributed to the overall spend attributed to this line for the period. If this breakdown-level information is not available downstream then the array will be empty.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PeriodBreakdownDetail"
+          }
+        }
+      }
+    },
+    "PeriodBreakdownDetail": {
+      "type": "object",
+      "required": ["breakdownType", "periodSpend"],
+      "properties": {
+        "breakdownType": {
+          "$ref": "#/definitions/breakdownType"
+        },
+        "periodBreakdownId": {
+          "type": "string",
+          "description": "An identifier that can be supplied to the Line Spend History Detail API endpoint to retrieve product-level spend details for this specific period. If this product-level breakdown is not available downstream then this identifier will be null.",
+          "example": "PLAN|2020-03-01T00:00:00Z|2020-03-31T00:00:00Z"
+        },
+        "periodSpend": {
+          "type": "number",
+          "description": "The period spend for this breakdown, it will have 2 d.p.",
+          "example": 26.34
+        }
+      }
+    },
+    "PeriodBreakdownSpendHistoryResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": [
+            "interval",
+            "breakdownType",
+            "gstInclusive",
+            "startDateTime",
+            "endDateTime",
+            "periodSpend",
+            "unbilled",
+            "contributingProducts"
+          ],
+          "properties": {
+            "interval": {
+              "$ref": "#/definitions/interval"
+            },
+            "breakdownType": {
+              "$ref": "#/definitions/breakdownType"
+            },
+            "gstInclusive": {
+              "type": "boolean",
+              "description": "A flag to indicate whether the spend values (charges, discounts, credits, etc) are inclusive of GST.",
+              "example": true
+            },
+            "startDateTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The ISO8601 date-time representing the start of the spend history summary response.",
+              "example": "2020-08-01T00:00:00.000+13:00"
+            },
+            "endDateTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The ISO8601 date-time representing the end of the spend history summary response.",
+              "example": "2020-09-01T00:00:00.000+13:00"
+            },
+            "periodSpend": {
+              "type": "number",
+              "description": "The period spend, it will have 2 d.p.",
+              "example": 86.3
+            },
+            "unbilled": {
+              "type": "boolean",
+              "description": "Whether this summarised period has been billed - always false if PREPAID.",
+              "example": false
+            },
+            "contributingProducts": {
+              "description": "An array of the products that contributed to this total spend over the nominated period. If no products are identified for the period then an empty array will be returned.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ContributingProduct"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ContributingProduct": {
+      "type": "object",
+      "required": ["productName", "chargeStartDateTime", "periodSpend"],
+      "properties": {
+        "offerId": {
+          "type": "string",
+          "description": "The downstream Offer ID associated to this product.",
+          "example": "mob3332010"
+        },
+        "productName": {
+          "type": "string",
+          "description": "The customer-facing name for this product.",
+          "example": "24 Unlimited Max Speed Data"
+        },
+        "chargeStartDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date when the instance of this product was purchased, renewed or activated.",
+          "example": "2020-04-26T00:19:00.000+13:00"
+        },
+        "chargeEndDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date when the charge for the product is ended.",
+          "example": "2020-05-26T00:19:00.000+13:00"
+        },
+        "productEndDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date when the product service is terminated.",
+          "example": "2020-05-26T00:19:00.000+13:00"
+        },
+        "periodSpend": {
+          "type": "number",
+          "description": "The spend to the line for this product, it will have 2 d.p.",
+          "example": 9.25
+        }
+      }
+    },
+    "interval": {
+      "type": "string",
+      "enum": ["MONTHLY"],
+      "description": "Identifies the type of summary returned. Current supported value is MONTHLY"
+    },
+    "accountType": {
+      "type": "string",
+      "enum": ["POSTPAID", "PREPAID"]
+    },
+    "breakdownType": {
+      "type": "string",
+      "enum": ["PLAN", "ADDITIONAL_INCLUDED", "ADDITIONAL_PAID", "CREDIT"],
+      "description": "An enum representing the high-level product type associated with the breakdown.",
+      "example": "PLAN"
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

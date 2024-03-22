@@ -1,0 +1,203 @@
+{
+  "messages": [{ "message": "Success", "code": 2000 }],
+  "offerDetails": [
+    {
+      "id": "apple126161spo",
+      "grandFathered": false,
+      "productType": "Device",
+      "externalId": "apple126161SPO",
+      "name": "Apple Watch SE GPS + Cell 44mm - GRY AL with Midnight Band",
+      "description": "Apple Watch SE has powerful features to help keep you connected, active, healthy and safe. And with cellular so you can go without your phone. This is a lot of watch for a lot less than you expected.",
+      "launchDate": "2021-09-23T12:00:00Z",
+      "category": [{ "id": "wearables" }, { "id": "wearables_apple_watch_se" }],
+      "contractTerm": {
+        "name": null,
+        "description": null,
+        "value": 12,
+        "unit": "Month"
+      },
+      "contentKey": null,
+      "price": {
+        "priceType": "Onetime",
+        "frequency": null,
+        "basePrice": 629,
+        "basePriceExcludingTax": 546.96,
+        "effectivePrice": null,
+        "effectivePriceExcludingTax": null,
+        "creditAmount": null,
+        "creditAmountExcludingTax": null,
+        "taxPercentage": "",
+        "length": null,
+        "description": null
+      },
+      "associatedPrices": [
+        {
+          "priceType": "Recurring",
+          "frequency": { "period": "Month", "value": 1 },
+          "basePrice": 52.42,
+          "basePriceExcludingTax": 45.58,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": 12,
+          "description": null
+        },
+        {
+          "priceType": "Recurring",
+          "frequency": { "period": "Month", "value": 1 },
+          "basePrice": 34.94,
+          "basePriceExcludingTax": 30.38,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": 18,
+          "description": null
+        },
+        {
+          "priceType": "Recurring",
+          "frequency": { "period": "Month", "value": 1 },
+          "basePrice": 26.21,
+          "basePriceExcludingTax": 22.79,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": 24,
+          "description": null
+        },
+        {
+          "priceType": "Recurring",
+          "frequency": { "period": "Month", "value": 1 },
+          "basePrice": 17.47,
+          "basePriceExcludingTax": 15.19,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": 36,
+          "description": null
+        }
+      ],
+      "group": {
+        "id": "apple_watch_se_44mm_group",
+        "name": "Apple Watch SE 44mm",
+        "description": null,
+        "sortOrder": null,
+        "images": [],
+        "isDefault": null
+      },
+      "images": [
+        {
+          "description": null,
+          "id": "AppleWatchSEGPS+Cell44mm-GRYALwithMidnightBand",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/tnz/mobile/smarttech/apple-watch-series-7-se/apple-watch-se1-lte-44mm-1.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "GALLERY"
+        },
+        {
+          "description": null,
+          "id": "AppleWatchSEGPS+Cell44mm-GRYALwithMidnightBand",
+          "sortOrder": 5,
+          "defaultUrl": "/content/dam/tnz/mobile/smarttech/apple-watch-series-7-se/apple-watch-se-lte-44mm-5.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "GALLERY"
+        },
+        {
+          "description": null,
+          "id": "AppleWatchSEGPS+Cell44mm-GRYALwithMidnightBand",
+          "sortOrder": 3,
+          "defaultUrl": "/content/dam/tnz/mobile/smarttech/apple-watch-series-7-se/apple-watch-se-lte-44mm-3.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "GALLERY"
+        },
+        {
+          "description": null,
+          "id": "AppleWatchSEGPS+Cell44mm-GRYALwithMidnightBand",
+          "sortOrder": 2,
+          "defaultUrl": "/content/dam/tnz/mobile/smarttech/apple-watch-series-7-se/apple-watch-se-lte-44mm-2.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "GALLERY"
+        },
+        {
+          "description": null,
+          "id": "AppleWatchSEGPScell44mmGRYALwithMidnightBandproduct",
+          "sortOrder": 1,
+          "defaultUrl": "/content/dam/tnz/mobile/smarttech/apple-watch-series-7-se/apple-watch-se1-lte-44mm-1.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "PRODUCT"
+        },
+        {
+          "description": null,
+          "id": "AppleWatchSEGPS+Cell44mm-GRYALwithMidnightBand",
+          "sortOrder": 4,
+          "defaultUrl": "/content/dam/tnz/mobile/smarttech/apple-watch-series-7-se/apple-watch-se-lte-44mm-4.png",
+          "zoomUrl": null,
+          "standardUrl": null,
+          "thumbnailUrl": null,
+          "tinyUrl": null,
+          "type": "GALLERY"
+        }
+      ],
+      "entitlements": [],
+      "promotions": [],
+      "productFeatures": {
+        "color": "Midnight",
+        "primaryColor": "Black",
+        "colorHex": "#232A31",
+        "brand": "Apple",
+        "band": "4G",
+        "storage": null
+      },
+      "productCharacteristics": {
+        "isShippable": true,
+        "entitledEntity": null,
+        "partnerId": null,
+        "isDeferrable": true,
+        "isIncluded": null,
+        "basePlanOfferId": null,
+        "addedInCart": null,
+        "isFeatured": false,
+        "soldSeparately": true,
+        "balanceManageMent": "POSTPAID"
+      },
+      "associatedPriceRules": [],
+      "stock": null,
+      "productSpecifications": [
+        {
+          "name": "eSIM enabled",
+          "values": [
+            { "value": "Yes", "group": "SIM Details", "sortOrder": 1 }
+          ],
+          "sortOrder": 1
+        }
+      ],
+      "ctaOverrides": [],
+      "supportedDestinations": [],
+      "defaultPlan": null,
+      "defaultPrice": null,
+      "defaultTerm": null
+    }
+  ]
+}

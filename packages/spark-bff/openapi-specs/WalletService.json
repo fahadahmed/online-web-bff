@@ -1,0 +1,548 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "These services manages the payment methods saved at the spark id level wallet.",
+    "version": "1.0.0",
+    "title": "DESL Payment Wallet Service API",
+    "x-ibm-name": "wallet-service-api"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/finance/wallet/me": {
+      "get": {
+        "tags": ["wallet", "finance", "protected", "oidc"],
+        "summary": "Fetches all the payment methods for the given identity along with its associations.",
+        "operationId": "getPaymentMethods",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PaymentMethodResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["wallet", "finance", "protected", "oidc"],
+        "summary": "Add a new payment method to the wallet for a myspark id",
+        "operationId": "addPaymentMethod",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "paymentMethod",
+            "in": "body",
+            "description": "The Payment method to add",
+            "schema": {
+              "$ref": "#/definitions/PaymentMethodRecord"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SinglePaymentMethodResponse"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/finance/wallet/me/{paymentmethodid}": {
+      "delete": {
+        "tags": ["wallet", "finance", "protected", "oidc"],
+        "summary": "Delete a method from the wallet for a myspark id",
+        "operationId": "removePaymentMethod",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "paymentmethodid",
+            "in": "path",
+            "description": "id of a payment method",
+            "required": true,
+            "pattern": "^MySpark[-]SSC\\d+[-]\\d+$",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["wallet", "finance", "protected", "oidc"],
+        "summary": "Updates the payment method's name and the preferred payment type flag only.",
+        "operationId": "patchPaymentMethod",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "paymentmethodid",
+            "in": "path",
+            "description": "id of a payment method",
+            "required": true,
+            "pattern": "^MySpark[-]SSC\\d+[-]\\d+$",
+            "type": "string"
+          },
+          {
+            "name": "paymentMethodUpdateRequest",
+            "in": "body",
+            "description": "The Payment method update request",
+            "schema": {
+              "$ref": "#/definitions/PaymentMethodUpdateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid, or access is otherwise denied.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Something goes wrong internally.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PaymentMethodResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "paymentMethods": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PaymentMethod"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SinglePaymentMethodResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "$ref": "#/definitions/BasePaymentMethodProperties"
+        },
+        {
+          "$ref": "#/definitions/AdditionalPaymentMethodProperties"
+        }
+      ]
+    },
+    "PaymentMethodUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "personalisedName": {
+          "type": "string",
+          "description": "A customised name given by the user for the payment method.",
+          "pattern": "^[\\w\\d _-]{3,30}$",
+          "example": "My Corporate Card - 1"
+        },
+        "isPreferred": {
+          "type": "boolean",
+          "description": "true indicates that the payment method is chosen as the default method of payment.",
+          "example": "true"
+        }
+      }
+    },
+    "BasePaymentMethodProperties": {
+      "type": "object",
+      "required": ["paymentMethodId"],
+      "properties": {
+        "paymentMethodId": {
+          "type": "string",
+          "pattern": "(^MySpark[-]SSC\\d+[-]\\d+$)|(^[\\dA-Z][\\dA-Z-]+[\\dA-Z]$)",
+          "description": "the unique identifier of this payment method.",
+          "example": "MySpark-SSC1502575177696595-29491"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["WALLET_SELF", "WALLET_OTHER", "DIRECT"],
+          "description": "Indicates the source of the payment method association.",
+          "example": "WALLET_OTHER"
+        }
+      }
+    },
+    "AdditionalPaymentMethodProperties": {
+      "type": "object",
+      "properties": {
+        "isDuplicate": {
+          "type": "boolean",
+          "description": "true indicates that this payment method already exists.",
+          "example": "true"
+        }
+      }
+    },
+    "PaymentMethod": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/PaymentMethodRecord"
+        },
+        {
+          "$ref": "#/definitions/BasePaymentMethodProperties"
+        }
+      ]
+    },
+    "PaymentMethodRecord": {
+      "type": "object",
+      "required": ["type", "isPreferred"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["CREDIT", "BANK"],
+          "description": "Indicates if the payment method is a card or bank account.",
+          "example": "CREDIT"
+        },
+        "personalisedName": {
+          "type": "string",
+          "description": "A customised name given by the user for the payment method.",
+          "pattern": "^[\\w\\d -]{3,30}$",
+          "example": "My Corporate Card - 1"
+        },
+        "cardDetail": {
+          "$ref": "#/definitions/CardDetail"
+        },
+        "isPreferred": {
+          "type": "boolean",
+          "description": "true indicates that he payment method is chosen as the default method of payment.",
+          "example": "true"
+        },
+        "bankAccountDetail": {
+          "$ref": "#/definitions/BankAccountDetail"
+        },
+        "associations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Association"
+          }
+        }
+      }
+    },
+    "CardDetail": {
+      "type": "object",
+      "properties": {
+        "maskedCardNumber": {
+          "type": "string",
+          "description": "the masked card number",
+          "pattern": "^[\\d*]{16}$",
+          "example": "123412******3443"
+        },
+        "cardName": {
+          "type": "string",
+          "description": "The name on the card",
+          "example": "Karthick G"
+        },
+        "cardType": {
+          "type": "string",
+          "description": "indicates the card vendor",
+          "example": "VISA"
+        },
+        "expiryMonth": {
+          "type": "integer",
+          "description": "the month of expiry on the card",
+          "minimum": 1,
+          "maximum": 12,
+          "example": "12"
+        },
+        "expiryYear": {
+          "type": "integer",
+          "description": "the year of expiry on the card",
+          "minimum": 1950,
+          "maximum": 9999,
+          "example": "2020"
+        },
+        "token": {
+          "type": "string",
+          "description": "The token representing the card in Bambora.",
+          "example": "324234-32-432-432-423"
+        },
+        "oneTimeToken": {
+          "type": "string",
+          "description": "temporary representation of the token until registration in Bambora.",
+          "example": "324234-32-432-432-423"
+        },
+        "secureTransactionToken": {
+          "type": "string",
+          "description": "The secure transaction token provided by bambora to register the card.",
+          "example": "324234-32-432-432-423"
+        }
+      }
+    },
+    "BankAccountDetail": {
+      "type": "object",
+      "required": ["accountNumber"],
+      "properties": {
+        "bankName": {
+          "type": "string",
+          "description": "the name of the bank",
+          "example": "ANZ Bank"
+        },
+        "accountName": {
+          "type": "string",
+          "description": "the name of the account",
+          "example": "Paul Walker"
+        },
+        "accountNumber": {
+          "type": "string",
+          "description": "the account number",
+          "pattern": "^\\d{13}0\\d{2}$",
+          "example": "2343340105953001"
+        }
+      }
+    },
+    "Association": {
+      "type": "object",
+      "required": ["type", "accessType", "paymentMethodId"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["RECURRING"],
+          "description": "the type of association, as of now we support only one type.",
+          "example": "RECURRING"
+        },
+        "accessType": {
+          "type": "string",
+          "enum": ["ACCOUNT", "LINE"],
+          "description": "the access type of the association.",
+          "example": "LINE"
+        },
+        "accountNumber": {
+          "type": "string",
+          "description": "the spark post pay account number if teh association is on the account.",
+          "pattern": "^\\d+$",
+          "example": "2342343234"
+        },
+        "lineNumber": {
+          "type": "string",
+          "description": "the spark line number if the association is on the line.",
+          "pattern": "^\\d+$",
+          "example": "0274444444"
+        },
+        "paymentMethodId": {
+          "type": "string",
+          "pattern": "(^[\\dA-Z][\\dA-Z-]+[\\dA-Z]$)",
+          "description": "the unique identifier of the associated payment method.",
+          "example": "1-S0123-23"
+        }
+      }
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "x-ibm-configuration": {
+    "enforced": true,
+    "testable": true,
+    "phase": "realized",
+    "cors": {
+      "enabled": false
+    },
+    "assembly": {
+      "execute": [
+        {
+          "activity-log": {
+            "title": "activity-log",
+            "content": "activity",
+            "error-content": "payload",
+            "version": "1.0.0"
+          }
+        },
+        {
+          "set-variable": {
+            "title": "set-variable",
+            "actions": [
+              {
+                "set": "message.headers.x-desl-handler",
+                "value": "$(deslHeader)"
+              },
+              {
+                "set": "message.headers.x-dasl-transaction-id",
+                "value": "$(message.headers.X-Global-Transaction-ID)"
+              }
+            ],
+            "version": "1.0.0"
+          }
+        },
+        {
+          "invoke": {
+            "title": "invoke",
+            "timeout": 60,
+            "verb": "keep",
+            "cache-response": "protocol",
+            "cache-ttl": 900,
+            "stop-on-error": [null],
+            "version": "1.0.0",
+            "target-url": "$(endPoint)$(request.path)$(request.search)"
+          }
+        }
+      ],
+      "catch": []
+    },
+    "properties": {
+      "deslHeader": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      },
+      "endPoint": {
+        "value": "",
+        "description": "",
+        "encoded": false
+      }
+    },
+    "catalogs": {
+      "INT01": {
+        "properties": {
+          "endPoint": "http://iamproxy-int01.internal.spark.co.nz/",
+          "deslHeader": "http://wallet-service-desl-int01.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT02": {
+        "properties": {
+          "endPoint": "http://iamproxy-int02.internal.spark.co.nz/",
+          "deslHeader": "http://wallet-service-desl-int02.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT03": {
+        "properties": {
+          "endPoint": "http://iamproxy-int03.internal.spark.co.nz/",
+          "deslHeader": "http://wallet-service-desl-int03.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT04": {
+        "properties": {
+          "endPoint": "http://iamproxy-int04.internal.spark.co.nz/",
+          "deslHeader": "http://wallet-service-desl-int04.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "INT05": {
+        "properties": {
+          "endPoint": "http://iamproxy-int05.internal.spark.co.nz/",
+          "deslHeader": "http://wallet-service-desl-int05.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "NFT": {
+        "properties": {
+          "endPoint": "http://iamproxy-nft.internal.spark.co.nz/",
+          "deslHeader": "http://wallet-service-desl-nft.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Staging": {
+        "properties": {
+          "endPoint": "http://iamproxy-stg.internal.spark.co.nz/",
+          "deslHeader": "http://wallet-service-desl-stg.npe01.ocp.internal.spark.co.nz/"
+        }
+      },
+      "Production-Internal": {
+        "properties": {
+          "endPoint": "http://iamproxy.internal.spark.co.nz/",
+          "deslHeader": "http://wallet-service-desl.prod01.ocp.internal.spark.co.nz/"
+        }
+      }
+    }
+  },
+  "basePath": "/",
+  "security": [
+    {
+      "clientSecret": [],
+      "clientId": []
+    }
+  ],
+  "securityDefinitions": {
+    "clientSecret": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Secret"
+    },
+    "clientId": {
+      "type": "apiKey",
+      "description": "",
+      "in": "header",
+      "name": "X-IBM-Client-Id"
+    }
+  }
+}

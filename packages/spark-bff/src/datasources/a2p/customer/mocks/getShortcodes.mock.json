@@ -1,0 +1,124 @@
+{
+  "shortcodes": [
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 1243,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"],
+      "usage": {
+        "length": 7,
+        "interval": "DAYS",
+        "dateTimeStart": "2020-12-25T00:00:00.000Z",
+        "dateTimeEnd": "2021-01-01T00:00:00.000Z",
+        "series": [
+          {
+            "dateTimeStart": "2021-01-01T00:00:00.000Z",
+            "dateTimeEnd": "2021-01-02T00:00:00.000Z",
+            "totalSmsCount": 303,
+            "sentSmsCount": 100,
+            "deliveredSmsCount": 100,
+            "failedSmsCount": 100
+          }
+        ]
+      }
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 5463,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"],
+      "usage": {
+        "length": 7,
+        "interval": "DAYS",
+        "dateTimeStart": "2020-12-25T00:00:00.000Z",
+        "dateTimeEnd": "2021-01-01T00:00:00.000Z",
+        "series": [
+          {
+            "dateTimeStart": "2021-01-01T00:00:00.000Z",
+            "dateTimeEnd": "2021-01-02T00:00:00.000Z",
+            "totalSmsCount": 301,
+            "sentSmsCount": 100,
+            "deliveredSmsCount": 100,
+            "failedSmsCount": 100
+          }
+        ]
+      }
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 5654,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"],
+      "usage": {
+        "length": 7,
+        "interval": "DAYS",
+        "dateTimeStart": "2020-12-25T00:00:00.000Z",
+        "dateTimeEnd": "2021-01-01T00:00:00.000Z",
+        "series": [
+          {
+            "dateTimeStart": "2021-01-01T00:00:00.000Z",
+            "dateTimeEnd": "2021-01-02T00:00:00.000Z",
+            "totalSmsCount": 302,
+            "sentSmsCount": 100,
+            "deliveredSmsCount": 100,
+            "failedSmsCount": 100
+          }
+        ]
+      }
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 7545,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"],
+      "usage": {
+        "length": 7,
+        "interval": "DAYS",
+        "dateTimeStart": "2020-12-25T00:00:00.000Z",
+        "dateTimeEnd": "2021-01-01T00:00:00.000Z",
+        "series": [
+          {
+            "dateTimeStart": "2021-01-01T00:00:00.000Z",
+            "dateTimeEnd": "2021-01-02T00:00:00.000Z",
+            "totalSmsCount": 305,
+            "sentSmsCount": 100,
+            "deliveredSmsCount": 100,
+            "failedSmsCount": 100
+          }
+        ]
+      }
+    },
+    {
+      "customerNumber": 1,
+      "customerName": "Spark",
+      "shortCodeNumber": 4543,
+      "status": "ACTIVE",
+      "type": "STANDARD",
+      "ctas": ["VIEW", "EDIT", "DEACTIVATE"],
+      "usage": {
+        "length": 7,
+        "interval": "DAYS",
+        "dateTimeStart": "2020-12-25T00:00:00.000Z",
+        "dateTimeEnd": "2021-01-01T00:00:00.000Z",
+        "series": [
+          {
+            "dateTimeStart": "2021-01-01T00:00:00.000Z",
+            "dateTimeEnd": "2021-01-02T00:00:00.000Z",
+            "totalSmsCount": 300,
+            "sentSmsCount": 100,
+            "deliveredSmsCount": 100,
+            "failedSmsCount": 100
+          }
+        ]
+      }
+    }
+  ]
+}

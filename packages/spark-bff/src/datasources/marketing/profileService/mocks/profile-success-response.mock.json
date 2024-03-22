@@ -1,0 +1,68 @@
+{
+  "profileData": [
+    {
+      "key": "snz.user.profile.profileID",
+      "value": "SSC1541554309763970"
+    },
+    {
+      "key": "snz.user.profile.loginOption",
+      "value": "Spark"
+    },
+    {
+      "key": "snz.user.profile.multiFactorAuthType",
+      "value": "email"
+    },
+    {
+      "key": "snz.user.profile.sparkCRM.segment",
+      "value": "Consumer"
+    },
+    {
+      "key": "snz.user.profile.sparkCRM.lineOfBusiness",
+      "value": "Spark"
+    },
+    {
+      "key": "snz.user.profile.sparkCRM.legalCategory",
+      "value": "Individual"
+    },
+    {
+      "key": "snz.user.profile.product.numberOfBroadband",
+      "value": "1"
+    },
+    {
+      "key": "snz.user.profile.product.numberOfLandline",
+      "value": "1"
+    },
+    {
+      "key": "snz.user.profile.product.numberOfProduct",
+      "value": "10"
+    },
+    {
+      "key": "snz.user.profile.access.numberOfAccount",
+      "value": "1"
+    },
+    {
+      "key": "snz.user.profile.access.numberOfPostpaidMobile",
+      "value": "1"
+    },
+    {
+      "key": "snz.user.profile.access.numberOfPrepaidMobile",
+      "value": "0"
+    },
+    {
+      "key": "snz.user.profile.access.numberOfAccess",
+      "value": "2"
+    },
+    {
+      "key": "snz.user.profile.product.servicePlanName",
+      "value": "ServicePlan011,ServicePlan3054"
+    },
+    {
+      "key": "snz.user.profile.access.numberOfAccess",
+      "value": "Mobile $59.99 Rollover Plan,Unplan Fibre 100 12 Months"
+    },
+    {
+      "key": "snz.user.profile.product.servicePlanType",
+      "value": "MOBILE_PREPAID,MOBILE_POSTPAID_NOTERM"
+    }
+  ]
+}

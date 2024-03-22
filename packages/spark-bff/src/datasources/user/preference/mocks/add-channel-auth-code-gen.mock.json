@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "code": "2012",
+      "message": "Auth code not passed for email or sms, auth code generated.  Channel not created."
+    }
+  ]
+}

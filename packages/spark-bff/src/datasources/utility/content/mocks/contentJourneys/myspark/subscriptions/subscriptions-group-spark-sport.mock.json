@@ -1,0 +1,108 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/subscriptions/group/spark_sport",
+  "tags": ["subscriptions:groupContent"],
+  "title": "subscriptions.groupContent",
+  "description": "subscriptions.groupContent",
+  "fields": [
+    {
+      "fieldKey": "faqs.question1",
+      "fieldType": "HEADER",
+      "fieldValue": "Do I have to be new to Spotify to get it with Spark, or can I already have a Spark Sport account "
+    },
+    {
+      "fieldKey": "faqs.answer1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added Spark Sport to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your Spark Sport in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question2",
+      "fieldType": "HEADER",
+      "fieldValue": "How do I start using my Spark Sport with Spark?"
+    },
+    {
+      "fieldKey": "faqs.answer2",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "fieldKey": "faqs.question3",
+      "fieldType": "HEADER",
+      "fieldValue": "When do I need to activate my Spark Sport?"
+    },
+    {
+      "fieldKey": "faqs.answer3",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added Spark Sport to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your Spark Sport in MySpark."
+    },
+    {
+      "fieldKey": "faqs.question4",
+      "fieldType": "HEADER",
+      "fieldValue": "When do I pay for my Spark Sport?"
+    },
+    {
+      "fieldKey": "faqs.answer4",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "fieldKey": "banner.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Every Formula 1 race live and on demand",
+      "fieldUrl": ""
+    },
+    {
+      "fieldKey": "banner.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Watch all F1 qualifying, practice and Grand Prix and F2, F3 qualifying and races."
+    },
+
+    {
+      "fieldKey": "banner.background",
+      "fieldType": "IMAGE",
+      "fieldValue": "",
+      "fieldUrl": "https://s3-alpha-sig.figma.com/img/8bd5/ab72/8e5a891f77dd8ae5e78b5594e6a4f81c?Expires=1635120000&Signature=F6lfJuY8fbrThd3MUvjb7n7LVUrBjXRB6UOrAWSsgajtxENfoMPDvbslfUfUyXYAOGsqNaia10oloUctHlVPGHG4fvdKaZgMkfM6-CiFJ2MzLbyTy6SuBImQACbp~7WopwhhU75W6BL-d4fq2c3yFwevqy8fPc59YsVzlsiwZUGvZH5~3StyUSVpzMJuvXEPajmIiU-bAd~FcoGtOI-SoukYZMztUecuvzC~l90AjppvEvapQ-gCNU4MTn2SQnmExUWUho4c5MDX313CiRl04yIegZNsYhMCnEz0bQqCPvzZ392Id4Hh-wLAArxfBoQoXrm~b9td4jFrgmsGYw2EFg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+      "fieldKey": "banner.link",
+      "fieldType": "HYPERLINK",
+      "fieldValue": "",
+      "fieldUrl": "https://www.sparksport.co.nz/"
+    },
+    {
+      "fieldKey": "manage.resume.banner.header",
+      "fieldType": "HEADING",
+      "fieldValue": "Every Formula 1 race live and on demand"
+    },
+    {
+      "fieldKey": "manage.resume.banner.subHeader",
+      "fieldType": "HEADING",
+      "fieldValue": "Watch all F1 qualifying, practice and Grand Prix and F2, F3 qualifying and races."
+    },
+    {
+      "fieldKey": "manage.resume.banner.background.link",
+      "fieldType": "HYPERLINK",
+      "fieldUrl": "https://www.sparksport.co.nz/"
+    },
+    {
+      "fieldKey": "manage.resume.banner.background",
+      "fieldType": "IMAGE",
+      "fieldUrl": "https://s3-alpha-sig.figma.com/img/8bd5/ab72/8e5a891f77dd8ae5e78b5594e6a4f81c?Expires=1635120000&Signature=F6lfJuY8fbrThd3MUvjb7n7LVUrBjXRB6UOrAWSsgajtxENfoMPDvbslfUfUyXYAOGsqNaia10oloUctHlVPGHG4fvdKaZgMkfM6-CiFJ2MzLbyTy6SuBImQACbp~7WopwhhU75W6BL-d4fq2c3yFwevqy8fPc59YsVzlsiwZUGvZH5~3StyUSVpzMJuvXEPajmIiU-bAd~FcoGtOI-SoukYZMztUecuvzC~l90AjppvEvapQ-gCNU4MTn2SQnmExUWUho4c5MDX313CiRl04yIegZNsYhMCnEz0bQqCPvzZ392Id4Hh-wLAArxfBoQoXrm~b9td4jFrgmsGYw2EFg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+      "fieldKey": "activate.faqs.question1",
+      "fieldType": "HEADING",
+      "fieldValue": "Do I have to be new to Spotify to get it with Spark, or can I already have a Spark Sport account "
+    },
+    {
+      "fieldKey": "activate.faqs.answer1",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Once you’ve added Spark Sport to your Spark Account, you’ll need to activate it. We’ll send you a notification once you’re Spotify has been processed and is ready for activation. The link in this notification will take you to the Spotify website to sign in with an existing account or create a new account. Alternatively, you can begin the Activation of your Spark Sport in MySpark."
+    }
+  ]
+}

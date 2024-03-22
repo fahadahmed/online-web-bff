@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`successfully retrieves the saved checkout form fields and value of queried step 1`] = `
+Object {
+  "id": "checkout-data-id",
+  "sections": Array [
+    Object {
+      "steps": Array [
+        Object {
+          "entries": Array [
+            Object {
+              "name": "chooseNumber",
+              "value": "Select a new number",
+            },
+            Object {
+              "name": "phoneNumbers",
+              "value": "0272060803",
+            },
+            Object {
+              "name": "chooseSIMType",
+              "value": "eSIM",
+            },
+            Object {
+              "name": "chooseNumber",
+              "value": "Select a new number",
+            },
+            Object {
+              "name": "phoneNumbers",
+              "value": "0272060803",
+            },
+            Object {
+              "name": "chooseSIMType",
+              "value": "eSIM",
+            },
+            Object {
+              "name": "chooseNumber",
+              "value": null,
+            },
+          ],
+          "offerContainerId": null,
+          "stepId": "fake-step-id",
+          "stepPath": "fake-step-id",
+        },
+      ],
+    },
+  ],
+}
+`;

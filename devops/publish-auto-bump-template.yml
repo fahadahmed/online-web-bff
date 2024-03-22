@@ -1,0 +1,9 @@
+steps:
+  - bash: |
+      yarn changeset version
+      git config user.name "Bumpy Bot"
+      git config user.email bumpy.bot@spark.co.nz
+      git add .changeset packages/spark-graphql-schema/CHANGELOG.md packages/spark-graphql-schema/package.json
+      git commit --no-verify -m "Bump version"
+      git push origin HEAD:$(Build.SourceBranch)
+    displayName: 'Bump version'

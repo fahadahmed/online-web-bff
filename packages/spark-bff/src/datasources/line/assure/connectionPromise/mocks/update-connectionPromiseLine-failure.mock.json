@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "The primary Connection Promise cannot be changed to a secondary record.",
+      "code": 4043
+    }
+  ]
+}

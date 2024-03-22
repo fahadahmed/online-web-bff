@@ -1,0 +1,130 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "addresses": [
+    {
+      "label": "5 Park Lane, Waihi 3610",
+      "elid": "302835065",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vic Butler Street, Mount Roskill, Auckland 1041",
+      "elid": "301703670",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5A Vic Butler Street, Mount Roskill, Auckland 1041",
+      "elid": "300212736",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vic Knight Lane, RD 8 Te Kowhai 3288",
+      "elid": "303076456",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vicente Place, Oteha, North Shore 0632",
+      "elid": "301066160",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Viceroy Place, Halswell, Christchurch 8025",
+      "elid": "302051364",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vickerman Street, Grovetown 7202",
+      "elid": "301880221",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5A Vickerman Street, Otara, Manukau 2023",
+      "elid": "300337212",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5B Vickerman Street, Otara, Manukau 2023",
+      "elid": "301357123",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5C Vickerman Street, Otara, Manukau 2023",
+      "elid": "301499505",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vickerman Street, Port Nelson, Nelson 7010",
+      "elid": "300856160",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vickers Crescent, Mangere, Manukau 2022",
+      "elid": "300159670",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vickers Road, Waiwhakaiho, New Plymouth 4312",
+      "elid": "300721055",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5A Vickers Road, Waiwhakaiho, New Plymouth 4312",
+      "elid": "301360869",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vickery Place, Maryhill, Dunedin 9011",
+      "elid": "301991991",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vickerys Road, Wigram, Christchurch 8042",
+      "elid": "300971859",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Vicki Street, Sockburn, Christchurch 8042",
+      "elid": "300517123",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Victa Lane, RD 2 Ardmore 2582",
+      "elid": "300697069",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Victor Grove, Waikanae Beach 5036",
+      "elid": "302104250",
+      "term": "5 vic",
+      "unVerified": false
+    },
+    {
+      "label": "5 Victor Road, Raumati Beach, Raumati 5032",
+      "elid": "301366156",
+      "term": "5 vic",
+      "unVerified": false
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns all the product offer details data with no errors 1`] = `
+Object {
+  "productOfferDetails": Object {
+    "offerDetails": Array [
+      Object {
+        "description": "Enjoy award-winning movies and must-see TV shows in Full HD. Watch on two devices at a time.",
+        "externalId": null,
+        "id": "misc050385",
+        "name": "Netflix – 6mo offer",
+        "price": Object {
+          "basePrice": 14.99,
+          "effectivePrice": 6.99,
+        },
+        "productCharacteristics": Object {
+          "entitledEntity": "LINE",
+          "isIncluded": true,
+        },
+      },
+      Object {
+        "description": "Ideal for online gaming, HD video streaming, file downloads and more",
+        "externalId": null,
+        "id": "misc050385",
+        "name": "Endless Mobile Plan",
+        "price": Object {
+          "basePrice": 79.99,
+          "effectivePrice": null,
+        },
+        "productCharacteristics": null,
+      },
+    ],
+  },
+}
+`;

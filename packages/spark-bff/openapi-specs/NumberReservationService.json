@@ -1,0 +1,281 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Number Reservation Service",
+    "version": "1.0.0",
+    "title": "Number Reservation Service API"
+  },
+  "host": "0.0.0.0:8080",
+  "schemes": ["https"],
+  "paths": {
+    "/v1/shop/numbers/mobile": {
+      "get": {
+        "tags": ["numberReservation", "protected", "oidc", "public"],
+        "summary": "Retrieve a list of available numbers for mobile. if this api is called with the already provided reservation id and paging info then it would return the next set of available mobile numbers for the same reservationId.",
+        "operationId": "getAvailableMobileNumbers",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Indicates the expected number of available mobile numbers.",
+            "type": "integer",
+            "required": false,
+            "minimum": 1,
+            "maximum": 20,
+            "x-example": 8
+          },
+          {
+            "name": "pagingId",
+            "in": "query",
+            "description": "Provided to indicate the paging when more numbers are requested against a reservationId",
+            "type": "string",
+            "required": false,
+            "x-example": "272075668"
+          },
+          {
+            "name": "reservationId",
+            "in": "query",
+            "description": "Provided when more numbers are required against a reservationId.",
+            "type": "string",
+            "required": false,
+            "x-example": "RE_20210603_008346474"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved mobile numbers.",
+            "schema": {
+              "$ref": "#/definitions/MobileNumbersResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shop/numbers/mobile/reserve": {
+      "post": {
+        "tags": ["numberReservation", "protected", "oidc", "public"],
+        "summary": "Reserves a mobile number which was previously selected from the pool of available numbers.",
+        "operationId": "reserveMobileNumber",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "accountNumber",
+            "in": "query",
+            "description": "The account number against which the reservation has to happen.",
+            "type": "string",
+            "required": false,
+            "pattern": "^\\d+$",
+            "x-example": "114859079"
+          },
+          {
+            "in": "body",
+            "name": "mobileNumberReservationRequest",
+            "description": "Request holding mobile number reservation details.",
+            "schema": {
+              "$ref": "#/definitions/MobileNumberReservationRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully reserved the mobile number.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    },
+    "/v1/shop/numbers/mobile/portIn": {
+      "post": {
+        "tags": ["numberReservation", "protected", "oidc", "public"],
+        "summary": "Attempts to port in the mobile number from a non spark provider to spark.",
+        "operationId": "portInMobileNumber",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "mobileNumberPortInRequest",
+            "description": "Request holding mobile number port in details.",
+            "schema": {
+              "$ref": "#/definitions/MobileNumberPortInRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully ported the mobile number.",
+            "schema": {
+              "$ref": "#/definitions/MobileNumberPortInResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "The provided token is invalid.",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "MobileNumbersResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["reservationId", "paging"],
+          "properties": {
+            "reservationId": {
+              "type": "string",
+              "description": "The reservation Id to be used for this transaction.",
+              "example": "RE_20210603_008346474"
+            },
+            "paging": {
+              "type": "string",
+              "description": "The paging info provided by downstream for further calls on the same reservation id",
+              "example": "272075668"
+            },
+            "lineNumbers": {
+              "description": "list of available numbers.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MobileNumberReservationRequest": {
+      "type": "object",
+      "required": ["reservationId", "lineNumber"],
+      "properties": {
+        "reservationId": {
+          "description": "The reservation id retrieved when this number was fetched as part of availability.",
+          "type": "string",
+          "pattern": "^[a-zA-Z]+.\\d+.\\d+$",
+          "example": "RE_20210701_008507483"
+        },
+        "lineNumber": {
+          "description": "The mobile number to be reserved.",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "0272692436"
+        }
+      }
+    },
+    "MobileNumberPortInRequest": {
+      "type": "object",
+      "required": ["lineNumber", "serviceProviderId"],
+      "properties": {
+        "lineNumber": {
+          "description": "The mobile number to be ported.",
+          "type": "string",
+          "pattern": "^0\\d+$",
+          "example": "0272692436"
+        },
+        "serviceProviderId": {
+          "description": "The current valid service provider id.",
+          "type": "string",
+          "pattern": "^\\d+$",
+          "example": "5"
+        }
+      }
+    },
+    "MobileNumberPortInResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Response"
+        },
+        {
+          "type": "object",
+          "required": ["reservationId"],
+          "properties": {
+            "reservationId": {
+              "type": "string",
+              "description": "The reservation id if the portin is success.",
+              "pattern": "^[a-zA-Z]+.\\d+.\\d+$",
+              "example": "RE_20210603_008346474"
+            }
+          }
+        }
+      ]
+    },
+    "Response": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "array",
+          "description": "List of Messages",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "required": ["message", "code"],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

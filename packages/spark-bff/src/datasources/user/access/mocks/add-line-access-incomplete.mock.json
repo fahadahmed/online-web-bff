@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "An auth code must be provided (and one has just been sent)",
+      "code": 3004
+    }
+  ]
+}

@@ -1,0 +1,479 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "mbundle050820",
+        "grandFathered": false,
+        "productType": "Mobile Subscription",
+        "externalId": null,
+        "name": "Endless Plan",
+        "description": "Enjoy unlimited calls, texts and endless data.",
+        "launchDate": "2022-02-03T09:56:00Z",
+        "category": [
+          {
+            "id": "endless_plans"
+          },
+          {
+            "id": "mobile_neon"
+          },
+          {
+            "id": "mobile_spark_sport"
+          },
+          {
+            "id": "spotify_individual_half_price"
+          },
+          {
+            "id": "upgrade_cons_bus"
+          },
+          {
+            "id": "primary_mobile_plan"
+          }
+        ],
+        "contractTerm": null,
+        "contentKey": "endless_plan.keyConditions",
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 59.99,
+          "basePriceExcludingTax": 52.17,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "$59.99EndlessMobilePlanicon",
+            "sortOrder": 1,
+            "defaultUrl": null,
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-1.svg",
+            "tinyUrl": null,
+            "type": "LOGO"
+          }
+        ],
+        "entitlements": [
+          {
+            "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/landline-icon.svg",
+            "sortOrder": 3,
+            "type": "Voice"
+          },
+          {
+            "name": "12GB data at max speed. Endless data at reduced speed*",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": "This will impact your experience.",
+            "quantity": "10",
+            "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.svg",
+            "sortOrder": 1,
+            "type": "Data"
+          },
+          {
+            "name": "Unlimited NZ/AUS SMS*",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": "",
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/sms-icon.svg",
+            "sortOrder": 2,
+            "type": "SMS"
+          }
+        ],
+        "promotions": [
+          {
+            "name": "Half price Spotify Premium",
+            "contentKey": null,
+            "productType": "CHARACTERISTIC",
+            "shortDescription": "",
+            "longDescription": "Usually $14.99/month (incl GST)",
+            "sortOrder": 1,
+            "iconUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon.svg"
+          },
+          {
+            "name": "Spark Voicemail App",
+            "contentKey": "visual_voicemail.infoModal",
+            "productType": "CHARACTERISTIC",
+            "shortDescription": "",
+            "longDescription": "",
+            "sortOrder": 4,
+            "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.svg"
+          },
+          {
+            "name": "3GB Hotspot data*",
+            "contentKey": null,
+            "productType": "CHARACTERISTIC",
+            "shortDescription": null,
+            "longDescription": null,
+            "sortOrder": 2,
+            "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.svg"
+          }
+        ],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": null,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "basePlanOfferId": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      },
+      {
+        "id": "mbundle050237",
+        "grandFathered": false,
+        "productType": "Mobile Subscription",
+        "externalId": null,
+        "name": "Endless Plan",
+        "description": "Ideal if you do a lot of browsing on the go. Enjoy Spotify Premium on us!",
+        "launchDate": "2022-01-29T01:56:00Z",
+        "category": [
+          {
+            "id": "endless_plans"
+          },
+          {
+            "id": "mobile_neon"
+          },
+          {
+            "id": "mobile_spark_sport"
+          },
+          {
+            "id": "spotify_individual_free_price"
+          },
+          {
+            "id": "upgrade_cons_bus"
+          },
+          {
+            "id": "primary_mobile_plan"
+          },
+          {
+            "id": "multi_product_discount"
+          }
+        ],
+        "contractTerm": null,
+        "contentKey": "endless_plan.keyConditions",
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 79.99,
+          "basePriceExcludingTax": 69.56,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "$79.99EndlessMobilePlanicon",
+            "sortOrder": 1,
+            "defaultUrl": null,
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-2.svg",
+            "tinyUrl": null,
+            "type": "LOGO"
+          }
+        ],
+        "entitlements": [
+          {
+            "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/landline-icon.svg",
+            "sortOrder": 3,
+            "type": "Voice"
+          },
+          {
+            "name": "Unlimited NZ/AUS SMS*",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": "",
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/sms-icon.svg",
+            "sortOrder": 2,
+            "type": "SMS"
+          },
+          {
+            "name": "40GB data at max speed. Endless data at reduced speed*",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": "This will impact your experience.",
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.svg",
+            "sortOrder": 1,
+            "type": "Data"
+          }
+        ],
+        "promotions": [
+          {
+            "name": "5GB Hotspot data*",
+            "contentKey": null,
+            "productType": "CHARACTERISTIC",
+            "shortDescription": null,
+            "longDescription": null,
+            "sortOrder": 2,
+            "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.svg"
+          },
+          {
+            "name": "Spotify Premium",
+            "contentKey": null,
+            "productType": "CHARACTERISTIC",
+            "shortDescription": "",
+            "longDescription": "Usually $14.99/month (incl GST)",
+            "sortOrder": 1,
+            "iconUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon.svg"
+          },
+          {
+            "name": "Spark Voicemail App",
+            "contentKey": "visual_voicemail.infoModal",
+            "productType": "CHARACTERISTIC",
+            "shortDescription": "",
+            "longDescription": "",
+            "sortOrder": 4,
+            "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.svg"
+          }
+        ],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": null,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "basePlanOfferId": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      },
+      {
+        "id": "mbundle050516",
+        "grandFathered": false,
+        "productType": "Mobile Subscription",
+        "externalId": null,
+        "name": "Endless Group Plan",
+        "description": "Enjoy nonstop browsing and streaming. Plus, get Spotify Premium on us!",
+        "launchDate": "2022-01-27T16:26:00Z",
+        "category": [
+          {
+            "id": "endless_plans"
+          },
+          {
+            "id": "mobile_neon"
+          },
+          {
+            "id": "mobile_spark_sport"
+          },
+          {
+            "id": "spotify_individual_free_price"
+          },
+          {
+            "id": "upgrade_cons_bus"
+          },
+          {
+            "id": "primary_mobile_plan"
+          },
+          {
+            "id": "multi_product_discount"
+          }
+        ],
+        "contractTerm": null,
+        "contentKey": "endless_plan.keyConditions",
+        "price": {
+          "priceType": "Recurring",
+          "frequency": {
+            "period": "Month",
+            "value": 1
+          },
+          "basePrice": 99.99,
+          "basePriceExcludingTax": 86.95,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "creditAmount": null,
+          "creditAmountExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [],
+        "group": null,
+        "images": [
+          {
+            "description": null,
+            "id": "$99.99EndlessGroupPlanicon",
+            "sortOrder": 1,
+            "defaultUrl": null,
+            "zoomUrl": null,
+            "standardUrl": null,
+            "thumbnailUrl": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-parent.svg",
+            "tinyUrl": null,
+            "type": "LOGO"
+          }
+        ],
+        "entitlements": [
+          {
+            "name": "Unlimited NZ/AUS SMS*",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": "",
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/sms-icon.svg",
+            "sortOrder": 2,
+            "type": "SMS"
+          },
+          {
+            "name": "Unlimited mins to any NZ/AUS mobiles and landlines",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": null,
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/landline-icon.svg",
+            "sortOrder": 3,
+            "type": "Voice"
+          },
+          {
+            "name": "100GB data at max speed. Endless data at reduced speed*",
+            "contentKey": null,
+            "shortDescription": "",
+            "longDescription": "This will impact your experience.",
+            "quantity": null,
+            "iconUrl": "/content/dam/spark/images/icons/unlimited-icon.svg",
+            "sortOrder": 1,
+            "type": "Data"
+          }
+        ],
+        "promotions": [
+          {
+            "name": "Spotify Premium",
+            "contentKey": null,
+            "productType": "CHARACTERISTIC",
+            "shortDescription": "",
+            "longDescription": "Usually $14.99/month (incl GST)",
+            "sortOrder": 1,
+            "iconUrl": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-icon.svg"
+          },
+          {
+            "name": "Add a companion",
+            "contentKey": "companions.infoModal",
+            "productType": "CHARACTERISTIC",
+            "shortDescription": "",
+            "longDescription": "Max 3 users for $29.99 each (incl GST) / $26.08 each (excl GST)",
+            "sortOrder": 3,
+            "iconUrl": "/content/dam/spark/images/icons/green-plus-icon.svg"
+          },
+          {
+            "name": "Spark Voicemail App",
+            "contentKey": "visual_voicemail.infoModal",
+            "productType": "CHARACTERISTIC",
+            "shortDescription": "",
+            "longDescription": "",
+            "sortOrder": 5,
+            "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.svg"
+          },
+          {
+            "name": "10GB Hotspot data*",
+            "contentKey": null,
+            "productType": "CHARACTERISTIC",
+            "shortDescription": null,
+            "longDescription": null,
+            "sortOrder": 2,
+            "iconUrl": "/content/dam/spark/images/icons/green-tick-icon.svg"
+          }
+        ],
+        "productFeatures": {
+          "color": null,
+          "primaryColor": null,
+          "colorHex": null,
+          "brand": null,
+          "band": null,
+          "storage": null
+        },
+        "productCharacteristics": {
+          "isShippable": null,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": null,
+          "isIncluded": null,
+          "basePlanOfferId": null,
+          "addedInCart": null,
+          "isFeatured": null,
+          "soldSeparately": null,
+          "balanceManageMent": "POSTPAID"
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": [],
+        "ctaOverrides": [],
+        "supportedDestinations": []
+      }
+    ],
+    "id": "endless_plans",
+    "name": "Endless",
+    "description": "Category to group  Endless plans",
+    "isCategoryContainer": false,
+    "visibility": true,
+    "defaultSelected": null,
+    "sortOrder": 1,
+    "subCategories": null
+  }
+}

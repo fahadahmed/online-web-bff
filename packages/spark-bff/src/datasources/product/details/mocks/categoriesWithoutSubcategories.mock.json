@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "id": "prepaid_extra",
+    "name": "Extras",
+    "description": "Extras",
+    "isCategoryContainer": false,
+    "visibility": null,
+    "defaultSelected": null,
+    "sortOrder": null,
+    "subCategories": null
+  }
+}

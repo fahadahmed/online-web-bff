@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "message": "BAD REQUEST",
+      "code": 4000
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "serviceProvider": {
+    "id": "5",
+    "name": "Vodafone"
+  },
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ]
+}

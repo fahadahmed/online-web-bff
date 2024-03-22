@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing related ifp query, should handle empty offer response 1`] = `Array []`;
+
+exports[`Testing related ifp query, should return related ifp offers of the given cart (real) 1`] = `
+Array [
+  Object {
+    "description": "Interest free payment over 12 months",
+    "id": "interest_free_payment_over_12_months",
+    "name": "Interest free payment over 12 months",
+    "promotions": null,
+  },
+  Object {
+    "description": "Interest free payment over 18 months",
+    "id": "interest_free_payment_over_18_months",
+    "name": "Interest free payment over 18 months",
+    "promotions": null,
+  },
+]
+`;
+
+exports[`Testing related ifp query, should return related ifp offers of the given cart (simulated) 1`] = `
+Array [
+  Object {
+    "description": "Interest free payment over 36 months",
+    "id": "interest_free_payment_over_36_months",
+    "name": "Interest free payment over 36 months",
+    "promotions": Array [
+      Object {
+        "shortDescription": "Save $400 over your interest free term (included in monthly price shown)",
+      },
+    ],
+  },
+  Object {
+    "description": "Interest free payment over 24 months",
+    "id": "interest_free_payment_over_24_months",
+    "name": "Interest free payment over 24 months",
+    "promotions": Array [
+      Object {
+        "shortDescription": "Save $400 over your interest free term (included in monthly price shown)",
+      },
+    ],
+  },
+  Object {
+    "description": "Interest free payment over 18 months",
+    "id": "interest_free_payment_over_18_months",
+    "name": "Interest free payment over 18 months",
+    "promotions": Array [
+      Object {
+        "shortDescription": "Save $400 over your interest free term (included in monthly price shown)",
+      },
+    ],
+  },
+  Object {
+    "description": "Interest free payment over 12 months",
+    "id": "interest_free_payment_over_12_months",
+    "name": "Interest free payment over 12 months",
+    "promotions": Array [
+      Object {
+        "shortDescription": "Save $400 over your interest free term (included in monthly price shown)",
+      },
+    ],
+  },
+]
+`;

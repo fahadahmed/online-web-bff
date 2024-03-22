@@ -1,0 +1,12 @@
+{
+  "overview": {
+    "length": 7,
+    "interval": "DAYS",
+    "dateTimeStart": "2020-12-25T00:00:00.000Z",
+    "dateTimeEnd": "2021-01-01T00:00:00.000Z",
+    "totalShortcodesCount": 25,
+    "activeShortcodesCount": 540,
+    "pendingShortcodesCount": 7323,
+    "suspendedShortcodesCount": 100
+  }
+}

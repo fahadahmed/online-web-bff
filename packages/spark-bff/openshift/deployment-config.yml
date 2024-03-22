@@ -1,0 +1,117 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: spark-web-gql-service
+    version: latest
+    group: nz.co.spark.digital.services
+  name: spark-web-gql-service
+spec:
+  replicas: ${{no_of_pods}}
+  revisionHistoryLimit: 2
+  selector:
+    app: spark-web-gql-service
+    group: nz.co.spark.digital.services
+  strategy:
+    rollingParams:
+      timeoutSeconds: 3600
+    type: Rolling
+    resources:
+      requests:
+        cpu: '100m'
+        memory: '100Mi'
+      limits:
+        cpu: '500m'
+        memory: '1Gi'
+  template:
+    metadata:
+      labels:
+        app: spark-web-gql-service
+        version: latest
+        group: nz.co.spark.digital.services
+    spec:
+      volumes:
+        - name: log-volume
+          emptyDir: {}
+      containers:
+        - name: nodejs-service
+          image: docker-registry-default.reg.ocp.internal.spark.co.nz/digitalservices/spark-web-gql-service:${{build_id}}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3001
+              name: http
+              protocol: TCP
+          volumeMounts:
+            - name: log-volume
+              mountPath: /usr/src/app/logs
+          env:
+            - name: BUILD_BUILDID
+              value: '${{build_id}}'
+            - name: BUILD_BUILDNUMBER
+              value: '${{build_number}}'
+            - name: API_GW_BASE_URL
+              value: ${{api_gw_base_url}}
+            - name: ENABLE_NON_PROD_FEATURES
+              value: '${{enable_non_prod_features}}'
+            - name: IS_DEVELOPMENT_ENVIRONMENT
+              value: '${{is_development_environment}}'
+            - name: MONITORING_ENABLED
+              value: '${{monitoring_enabled}}'
+            - name: NODE_ENV
+              value: production
+            - name: APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY
+              value: '${{appdynamics_access_key}}'
+            - name: APPDYNAMICS_AGENT_ACCOUNT_NAME
+              value: '${{appdynamics_account_name}}'
+            - name: APPDYNAMICS_AGENT_APPLICATION_NAME
+              value: '${{appdynamics_app_name}}'
+            - name: APPDYNAMICS_AGENT_TIER_NAME
+              value: 'graphql-service'
+            - name: APPDYNAMICS_CONTROLLER_HOST_NAME
+              value: '${{appdynamics_controller_url}}'
+            - name: APPDYNAMICS_CONTROLLER_PORT
+              value: '443'
+            - name: APPDYNAMICS_CONTROLLER_SSL_ENABLED
+              value: 'true'
+            - name: APPDYNAMICS_AGENT_PROXY_HOST
+              value: '${{appdynamics_proxy_url}}'
+            - name: APPDYNAMICS_AGENT_PROXY_PORT
+              value: '8080'
+          # AppD-START
+          envFrom:
+            - secretRef:
+                name: appdynamics-access-key
+          # AppD-END
+          resources:
+            requests:
+              memory: '50Mi'
+              cpu: '50m'
+            limits:
+              memory: '400Mi'
+              cpu: '500m'
+
+        - name: splunk-sidecar
+          image: docker-registry-default.reg.ocp.internal.spark.co.nz/digitalservices/splunk-sidecar:1.0.0
+          sidecar: true
+          volumeMounts:
+            - name: log-volume
+              mountPath: /usr/src/app/logs
+          env:
+            - name: ENVIRONMENT
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: SERVICE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          resources:
+            requests:
+              memory: '100Mi'
+              cpu: '50m'
+            limits:
+              memory: '400Mi'
+              cpu: '500m'
+
+  triggers:
+    - type: ConfigChange

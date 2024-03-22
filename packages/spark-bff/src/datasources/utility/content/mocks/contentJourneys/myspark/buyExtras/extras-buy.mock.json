@@ -1,0 +1,58 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "id": "myspark/extras/buy",
+  "tags": ["extras:buy"],
+  "title": "Extras Buy",
+  "description": "",
+  "fields": [
+    {
+      "fieldKey": "button.extra",
+      "fieldType": "HEADING",
+      "fieldValue": "Add extra",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "button.pack",
+      "fieldType": "HEADING",
+      "fieldValue": "Select pack",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "roaming.annotation",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "Plan your journey or if you already know which pack you need for your destination select a pack below.",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "roaming.link",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "View roaming information",
+      "fieldUrl": null
+    },
+    {
+      "fieldKey": "roaming.destinations.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Destinations covered"
+    },
+    {
+      "fieldKey": "roaming.destinations.covered",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "View destinations covered"
+    },
+    {
+      "fieldKey": "roaming.information.title",
+      "fieldType": "HEADING",
+      "fieldValue": "Roaming information"
+    },
+    {
+      "fieldKey": "roaming.information.description",
+      "fieldType": "PARAGRAPH",
+      "fieldValue": "<h6>14 Day Roaming Packs</h6><p>Roaming packs are activated upon first roaming use in a valid destination. They expire fourteen days from the next New Zealand midnight.</p><h6>Daily Roaming Pack</h6><p>Roaming packs are activated upon first roaming use in a valid destination. Daily packs last exactly 24 hours, from first use.This $8 Daily Roaming Pack gives you 1GB of data and unlimited calls and texts to NZ/AUS numbers only. Calls and text to elsewhere charged at casual rates of $0.56/min and $0.92/text incl GST.</p><h6>Auto Buy Roaming</h6><p>If you purchase and/or enable Auto Buy Roaming, your pack will automatically activate when you text, call or use data while in an eligible destination(s). </p><p>Any additional pack(s) will automatically start after you've used up one of your call, text or data allowances, or when your current pack expires. You can also buy another roaming pack at any time.</p>"
+    }
+  ]
+}

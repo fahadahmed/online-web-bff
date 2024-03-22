@@ -1,0 +1,52 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [],
+    "id": "postpaid",
+    "name": "Postpaid",
+    "description": "Category to group Postpaid products offers",
+    "isCategoryContainer": false,
+    "visibility": null,
+    "defaultSelected": null,
+    "sortOrder": null,
+    "subCategories": [
+      {
+        "id": "endless_plans",
+        "name": "Endless",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": 1,
+        "subCategories": null
+      },
+      {
+        "id": "rollover_plan",
+        "name": "Rollover",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": 2,
+        "subCategories": null
+      },
+      {
+        "id": "data_plan",
+        "name": "Data",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": 3,
+        "subCategories": null
+      },
+      {
+        "id": "wearable_plan",
+        "name": "Wearable",
+        "visibility": true,
+        "defaultSelected": null,
+        "sortOrder": 4,
+        "subCategories": null
+      }
+    ]
+  }
+}

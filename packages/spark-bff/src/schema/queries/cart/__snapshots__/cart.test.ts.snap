@@ -1,0 +1,510 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns shippable items with no duplicate offering id and correct quantity of delivable items 1`] = `
+Array [
+  Object {
+    "description": "One time off free sim card",
+    "imageUrl": "",
+    "itemId": "bc7e89a7-af37-4b40-9c78-c10e0a411358",
+    "quantity": 3,
+    "title": "Sim Card",
+  },
+  Object {
+    "description": "iPhone 12 64GB - Black",
+    "imageUrl": "",
+    "itemId": "bc7e89a7-af37-4b40-9c78-c10e0a411354",
+    "quantity": 1,
+    "title": "iPhone 12 64GB",
+  },
+]
+`;
+
+exports[`returns success for getting cart list items with cookies 1`] = `
+Array [
+  Object {
+    "billingFrequency": "ONE_OFF",
+    "discount": 0,
+    "frequencyPeriod": null,
+    "frequencyType": "OneOff",
+    "frequencyValue": null,
+    "gst": 12.91,
+    "subtotal": 99,
+    "taxExclusiveDiscount": 0,
+    "taxExclusiveSubtotal": 86.09,
+    "taxExclusiveTotal": 86.09,
+    "total": 99,
+  },
+  Object {
+    "billingFrequency": "ONE_OFF",
+    "discount": 0,
+    "frequencyPeriod": null,
+    "frequencyType": "OneOff",
+    "frequencyValue": null,
+    "gst": 3.51,
+    "subtotal": 26.9,
+    "taxExclusiveDiscount": 0,
+    "taxExclusiveSubtotal": 23.39,
+    "taxExclusiveTotal": 23.39,
+    "total": 26.9,
+  },
+  Object {
+    "billingFrequency": "MONTHLY",
+    "discount": 4.13,
+    "frequencyPeriod": "Month",
+    "frequencyType": "Recurring",
+    "frequencyValue": 1,
+    "gst": 30.58,
+    "subtotal": 234.42,
+    "taxExclusiveDiscount": 3.58,
+    "taxExclusiveSubtotal": 203.84,
+    "taxExclusiveTotal": 200.26,
+    "total": 230.29,
+  },
+]
+`;
+
+exports[`returns success for getting cart list items with cookies 2`] = `
+Array [
+  Object {
+    "bundleId": "f4abe282-ac3a-4ba9-9b84-655486784325",
+    "categoryId": "mobile",
+    "filteredItems": Array [
+      Object {
+        "itemId": "f8f3f20a-e100-4de5-b013-6effd77fe792",
+        "title": "$79.99 Endless Plan",
+      },
+      Object {
+        "itemId": "7b7360df-f79e-4ee5-9e03-a653d4874315",
+        "title": "Spotify Premium",
+      },
+      Object {
+        "itemId": "f68a7ca0-e6e4-4b52-966c-29b6fd63adee",
+        "title": "iPhone 13 Pro 128GB - Graphite",
+      },
+      Object {
+        "itemId": "109c861e-e438-4b47-a525-57566f290904",
+        "title": "Interest free payment over 24 months",
+      },
+    ],
+    "isLineNumberRequired": false,
+    "items": Array [
+      Object {
+        "action": "add",
+        "balanceManagement": "POSTPAID",
+        "basePrice": Object {
+          "taxExclusiveValue": 69.56,
+          "value": 79.99,
+        },
+        "billingFrequency": "MONTHLY",
+        "categories": Array [
+          "endless_plans",
+          "mobile_neon",
+          "mobile_spark_sport",
+          "spotify_individual_free_price",
+          "upgrade_cons_bus",
+          "primary_mobile_plan",
+        ],
+        "contractTerm": null,
+        "dealText": "",
+        "description": "Ideal if you do a lot of browsing on the go. Enjoy Spotify Premium on us!",
+        "discountPrice": null,
+        "effectivePrice": Object {
+          "taxExclusiveValue": 69.56,
+          "value": 79.99,
+        },
+        "frequencyPeriod": "Month",
+        "frequencyType": "Recurring",
+        "frequencyValue": 1,
+        "imageUrl": null,
+        "isIncluded": false,
+        "itemId": "f8f3f20a-e100-4de5-b013-6effd77fe792",
+        "offerId": "mbundle050237",
+        "productOfferingId": "mbundle050237",
+        "quantity": 1,
+        "removable": false,
+        "shouldHide": false,
+        "title": "$79.99 Endless Plan",
+      },
+      Object {
+        "action": "add",
+        "balanceManagement": "POSTPAID",
+        "basePrice": Object {
+          "taxExclusiveValue": 0,
+          "value": 0,
+        },
+        "billingFrequency": "MONTHLY",
+        "categories": Array [
+          "mobile_spotify",
+          "mobile_vas",
+        ],
+        "contractTerm": null,
+        "dealText": "",
+        "description": "Endlessly stream, skip and share music & podcasts with Spotify Premium.",
+        "discountPrice": null,
+        "effectivePrice": Object {
+          "taxExclusiveValue": 0,
+          "value": 0,
+        },
+        "frequencyPeriod": "Month",
+        "frequencyType": "Recurring",
+        "frequencyValue": 1,
+        "imageUrl": null,
+        "isIncluded": true,
+        "itemId": "7b7360df-f79e-4ee5-9e03-a653d4874315",
+        "offerId": "spotify_premium_included",
+        "productOfferingId": "spotify_premium_included",
+        "quantity": 1,
+        "removable": false,
+        "shouldHide": false,
+        "title": "Spotify Premium",
+      },
+      Object {
+        "action": "add",
+        "balanceManagement": null,
+        "basePrice": Object {
+          "taxExclusiveValue": 65.18,
+          "value": 74.96,
+        },
+        "billingFrequency": "MONTHLY",
+        "categories": Array [
+          "handsets",
+          "handsets_apple_iphone_13_pro",
+        ],
+        "contractTerm": Object {
+          "description": "IFP Term",
+          "name": "IFP Term",
+          "unit": "Month",
+          "value": 24,
+        },
+        "dealText": "",
+        "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+        "discountPrice": Object {
+          "taxExclusiveValue": 0,
+          "value": 4.13,
+        },
+        "effectivePrice": Object {
+          "taxExclusiveValue": 61.6,
+          "value": 70.83,
+        },
+        "frequencyPeriod": "Month",
+        "frequencyType": "Recurring",
+        "frequencyValue": 1,
+        "imageUrl": null,
+        "isIncluded": false,
+        "itemId": "f68a7ca0-e6e4-4b52-966c-29b6fd63adee",
+        "offerId": "apple126132spo",
+        "productOfferingId": "apple126132spo",
+        "quantity": 1,
+        "removable": false,
+        "shouldHide": false,
+        "title": "iPhone 13 Pro 128GB - Graphite",
+      },
+      Object {
+        "action": "add",
+        "balanceManagement": null,
+        "basePrice": null,
+        "billingFrequency": null,
+        "categories": Array [
+          "ifp",
+        ],
+        "contractTerm": null,
+        "dealText": "",
+        "description": "Interest free payment over 24 months",
+        "discountPrice": null,
+        "effectivePrice": null,
+        "frequencyPeriod": null,
+        "frequencyType": null,
+        "frequencyValue": null,
+        "imageUrl": null,
+        "isIncluded": false,
+        "itemId": "109c861e-e438-4b47-a525-57566f290904",
+        "offerId": "interest_free_payment_over_24_months",
+        "productOfferingId": "interest_free_payment_over_24_months",
+        "quantity": 1,
+        "removable": true,
+        "shouldHide": true,
+        "title": "Interest free payment over 24 months",
+      },
+    ],
+    "lineNumber": null,
+    "offerIds": Array [
+      "mbundle050237",
+      "spotify_premium_included",
+      "apple126132spo",
+      "interest_free_payment_over_24_months",
+    ],
+  },
+  Object {
+    "bundleId": "f2b09286-4a6c-4415-8571-c418e8b5ac2b",
+    "categoryId": "mobile",
+    "filteredItems": Array [
+      Object {
+        "itemId": "34ea9285-150a-4f62-a6ff-15cfcbcb0e8f",
+        "title": "$20 Prepaid Value Pack",
+      },
+      Object {
+        "itemId": "2ae5a775-dad8-44df-8ec0-88bee05d464b",
+        "title": "Spotify Premium",
+      },
+    ],
+    "isLineNumberRequired": false,
+    "items": Array [
+      Object {
+        "action": "add",
+        "balanceManagement": "PREPAID",
+        "basePrice": Object {
+          "taxExclusiveValue": 17.39,
+          "value": 20,
+        },
+        "billingFrequency": "EVERY_28_DAYS",
+        "categories": Array [
+          "addon_prepaid",
+          "prepaid_value_pack",
+          "prepaid_extra_value_packs",
+        ],
+        "contractTerm": null,
+        "dealText": "",
+        "description": "Ideal for those who love to text and use a small amount of data and calling.",
+        "discountPrice": null,
+        "effectivePrice": Object {
+          "taxExclusiveValue": 17.39,
+          "value": 20,
+        },
+        "frequencyPeriod": "Day",
+        "frequencyType": "OneOff",
+        "frequencyValue": 28,
+        "imageUrl": null,
+        "isIncluded": false,
+        "itemId": "34ea9285-150a-4f62-a6ff-15cfcbcb0e8f",
+        "offerId": "valuepack050312",
+        "productOfferingId": "valuepack050312",
+        "quantity": 1,
+        "removable": false,
+        "shouldHide": false,
+        "title": "$20 Prepaid Value Pack",
+      },
+      Object {
+        "action": "add",
+        "balanceManagement": "PREPAID",
+        "basePrice": Object {
+          "taxExclusiveValue": 6,
+          "value": 6.9,
+        },
+        "billingFrequency": "EVERY_28_DAYS",
+        "categories": Array [
+          "mobile_spotify",
+          "mobile_vas",
+        ],
+        "contractTerm": null,
+        "dealText": "",
+        "description": "Endlessly stream, skip and share music & podcasts with Spotify Premium.",
+        "discountPrice": null,
+        "effectivePrice": Object {
+          "taxExclusiveValue": 6,
+          "value": 6.9,
+        },
+        "frequencyPeriod": "Day",
+        "frequencyType": "OneOff",
+        "frequencyValue": 28,
+        "imageUrl": null,
+        "isIncluded": false,
+        "itemId": "2ae5a775-dad8-44df-8ec0-88bee05d464b",
+        "offerId": "spotify_premium_prepaid",
+        "productOfferingId": "spotify_premium_prepaid",
+        "quantity": 1,
+        "removable": true,
+        "shouldHide": false,
+        "title": "Spotify Premium",
+      },
+    ],
+    "lineNumber": null,
+    "offerIds": Array [
+      "valuepack050312",
+      "spotify_premium_prepaid",
+    ],
+  },
+  Object {
+    "bundleId": "bb7ee884-e02a-43c0-bcca-703ed0ec0c4d",
+    "categoryId": "account_vas",
+    "filteredItems": Array [
+      Object {
+        "itemId": "ce7b812f-88a5-47b3-9277-f94bbe095434",
+        "title": "Neon",
+      },
+    ],
+    "isLineNumberRequired": false,
+    "items": Array [
+      Object {
+        "action": "add",
+        "balanceManagement": "POSTPAID",
+        "basePrice": Object {
+          "taxExclusiveValue": 10.43,
+          "value": 11.99,
+        },
+        "billingFrequency": "MONTHLY",
+        "categories": Array [
+          "account_vas",
+          "neon",
+        ],
+        "contractTerm": null,
+        "dealText": "",
+        "description": "Enjoy hit shows, movies and blockbusters all in one place with Neon.",
+        "discountPrice": null,
+        "effectivePrice": Object {
+          "taxExclusiveValue": 10.43,
+          "value": 11.99,
+        },
+        "frequencyPeriod": "Month",
+        "frequencyType": "Recurring",
+        "frequencyValue": 1,
+        "imageUrl": null,
+        "isIncluded": false,
+        "itemId": "ce7b812f-88a5-47b3-9277-f94bbe095434",
+        "offerId": "neon_bundle",
+        "productOfferingId": "neon_bundle",
+        "quantity": 1,
+        "removable": false,
+        "shouldHide": false,
+        "title": "Neon",
+      },
+    ],
+    "lineNumber": null,
+    "offerIds": Array [
+      "neon_bundle",
+    ],
+  },
+  Object {
+    "bundleId": "66eb43c7-295b-4d86-ad3d-5e09ce43fc37",
+    "categoryId": "mobile",
+    "filteredItems": Array [
+      Object {
+        "itemId": "2de00c16-9e22-40af-98d2-784b64821baa",
+        "title": "$59.99 Endless Plan",
+      },
+      Object {
+        "itemId": "e258d2d9-4bf5-4686-b870-239072ee1f8d",
+        "title": "Spotify Premium",
+      },
+    ],
+    "isLineNumberRequired": false,
+    "items": Array [
+      Object {
+        "action": "add",
+        "balanceManagement": "POSTPAID",
+        "basePrice": Object {
+          "taxExclusiveValue": 52.17,
+          "value": 59.99,
+        },
+        "billingFrequency": "MONTHLY",
+        "categories": Array [
+          "endless_plans",
+          "mobile_neon",
+          "mobile_spark_sport",
+          "spotify_individual_half_price",
+          "upgrade_cons_bus",
+          "primary_mobile_plan",
+        ],
+        "contractTerm": null,
+        "dealText": "",
+        "description": "Enjoy unlimited calls, texts and endless data.",
+        "discountPrice": null,
+        "effectivePrice": Object {
+          "taxExclusiveValue": 52.17,
+          "value": 59.99,
+        },
+        "frequencyPeriod": "Month",
+        "frequencyType": "Recurring",
+        "frequencyValue": 1,
+        "imageUrl": null,
+        "isIncluded": false,
+        "itemId": "2de00c16-9e22-40af-98d2-784b64821baa",
+        "offerId": "mbundle050820",
+        "productOfferingId": "mbundle050820",
+        "quantity": 1,
+        "removable": false,
+        "shouldHide": false,
+        "title": "$59.99 Endless Plan",
+      },
+      Object {
+        "action": "add",
+        "balanceManagement": "POSTPAID",
+        "basePrice": Object {
+          "taxExclusiveValue": 6.51,
+          "value": 7.49,
+        },
+        "billingFrequency": "MONTHLY",
+        "categories": Array [
+          "mobile_vas",
+          "mobile_spotify",
+        ],
+        "contractTerm": null,
+        "dealText": "",
+        "description": "Endlessly stream, skip and share music & podcasts with Spotify Premium.",
+        "discountPrice": null,
+        "effectivePrice": Object {
+          "taxExclusiveValue": 6.51,
+          "value": 7.49,
+        },
+        "frequencyPeriod": "Month",
+        "frequencyType": "Recurring",
+        "frequencyValue": 1,
+        "imageUrl": null,
+        "isIncluded": false,
+        "itemId": "e258d2d9-4bf5-4686-b870-239072ee1f8d",
+        "offerId": "spotify_premium_half_price",
+        "productOfferingId": "spotify_premium_half_price",
+        "quantity": 1,
+        "removable": true,
+        "shouldHide": false,
+        "title": "Spotify Premium",
+      },
+    ],
+    "lineNumber": null,
+    "offerIds": Array [
+      "mbundle050820",
+      "spotify_premium_half_price",
+    ],
+  },
+]
+`;
+
+exports[`returns success for getting cart list items with cookies 3`] = `
+Array [
+  Object {
+    "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable design, and a huge leap in battery life.",
+    "imageUrl": null,
+    "itemId": "f68a7ca0-e6e4-4b52-966c-29b6fd63adee",
+    "quantity": 1,
+    "title": "iPhone 13 Pro 128GB - Graphite",
+  },
+]
+`;
+
+exports[`returns success for getting cart list items with cookies 4`] = `
+Array [
+  Object {
+    "offerId": "spotify_premium_half_price",
+    "url": "/content/dam/spark/images/product-images/subscriptions/Spotify/spotify-premium-logo-189x57.png",
+  },
+  Object {
+    "offerId": "mbundle050820",
+    "url": "/content/dam/spark/images/nui-graphics/static/EndlessPlanIcons/endless-plan-icon-child-1.png",
+  },
+]
+`;
+
+exports[`returns successful empty cart response 1`] = `
+Object {
+  "accountNumber": "account-number",
+  "auth": Object {
+    "isAuthenticated": true,
+    "isGuest": false,
+  },
+  "bundles": Array [],
+  "cartId": "success-empty-cart-id",
+  "isAccountNumberRequired": true,
+  "productOfferImages": null,
+  "shippableItems": Array [],
+  "summaries": Array [],
+}
+`;

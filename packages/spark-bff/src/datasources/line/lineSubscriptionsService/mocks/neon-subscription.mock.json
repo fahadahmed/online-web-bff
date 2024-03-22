@@ -1,0 +1,33 @@
+{
+  "offer": {
+    "id": "neon",
+    "name": "Neon",
+    "productInstanceId": "1-2HAZ11110"
+  },
+  "bundleOffer": {
+    "id": "misc010921",
+    "name": "Neon & Broadband",
+    "productInstanceId": "1-2HAZ11111"
+  },
+  "assetStartDate": "2021-11-18T03:31:03.964Z",
+  "accountNumber": "369121518",
+  "lineNumber": "0278675179",
+  "status": {
+    "type": "PROCESSING_ACTIVATION",
+    "label": "Updating"
+  },
+  "nextRenewalDate": "2021-01-01T00:00:00.000Z",
+  "username": "ash.ketchum@pokemon.go",
+  "ctas": [
+    {
+      "type": "ACTIVATE_RETRY",
+      "label": "Start again",
+      "webLink": null
+    },
+    {
+      "type": "EDIT_PARTNER_ACCOUNT",
+      "label": "Go to Neon",
+      "webLink": "https://accounts.neon.com/"
+    }
+  ]
+}

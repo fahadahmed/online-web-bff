@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns notification preference for Mobile usage 1`] = `
+Array [
+  Object {
+    "channels": Array [
+      Object {
+        "entityID": "3-jn4ha",
+        "isActive": true,
+        "type": "email",
+        "value": "bob.builder@toyworld.com",
+      },
+      Object {
+        "entityID": "",
+        "isActive": false,
+        "type": "inapp",
+        "value": "",
+      },
+      Object {
+        "entityID": "",
+        "isActive": false,
+        "type": "push",
+        "value": "",
+      },
+    ],
+    "entityID": "1b5-9612-4eba-b412",
+    "id": "Tm90aWZpY2F0aW9uUHJlZmVyZW5jZTowMjc0NzIyNDMy",
+    "line": "0274722432",
+  },
+  Object {
+    "channels": Array [
+      Object {
+        "entityID": "4-jn4ha",
+        "isActive": true,
+        "type": "email",
+        "value": "bob.builder@toyworld.com",
+      },
+      Object {
+        "entityID": "5-jn4ha",
+        "isActive": true,
+        "type": "sms",
+        "value": "0277320153",
+      },
+      Object {
+        "entityID": "",
+        "isActive": false,
+        "type": "inapp",
+        "value": "",
+      },
+      Object {
+        "entityID": "",
+        "isActive": false,
+        "type": "push",
+        "value": "",
+      },
+    ],
+    "entityID": "1b5-9612-4eba-b42d",
+    "id": "Tm90aWZpY2F0aW9uUHJlZmVyZW5jZTowMjc0NzIyMTEx",
+    "line": "0274722111",
+  },
+  Object {
+    "channels": Array [
+      Object {
+        "entityID": "",
+        "isActive": false,
+        "type": "inapp",
+        "value": "",
+      },
+      Object {
+        "entityID": "",
+        "isActive": false,
+        "type": "push",
+        "value": "",
+      },
+    ],
+    "entityID": "hj5a-b42d-92f09cad6",
+    "id": "Tm90aWZpY2F0aW9uUHJlZmVyZW5jZTowMjc0NzIyOTEz",
+    "line": "0274722913",
+  },
+  Object {
+    "channels": Array [
+      Object {
+        "entityID": "6-jn4ha",
+        "isActive": true,
+        "type": "sms",
+        "value": "0277320153",
+      },
+      Object {
+        "entityID": "7-jn4ha",
+        "isActive": true,
+        "type": "email",
+        "value": "test@gmail.com",
+      },
+      Object {
+        "entityID": "8-jn4ha",
+        "isActive": false,
+        "type": "inapp",
+        "value": null,
+      },
+      Object {
+        "entityID": "9-jn4ha",
+        "isActive": false,
+        "type": "push",
+        "value": null,
+      },
+    ],
+    "entityID": "ghsa34-3y3b3-jn4haj98z",
+    "id": "Tm90aWZpY2F0aW9uUHJlZmVyZW5jZTowMjc1MDE2MTYy",
+    "line": "0275016162",
+  },
+]
+`;

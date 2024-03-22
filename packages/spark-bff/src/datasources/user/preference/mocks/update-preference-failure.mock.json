@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "code": 4011,
+      "message": "Preference centre returned an error and failed to persist the preference."
+    }
+  ]
+}

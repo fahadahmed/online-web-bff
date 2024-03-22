@@ -1,0 +1,273 @@
+{
+  "messages": [
+    {
+      "message": "Success",
+      "code": 2000
+    }
+  ],
+  "category": {
+    "offerDetails": [
+      {
+        "id": "samsung_galaxy_z_fold3_5g_256gb_silver",
+        "grandFathered": false,
+        "externalId": null,
+        "name": "Samsung Galaxy Z Fold3 5G 256GB - Silver",
+        "description": "The future unfolds, with the Galaxy Z Fold3 5G, and its array of outstanding new features, including S Pen support. Immerse yourself in the unfolded 7.6” Infinity Flex Display, with silky-smooth 120Hz scrolling, then fold the screen for a one-handed smartphone experience, and a compact size. Maximise your productivity with Multi-View, letting you view and use multiple apps at once. Are you ready for the upgrade of a lifetime?",
+        "category": [
+          {
+            "id": "handset"
+          },
+          {
+            "id": "handset_samsung_galaxy_fold3"
+          },
+          {
+            "id": "premium_insurance"
+          }
+        ],
+        "contentKey": null,
+        "price": {
+          "priceType": "Onetime",
+          "frequency": null,
+          "basePrice": 2699,
+          "basePriceExcludingTax": 2346.96,
+          "effectivePrice": null,
+          "effectivePriceExcludingTax": null,
+          "taxPercentage": "",
+          "length": null,
+          "description": null
+        },
+        "associatedPrices": [
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 112.46,
+            "basePriceExcludingTax": 97.79,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 224.92,
+            "basePriceExcludingTax": 195.58,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": "Recurring Price for 12 Months"
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 74.97,
+            "basePriceExcludingTax": 65.19,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": null
+          },
+          {
+            "priceType": "Recurring",
+            "frequency": {
+              "period": "Month",
+              "value": 1
+            },
+            "basePrice": 149.94,
+            "basePriceExcludingTax": 130.38,
+            "effectivePrice": null,
+            "effectivePriceExcludingTax": null,
+            "taxPercentage": "",
+            "length": null,
+            "description": null
+          }
+        ],
+        "group": {
+          "id": "samsung_galaxy_z_fold3_5g",
+          "name": "Samsung Galaxy Z Fold3 5G",
+          "description": null,
+          "sortOrder": null,
+          "images": [],
+          "isDefault": null
+        },
+        "images": [
+          {
+            "description": null,
+            "id": "SamsungGalaxyZFold35G256GBSilver",
+            "sortOrder": null,
+            "defaultUrl": "/content/dam/tnz/mobile/phones/Samsung/z-fold/silver-2021/fold-3-silver-1.png",
+            "zoomUrl": null,
+            "standardUrl": "/content/dam/tnz/mobile/phones/Samsung/z-fold/silver-2021/fold-3-silver-4.png",
+            "thumbnailUrl": "/content/dam/tnz/mobile/phones/Samsung/z-fold/silver-2021/fold-3-silver-9.png",
+            "tinyUrl": null,
+            "type": null
+          }
+        ],
+        "entitlements": [],
+        "promotions": [],
+        "productFeatures": {
+          "color": "Silver",
+          "primaryColor": "Silver",
+          "colorHex": "#EBEBE3",
+          "brand": "Samsung",
+          "band": "5G",
+          "storage": "256GB"
+        },
+        "productCharacteristics": {
+          "isShippable": true,
+          "entitledEntity": null,
+          "partnerId": null,
+          "isDeferrable": true,
+          "isIncluded": null,
+          "addedInCart": null,
+          "isFeatured": false,
+          "soldSeparately": false,
+          "balanceManageMent": null
+        },
+        "associatedPriceRules": null,
+        "stock": null,
+        "productSpecifications": []
+      }
+    ],
+    "id": "handset",
+    "name": "Handset",
+    "description": "Handset",
+    "isCategoryContainer": false,
+    "visibility": null,
+    "defaultSelected": null,
+    "sortOrder": null,
+    "subCategories": [
+      {
+        "id": "apple",
+        "name": "Apple",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "applewatch",
+        "name": "Apple Watch",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "bury",
+        "name": "Bury",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "cat",
+        "name": "CAT",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "htc",
+        "name": "HTC",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "huawei",
+        "name": "Huawei",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "ipad",
+        "name": "iPad",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "lg",
+        "name": "LG",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "nokia",
+        "name": "Nokia",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "oppo",
+        "name": "Oppo",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "premium_insurance",
+        "name": "Premium Insurance",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "samsung",
+        "name": "Samsung",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "samsung_galaxy",
+        "name": "Samsung Galaxy",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "samsung_watch",
+        "name": "Samsung Watch",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "sony_xperia",
+        "name": "Sony Xperia",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "spark",
+        "name": "Spark",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      },
+      {
+        "id": "standard_insurance",
+        "name": "Standard Insurance",
+        "visibility": null,
+        "defaultSelected": null,
+        "sortOrder": null
+      }
+    ]
+  }
+}

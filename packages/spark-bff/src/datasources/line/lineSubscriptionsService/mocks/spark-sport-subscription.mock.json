@@ -1,0 +1,53 @@
+{
+  "offer": {
+    "id": "spark_sport",
+    "name": "Spark Sport",
+    "productInstanceId": "1-2HA44440"
+  },
+  "bundleOffer": {
+    "id": "misc236443",
+    "name": "Spark Sport",
+    "productInstanceId": "1-2HA44441"
+  },
+  "assetStartDate": "2021-09-22T03:31:03.964Z",
+  "accountNumber": "369121518",
+  "lineNumber": "0278675179",
+  "status": {
+    "type": "NOT_ACTIVE",
+    "label": "Ready to activate"
+  },
+  "nextRenewalDate": "2021-01-01T00:00:00.000Z",
+  "username": "ash.ketchum@pokemon.go",
+  "ctas": [
+    {
+      "type": "ACTIVATE",
+      "label": "Activate Spark Sport"
+    },
+    {
+      "type": "ACTIVATE_RETRY",
+      "label": "Start again",
+      "webLink": null
+    },
+    {
+      "type": "CANCEL",
+      "label": "Cancel Spark Sport Premium"
+    },
+    {
+      "type": "CHANGE_PAYMENT_METHOD",
+      "label": "Change payment method"
+    },
+    {
+      "type": "EDIT_PARTNER_ACCOUNT",
+      "label": "Go to Spark Sport",
+      "webLink": "https://accounts.sparksport.com/"
+    },
+    {
+      "type": "RESUME",
+      "label": "Resume Spark Sport"
+    },
+    {
+      "type": "SWITCH",
+      "label": "Change to Spark Sport"
+    }
+  ]
+}

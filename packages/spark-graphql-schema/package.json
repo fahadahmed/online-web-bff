@@ -1,0 +1,11 @@
+{
+  "name": "@sparknz/spark-graphql-schema",
+  "version": "4.1.0-develop.2",
+  "license": "UNLICENSED",
+  "files": [
+    "schema.graphql"
+  ],
+  "scripts": {
+    "prepublish": "yarn --cwd ../spark-bff generate:schema"
+  }
+}
